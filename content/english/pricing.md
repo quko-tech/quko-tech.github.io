@@ -35,18 +35,6 @@ pricing:
     - Email Marketing
     - 24/7 Tech Support
 
-  # pricing table loop
-  - name : "Advance"
-    price: "$299"
-    content : "Suitable for large businesses with unlimited employees"
-    link : "#"
-    services:
-    - Unlimited agents
-    - 10 PSD Design
-    - HTML5 Markup
-    - Basic SEO
-    - Email Marketing
-    - 24/7 Tech Support
 
 ############################# call to action #################################
 cta:
