@@ -1,0 +1,82 @@
+############# Italian navigation ##############
+
+# main menu
+[[main]]
+name = "Inicio"
+url = ""
+weight = 1
+
+[[main]]
+name = "Quen somos"
+url = "about/"
+weight = 2
+
+[[main]]
+name = "Proxecto"
+url = "project/"
+weight = 3
+
+[[main]]
+name = "Blog"
+url = "blog/"
+weight = 4
+
+[[main]]
+weight = 5
+name = "Máis"
+hasChildren = true
+
+  [[main]]
+  parent = "Máis"
+  name = "Servizo"
+  url = "service/"
+  weight = 1
+
+  [[main]]
+  parent = "Máis"
+  name = "Prezos"
+  url = "pricing/"
+  weight = 2
+
+  [[main]]
+  parent = "Máis"
+  name = "FAQ"
+  url = "faq/"
+  weight = 3
+  
+[[main]]
+name = "Contato"
+url = "contact/"
+weight = 6
+
+
+# footer menu
+[[footer]]
+name = "Quen somos"
+url = "about/"
+weight = 2
+
+[[footer]]
+name = "Proxecto"
+url = "project/"
+weight = 3
+
+[[footer]]
+name = "Servizo"
+url = "service/"
+weight = 4
+
+[[footer]]
+name = "Prezos"
+url = "pricing/"
+weight = 5
+
+[[footer]]
+name = "FAQ"
+url = "faq/"
+weight = 6
+
+[[footer]]
+name = "Contaco"
+url = "contact/"
+weight = 7

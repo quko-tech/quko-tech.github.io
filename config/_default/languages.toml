@@ -1,0 +1,20 @@
+################# Español language ################
+[es]
+languageName = "Español"
+languageCode = "es-ES"
+contentDir = "content/spanish"
+weight = 1
+
+################ French language ##################
+[gl]
+languageName = "Galego"
+languageCode = "gl-GL"
+contentDir = "content/galego"
+weight = 2
+
+################# English language ################
+[en]
+languageName = "English"
+languageCode = "en-US"
+contentDir = "content/english"
+weight = 3
