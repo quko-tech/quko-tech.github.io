@@ -26,7 +26,7 @@ Pontevedra, Galicia
 Spain
 """
 # copyright
-copyright = "Plantilla web desarrollada por [Themefisher](https://themefisher.com/) y [Gethugothemes](https://gethugothemes.com/)"
+copyright = "Pablo Álvarez, 2022 (C) <br> Powered by [Themefisher](https://themefisher.com/) y [Gethugothemes](https://gethugothemes.com/)"
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>" 
 custom_script= ""
 # google tag manager, see https://developers.google.com/tag-manager/
