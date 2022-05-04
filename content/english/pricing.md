@@ -1,6 +1,6 @@
 ---
 title: "Our Pricing"
-description: "this is meta description"
+description: "We offer different packages for you to choose the one that fits you the best"
 bg_image: "images/feature-bg.jpg"
 layout: "pricing"
 draft: false
@@ -11,11 +11,10 @@ pricing:
   pricing_table:
   # pricing table loop
   - name : "Basic"
-    price: "$99"
     content : "Perfect for single freelancers who work by themselves"
     link : "#"
     services:
-    - Unlimited agents
+    - Unlimited software uses
     - 10 PSD Design
     - HTML5 Markup
     - Basic SEO
@@ -24,7 +23,6 @@ pricing:
 
   # pricing table loop
   - name : "Premium"
-    price: "$199"
     content : "Suitable for small businesses with up to 5 employees"
     link : "#"
     services:
@@ -35,6 +33,17 @@ pricing:
     - Email Marketing
     - 24/7 Tech Support
 
+  # pricing table loop
+  - name : "Advance"
+    content : "Suitable for large businesses with unlimited employees"
+    link : "#"
+    services:
+    - Unlimited agents
+    - 10 PSD Design
+    - HTML5 Markup
+    - Basic SEO
+    - Email Marketing
+    - 24/7 Tech Support
 
 ############################# call to action #################################
 cta:
