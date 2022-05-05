@@ -12,31 +12,36 @@ url = "about/"
 weight = 2
 
 [[main]]
-name = "Proyecto"
-url = "project/"
+name = "Servicio"
+url = "service/"
 weight = 3
 
-[[main]]
-name = "Blog"
-url = "blog/"
-weight = 4
+#[[main]]
+#name = "Proyecto"
+#url = "project/"
+#weight = 3
+
+#[[main]]
+#name = "Blog"
+#url = "blog/"
+#weight = 4
 
 [[main]]
 weight = 5
 name = "Más"
 hasChildren = true
 
-  [[main]]
-  parent = "Más"
-  name = "Servicio"
-  url = "service/"
-  weight = 1
+  #[[main]]
+  #parent = "Más"
+  #name = "Servicio"
+  #url = "service/"
+  #weight = 1
 
-  [[main]]
-  parent = "Más"
-  name = "Tarifas"
-  url = "pricing/"
-  weight = 2
+  #[[main]]
+  #parent = "Más"
+  #name = "Tarifas"
+  #url = "pricing/"
+  #weight = 2
 
   [[main]]
   parent = "Más"
@@ -56,20 +61,20 @@ name = "Quiénes somos"
 url = "about/"
 weight = 2
 
-[[footer]]
-name = "Proyecto"
-url = "project/"
-weight = 3
+#[[footer]]
+#name = "Proyecto"
+#url = "project/"
+#weight = 3
 
 [[footer]]
 name = "Servicio"
 url = "service/"
 weight = 4
 
-[[footer]]
-name = "Tarifas"
-url = "pricing/"
-weight = 5
+#[[footer]]
+#name = "Tarifas"
+#url = "pricing/"
+#weight = 5
 
 [[footer]]
 name = "FAQ"

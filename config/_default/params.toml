@@ -21,10 +21,16 @@ phone = "0124857985320"
 email = "demo@email.com"
 location = """
 **MAKO Systems**  
-Cangas do Morrazo
+Cangas do Morrazo, 
 Pontevedra, Galicia  
 Spain
 """
+
+
+dateFormat = "02 Jan 2006"
+
+
+
 # copyright
 copyright = "Pablo Álvarez, 2022 (C) <br> Powered by [Themefisher](https://themefisher.com/) y [Gethugothemes](https://gethugothemes.com/)"
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>" 

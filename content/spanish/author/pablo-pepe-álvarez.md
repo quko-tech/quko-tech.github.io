@@ -12,4 +12,4 @@ social:
     link : "https://es.linkedin.com/in/p-adominguez"
 ---
 
-Telecommunication Engineer by the Universidad Politécnica de Madrid, specialised in telecommunication systems and signal processing. Galician Higl-Level Athlete in Sprint Canoeing, where he currently compites.
+Ingeniero de Telecomunicaciones por la Universidad Politécnica de Madrid, especializado en sistemas de telecomunicaciones y procesado de señal. Deportista Galego de Alto Nivel en piragüismo, donde compite de forma activa en la actualidad.

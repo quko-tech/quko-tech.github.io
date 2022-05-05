@@ -17,6 +17,8 @@ googleAnalytics = "" # example: UA-123-45, for more info, read the article https
 
 
 # disable language
+defaultContentLanguage = 'es'
+
 disableLanguages = [] # example: ["fr"] for disable french language. see https://gohugo.io/content-management/multilingual/
 hasCJKLanguage = false # If hasCJKLanguage true, auto-detect Chinese/Japanese/Korean Languages in the content. see: https://gohugo.io/getting-started/configuration/#hascjklanguage
 
@@ -34,7 +36,7 @@ home = ["HTML", "WebAppManifest"]
 [imaging]
 # See https://github.com/disintegration/imaging
 # Default JPEG or WebP quality setting. Default is 75.
-quality = 90
+quality = 95
 
 ############################# Caches ###############################
 [caches]
