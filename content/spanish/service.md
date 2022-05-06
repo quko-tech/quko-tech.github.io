@@ -10,7 +10,7 @@ about:
   enable : true
   title : "Una nueva forma de entrenar"
   content : "Imagina ser capaz de grabar los entrenamientos y competiciones de diferentes deportistas al mismo tiempo, y poder analizar más tarde su rendimiento de forma cuantitativa comparando movimientos, valocidades frecuencias cardíacas y más con una precisión de centésimas de segundo.         
-  <br> En Mako, ofrecemos soluciones de software (¡y hardware en breve!) para equipos deportivos de alto rendimiento. Al elegir nuestros servicios, desde Mako proveeremos al cuerpo técnico de todo el software del que dispongamos para en análisis de su deporte o modalidad. Además, también ofrecemos soporte de nuestro equipo para actualizar nuestros programas en función de sus necesidades, añadiendo nuevas funcionalidades, arrojando nuevos resultados. Creemos en una relación de apoyo y confianza entre cuerpo técnico y nuestro equipo de ingeniería para lograr los mejores resultados"
+  <br> En Mako, ofrecemos soluciones de software para equipos deportivos de alto rendimiento, proveyéndolos de todo lo necesario para el análisis de su deporte o modalidad. Además, ofrecemos soporte a la hora de actualizar nuestros programas en función de sus requisitos, añadiendo nuevas funcionalidades y obteniendo así resultados más completos."
   image : "images/company/company-group-pic.jpg"
 
 
