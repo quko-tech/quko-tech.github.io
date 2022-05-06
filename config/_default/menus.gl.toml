@@ -51,7 +51,7 @@ hasChildren = true
   weight = 3
   
 [[main]]
-name = "Contato"
+name = "Contacto"
 url = "contact/"
 weight = 6
 
@@ -83,6 +83,6 @@ url = "faq/"
 weight = 6
 
 [[footer]]
-name = "Contaco"
+name = "Contacto"
 url = "contact/"
 weight = 7
