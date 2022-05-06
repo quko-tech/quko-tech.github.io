@@ -8,8 +8,8 @@ banner:
   content: "En Mako, trabajamos para incorporar técnicas noveles en data science y procesado de señal al entrenamiento deportivo de alto nivel"
   button:
     enable: true
-    label: "Discover Our Project"
-    link: "project/"
+    label: "Conócenos"
+    link: "about/"
 
 ############################# About #################################
 about:
@@ -28,10 +28,10 @@ portfolio:
   content: "Los sensores nos ofrecen la capacidad de \"ver lo invisible\": mediante un procesado de datos acecuado y análisis de tendencias, es posible adquirir información sobre la actaución de un atleta en un entremaiento o competición que de otro modo pasaría completamente desapercibida.
 
 
-  Desde Mako, pensamos que los ténicos no deben ser quienes tengan que interpretar datos en brutos de sensores. Es por ello que les ofrecemos soluciones a la vanguardia que les ayuda a obtener los resultados cualitativos y cuantitativos que requieren para analizar el rendimiento de un deportista.
+  Desde Mako, pensamos que los ténicos no deben ser quienes tengan que interpretar datos en bruto de sensores. Es por ello que les ofrecemos soluciones a la vanguardia que les ayuda a obtener los resultados cualitativos y cuantitativos que requieren para analizar el rendimiento de un deportista.
 
 
-  Creemos en mantener una relacióne strecha y de confianza con nuestros clientes para pdoer adaptar por completo el procesado y adquisición de datos a las necesidades específicas de cada equipo.
+  Creemos en mantener una relación estrecha y de confianza con nuestros clientes para poder adaptar por completo el procesado y adquisición de datos a las necesidades específicas de cada equipo.
   "
   button:
     enable: true
@@ -50,7 +50,7 @@ cta:
   enable: true
   bg_image: "images/call-to-action-bg.jpg"
   title: "De deportistas, para deportistas"
-  content: "No importa si eres un particular, un equipo o una federación: en Mako, ofrecemos soluciones de software para todo tipo de grupos  de entrenamiento<br>Si estás interesado en nuestros servicios o tienes cualqueir pregunta sobre ellos, ¡no dudes en ponerte en contacto con nosotros!"
+  content: "No importa si eres un particular, un equipo o una federación: en Mako, ofrecemos soluciones de software para todo tipo de grupos de entrenamiento<br>Si estás interesado en nuestros servicios o tienes cualquier pregunta sobre ellos, ¡no dudes en ponerte en contacto con nosotros!"
   button:
     enable: true
     label: "Ponte en contacto"
@@ -59,13 +59,13 @@ cta:
 ############################# Funfacts ###############################
 funfacts:
   enable: true
-  title: "Satos sobre nosotros"
+  title: "Datos sobre nosotros"
   description: "Hay mucho trabajo tras Mako, ¡y aún estamos creciendo!"
   funfact_item:
   # funfacts item loop
   - icon: "fas fa-mug-hot" #https://fontawesome.com/v5.15/icons
     name: "Cafés"
-    count: "99"
+    count: "37"
 
   # funfacts item loop
   - icon: "fas fa-glasses" #https://fontawesome.com/v5.15/icons
@@ -74,32 +74,32 @@ funfacts:
 
   # funfacts item loop
   - icon: "fas fa-keyboard" #https://fontawesome.com/v5.15/icons
-    name: "Proyectos completados"
-    count: "1"
+    name: "Proyectos activos"
+    count: "3"
 
   # funfacts item loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
     name : "Líneas de código"
-    count : "3500"
+    count : "2500"
 
-  testimonial_slider:
-  # testimonial item loop
-  - name: "Joselito"
-    image: "images/clients/avater-1.jpg"
-    designation: "Deportista profesional"
-    content: "Aquí vendría una frase"
+  #testimonial_slider:
+  ## testimonial item loop
+  #- name: "Joselito"
+  #  image: "images/clients/avater-1.jpg"
+  #  designation: "Deportista profesional"
+  #  content: "Aquí vendría una frase"
 
-  # testimonial item loop
-  - name: "Menganito"
-    image: "images/clients/avater-2.jpg"
-    designation: "Ingeniero de Telecomunicaciones"
-    content: "Aquí vendría una frase"
+  ## testimonial item loop
+  #- name: "Menganito"
+  #  image: "images/clients/avater-2.jpg"
+  #  designation: "Ingeniero de Telecomunicaciones"
+  #  content: "Aquí vendría una frase"
 
-  # testimonial item loop
-  - name: "Fulanita"
-    image: "images/clients/avater-3.jpg"
-    designation: "Deportista profesional"
-    content: "Aquí vendría una frase"
+  ## testimonial item loop
+  #- name: "Fulanita"
+  #  image: "images/clients/avater-3.jpg"
+  #  designation: "Deportista profesional"
+  #  content: "Aquí vendría una frase"
 
 
 ---

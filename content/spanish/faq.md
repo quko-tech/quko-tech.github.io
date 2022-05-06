@@ -22,7 +22,7 @@ Otras soluciones en el mercado toman los datos brutos recolectados por los diver
 
 Por el momento, sólo ofrecemos soporte oficial completo para piragüismo en canoa (C1, C2 y C4). Esto se debe a que es ésta la modalidad con la que se originó este proyecto y en la que más tiempo se invirtió en investigación y desarrollo. Sin embargo, esperamos incluir otras modalidades de este deporte como kayak, barco dragón o aguas bravas en los próximos meses.
 
-Estamos profundamente interesados en ampliat nuestro catálogo y expandirnos a nuevos deportes. Si estás interesado en nuestros servicios pero tu modalidad en concreto no aparece en la lista anterior, ¡no dudes en contactarnos! Estaremos encantados de atenderte y analizar tu caso para incorporar tu deporte a nuestro proyecto.
+Estamos profundamente interesados en ampliar nuestro catálogo y expandirnos a nuevos deportes. Si estás interesado en nuestros servicios pero tu modalidad en concreto no aparece en la lista anterior, ¡no dudes en contactarnos! Estaremos encantados de atenderte y analizar tu caso para incorporar tu deporte a nuestro proyecto.
 
 <br>
 

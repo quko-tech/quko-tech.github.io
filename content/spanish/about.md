@@ -10,8 +10,8 @@ draft: false
 about:
   enable : true
   image : "images/company/about.jpg"
-  title : "Lo último en tecnologia deportiva"
-  content : "Extraer parámetros útiles de datos brutos requiere de técnicas avanzadas de procesado de señal y data science. Sin embargo, en el mundo de deporte, no basta con conocimientos ingenieriles para lograr unos resultados útiles: se necesita también un gran conocimiento de la técnica deportiva para lograr identificar los parámetros clave que afectan al rendimiento de un atleta.
+  title : "Lo último en tecnología deportiva"
+  content : "Extraer parámetros de utilidad de datos brutos requiere de técnicas avanzadas de procesado de señal y data science. Sin embargo, en el mundo de deporte, no basta con conocimientos ingenieriles para lograr unos resultados útiles: se necesita también un gran conocimiento de la técnica deportiva para lograr identificar los parámetros clave que afectan al rendimiento de un atleta.
 
 
   En nuestra plantilla contamos tanto con un equipo de ingeniería con amplia experiencia en procesado de datos como con un equipo deportivo con conocimientos en el ámbito del entrenamiento de alto nivel. De este modo, buscamos ofrecer la simbiosis perfecta entre ambos mundos."
@@ -55,7 +55,7 @@ about:
 ################################ feature #####################################
 features:
   enable : true
-  title : "Donde se juntan ingeniería de deporte profesional"
+  title : "Donde se juntan ingeniería con deporte profesional"
   feature_item:
   # feature item loop
   - icon : "fas fa-code" #https://fontawesome.com/v5.15/icons
@@ -70,7 +70,7 @@ features:
   # feature item loop
   - icon : "fas fa-ad" #https://fontawesome.com/v5.15/icons
     name : "Equipo de marketing"
-    content : "Con el objetivo de alcanzar todo tipo de deportes y modalidades diferentes, también disponemos de equipod e márqueting"
+    content : "Con el objetivo de alcanzar todo tipo de deportes y modalidades diferentes, también disponemos de equipo de márqueting"
 
   # feature item loop
   #- icon : "fas fa-microscope" #https://fontawesome.com/v5.15/icons
@@ -98,7 +98,7 @@ mission_vision:
   tabs:
   # tab item loop
   - name : "Visión"
-    content : "En mako, creemos firmemente en el uso de tecnologías a la vanguardia con el fin de optimizar la eficiencia en la rpactica y entrenamiento deportivo.
+    content : "En mako, creemos firmemente en el uso de tecnologías a la vanguardia con el fin de optimizar la eficiencia en la práctica y entrenamiento deportivo.
     Un simple vistazo atrás hacia competiciones en el Siglo XX sirve para darse cuenta de cómo la evolución de un deporte va de la mano de los diferentes avances tecnológicos que éste experimenta.
     De este modo, Mako busca ofrecer software que logre ayudar a entrenadores y cuerpo técnico de todo el mundo a visualizar los entrenos de sus
     deportistas desde un nuevo punto de vista más cuantitativo y objetivo, permitiéndoles descubrir nuevas formas de aumentar su rendimiento."

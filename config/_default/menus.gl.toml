@@ -7,36 +7,42 @@ url = ""
 weight = 1
 
 [[main]]
-name = "Quen somos"
+name = "Sobre nós"
 url = "about/"
 weight = 2
 
 [[main]]
-name = "Proxecto"
-url = "project/"
+name = "Servizo"
+url = "service/"
 weight = 3
 
-[[main]]
-name = "Blog"
-url = "blog/"
-weight = 4
+#[[main]]
+#name = "Proxecto"
+#url = "project/"
+#weight = 4
+
+
+#[[main]]
+#name = "Blog"
+#url = "blog/"
+#weight = 4
 
 [[main]]
 weight = 5
 name = "Máis"
 hasChildren = true
 
-  [[main]]
-  parent = "Máis"
-  name = "Servizo"
-  url = "service/"
-  weight = 1
+  #[[main]]
+  ##parent = "Máis"
+  #name = "Servizo"
+  #url = "service/"
+  #weight = 1
 
-  [[main]]
-  parent = "Máis"
-  name = "Prezos"
-  url = "pricing/"
-  weight = 2
+  #[[main]]
+  ##parent = "Máis"
+  #name = "Prezos"
+  #url = "pricing/"
+  #weight = 2
 
   [[main]]
   parent = "Máis"
@@ -52,7 +58,7 @@ weight = 6
 
 # footer menu
 [[footer]]
-name = "Quen somos"
+name = "Sobre nós"
 url = "about/"
 weight = 2
 
