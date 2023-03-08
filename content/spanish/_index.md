@@ -4,8 +4,8 @@ banner:
   enable: true
   bg_image: "images/verdu.jpg"
   bg_overlay: true
-  title: "Alcanza el siguiente nivel <br/> en rendimiento deportivo"
-  content: "En Mako, trabajamos para incorporar técnicas noveles en data science y procesado de señal al entrenamiento deportivo de alto nivel"
+  title: "Soluciones de vanguardia <br/> en procesado de datos <br/> y data science"
+  content: "En Mako, trabajamos para ofrecer soluciones innovadoras en los ámbitos del procesado de señal y ciencia de datos a a nuestros clientes"
   button:
     enable: true
     label: "Conócenos"
@@ -15,8 +15,9 @@ banner:
 about:
   enable: true
   title: "Sobre Mako"
-  description: "Nacido en el mundo del piragüismo de sprint, Mako se creó con una meta clara: ofrecer a entrenadores y deportistas los datos que de verdad necesitan para mejorar su rendimiento"
-  content: "Es imposible caracterizar completamente un entrenamiento sólo observándolo: ciertos detalles como movimientos sutiles, frecuencia cardíaca o pequeñas desviaciones de velocidad pasan desapercibidas al ojo de un entrenador. <br> En Mako, desarrollamos soluciones de software que procesan los datos en bruto adquiridos por diversos sensores para ofrecer a entrenadores y técnicos los datos precisos que necesitan para analizar el comportamiento y rendimiento de un deportista."
+  description: "Nacido en el mundo del procesado de señales biométricas y biomecánicas, Mako se creó con una meta clara: poner al alcance de cualquier persona ténicas avanzadas de tratamiento de la información, con el fin de sacar el máximo partido a los datos disponibles"
+  content: "Vivimos una época donde somos capaces de parametrizar cualquier fenómeno por medio de datos: existe una infinidad de sensores diferentes para recolectar información con resoluciones antes inimaginables. Sin embargo, trabajar con estas enormes cantidades de datos es una tarea compleja 
+  <br>En Mako, desarrollamos soluciones de procesado de señal, tratamiento de datos y data science para, a partir de datos en bruto difícilmente interpretables por un particular, obtener la información clave que ayudará a la optimización de la actividad analizada"
   image: "images/palada.png"
 
 
@@ -25,13 +26,13 @@ portfolio:
   enable: true
   bg_image: "images/feature-bg.jpg"
   title: "EL CONOCIMIENTO ES PODER"
-  content: "Los sensores nos ofrecen la capacidad de \"ver lo invisible\": mediante un procesado de datos acecuado y análisis de tendencias, es posible adquirir información sobre la actaución de un atleta en un entremaiento o competición que de otro modo pasaría completamente desapercibida.
+  content: "Los sensores nos ofrecen la capacidad de \"ver lo invisible\": mediante un procesado de datos acecuado y análisis de tendencias, es posible adquirir información valiosa que de otro modo pasaría completamente desapercibida.
 
 
-  Desde Mako, pensamos que los ténicos no deben ser quienes tengan que interpretar datos en bruto de sensores. Es por ello que les ofrecemos soluciones a la vanguardia que les ayuda a obtener los resultados cualitativos y cuantitativos que requieren para analizar el rendimiento de un deportista.
+  Desde Mako, somos conscientes del problema que puede suponer la interpretación de los datos en bruto adquiridos y su transformación en parámetros cuantificables que se puedan aplicar en el día a día. Es por ello que ofrecemos soluciones a la vanguardia que ayuda a nuestros clientes a obtener los resultados cualitativos y cuantitativos que se requieren para analizar la actividad deseada.
 
 
-  Creemos en mantener una relación estrecha y de confianza con nuestros clientes para poder adaptar por completo el procesado y adquisición de datos a las necesidades específicas de cada equipo.
+  Creemos en mantener una relación estrecha y de confianza con nuestros clientes para poder adaptar por completo el procesado y adquisición de datos a las necesidades específicas de cada uno.
   "
   button:
     enable: true
@@ -49,8 +50,8 @@ service:
 cta:
   enable: true
   bg_image: "images/call-to-action-bg.jpg"
-  title: "De deportistas, para deportistas"
-  content: "No importa si eres un particular, un equipo o una federación: en Mako, ofrecemos soluciones de software para todo tipo de grupos de entrenamiento<br>Si estás interesado en nuestros servicios o tienes cualquier pregunta sobre ellos, ¡no dudes en ponerte en contacto con nosotros!"
+  title: "Optimiza tu rendimiento"
+  content: "En Mako, ofrecemos todo tipo de soluciones para llevar las últimas tecnología a diferentes ámbitos, partiendo de la implantación de redes de sensores hasta el procesado de datos y presentación de informes cuantitativos<br><br>Si estás interesado en nuestros servicios o tienes cualquier pregunta sobre ellos, ¡no dudes en ponerte en contacto con nosotros!"
   button:
     enable: true
     label: "Ponte en contacto"
@@ -65,22 +66,22 @@ funfacts:
   # funfacts item loop
   - icon: "fas fa-mug-hot" #https://fontawesome.com/v5.15/icons
     name: "Cafés"
-    count: "37"
+    count: "384"
 
   # funfacts item loop
   - icon: "fas fa-glasses" #https://fontawesome.com/v5.15/icons
-    name: "Premios obtenidos"
+    name: "Premios ganados"
     count: "1"
 
   # funfacts item loop
   - icon: "fas fa-keyboard" #https://fontawesome.com/v5.15/icons
     name: "Proyectos activos"
-    count: "3"
+    count: "2"
 
   # funfacts item loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
     name : "Líneas de código"
-    count : "2500"
+    count : "25000"
 
   #testimonial_slider:
   ## testimonial item loop

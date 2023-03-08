@@ -1,6 +1,6 @@
 ---
 title: "Sobre MAKO"
-description: "Donde tecnología y data science se encuentran para optimizar el deporte de alto nivel"
+description: "Donde tecnología y data science se encuentran para alcanzar el máximo rendimiento"
 bg_image: "images/feature-bg.jpg"
 layout: "about"
 draft: false
@@ -10,11 +10,25 @@ draft: false
 about:
   enable : true
   image : "images/company/about.jpg"
-  title : "Lo último en tecnología deportiva"
-  content : "Extraer parámetros de utilidad de datos brutos requiere de técnicas avanzadas de procesado de señal y data science. Sin embargo, en el mundo de deporte, no basta con conocimientos ingenieriles para lograr unos resultados útiles: se necesita también un gran conocimiento de la técnica deportiva para lograr identificar los parámetros clave que afectan al rendimiento de un atleta.
+  title : "Lo último en tecnología"
+  content : "El conocimiento es poder, y más en la época en la que vivimos, donde la existencia de millones de sensores distintos nos ofrece la posibilidad de medir y registrar prácticamente todos los aspectos de una actividad hasta conseguir una caracterización completa en alta resolución de la misma.
 
 
-  En nuestra plantilla contamos tanto con un equipo de ingeniería con amplia experiencia en procesado de datos como con un equipo deportivo con conocimientos en el ámbito del entrenamiento de alto nivel. De este modo, buscamos ofrecer la simbiosis perfecta entre ambos mundos."
+  <br>
+
+
+  En Mako creemos en la posibilidad de optimizar todo tipo de actividades mediante la adquisición de datos, su procesado y la obtención de las principales características que determinan su desarrollo. De este modo, ofrecemos soluciones tanto a nivel de hardware como de software o servicios puntuales para acercar esta posibilidad a cualquiera.
+
+
+  <br>
+
+
+  Extraer parámetros de utilidad de datos brutos requiere de técnicas avanzadas de procesado de señal y data science. En nuestro equpo, contamos con gente con una excelente formación y con experiencia en el sector para implementar estas técnicas de vanguardia a la hora de resolver cualquier tipo de problema que las necesite. 
+
+  <br>
+
+
+  Además del procesado de información, en Mako también ofrecemos soluciones a nivel de hardware para el monitoreo y la obtención de información en todo tipo de situaciones."
 
   #button:
   #  enable : true
@@ -30,22 +44,22 @@ about:
   # funfacts loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
     name : "Líneas de código"
-    count : "3500"
+    count : "25000"
 
   # funfacts loop
   - icon : "fas fa-glasses" #https://fontawesome.com/v5.15/icons
-    name : "Consumidores satisfechos"
-    count : "70"
+    name : "Años en el sector"
+    count : "3"
 
   # funfacts loop
   - icon : "fas fa-trophy" #https://fontawesome.com/v5.15/icons
     name : "Premios ganados"
-    count : "10"
+    count : "1"
 
   # funfacts loop
   - icon : "fas fa-glass-cheers" #https://fontawesome.com/v5.15/icons
     name : "Cafés consumidos"
-    count : "75"
+    count : "384"
 
   # funfacts loop
   - icon : "fas fa-certificate" #https://fontawesome.com/v5.15/icons
@@ -55,22 +69,22 @@ about:
 ################################ feature #####################################
 features:
   enable : true
-  title : "Donde se juntan ingeniería con deporte profesional"
+  title : "La información que necesitas, a tu alcance"
   feature_item:
   # feature item loop
+  - icon : "fas fa-microscope" #https://fontawesome.com/v5.15/icons
+    name : "Desliegue de Hardware"
+    content : "Contamos con capacidad para el diseño de hardware personalizado para la recopilación de datos y despliegue de redes de sensores"
+
+  # feature item loop
   - icon : "fas fa-code" #https://fontawesome.com/v5.15/icons
-    name : "Equipo de ingeniería"
-    content : "En Mako, todo el software y firmware es desarrollado por ingenieros especializados en teoría de la información, procesado de señal y data science"
+    name : "Software y procesado"
+    content : "Disponemos del mejor equipo para el despliegue de soluciones a nivel de software, procesado de señal y data science para tu aplicación"
 
   # feature item loop
   - icon : "fas fa-running" #https://fontawesome.com/v5.15/icons
-    name : "Equipo de deporte"
-    content : "Contamos con deportistas de alto nivel en Mako, así como con colaboración con otros deportistas de élite para probar y mejorar nuestros productos y servicios"
-
-  # feature item loop
-  - icon : "fas fa-ad" #https://fontawesome.com/v5.15/icons
-    name : "Equipo de marketing"
-    content : "Con el objetivo de alcanzar todo tipo de deportes y modalidades diferentes, también disponemos de equipo de márqueting"
+    name : "Elaboración de informes"
+    content : "Ofrecemos la posibilidad de realizar informes detallados con toda la información necesaria para analizar y optimizar diferentes actividades"
 
   # feature item loop
   #- icon : "fas fa-microscope" #https://fontawesome.com/v5.15/icons
