@@ -7,11 +7,11 @@ logo = "images/logo.png"
 # Note: logo_width is not work with .svg file
 logo_width = "180px"
 # logo text will only show when logo is missing.
-logo_text = "MAKO"
+logo_text = "QUMIO"
 # navbar fixed to top
 navbar_fixed = false
 # OpenGraph / Twitter Card metadata
-description = "MAKO | Data solutions"
+description = "QUMIO | Data solutions"
 author = "Pablo Álvarez"
 image = "images/logo.png" # this image will be used as fallback if a page has no image of its own
 # Whether to display text descriptors (like "E-mail: ", "Phone: ") before the address block elements
@@ -20,7 +20,7 @@ address_descriptors = false
 phone = "0124857985320"
 email = "demo@email.com"
 location = """
-**MAKO Systems**  
+**QUMIO Systems**  
 Cangas do Morrazo, 
 Pontevedra, Galicia  
 Spain

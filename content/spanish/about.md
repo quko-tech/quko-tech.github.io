@@ -1,5 +1,5 @@
 ---
-title: "Sobre MAKO"
+title: "Sobre QUMIO"
 description: "Donde tecnología y data science se encuentran para alcanzar el máximo rendimiento"
 bg_image: "images/feature-bg.jpg"
 layout: "about"
@@ -17,7 +17,7 @@ about:
   <br>
 
 
-  En Mako creemos en la posibilidad de optimizar todo tipo de actividades mediante la adquisición de datos, su procesado y la obtención de las principales características que determinan su desarrollo. De este modo, ofrecemos soluciones tanto a nivel de hardware como de software o servicios puntuales para acercar esta posibilidad a cualquiera.
+  En Qumio creemos en la posibilidad de optimizar todo tipo de actividades mediante la adquisición de datos, su procesado y la obtención de las principales características que determinan su desarrollo. De este modo, ofrecemos soluciones tanto a nivel de hardware como de software o servicios puntuales para acercar esta posibilidad a cualquiera.
 
 
   <br>
@@ -28,7 +28,7 @@ about:
   <br>
 
 
-  Además del procesado de información, en Mako también ofrecemos soluciones a nivel de hardware para el monitoreo y la obtención de información en todo tipo de situaciones."
+  Además del procesado de información, en Qumio también ofrecemos soluciones a nivel de hardware para el monitoreo y la obtención de información en todo tipo de situaciones."
 
   #button:
   #  enable : true
@@ -112,7 +112,7 @@ mission_vision:
   tabs:
   # tab item loop
   - name : "Visión"
-    content : "En mako, creemos firmemente en el uso de tecnologías a la vanguardia con el fin de optimizar la eficiencia de cualquier tipo de actividad: industrial, profesional, deportiva, y más.
+    content : "En Qumio, creemos firmemente en el uso de tecnologías a la vanguardia con el fin de optimizar la eficiencia de cualquier tipo de actividad: industrial, profesional, deportiva, y más.
     Anteriormente, cuando no se disponía de la gran variedad de sensores que existen hoy en día, sólo existía una manera de optimizar un proceso: mediante prueba y error. Este método, aparte de ser lento, resulta muy poco eficaz, ya que por mera observación es imposible conseguir una descripción completa de lo que está ocurriendo en realidad.
     Hoy día disponemos de medios suficientes y al alcance de todos para llevar a cabo una fase de adquisición de datos compleja, donde distintos tipos de hardware recolecten información sobre variables que no son medibles cuantitativamente a simple vista, permitiendo obtener una descripción completa y objetiva de la actividad analizada."
 
@@ -122,7 +122,7 @@ mission_vision:
 
   # tab item loop
   - name : "Metodología"
-    content : "Hoy día no resulta difícil desarrolla una solución basada en hardware para el monitoreo y la recolección de datos. El verdadero problema reside en la capacidad del software que la acompaña de procesar los datos en bruto para extraer parámetros útiles de ellos. Desde Mako somos conscientes de ello y buscamos ofrecer un conjunto de software que permita ayudar a equipos profesionales a conseguir la información que de verdad necesitan. Para ello, centramos nuestra investigación alrededor la actividad específica que buscamos implementar, manteniendo una relación cercana con nuestros clientes para segurar un resultado final que satisfaga sus necesidades."
+    content : "Hoy día no resulta difícil desarrolla una solución basada en hardware para el monitoreo y la recolección de datos. El verdadero problema reside en la capacidad del software que la acompaña de procesar los datos en bruto para extraer parámetros útiles de ellos. Desde Qumio somos conscientes de ello y buscamos ofrecer un conjunto de software que permita ayudar a equipos profesionales a conseguir la información que de verdad necesitan. Para ello, centramos nuestra investigación alrededor la actividad específica que buscamos implementar, manteniendo una relación cercana con nuestros clientes para segurar un resultado final que satisfaga sus necesidades."
 
 
 ############################# call to action #################################

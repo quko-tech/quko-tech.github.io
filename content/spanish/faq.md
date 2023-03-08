@@ -9,17 +9,17 @@ draft: false
 ---
 
 
-#### 1. ¿Por qué elegir Mako frente a otras alternativas?
+#### 1. ¿Por qué elegir Qumio frente a otras alternativas?
 
 Existe un factor clave que nos diferencia de la competencia: ofrecemos soluciones personalizadas para cada caso.
 
-Otros softwares en el mercado toman los datos brutos recolectados por los diversos sensores, los procesan de forma puramente estadística y dejan la responsabilidad de interpretar los resultados en manos del cliente. Desde Mako, consideramos que son ellos los que deben contar ya con una información procesada y filtrada, de tal modo que su deber sea centrarse en la mejora y optimización de la actividad estudiada. De este modo, nuestro software cuenta con un procesado de información de más alto nivel, ofreciéndoles unos datos que pueden implementar directamente en sus planificaciones. Además, ofrecemos un soporte personalizado con nuestros clientes, con el fin de comprender al completo sus necesidades y adaptar nuestras soluciones a su deporte en particular.
+Otros softwares en el mercado toman los datos brutos recolectados por los diversos sensores, los procesan de forma puramente estadística y dejan la responsabilidad de interpretar los resultados en manos del cliente. Desde Qumio, consideramos que son ellos los que deben contar ya con una información procesada y filtrada, de tal modo que su deber sea centrarse en la mejora y optimización de la actividad estudiada. De este modo, nuestro software cuenta con un procesado de información de más alto nivel, ofreciéndoles unos datos que pueden implementar directamente en sus planificaciones. Además, ofrecemos un soporte personalizado con nuestros clientes, con el fin de comprender al completo sus necesidades y adaptar nuestras soluciones a su deporte en particular.
 
 <br>
 
-#### 2. ¿Qué actividades soporta Mako?
+#### 2. ¿Qué actividades soporta Qumio?
 
-En general, ¡cualquiera! La visión de Mako gira en torno al desarrollo y aplicación de herramientas de data science en todo tipo de procesos cuantizables mediante sensores. 
+En general, ¡cualquiera! La visión de Qumio gira en torno al desarrollo y aplicación de herramientas de data science en todo tipo de procesos cuantizables mediante sensores. 
 
 Como ejemplo, actualmente contamos con soluciones muy evolucionadas para el procesado de datos para deportistas, focalizándose en piragüismo de sprint. En relación a hardware, desarrollamos redes de sensores para el monitoreo de datos biomecánicos, recolección de datos meteorológicos y despliegue de sistemas RADAR de uso civil entre otros.
 
@@ -27,6 +27,6 @@ Estamos profundamente interesados en ampliar nuestro catálogo y expandirnos a n
 
 <br>
 
-#### 3. ¿Recolecta Mako información sensible?
+#### 3. ¿Recolecta Qumio información sensible?
 
-Mako no recolecta ningún tipo de dato relacionado con las medidas obtenidas por los distintos sensores, ni cuenta con ningún tipo de base de datos de almacenamiento de información. Tanto los datos en bruto como los resultados finales son procesados de forma privada en un servidor en la nube, se devuelven al cliente y no son compartidos en ningún sitio.
+Qumio no recolecta ningún tipo de dato relacionado con las medidas obtenidas por los distintos sensores, ni cuenta con ningún tipo de base de datos de almacenamiento de información. Tanto los datos en bruto como los resultados finales son procesados de forma privada en un servidor en la nube, se devuelven al cliente y no son compartidos en ningún sitio.
