@@ -112,20 +112,17 @@ mission_vision:
   tabs:
   # tab item loop
   - name : "Visión"
-    content : "En mako, creemos firmemente en el uso de tecnologías a la vanguardia con el fin de optimizar la eficiencia en la práctica y entrenamiento deportivo.
-    Un simple vistazo atrás hacia competiciones en el Siglo XX sirve para darse cuenta de cómo la evolución de un deporte va de la mano de los diferentes avances tecnológicos que éste experimenta.
-    De este modo, Mako busca ofrecer software que logre ayudar a entrenadores y cuerpo técnico de todo el mundo a visualizar los entrenos de sus
-    deportistas desde un nuevo punto de vista más cuantitativo y objetivo, permitiéndoles descubrir nuevas formas de aumentar su rendimiento."
+    content : "En mako, creemos firmemente en el uso de tecnologías a la vanguardia con el fin de optimizar la eficiencia de cualquier tipo de actividad: industrial, profesional, deportiva, y más.
+    Anteriormente, cuando no se disponía de la gran variedad de sensores que existen hoy en día, sólo existía una manera de optimizar un proceso: mediante prueba y error. Este método, aparte de ser lento, resulta muy poco eficaz, ya que por mera observación es imposible conseguir una descripción completa de lo que está ocurriendo en realidad.
+    Hoy día disponemos de medios suficientes y al alcance de todos para llevar a cabo una fase de adquisición de datos compleja, donde distintos tipos de hardware recolecten información sobre variables que no son medibles cuantitativamente a simple vista, permitiendo obtener una descripción completa y objetiva de la actividad analizada."
 
   # tab item loop
   - name : "Misión"
-    content : "Nuestra misión final es ofrecer un ecosistema deportivo basado en hardware, software y soporte que cualquier entrenador o deportista del mundo pueda utilizar para
-    optimizar sus entrenamientos. Además, buscamos lograr este objetivo no sólo mediante la mera mejora de las especificaciones y características de nuestros productos, sino poniendo al deportista 
-    en nuestro punto de mira y adaptar nuestra investigación y desarrollo a sus necesidades."
+    content : "Nuestra misión final es ofrecer un ecosistema basado en hardware, software y soporte del que cualquier persona pueda hacer uso para la sacar su máximo rendimiento. Además, buscamos lograr este objetivo no sólo mediante la mera mejora de las especificaciones y características de nuestros productos, sino poniendo al cliente en nuestro punto de mira y adaptando nuestra investigación y desarrollo a sus necesidades."
 
   # tab item loop
   - name : "Metodología"
-    content : "Hoy día no resulta difícil desarrolla una solución basada en hardware para el monitoreo de la actividad deportiva. El verdadero problema reside en la capacidad del software que la acompaña de procesar los datos en bruto para extraer parámetros útiles de ellos. Desde Mako somos conscientes de ello y buscamos ofrecer un conjunto de software que permita ayudar a equipos profesionales a conseguir la información que de verdad necesitan. Para ello, centramos nuestra investigación alrededor del deporte específico que buscamos implementar, manteniendo una relación cercana con entrenadores y deportistas para segurar un resultado final que satisfaga sus necesidades."
+    content : "Hoy día no resulta difícil desarrolla una solución basada en hardware para el monitoreo y la recolección de datos. El verdadero problema reside en la capacidad del software que la acompaña de procesar los datos en bruto para extraer parámetros útiles de ellos. Desde Mako somos conscientes de ello y buscamos ofrecer un conjunto de software que permita ayudar a equipos profesionales a conseguir la información que de verdad necesitan. Para ello, centramos nuestra investigación alrededor la actividad específica que buscamos implementar, manteniendo una relación cercana con nuestros clientes para segurar un resultado final que satisfaga sus necesidades."
 
 
 ############################# call to action #################################

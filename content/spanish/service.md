@@ -8,9 +8,9 @@ draft: false
 ########################### about service #############################
 about:
   enable : true
-  title : "Una nueva forma de entrenar"
-  content : "Imagina ser capaz de grabar los entrenamientos y competiciones de diferentes deportistas al mismo tiempo, y poder analizar más tarde su rendimiento de forma cuantitativa comparando movimientos, velocidades, frecuencias cardíacas y más con una precisión de centésimas de segundo.         
-  <br> En Mako, ofrecemos soluciones de software para equipos deportivos de alto rendimiento, proveyéndolos de todo lo necesario para el análisis de su deporte o modalidad. Además, ofrecemos soporte a la hora de actualizar nuestros programas en función de sus requisitos, añadiendo nuevas funcionalidades y obteniendo así resultados más completos."
+  title : "Caracterizando lo invisible"
+  content : "Imagina contar con una tecnología capaz de grabar decenas de actividades al mismo tiempo y posteriormente analizar el rendimiento obtenido de forma cuantitativa comparando movimientos, velocidades, frecuencias, fuerzas, temperaturas y más con una resolución de centésimas de segundo.         
+  <br> En Mako, ofrecemos soluciones para la optimización del rendimiento, proveyendo a nuestros clientes de todo lo necesario para el análisis deseado. Además, ofrecemos soporte a la hora de actualizar nuestro software en función de sus requisitos, añadiendo nuevas funcionalidades y obteniendo así resultados más completos."
   image : "images/company/company-group-pic.jpg"
 
 
@@ -28,13 +28,13 @@ featured_service:
     - name : "Hardware"
       icon : "fas fa-microchip"
       color : "primary-darker"
-      content : "¡Dentro de poco!"
+      content : "Contamos con capacidad para el despliegue de redes de sensores y hardware"
 
     # featured service item loop
     - name : "Soporte"
       icon : "fas fa-user-friends"
       color : "primary-dark"
-      content : "Nuestro equipo escucha las necesidades de los clientes para adaptar nuestras soluciones a las necesidades de los deportistas"
+      content : "Nuestro equipo escucha las necesidades de los clientes para adaptar nuestras soluciones a sus necesidades"
 
 
 ############################# Service ###############################
@@ -42,12 +42,12 @@ featured_service:
 service:
   enable : true
   title : "¿Por qué Mako?"
-  description : "En Mako, disponemos de un equipo con años de experiencia a sus espaldas tanto en campos de la ingeniería de datos como del deporte de alto nivel. Es por esta razón que creemos firmemente en la simbiosis entre tecnología y entrenamiento para lograr el rendimiento deportivo óptimo"
+  description : "En Mako, disponemos de un equipo con años de experiencia a sus espaldas tanto en campos de la ingeniería de datos, electrónica y de telecomunicaciones"
   service_item:
     # feature item loop
     - icon : fas fa-code #https://fontawesome.com/v5.15/icons
       name : Software compacto
-      content : "Nuestros ingenieros trabajan en ofrecer una solución compacta con todo el software que un euipo deportivo pueda necesitar"
+      content : "Nuestros ingenieros trabajan en ofrecer una solución compacta con todo el software que nuestros clientes puedan necesitar"
 
     # feature item loop
     - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
@@ -57,12 +57,12 @@ service:
     # feature item loop
     - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
       name : Rendimiento óptimo
-      content : "Cuantos más datos tenga un equipo, más fácil será para ellos encontrar qué deben mejorar y cómo mejorarlo"
+      content : "Cuantos más datos, más fácil será encontrar qué aspectos deben mejorar y cómo mejorarlos"
 
     # feature item loop
     - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
       name : Soporte
-      content : "Nuestro equipo se compromete con sus clientes ofrecienco soporte técnico y consultorio durante los primeros meses <br><br> "
+      content : "Nuestro equipo se compromete con sus clientes ofrecienco soporte técnico y consultorio<br><br> "
 
 
     # feature item loop
@@ -73,12 +73,12 @@ service:
 
     - icon : fas fa-microscope #https://fontawesome.com/v5.15/icons
       name : A la vanguardia
-      content : "Investigamos y hacemos uso de técnicas noveles para traer las soluciones más innovadoras al mundo del deporte"
+      content : "Investigamos y hacemos uso de técnicas noveles para traer las soluciones más innovadoras al alcance de todos"
 
 
     - icon : fas fa-user-check #https://fontawesome.com/v5.15/icons
       name : Accesible
-      content : "Entrenadores y cuerpo técnico no tienen por qué tener conocimientos previos fuera del deporte para interpretar los datos obtenidos"
+      content : "Nuestros clientes no tienen por qué tener conocimientos previos para interpretar los datos obtenidos"
 
 
     - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
