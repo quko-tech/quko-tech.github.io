@@ -10,7 +10,7 @@ about:
   enable : true
   title : "Caracterizando lo invisible"
   content : "Imagina contar con una tecnología capaz de grabar decenas de actividades al mismo tiempo y posteriormente analizar el rendimiento obtenido de forma cuantitativa comparando movimientos, velocidades, frecuencias, fuerzas, temperaturas y más con una resolución de centésimas de segundo.         
-  <br> En Qumio, ofrecemos soluciones para la optimización del rendimiento, proveyendo a nuestros clientes de todo lo necesario para el análisis deseado. Además, ofrecemos soporte a la hora de actualizar nuestro software en función de sus requisitos, añadiendo nuevas funcionalidades y obteniendo así resultados más completos."
+  <br> En Quko, ofrecemos soluciones para la optimización del rendimiento, proveyendo a nuestros clientes de todo lo necesario para el análisis deseado. Además, ofrecemos soporte a la hora de actualizar nuestro software en función de sus requisitos, añadiendo nuevas funcionalidades y obteniendo así resultados más completos."
   image : "images/company/company-group-pic.jpg"
 
 
@@ -41,8 +41,8 @@ featured_service:
 
 service:
   enable : true
-  title : "¿Por qué Qumio?"
-  description : "En Qumio, disponemos de un equipo con años de experiencia a sus espaldas tanto en campos de la ingeniería de datos, electrónica y de telecomunicaciones"
+  title : "¿Por qué Quko?"
+  description : "En Quko, disponemos de un equipo con años de experiencia a sus espaldas tanto en campos de la ingeniería de datos, electrónica y de telecomunicaciones"
   service_item:
     # feature item loop
     - icon : fas fa-code #https://fontawesome.com/v5.15/icons
@@ -68,7 +68,7 @@ service:
     # feature item loop
     - icon : fas fa-lightbulb #https://fontawesome.com/v5.15/icons
       name : No paramos
-      content : "En Qumio estamos constantemente evolucionando e introduciendo nuevas ideas y actualizaciones en nuestros productos"
+      content : "En Quko estamos constantemente evolucionando e introduciendo nuevas ideas y actualizaciones en nuestros productos"
 
 
     - icon : fas fa-microscope #https://fontawesome.com/v5.15/icons
