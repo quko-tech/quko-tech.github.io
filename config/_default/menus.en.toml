@@ -54,6 +54,11 @@ name = "Contact"
 url = "contact/"
 weight = 6
 
+[[main]]
+name = "Access"
+url = "http://www.google.es/"
+weight = 7
+
 
 # footer menu
 [[footer]]
