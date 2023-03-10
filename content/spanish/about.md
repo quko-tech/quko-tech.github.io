@@ -17,7 +17,7 @@ about:
   <br>
 
 
-  En Quko creemos en la posibilidad de adaptar este tipo de tecnologías de tal forma que puedan utilizarse en todo tipo de situaciones distintas, logrando así optimizar procesos de formas antes inimaginables. 
+  En Quko creemos en la posibilidad de adaptar este tipo de tecnologías de tal forma que puedan utilizarse en todo tipo de circunstancias diferentes, logrando así optimizar procesos de formas antes inimaginables. 
 
 
   <br>

@@ -11,9 +11,9 @@ draft: false
 
 #### 1. ¿Por qué elegir Quko frente a otras alternativas?
 
-Existe un factor clave que nos diferencia de la competencia: ofrecemos soluciones personalizadas adaptadar a nuestros clientes.
+Existe un factor clave que nos diferencia de la competencia: ofrecemos soluciones personalizadas adaptar a nuestros clientes.
 
-Desde Quko, consideramos que nuestros clientes deben poder hacer uso de las últimas tecnologías sin necesitar ningún tipo de conocimiento previo. De este modo, nos basamos en mantener una relación cercana con ellos, basada en la comunicación y la confidencialidad, para así ser capaces de comprender en su totalidad sus necesidades en específico y poder ofrecerles la solución que mejor se adecuen a ellos.
+Desde Quko, consideramos que nuestros clientes deben contar con la capacidad de sacarle partido a las últimas tecnologías sin necesitar ningún tipo de conocimiento previo. De este modo, nos basamos en mantener una relación cercana con ellos, basada en la comunicación y la confidencialidad, para así ser capaces de comprender en su totalidad sus necesidades en específico y poder ofrecerles la solución que mejor se adecuen a ellos.
 
 <br>
 

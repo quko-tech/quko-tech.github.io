@@ -16,8 +16,8 @@ about:
   enable: true
   title: "Sobre Quko"
   description: "Nacido en el mundo del procesado de señales biométricas y biomecánicas, Quko se creó con una meta clara: poner al alcance de cualquier persona todos los avances tecnológicos que nos rodean"
-  content: "Vivimos una época donde las tecnologías digitales se encuentras extremadamente evolucionadas: redes de sistemas empotrados, nuevas técnicas de procesado de señal, data science o inteligencia artificial son ejemplo de ello.  
-  <br>En Quko, tenemos como objetivo ser capaz de llevar estas nuevas tecnologías a nuestros clientes, para que no se queden atrás en la actual revolución digital 2.0 y puedan disponer de ellas para conseguir el máximo rendimiento y beneficios"
+  content: "Vivimos una época donde las tecnologías digitales se encuentran extremadamente evolucionadas: redes de sistemas empotrados, nuevas técnicas de procesado de señal, data science o inteligencia artificial son ejemplo de ello.  
+  <br>En Quko, tenemos como objetivo ser capaz de llevar estas nuevas tecnologías a nuestros usuarios, para que evolucionen ante el reto de la actual revolución digital 2.0 y puedan disponer de ellas para conseguir el máximo rendimiento y beneficios"
   image: "images/palada.png"
 
 
@@ -26,13 +26,13 @@ portfolio:
   enable: true
   bg_image: "images/feature-bg.jpg"
   title: "TE ESCUCHAMOS"
-  content: "Uno de los principales pilares de Quko es nuestra filosofía de adaptar lo máximo posible nuestras soluciones a las necesidades de nuestros clientes.
+  content: "Uno de los principales pilares de Quko es nuestra filosofía de adaptar lo máximo posible las soluciones finales a las necesidades de nuestros clientes.
 
 
-  Somos conscientes del problema que puede suponer la implementación de tecnologías tan novedosas a gente de sectores alejados de las tecnologías digitales. En este sentido, tenemos como objetivo trabajar codo con codo con nuestros clientes para lograr una completa y detallada caracterización de cada caso particular, y ofrecer así una solución única que se adapte por completo a sus requerimientos.
+  Somos conscientes del problema que puede suponer la implementación de tecnologías tan novedosas a gente de sectores alejados de las tecnologías digitales. En este sentido, tenemos como objetivo trabajar codo con codo con nuestros usuarios para lograr una completa y detallada caracterización de cada caso particular, y ofrecer así una solución única que se adapte por completo a sus requerimientos.
 
 
-  Desde Quko nos alejamos de las soluciones genéricas, y buscamos mantener una relación estrecha y de confianza con nuestros clientes es clave para lograr los mejores resultados.
+  Desde Quko nos alejamos de las soluciones genéricas. Mantener una relación estrecha y de confianza con nuestros clientes es clave para lograr los mejores resultados.
   "
   button:
     enable: true
