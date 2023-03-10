@@ -12,7 +12,7 @@ about:
   content : "En Quko contamos con la experiencia y el conocimiento necesario para implementar todo tipo de soluciones basadas en las últimas tecnologías digitales en una amplia diversidad de sectores.
 
   <br> Independientemente del reto que nos propongan nuestros clientes, ya sea buscar la solución a un problema o la optimización de procesos, les ofrecemos no sólo los mejores resultados, sino también los que mejor se adaptan a sus condiciones en específico."
-  image : "images/company/company-group-pic.jpg"
+  image : "images/stock-placa3.jpg"
 
 
 ########################## featured service ############################
