@@ -1,6 +1,6 @@
 ---
 title: "Sobre QUKO"
-description: "Donde tecnología y data science se encuentran para alcanzar el máximo rendimiento"
+description: "A la vanguardia de la tecnología para alcanzar el máximo rendimiento"
 bg_image: "images/feature-bg.jpg"
 layout: "about"
 draft: false
@@ -10,25 +10,25 @@ draft: false
 about:
   enable : true
   image : "images/company/about.jpg"
-  title : "Lo último en tecnología"
-  content : "El conocimiento es poder, y más en la época en la que vivimos, donde la existencia de millones de sensores distintos nos ofrece la posibilidad de medir y registrar prácticamente todos los aspectos de una actividad hasta conseguir una caracterización completa en alta resolución de la misma.
+  title : "Soluciones innovadoras"
+  content : "Cada vez son más las nuevas tecnologías que cuentan con la capacidad de revolucionar un negocio, una actividad o incluso un sector entero: desde data science a inteligencia artificial, pasando por internet de las cosas o procesado de datos, hoy día resulta crucial sacarle el máximo partido a estas herramientas para maximizar el rendimiento de cualquier actividad.
 
 
   <br>
 
 
-  En Quko creemos en la posibilidad de optimizar todo tipo de actividades mediante la adquisición de datos, su procesado y la obtención de las principales características que determinan su desarrollo. De este modo, ofrecemos soluciones tanto a nivel de hardware como de software o servicios puntuales para acercar esta posibilidad a cualquiera.
+  En Quko creemos en la posibilidad de adaptar este tipo de tecnologías de tal forma que puedan utilizarse en todo tipo de situaciones distintas, logrando así optimizar procesos de formas antes inimaginables. 
 
 
   <br>
 
 
-  Extraer parámetros de utilidad de datos brutos requiere de técnicas avanzadas de procesado de señal y data science. En nuestro equpo, contamos con gente con una excelente formación y con experiencia en el sector para implementar estas técnicas de vanguardia a la hora de resolver cualquier tipo de problema que las necesite. 
+  Además, contamosen nuestro equipo con personas con una excelente formación y experiencia en el sector para implementar estas técnicas de vanguardia a la hora de resolver cualquier problema que las requiera. 
 
   <br>
 
 
-  Además del procesado de información, en Quko también ofrecemos soluciones a nivel de hardware para el monitoreo y la obtención de información en todo tipo de situaciones."
+  De hardware a software, pasando por procesado de señal, despliegue de redes de comunicaciones o implementación de sistemas empotrados, en Quko siempre habrá un experto en la materia para ofrecerte la solución que mejor se adapte a tus necesidades."
 
   #button:
   #  enable : true
@@ -69,22 +69,22 @@ about:
 ################################ feature #####################################
 features:
   enable : true
-  title : "La información que necesitas, a tu alcance"
+  title : "La tecnología que necesitas, a tu alcance"
   feature_item:
   # feature item loop
-  - icon : "fas fa-microscope" #https://fontawesome.com/v5.15/icons
-    name : "Desliegue de Hardware"
-    content : "Contamos con capacidad para el diseño de hardware personalizado para la recopilación de datos y despliegue de redes de sensores"
+  - icon : "fas fa-microchip" #https://fontawesome.com/v5.15/icons
+    name : "Desarrollo de Hardware"
+    content : "Contamos con capacidad para el diseño de hardware personalizado para todos los casos de uso"
+
+  # feature item loop
+  - icon : "fas fa-satellite-dish" #https://fontawesome.com/v5.15/icons
+    name : "Despliegue de redes"
+    content : "Disponemos del mejor equipo para el dimensionado y despliegue de redes de telecomunicaciones"
 
   # feature item loop
   - icon : "fas fa-code" #https://fontawesome.com/v5.15/icons
-    name : "Software y procesado"
-    content : "Disponemos del mejor equipo para el despliegue de soluciones a nivel de software, procesado de señal y data science para tu aplicación"
-
-  # feature item loop
-  - icon : "fas fa-running" #https://fontawesome.com/v5.15/icons
-    name : "Elaboración de informes"
-    content : "Ofrecemos la posibilidad de realizar informes detallados con toda la información necesaria para analizar y optimizar diferentes actividades"
+    name : "Desarrollo de software"
+    content : "Años de experiencia en el desarrollo de todo tipo de aplicaciones y soluciones de software"
 
   # feature item loop
   #- icon : "fas fa-microscope" #https://fontawesome.com/v5.15/icons
@@ -111,18 +111,20 @@ mission_vision:
   enable : true
   tabs:
   # tab item loop
-  - name : "Visión"
-    content : "En Quko, creemos firmemente en el uso de tecnologías a la vanguardia con el fin de optimizar la eficiencia de cualquier tipo de actividad: industrial, profesional, deportiva, y más.
-    Anteriormente, cuando no se disponía de la gran variedad de sensores que existen hoy en día, sólo existía una manera de optimizar un proceso: mediante prueba y error. Este método, aparte de ser lento, resulta muy poco eficaz, ya que por mera observación es imposible conseguir una descripción completa de lo que está ocurriendo en realidad.
-    Hoy día disponemos de medios suficientes y al alcance de todos para llevar a cabo una fase de adquisición de datos compleja, donde distintos tipos de hardware recolecten información sobre variables que no son medibles cuantitativamente a simple vista, permitiendo obtener una descripción completa y objetiva de la actividad analizada."
+  - name : "Vision"
+    content : "En Quko, creemos firmemente en el uso de tecnologías a la vanguardia con el fin de optimizar la eficiencia de cualquier tipo de actividad o proceso, ya sea industrial, profesional, deportiva, y más.
+<br><br>
+    Además, somos conscientes del inmenso número de personas que podrían beneficiarse enormemente de la implantación de este tipo de soluciones, por lo que buscamos acercárselas de la manera más accesible posible"
 
   # tab item loop
-  - name : "Misión"
-    content : "Nuestra misión final es ofrecer un ecosistema basado en hardware, software y soporte del que cualquier persona pueda hacer uso para la sacar su máximo rendimiento. Además, buscamos lograr este objetivo no sólo mediante la mera mejora de las especificaciones y características de nuestros productos, sino poniendo al cliente en nuestro punto de mira y adaptando nuestra investigación y desarrollo a sus necesidades."
+  - name : "Mission"
+    content : "Nuestra misión final es ofrecer soluciones tecnológicas que cualquier persona pueda hacer uso para la sacar su máximo rendimiento. Además, buscamos lograr este objetivo no sólo mediante una mera implementación genérica de las diferentes tegnologías, sino poniendo al cliente en nuestro punto de mira y adaptando nuestra investigación y desarrollo a sus necesidades."
 
   # tab item loop
-  - name : "Metodología"
-    content : "Hoy día no resulta difícil desarrolla una solución basada en hardware para el monitoreo y la recolección de datos. El verdadero problema reside en la capacidad del software que la acompaña de procesar los datos en bruto para extraer parámetros útiles de ellos. Desde Quko somos conscientes de ello y buscamos ofrecer un conjunto de software que permita ayudar a equipos profesionales a conseguir la información que de verdad necesitan. Para ello, centramos nuestra investigación alrededor la actividad específica que buscamos implementar, manteniendo una relación cercana con nuestros clientes para segurar un resultado final que satisfaga sus necesidades."
+  - name : "Approach"
+    content : "El objetivo de Quko es lograr la solución que mejor se adapte a los requerimientos de nuestros clientes. Para lograrlo, creemos en el establecimiento de una relación entrecha con ellos, de modo que nuestro equipo adquiera un entendimiento completo del problema a resolver y pueda así facilitarle la solución adecuada
+<br><br>
+En este proceso, la confianza de nuestros clientes en nosotros es clave, por lo que nuestros principales pilares a la hora de trabajar con ellos son la comunicación y la confidencialidad."
 
 
 ############################# call to action #################################

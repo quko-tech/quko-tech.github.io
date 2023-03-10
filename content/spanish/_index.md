@@ -4,8 +4,8 @@ banner:
   enable: true
   bg_image: "images/verdu.jpg"
   bg_overlay: true
-  title: "Soluciones de vanguardia <br/> en procesado de datos <br/> y data science"
-  content: "En Quko, trabajamos para ofrecer soluciones innovadoras en los ámbitos del procesado de señal y ciencia de datos a a nuestros clientes"
+  title: "Tecnología de vanguardia <br/> al alcance de todos "
+  content: "En Quko, trabajamos para ofrecer soluciones innovadoras basadas en las últimas tecnologías a nuestros clientes"
   button:
     enable: true
     label: "Conócenos"
@@ -15,9 +15,9 @@ banner:
 about:
   enable: true
   title: "Sobre Quko"
-  description: "Nacido en el mundo del procesado de señales biométricas y biomecánicas, Quko se creó con una meta clara: poner al alcance de cualquier persona ténicas avanzadas de tratamiento de la información, con el fin de sacar el máximo partido a los datos disponibles"
-  content: "Vivimos una época donde somos capaces de parametrizar cualquier fenómeno por medio de datos: existe una infinidad de sensores diferentes para recolectar información con resoluciones antes inimaginables. Sin embargo, trabajar con estas enormes cantidades de datos es una tarea compleja 
-  <br>En Quko, desarrollamos soluciones de procesado de señal, tratamiento de datos y data science para, a partir de datos en bruto difícilmente interpretables por un particular, obtener la información clave que ayudará a la optimización de la actividad analizada"
+  description: "Nacido en el mundo del procesado de señales biométricas y biomecánicas, Quko se creó con una meta clara: poner al alcance de cualquier persona todos los avances tecnológicos que nos rodean"
+  content: "Vivimos una época donde las tecnologías digitales se encuentras extremadamente evolucionadas: redes de sistemas empotrados, nuevas técnicas de procesado de señal, data science o inteligencia artificial son ejemplo de ello.  
+  <br>En Quko, tenemos como objetivo ser capaz de llevar estas nuevas tecnologías a nuestros clientes, para que no se queden atrás en la actual revolución digital 2.0 y puedan disponer de ellas para conseguir el máximo rendimiento y beneficios"
   image: "images/palada.png"
 
 
@@ -25,14 +25,14 @@ about:
 portfolio:
   enable: true
   bg_image: "images/feature-bg.jpg"
-  title: "EL CONOCIMIENTO ES PODER"
-  content: "Los sensores nos ofrecen la capacidad de \"ver lo invisible\": mediante un procesado de datos acecuado y análisis de tendencias, es posible adquirir información valiosa que de otro modo pasaría completamente desapercibida.
+  title: "TE ESCUCHAMOS"
+  content: "Uno de los principales pilares de Quko es nuestra filosofía de adaptar lo máximo posible nuestras soluciones a las necesidades de nuestros clientes.
 
 
-  Desde Quko, somos conscientes del problema que puede suponer la interpretación de los datos en bruto adquiridos y su transformación en parámetros cuantificables que se puedan aplicar en el día a día. Es por ello que ofrecemos soluciones a la vanguardia que ayuda a nuestros clientes a obtener los resultados cualitativos y cuantitativos que se requieren para analizar la actividad deseada.
+  Somos conscientes del problema que puede suponer la implementación de tecnologías tan novedosas a gente de sectores alejados de las tecnologías digitales. En este sentido, tenemos como objetivo trabajar codo con codo con nuestros clientes para lograr una completa y detallada caracterización de cada caso particular, y ofrecer así una solución única que se adapte por completo a sus requerimientos.
 
 
-  Creemos en mantener una relación estrecha y de confianza con nuestros clientes para poder adaptar por completo el procesado y adquisición de datos a las necesidades específicas de cada uno.
+  Desde Quko nos alejamos de las soluciones genéricas, y buscamos mantener una relación estrecha y de confianza con nuestros clientes es clave para lograr los mejores resultados.
   "
   button:
     enable: true
@@ -51,7 +51,7 @@ cta:
   enable: true
   bg_image: "images/call-to-action-bg.jpg"
   title: "Optimiza tu rendimiento"
-  content: "En Quko, ofrecemos todo tipo de soluciones para llevar las últimas tecnología a diferentes ámbitos, partiendo de la implantación de redes de sensores hasta el procesado de datos y presentación de informes cuantitativos<br><br>Si estás interesado en nuestros servicios o tienes cualquier pregunta sobre ellos, ¡no dudes en ponerte en contacto con nosotros!"
+  content: "En Quko, ofrecemos todo tipo de soluciones para llevar las últimas tecnología a diferentes ámbitos<br><br>Si estás interesado en nuestros servicios o tienes cualquier pregunta sobre ellos, ¡no dudes en ponerte en contacto con nosotros!"
   button:
     enable: true
     label: "Ponte en contacto"
@@ -83,12 +83,14 @@ funfacts:
     name : "Líneas de código"
     count : "25000"
 
-  #testimonial_slider:
-  ## testimonial item loop
-  #- name: "Joselito"
-  #  image: "images/clients/avater-1.jpg"
-  #  designation: "Deportista profesional"
-  #  content: "Aquí vendría una frase"
+
+
+  testimonial_slider:
+  # testimonial item loop
+  - name: "Pablo Álvarez"
+    image: "images/clients/avater-1.jpg"
+    designation: "Ingeniero de Telecomunicaciones"
+    content: "Nuestra meta es llevar las últimas tecnologías a todo tipo se sectores, manteniendo una relación cercana con el cliente basada en la confianza y confidencialidad."
 
   ## testimonial item loop
   #- name: "Menganito"
