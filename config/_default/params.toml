@@ -17,12 +17,13 @@ image = "images/logo.png" # this image will be used as fallback if a page has no
 # Whether to display text descriptors (like "E-mail: ", "Phone: ") before the address block elements
 address_descriptors = false
 # contact info
-phone = "0124857985320"
-email = "demo@email.com"
+phone = "+34 666 666 666"
+email = "contacto@quko.es"
 location = """
-**QUKO Systems**  
-Cangas do Morrazo, 
-Pontevedra, Galicia  
+**QUKO**  
+Cangas do Morrazo              
+Pontevedra, 36940           
+Galicia              
 Spain
 """
 

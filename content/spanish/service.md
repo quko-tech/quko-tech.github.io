@@ -19,22 +19,22 @@ featured_service:
   enable : true
   service_item:
     # featured service item loop
-    - name : "Software"
-      icon : "fas fa-flask"
-      color : "primary"
-      content : "Ofrecemos soluciones de vanguardia en data science y procesado de señal"
-
-    # featured service item loop
     - name : "Hardware"
       icon : "fas fa-microchip"
-      color : "primary-darker"
-      content : "Contamos con capacidad para el despliegue de redes de sensores y hardware"
+      color : "primary"
+      content : "Ofrecemos soluciones de hardware personalizado"
 
     # featured service item loop
-    - name : "Soporte"
-      icon : "fas fa-user-friends"
+    - name : "Telecomunicaciones"
+      icon : "fas fa-satellite-dish"
+      color : "primary-darker"
+      content : "Capacidad para el dimensionado y despliegue de redes de telecomunicaciones"
+
+    # featured service item loop
+    - name : "Software"
+      icon : "fas fa-code"
       color : "primary-dark"
-      content : "Nuestro equipo escucha las necesidades de los clientes para adaptar nuestras soluciones a sus necesidades"
+      content : "Soluciones basadas en procesado de datos, diseño de aplicaciones web, data science y más"
 
 
 ############################# Service ###############################
@@ -42,7 +42,7 @@ featured_service:
 service:
   enable : true
   title : "¿Por qué Quko?"
-  description : "En Quko, disponemos de un equipo con años de experiencia a sus espaldas tanto en campos de la ingeniería de datos, electrónica y de telecomunicaciones"
+  description : "En Quko, disponemos de un equipo con años de experiencia a sus espaldas tanto en campos de la ingeniería de datos, electrónica, de software y de telecomunicaciones"
   service_item:
     # feature item loop
     - icon : fas fa-code #https://fontawesome.com/v5.15/icons
