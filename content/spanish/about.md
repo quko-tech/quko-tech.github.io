@@ -11,7 +11,7 @@ about:
   enable : true
   image : "images/company/about.jpg"
   title : "Soluciones innovadoras"
-  content : "Cada vez son más las nuevas tecnologías que cuentan con la capacidad de revolucionar un negocio, una actividad o incluso un sector entero: desde data science a inteligencia artificial, pasando por internet de las cosas o procesado de datos, hoy día resulta crucial sacarle el máximo partido a estas herramientas para maximizar el rendimiento de cualquier actividad.
+  content : "Cada vez son más las nuevas tecnologías que cuentan con la capacidad de revolucionar un negocio, una actividad o incluso un sector entero. Desde data science a inteligencia artificial, pasando por internet de las cosas o procesado de datos, es evidente que hoy día resulta crucial sacarle el máximo partido a estas herramientas para maximizar el rendimiento de cualquier actividad.
 
 
   <br>
@@ -23,7 +23,8 @@ about:
   <br>
 
 
-  Además, contamosen nuestro equipo con personas con una excelente formación y experiencia en el sector para implementar estas técnicas de vanguardia a la hora de resolver cualquier problema que las requiera. 
+  Además, contamos con un equipo con una excelente formación y experiencia en el sector para implementar estas técnicas de vanguardia a la hora de resolver cualquier problema que las requiera. 
+
 
   <br>
 

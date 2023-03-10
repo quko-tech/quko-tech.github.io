@@ -50,7 +50,7 @@ use_recaptcha = true
 # Form action
 ## Fill in your Form ID URL for Formspree.io, e.g. `https://formspree.io/f/{form_id}`
 ## Ignored if `use_netlify = true` (custom [success page](https://docs.netlify.com/forms/setup/#success-messages) is already included) 
-action = "#"
+action = "https://formspree.io/f/xjvdogoj"
 # Image on custom success page `/message_sent.html`
 success_image = "images/paper-plane.svg"
 

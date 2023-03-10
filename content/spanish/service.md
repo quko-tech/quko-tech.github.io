@@ -8,9 +8,10 @@ draft: false
 ########################### about service #############################
 about:
   enable : true
-  title : "Caracterizando lo invisible"
-  content : "Imagina contar con una tecnología capaz de grabar decenas de actividades al mismo tiempo y posteriormente analizar el rendimiento obtenido de forma cuantitativa comparando movimientos, velocidades, frecuencias, fuerzas, temperaturas y más con una resolución de centésimas de segundo.         
-  <br> En Quko, ofrecemos soluciones para la optimización del rendimiento, proveyendo a nuestros clientes de todo lo necesario para el análisis deseado. Además, ofrecemos soporte a la hora de actualizar nuestro software en función de sus requisitos, añadiendo nuevas funcionalidades y obteniendo así resultados más completos."
+  title : "Tenemos la solución que buscas"
+  content : "En Quko contamos con la experiencia y el conocimiento necesario para implementar todo tipo de soluciones basadas en las últimas tecnologías digitales en una amplia diversidad de sectores.
+
+  <br> Independientemente del reto que nos propongan nuestros clientes, ya sea buscar la solución a un problema o la optimización de procesos, les ofrecemos no sólo los mejores resultados, sino también los que mejor se adaptan a sus condiciones en específico."
   image : "images/company/company-group-pic.jpg"
 
 
@@ -22,7 +23,7 @@ featured_service:
     - name : "Hardware"
       icon : "fas fa-microchip"
       color : "primary"
-      content : "Ofrecemos soluciones de hardware personalizado"
+      content : "Soluciones de hardware personalizado"
 
     # featured service item loop
     - name : "Telecomunicaciones"
@@ -42,22 +43,22 @@ featured_service:
 service:
   enable : true
   title : "¿Por qué Quko?"
-  description : "En Quko, disponemos de un equipo con años de experiencia a sus espaldas tanto en campos de la ingeniería de datos, electrónica, de software y de telecomunicaciones"
+  description : "En Quko, disponemos de un equipo con años de experiencia a sus espaldas en los campos de la ingeniería de datos, electrónica, de software y de telecomunicaciones"
   service_item:
     # feature item loop
     - icon : fas fa-code #https://fontawesome.com/v5.15/icons
-      name : Software compacto
-      content : "Nuestros ingenieros trabajan en ofrecer una solución compacta con todo el software que nuestros clientes puedan necesitar"
+      name : Adaptación al cliente
+      content : "Ofrecemos soluciones compactas adaptadas al uso específico de nuestros clientes"
 
     # feature item loop
     - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
-      name : Fácil de usar
-      content : "Cuanto más sencillo, mejor. Esta es nuestra filosofía a la hora de desarrollar unas interfaces de usuario limpias y claras."
+      name : Confidencialidad
+      content : "Buscamos mantener una relación de estrecha confianza con nuestros clientes basada en la confidencialidad"
 
     # feature item loop
     - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
       name : Rendimiento óptimo
-      content : "Cuantos más datos, más fácil será encontrar qué aspectos deben mejorar y cómo mejorarlos"
+      content : "Sea cual sea el proceso a optimizar, lucharemos por obtener el máximo rendimiento mediante la tecnología"
 
     # feature item loop
     - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
@@ -78,7 +79,7 @@ service:
 
     - icon : fas fa-user-check #https://fontawesome.com/v5.15/icons
       name : Accesible
-      content : "Nuestros clientes no tienen por qué tener conocimientos previos para interpretar los datos obtenidos"
+      content : "Nuestros clientes no requieren de conocimientos previos para hacer uso de nuestros servicios"
 
 
     - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
