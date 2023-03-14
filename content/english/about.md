@@ -80,7 +80,7 @@ features:
   # feature item loop
   - icon : "fas fa-satellite-dish" #https://fontawesome.com/v5.15/icons
     name : "Network deployment"
-    content : "We have the best equipment for the sizing and deployment of telecommunications networks".
+    content : "We have the best equipment for the sizing and deployment of telecommunications networks"
 
   # feature item loop
   - icon : "fas fa-code" #https://fontawesome.com/v5.15/icons
