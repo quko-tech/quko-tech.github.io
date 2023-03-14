@@ -1,6 +1,6 @@
 ---
 title: "Sobre QUKO"
-description: "A la vanguardia de la tecnología para alcanzar el máximo rendimiento"
+description: "Á vangarda da tecnoloxía para acadar o máximo rendemento"
 bg_image: "images/feature-bg.jpg"
 layout: "about"
 draft: false
@@ -10,26 +10,26 @@ draft: false
 about:
   enable : true
   image : "images/company/about.jpg"
-  title : "Soluciones innovadoras"
-  content : "Cada vez son más las nuevas tecnologías que cuentan con la capacidad de revolucionar un negocio, una actividad o incluso un sector entero. Desde data science a inteligencia artificial, pasando por internet de las cosas o procesado de datos, es evidente que hoy día resulta crucial sacarle el máximo partido a estas herramientas para maximizar el rendimiento de cualquier actividad.
+  title : "Solucións innovadoras"
+  content : "Cada vez son máis ls novas tecnoloxías que contan coa capacidade de revolucionar un negocio, unha actividade ou incluso un sector enteiro. Dende data science a intelixencia artificial, pasando por internet das cousas ou procesado de datos, é evidente que hoxe resulta crucial sacarlle ol máximo partido a estas ferramentas para maximizar o rendemento de cualquera actividade.
 
 
   <br>
 
 
-  En Quko creemos en la posibilidad de adaptar este tipo de tecnologías de tal forma que puedan utilizarse en todo tipo de circunstancias diferentes, logrando así optimizar procesos de formas antes inimaginables. 
+  En Quko cremos na posibilidade de adaptar este tipo de tecnoloxías de xeito que podan utilizarse en todo tipo de circunstancias diferentes, logrando así optimizar procesos de formas antes inimaxinables. 
 
 
   <br>
 
 
-  Además, contamos con un equipo con una excelente formación y experiencia en el sector para implementar estas técnicas de vanguardia a la hora de resolver cualquier problema que las requiera. 
+  Ademáis, contamos cun equipo cunha excelente formación e experiencia no sector para implementar estas técnicas de vangarda no momento de resolver cualquera problema que as requira. 
 
 
   <br>
 
 
-  De hardware a software, pasando por procesado de señal, despliegue de redes de comunicaciones o implementación de sistemas empotrados, en Quko siempre habrá un experto en la materia para ofrecerte la solución que mejor se adapte a tus necesidades."
+  De hardware a software, pasando por procesado de sinal, despregadura de redes de comunicacións ou implementación de sistemas encaixados, en Quko sempre haberá un experto na materia para ofrecerche a solución que mellor se adapte aas túas necesidades."
 
   #button:
   #  enable : true
@@ -39,27 +39,27 @@ about:
   funfacts:
   # funfacts loop
   - icon : "fas fa-flask" #https://fontawesome.com/v5.15/icons
-    name : "Proyectos"
+    name : "Proxectos"
     count : "2"
 
   # funfacts loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
-    name : "Líneas de código"
+    name : "Liñas de código"
     count : "25000"
 
   # funfacts loop
   - icon : "fas fa-glasses" #https://fontawesome.com/v5.15/icons
-    name : "Años en el sector"
+    name : "Anos no sector"
     count : "2"
 
   # funfacts loop
   - icon : "fas fa-trophy" #https://fontawesome.com/v5.15/icons
-    name : "Premios ganados"
+    name : "Premios gañados"
     count : "1"
 
   # funfacts loop
   - icon : "fas fa-glass-cheers" #https://fontawesome.com/v5.15/icons
-    name : "Cafés consumidos"
+    name : "Cafés"
     count : "384"
 
   # funfacts loop
@@ -70,22 +70,22 @@ about:
 ################################ feature #####################################
 features:
   enable : true
-  title : "La tecnología que necesitas, a tu alcance"
+  title : "A tecnoloxía da que precisas, ao teu alcance"
   feature_item:
   # feature item loop
   - icon : "fas fa-microchip" #https://fontawesome.com/v5.15/icons
-    name : "Desarrollo de Hardware"
-    content : "Contamos con capacidad para el diseño de hardware personalizado para todos los casos de uso"
+    name : "Desenvolvemento de Hardware"
+    content : "Contamos con capacidade para o deseno de hardware persoalizado para todos os casos de uso"
 
   # feature item loop
   - icon : "fas fa-satellite-dish" #https://fontawesome.com/v5.15/icons
-    name : "Despliegue de redes"
-    content : "Disponemos del mejor equipo para el dimensionado y despliegue de redes de telecomunicaciones"
+    name : "Despregadura de redes"
+    content : "Dispoñemos do mellor equipo para o dimensioado e a despregadura de redes de telecomunicacións"
 
   # feature item loop
   - icon : "fas fa-code" #https://fontawesome.com/v5.15/icons
-    name : "Desarrollo de software"
-    content : "Años de experiencia en el desarrollo de todo tipo de aplicaciones y soluciones de software"
+    name : "Desenvolvemento de software"
+    content : "Anos de experiencia no desenvolvemento de todo tipo de aplicacións e solucións de software"
 
   # feature item loop
   #- icon : "fas fa-microscope" #https://fontawesome.com/v5.15/icons
@@ -113,19 +113,19 @@ mission_vision:
   tabs:
   # tab item loop
   - name : "Vision"
-    content : "En Quko, creemos firmemente en el uso de tecnologías a la vanguardia con el fin de optimizar la eficiencia de cualquier tipo de actividad o proceso, ya sea industrial, profesional, deportiva, y más.
+    content : "En Quko, cremos firmemente no uso de tecnoloxías á vangarda coa fin de optimizar a eficiencia de cualquera tipo de actividade ou proceso, sexa sea industrial, profesional, deportivo, ou algo completamente novo.
 <br><br>
-    Además, somos conscientes del inmenso número de personas que podrían beneficiarse enormemente de la implantación de este tipo de soluciones, por lo que buscamos acercárselas de la manera más accesible posible"
+    Ademáis, somos conscientes do inmenso número de persoas que poderían beneficiarse enormemente da implantación deste tipo de solucións, polo que procuramos achegarllas do xeito máis accesible posible"
 
   # tab item loop
   - name : "Mission"
-    content : "Nuestra misión final es ofrecer soluciones tecnológicas que cualquier persona pueda hacer uso para la sacar su máximo rendimiento. Además, buscamos lograr este objetivo no sólo mediante una mera implementación genérica de las diferentes tegnologías, sino poniendo al cliente en nuestro punto de mira y adaptando nuestra investigación y desarrollo a sus necesidades."
+    content : "A nosa misión final é ofrecer solucións tecnolóxicas das que calquera persoa poda facer uso para la acadar o seu máximo rendimiento. Ademáis, buscamos lograr este obxectivo non só mediante unha implementación xeral das distintas tegnoloxías, senón poñendo ao cliente no noso punto de mira e adaptando a nosa investigación e desenvolvemento ás súas necesidades."
 
   # tab item loop
   - name : "Approach"
-    content : "El objetivo de Quko es lograr la solución que mejor se adapte a los requerimientos de nuestros clientes. Para lograrlo, creemos en el establecimiento de una relación entrecha con ellos, de modo que nuestro equipo adquiera un entendimiento completo del problema a resolver y pueda así facilitarle la solución adecuada
+    content : "A meta de Quko é lograr a solución que mellor se adapte aos requerimentos dos nosos usuarios. Para iso, cremos no establecemiento dunha relación estreita con eles, de forma que o noso equipo adquira un entendemiento completo do problema a resolver e poda así facilitarlle a solución adecuada.
 <br><br>
-En este proceso, la confianza de nuestros clientes en nosotros es clave, por lo que nuestros principales pilares a la hora de trabajar con ellos son la comunicación y la confidencialidad."
+Neste proceso, a confianza dos nuestros clientes en nós é crave, polo que baseamos a nosa filosofía de traballo na boa comunicación e a confidencialidade."
 
 
 ############################# call to action #################################

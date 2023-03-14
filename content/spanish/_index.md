@@ -17,7 +17,7 @@ about:
   title: "Sobre Quko"
   description: "Nacido en el mundo del procesado de señales biométricas y biomecánicas, Quko se creó con una meta clara: poner al alcance de cualquier persona todos los avances tecnológicos que nos rodean"
   content: "Vivimos una época donde las tecnologías digitales se encuentran extremadamente evolucionadas: redes de sistemas empotrados, nuevas técnicas de procesado de señal, data science o inteligencia artificial son ejemplo de ello.  
-  <br>En Quko, tenemos como objetivo ser capaces de llevar estas nuevas tecnologías a nuestros usuarios, para que evolucionen ante el reto de la actual revolución digital 2.0 y puedan disponer de ellas para conseguir el máximo rendimiento y beneficios"
+  <br>En Quko, tenemos como objetivo ser capaces de llevar estas nuevas herramientas a nuestros usuarios, para que evolucionen ante el reto de la actual revolución digital 2.0 y puedan disponer de ellas para conseguir el máximo rendimiento y beneficios"
   image: "images/palada.png"
 
 
@@ -29,7 +29,7 @@ portfolio:
   content: "Uno de los principales pilares de Quko es nuestra filosofía de adaptar lo máximo posible las soluciones finales a las necesidades de nuestros clientes.
 
 
-  Somos conscientes del problema que puede suponer la implementación de tecnologías tan novedosas a gente de sectores alejados de las tecnologías digitales. En este sentido, tenemos como objetivo trabajar codo con codo con nuestros usuarios para lograr una completa y detallada caracterización de cada caso particular, y ofrecer así una solución única que se adapte por completo a sus requerimientos.
+  Somos conscientes del problema que puede suponer la implementación de tecnologías tan novedosas a gente de sectores alejados de la revolución digital. En este sentido, tenemos como objetivo trabajar codo con codo con los usuarios para lograr una completa y detallada caracterización de cada caso particular, y ofrecer así una solución única que se adapte por completo a sus requerimientos.
 
 
   Desde Quko nos alejamos de las soluciones genéricas. Mantener una relación estrecha y de confianza con nuestros clientes es clave para lograr los mejores resultados.
@@ -51,7 +51,7 @@ cta:
   enable: true
   bg_image: "images/call-to-action-bg.jpg"
   title: "Optimiza tu rendimiento"
-  content: "En Quko, ofrecemos todo tipo de soluciones para llevar las últimas tecnología a diferentes ámbitos<br><br>Si estás interesado en nuestros servicios o tienes cualquier pregunta sobre ellos, ¡no dudes en ponerte en contacto con nosotros!"
+  content: "En Quko, ofrecemos todo tipo de soluciones para llevar las últimas tecnologías a diferentes ámbitos<br><br>Si estás interesado en nuestros servicios o tienes cualquier pregunta sobre ellos, ¡no dudes en ponerte en contacto con nosotros!"
   button:
     enable: true
     label: "Ponte en contacto"

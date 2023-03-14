@@ -48,7 +48,7 @@ service:
     # feature item loop
     - icon : fas fa-code #https://fontawesome.com/v5.15/icons
       name : Adaptación al cliente
-      content : "Ofrecemos soluciones compactas adaptadas al uso específico de nuestros clientes"
+      content : "Ofrecemos soluciones compactas adaptadas al usos específicos"
 
     # feature item loop
     - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
@@ -63,7 +63,7 @@ service:
     # feature item loop
     - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
       name : Soporte
-      content : "Nuestro equipo se compromete con sus clientes ofrecienco soporte técnico y consultorio<br><br> "
+      content : "Nuestro equipo se compromete con sus clientes ofreciendo soporte técnico y consultorio<br><br> "
 
 
     # feature item loop
@@ -74,12 +74,12 @@ service:
 
     - icon : fas fa-microscope #https://fontawesome.com/v5.15/icons
       name : A la vanguardia
-      content : "Investigamos y hacemos uso de técnicas noveles para traer las soluciones más innovadoras al alcance de todos"
+      content : "Investigamos y hacemos uso de técnicas noveles para poner las soluciones más innovadoras al alcance de todos"
 
 
     - icon : fas fa-user-check #https://fontawesome.com/v5.15/icons
       name : Accesible
-      content : "Nuestros clientes no requieren de conocimientos previos para hacer uso de nuestros servicios"
+      content : "Los usuarios no requieren de conocimientos previos para hacer uso de nuestros servicios"
 
 
     - icon : fas fa-smile #https://fontawesome.com/v5.15/icons

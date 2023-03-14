@@ -4,20 +4,20 @@ banner:
   enable: true
   bg_image: "images/verdu.jpg"
   bg_overlay: true
-  title: "Tecnología de vanguardia <br/> al alcance de todos "
-  content: "En Quko, trabajamos para ofrecer soluciones innovadoras basadas en las últimas tecnologías a nuestros clientes"
+  title: "Tecnoloxía de vangarda <br/> oa alcance de todos "
+  content: "En Quko, traballamos para ofrecer solucións innovadoras basadas nas últimas tecnoloxías aos nosos clientes"
   button:
     enable: true
-    label: "Conócenos"
+    label: "Coñécenos"
     link: "about/"
 
 ############################# About #################################
 about:
   enable: true
   title: "Sobre Quko"
-  description: "Nacido en el mundo del procesado de señales biométricas y biomecánicas, Quko se creó con una meta clara: poner al alcance de cualquier persona todos los avances tecnológicos que nos rodean"
-  content: "Vivimos una época donde las tecnologías digitales se encuentran extremadamente evolucionadas: redes de sistemas empotrados, nuevas técnicas de procesado de señal, data science o inteligencia artificial son ejemplo de ello.  
-  <br>En Quko, tenemos como objetivo ser capaces de llevar estas nuevas tecnologías a nuestros usuarios, para que evolucionen ante el reto de la actual revolución digital 2.0 y puedan disponer de ellas para conseguir el máximo rendimiento y beneficios"
+  description: "Nado no mundo do procesado de sinais biométricas e biomecánicas, Quko creouse cunha clara meta: poñer ao alcance de calquera persoa todos os avances tecnolóxicos que nos rodean"
+  content: "Vivimos unha época onde as tecnoloxías dixitais atópanse extremadamente evolucionadas: redes de sistemas empotrados, novas técnicas de procesado de sinal, data science ou intelixencia artificial son exemplo disto.  
+  <br>En Quko, tenemos como obxectivo ser capaces de levar estas novas ferramentas aos nosos usuarios, para que evolucionen perante o reto da actual revolución dixital 2.0 r podan dispoñer delas para acadar o máximo rendrmiento e beneficios"
   image: "images/palada.png"
 
 
@@ -25,18 +25,18 @@ about:
 portfolio:
   enable: true
   bg_image: "images/feature-bg.jpg"
-  title: "TE ESCUCHAMOS"
-  content: "Uno de los principales pilares de Quko es nuestra filosofía de adaptar lo máximo posible las soluciones finales a las necesidades de nuestros clientes.
+  title: "ESCOITÁMOSTE"
+  content: "Un dos principais piares de Quko é a nosa filosofía de adaptar o máximo posible as solucións finais ás necesidades dos nosos clientes.
 
 
-  Somos conscientes del problema que puede suponer la implementación de tecnologías tan novedosas a gente de sectores alejados de las tecnologías digitales. En este sentido, tenemos como objetivo trabajar codo con codo con nuestros usuarios para lograr una completa y detallada caracterización de cada caso particular, y ofrecer así una solución única que se adapte por completo a sus requerimientos.
+  Somos conscientes do problema que pode supoñer a implementación de tecnoloxías tan novas a xente de sectores afastados da revolución dixital. Neste sentido, procuramos traballar de xeito conxunto cos usuarios para lograr unha completa e detallada caracterización de cada caso particular, e ofrecer así unha solución única que se adapte por completo aos seus requerimentos.
 
 
-  Desde Quko nos alejamos de las soluciones genéricas. Mantener una relación estrecha y de confianza con nuestros clientes es clave para lograr los mejores resultados.
+  Dende Quko alexámonos das solucións xerais. Manter unha relación estreita e de confianza cos nosos clientes é crave para lograr os mellores resultados.
   "
   button:
     enable: true
-    label: "Ver productos"
+    label: "Ver produtos"
     link: "project/"
 
 
@@ -50,8 +50,8 @@ service:
 cta:
   enable: true
   bg_image: "images/call-to-action-bg.jpg"
-  title: "Optimiza tu rendimiento"
-  content: "En Quko, ofrecemos todo tipo de soluciones para llevar las últimas tecnología a diferentes ámbitos<br><br>Si estás interesado en nuestros servicios o tienes cualquier pregunta sobre ellos, ¡no dudes en ponerte en contacto con nosotros!"
+  title: "Optimiza o teu rendemento"
+  content: "En Quko, ofrecemos todo tipo de solucións para levar as últimas tecnoloxías a diferentes ámbitos<br><br>Se estás interesado nos nosos servizos ou tes calquera pregunta sobre eles, ¡non dubides en poñerte en contacto connosco!"
   button:
     enable: true
     label: "Ponte en contacto"
@@ -60,8 +60,8 @@ cta:
 ############################# Funfacts ###############################
 funfacts:
   enable: true
-  title: "Datos sobre nosotros"
-  description: "Hay mucho trabajo tras Quko, ¡y aún estamos creciendo!"
+  title: "Datos sobre nós"
+  description: "Hai moito traballo tras Quko, ¡e aínda estamos medrando!"
   funfact_item:
   # funfacts item loop
   - icon: "fas fa-mug-hot" #https://fontawesome.com/v5.15/icons
@@ -70,17 +70,17 @@ funfacts:
 
   # funfacts item loop
   - icon: "fas fa-glasses" #https://fontawesome.com/v5.15/icons
-    name: "Premios ganados"
+    name: "Premios gañados"
     count: "1"
 
   # funfacts item loop
   - icon: "fas fa-keyboard" #https://fontawesome.com/v5.15/icons
-    name: "Proyectos activos"
+    name: "Proxectos activos"
     count: "2"
 
   # funfacts item loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
-    name : "Líneas de código"
+    name : "Liñas de código"
     count : "25000"
 
 
@@ -89,8 +89,8 @@ funfacts:
   # testimonial item loop
   - name: "Pablo Álvarez"
     image: "images/clients/pepe1.jpeg"
-    designation: "Ingeniero de Telecomunicaciones"
-    content: "Nuestra meta es llevar las últimas tecnologías a todo tipo se sectores, manteniendo una relación cercana con el cliente basada en la confianza y la confidencialidad."
+    designation: "Enxeñeiro de Telecomunicacións"
+    content: "A nosa meta é levar as últimas tecnoloxías a todo tipo se sectores, mantendo unha relación cercana co cliente baseada na confianza e na confidencialidade."
 
   ## testimonial item loop
   #- name: "Menganito"

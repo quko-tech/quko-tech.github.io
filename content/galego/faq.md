@@ -9,22 +9,22 @@ draft: false
 ---
 
 
-#### 1. ¿Por qué elegir Quko frente a otras alternativas?
+#### 1. Por que elixir Quko fronte a outras alternativas?
 
-Existe un factor clave que nos diferencia de la competencia: ofrecemos soluciones personalizadas adaptar a nuestros clientes.
+Existe un factor crave que nos diferenza da competencia: ofrecemos solucións persoalizadas e adaptadas aos nuestros clientes.
 
-Desde Quko, consideramos que nuestros clientes deben contar con la capacidad de sacarle partido a las últimas tecnologías sin necesitar ningún tipo de conocimiento previo. De este modo, nos basamos en mantener una relación cercana con ellos, basada en la comunicación y la confidencialidad, para así ser capaces de comprender en su totalidad sus necesidades en específico y poder ofrecerles la solución que mejor se adecuen a ellos.
-
-<br>
-
-#### 2. ¿Con qué tipo de actividades trabaja Quko?
-
-En general, ¡con cualquiera! La visión de Quko gira en torno al desarrollo y aplicación de herramientas de última tecnología en todo tipo de procesos. 
-
-En este sentido, estamos siempre buscando ampliar nuestro catálogo y expandirnos a nuevas actividades. Si estás interesado en nuestros servicios, ¡no dudes en contactarnos! Estaremos encantados de atenderte y analizar tu caso para poder incorporarlo a nuestro proyecto.
+En Quko, consideramos que os usuarios deben contar coa capacidade de sacarlle partido ás últimas tecnoloxías sen precisar de ningún tipo de coñecemento previo. Deste modo, buscamos manter unha relación preta con eles, baseada na comunicación e na confidencialidade, para así ser capaces de comprender na súa totalidade as súas necesidades en específico e poder ofrecerlles a solución que máis se adecue a elas.
 
 <br>
 
-#### 3. ¿Qué tratamiento o uso de mis datos hace Quko?
+#### 2. Con que tipo de actividades traballa Quko?
 
-En Quko no recolectamos ningún tipo de dato o información sensible, ni contamos con ninguna base de datos de almacenamiento de información. Tanto los posibles datos recolectados durante el diseño y despliegue de la solución como los resultados finales son procesados de forma privada en un servidor en la nube y devueltos al cliente sin ser compartidos con terceros.
+En xeral, con calquera! A visión de Quko xira arredor do desenvolvemento e a aplicación de ferramentas de última tecnoloxía en todo tipo de procesos. 
+
+Neste sentido, estamos sempre procurando ampliar o noso catálogo e expandirnos a novas actividades. Se estás interesado nos nosos servizos, non dubides en contactarnos! Estaremos encantados de atenderte e analizar o teu caso para poder incorporalo a Quko.
+
+<br>
+
+#### 3. Que tratamento ou uso dos meus datos fai Quko?
+
+En Quko non colleitamos ningún tipo de dato ou información sensible, nin contamos con bases de datos de almaceamento de información. Tanto os posibles datos colleitados durante o deseno e despregadura da solución como os resultados finais son procesados de forma privada nun servidor na nube e devoltos ao cliente sen partillalos con terceiros.

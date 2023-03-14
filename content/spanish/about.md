@@ -113,19 +113,19 @@ mission_vision:
   tabs:
   # tab item loop
   - name : "Vision"
-    content : "En Quko, creemos firmemente en el uso de tecnologías a la vanguardia con el fin de optimizar la eficiencia de cualquier tipo de actividad o proceso, ya sea industrial, profesional, deportiva, y más.
+    content : "En Quko, creemos firmemente en el uso de tecnologías a la vanguardia con el fin de optimizar la eficiencia de cualquier tipo de actividad o proceso, ya sea industrial, profesional, deportivao o completamente nuevo.
 <br><br>
     Además, somos conscientes del inmenso número de personas que podrían beneficiarse enormemente de la implantación de este tipo de soluciones, por lo que buscamos acercárselas de la manera más accesible posible"
 
   # tab item loop
   - name : "Mission"
-    content : "Nuestra misión final es ofrecer soluciones tecnológicas que cualquier persona pueda hacer uso para la sacar su máximo rendimiento. Además, buscamos lograr este objetivo no sólo mediante una mera implementación genérica de las diferentes tegnologías, sino poniendo al cliente en nuestro punto de mira y adaptando nuestra investigación y desarrollo a sus necesidades."
+    content : "Nuestra misión final es ofrecer soluciones tecnológicas de las que cualquier persona pueda hacer uso para alcanzar su máximo rendimiento. Además, buscamos lograr este objetivo no sólo mediante una mera implementación genérica de las diferentes tegnologías, sino poniendo al cliente en nuestro punto de mira y adaptando nuestra investigación y desarrollo a sus necesidades."
 
   # tab item loop
   - name : "Approach"
-    content : "El objetivo de Quko es lograr la solución que mejor se adapte a los requerimientos de nuestros clientes. Para lograrlo, creemos en el establecimiento de una relación entrecha con ellos, de modo que nuestro equipo adquiera un entendimiento completo del problema a resolver y pueda así facilitarle la solución adecuada
+    content : "La meta de Quko es lograr la solución que mejor se adapte a los requerimientos de nuestros clientes. Para lograrlo, creemos en el establecimiento de una relación estrecha con ellos, de modo que nuestro equipo adquiera un entendimiento completo del problema a resolver y pueda así facilitarle la solución adecuada.
 <br><br>
-En este proceso, la confianza de nuestros clientes en nosotros es clave, por lo que nuestros principales pilares a la hora de trabajar con ellos son la comunicación y la confidencialidad."
+En este proceso, la confianza de nuestros clientes en nosotros es clave, por lo que basamos nuestra filosofía de trabajo en la buena comunicación y la confidencialidad."
 
 
 ############################# call to action #################################
