@@ -4,8 +4,8 @@ banner:
   enable: true
   bg_image: "images/verdu.jpg"
   bg_overlay: true
-  title: "Tecnología de vanguardia <br/> al alcance de todos "
-  content: "En Quko, trabajamos para ofrecer soluciones innovadoras basadas en las últimas tecnologías a nuestros clientes"
+  title: "Cutting-edge technology <br/> within everyone's reach"
+  content: "At Quko, we work to offer innovative solutions based on the latest technologies to our customers"
   button:
     enable: true
     label: "Conócenos"
