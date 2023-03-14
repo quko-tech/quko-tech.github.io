@@ -39,8 +39,8 @@ about:
   funfacts:
   # funfacts loop
   - icon : "fas fa-flask" #https://fontawesome.com/v5.15/icons
-    name : "Proyectos completados"
-    count : "349"
+    name : "Proyectos"
+    count : "2"
 
   # funfacts loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
@@ -50,7 +50,7 @@ about:
   # funfacts loop
   - icon : "fas fa-glasses" #https://fontawesome.com/v5.15/icons
     name : "Años en el sector"
-    count : "3"
+    count : "2"
 
   # funfacts loop
   - icon : "fas fa-trophy" #https://fontawesome.com/v5.15/icons
@@ -64,7 +64,7 @@ about:
 
   # funfacts loop
   - icon : "fas fa-certificate" #https://fontawesome.com/v5.15/icons
-    name : "paladas remadas"
+    name : "Paladas remadas"
     count : "48000"
 
 ################################ feature #####################################

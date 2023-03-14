@@ -1,6 +1,6 @@
 ---
-title: "Sobre MAKO"
-description: "Onde tecnoloxía e data science xúntanse para optimizar o deporte de alto nivel"
+title: "Sobre QUKO"
+description: "A la vanguardia de la tecnología para alcanzar el máximo rendimiento"
 bg_image: "images/feature-bg.jpg"
 layout: "about"
 draft: false
@@ -10,11 +10,26 @@ draft: false
 about:
   enable : true
   image : "images/company/about.jpg"
-  title : "O último en tecnoloxía deportiva"
-  content : "Obter parámetros útiles de datos brutos require de técnicas avanzadas de procesado de sinal e data science. Pero, no mundo do deporte, non chega con coñecementos de enxeñería para lograr uns resultados útiles: precísase tamén dun gran coñecemento da técnica deportiva para lograr identificar os parámetros máis importantes que afectan ó rendemiento dun atleta.
+  title : "Soluciones innovadoras"
+  content : "Cada vez son más las nuevas tecnologías que cuentan con la capacidad de revolucionar un negocio, una actividad o incluso un sector entero. Desde data science a inteligencia artificial, pasando por internet de las cosas o procesado de datos, es evidente que hoy día resulta crucial sacarle el máximo partido a estas herramientas para maximizar el rendimiento de cualquier actividad.
 
 
-  Na nosa plantilla contamos tanto cun equipo de enxeñaría con amplia experiencia en procesado de datos como cun equipo deportivo con coñecementos no ámbito do adestramento de alto nivel. Deste xeito, buscamos ofrecer a simbiosis perfeta entre ambos mundos."
+  <br>
+
+
+  En Quko creemos en la posibilidad de adaptar este tipo de tecnologías de tal forma que puedan utilizarse en todo tipo de circunstancias diferentes, logrando así optimizar procesos de formas antes inimaginables. 
+
+
+  <br>
+
+
+  Además, contamos con un equipo con una excelente formación y experiencia en el sector para implementar estas técnicas de vanguardia a la hora de resolver cualquier problema que las requiera. 
+
+
+  <br>
+
+
+  De hardware a software, pasando por procesado de señal, despliegue de redes de comunicaciones o implementación de sistemas empotrados, en Quko siempre habrá un experto en la materia para ofrecerte la solución que mejor se adapte a tus necesidades."
 
   #button:
   #  enable : true
@@ -24,53 +39,53 @@ about:
   funfacts:
   # funfacts loop
   - icon : "fas fa-flask" #https://fontawesome.com/v5.15/icons
-    name : "Proxectos completados"
-    count : "349"
+    name : "Proyectos"
+    count : "2"
 
   # funfacts loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
-    name : "Liñas de código"
-    count : "3500"
+    name : "Líneas de código"
+    count : "25000"
 
   # funfacts loop
   - icon : "fas fa-glasses" #https://fontawesome.com/v5.15/icons
-    name : "Consumidores satisfeitos"
-    count : "70"
+    name : "Años en el sector"
+    count : "2"
 
   # funfacts loop
   - icon : "fas fa-trophy" #https://fontawesome.com/v5.15/icons
-    name : "Premios gañados"
-    count : "10"
+    name : "Premios ganados"
+    count : "1"
 
   # funfacts loop
   - icon : "fas fa-glass-cheers" #https://fontawesome.com/v5.15/icons
     name : "Cafés consumidos"
-    count : "75"
+    count : "384"
 
   # funfacts loop
   - icon : "fas fa-certificate" #https://fontawesome.com/v5.15/icons
-    name : "Padexos rexistrados"
+    name : "Paladas remadas"
     count : "48000"
 
 ################################ feature #####################################
 features:
   enable : true
-  title : "Onde se xuntan enxeñería con deporte profesional"
+  title : "La tecnología que necesitas, a tu alcance"
   feature_item:
   # feature item loop
+  - icon : "fas fa-microchip" #https://fontawesome.com/v5.15/icons
+    name : "Desarrollo de Hardware"
+    content : "Contamos con capacidad para el diseño de hardware personalizado para todos los casos de uso"
+
+  # feature item loop
+  - icon : "fas fa-satellite-dish" #https://fontawesome.com/v5.15/icons
+    name : "Despliegue de redes"
+    content : "Disponemos del mejor equipo para el dimensionado y despliegue de redes de telecomunicaciones"
+
+  # feature item loop
   - icon : "fas fa-code" #https://fontawesome.com/v5.15/icons
-    name : "Equipo de enxeñería"
-    content : "En Mako, todo o software e firmware son desenvolvidos por enxeñeiros especializados en teoría da información, procesado de sinal e data science"
-
-  # feature item loop
-  - icon : "fas fa-running" #https://fontawesome.com/v5.15/icons
-    name : "Equipo de deporte"
-    content : "Contamos con deportistas de alto nivel en Mako, así como coa colaboración con outros deportistas de élite para probar e mellorar os nosos produtos e servizos"
-
-  # feature item loop
-  - icon : "fas fa-ad" #https://fontawesome.com/v5.15/icons
-    name : "Equipo de marketing"
-    content : "Co obxectivo de alcanzar todo tipo de deportes e modalidades diferentes, tamén dispoñemos de equipo de márqueting"
+    name : "Desarrollo de software"
+    content : "Años de experiencia en el desarrollo de todo tipo de aplicaciones y soluciones de software"
 
   # feature item loop
   #- icon : "fas fa-microscope" #https://fontawesome.com/v5.15/icons
@@ -97,21 +112,20 @@ mission_vision:
   enable : true
   tabs:
   # tab item loop
-  - name : "Visión"
-    content : "En mako, cremos firmemente no uso de tecnoloxías á vanguardia co fin de optimizar la eficiencia na práctica e adestramento deportivo.
-    Unha simple ollada atrás hacia competición no Século XX serve para darse conta de cómo a evolución dun deporte vai da man dos diferentes avances tecnolóxicos que éste experimenta.
-    De este xeito, Mako busca ofrecer software que logre axudar a adestradores e corpo técnico de todo o mundo a visualizar os entrenos dos seus
-    deportistas dende un nuevo punto de vista máis cuantitativo e obxectivo, permitíndolles descubrir novas formas de aumentar o seu rendemento."
+  - name : "Vision"
+    content : "En Quko, creemos firmemente en el uso de tecnologías a la vanguardia con el fin de optimizar la eficiencia de cualquier tipo de actividad o proceso, ya sea industrial, profesional, deportiva, y más.
+<br><br>
+    Además, somos conscientes del inmenso número de personas que podrían beneficiarse enormemente de la implantación de este tipo de soluciones, por lo que buscamos acercárselas de la manera más accesible posible"
 
   # tab item loop
-  - name : "Misión"
-    content : "A nosa misión final é ofrecer un ecosistema deportivo basado en hardware, software e soporte que calquer adestrador ou deportista do mundo poda utilizar para
-    optimizar os seus adestramentos. Ademais, buscamos lograr este obxectivo non só mediante a mera mellora das especificacións e características dos nuestros productos, senón poñendo ó deportista 
-    no noso punto de mira e adaptar a nosa investigación e desenvolvemento ás súas necesidades."
+  - name : "Mission"
+    content : "Nuestra misión final es ofrecer soluciones tecnológicas que cualquier persona pueda hacer uso para la sacar su máximo rendimiento. Además, buscamos lograr este objetivo no sólo mediante una mera implementación genérica de las diferentes tegnologías, sino poniendo al cliente en nuestro punto de mira y adaptando nuestra investigación y desarrollo a sus necesidades."
 
   # tab item loop
-  - name : "Metodología"
-    content : "Hoxe non resulta difícil desenvolver unha solución basada en hardware para o monitoreo da actividad deportiva. O verdadeiro problema reside na capacidade do software que a acompaña de procesar os datos en bruto para extraer parámetros de utilidade. Dende Mako somos conscientes desta dificultade e buscamos ofrecer un conxunto de software que permita axudar a equipos profesionais a conseguir a información que de verdade necesitan. Para iso, centramos a nosa investigación arredor do deporte específico que buscamos implementar, mantendo unha relación cercana con adestradores e deportistas para segurar un resultado final que satisfaga as súas necesidades."
+  - name : "Approach"
+    content : "El objetivo de Quko es lograr la solución que mejor se adapte a los requerimientos de nuestros clientes. Para lograrlo, creemos en el establecimiento de una relación entrecha con ellos, de modo que nuestro equipo adquiera un entendimiento completo del problema a resolver y pueda así facilitarle la solución adecuada
+<br><br>
+En este proceso, la confianza de nuestros clientes en nosotros es clave, por lo que nuestros principales pilares a la hora de trabajar con ellos son la comunicación y la confidencialidad."
 
 
 ############################# call to action #################################

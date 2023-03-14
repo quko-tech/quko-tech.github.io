@@ -1,46 +1,30 @@
 ---
-title: "Frequently Asked Questions"
-description: "Any doubt? Check this out first!"
-subtitle : "If you can't finde here your doubt, don't hesitate to contact us!"
-#lastmod: 2022-05-03
+title: "FAQ"
+description: "Any doubts? Take a look at this page!"
+subtitle : "If you don't find what you are looking for here, don't hesitate to contact us!"
+lastmod: 2023-03-10T21:10:00+07:00
 bg_image: "images/feature-bg.jpg"
 layout: "faq"
 draft: false
 ---
 
 
-#### 1. Why mako over other alternatives?
+#### 1. Why choose Quko over other alternatives?
 
-There is one key factor that differenciates us from our competitors: our focus on the athletes. 
+There is one key factor that sets us apart from the competition: we offer customized solutions tailored to our customers.
 
-Other companies take the raw data from the sensors, process it in a purely statistical way and leave the responsibility of interpreting the
-results to the technical staff. In our case, we really want to retrieve useful results that trainers can directly use in their planifications 
-with no previous "guessing game". For this purpose, we like maintaining one-to-one relationships with them in order to fully comprehend their
-view of the sports and adapt the results output by our program to what they really need.
+At Quko, we believe that our customers should be able to take advantage of the latest technologies without any prior knowledge. Thus, we rely on maintaining a close relationship with them, based on communication and confidentiality, in order to be able to fully understand their specific needs and to be able to offer them the solution that best suits them.
 
 <br>
 
-#### 2. What sports does Mako support?
+#### 2. What kind of activities does Quko work with?
 
-For the moment, we are only providing full support for Canoeing (C1, C2 and C4). This is because this sport is where our
-project started and the one we have been able to develop the most software for. It is expected to include Kayaking or Whitewater 
-to this list in few months. 
+In general, with anyone! Quko's vision revolves around the development and application of state-of-the-art tools in all kinds of processes. 
 
-Nevertheless, we really ant to expand to other individual sports. If you would be interested in this, please, contact us! We will
-be so pleased to incorporate new modalities to our project.
+In this sense, we are always looking to expand our portfolio and expand into new activities. If you are interested in our services, do not hesitate to contact us! We will be happy to assist you and analyze your case in order to incorporate it into our project.
 
 <br>
 
-#### 3. Does Mako collect any data?
+#### 3. How does Quko process or use my data?
 
-Since we offer offline software solutions, Mako does not collect any data related to any of themeasurements taken! Both the
-raw data from the sensors and the results obtained after the processing are kept private in the client's computer, and not
-uploaded anywhere. 
-
-<br>
-
-
-#### 5. Is there any security concern I should know?
-
-Not at all! Once we give you the corresponding credentials for accessing the software, we will no longer have any access to any
-of our programs. It is the responsibility of the client to keep his or her data safe.
+At Quko we do not collect any type of data or sensitive information, nor do we have any information storage database. Any data collected during the design and deployment of the solution as well as the final results are processed privately on a cloud server and returned to the customer without being shared with third parties.

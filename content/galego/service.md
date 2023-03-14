@@ -1,6 +1,6 @@
 ---
-title: "Servizos"
-description: "Isto é o que ofrecemos"
+title: "Servicios"
+description: "Esto es lo que ofrecemos"
 bg_image: "images/feature-bg.jpg"
 layout: "service"
 draft: false
@@ -8,10 +8,11 @@ draft: false
 ########################### about service #############################
 about:
   enable : true
-  title : "Unha nova forma de adestrar"
-  content : "Imaxina poder grabar os adestramentos e competicións de diferentes deportistas ó mesmo tempo, para analizar máis tarde o seu rendemiento de xeito cuantitativo comparando movemientos, velocidades, frecuencias cardíacas e máis cunha precisión de centésimas de segundo.         
-  <br> En Mako, ofrecemos solucións de software para equipos deportivos de alto rendemiento, provéndolles de todo o necesario para o análise do seu deporte ou modalidade. Ademáis, ofrecemos soporte á hora de actualizar nuestros programas en función de sus requisitos, añadindo novas funcións e obtendo así resultados máis completos."
-  image : "images/company/company-group-pic.jpg"
+  title : "Tenemos la solución que buscas"
+  content : "En Quko contamos con la experiencia y el conocimiento necesario para implementar todo tipo de soluciones basadas en las últimas tecnologías digitales en una amplia diversidad de sectores.
+
+  <br> Independientemente del reto que nos propongan nuestros clientes, ya sea buscar la solución a un problema o la optimización de procesos, les ofrecemos no sólo los mejores resultados, sino también los que mejor se adaptan a sus condiciones en específico."
+  image : "images/stock-placa3.jpg"
 
 
 ########################## featured service ############################
@@ -19,71 +20,71 @@ featured_service:
   enable : true
   service_item:
     # featured service item loop
-    - name : "Software"
-      icon : "fas fa-flask"
-      color : "primary"
-      content : "Ofrecemos solucións de vanguardia en data science e procesado de sinal"
-
-    # featured service item loop
     - name : "Hardware"
       icon : "fas fa-microchip"
-      color : "primary-darker"
-      content : "Dentro de pouco!"
+      color : "primary"
+      content : "Soluciones de hardware personalizado"
 
     # featured service item loop
-    - name : "Soporte"
-      icon : "fas fa-user-friends"
+    - name : "Telecomunicaciones"
+      icon : "fas fa-satellite-dish"
+      color : "primary-darker"
+      content : "Capacidad para el dimensionado y despliegue de redes de telecomunicaciones"
+
+    # featured service item loop
+    - name : "Software"
+      icon : "fas fa-code"
       color : "primary-dark"
-      content : "O noso equipo escoita as necesidades dos clientes para adaptar as nosas solucións ás necesidades dos deportistas"
+      content : "Soluciones basadas en procesado de datos, diseño de aplicaciones web, data science y más"
 
 
 ############################# Service ###############################
 
 service:
   enable : true
-  title : "Por que Mako?"
-  description : "En Mako, dispoñemos dun equipo con anos de experiencia tanto en campos da enxeñería de datos como do deporte de alto nivel. É por isto que cremos firmemente na simbiosis entre tecnoloxía e adestramento para alcanzar o rendemento deportivo óptimo"
+  title : "¿Por qué Quko?"
+  description : "En Quko, disponemos de un equipo con años de experiencia a sus espaldas en los campos de la ingeniería de datos, electrónica, de software y de telecomunicaciones"
   service_item:
     # feature item loop
     - icon : fas fa-code #https://fontawesome.com/v5.15/icons
-      name : Software compacto
-      content : "Os nosos enxeñeiros traballan en ofrecer unha solución compacta con todo o software do que un euipo deportivo poda precisar"
+      name : Adaptación al cliente
+      content : "Ofrecemos soluciones compactas adaptadas al uso específico de nuestros clientes"
 
     # feature item loop
     - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
-      name : Doado
-      content : "Canto máis sinxelo, mellor. Esta é a nosa filosofía á hora de desenvolver unhas interfaces de usuario limpas e claras."
+      name : Confidencialidad
+      content : "Buscamos mantener una relación de estrecha confianza con nuestros clientes basada en la confidencialidad"
 
     # feature item loop
     - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
-      name : Rendemento óptimo
-      content : "Cantos máis datos teña un equipo, máis doado será para eles atopar que deben mellorar e como melloralo"
+      name : Rendimiento óptimo
+      content : "Sea cual sea el proceso a optimizar, lucharemos por obtener el máximo rendimiento mediante la tecnología"
 
     # feature item loop
     - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
       name : Soporte
-      content : "O noso equipo comprométese cos seus clientes ofrecenco soporte técnico e consultorio durante os primeiros meses <br><br> "
+      content : "Nuestro equipo se compromete con sus clientes ofrecienco soporte técnico y consultorio<br><br> "
 
 
     # feature item loop
     - icon : fas fa-lightbulb #https://fontawesome.com/v5.15/icons
-      name : Non paramos
-      content : "En Mako estamos constantemente evolucionando e introducindo novas ideas e actualizacións nos nosos produtos"
+      name : No paramos
+      content : "En Quko estamos constantemente evolucionando e introduciendo nuevas ideas y actualizaciones en nuestros productos"
 
 
     - icon : fas fa-microscope #https://fontawesome.com/v5.15/icons
-      name : Á vangarda
-      content : "Investigamos e facemos uso de técnicas noveles para traer as solución máis innovadoras ó mundo do deporte"
+      name : A la vanguardia
+      content : "Investigamos y hacemos uso de técnicas noveles para traer las soluciones más innovadoras al alcance de todos"
 
 
     - icon : fas fa-user-check #https://fontawesome.com/v5.15/icons
       name : Accesible
-      content : "Adestradores e corpo técnico non teñen por que ter coñecementos previos fora do deporte para interpretar os datos obtidos"
+      content : "Nuestros clientes no requieren de conocimientos previos para hacer uso de nuestros servicios"
 
 
     - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
-      name : Aberto
-      content : "Estamos sempre abertos a comentarios ou suxestións sobre como mellorar a experiencia de usuario!"
+      name : Abierto
+      content : "¡Estamos siempre abiertos a comentarios o sugerencias sobre cómo mejorar la experiencia de usuario!"
 
 
 

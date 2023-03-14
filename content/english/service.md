@@ -1,5 +1,5 @@
 ---
-title: "Service"
+title: "Services"
 description: "This is what we offer"
 bg_image: "images/feature-bg.jpg"
 layout: "service"
@@ -8,14 +8,11 @@ draft: false
 ########################### about service #############################
 about:
   enable : true
-  title : "A new way to train"
-  content : "Imagine being able to record trainings and competitions of different athletes at the same time, and being able to analyse
-  later their performance in a quantitative way by comparing their precise movements, speed, heart rate and more with a precision of miliseconds.            
-  <br> In Mako, we offer software (and hardware soon!) solutions for high-level sport teams. By choosing our services we will provide you with all 
-  the software solutions available for the corresponding sport or modality. Besides, you will also receive the support of our team for updating our software 
-  depending on your needs, receiving new functionalities and establishing a one-to-one relationship with the technical staff in order to fit our product to the
-  requirements of the trainers and athletes"
-  image : "images/company/company-group-pic.jpg"
+  title : "We have the solution you are looking for"
+  content : "At Quko we have the experience and knowledge necessary to implement all types of solutions based on the latest digital technologies in a wide variety of sectors.
+
+  <br> Regardless of the challenge our customers set us, whether it is the solution to a problem or the optimization of processes, we offer them not only the best results, but also those that are best suited to their specific conditions."
+  image : "images/stock-placa3.jpg"
 
 
 ########################## featured service ############################
@@ -23,71 +20,71 @@ featured_service:
   enable : true
   service_item:
     # featured service item loop
-    - name : "Software"
-      icon : "fas fa-flask"
-      color : "primary"
-      content : "We offer state-of-the-art solutions in data science and signal processing"
-
-    # featured service item loop
     - name : "Hardware"
       icon : "fas fa-microchip"
-      color : "primary-darker"
-      content : "Coming soon!"
+      color : "primary"
+      content : "Custom hardware solutions"
 
     # featured service item loop
-    - name : "Support"
-      icon : "fas fa-user-friends"
+    - name : "Telecommunications"
+      icon : "fas fa-satellite-dish"
+      color : "primary-darker"
+      content : "Telecommunication networks sizing and deployment capabilities"
+
+    # featured service item loop
+    - name : "Software"
+      icon : "fas fa-code"
       color : "primary-dark"
-      content : "Our team will listen to your needs and adapt our solutions to the requirements of the athletes"
+      content : "Solutions based on data processing, web application design, data science and more"
 
 
 ############################# Service ###############################
 
 service:
   enable : true
-  title : "Why Mako?"
-  description : "In Mako, we have a team endorsed by years of experience in the fields of both high-level sports and engineering. It is for this reason that we firmly believe in the symbiosis of technology and trainings in order to achieve the optimal result"
+  title : "Why Quko?"
+  description : "At Quko, we have a team with years of experience behind them in the fields of data, electronics, software and telecommunications engineering."
   service_item:
     # feature item loop
     - icon : fas fa-code #https://fontawesome.com/v5.15/icons
-      name : Compact software
-      content : "Our engineers work hard in offering a single compact solution with all the software a sports team will ever need"
+      name : Adaptation to the customer
+      content : "We offer compact solutions tailored to the specific use of our customers."
 
     # feature item loop
     - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
-      name : Easy to use
-      content : "The cleaner, the better. That was our plan when designing a clear and straightforward user interface"
+      name : Confidentiality
+      content : "We seek to maintain a relationship of close trust with our clients based on confidentiality."
 
     # feature item loop
     - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
-      name : Optimal performance
-      content : "The more data a team has, the easier it is for them to spot what to improve and how to improve it"
+      name : Optimum performance
+      content : "Whatever the process to be optimized, we will strive for maximum performance through technology."
 
     # feature item loop
     - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
       name : Support
-      content : "Our team compromises with our clients by offering technical and advisorial support during the first months <br><br> "
+      content : "Our team is committed to its customers by offering technical support and consulting<br><br> "
 
 
     # feature item loop
     - icon : fas fa-lightbulb #https://fontawesome.com/v5.15/icons
-      name : Never stop
-      content : "Our team is constantly evolving and introducing new ideas and updates in our products"
+      name : We never stop
+      content : "At Quko we are constantly evolving and introducing new ideas and updates to our products."
 
 
     - icon : fas fa-microscope #https://fontawesome.com/v5.15/icons
-      name : State of the art
-      content : "We research and make use of novel techniques in order to bring the most innovative solutions to the market"
+      name : At the vanguard
+      content : "We research and make use of novel techniques to bring the most innovative solutions within everyone's reach."
 
 
     - icon : fas fa-user-check #https://fontawesome.com/v5.15/icons
-      name : Acessible
-      content : "Trainers or staff do not need to have any knowledge outside sports to interpret our data"
+      name : Accessible
+      content : "Our clients do not require any previous knowledge to use our services"
 
 
     - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
       name : Open
-      content : "We are always open to comments and suggestions for improving the user experience!"
+      content : "We are always open to comments or suggestions on how to improve the user experience!"
 
 
 

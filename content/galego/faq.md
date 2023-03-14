@@ -1,38 +1,30 @@
 ---
 title: "Preguntas Frecuentes"
-description: "Algunha dúbida? Bótalle unha ollada a esta páxina!"
-subtitle : "Se non atopas aquí o que buscas, ¡non dubides en contactarnos!"
-lastmod: 2022-03-18T21:10:00+07:00
+description: "¿Alguna duda? ¡Échale un vistazo a esta página!"
+subtitle : "Si no encuentras aquí lo que buscas, ¡no dudes en contactarnos!"
+lastmod: 2023-03-10T21:10:00+07:00
 bg_image: "images/feature-bg.jpg"
 layout: "faq"
 draft: false
 ---
 
 
-#### 1. Por que elixir Mako frente a outras alternativas?
+#### 1. ¿Por qué elegir Quko frente a otras alternativas?
 
-Existe un factor crave que nos diferencia da competencia: o noso principal foco de atención son os deportistas.
+Existe un factor clave que nos diferencia de la competencia: ofrecemos soluciones personalizadas adaptar a nuestros clientes.
 
-Outras solucións no mercado toman os datos brutos recolleitados polos diversos sensores, procésanos de forma puramente estadística y deixan a responsabilidade de interpretar os resultados en mans do corpo técnico deportivo correspondente. Dende Mako, consideramos que son os técnicos os que deben contar xa cunha información procesada e filtrada, de forma que o seu deber sexa centrarse só na mellora técnica do deportista. De este xestio, o noso software conta cun procesado de información de máis alto nivel, ofrecéndolles uns datos que poden implementar directamente nas súas planificacións. Para iso, ofrecemos un soporte persoalizado cos nosos clientes, co fin de comprender ó máximo as súas necesidades e adaptar as nosas solucións ó seu deporte en particular.
-
-
-<br>
-
-#### 2. Que deportes soporta Mako?
-
-Polo momento, só ofrecemos soporte oficial completo para piragüismo en canoa (C1, C2 e C4). Isto débese a que es esta a modalidade na que se se orixinou este proxecto e na que máis tiempo se investiu en investigación e desenvolvemento. Por outro lado, temos previsto incluir outras modalidades deste deporte como kayak, barco dragón ou aguas bravas nos vindeiros meses.
-
-Estamos profundamente interesados en ampliar o noso catálogo e expandirnos a novos deportes. Se estás interesado nos nosos servizos pero a túa modalidad en concreto non aparece na lista anterior, ¡non dubides en contactarnos! Estaremos encantados de atenderte e analizar o teu caso para incorporar o teu deporte ó noso proxecto.
+Desde Quko, consideramos que nuestros clientes deben contar con la capacidad de sacarle partido a las últimas tecnologías sin necesitar ningún tipo de conocimiento previo. De este modo, nos basamos en mantener una relación cercana con ellos, basada en la comunicación y la confidencialidad, para así ser capaces de comprender en su totalidad sus necesidades en específico y poder ofrecerles la solución que mejor se adecuen a ellos.
 
 <br>
 
-#### 3. Colleita Mako información sensible?
+#### 2. ¿Con qué tipo de actividades trabaja Quko?
 
-Posto que ofrecemos solucións de software offline, Mako non colleita ningún tipo de dato relacionado coas medidas obtidas polos distintos deportistas. Tanto os datos en bruto coma os resultados finais son procesados de forma privada no el ordenador do cliente, e no son compartidos en ningures.
+En general, ¡con cualquiera! La visión de Quko gira en torno al desarrollo y aplicación de herramientas de última tecnología en todo tipo de procesos. 
+
+En este sentido, estamos siempre buscando ampliar nuestro catálogo y expandirnos a nuevas actividades. Si estás interesado en nuestros servicios, ¡no dudes en contactarnos! Estaremos encantados de atenderte y analizar tu caso para poder incorporarlo a nuestro proyecto.
 
 <br>
 
+#### 3. ¿Qué tratamiento o uso de mis datos hace Quko?
 
-#### 5. Existe algún risgo de seguridade que deba coñecer?
-
-Dende logo que non! Unha vez dispoñas deos credenciais necesarios para facer uso do software correspondente, será responsabilidade do usuario manter os datos procesados protexidos.
+En Quko no recolectamos ningún tipo de dato o información sensible, ni contamos con ninguna base de datos de almacenamiento de información. Tanto los posibles datos recolectados durante el diseño y despliegue de la solución como los resultados finales son procesados de forma privada en un servidor en la nube y devueltos al cliente sin ser compartidos con terceros.

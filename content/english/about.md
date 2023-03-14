@@ -1,6 +1,6 @@
 ---
-title: "About MAKO"
-description: "Where technology and data science meet to optimise sport"
+title: "About QUKO"
+description: "At the forefront of technology to achieve maximum performance"
 bg_image: "images/feature-bg.jpg"
 layout: "about"
 draft: false
@@ -10,11 +10,26 @@ draft: false
 about:
   enable : true
   image : "images/company/about.jpg"
-  title : "Data is power"
-  content : "Extracting useful parameters from raw sensors requires advanced signal processing and data science techniques. However, when referring to sports, a lot of technical knowledge is also needed in order to identify the key parameters than can affect an athlete's performance
+  title : "Innovative solutions"
+  content : "More and more new technologies have the capacity to revolutionize a business, an activity or even an entire sector. From data science to artificial intelligence, from the internet of things to data processing, it is clear that today it is crucial to make the most of these tools to maximize the performance of any activity.
 
 
-  In our team, we count on highly experienced engineers as well as professional high-level athletes with the aim of achieving the perfect symbiosis between both worlds."
+  <br>
+
+
+  At Quko we believe in the possibility of adapting this type of technology in such a way that it can be used in all kinds of different circumstances, thus optimizing processes in previously unimaginable ways. 
+
+
+  <br>
+
+
+  In addition, we have a team with excellent training and experience in the sector to implement these cutting-edge techniques to solve any problem that requires them. 
+
+
+  <br>
+
+
+  From hardware to software, signal processing, deployment of communication networks or implementation of embedded systems, at Quko there will always be an expert in the field to offer you the solution that best suits your needs."
 
   #button:
   #  enable : true
@@ -24,53 +39,53 @@ about:
   funfacts:
   # funfacts loop
   - icon : "fas fa-flask" #https://fontawesome.com/v5.15/icons
-    name : "Completed Projects"
-    count : "349"
+    name : "Current projects"
+    count : "2"
 
   # funfacts loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
-    name : "Lines Of Code"
-    count : "3500"
+    name : "Lines of code"
+    count : "25000"
 
   # funfacts loop
   - icon : "fas fa-glasses" #https://fontawesome.com/v5.15/icons
-    name : "Satisfied Customer"
-    count : "70"
+    name : "Years in the industry"
+    count : "2"
 
   # funfacts loop
   - icon : "fas fa-trophy" #https://fontawesome.com/v5.15/icons
-    name : "Awards Winner"
-    count : "10"
+    name : "Awards won"
+    count : "1"
 
   # funfacts loop
   - icon : "fas fa-glass-cheers" #https://fontawesome.com/v5.15/icons
-    name : "Satisfied Customer"
-    count : "75"
+    name : "Cafés"
+    count : "384"
 
   # funfacts loop
   - icon : "fas fa-certificate" #https://fontawesome.com/v5.15/icons
-    name : "Awards Winner"
-    count : "20"
+    name : "Paddles paddled"
+    count : "48000"
 
 ################################ feature #####################################
 features:
   enable : true
-  title : "Where high-end engineering and professional sports meet"
+  title : "The technology you need, at your fingertips"
   feature_item:
   # feature item loop
+  - icon : "fas fa-microchip" #https://fontawesome.com/v5.15/icons
+    name : "Hardware Development"
+    content : "We have custom hardware design capabilities for all use cases."
+
+  # feature item loop
+  - icon : "fas fa-satellite-dish" #https://fontawesome.com/v5.15/icons
+    name : "Network deployment"
+    content : "We have the best equipment for the sizing and deployment of telecommunications networks".
+
+  # feature item loop
   - icon : "fas fa-code" #https://fontawesome.com/v5.15/icons
-    name : "Engineering team"
-    content : "In Mako, all the software and firmware is developed by engineers specialised in information theory, signal processing and data science"
-
-  # feature item loop
-  - icon : "fas fa-running" #https://fontawesome.com/v5.15/icons
-    name : "Sports team"
-    content : "We count on high-level sport athletes in Mako, and we also partner with other elite sportmen to test our products"
-
-  # feature item loop
-  - icon : "fas fa-ad" #https://fontawesome.com/v5.15/icons
-    name : "Marketing team"
-    content : "With the aim of reaching all type of different sports and activities, we also have a marketing team"
+    name : "Software development"
+    content : "Years of experience in the development of all types of applications and software solutions"
 
   # feature item loop
   #- icon : "fas fa-microscope" #https://fontawesome.com/v5.15/icons
@@ -98,26 +113,19 @@ mission_vision:
   tabs:
   # tab item loop
   - name : "Vision"
-    content : "In Mako we firmly believe in the use of novel technologies for optimising efficiencies in 
-    sports. A simple look back to sport competitions in the XX century is enough for noticing how the evolution of a sport
-    or modality comes with an improvement in the technology available at the time. In this way, Mako offers software for 
-    both individuals and teams that will help trainers and technical staff around the world see their athletes from a different, 
-    more cuantitative, perspective, allowing them to discover new ways to optimise their performance."
+    content : "At Quko, we strongly believe in the use of cutting-edge technologies in order to optimize the efficiency of any type of activity or process, be it industrial, professional, sports, and more.
+<br><br>
+    We are also aware of the huge number of people who could benefit enormously from the implementation of this type of solutions, so we seek to make them as accessible as possible."
 
   # tab item loop
   - name : "Mission"
-    content : "Our final mission is offering a sport-oriented technical ecosystem, consisting of both hardware, software and support, 
-    that any pofessional team or athlete around the globe can take advantage of. Moreover, we aim to do so not just by improving our
-    engineering systems but by setting always the athletes as our points of references and adapting our research and developmentactivities
-    to their needs."
+    content : "Our ultimate mission is to offer technological solutions that anyone can use to get the most out of them. Moreover, we seek to achieve this goal not only through a mere generic implementation of different technologies, but by putting the customer in our focus and adapting our research and development to their needs."
 
   # tab item loop
   - name : "Approach"
-    content : "Nowadays it is not difficult to develop a hardware solution for sports tracking. The real problem lies in the capacity of
-    the corresponding software to process the raw data and extract useful parameters from it. In this way, from Mako we want to approach said
-    problem by first deploying a toolkit of useful software that can aid professional teams obtain said results. In order to achieve this, we 
-    aim to center our research around the specific sport and athletes we are working with, so that we can offer a final product that can fulfill
-    their needs."
+    content : "Quko's goal is to achieve the solution that best suits our customers' requirements. To achieve this, we believe in establishing a close relationship with them, so that our team acquires a complete understanding of the problem to be solved and can provide the right solution.
+<br><br>
+In this process, our clients' trust in us is key, so our main pillars when working with them are communication and confidentiality."
 
 
 ############################# call to action #################################
