@@ -37,7 +37,7 @@ copyright = "Pablo Álvarez, 2023 (C)"# <br> Powered by [Themefisher](https://th
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>" 
 custom_script= ""
 # google tag manager, see https://developers.google.com/tag-manager/
-google_tag_manager = "" # example: G-XXXXXXXXXX
+google_tag_manager = "G-7D16PX3DB1" # example: G-XXXXXXXXXX
 # recaptch v3 site key
 recaptcha_site_key = "xxx-xxxxxxxxxxxxxxxxxxxxxxxx"
 
