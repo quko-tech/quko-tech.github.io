@@ -1,5 +1,5 @@
 ---
-title: "Sobre QUKO"
+title: "Sobre Quko"
 description: "Á vangarda da tecnoloxía para acadar o máximo rendemento"
 bg_image: "images/feature-bg.jpg"
 layout: "about"

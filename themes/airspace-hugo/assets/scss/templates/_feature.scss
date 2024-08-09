@@ -9,6 +9,7 @@
   background-size: cover;
   padding: 100px 0;
 
+
   @include large-desktop {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -22,7 +23,7 @@
   }
 
   p {
-    color: darken( $light, 41.37);
+    color: darken( $white, 30%);
     margin-bottom: 20px;
   }
 

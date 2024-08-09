@@ -1,5 +1,5 @@
 ---
-title: "About QUKO"
+title: "About Quko"
 description: "At the forefront of technology to achieve maximum performance"
 bg_image: "images/feature-bg.jpg"
 layout: "about"

@@ -7,11 +7,11 @@ logo = "images/logo.png"
 # Note: logo_width is not work with .svg file
 logo_width = "180px"
 # logo text will only show when logo is missing.
-logo_text = "QUKO"
+logo_text = "Quko"
 # navbar fixed to top
 navbar_fixed = false
 # OpenGraph / Twitter Card metadata
-description = "QUKO | Data solutions"
+description = "Quko | Data solutions"
 author = "Pablo Álvarez"
 image = "images/logo.png" # this image will be used as fallback if a page has no image of its own
 # Whether to display text descriptors (like "E-mail: ", "Phone: ") before the address block elements
@@ -20,7 +20,7 @@ address_descriptors = false
 phone = "+34 644 43 96 48"
 email = "contacto@quko.es"
 location = """
-**QUKO**  
+**Quko**  
 Cangas do Morrazo              
 Pontevedra, 36940           
 Galicia              
@@ -37,12 +37,12 @@ copyright = "Pablo Álvarez, 2023 (C)"# <br> Powered by [Themefisher](https://th
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>" 
 custom_script= ""
 # google tag manager, see https://developers.google.com/tag-manager/
-google_tag_manager = "G-7D16PX3DB1" # example: G-XXXXXXXXXX
+google_tag_manager = "" # example: G-XXXXXXXXXX
 # recaptch v3 site key
 recaptcha_site_key = "xxx-xxxxxxxxxxxxxxxxxxxxxxxx"
 
 [contact.form]
-enable = true
+enable = false
 # Whether to use [Netlify Forms](https://docs.netlify.com/forms/setup/)
 use_netlify = false
 # Whether to use recaptch v3 in form

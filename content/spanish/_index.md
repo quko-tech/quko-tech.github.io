@@ -18,13 +18,13 @@ about:
   description: "Nacido en el mundo del procesado de señales biométricas y biomecánicas, Quko se creó con una meta clara: poner al alcance de cualquier persona todos los avances tecnológicos que nos rodean"
   content: "Vivimos una época donde las tecnologías digitales se encuentran extremadamente evolucionadas: redes de sistemas empotrados, nuevas técnicas de procesado de señal, data science o inteligencia artificial son ejemplo de ello.  
   <br>En Quko, tenemos como objetivo ser capaces de llevar estas nuevas herramientas a nuestros usuarios, para que evolucionen ante el reto de la actual revolución digital 2.0 y puedan disponer de ellas para conseguir el máximo rendimiento y beneficios"
-  image: "images/palada.png"
+  image: "images/palada.jpeg"
 
 
 ######################### Portfolio ###############################
 portfolio:
   enable: true
-  bg_image: "images/feature-bg.jpg"
+  bg_image: "images/palada.gif"
   title: "TE ESCUCHAMOS"
   content: "Uno de los principales pilares de Quko es nuestra filosofía de adaptar lo máximo posible las soluciones finales a las necesidades de nuestros clientes.
 
@@ -35,7 +35,7 @@ portfolio:
   Desde Quko nos alejamos de las soluciones genéricas. Mantener una relación estrecha y de confianza con nuestros clientes es clave para lograr los mejores resultados.
   "
   button:
-    enable: true
+    enable: false
     label: "Ver productos"
     link: "project/"
 
@@ -76,7 +76,7 @@ funfacts:
   # funfacts item loop
   - icon: "fas fa-keyboard" #https://fontawesome.com/v5.15/icons
     name: "Proyectos activos"
-    count: "2"
+    count: "3"
 
   # funfacts item loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons

@@ -8,7 +8,7 @@ banner:
   content: "At Quko, we work to offer innovative solutions based on the latest technologies to our customers"
   button:
     enable: true
-    label: "Conócenos"
+    label: "Get to know us"
     link: "about/"
 
 ############################# About #################################
@@ -24,8 +24,8 @@ about:
 ######################### Portfolio ###############################
 portfolio:
   enable: true
-  bg_image: "images/feature-bg.jpg"
-  title: "WE LISTEN"
+  bg_image: "images/palada.gif"
+  title: "WE LISTEN TO YOU"
   content: "One of the main pillars of Quko is our philosophy of adapting the final solutions as much as possible to the needs of our customers.
 
 We are aware of the problem that the implementation of such new technologies can pose to people from sectors far from digital technologies. In this sense, we aim to work closely with our users to achieve a complete and detailed characterization of each particular case, and thus offer a unique solution that fully adapts to their requirements.
@@ -34,7 +34,7 @@ We are aware of the problem that the implementation of such new technologies can
   At Quko we move away from generic solutions. Maintaining a close and trusting relationship with our customers is key to achieve the best results.
   "
   button:
-    enable: true
+    enable: false
     label: "See more"
     link: "project/"
 
@@ -74,8 +74,8 @@ funfacts:
 
   # funfacts item loop
   - icon: "fas fa-keyboard" #https://fontawesome.com/v5.15/icons
-    name: "Finished projects"
-    count: "2"
+    name: "Active projects"
+    count: "3"
 
   # funfacts item loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons

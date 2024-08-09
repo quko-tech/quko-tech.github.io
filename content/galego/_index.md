@@ -24,7 +24,7 @@ about:
 ######################### Portfolio ###############################
 portfolio:
   enable: true
-  bg_image: "images/feature-bg.jpg"
+  bg_image: "images/palada.gif"
   title: "ESCOITÁMOSTE"
   content: "Un dos principais piares de Quko é a nosa filosofía de adaptar o máximo posible as solucións finais ás necesidades dos nosos clientes.
 
@@ -35,7 +35,7 @@ portfolio:
   Dende Quko alexámonos das solucións xerais. Manter unha relación estreita e de confianza cos nosos clientes é crave para lograr os mellores resultados.
   "
   button:
-    enable: true
+    enable: false
     label: "Ver produtos"
     link: "project/"
 
@@ -76,7 +76,7 @@ funfacts:
   # funfacts item loop
   - icon: "fas fa-keyboard" #https://fontawesome.com/v5.15/icons
     name: "Proxectos activos"
-    count: "2"
+    count: "3"
 
   # funfacts item loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons

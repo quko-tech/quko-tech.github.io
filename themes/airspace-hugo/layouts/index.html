@@ -96,7 +96,6 @@
         {{ with .description }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
       </div>
     </div>
-
     <div class="row">
       <div class="col-md-6">
         <div class="block">
@@ -111,47 +110,6 @@
           </ul>
         </div>
       </div>
-
-
-
-      
-      <div class="col-md-5 col-md-offset-1">
-        <div class="testimonial-carousel text-center">
-          <div class="testimonial-slider owl-carousel">
-            {{ range .testimonial_slider }}
-            <div>
-              <i class="fas fa-cogs"></i>
-              {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-              <div class="user">
-                <img src="{{ .image | relURL }}" alt="client">
-                <p><span>{{ .name | markdownify }}</span> {{ .designation | markdownify }}</p>
-              </div>
-            </div>
-            {{ end }}
-          </div>
-        </div>
-      </div>
-
-
-
-
-    <!--
-    <div class="row">
-      <div class="col-md-6">
-        <div class="block">
-          <ul class="counter-box clearfix">
-            {{ range .funfact_item }}
-            <li class="counter-item">
-              <i class="{{ .icon }}"></i>
-              <h4 class="count" data-count="{{ .count }}">0</h4>
-              <span>{{ .name | markdownify }}</span>
-            </li>
-            {{ end }}
-          </ul>
-        </div>
-      </div>
-
-      
       <div class="col-md-5 col-md-offset-1">
         <div class="testimonial-carousel text-center">
           <div class="testimonial-slider owl-carousel">
@@ -168,7 +126,6 @@
           </div>
         </div>
       </div>
-      -->
     </div>
   </div>
 </section>
