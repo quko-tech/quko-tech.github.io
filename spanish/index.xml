@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Airspace | Creative Agency Hugo Template</title>
+    <link>http://localhost:1313/airspace/examplesite/spanish/</link>
+    <description>Recent content on Airspace | Creative Agency Hugo Template</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Mar 2023 21:10:00 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/airspace/examplesite/spanish/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Preguntas Frecuentes</title>
+      <link>http://localhost:1313/airspace/examplesite/spanish/faq/</link>
+      <pubDate>Fri, 10 Mar 2023 21:10:00 +0700</pubDate>
+      <guid>http://localhost:1313/airspace/examplesite/spanish/faq/</guid>
+      <description>1. ¿Por qué elegir Quko frente a otras alternativas? Existe un factor clave que nos diferencia de la competencia: ofrecemos soluciones personalizadas y adaptadas a nuestros clientes.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/airspace/examplesite/spanish/message_sent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/airspace/examplesite/spanish/message_sent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Our Pricing</title>
+      <link>http://localhost:1313/airspace/examplesite/spanish/pricing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/airspace/examplesite/spanish/pricing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pablo (Pepe) Álvarez</title>
+      <link>http://localhost:1313/airspace/examplesite/spanish/author/pablo-pepe-%C3%A1lvarez/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/airspace/examplesite/spanish/author/pablo-pepe-%C3%A1lvarez/</guid>
+      <description>Ingeniero de Telecomunicaciones por la Universidad Politécnica de Madrid, especializado en sistemas de telecomunicaciones y procesado de señal.</description>
+    </item>
+    <item>
+      <title>Ponte en contacto con Quko</title>
+      <link>http://localhost:1313/airspace/examplesite/spanish/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/airspace/examplesite/spanish/contact/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servicios</title>
+      <link>http://localhost:1313/airspace/examplesite/spanish/service/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/airspace/examplesite/spanish/service/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sobre QUKO</title>
+      <link>http://localhost:1313/airspace/examplesite/spanish/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/airspace/examplesite/spanish/about/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

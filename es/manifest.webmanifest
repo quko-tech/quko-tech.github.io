@@ -1,0 +1,54 @@
+{
+  "name": "QUKO | Data solutions",
+  "short_name": "QUKO | Data solutions",
+  "lang": "es-ES",
+  "theme_color": "#655e7a",
+  "background_color": "#fff",
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  "icons": [
+    {
+      "src": "/airspace/examplesite/images/favicon_hu6803633288977241620.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/airspace/examplesite/images/favicon_hu792262539737967493.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/airspace/examplesite/images/favicon_hu9618924702209442576.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/airspace/examplesite/images/favicon_hu16462578527064950409.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/airspace/examplesite/images/favicon_hu1243128188866922698.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/airspace/examplesite/images/favicon_hu11825894736395567997.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  
+  
+  "display": "standalone",
+  "start_url": "/airspace/examplesite/es?utm_source=web_app_manifest"
+}
