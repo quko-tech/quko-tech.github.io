@@ -42,7 +42,7 @@ google_tag_manager = "" # example: G-XXXXXXXXXX
 recaptcha_site_key = "xxx-xxxxxxxxxxxxxxxxxxxxxxxx"
 
 [contact.form]
-enable = false
+enable = true
 # Whether to use [Netlify Forms](https://docs.netlify.com/forms/setup/)
 use_netlify = false
 # Whether to use recaptch v3 in form
@@ -96,7 +96,7 @@ baidu = "" # Your verification code
 
 # google map
 [gmap]
-enable = true
+enable = false
 gmap_api = "AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"
 map_latitude = "51.5223477"
 map_longitude = "-0.1622023"
@@ -115,20 +115,20 @@ sidebar = ["recent_posts", "taxonomy_category", "taxonomy_tags"]
 # available widget : categories,tags,recent-post
 
 ############################# social site ########################
-[[social]]
-title = "facebook"
-icon = "fab fa-facebook"  # fontawesome icon pack : https://fontawesome.com/icons/
-link = "#"
+#[[social]]
+#title = "facebook"
+#icon = "fab fa-facebook"  # fontawesome icon pack : https://fontawesome.com/icons/
+#link = "#"
 
-[[social]]
-title = "twitter"
-icon = "fab fa-twitter"  # fontawesome icon pack : https://fontawesome.com/icons/
-link = "#"
+#[[social]]
+#title = "twitter"
+#icon = "fab fa-twitter"  # fontawesome icon pack : https://fontawesome.com/icons/
+#link = "#"
 
 [[social]]
 title = "instagram"
 icon = "fab fa-instagram" # fontawesome icon pack : https://fontawesome.com/icons/
-link = "#"
+link = "https://instagram.com/quko_es/"
 
 #[[social]]
 #title = "github"
@@ -138,4 +138,4 @@ link = "#"
 [[social]]
 title = "linkedin"
 icon = "fab fa-linkedin" # fontawesome icon pack : https://fontawesome.com/icons/
-link = "#"
+link = "https://www.linkedin.com/in/p-adominguez"
