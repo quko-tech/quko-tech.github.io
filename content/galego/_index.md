@@ -18,7 +18,7 @@ about:
   description: "Nado no mundo do procesado de sinais biométricas e biomecánicas, Quko creouse cunha clara meta: poñer ao alcance de calquera persoa todos os avances tecnolóxicos que nos rodean"
   content: "Vivimos unha época onde as tecnoloxías dixitais atópanse extremadamente evolucionadas: redes de sistemas empotrados, novas técnicas de procesado de sinal, data science ou intelixencia artificial son exemplo disto.  
   <br>En Quko, tenemos como obxectivo ser capaces de levar estas novas ferramentas aos nosos usuarios, para que evolucionen perante o reto da actual revolución dixital 2.0 r podan dispoñer delas para acadar o máximo rendrmiento e beneficios"
-  image: "images/palada.png"
+  image: "images/palada.jpeg"
 
 
 ######################### Portfolio ###############################

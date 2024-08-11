@@ -16,9 +16,9 @@ about:
   enable: true
   title: "About Quko"
   description: "Born in the world of biometric and biomechanical signal processing, Quko was created with a clear goal: to make all the technological advances that surround us available to everyone"
-  content: "VWe live in an era where digital technologies are extremely evolved: embedded systems networks, new signal processing techniques, data science or artificial intelligence are examples of this.  
-  <br>EAt Quko, our goal is to be able to bring these new technologies to our users, so that they evolve to the challenge of the current digital revolution 2.0 and can use them to achieve maximum performance and benefits"
-  image: "images/palada.png"
+  content: "We live in an era where digital technologies are extremely evolved: embedded systems networks, new signal processing techniques, data science or artificial intelligence are examples of this.  
+  <br>At Quko, our goal is to be able to bring these new technologies to our users, so that they evolve to the challenge of the current digital revolution 2.0 and can use them to achieve maximum performance and benefits"
+  image: "images/palada.jpeg"
 
 
 ######################### Portfolio ###############################
