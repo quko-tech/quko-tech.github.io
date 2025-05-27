@@ -60,7 +60,7 @@ gdpr_marketing_consent = "Doy mi consentimiento para recibir correos promocional
 gdpr_marketing_detail = "sobre productos, servicios y ofertas especiales. Esto es opcional y independiente del boletín."
 
 # Derechos de Privacidad RGPD
-gdpr_info_title = "Tus Derechos de Privacidad ="
+gdpr_info_title = "Tus Derechos de Privacidad:"
 gdpr_right_1 = "Solo utilizaremos tus datos para los fines a los que has dado tu consentimiento anteriormente"
 gdpr_right_2 = "Puedes retirar tu consentimiento en cualquier momento cancelando la suscripción o contactando con nosotros"
 gdpr_right_3 = "Nunca compartiremos tu información con terceros sin tu consentimiento"
