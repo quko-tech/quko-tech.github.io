@@ -9,7 +9,7 @@ draft: false
 about:
   enable : true
   title : "Tenemos la solución que buscas"
-  content : "En Quko contamos con la experiencia y el conocimiento necesario para implementar todo tipo de soluciones basadas en las últimas tecnologías digitales en una amplia diversidad de sectores.
+  content : "En QUKO contamos con la experiencia y el conocimiento necesario para implementar todo tipo de soluciones basadas en las últimas tecnologías digitales en una amplia diversidad de sectores.
 
   <br> Independientemente del reto que nos propongan nuestros clientes, ya sea buscar la solución a un problema o la optimización de procesos, les ofrecemos no sólo los mejores resultados, sino también los que mejor se adaptan a sus condiciones en específico."
   image : "images/stock-placa3.jpg"
@@ -42,8 +42,8 @@ featured_service:
 
 service:
   enable : true
-  title : "¿Por qué Quko?"
-  description : "En Quko, disponemos de un equipo con años de experiencia a sus espaldas en los campos de la ingeniería de datos, electrónica, de software y de telecomunicaciones"
+  title : "¿Por qué QUKO?"
+  description : "En QUKO, disponemos de un equipo con años de experiencia a sus espaldas en los campos de la ingeniería de datos, electrónica, de software y de telecomunicaciones"
   service_item:
     # feature item loop
     - icon : fas fa-code #https://fontawesome.com/v5.15/icons
@@ -69,7 +69,7 @@ service:
     # feature item loop
     - icon : fas fa-lightbulb #https://fontawesome.com/v5.15/icons
       name : No paramos
-      content : "En Quko estamos constantemente evolucionando e introduciendo nuevas ideas y actualizaciones en nuestros productos"
+      content : "En QUKO estamos constantemente evolucionando e introduciendo nuevas ideas y actualizaciones en nuestros productos"
 
 
     - icon : fas fa-microscope #https://fontawesome.com/v5.15/icons

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Company News on Quko | Data solutions</title>
+    <link>http://localhost:1313/en/categories/company-news/</link>
+    <description>Recent content in Company News on Quko | Data solutions</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 24 Sep 2018 11:07:10 +0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/categories/company-news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Esto es una prueba</title>
+      <link>http://localhost:1313/en/blog/blog-post-1/</link>
+      <pubDate>Mon, 24 Sep 2018 11:07:10 +0600</pubDate>
+      <guid>http://localhost:1313/en/blog/blog-post-1/</guid>
+      <description>&lt;p&gt;un post de prueba&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

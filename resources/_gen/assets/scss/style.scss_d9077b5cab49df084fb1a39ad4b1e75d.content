@@ -256,8 +256,7 @@ input[type="tel"] {
 .section-subtitle {
   font-size: 28px;
   font-weight: 600;
-  margin-bottom: 30px;
-  color: #ffffff; }
+  margin-bottom: 30px; }
   @media (max-width: 400px) {
     .section-subtitle {
       font-size: 26px; } }
@@ -798,7 +797,7 @@ header .navbar-default .navbar-nav li a:hover {
     padding-top: 30px;
     padding-bottom: 30px; }
   .feature p {
-    color: #b3b3b3;
+    color: #8c8c8c;
     margin-bottom: 20px; }
   .feature .btn-view-works {
     background: #6c6c6c;
@@ -882,7 +881,7 @@ header .navbar-default .navbar-nav li a:hover {
   display: inline-block; }
 
 .portfolio-single-page .project-details strong {
-  color: #ffffff;
+  color: #313131;
   font-weight: normal; }
 
 .portfolio-single-page .project-details ul li {
@@ -1436,7 +1435,7 @@ header .navbar-default .navbar-nav li a:hover {
   .about .about-img:hover img {
     transform: scale3D(1.1, 1.1, 1); }
   .about .about-img img {
-    opacity: .9;
+    opacity: .6;
     -webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
     -ms-transition: all 0.5s ease-out;

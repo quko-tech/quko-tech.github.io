@@ -23,3 +23,45 @@ posted_by = "Posted by"
 read_more = "Continue reading"
 submit = "Send message"
 tags = "Tags"
+
+# Newsletter Form i18n Strings
+# Add these to your Hugo i18n files (e.g., i18n/en.yaml, i18n/es.yaml, etc.)
+
+# Main newsletter content
+newsletter_title = "Stay in the Loop!"
+newsletter_description = "Stay updated with our latest articles, insights, and exclusive content delivered straight to your inbox."
+
+# Form fields
+newsletter_action = "Newsletter Action"
+newsletter_subscribe_text = "Yes, I want to be included in the distribution list newsletter@quko.es"
+newsletter_unsubscribe_text = "Please remove me from the distribution list newsletter@quko.es"
+newsletter_email_label = "Enter your email address"
+newsletter_email_confirm = "Please confirm your email address"
+newsletter_email_confirm_placeholder = "Confirm your email address"
+
+# Buttons
+newsletter_submit = "Submit"
+newsletter_reset = "Reset"
+
+# GDPR Section
+gdpr_consent_title = "Consent & Privacy"
+
+# GDPR Checkboxes
+gdpr_newsletter_consent = "I consent to receive newsletter emails"
+gdpr_newsletter_detail = "containing blog updates, articles, and content from this website. This consent is required to subscribe."
+gdpr_data_consent = "I agree to the processing of my personal data"
+gdpr_data_detail = "(email address) for the purpose of sending newsletters, as described in our"
+gdpr_marketing_consent = "I consent to receive promotional emails"
+gdpr_marketing_detail = "about products, services, and special offers. This is optional and separate from the newsletter."
+
+# GDPR Privacy Rights
+gdpr_info_title = "Your Privacy Rights:"
+gdpr_right_1 = "We will only use your data for the purposes you've consented to above"
+gdpr_right_2 = "You can withdraw your consent at any time by unsubscribing or contacting us"
+gdpr_right_3 = "We will never share your information with third parties without your consent"
+gdpr_right_4 = "You have the right to access, correct, or delete your personal data"
+gdpr_contact_info = "Contact us for any privacy-related questions or to exercise your rights: "
+
+# General terms
+privacy_policy = "Privacy Policy"
+optional = "Optional"

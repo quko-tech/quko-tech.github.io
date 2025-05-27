@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Quko | Data solutions</title>
+    <link>http://localhost:1313/en/categories/</link>
+    <description>Recent content in Categories on Quko | Data solutions</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 27 May 2025 11:07:10 +0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Canoeing</title>
+      <link>http://localhost:1313/en/categories/canoeing/</link>
+      <pubDate>Tue, 27 May 2025 11:07:10 +0600</pubDate>
+      <guid>http://localhost:1313/en/categories/canoeing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kayaking</title>
+      <link>http://localhost:1313/en/categories/kayaking/</link>
+      <pubDate>Tue, 27 May 2025 11:07:10 +0600</pubDate>
+      <guid>http://localhost:1313/en/categories/kayaking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rowing</title>
+      <link>http://localhost:1313/en/categories/rowing/</link>
+      <pubDate>Tue, 27 May 2025 11:07:10 +0600</pubDate>
+      <guid>http://localhost:1313/en/categories/rowing/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

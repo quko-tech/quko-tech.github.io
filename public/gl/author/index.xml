@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on QUKO | Data solutions</title>
+    <link>http://localhost:1313/gl/author/</link>
+    <description>Recent content in Authors on QUKO | Data solutions</description>
+    <generator>Hugo</generator>
+    <language>gl-GL</language>
+    <atom:link href="http://localhost:1313/gl/author/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pablo (Pepe) Álvarez</title>
+      <link>http://localhost:1313/gl/author/pablo-pepe-%C3%A1lvarez/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/gl/author/pablo-pepe-%C3%A1lvarez/</guid>
+      <description>&lt;p&gt;Enxeñeiro de Telecomunicacións pola Universidad Politécnica de Madrid, especializado en sistemas de telecomunicacións e procesado de sinal. Deportista Galego de Alto Nivel en piragüismo, onde compite de forma activa na actualidade.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

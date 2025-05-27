@@ -7,11 +7,11 @@ logo = "images/logo.png"
 # Note: logo_width is not work with .svg file
 logo_width = "180px"
 # logo text will only show when logo is missing.
-logo_text = "Quko"
+logo_text = "QUKO"
 # navbar fixed to top
 navbar_fixed = false
 # OpenGraph / Twitter Card metadata
-description = "Quko | Data solutions"
+description = "QUKO | Data solutions"
 author = "Pablo Álvarez"
 image = "images/logo.png" # this image will be used as fallback if a page has no image of its own
 # Whether to display text descriptors (like "E-mail: ", "Phone: ") before the address block elements
@@ -20,20 +20,24 @@ address_descriptors = false
 phone = "+34 644 43 96 48"
 email = "contacto@quko.es"
 location = """
-**Quko**  
+**QUKO**  
 Cangas do Morrazo              
 Pontevedra, 36940           
 Galicia              
 Spain
 """
 
+privacy_policy_url = "/privacy-policy"  # Update this to your actual privacy policy URL
+
+[newsletter.form]
+enable = true
 
 dateFormat = "02 Jan 2006"
 
 
 
 # copyright
-copyright = "Pablo Álvarez, 2023 (C)"# <br> Powered by [Themefisher](https://themefisher.com/)"
+copyright = "Pablo Álvarez, 2025 (C)"# <br> Powered by [Themefisher](https://themefisher.com/)"
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>" 
 custom_script= ""
 # google tag manager, see https://developers.google.com/tag-manager/

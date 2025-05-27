@@ -1,0 +1,67 @@
+# Traducciones simples sin reglas de pluralización
+404_message = "Lo sentimos – esta página no parece existir"
+address_title = "Dirección"
+all = "Todo"
+buy_now = "Comprar ahora"
+categories = "Categorías"
+contact_form_email = "Tu dirección de correo electrónico"
+contact_form_message = "Mensaje"
+contact_form_name = "Tu nombre"
+contact_form_subject = "Asunto"
+email = "Correo electrónico"
+faq_toc_title = "Índice"
+form_respond = "Gracias por tu mensaje. Te responderemos lo antes posible."
+form_submitted = "Tu mensaje se ha enviado correctamente"
+go_home = "A la página de inicio"
+last_update = "Última actualización"
+latest_posts = "Últimas Entradas"
+location = "Ubicación"
+page_next = "Más antiguas"
+page_prev = "Más recientes"
+phone = "Teléfono"
+posted_by = "Publicado por"
+read_more = "Seguir leyendo"
+submit = "Enviar mensaje"
+tags = "Etiquetas"
+
+# Newsletter Form i18n Strings - Spanish (Spain)
+# Añade estas traducciones a tus archivos i18n de Hugo (ej = i18n/es.yaml)
+
+# Contenido principal del boletín
+newsletter_title = "Suscríbete a Nuestro Boletín"
+newsletter_description = "Mantente al día con nuestros últimos artículos, análisis y contenido exclusivo directamente en tu bandeja de entrada."
+
+# Campos del formulario
+newsletter_action = "Acción del Boletín"
+newsletter_subscribe_text = "Sí, quiero ser incluido en la lista de distribución newsletter@quko.es"
+newsletter_unsubscribe_text = "Por favor, eliminadme de la lista de distribución newsletter@quko.es"
+newsletter_email_label = "Introduce tu dirección de correo electrónico"
+newsletter_email_confirm = "Por favor, confirma tu dirección de correo electrónico"
+newsletter_email_confirm_placeholder = "Confirma tu dirección de correo"
+
+# Botones
+newsletter_submit = "Enviar"
+newsletter_reset = "Restablecer"
+
+# Sección RGPD
+gdpr_consent_title = "Consentimiento y Privacidad"
+
+# Casillas de verificación RGPD
+gdpr_newsletter_consent = "Doy mi consentimiento para recibir correos del boletín"
+gdpr_newsletter_detail = "con actualizaciones del blog, artículos y contenido de este sitio web. Este consentimiento es necesario para suscribirse."
+gdpr_data_consent = "Acepto el tratamiento de mis datos personales"
+gdpr_data_detail = "(dirección de correo electrónico) con el fin de enviar boletines, tal como se describe en nuestra"
+gdpr_marketing_consent = "Doy mi consentimiento para recibir correos promocionales"
+gdpr_marketing_detail = "sobre productos, servicios y ofertas especiales. Esto es opcional y independiente del boletín."
+
+# Derechos de Privacidad RGPD
+gdpr_info_title = "Tus Derechos de Privacidad ="
+gdpr_right_1 = "Solo utilizaremos tus datos para los fines a los que has dado tu consentimiento anteriormente"
+gdpr_right_2 = "Puedes retirar tu consentimiento en cualquier momento cancelando la suscripción o contactando con nosotros"
+gdpr_right_3 = "Nunca compartiremos tu información con terceros sin tu consentimiento"
+gdpr_right_4 = "Tienes derecho a acceder, corregir o eliminar tus datos personales"
+gdpr_contact_info = "Contacta con nosotros para cualquier consulta relacionada con la privacidad o para ejercer tus derechos: "
+
+# Términos generales
+privacy_policy = "Política de Privacidad"
+optional = "Opcional"

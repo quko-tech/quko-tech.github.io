@@ -1,5 +1,5 @@
 ---
-title: "About Quko"
+title: "About QUKO"
 description: "At the forefront of technology to achieve maximum performance"
 bg_image: "images/feature-bg.jpg"
 layout: "about"
@@ -17,7 +17,7 @@ about:
   <br>
 
 
-  At Quko we believe in the possibility of adapting this type of technology in such a way that it can be used in all kinds of different circumstances, thus optimizing processes in previously unimaginable ways. 
+  At QUKO we believe in the possibility of adapting this type of technology in such a way that it can be used in all kinds of different circumstances, thus optimizing processes in previously unimaginable ways. 
 
 
   <br>
@@ -29,7 +29,7 @@ about:
   <br>
 
 
-  From hardware to software, signal processing, deployment of communication networks or implementation of embedded systems, at Quko there will always be an expert in the field to offer you the solution that best suits your needs."
+  From hardware to software, signal processing, deployment of communication networks or implementation of embedded systems, at QUKO there will always be an expert in the field to offer you the solution that best suits your needs."
 
   #button:
   #  enable : true
@@ -40,17 +40,17 @@ about:
   # funfacts loop
   - icon : "fas fa-flask" #https://fontawesome.com/v5.15/icons
     name : "Current projects"
-    count : "2"
+    count : "4"
 
   # funfacts loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
     name : "Lines of code"
-    count : "25000"
+    count : "500000"
 
   # funfacts loop
   - icon : "fas fa-glasses" #https://fontawesome.com/v5.15/icons
     name : "Years in the industry"
-    count : "2"
+    count : "3"
 
   # funfacts loop
   - icon : "fas fa-trophy" #https://fontawesome.com/v5.15/icons
@@ -59,12 +59,12 @@ about:
 
   # funfacts loop
   - icon : "fas fa-glass-cheers" #https://fontawesome.com/v5.15/icons
-    name : "Cafés"
+    name : "Coffees"
     count : "384"
 
   # funfacts loop
   - icon : "fas fa-certificate" #https://fontawesome.com/v5.15/icons
-    name : "Paddles paddled"
+    name : "Strokes paddled"
     count : "48000"
 
 ################################ feature #####################################
@@ -113,7 +113,7 @@ mission_vision:
   tabs:
   # tab item loop
   - name : "Vision"
-    content : "At Quko, we strongly believe in the use of cutting-edge technologies in order to optimize the efficiency of any type of activity or process, be it industrial, professional, sports, and more.
+    content : "At QUKO, we strongly believe in the use of cutting-edge technologies in order to optimize the efficiency of any type of activity or process, be it industrial, professional, sports, and more.
 <br><br>
     We are also aware of the huge number of people who could benefit enormously from the implementation of this type of solutions, so we seek to make them as accessible as possible."
 
@@ -123,7 +123,7 @@ mission_vision:
 
   # tab item loop
   - name : "Approach"
-    content : "Quko's goal is to achieve the solution that best suits our customers' requirements. To achieve this, we believe in establishing a close relationship with them, so that our team acquires a complete understanding of the problem to be solved and can provide the right solution.
+    content : "QUKO's goal is to achieve the solution that best suits our customers' requirements. To achieve this, we believe in establishing a close relationship with them, so that our team acquires a complete understanding of the problem to be solved and can provide the right solution.
 <br><br>
 In this process, our clients' trust in us is key, so our main pillars when working with them are communication and confidentiality."
 

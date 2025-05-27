@@ -5,7 +5,7 @@ banner:
   bg_image: "images/verdu.jpg"
   bg_overlay: true
   title: "Tecnoloxía de vangarda <br/> oa alcance de todos "
-  content: "En Quko, traballamos para ofrecer solucións innovadoras basadas nas últimas tecnoloxías aos nosos clientes"
+  content: "En QUKO, traballamos para ofrecer solucións innovadoras basadas nas últimas tecnoloxías aos nosos clientes"
   button:
     enable: true
     label: "Coñécenos"
@@ -14,10 +14,10 @@ banner:
 ############################# About #################################
 about:
   enable: true
-  title: "Sobre Quko"
-  description: "Nado no mundo do procesado de sinais biométricas e biomecánicas, Quko creouse cunha clara meta: poñer ao alcance de calquera persoa todos os avances tecnolóxicos que nos rodean"
+  title: "Sobre QUKO"
+  description: "Nado no mundo do procesado de sinais biométricas e biomecánicas, QUKO creouse cunha clara meta: poñer ao alcance de calquera persoa todos os avances tecnolóxicos que nos rodean"
   content: "Vivimos unha época onde as tecnoloxías dixitais atópanse extremadamente evolucionadas: redes de sistemas empotrados, novas técnicas de procesado de sinal, data science ou intelixencia artificial son exemplo disto.  
-  <br>En Quko, tenemos como obxectivo ser capaces de levar estas novas ferramentas aos nosos usuarios, para que evolucionen perante o reto da actual revolución dixital 2.0 r podan dispoñer delas para acadar o máximo rendrmiento e beneficios"
+  <br>En QUKO, tenemos como obxectivo ser capaces de levar estas novas ferramentas aos nosos usuarios, para que evolucionen perante o reto da actual revolución dixital 2.0 r podan dispoñer delas para acadar o máximo rendrmiento e beneficios"
   image: "images/palada.jpeg"
 
 
@@ -26,13 +26,13 @@ portfolio:
   enable: true
   bg_image: "images/palada.gif"
   title: "ESCOITÁMOSTE"
-  content: "Un dos principais piares de Quko é a nosa filosofía de adaptar o máximo posible as solucións finais ás necesidades dos nosos clientes.
+  content: "Un dos principais piares de QUKO é a nosa filosofía de adaptar o máximo posible as solucións finais ás necesidades dos nosos clientes.
 
 
   Somos conscientes do problema que pode supoñer a implementación de tecnoloxías tan novas a xente de sectores afastados da revolución dixital. Neste sentido, procuramos traballar de xeito conxunto cos usuarios para lograr unha completa e detallada caracterización de cada caso particular, e ofrecer así unha solución única que se adapte por completo aos seus requerimentos.
 
 
-  Dende Quko alexámonos das solucións xerais. Manter unha relación estreita e de confianza cos nosos clientes é crave para lograr os mellores resultados.
+  Dende QUKO alexámonos das solucións xerais. Manter unha relación estreita e de confianza cos nosos clientes é crave para lograr os mellores resultados.
   "
   button:
     enable: false
@@ -51,7 +51,7 @@ cta:
   enable: true
   bg_image: "images/call-to-action-bg.jpg"
   title: "Optimiza o teu rendemento"
-  content: "En Quko, ofrecemos todo tipo de solucións para levar as últimas tecnoloxías a diferentes ámbitos<br><br>Se estás interesado nos nosos servizos ou tes calquera pregunta sobre eles, ¡non dubides en poñerte en contacto connosco!"
+  content: "En QUKO, ofrecemos todo tipo de solucións para levar as últimas tecnoloxías a diferentes ámbitos<br><br>Se estás interesado nos nosos servizos ou tes calquera pregunta sobre eles, ¡non dubides en poñerte en contacto connosco!"
   button:
     enable: true
     label: "Ponte en contacto"
@@ -61,7 +61,7 @@ cta:
 funfacts:
   enable: true
   title: "Datos sobre nós"
-  description: "Hai moito traballo tras Quko, ¡e aínda estamos medrando!"
+  description: "Hai moito traballo tras QUKO, ¡e aínda estamos medrando!"
   funfact_item:
   # funfacts item loop
   - icon: "fas fa-mug-hot" #https://fontawesome.com/v5.15/icons
@@ -76,12 +76,12 @@ funfacts:
   # funfacts item loop
   - icon: "fas fa-keyboard" #https://fontawesome.com/v5.15/icons
     name: "Proxectos activos"
-    count: "3"
+    count: "4"
 
   # funfacts item loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
     name : "Liñas de código"
-    count : "25000"
+    count : "500000"
 
 
 

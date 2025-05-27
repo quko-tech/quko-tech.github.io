@@ -21,10 +21,10 @@ weight = 3
 #url = "project/"
 #weight = 3
 
-#[[main]]
-#name = "Blog"
-#url = "blog/"
-#weight = 4
+[[main]]
+name = "Blog"
+url = "blog/"
+weight = 4
 
 [[main]]
 weight = 5
@@ -45,17 +45,24 @@ hasChildren = true
 
   [[main]]
   parent = "More"
+  name = "Newsletter"
+  url = "newsletter/"
+  weight = 4
+
+  [[main]]
+  parent = "More"
   name = "FAQ"
   url = "faq/"
   weight = 3
   
-[[main]]
-name = "Contact"
-url = "contact/"
-weight = 6
+  [[main]]
+  parent = "More"
+  name = "Contact"
+  url = "contact/"
+  weight = 4
 
 [[main]]
-name = "Access"
+name = "Access QUKO Cloud"
 url = "https://app.quko.es/"
 weight = 7
 

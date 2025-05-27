@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kayaking on QUKO | Data solutions</title>
+    <link>http://localhost:1313/es/categories/kayaking/</link>
+    <description>Recent content in Kayaking on QUKO | Data solutions</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <lastBuildDate>Tue, 27 May 2025 11:07:10 +0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/es/categories/kayaking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>La Ciencia Detrás del Diseño Perfecto de Palas: Lo que la Física Revela sobre la Longitud Óptima de Remos y el Tamaño de las Palas</title>
+      <link>http://localhost:1313/es/blog/2025.05.27/</link>
+      <pubDate>Tue, 27 May 2025 11:07:10 +0600</pubDate>
+      <guid>http://localhost:1313/es/blog/2025.05.27/</guid>
+      <description>&lt;p&gt;Una investigación revolucionaria reciente de la École polytechnique y Phyling, dirigida por Romain Labbé y su equipo, ha revolucionado nuestra comprensión de la optimización de palas en deportes acuáticos. Su estudio &lt;em&gt;&amp;ldquo;Physics of rowing oars&amp;rdquo;&lt;/em&gt; desafía la sabiduría convencional al examinar la eficiencia de las palas a través del prisma de las limitaciones fisiológicas humanas en lugar de consideraciones puramente mecánicas. Esta investigación no solo se aplica al remo—sus ideas se extienden al kayak de velocidad y al piragüismo, ofreciendo orientación valiosa para cualquier atleta que dependa de la eficiencia de las palas para el rendimiento.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

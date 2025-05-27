@@ -3,7 +3,7 @@
 languageName = "Español"
 languageCode = "es-ES"
 contentDir = "content/spanish"
-weight = 1
+weight = 3
 
 ################ French language ##################
 [gl]
@@ -17,4 +17,4 @@ weight = 2
 languageName = "English"
 languageCode = "en-US"
 contentDir = "content/english"
-weight = 3
+weight = 1

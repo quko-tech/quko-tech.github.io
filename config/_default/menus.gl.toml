@@ -50,13 +50,14 @@ hasChildren = true
   url = "faq/"
   weight = 3
   
-[[main]]
-name = "Contacto"
-url = "contact/"
-weight = 6
+  [[main]]
+  parent = "Máis"
+  name = "Contacto"
+  url = "contact/"
+  weight = 4
 
 [[main]]
-name = "Acceso"
+name = "QUKO Cloud"
 url = "https://app.quko.es/"
 weight = 7
 

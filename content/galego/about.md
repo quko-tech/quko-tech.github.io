@@ -1,5 +1,5 @@
 ---
-title: "Sobre Quko"
+title: "Sobre QUKO"
 description: "Á vangarda da tecnoloxía para acadar o máximo rendemento"
 bg_image: "images/feature-bg.jpg"
 layout: "about"
@@ -17,7 +17,7 @@ about:
   <br>
 
 
-  En Quko cremos na posibilidade de adaptar este tipo de tecnoloxías de xeito que podan utilizarse en todo tipo de circunstancias diferentes, logrando así optimizar procesos de formas antes inimaxinables. 
+  En QUKO cremos na posibilidade de adaptar este tipo de tecnoloxías de xeito que podan utilizarse en todo tipo de circunstancias diferentes, logrando así optimizar procesos de formas antes inimaxinables. 
 
 
   <br>
@@ -29,7 +29,7 @@ about:
   <br>
 
 
-  De hardware a software, pasando por procesado de sinal, despregadura de redes de comunicacións ou implementación de sistemas encaixados, en Quko sempre haberá un experto na materia para ofrecerche a solución que mellor se adapte aas túas necesidades."
+  De hardware a software, pasando por procesado de sinal, despregadura de redes de comunicacións ou implementación de sistemas encaixados, en QUKO sempre haberá un experto na materia para ofrecerche a solución que mellor se adapte aas túas necesidades."
 
   #button:
   #  enable : true
@@ -40,17 +40,17 @@ about:
   # funfacts loop
   - icon : "fas fa-flask" #https://fontawesome.com/v5.15/icons
     name : "Proxectos"
-    count : "2"
+    count : "4"
 
   # funfacts loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
     name : "Liñas de código"
-    count : "25000"
+    count : "500000"
 
   # funfacts loop
   - icon : "fas fa-glasses" #https://fontawesome.com/v5.15/icons
     name : "Anos no sector"
-    count : "2"
+    count : "3"
 
   # funfacts loop
   - icon : "fas fa-trophy" #https://fontawesome.com/v5.15/icons
@@ -113,7 +113,7 @@ mission_vision:
   tabs:
   # tab item loop
   - name : "Vision"
-    content : "En Quko, cremos firmemente no uso de tecnoloxías á vangarda coa fin de optimizar a eficiencia de cualquera tipo de actividade ou proceso, sexa sea industrial, profesional, deportivo, ou algo completamente novo.
+    content : "En QUKO, cremos firmemente no uso de tecnoloxías á vangarda coa fin de optimizar a eficiencia de cualquera tipo de actividade ou proceso, sexa sea industrial, profesional, deportivo, ou algo completamente novo.
 <br><br>
     Ademáis, somos conscientes do inmenso número de persoas que poderían beneficiarse enormemente da implantación deste tipo de solucións, polo que procuramos achegarllas do xeito máis accesible posible"
 
@@ -123,7 +123,7 @@ mission_vision:
 
   # tab item loop
   - name : "Approach"
-    content : "A meta de Quko é lograr a solución que mellor se adapte aos requerimentos dos nosos usuarios. Para iso, cremos no establecemiento dunha relación estreita con eles, de forma que o noso equipo adquira un entendemiento completo do problema a resolver e poda así facilitarlle a solución adecuada.
+    content : "A meta de QUKO é lograr a solución que mellor se adapte aos requerimentos dos nosos usuarios. Para iso, cremos no establecemiento dunha relación estreita con eles, de forma que o noso equipo adquira un entendemiento completo do problema a resolver e poda así facilitarlle a solución adecuada.
 <br><br>
 Neste proceso, a confianza dos nuestros clientes en nós é crave, polo que baseamos a nosa filosofía de traballo na boa comunicación e a confidencialidade."
 

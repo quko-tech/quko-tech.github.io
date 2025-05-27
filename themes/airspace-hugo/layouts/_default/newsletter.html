@@ -1,0 +1,266 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section class="contact-form">
+  <div class="container">
+    {{ with site.Params.newsletter.form }}{{ if .enable -}}
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="newsletter-intro block">
+          <h2>{{ i18n "newsletter_title" | default "Stay in the Loop!" }}</h2>
+          <p>{{ i18n "newsletter_description" | default "Stay updated with our latest articles, insights, and exclusive content delivered straight to your inbox." }}</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <form method="POST" action="https://ml.kundenserver.de/cgi-bin/mailinglist.cgi" target="_blank">
+        
+        <div class="col-md-12 col-sm-12">
+          <div class="block">
+            <div class="form-group">
+              <label>{{ i18n "newsletter_action" | default "Newsletter Action" }}</label>
+              <div class="radio-wrapper">
+                <input checked name="subscribe_r" type="radio" value="subscribe" id="subscribe" class="form-radio">
+                <label for="subscribe" class="radio-label">
+                  &ensp;{{ i18n "newsletter_subscribe_text" | default "Yes, I want to be included in the distribution list newsletter@quko.es" }}
+                </label>
+              </div>
+              <div class="radio-wrapper">
+                <input name="subscribe_r" type="radio" value="unsubscribe" id="unsubscribe" class="form-radio">
+                <label for="unsubscribe" class="radio-label">
+                  &ensp;{{ i18n "newsletter_unsubscribe_text" | default "Please remove me from the distribution list newsletter@quko.es" }}
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">{{ i18n "newsletter_email_label" | default "Enter your email address" }}</label>
+              <input id="email" 
+                     name="mailaccount_r" 
+                     type="email" 
+                     maxlength="51" 
+                     size="51"
+                     class="form-control" 
+                     placeholder="{{ i18n "contact_form_email" | default "your@email.com" }}" 
+                     required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email-confirm">{{ i18n "newsletter_email_confirm" | default "Please confirm your email address" }}</label>
+              <input id="email-confirm" 
+                     name="mailaccount2_r" 
+                     type="email" 
+                     maxlength="51" 
+                     size="51"
+                     class="form-control" 
+                     placeholder="{{ i18n "newsletter_email_confirm_placeholder" | default "Confirm your email address" }}" 
+                     required>
+            </div>
+
+            <!-- Hidden fields for mailing list configuration -->
+            <input name="FBMLNAME" type="hidden" value="newsletter@quko.es">
+            <input name="FBLANG" type="hidden" value="{{ $.Language.Lang | default "en" }}">
+            <input name="FBURLERROR_L" type="hidden" value="https://ml.kundenserver.de/mailinglist/error.{{ $.Language.Lang | default "en" }}.html">
+            <input name="FBURLSUBSCRIBE_L" type="hidden" value="https://ml.kundenserver.de/mailinglist/subscribe.{{ $.Language.Lang | default "en" }}.html">
+            <input name="FBURLUNSUBSCRIBE_L" type="hidden" value="https://ml.kundenserver.de/mailinglist/unsubscribe.{{ $.Language.Lang | default "en" }}.html">
+            <input name="FBURLINVALID_L" type="hidden" value="https://ml.kundenserver.de/mailinglist/invalid.{{ $.Language.Lang | default "en" }}.html">
+          </div>
+          
+          <div class="block gdpr-block">
+            <div class="gdpr-title">
+              <h4>{{ i18n "gdpr_consent_title" | default "Consent & Privacy" }}</h4>
+            </div>
+            
+            <div class="form-group">
+              <div class="checkbox-wrapper">
+                <input type="checkbox" 
+                       class="form-check-input" 
+                       id="consent-newsletter" 
+                       name="consent_newsletter" 
+                       required>
+                <label class="checkbox-label" for="consent-newsletter">
+                  <strong>&ensp;{{ i18n "gdpr_newsletter_consent" | default "I consent to receive newsletter emails" }}</strong> {{ i18n "gdpr_newsletter_detail" | default "containing blog updates, articles, and content from this website. This consent is required to subscribe." }} <span style="color: #d32f2f;">*</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="checkbox-wrapper">
+                <input type="checkbox" 
+                       class="form-check-input" 
+                       id="consent-data-processing" 
+                       name="consent_data_processing" 
+                       required>
+                <label class="checkbox-label" for="consent-data-processing">
+                  <strong>&ensp;{{ i18n "gdpr_data_consent" | default "I agree to the processing of my personal data" }}</strong> {{ i18n "gdpr_data_detail" | default "(email address) for the purpose of sending newsletters, as described in our" }} 
+                  <a href="{{ "/privacy-policy" | relLangURL }}" target="_blank">{{ i18n "privacy_policy" | default "Privacy Policy" }}</a>. <span style="color: #d32f2f;">*</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="checkbox-wrapper">
+                <input type="checkbox" 
+                       class="form-check-input" 
+                       id="consent-marketing" 
+                       name="consent_marketing">
+                <label class="checkbox-label" for="consent-marketing">
+                  <strong>&ensp;{{ i18n "gdpr_marketing_consent" | default "I consent to receive promotional emails" }}</strong> {{ i18n "gdpr_marketing_detail" | default "about products, services, and special offers. This is optional and separate from the newsletter." }} <em>({{ i18n "optional" | default "Optional" }})</em>
+                </label>
+              </div>
+            </div>
+
+            <div class="gdpr-info">
+              <small>
+                <strong>{{ i18n "gdpr_info_title" | default "Your Privacy Rights:" }}</strong>
+              </small>
+              <ul class="privacy-rights-list">
+                <li><small>{{ i18n "gdpr_right_1" | default "We will only use your data for the purposes you've consented to above" }}</small></li>
+                <li><small>{{ i18n "gdpr_right_2" | default "You can withdraw your consent at any time by unsubscribing or contacting us" }}</small></li>
+                <li><small>{{ i18n "gdpr_right_3" | default "We will never share your information with third parties without your consent" }}</small></li>
+                <li><small>{{ i18n "gdpr_right_4" | default "You have the right to access, correct, or delete your personal data" }}</small></li>
+              </ul>
+              <small>
+                {{ i18n "gdpr_contact_info" | default "Contact us for any privacy-related questions or to exercise your rights: " }}
+                <a href="mailto:contacto@quko.es">contacto@quko.es</a>
+              </small>
+            </div>
+          </div>
+          
+          <div class="block">
+            <button class="btn btn-default" type="submit">
+              {{ i18n "newsletter_submit" | default "Submit" }}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    {{- end }}{{ end }}
+  </div>
+</section>
+
+<style>
+.newsletter-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.newsletter-intro h2 {
+  margin-bottom: 15px;
+}
+
+.gdpr-block {
+  border: 1px solid #e1e1e1;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+.gdpr-title h4 {
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.radio-wrapper {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.form-radio {
+  margin-right: 15px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.radio-label {
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+  margin: 0;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.form-check-input {
+  margin-right: 20px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+  margin: 0;
+}
+
+.checkbox-label a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.gdpr-info {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e1e1e1;
+}
+
+.gdpr-info small {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #666;
+}
+
+.privacy-rights-list {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.privacy-rights-list li {
+  margin-bottom: 5px;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+</style>
+
+<script>
+// Email confirmation validation
+document.addEventListener('DOMContentLoaded', function() {
+  const emailField = document.getElementById('email');
+  const confirmField = document.getElementById('email-confirm');
+  
+  function validateEmails() {
+    if (emailField.value && confirmField.value) {
+      if (emailField.value !== confirmField.value) {
+        confirmField.setCustomValidity('Email addresses do not match');
+      } else {
+        confirmField.setCustomValidity('');
+      }
+    }
+  }
+  
+  emailField.addEventListener('input', validateEmails);
+  confirmField.addEventListener('input', validateEmails);
+});
+</script>
+
+{{ end }}

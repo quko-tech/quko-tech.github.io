@@ -9,7 +9,7 @@ draft: false
 about:
   enable : true
   title : "We have the solution you are looking for"
-  content : "At Quko we have the experience and knowledge necessary to implement all types of solutions based on the latest digital technologies in a wide variety of sectors.
+  content : "At QUKO we have the experience and knowledge necessary to implement all types of solutions based on the latest digital technologies in a wide variety of sectors.
 
   <br> Regardless of the challenge our customers set us, whether it is the solution to a problem or the optimization of processes, we offer them not only the best results, but also those that are best suited to their specific conditions."
   image : "images/stock-placa3.jpg"
@@ -42,8 +42,8 @@ featured_service:
 
 service:
   enable : true
-  title : "Why Quko?"
-  description : "At Quko, we have a team with years of experience behind them in the fields of data, electronics, software and telecommunications engineering."
+  title : "Why QUKO?"
+  description : "At QUKO, we have a team with years of experience behind them in the fields of data, electronics, software and telecommunications engineering."
   service_item:
     # feature item loop
     - icon : fas fa-code #https://fontawesome.com/v5.15/icons
@@ -69,11 +69,11 @@ service:
     # feature item loop
     - icon : fas fa-lightbulb #https://fontawesome.com/v5.15/icons
       name : We never stop
-      content : "At Quko we are constantly evolving and introducing new ideas and updates to our products."
+      content : "At QUKO we are constantly evolving and introducing new ideas and updates to our products."
 
 
     - icon : fas fa-microscope #https://fontawesome.com/v5.15/icons
-      name : At the vanguard
+      name : State of the art
       content : "We research and make use of novel techniques to bring the most innovative solutions within everyone's reach."
 
 
