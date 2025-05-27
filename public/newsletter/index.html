@@ -465,8 +465,18 @@
         </div>
       </div>
     </div>
+
+    <div class="benefits">
+        <h4>What will you receive?</h4>
+        <ul>
+            <li>New scientific content right in your inbox</li>
+            <li>Exclusive content for our subscribers</li>
+            <li>Useful scientific and technical resources</li>
+            <li>Without any spam, just valuable content</li>
+        </ul>
+    </div>
     
-    <div class="row">
+    <div class="benefits row">
       <form method="POST" action="https://ml.kundenserver.de/cgi-bin/mailinglist.cgi" target="_blank">
         
         <div class="col-md-12 col-sm-12">
@@ -476,13 +486,13 @@
               <div class="radio-wrapper">
                 <input checked name="subscribe_r" type="radio" value="subscribe" id="subscribe" class="form-radio">
                 <label for="subscribe" class="radio-label">
-                  &ensp;Yes, I want to be included in the distribution list newsletter@quko.es
+                  &ensp;✅ Yes, I want to be included in the distribution list newsletter@quko.es
                 </label>
               </div>
               <div class="radio-wrapper">
                 <input name="subscribe_r" type="radio" value="unsubscribe" id="unsubscribe" class="form-radio">
                 <label for="unsubscribe" class="radio-label">
-                  &ensp;Please remove me from the distribution list newsletter@quko.es
+                  &ensp;❌ Please remove me from the distribution list newsletter@quko.es
                 </label>
               </div>
             </div>
@@ -566,7 +576,7 @@
 
             <div class="gdpr-info">
               <small>
-                <strong>Your Privacy Rights:</strong>
+                <strong>🔒 Your Privacy Rights:</strong>
               </small>
               <ul class="privacy-rights-list">
                 <li><small>We will only use your data for the purposes you&#39;ve consented to above</small></li>
@@ -593,6 +603,39 @@
 </section>
 
 <style>
+.benefits {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.benefits h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.benefits ul {
+    list-style: none;
+    color: #555;
+}
+
+.benefits li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.benefits li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+  
 .newsletter-intro {
   text-align: center;
   margin-bottom: 30px;

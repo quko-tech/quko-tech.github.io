@@ -25,7 +25,12 @@ submit = "Enviar mensaxe"
 tags = "Etiquetas"
 
 # Newsletter Form i18n Strings - Galician
-# Engade estas traducións aos teus ficheiros i18n de Hugo (ex = i18n/gl.yaml)
+
+newsletter_benefits_title = "Que recibirás?"
+newsletter_benefit_1 = "Novo contido científico directamente na túa caixa de correo"
+newsletter_benefit_2 = "Contido exclusivo para os nosos subscritores"
+newsletter_benefit_3 = "Recursos científicos e técnicos útiles"
+newsletter_benefit_4 = "Sen spam, só contido valioso"
 
 # Contido principal do boletín
 newsletter_title = "Subscríbete ao Noso Boletín"

@@ -25,7 +25,12 @@ submit = "Enviar mensaje"
 tags = "Etiquetas"
 
 # Newsletter Form i18n Strings - Spanish (Spain)
-# Añade estas traducciones a tus archivos i18n de Hugo (ej = i18n/es.yaml)
+
+newsletter_benefits_title = "¿Qué recibirás?"
+newsletter_benefit_1 = "Nuevo contenido científico directamente en tu bandeja de entrada"
+newsletter_benefit_2 = "Contenido exclusivo para nuestros suscriptores"
+newsletter_benefit_3 = "Recursos científicos y técnicos útiles"
+newsletter_benefit_4 = "Sin spam, solo contenido valioso"
 
 # Contenido principal del boletín
 newsletter_title = "Suscríbete a Nuestro Boletín"

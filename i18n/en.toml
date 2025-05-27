@@ -25,11 +25,16 @@ submit = "Send message"
 tags = "Tags"
 
 # Newsletter Form i18n Strings
-# Add these to your Hugo i18n files (e.g., i18n/en.yaml, i18n/es.yaml, etc.)
 
 # Main newsletter content
 newsletter_title = "Stay in the Loop!"
 newsletter_description = "Stay updated with our latest articles, insights, and exclusive content delivered straight to your inbox."
+
+newsletter_benefits_title = "What will you receive?"
+newsletter_benefit_1 = "New scientific content right in your inbox"
+newsletter_benefit_2 = "Exclusive content for our subscribers"
+newsletter_benefit_3 = "Useful scientific and technical resources"
+newsletter_benefit_4 = "Without any spam, just valuable content"
 
 # Form fields
 newsletter_action = "Newsletter Action"
