@@ -92,6 +92,24 @@
                 href="http://localhost:1313/categories/kayaking/"
                 />
   </url><url>
+    <loc>http://localhost:1313/blog/2025.05.27/</loc>
+    <lastmod>2025-05-27T11:07:10+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/blog/2025.05.27/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/blog/2025.05.27/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/blog/2025.05.27/"
+                />
+  </url><url>
     <loc>http://localhost:1313/tags/physics/</loc>
     <lastmod>2025-05-27T11:07:10+06:00</lastmod>
     <xhtml:link
@@ -162,24 +180,6 @@
                 rel="alternate"
                 hreflang="en-US"
                 href="http://localhost:1313/tags/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/blog/2025.05.27/</loc>
-    <lastmod>2025-05-27T11:07:10+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/blog/2025.05.27/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/blog/2025.05.27/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/blog/2025.05.27/"
                 />
   </url><url>
     <loc>http://localhost:1313/faq/</loc>

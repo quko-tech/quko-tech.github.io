@@ -1,108 +1,188 @@
 {{ define "main" }}
 
-{{ partial "page-title.html" . }}
-
 <!-- checking blog -->
 {{ if or (eq .Section "post") (eq .Section "posts") (eq .Section "blog") (eq .Section "blogs") (eq .Section "news") (eq .Section "categories") (eq .Section "tags") }}
 
 <div class="page-wrapper">
   <div class="container">
+    <!-- Blog Header -->
+    <div class="blog-header">
+      <h1 class="blog-title">
+        {{ if eq .Section "blog" }}{{ i18n "blog" | default "Blog" }}
+        {{ else if eq .Section "news" }}{{ i18n "news" | default "News" }}
+        {{ else if eq .Section "posts" }}{{ i18n "posts" | default "Posts" }}
+        {{ else }}{{ .Section | title }}{{ end }}
+      </h1>
+      <p class="blog-subtitle">
+        {{ if .Description }}{{ .Description }}
+        {{ else if eq .Section "blog" }}{{ i18n "blog_description" | default "Discover our latest thoughts, insights, and stories" }}
+        {{ else if eq .Section "news" }}{{ i18n "news_description" | default "Stay updated with our latest news and announcements" }}
+        {{ else }}{{ i18n "posts_description" | default "Read our latest articles and updates" }}{{ end }}
+      </p>
+    </div>
+
     <div class="row">
       <div class="col-md-8">
         {{ $paginator := .Paginate .Data.Pages -}}
         {{ range $paginator.Pages -}}
-        <div class="post">
-          <div class="post-media post-thumb">
-            {{ if isset .Params "image" -}}
-            <a href="{{ .RelPermalink }}">
-              <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
-            </a>
-            {{- end }}
+        <article class="post">
+          <div class="post-container">
+            <!-- Post Image Section -->
+            <div class="post-media post-thumb">
+              {{ if isset .Params "image" -}}
+              <a href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">
+                <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy">
+              </a>
+              {{ else -}}
+              <!-- Fallback gradient background if no image -->
+              <a href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">
+                <div style="width: 100%; height: 220px; background: linear-gradient(135deg, #f53f3f 0%, #e02d2d 100%); display: flex; align-items: center; justify-content: center;">
+                  <i class="fas fa-file-alt" style="font-size: 48px; color: rgba(255,255,255,0.7);"></i>
+                </div>
+              </a>
+              {{- end }}
+            </div>
+
+            <!-- Post Content Section -->
+            <div class="post-content-wrapper">
+              <div class="post-header">
+                <h3 class="post-title">
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h3>
+                
+                <div class="post-meta">
+                  <ul>
+                    <li>
+                      <i class="fas fa-calendar-alt"></i>
+                      <time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+                        {{ time.Format ":date_long" .PublishDate }}
+                      </time>
+                    </li>
+                    <li>
+                      <i class="fas fa-user"></i>
+                      {{ i18n "posted_by" }}
+                      {{ $authors := slice }}{{ if reflect.IsSlice .Params.author }}{{ $authors = .Params.author }}{{ else }}{{ $authors = (slice .Params.author) }}{{ end -}}
+                      {{ range $index, $elements := $authors }}{{ if ne $index 0 }}| {{ end }}<a class="post-author" href="{{ `author/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+                    </li>
+                    {{ if .Params.tags -}}
+                    <li>
+                      <i class="fas fa-tags"></i>
+                      {{ range $index, $elements:= .Params.tags }}{{ if ne $index 0 }}| {{ end }}<a href="{{ `tags/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+                    </li>
+                    {{- end }}
+                    {{ if .Params.categories -}}
+                    <li>
+                      <i class="fas fa-folder"></i>
+                      {{ range $index, $elements:= .Params.categories }}{{ if ne $index 0 }}| {{ end }}<a href="{{ `categories/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+                    </li>
+                    {{- end }}
+                  </ul>
+                </div>
+              </div>
+
+              <div class="post-content">
+                <p>{{ .Summary | truncate 200 }}</p>
+                <a href="{{ .RelPermalink }}" class="btn btn-main" aria-label="Read full article: {{ .Title }}">
+                  {{ i18n "read_more" | default "Read More" }}
+                </a>
+              </div>
+            </div>
           </div>
-          <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          <div class="post-meta">
-            <ul>
-              <li><i class="fas fa-calendar-week"></i> {{ time.Format ":date_long" .PublishDate }}</li>
-              <li><i class="fas fa-user"></i>
-                {{ i18n "posted_by" }}
-                {{ $authors := slice }}{{ if reflect.IsSlice .Params.author }}{{ $authors = .Params.author }}{{ else }}{{ $authors = (slice .Params.author) }}{{ end -}}
-                {{ range $index, $elements := $authors }}{{ if ne $index 0 }}, {{ end }}<a class="text-primary" href="{{ `author/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
-              </li>
-              <li><i class="fas fa-tags"></i>
-                {{ range $index, $elements:= .Params.tags }}{{ if ne $index 0 }}, {{ end }}<a href="{{ `tags/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
-              </li>
-            </ul>
-          </div>
-          <div class="post-content">
-            <p>{{ .Summary }}</p>
-            <a href="{{ .RelPermalink }}" class="btn btn-main">{{ i18n "read_more" }}</a>
-          </div>
-        </div>
+        </article>
         {{- end }}
 
-        <!-- pagination -->
+        <!-- Enhanced Pagination -->
         {{ $paginator := .Paginator -}}
         {{ $adjacent_links := 2 -}}
         {{ $max_links := (add (mul $adjacent_links 2) 1) -}}
         {{ $lower_limit := (add $adjacent_links 1) -}}
         {{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) -}}
         {{ if gt $paginator.TotalPages 1 -}}
-        <nav class="text-center">
+        <nav class="text-center" aria-label="Blog pagination">
           <ul class="pagination post-pagination">
-            <!-- Previous page. -->
+            <!-- Previous page -->
             {{ if $paginator.HasPrev -}}
             <li>
-              <a href="{{ $paginator.Prev.URL }}" class="page-link">{{ i18n "page_prev" }}</a>
+              <a href="{{ $paginator.Prev.URL }}" class="page-link" aria-label="Previous page">
+                <i class="fas fa-chevron-left"></i>
+                <span class="sr-only">{{ i18n "page_prev" | default "Previous" }}</span>
+              </a>
             </li>
             {{- end }}
-            <!-- Page numbers. -->
+
+            <!-- First page -->
+            {{ if gt $paginator.PageNumber 3 -}}
+            <li>
+              <a href="{{ $paginator.First.URL }}" aria-label="First page">1</a>
+            </li>
+            {{ if gt $paginator.PageNumber 4 -}}
+            <li class="pagination-ellipsis">
+              <span>…</span>
+            </li>
+            {{- end }}
+            {{- end }}
+
+            <!-- Page numbers -->
             {{ range $paginator.Pagers -}}
             {{ $page_number_flag := false -}}
-            <!-- Advanced page numbers. -->
+            <!-- Advanced page numbers -->
             {{ if gt $paginator.TotalPages $max_links -}}
-            <!-- Lower limit pages. -->
-            <!-- If the user is on a page which is in the lower limit.  -->
+            <!-- Lower limit pages -->
             {{ if le $paginator.PageNumber $lower_limit -}}
-            <!-- If the current loop page is less than max_links. -->
             {{ if le .PageNumber $max_links -}}
             {{ $page_number_flag = true -}}
             {{ end -}}
-            <!-- Upper limit pages. -->
-            <!-- If the user is on a page which is in the upper limit. -->
+            <!-- Upper limit pages -->
             {{ else if ge $paginator.PageNumber $upper_limit -}}
-            <!-- If the current loop page is greater than total pages minus $max_links -->
             {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) -}}
             {{ $page_number_flag = true -}}
             {{ end -}}
-            <!-- Middle pages. -->
+            <!-- Middle pages -->
             {{ else -}}
             {{ if and (ge .PageNumber (sub $paginator.PageNumber $adjacent_links)) (le .PageNumber (add $paginator.PageNumber $adjacent_links)) -}}
             {{ $page_number_flag = true -}}
             {{ end -}}
             {{ end -}}
-            <!-- Simple page numbers. -->
+            <!-- Simple page numbers -->
             {{ else -}}
             {{ $page_number_flag = true -}}
             {{ end -}}
-            <!-- Output page numbers. -->
+            <!-- Output page numbers -->
             {{ if eq $page_number_flag true -}}
-            <li class="{{ if eq . $paginator }} active {{ end }}">
-              <a href="{{ .URL }}">
+            <li class="{{ if eq . $paginator }}active{{ end }}">
+              <a href="{{ .URL }}" {{ if eq . $paginator }}aria-current="page"{{ end }} aria-label="Page {{ .PageNumber }}">
                 {{ .PageNumber }}
               </a>
             </li>
             {{- end }}
             {{- end }}
-            <!-- Next page. -->
+
+            <!-- Last page -->
+            {{ if lt $paginator.PageNumber (sub $paginator.TotalPages 2) -}}
+            {{ if lt $paginator.PageNumber (sub $paginator.TotalPages 3) -}}
+            <li class="pagination-ellipsis">
+              <span>…</span>
+            </li>
+            {{- end }}
+            <li>
+              <a href="{{ $paginator.Last.URL }}" aria-label="Last page">{{ $paginator.TotalPages }}</a>
+            </li>
+            {{- end }}
+
+            <!-- Next page -->
             {{ if $paginator.HasNext -}}
             <li>
-              <a href="{{ $paginator.Next.URL }}">{{ i18n "page_next" }}</a>
+              <a href="{{ $paginator.Next.URL }}" class="page-link" aria-label="Next page">
+                <i class="fas fa-chevron-right"></i>
+                <span class="sr-only">{{ i18n "page_next" | default "Next" }}</span>
+              </a>
             </li>
             {{- end }}
           </ul>
         </nav>
         {{- end }}
       </div>
+      
       <div class="col-md-4">
         {{ partial "blog-sidebar.html" . }}
       </div>

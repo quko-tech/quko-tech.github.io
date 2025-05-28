@@ -130,27 +130,91 @@
               <h4 class="section-title">You might also like</h4>
               <div class="related-posts">
                 {{ $currentPermalink := .Permalink }}
-                {{ $posts := where site.RegularPages "Type" "post" }}
-                {{ $posts = where $posts ".Permalink" "!=" $currentPermalink }}
-                {{ range first 3 $posts }}
-                <article class="related-post-item">
-                  <h5 class="related-post-title">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                  </h5>
-                  <div class="related-post-meta">
-                    <time datetime="{{ .Date.Format "2006-01-02" }}">
-                      {{ .Date.Format "January 2, 2006" }}
-                    </time>
-                    {{ with .Params.author }}
-                     • {{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}
+                {{ $currentPost := . }}
+                {{ $relatedPosts := slice }}
+                
+                <!-- Get all posts except current one -->
+                {{ $allPosts := where (where site.Pages "Type" "post") "Permalink" "!=" $currentPermalink }}
+                
+                <!-- Find posts with matching categories -->
+                {{ if .Params.categories }}
+                  {{ $categoryMatches := slice }}
+                  {{ range $allPosts }}
+                    {{ if .Params.categories }}
+                      {{ $commonCategories := intersect $currentPost.Params.categories .Params.categories }}
+                      {{ if gt (len $commonCategories) 0 }}
+                        {{ $categoryMatches = $categoryMatches | append . }}
+                      {{ end }}
                     {{ end }}
-                  </div>
-                  {{ with .Params.description }}
-                  <p class="related-post-excerpt">{{ . | truncate 120 }}</p>
-                  {{ else }}
-                  <p class="related-post-excerpt">{{ .Summary | truncate 120 }}</p>
                   {{ end }}
-                </article>
+                  {{ $relatedPosts = $relatedPosts | append ($categoryMatches | shuffle | first 3) }}
+                {{ end }}
+                
+                <!-- If we need more posts, find posts with matching tags -->
+                {{ if lt (len $relatedPosts) 3 }}
+                  {{ if .Params.tags }}
+                    {{ $tagMatches := slice }}
+                    {{ range $allPosts }}
+                      {{ if .Params.tags }}
+                        {{ $commonTags := intersect $currentPost.Params.tags .Params.tags }}
+                        {{ if gt (len $commonTags) 0 }}
+                          <!-- Exclude posts already in relatedPosts -->
+                          {{ $alreadyIncluded := false }}
+                          {{ range $relatedPosts }}
+                            {{ if eq .Permalink $.Permalink }}
+                              {{ $alreadyIncluded = true }}
+                            {{ end }}
+                          {{ end }}
+                          {{ if not $alreadyIncluded }}
+                            {{ $tagMatches = $tagMatches | append . }}
+                          {{ end }}
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                    {{ $needed := sub 3 (len $relatedPosts) }}
+                    {{ $relatedPosts = $relatedPosts | append ($tagMatches | shuffle | first $needed) }}
+                  {{ end }}
+                {{ end }}
+                
+                <!-- If we still need more posts, fill with recent posts -->
+                {{ if lt (len $relatedPosts) 3 }}
+                  {{ $recentPosts := slice }}
+                  {{ range $allPosts | first 10 }}
+                    <!-- Exclude posts already in relatedPosts -->
+                    {{ $alreadyIncluded := false }}
+                    {{ range $relatedPosts }}
+                      {{ if eq .Permalink $.Permalink }}
+                        {{ $alreadyIncluded = true }}
+                      {{ end }}
+                    {{ end }}
+                    {{ if not $alreadyIncluded }}
+                      {{ $recentPosts = $recentPosts | append . }}
+                    {{ end }}
+                  {{ end }}
+                  {{ $needed := sub 3 (len $relatedPosts) }}
+                  {{ $relatedPosts = $relatedPosts | append ($recentPosts | first $needed) }}
+                {{ end }}
+                
+                <!-- Display the related posts -->
+                {{ range first 3 $relatedPosts }}
+                  <article class="related-post-item">
+                    <h5 class="related-post-title">
+                      <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </h5>
+                    <div class="related-post-meta">
+                      <time datetime="{{ .Date.Format "2006-01-02" }}">
+                        {{ .Date.Format "January 2, 2006" }}
+                      </time>
+                      {{ with .Params.author }}
+                      • {{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}
+                      {{ end }}
+                    </div>
+                    {{ with .Params.description }}
+                    <p class="related-post-excerpt">{{ . | truncate 120 }}</p>
+                    {{ else }}
+                    <p class="related-post-excerpt">{{ .Summary | truncate 120 }}</p>
+                    {{ end }}
+                  </article>
                 {{ end }}
               </div>
             </div>
