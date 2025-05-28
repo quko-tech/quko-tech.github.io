@@ -1,13 +1,12 @@
 {{ define "main" }}
 
-<!-- Separator from header -->
-<div class="header-separator"></div>
-
 <!-- Sticky Progress Header -->
 <div class="sticky-progress-header" id="stickyHeader">
   <div class="container-fluid">
     <div class="progress-header-content">
       <h4 class="progress-title">{{ .Title }}</h4>
+      <!-- Add your logo here - replace with your logo path -->
+      <img src="/images/logo.png" alt="Logo" class="progress-logo" id="stickyLogo">
       <div class="progress-bar-container">
         <div class="progress-bar" id="progressBar"></div>
       </div>
@@ -64,14 +63,14 @@
             <div class="meta-section">
               <h5 class="meta-label">Share</h5>
               <div class="share-buttons-vertical">
-                <a href="#" class="share-btn" title="Share on Twitter">
-                  <i class="ion-social-twitter"></i>
+                <a href="https://twitter.com/intent/tweet?url={{ .Permalink | absURL }}&text={{ .Title }}" target="_blank" class="share-btn" title="Share on Twitter">
+                  <i class="fab fa-twitter"></i>
                 </a>
-                <a href="#" class="share-btn" title="Share on Facebook">
-                  <i class="ion-social-facebook"></i>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | absURL }}" target="_blank" class="share-btn" title="Share on Facebook">
+                  <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" class="share-btn" title="Share on LinkedIn">
-                  <i class="ion-social-linkedin"></i>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink | absURL }}" target="_blank" class="share-btn" title="Share on LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
                 </a>
               </div>
             </div>
@@ -118,8 +117,11 @@
             <!-- Author Bio -->
             {{ if .Params.author }}
             <div class="author-bio-section">
-              <h4>About the Author</h4>
-              <!-- Add author bio content here -->
+              <h4>More about the author: </h4>
+              {{ $authors := slice }}{{ if reflect.IsSlice .Params.author }}{{ $authors = .Params.author }}{{ else }}{{ $authors = (slice .Params.author) }}{{ end -}}
+              {{ range $index, $elements := $authors }}
+              <a class="author-link" href="{{ `author/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ if ne $index (sub (len $authors) 1) }}, {{ end }}
+              {{ end }}
             </div>
             {{ end }}
             
@@ -127,19 +129,24 @@
             <div class="related-articles-section">
               <h4 class="section-title">You might also like</h4>
               <div class="related-posts">
-                {{ $related := .Site.RegularPages.Related . | first 3 }}
-                {{ range $related }}
+                {{ $currentPermalink := .Permalink }}
+                {{ $posts := where site.RegularPages "Type" "post" }}
+                {{ $posts = where $posts ".Permalink" "!=" $currentPermalink }}
+                {{ range first 3 $posts }}
                 <article class="related-post-item">
                   <h5 class="related-post-title">
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                   </h5>
                   <div class="related-post-meta">
-                    <time datetime="{{ .PublishDate.Format "2006-01-02" }}">
-                      {{ .PublishDate.Format "January 2, 2006" }}
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">
+                      {{ .Date.Format "January 2, 2006" }}
                     </time>
+                    {{ with .Params.author }}
+                     • {{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}
+                    {{ end }}
                   </div>
-                  {{ if .Params.description }}
-                  <p class="related-post-excerpt">{{ .Params.description | truncate 120 }}</p>
+                  {{ with .Params.description }}
+                  <p class="related-post-excerpt">{{ . | truncate 120 }}</p>
                   {{ else }}
                   <p class="related-post-excerpt">{{ .Summary | truncate 120 }}</p>
                   {{ end }}
@@ -168,6 +175,110 @@
     </div>
   </div>
 </section>
+
+<!-- Sticky Header JavaScript -->
+<script>
+// Sticky Progress Header Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const stickyHeader = document.getElementById('stickyHeader');
+  const progressBar = document.getElementById('progressBar');
+  const articleContent = document.querySelector('.article-content');
+  const articleHeader = document.querySelector('.article-header');
+  
+  if (!stickyHeader || !progressBar || !articleContent) {
+    return; // Exit if required elements are not found
+  }
+  
+  let isHeaderVisible = false;
+  let ticking = false;
+  
+  // Calculate the trigger point (after article header)
+  const getTriggerPoint = () => {
+    if (articleHeader) {
+      return articleHeader.offsetTop + articleHeader.offsetHeight;
+    }
+    return 300; // Fallback value
+  };
+  
+  // Calculate reading progress
+  const calculateProgress = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const documentHeight = document.documentElement.scrollHeight;
+    const windowHeight = window.innerHeight;
+    
+    // Calculate progress based on how close we are to the bottom of the page
+    const scrollableDistance = documentHeight - windowHeight;
+    const scrolledPercentage = Math.min(100, (scrollTop / scrollableDistance) * 100);
+    
+    return Math.max(0, scrolledPercentage);
+  };
+  
+  // Update progress bar
+  const updateProgressBar = () => {
+    const progress = calculateProgress();
+    progressBar.style.width = progress + '%';
+  };
+  
+  // Show/hide sticky header
+  const toggleStickyHeader = () => {
+    const triggerPoint = getTriggerPoint();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > triggerPoint && !isHeaderVisible) {
+      stickyHeader.classList.add('visible');
+      document.body.classList.add('sticky-header-visible');
+      isHeaderVisible = true;
+    } else if (scrollTop <= triggerPoint && isHeaderVisible) {
+      stickyHeader.classList.remove('visible');
+      document.body.classList.remove('sticky-header-visible');
+      isHeaderVisible = false;
+    }
+  };
+  
+  // Main scroll handler
+  const handleScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        toggleStickyHeader();
+        updateProgressBar();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+  
+  // Throttled resize handler
+  let resizeTimeout;
+  const handleResize = () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      toggleStickyHeader();
+      updateProgressBar();
+    }, 150);
+  };
+  
+  // Initialize
+  const init = () => {
+    // Set initial state
+    updateProgressBar();
+    toggleStickyHeader();
+    
+    // Add event listeners
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
+  };
+  
+  // Start the functionality
+  init();
+  
+  // Clean up function (useful for single-page applications)
+  window.stickyHeaderCleanup = () => {
+    window.removeEventListener('scroll', handleScroll);
+    window.removeEventListener('resize', handleResize);
+    clearTimeout(resizeTimeout);
+  };
+});
+</script>
 
 <!-- regular page -->
 {{ else -}}
