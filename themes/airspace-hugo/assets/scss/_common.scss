@@ -655,3 +655,177 @@ span.cloaked-e-mail:before {
       float: none;
   }
 }
+
+
+/* ==========================================================================
+   Mobile-Specific Styles (Example: Screens <= 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* --- Layout & Spacing --- */
+
+    .section {
+        padding: 60px 0; /* Reduce vertical padding */
+    }
+
+    .section-sm {
+        padding: 40px 0; /* Reduce vertical padding */
+    }
+
+    .page-title {
+        padding: 60px 0; /* Reduce padding */
+    }
+
+    .page-wrapper {
+        padding: 40px 0; /* Reduce padding */
+    }
+
+    .bg-shadow {
+        padding: 15px; /* Reduce padding for shadowed boxes */
+    }
+
+    /* Reduce margins - You might not need all, just examples */
+    .mt-50 { margin-top: 30px; }
+    .mt-40 { margin-top: 25px; }
+    .mt-30 { margin-top: 20px; }
+
+    /* --- Typography --- */
+
+    .section-title h2 {
+        font-size: 1.8em; /* Adjust section title size */
+        padding: 10px 0px;
+    }
+
+    .section-title p {
+        font-size: 1em; /* Adjust paragraph size */
+    }
+
+    .section-subtitle {
+        font-size: 22px; /* Adjust subtitle size */
+        margin-bottom: 20px;
+    }
+
+    .heading h2 {
+        font-size: 24px; /* Adjust heading size */
+        line-height: 1.4;
+    }
+
+    .heading p {
+        font-size: 16px; /* Adjust paragraph size */
+        line-height: 1.6;
+        padding: 0 10px; /* Add some horizontal padding if needed */
+    }
+
+    blockquote {
+        font-size: 16px; /* Smaller blockquote text */
+        padding: 15px 25px; /* Smaller blockquote padding */
+    }
+
+    .page-title .block h1 {
+        font-size: 2.5em; /* Adjust page title H1 */
+        letter-spacing: 0.1em;
+    }
+
+    /* --- Buttons --- */
+
+    .btn-main,
+    .btn-large {
+        padding: 12px 25px; /* Maybe slightly smaller padding */
+        font-size: 13px;
+    }
+
+    .btn-large {
+        padding: 15px 35px;
+    }
+
+    /* Make buttons full-width if needed for better tapping */
+    .buttonPart li .btn {
+         /* display: block; */
+         /* width: 100%; */
+         /* text-align: center; */
+         /* margin-bottom: 10px; */ /* Add space if stacked */
+    }
+    /* You already have margin-bottom in your SCSS for buttons, which is good! */
+
+    /* --- Navigation & Interactive --- */
+
+    /* Dropdowns might need to be full-width or handled differently */
+    .dropdown-slide:hover .dropdown-menu,
+    .dropdown-slide .dropdown-menu {
+        transform: none; /* Remove transform for simpler display */
+        width: 100%; /* Example: make dropdowns full width */
+        position: relative; /* Often better to make them static/relative */
+        box-shadow: none;
+        border: none;
+        visibility: visible;
+        opacity: 1;
+        display: none; /* Rely on JS/Click to show on mobile */
+    }
+    /* IMPORTANT: Hover-based dropdowns are not ideal for touch.
+       You usually need JavaScript to make them open on click/tap.
+       You might need to hide your desktop menu and show a
+       different mobile menu (like a hamburger menu). */
+
+    .tabCommon .nav-tabs li {
+        display: block; /* Stack tabs */
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .tabCommon .nav-tabs li a {
+        text-align: center;
+    }
+
+    /* --- Social Icons --- */
+
+    .social-media-icons ul li a {
+        padding: 5px 10px; /* Adjust padding if needed */
+        font-size: 16px;
+    }
+    .social-media-icons ul li .facebook {
+        padding: 5px 15px;
+    }
+
+    /* --- Sticky Top --- */
+    /* Your current code makes it *static* on desktop, which is unusual.
+       Usually, you might want it sticky on desktop and static on mobile
+       if it takes up too much space. If you want it sticky *except* on mobile: */
+    .sticky-top {
+        position: static; /* Remove sticky positioning on mobile */
+    }
+    /* If you want it sticky on mobile too, ensure it doesn't cover content. */
+
+}
+
+/* ==========================================================================
+   Even Smaller Screens (Example: <= 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+    .section-title h2 {
+        font-size: 1.5em; /* Further reduce font size */
+    }
+
+    .page-title .block h1 {
+        font-size: 2em; /* Further reduce font size */
+    }
+
+    .btn-main,
+    .btn-large,
+    .btn-small {
+        padding: 10px 20px; /* Maybe smaller padding */
+        width: 100%; /* Often best to go full-width on very small screens */
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .btn-large {
+        padding: 12px 25px;
+    }
+    /* Remove last button margin */
+    .buttonPart li:last-child .btn {
+      margin-bottom: 0;
+    }
+}

@@ -492,6 +492,150 @@ span.cloaked-e-mail:before {
     display: table-cell;
     float: none; } }
 
+/* ==========================================================================
+   Mobile-Specific Styles (Example: Screens <= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* --- Layout & Spacing --- */
+  .section {
+    padding: 60px 0;
+    /* Reduce vertical padding */ }
+  .section-sm {
+    padding: 40px 0;
+    /* Reduce vertical padding */ }
+  .page-title {
+    padding: 60px 0;
+    /* Reduce padding */ }
+  .page-wrapper {
+    padding: 40px 0;
+    /* Reduce padding */ }
+  .bg-shadow {
+    padding: 15px;
+    /* Reduce padding for shadowed boxes */ }
+  /* Reduce margins - You might not need all, just examples */
+  .mt-50 {
+    margin-top: 30px; }
+  .mt-40 {
+    margin-top: 25px; }
+  .mt-30 {
+    margin-top: 20px; }
+  /* --- Typography --- */
+  .section-title h2 {
+    font-size: 1.8em;
+    /* Adjust section title size */
+    padding: 10px 0px; }
+  .section-title p {
+    font-size: 1em;
+    /* Adjust paragraph size */ }
+  .section-subtitle {
+    font-size: 22px;
+    /* Adjust subtitle size */
+    margin-bottom: 20px; }
+  .heading h2 {
+    font-size: 24px;
+    /* Adjust heading size */
+    line-height: 1.4; }
+  .heading p {
+    font-size: 16px;
+    /* Adjust paragraph size */
+    line-height: 1.6;
+    padding: 0 10px;
+    /* Add some horizontal padding if needed */ }
+  blockquote {
+    font-size: 16px;
+    /* Smaller blockquote text */
+    padding: 15px 25px;
+    /* Smaller blockquote padding */ }
+  .page-title .block h1 {
+    font-size: 2.5em;
+    /* Adjust page title H1 */
+    letter-spacing: 0.1em; }
+  /* --- Buttons --- */
+  .btn-main, .btn-transparent, .btn-small,
+  .btn-large {
+    padding: 12px 25px;
+    /* Maybe slightly smaller padding */
+    font-size: 13px; }
+  .btn-large {
+    padding: 15px 35px; }
+  /* Make buttons full-width if needed for better tapping */
+  .buttonPart li .btn {
+    /* display: block; */
+    /* width: 100%; */
+    /* text-align: center; */
+    /* margin-bottom: 10px; */
+    /* Add space if stacked */ }
+  /* You already have margin-bottom in your SCSS for buttons, which is good! */
+  /* --- Navigation & Interactive --- */
+  /* Dropdowns might need to be full-width or handled differently */
+  .dropdown-slide:hover .dropdown-menu,
+  .dropdown-slide .dropdown-menu {
+    transform: none;
+    /* Remove transform for simpler display */
+    width: 100%;
+    /* Example: make dropdowns full width */
+    position: relative;
+    /* Often better to make them static/relative */
+    box-shadow: none;
+    border: none;
+    visibility: visible;
+    opacity: 1;
+    display: none;
+    /* Rely on JS/Click to show on mobile */ }
+  /* IMPORTANT: Hover-based dropdowns are not ideal for touch.
+       You usually need JavaScript to make them open on click/tap.
+       You might need to hide your desktop menu and show a
+       different mobile menu (like a hamburger menu). */
+  .tabCommon .nav-tabs li {
+    display: block;
+    /* Stack tabs */
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 5px; }
+  .tabCommon .nav-tabs li a {
+    text-align: center; }
+  /* --- Social Icons --- */
+  .social-media-icons ul li a {
+    padding: 5px 10px;
+    /* Adjust padding if needed */
+    font-size: 16px; }
+  .social-media-icons ul li .facebook {
+    padding: 5px 15px; }
+  /* --- Sticky Top --- */
+  /* Your current code makes it *static* on desktop, which is unusual.
+       Usually, you might want it sticky on desktop and static on mobile
+       if it takes up too much space. If you want it sticky *except* on mobile: */
+  .sticky-top {
+    position: static;
+    /* Remove sticky positioning on mobile */ }
+  /* If you want it sticky on mobile too, ensure it doesn't cover content. */ }
+
+/* ==========================================================================
+   Even Smaller Screens (Example: <= 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .section-title h2 {
+    font-size: 1.5em;
+    /* Further reduce font size */ }
+  .page-title .block h1 {
+    font-size: 2em;
+    /* Further reduce font size */ }
+  .btn-main, .btn-transparent,
+  .btn-large,
+  .btn-small {
+    padding: 10px 20px;
+    /* Maybe smaller padding */
+    width: 100%;
+    /* Often best to go full-width on very small screens */
+    display: block;
+    text-align: center;
+    margin-bottom: 10px; }
+  .btn-large {
+    padding: 12px 25px; }
+  /* Remove last button margin */
+  .buttonPart li:last-child .btn {
+    margin-bottom: 0; } }
+
 #wrapper-work {
   overflow: hidden;
   padding-top: 100px; }
@@ -706,113 +850,215 @@ header .navbar-default .navbar-nav li a:hover {
 .call-to-action {
   text-align: center;
   padding: 70px 0px; }
-  @media (max-width: 768px) {
-    .call-to-action {
-      padding-top: 20px;
-      padding-bottom: 20px; } }
+
+.call-to-action h2 {
+  color: white;
+  font-size: xxx-large;
+  margin: 0px;
+  padding: 30px 0px; }
+
+.call-to-action p {
+  color: white;
+  font-size: x-large; }
+
+.call-to-action .btn-main, .call-to-action .btn-transparent, .call-to-action .btn-small {
+  padding: 15px 35px;
+  font-size: 12px;
+  margin-top: 30px;
+  margin-bottom: 30px; }
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .call-to-action {
+    padding-top: 20px;
+    padding-bottom: 20px; } }
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .call-to-action {
+    padding: 20px 10px; }
   .call-to-action h2 {
-    color: #ffffff;
-    font-size: xxx-large;
-    margin: 0px;
-    padding: 30px 0px; }
+    font-size: 24px;
+    padding: 20px 0px; }
   .call-to-action p {
-    color: #ffffff;
-    font-size: x-large; }
+    font-size: 16px; }
   .call-to-action .btn-main, .call-to-action .btn-transparent, .call-to-action .btn-small {
-    padding: 15px 35px;
-    font-size: 12px;
-    margin-top: 30px;
-    margin-bottom: 30px; }
+    padding: 10px 20px;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px; } }
 
 .service {
   text-align: center;
   padding: 90px 0; }
-  @media (max-width: 768px) {
-    .service {
-      padding-top: 20px;
-      padding-bottom: 20px; } }
-  .service .service-item {
-    padding-bottom: 30px; }
-    .service .service-item i {
-      font-size: 50px;
-      color: #990000; }
-    .service .service-item h4 {
-      padding-top: 15px;
-      margin: 0;
-      margin-top: 10px;
-      font-weight: 500;
-      text-transform: x-large; }
-    .service .service-item p {
-      padding-top: 10px;
-      margin: 0;
-      font-size: large; }
+
+.service .service-item {
+  padding-bottom: 30px; }
+
+.service .service-item i {
+  font-size: 60px;
+  color: var(--color-primary); }
+
+.service .service-item h4 {
+  padding-top: 15px;
+  margin: 0;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: x-large; }
+
+.service .service-item p {
+  padding-top: 10px;
+  margin: 0;
+  font-size: large; }
 
 .dark-service .title {
-  color: #ffffff; }
+  color: white; }
 
 .dark-service .service-item {
   padding-bottom: 30px;
   text-align: center; }
-  .dark-service .service-item i {
-    color: #ffffff;
-    font-size: 40px;
-    margin-bottom: 10px; }
-  .dark-service .service-item h4 {
-    color: #ffffff;
-    padding-top: 15px;
-    margin: 0;
-    margin-top: 10px;
-    font-weight: 500;
-    text-transform: uppercase; }
-  .dark-service .service-item p {
-    padding-top: 10px;
-    margin: 0; }
+
+.dark-service .service-item i {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 10px; }
+
+.dark-service .service-item h4 {
+  color: white;
+  padding-top: 15px;
+  margin: 0;
+  margin-top: 10px;
+  font-weight: 500;
+  text-transform: uppercase; }
+
+.dark-service .service-item p {
+  padding-top: 10px;
+  margin: 0; }
+
+.service-about h2 {
+  font-size: x-large; }
 
 .service-about p {
-  line-height: 28px; }
+  line-height: 28px;
+  font-size: large; }
 
 .service-arrow .block {
   padding: 70px 30px; }
-  .service-arrow .block i {
-    font-size: 40px; }
-  .service-arrow .block p {
-    color: #ffffff; }
+
+.service-arrow .block i {
+  font-size: 40px; }
+
+.service-arrow .block h3 {
+  font-size: x-large; }
+
+.service-arrow .block p {
+  color: white;
+  font-size: medium; }
 
 .service-list .block {
   padding: 30px;
   margin-bottom: 20px;
-  background: #ffffff; }
+  background: white; }
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .service {
+    padding-top: 20px;
+    padding-bottom: 20px; } }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .service .service-item i {
+    font-size: 40px; }
+  .service .service-item h4 {
+    font-size: large; }
+  .service .service-item p {
+    font-size: medium; }
+  .dark-service .service-item i {
+    font-size: 30px; }
+  .dark-service .service-item h4 {
+    font-size: medium; }
+  .service-about h2 {
+    font-size: large; }
+  .service-about p {
+    font-size: medium;
+    line-height: 24px; }
+  .service-arrow .block {
+    padding: 40px 15px; }
+  .service-arrow .block i {
+    font-size: 30px; }
+  .service-arrow .block h3 {
+    font-size: large; }
+  .service-arrow .block p {
+    font-size: small; }
+  .service-list .block {
+    padding: 20px; } }
 
 .feature {
   background: url("../img/feature-bg.jpg");
-  background-position: 50% 94px;
-  display: block;
-  position: relative;
+  background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center center;
   background-size: cover;
+  display: block;
+  position: relative;
   padding: 100px 0; }
-  @media (max-width: 1200px) {
-    .feature {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      background-attachment: unset; } }
+
+.feature h2 {
+  color: #FFFFFF;
+  font-size: xx-large;
+  margin: 0px;
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+.feature p {
+  color: #FFFFFF;
+  font-size: large;
+  margin-bottom: 20px; }
+
+.feature .btn-view-works {
+  background: #6b6b6b;
+  /* Approximate lighten($black, 42.35) */
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 30px; }
+
+/* Large desktop (optional if you want to target >1400px screens differently) */
+@media (max-width: 1400px) {
+  .feature {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-attachment: unset; } }
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .feature {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-attachment: scroll; }
   .feature h2 {
-    color: #FFFFFF;
-    font-size: xx-large;
-    margin: 0px;
-    padding-top: 30px;
-    padding-bottom: 30px; }
+    font-size: x-large;
+    padding-top: 20px;
+    padding-bottom: 20px; }
   .feature p {
-    color: #FFFFFF;
-    font-size: large;
-    margin-bottom: 20px; }
+    font-size: medium; }
   .feature .btn-view-works {
-    background: #6c6c6c;
-    color: #ffffff;
-    padding: 10px 20px;
-    margin-bottom: 30px; }
+    font-size: 14px;
+    padding: 8px 16px; } }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .feature {
+    padding: 30px 15px; }
+  .feature h2 {
+    font-size: large;
+    padding-top: 15px;
+    padding-bottom: 15px; }
+  .feature p {
+    font-size: small; }
+  .feature .btn-view-works {
+    font-size: 12px;
+    padding: 6px 12px; } }
 
 .portfolio-work {
   padding: 80px 0; }

@@ -1,28 +1,54 @@
 .call-to-action {
   text-align: center;
   padding: 70px 0px;
+}
 
-  @include tablet {
+.call-to-action h2 {
+  color: white;
+  font-size: xxx-large;
+  margin: 0px;
+  padding: 30px 0px;
+}
+
+.call-to-action p {
+  color: white;
+  font-size: x-large;
+}
+
+.call-to-action .btn-main {
+  padding: 15px 35px;
+  font-size: 12px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .call-to-action {
     padding-top: 20px;
     padding-bottom: 20px;
   }
+}
 
-  h2 {
-    color: $white;
-    font-size: xxx-large;
-    margin: 0px;
-    padding: 30px 0px;
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .call-to-action {
+    padding: 20px 10px;
   }
 
-  p {
-    color: $white;
-    font-size: x-large;
+  .call-to-action h2 {
+    font-size: 24px;
+    padding: 20px 0px;
   }
 
-  .btn-main {
-    padding: 15px 35px;
-    font-size: 12px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+  .call-to-action p {
+    font-size: 16px;
+  }
+
+  .call-to-action .btn-main {
+    padding: 10px 20px;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }

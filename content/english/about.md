@@ -11,25 +11,15 @@ about:
   enable : true
   image : "images/company/about.jpg"
   title : "Innovative solutions"
-  content : "More and more new technologies have the capacity to revolutionize a business, an activity or even an entire sector. From data science to artificial intelligence, from the internet of things to data processing, it is clear that today it is crucial to make the most of these tools to maximize the performance of any activity.
+  content : "<br>New technologies are transforming businesses and entire industries. From AI and data science to the Internet of Things and advanced data processing, leveraging these tools is essential for maximizing performance today.
 
 
-  <br>
+
+<br>At QUKO, we specialize in adapting these technologies across diverse scenarios to optimize processes in ways once thought impossible.
 
 
-  At QUKO we believe in the possibility of adapting this type of technology in such a way that it can be used in all kinds of different circumstances, thus optimizing processes in previously unimaginable ways. 
 
-
-  <br>
-
-
-  In addition, we have a team with excellent training and experience in the sector to implement these cutting-edge techniques to solve any problem that requires them. 
-
-
-  <br>
-
-
-  From hardware to software, signal processing, deployment of communication networks or implementation of embedded systems, at QUKO there will always be an expert in the field to offer you the solution that best suits your needs."
+<br>Our experienced team is skilled in cutting-edge solutions—from hardware and software to signal processing, communication networks, and embedded systems—ensuring the perfect fit for your unique needs."
 
   #button:
   #  enable : true
@@ -105,11 +95,11 @@ features:
 
 #################################### testimonial & mission vision #######################################
 testimonial:
-  enable : true
+  enable : false
   # testimonial content comes from "data/*/homepage.yml" file
 
 mission_vision:
-  enable : true
+  enable : false
   tabs:
   # tab item loop
   - name : "Vision"
@@ -130,6 +120,6 @@ In this process, our clients' trust in us is key, so our main pillars when worki
 
 ############################# call to action #################################
 cta:
-  enable : true
+  enable : false
   # call to action content comes from "_index.md"
 ---

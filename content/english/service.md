@@ -9,9 +9,10 @@ draft: false
 about:
   enable : true
   title : "We have the solution you are looking for"
-  content : "At QUKO we have the experience and knowledge necessary to implement all types of solutions based on the latest digital technologies in a wide variety of sectors.
+  content : "At QUKO, we bring the expertise to apply cutting-edge digital technologies across a wide range of sectors.
 
-  <br> Regardless of the challenge our customers set us, whether it is the solution to a problem or the optimization of processes, we offer them not only the best results, but also those that are best suited to their specific conditions."
+
+<br>No matter the challenge—solving a problem or streamlining processes—we deliver results that are both high-quality and tailored to each client's specific needs."
   image : "images/stock-placa3.jpg"
 
 

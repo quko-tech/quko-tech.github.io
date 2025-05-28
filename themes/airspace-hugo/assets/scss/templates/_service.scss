@@ -1,98 +1,148 @@
 .service {
   text-align: center;
   padding: 90px 0;
+}
 
-  @include tablet {
+.service .service-item {
+  padding-bottom: 30px;
+}
+
+.service .service-item i {
+  font-size: 60px;
+  color: var(--color-primary);
+}
+
+.service .service-item h4 {
+  padding-top: 15px;
+  margin: 0;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: x-large;
+}
+
+.service .service-item p {
+  padding-top: 10px;
+  margin: 0;
+  font-size: large;
+}
+
+.dark-service .title {
+  color: white;
+}
+
+.dark-service .service-item {
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.dark-service .service-item i {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.dark-service .service-item h4 {
+  color: white;
+  padding-top: 15px;
+  margin: 0;
+  margin-top: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.dark-service .service-item p {
+  padding-top: 10px;
+  margin: 0;
+}
+
+.service-about h2 {
+  font-size: x-large;
+}
+
+.service-about p {
+  line-height: 28px;
+  font-size: large;
+}
+
+.service-arrow .block {
+  padding: 70px 30px;
+}
+
+.service-arrow .block i {
+  font-size: 40px;
+}
+
+.service-arrow .block h3 {
+  font-size: x-large;
+}
+
+.service-arrow .block p {
+  color: white;
+  font-size: medium;
+}
+
+.service-list .block {
+  padding: 30px;
+  margin-bottom: 20px;
+  background: white;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .service {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-
-  .service-item {
-    padding-bottom: 30px;
-
-    i {
-      font-size: 50px;
-      color: $color-primary;
-    }
-
-    h4 {
-      padding-top: 15px;
-      margin: 0;
-      margin-top: 10px;
-      font-weight: 500;
-      text-transform: x-large;
-    }
-
-    p {
-      padding-top: 10px;
-      margin: 0;
-      font-size: large;
-    }
-  }
 }
 
-.dark-service {
-  .title {
-    color: $white;
+/* Mobile */
+@media (max-width: 600px) {
+  .service .service-item i {
+    font-size: 40px;
   }
 
-  .service-item {
-    padding-bottom: 30px;
-    text-align: center;
-
-    i {
-      color: $white;
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-
-    h4 {
-      color: $white;
-      padding-top: 15px;
-      margin: 0;
-      margin-top: 10px;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-
-    p {
-      padding-top: 10px;
-      margin: 0;
-    }
+  .service .service-item h4 {
+    font-size: large;
   }
-}
 
-.service-about {
-  p {
-    line-height: 28px;
+  .service .service-item p {
+    font-size: medium;
   }
-}
 
-
-
-
-
-.service-arrow {
-  .block {
-    padding: 70px 30px;
-
-    i {
-      font-size: 40px;
-    }
-
-    p {
-      color: $white;
-    }
+  .dark-service .service-item i {
+    font-size: 30px;
   }
-}
 
+  .dark-service .service-item h4 {
+    font-size: medium;
+  }
 
+  .service-about h2 {
+    font-size: large;
+  }
 
+  .service-about p {
+    font-size: medium;
+    line-height: 24px;
+  }
 
-.service-list {
-  .block {
-    padding: 30px;
-    margin-bottom: 20px;
-    background: $white;
+  .service-arrow .block {
+    padding: 40px 15px;
+  }
+
+  .service-arrow .block i {
+    font-size: 30px;
+  }
+
+  .service-arrow .block h3 {
+    font-size: large;
+  }
+
+  .service-arrow .block p {
+    font-size: small;
+  }
+
+  .service-list .block {
+    padding: 20px;
   }
 }

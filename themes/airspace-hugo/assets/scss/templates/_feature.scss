@@ -1,39 +1,86 @@
 .feature {
   background: url("../img/feature-bg.jpg");
-  background-position: 50% 94px;
-  display: block;
-  position: relative;
+  background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center center;
   background-size: cover;
+  display: block;
+  position: relative;
   padding: 100px 0;
+}
 
-  @include large-desktop {
+.feature h2 {
+  color: #FFFFFF;
+  font-size: xx-large;
+  margin: 0px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.feature p {
+  color: #FFFFFF;
+  font-size: large;
+  margin-bottom: 20px;
+}
+
+.feature .btn-view-works {
+  background: #6b6b6b; /* Approximate lighten($black, 42.35) */
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+}
+
+/* Large desktop (optional if you want to target >1400px screens differently) */
+@media (max-width: 1400px) {
+  .feature {
     padding-top: 20px;
     padding-bottom: 20px;
     background-attachment: unset;
   }
+}
 
-  h2 {
-    color: #FFFFFF;
-    font-size: xx-large;
-    margin: 0px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+/* Tablet */
+@media (max-width: 1024px) {
+  .feature {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-attachment: scroll;
   }
 
-  p {
-    // color: darken( $light, 41.37);
-    color: #FFFFFF;
+  .feature h2 {
+    font-size: x-large;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .feature p {
+    font-size: medium;
+  }
+
+  .feature .btn-view-works {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .feature {
+    padding: 30px 15px;
+  }
+
+  .feature h2 {
     font-size: large;
-    margin-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
-  .btn-view-works {
-    background: lighten( $black, 42.35 );
-    color: $white;
-    padding: 10px 20px;
-    margin-bottom: 30px;
+  .feature p {
+    font-size: small;
+  }
+
+  .feature .btn-view-works {
+    font-size: 12px;
+    padding: 6px 12px;
   }
 }
