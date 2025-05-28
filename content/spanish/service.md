@@ -51,19 +51,19 @@ service:
       content : "Ofrecemos soluciones compactas adaptadas al usos específicos"
 
     # feature item loop
-    - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
-      name : Confidencialidad
-      content : "Buscamos mantener una relación de estrecha confianza con nuestros clientes basada en la confidencialidad"
+    # - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
+    #   name : Confidencialidad
+    #   content : "Buscamos mantener una relación de estrecha confianza con nuestros clientes basada en la confidencialidad"
 
     # feature item loop
-    - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
-      name : Rendimiento óptimo
-      content : "Sea cual sea el proceso a optimizar, lucharemos por obtener el máximo rendimiento mediante la tecnología"
+    # - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
+    #   name : Rendimiento óptimo
+    #   content : "Sea cual sea el proceso a optimizar, lucharemos por obtener el máximo rendimiento mediante la tecnología"
 
     # feature item loop
-    - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
-      name : Soporte
-      content : "Nuestro equipo se compromete con sus clientes ofreciendo soporte técnico y consultorio<br><br> "
+    # - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
+    #   name : Soporte
+    #   content : "Nuestro equipo se compromete con sus clientes ofreciendo soporte técnico y consultorio<br><br> "
 
 
     # feature item loop
@@ -82,9 +82,9 @@ service:
       content : "Los usuarios no requieren de conocimientos previos para hacer uso de nuestros servicios"
 
 
-    - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
-      name : Abierto
-      content : "¡Estamos siempre abiertos a comentarios o sugerencias sobre cómo mejorar la experiencia de usuario!"
+    # - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
+    #   name : Abierto
+    #   content : "¡Estamos siempre abiertos a comentarios o sugerencias sobre cómo mejorar la experiencia de usuario!"
 
 
 

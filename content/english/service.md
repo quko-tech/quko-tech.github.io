@@ -42,8 +42,8 @@ featured_service:
 
 service:
   enable : true
-  title : "Why QUKO?"
-  description : "At QUKO, we have a team with years of experience behind them in the fields of data, electronics, software and telecommunications engineering."
+  title : "Why choosing QUKO?"
+  #description : "At QUKO, we have a team with years of experience behind them in the fields of data, electronics, software and telecommunications engineering."
   service_item:
     # feature item loop
     - icon : fas fa-code #https://fontawesome.com/v5.15/icons
@@ -51,19 +51,19 @@ service:
       content : "We offer compact solutions tailored to the specific use of our customers."
 
     # feature item loop
-    - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
-      name : Confidentiality
-      content : "We seek to maintain a relationship of close trust with our clients based on confidentiality."
+    # - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
+    #   name : Confidentiality
+    #   content : "We seek to maintain a relationship of close trust with our clients based on confidentiality."
 
     # feature item loop
-    - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
-      name : Optimum performance
-      content : "Whatever the process to be optimized, we will strive for maximum performance through technology."
+    # - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
+    #   name : Optimum performance
+    #   content : "Whatever the process to be optimized, we will strive for maximum performance through technology."
 
     # feature item loop
-    - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
-      name : Support
-      content : "Our team is committed to its customers by offering technical support and consulting<br><br> "
+    # - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
+    #   name : Support
+    #   content : "Our team is committed to its customers by offering technical support and consulting<br><br> "
 
 
     # feature item loop
@@ -79,12 +79,12 @@ service:
 
     - icon : fas fa-user-check #https://fontawesome.com/v5.15/icons
       name : Accessible
-      content : "Our clients do not require any previous knowledge to use our services"
+      content : "Our clients do not require any technical knowledge to make the most out of our services."
 
 
-    - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
-      name : Open
-      content : "We are always open to comments or suggestions on how to improve the user experience!"
+    # - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
+    #   name : Open
+    #   content : "We are always open to comments or suggestions on how to improve the user experience!"
 
 
 

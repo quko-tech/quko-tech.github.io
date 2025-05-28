@@ -51,19 +51,19 @@ service:
       content : "Ofrecemos solucións compactas adaptadas a usos específicos"
 
     # feature item loop
-    - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
-      name : Confidencialidad
-      content : "Procuramos manter unha relación de estreita confianza cos nosos clientes basaeda na confidencialidade"
+    # - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
+    #   name : Confidencialidade
+    #   content : "Procuramos manter unha relación de estreita confianza cos nosos clientes basaeda na confidencialidade"
 
     # feature item loop
-    - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
-      name : Rendimiento óptimo
-      content : "Sexa o que sexa o proceso a optimizar, loitaremos por obter o máximo rendemiento mediante a tecnoloxía"
+    # - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
+    #   name : Rendimiento óptimo
+    #   content : "Sexa o que sexa o proceso a optimizar, loitaremos por obter o máximo rendemiento mediante a tecnoloxía"
 
     # feature item loop
-    - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
-      name : Soporte
-      content : "O noso equipo comprométese cos seus usuarios ofrecendo soporte técnico e consultorio<br><br> "
+    # - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
+    #   name : Soporte
+    #   content : "O noso equipo comprométese cos seus usuarios ofrecendo soporte técnico e consultorio<br><br> "
 
 
     # feature item loop
@@ -82,9 +82,9 @@ service:
       content : "Os usuarios no requiren de coñecementos previos para facer uso dos nosos servicios"
 
 
-    - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
-      name : Abierto
-      content : "Estamos sempre abertos a comentarios ou suxestións sobre como mellorar a experiencia de usuario!"
+    # - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
+    #   name : Abierto
+    #   content : "Estamos sempre abertos a comentarios ou suxestións sobre como mellorar a experiencia de usuario!"
 
 
 

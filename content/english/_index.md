@@ -26,12 +26,17 @@ portfolio:
   enable: true
   bg_image: "images/palada.gif"
   title: "WE LISTEN TO YOU"
-  content: "One of the main pillars of QUKO is our philosophy of adapting the final solutions as much as possible to the needs of our customers.
+  content: "
+  
+  At QUKO, we tailor every solution to fit the unique needs of our customers. One-size-fits-all isn’t our style.
 
-We are aware of the problem that the implementation of such new technologies can pose to people from sectors far from digital technologies. In this sense, we aim to work closely with our users to achieve a complete and detailed characterization of each particular case, and thus offer a unique solution that fully adapts to their requirements.
+
+We understand that new technologies can be overwhelming, especially for those in non-digital fields. That’s why we work closely with users to fully understand each case.
 
 
-  At QUKO we move away from generic solutions. Maintaining a close and trusting relationship with our customers is key to achieve the best results.
+By building trust and maintaining close collaboration, we ensure every solution is practical, personalized, and effective.
+
+
   "
   button:
     enable: false
@@ -50,7 +55,7 @@ cta:
   enable: true
   bg_image: "images/call-to-action-bg.jpg"
   title: "Optimize your performance"
-  content: "At QUKO, we offer all kinds of solutions to bring the latest technology to different fields<br><br>If you are interested in our services or have any questions about them, do not hesitate to contact us!"
+  content: "We offer all kinds of solutions to bring the latest technology to different fields"
   button:
     enable: true
     label: "Contact us"
@@ -59,8 +64,8 @@ cta:
 ############################# Funfacts ###############################
 funfacts:
   enable: true
-  title: "Fun facts about us"
-  description: "Hay mucho trabajo tras QUKO, ¡y aún estamos creciendo!"
+  title: "QUKO in numbers"
+  #description: "There is a lot of work behind the scenes!"
   funfact_item:
   # funfacts item loop
   - icon: "fas fa-mug-hot" #https://fontawesome.com/v5.15/icons
@@ -80,7 +85,7 @@ funfacts:
   # funfacts item loop
   - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
     name : "Lines of code"
-    count : "500000"
+    count : "700000"
 
 
 

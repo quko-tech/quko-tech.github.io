@@ -1,46 +1,169 @@
 {{ define "main" }}
 
-{{ partial "page-title.html" . }}
+<!-- Separator from header -->
+<div class="header-separator"></div>
+
+<!-- Sticky Progress Header -->
+<div class="sticky-progress-header" id="stickyHeader">
+  <div class="container-fluid">
+    <div class="progress-header-content">
+      <h4 class="progress-title">{{ .Title }}</h4>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- checking blog -->
 {{ if or (eq .Section "post") (eq .Section "posts") (eq .Section "blog") (eq .Section "blogs") (eq .Section "news") (eq .Section "categories") (eq .Section "tags") }}
 
-<section class="page-wrapper">
-  <div class="container">
+<section class="modern-article-wrapper">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8">
-        <div class="post post-single">
-          <h2 class="post-title">{{ .Title }}</h2>
-          <div class="post-meta">
-            <ul>
-              <li><i class="ion-calendar"></i> {{ time.Format ":date_long" .PublishDate }}</li>
-              <li><i class="ion-android-people"></i>
-                {{ i18n "posted_by" }}
-                {{ $authors := slice }}{{ if reflect.IsSlice .Params.author }}{{ $authors = .Params.author }}{{ else }}{{ $authors = (slice .Params.author) }}{{ end -}}
-                {{ range $index, $elements := $authors }}{{ if ne $index 0 }}, {{ end }}<a class="text-primary" href="{{ `author/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
-              </li>
-              <li><i class="ion-pricetags"></i>
-                {{ range $index, $elements:= .Params.tags }}{{ if ne $index 0 }}, {{ end }}<a href="{{ `tags/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
-              </li>
-            </ul>
+      <!-- Left Sidebar - Metadata -->
+      <div class="col-md-2">
+        <aside class="article-metadata">
+          <div class="meta-sticky">
+            <!-- Date -->
+            <div class="meta-section">
+              <h5 class="meta-label">Published</h5>
+              <time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+                {{ time.Format "January 2, 2006" .PublishDate }}
+              </time>
+            </div>
+            
+            <!-- Author -->
+            <div class="meta-section">
+              <h5 class="meta-label">Written by</h5>
+              {{ $authors := slice }}{{ if reflect.IsSlice .Params.author }}{{ $authors = .Params.author }}{{ else }}{{ $authors = (slice .Params.author) }}{{ end -}}
+              {{ range $index, $elements := $authors }}
+              <a class="author-link" href="{{ `author/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ if ne $index (sub (len $authors) 1) }}, {{ end }}
+              {{ end }}
+            </div>
+            
+            <!-- Reading Time -->
+            <div class="meta-section">
+              <h5 class="meta-label">Reading time</h5>
+              <span>{{ .ReadingTime }} min read</span>
+            </div>
+            
+            <!-- Tags -->
+            {{ if .Params.tags }}
+            <div class="meta-section">
+              <h5 class="meta-label">Topics</h5>
+              <div class="tag-list-vertical">
+                {{ range .Params.tags }}
+                <a href="{{ `tags/` | relLangURL }}{{ . | urlize }}" class="tag-link">{{ . }}</a>
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+            
+            <!-- Share -->
+            <div class="meta-section">
+              <h5 class="meta-label">Share</h5>
+              <div class="share-buttons-vertical">
+                <a href="#" class="share-btn" title="Share on Twitter">
+                  <i class="ion-social-twitter"></i>
+                </a>
+                <a href="#" class="share-btn" title="Share on Facebook">
+                  <i class="ion-social-facebook"></i>
+                </a>
+                <a href="#" class="share-btn" title="Share on LinkedIn">
+                  <i class="ion-social-linkedin"></i>
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="post-thumb">
-            {{ with .Params.image -}}
-            <img class="img-responsive" src="{{ . | relURL }}" alt="{{ $.Title }}">
-            {{- end }}
-          </div>
-          <div class="post-content post-excerpt">
+        </aside>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="col-md-7">
+        <article class="modern-article">
+          <!-- Headline -->
+          <header class="article-header">
+            <h1 class="article-title">{{ .Title }}</h1>
+            
+            <!-- Description/Excerpt -->
+            {{ if .Params.description }}
+            <div class="article-description">
+              {{ .Params.description }}
+            </div>
+            {{ else if .Summary }}
+            <div class="article-description">
+              {{ .Summary | truncate 200 }}
+            </div>
+            {{ end }}
+          </header>
+          
+          <!-- Main Image -->
+          {{ with .Params.image }}
+          <figure class="article-hero">
+            <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+            {{ with $.Params.image_caption }}
+            <figcaption>{{ . }}</figcaption>
+            {{ end }}
+          </figure>
+          {{ end }}
+          
+          <!-- Article Content -->
+          <div class="article-content">
             {{ .Content }}
           </div>
-          {{ with site.Params.DisqusShortname -}}
-          <div class="post-comments">
+          
+          <!-- Article Footer -->
+          <footer class="article-footer">
+            <!-- Author Bio -->
+            {{ if .Params.author }}
+            <div class="author-bio-section">
+              <h4>About the Author</h4>
+              <!-- Add author bio content here -->
+            </div>
+            {{ end }}
+            
+            <!-- Related Articles -->
+            <div class="related-articles-section">
+              <h4 class="section-title">You might also like</h4>
+              <div class="related-posts">
+                {{ $related := .Site.RegularPages.Related . | first 3 }}
+                {{ range $related }}
+                <article class="related-post-item">
+                  <h5 class="related-post-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                  </h5>
+                  <div class="related-post-meta">
+                    <time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+                      {{ .PublishDate.Format "January 2, 2006" }}
+                    </time>
+                  </div>
+                  {{ if .Params.description }}
+                  <p class="related-post-excerpt">{{ .Params.description | truncate 120 }}</p>
+                  {{ else }}
+                  <p class="related-post-excerpt">{{ .Summary | truncate 120 }}</p>
+                  {{ end }}
+                </article>
+                {{ end }}
+              </div>
+            </div>
+          </footer>
+          
+          <!-- Comments -->
+          {{ with site.Params.DisqusShortname }}
+          <section class="article-comments">
+            <h3>Join the conversation</h3>
             {{ template "_internal/disqus.html" . }}
-          </div>
-          {{- end }}
-        </div>
+          </section>
+          {{ end }}
+        </article>
       </div>
-      <div class="col-md-4">
-        {{ partial "blog-sidebar.html" . }}
+      
+      <!-- Right Sidebar -->
+      <div class="col-md-3">
+        <aside class="article-sidebar">
+          {{ partial "blog-sidebar.html" . }}
+        </aside>
       </div>
     </div>
   </div>

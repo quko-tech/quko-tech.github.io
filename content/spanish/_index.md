@@ -51,7 +51,7 @@ cta:
   enable: true
   bg_image: "images/call-to-action-bg.jpg"
   title: "Optimiza tu rendimiento"
-  content: "En QUKO, ofrecemos todo tipo de soluciones para llevar las últimas tecnologías a diferentes ámbitos<br><br>Si estás interesado en nuestros servicios o tienes cualquier pregunta sobre ellos, ¡no dudes en ponerte en contacto con nosotros!"
+  content: "En QUKO, ofrecemos todo tipo de soluciones para llevar las últimas tecnologías a diferentes ámbitos"
   button:
     enable: true
     label: "Ponte en contacto"
@@ -60,8 +60,8 @@ cta:
 ############################# Funfacts ###############################
 funfacts:
   enable: true
-  title: "Datos sobre nosotros"
-  description: "Hay mucho trabajo tras QUKO, ¡y aún estamos creciendo!"
+  title: "QUKO en números"
+  #description: "Hay mucho trabajo tras QUKO, ¡y aún estamos creciendo!"
   funfact_item:
   # funfacts item loop
   - icon: "fas fa-mug-hot" #https://fontawesome.com/v5.15/icons
