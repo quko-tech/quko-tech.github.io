@@ -2339,7 +2339,8 @@ html {
   scroll-behavior: smooth; }
 
 ::selection {
-  color: white; }
+  background-color: #f53f3f;
+  color: #f3f3f3; }
 
 .bg-1 {
   background-size: cover;
