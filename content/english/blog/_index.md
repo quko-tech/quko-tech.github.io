@@ -1,6 +1,6 @@
 ---
-title: "QUKO's Sport and Science Blog"
-description: "Your trusted source of information with the latest studies and discoveries in your sport"
+title: "QUKO Performance Lab"
+description: "Latest research decoded for competitive athletes"
 draft: false
 bg_image: "images/feature-bg.jpg"
 ---
