@@ -20,24 +20,6 @@
                 href="http://localhost:1313/es/"
                 />
   </url><url>
-    <loc>http://localhost:1313/es/blog/</loc>
-    <lastmod>2025-05-27T11:07:10+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/blog/"
-                />
-  </url><url>
     <loc>http://localhost:1313/es/categories/canoeing/</loc>
     <lastmod>2025-05-27T11:07:10+06:00</lastmod>
     <xhtml:link
@@ -126,6 +108,24 @@
                 rel="alternate"
                 hreflang="es-ES"
                 href="http://localhost:1313/es/blog/2025.05.27/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/blog/</loc>
+    <lastmod>2025-05-27T11:07:10+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/blog/"
                 />
   </url><url>
     <loc>http://localhost:1313/es/tags/physics/</loc>

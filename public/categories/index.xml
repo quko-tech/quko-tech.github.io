@@ -6,20 +6,20 @@
     <description>Recent content in Categories on QUKO | Data solutions</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 27 May 2025 11:07:10 +0600</lastBuildDate>
+    <lastBuildDate>Fri, 06 Jun 2025 11:07:10 +0600</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kayaking</title>
+      <link>http://localhost:1313/categories/kayaking/</link>
+      <pubDate>Fri, 06 Jun 2025 11:07:10 +0600</pubDate>
+      <guid>http://localhost:1313/categories/kayaking/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Canoeing</title>
       <link>http://localhost:1313/categories/canoeing/</link>
       <pubDate>Tue, 27 May 2025 11:07:10 +0600</pubDate>
       <guid>http://localhost:1313/categories/canoeing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Kayaking</title>
-      <link>http://localhost:1313/categories/kayaking/</link>
-      <pubDate>Tue, 27 May 2025 11:07:10 +0600</pubDate>
-      <guid>http://localhost:1313/categories/kayaking/</guid>
       <description></description>
     </item>
     <item>
