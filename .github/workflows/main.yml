@@ -20,6 +20,8 @@ env:
   NODE_VERSION: "18.15.0"
   TINA_CLIENT_ID: ${{ vars.TINA_CLIENT_ID }}
   TINA_TOKEN: ${{ vars.TINA_TOKEN }}
+  FACEBOOK_PAGE_ID: ${{ vars.FACEBOOK_PAGE_ID }}
+  FACEBOOK_ACCESS_TOKEN: ${{ secrets.FACEBOOK_ACCESS_TOKEN }}
 
 jobs:
   # Build job
@@ -27,6 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # Fetch last 2 commits to compare changes
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -56,6 +61,96 @@ jobs:
 
       - name: Publish to GitHub Pages
         run: npm run build
+
+      - name: Check for new blog posts
+        id: check-posts
+        run: |
+          # Check for new or modified markdown files in the blog directory
+          # Adjust the path according to your Hugo content structure
+          NEW_POSTS=$(git diff --name-only HEAD~1 HEAD | grep -E '^content/blog/.*\.md$' || true)
+          
+          if [ -n "$NEW_POSTS" ]; then
+            echo "new_posts_found=true" >> $GITHUB_OUTPUT
+            echo "new_posts<<EOF" >> $GITHUB_OUTPUT
+            echo "$NEW_POSTS" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "new_posts_found=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Post to Facebook
+        if: steps.check-posts.outputs.new_posts_found == 'true'
+        run: |
+          # Install required tools
+          sudo apt-get update
+          sudo apt-get install -y jq python3-pip
+          pip3 install python-frontmatter
+
+          # Process each new blog post
+          echo "${{ steps.check-posts.outputs.new_posts }}" | while IFS= read -r post_file; do
+            if [ -f "$post_file" ]; then
+              echo "Processing: $post_file"
+              
+              # Extract front matter using Python
+              POST_DATA=$(python3 -c "
+          import frontmatter
+          import json
+          import os
+          
+          with open('$post_file', 'r', encoding='utf-8') as f:
+              post = frontmatter.load(f)
+              
+          # Extract metadata
+          title = post.get('title', 'New Blog Post')
+          slug = post.get('slug', os.path.basename('$post_file').replace('.md', ''))
+          description = post.get('description', post.get('summary', ''))
+          
+          # Get first 160 characters of content if no description
+          if not description and post.content:
+              description = post.content[:160].strip() + '...'
+          
+          data = {
+              'title': title,
+              'slug': slug,
+              'description': description
+          }
+          
+          print(json.dumps(data))
+          ")
+              
+              # Parse the JSON data
+              TITLE=$(echo "$POST_DATA" | jq -r '.title')
+              SLUG=$(echo "$POST_DATA" | jq -r '.slug')
+              DESCRIPTION=$(echo "$POST_DATA" | jq -r '.description')
+              
+              # Construct the blog post URL
+              POST_URL="https://quko.es/blog/${SLUG}/"
+              
+              # Create Facebook post message
+              MESSAGE="📝 New blog post: ${TITLE}
+
+          ${DESCRIPTION}
+
+          Read more: ${POST_URL}"
+              
+              # Post to Facebook using Graph API
+              response=$(curl -s -X POST \
+                "https://graph.facebook.com/v18.0/${FACEBOOK_PAGE_ID}/feed" \
+                -H "Content-Type: application/x-www-form-urlencoded" \
+                -d "message=$(echo "$MESSAGE" | jq -sRr @uri)" \
+                -d "link=${POST_URL}" \
+                -d "access_token=${FACEBOOK_ACCESS_TOKEN}")
+              
+              # Check if post was successful
+              if echo "$response" | jq -e '.id' > /dev/null; then
+                echo "✅ Successfully posted to Facebook: ${TITLE}"
+                echo "Facebook Post ID: $(echo "$response" | jq -r '.id')"
+              else
+                echo "❌ Failed to post to Facebook: ${TITLE}"
+                echo "Error: $response"
+              fi
+            fi
+          done
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
