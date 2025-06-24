@@ -67,7 +67,7 @@ jobs:
         run: |
           # Check for new or modified markdown files in the blog directory
           # Adjust the path according to your Hugo content structure
-          NEW_POSTS=$(git diff --name-only HEAD~1 HEAD | grep -E '^content/blog/.*\.md$' || true)
+          NEW_POSTS=$(git diff --name-only HEAD~1 HEAD | grep -E '^content/english/blog/.*\.md$' || true)
           
           if [ -n "$NEW_POSTS" ]; then
             echo "new_posts_found=true" >> $GITHUB_OUTPUT
