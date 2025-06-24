@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-06-18T12:00:10+06:00</lastmod>
+    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="gl-GL"
@@ -21,7 +21,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-06-18T12:00:10+06:00</lastmod>
+    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="gl-GL"
@@ -39,7 +39,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/tags/equipment/</loc>
-    <lastmod>2025-06-18T12:00:10+06:00</lastmod>
+    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="gl-GL"
@@ -56,8 +56,11 @@
                 href="http://localhost:1313/tags/equipment/"
                 />
   </url><url>
+    <loc>http://localhost:1313/blog/2025.06.24/</loc>
+    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/physics/</loc>
-    <lastmod>2025-06-18T12:00:10+06:00</lastmod>
+    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="gl-GL"
@@ -74,11 +77,8 @@
                 href="http://localhost:1313/tags/physics/"
                 />
   </url><url>
-    <loc>http://localhost:1313/blog/2025.06.18/</loc>
-    <lastmod>2025-06-18T12:00:10+06:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2025-06-18T12:00:10+06:00</lastmod>
+    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="gl-GL"
@@ -96,7 +96,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/categories/rowing/</loc>
-    <lastmod>2025-06-18T12:00:10+06:00</lastmod>
+    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="gl-GL"
@@ -114,7 +114,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-06-18T12:00:10+06:00</lastmod>
+    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="gl-GL"
@@ -130,6 +130,9 @@
                 hreflang="en-US"
                 href="http://localhost:1313/tags/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/blog/2025.06.18/</loc>
+    <lastmod>2025-06-18T12:00:10+06:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/2025.06.13/</loc>
     <lastmod>2025-06-13T12:00:10+06:00</lastmod>

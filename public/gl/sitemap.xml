@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/gl/</loc>
-    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
+    <lastmod>2025-05-27T11:07:10+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -18,117 +18,6 @@
                 rel="alternate"
                 hreflang="gl-GL"
                 href="http://localhost:1313/gl/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/gl/blog/</loc>
-    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/blog/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/gl/categories/</loc>
-    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/categories/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/gl/tags/equipment/</loc>
-    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/tags/equipment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/tags/equipment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/tags/equipment/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/gl/blog/2025.06.24/</loc>
-    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/gl/tags/physics/</loc>
-    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/tags/physics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/tags/physics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/tags/physics/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/gl/categories/rowing/</loc>
-    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/categories/rowing/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/categories/rowing/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/categories/rowing/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/gl/tags/</loc>
-    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/tags/"
                 />
   </url><url>
     <loc>http://localhost:1313/gl/blog/2025.05.27/</loc>
@@ -149,6 +38,24 @@
                 href="http://localhost:1313/gl/blog/2025.05.27/"
                 />
   </url><url>
+    <loc>http://localhost:1313/gl/blog/</loc>
+    <lastmod>2025-05-27T11:07:10+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/blog/"
+                />
+  </url><url>
     <loc>http://localhost:1313/gl/categories/canoeing/</loc>
     <lastmod>2025-05-27T11:07:10+06:00</lastmod>
     <xhtml:link
@@ -167,6 +74,42 @@
                 href="http://localhost:1313/gl/categories/canoeing/"
                 />
   </url><url>
+    <loc>http://localhost:1313/gl/categories/</loc>
+    <lastmod>2025-05-27T11:07:10+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/categories/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/gl/tags/equipment/</loc>
+    <lastmod>2025-05-27T11:07:10+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/tags/equipment/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/tags/equipment/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/tags/equipment/"
+                />
+  </url><url>
     <loc>http://localhost:1313/gl/categories/kayaking/</loc>
     <lastmod>2025-05-27T11:07:10+06:00</lastmod>
     <xhtml:link
@@ -183,6 +126,60 @@
                 rel="alternate"
                 hreflang="gl-GL"
                 href="http://localhost:1313/gl/categories/kayaking/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/gl/tags/physics/</loc>
+    <lastmod>2025-05-27T11:07:10+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/tags/physics/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/tags/physics/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/tags/physics/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/gl/categories/rowing/</loc>
+    <lastmod>2025-05-27T11:07:10+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/categories/rowing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/categories/rowing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/categories/rowing/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/gl/tags/</loc>
+    <lastmod>2025-05-27T11:07:10+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/tags/"
                 />
   </url><url>
     <loc>http://localhost:1313/gl/faq/</loc>
