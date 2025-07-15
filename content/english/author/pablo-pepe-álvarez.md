@@ -1,6 +1,6 @@
 ---
 title: "Pablo (Pepe) Álvarez"
-email: "contacto@quko.es"
+email: "contact@quko.es"
 bg_image: "images/feature-bg.jpg"
 photo: "/images/clients/pepe1.jpeg"
 draft: false

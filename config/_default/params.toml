@@ -18,7 +18,7 @@ image = "images/logo.png" # this image will be used as fallback if a page has no
 address_descriptors = false
 # contact info
 phone = "+34 644 43 96 48"
-email = "contacto@quko.es"
+email = "contact@quko.es"
 location = """
 **QUKO**  
 Cangas do Morrazo              
