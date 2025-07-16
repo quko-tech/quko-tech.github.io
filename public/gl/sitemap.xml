@@ -251,6 +251,23 @@
                 href="http://localhost:1313/gl/contact/"
                 />
   </url><url>
+    <loc>http://localhost:1313/gl/kosoku/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/kosoku/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/kosoku/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/kosoku/"
+                />
+  </url><url>
     <loc>http://localhost:1313/gl/newsletter/</loc>
     <xhtml:link
                 rel="alternate"

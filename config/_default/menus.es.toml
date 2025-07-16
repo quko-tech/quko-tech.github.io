@@ -12,9 +12,14 @@ url = "about/"
 weight = 2
 
 [[main]]
-name = "Servicio"
+name = "Servicios"
 url = "service/"
 weight = 3
+
+[[main]]
+name = "Kosoku"
+url = "kosoku/"
+weight = 4
 
 #[[main]]
 #name = "Proyecto"
