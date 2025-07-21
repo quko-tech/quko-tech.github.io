@@ -15,7 +15,7 @@ kosoku:
 
 kosoku_video:
   enable : true
-  youtube_id: "dQw4w9WgXcQ"
+  youtube_id: "N_gSmXmxfF0"
 
 
 
@@ -25,23 +25,27 @@ featured_service:
   enable : true
   service_item:
     # featured service item loop
-    - name : "Hardware"
+    - name : "Data logging"
       icon : "fas fa-microchip"
       color : "primary"
-      content : "Custom hardware solutions"
+      content : "Optimise your technique and performance"
 
     # featured service item loop
-    - name : "Telecommunications"
+    - name : "Live data streaming"
       icon : "fas fa-satellite-dish"
       color : "primary-darker"
-      content : "Telecommunication networks sizing and deployment capabilities"
+      content : "Give immediate feedback to athletes"
 
     # featured service item loop
-    - name : "Software"
+    - name : "Garmin compatibility"
       icon : "fas fa-code"
       color : "primary-dark"
-      content : "Solutions based on data processing, web application design, data science and more"
+      content : "Allow athletes to better understand their triaining sessions with real time feedback and statistics"
 
+
+kosoku_video_2:
+  enable : true
+  youtube_id: "edw6svHVUdE"
 
 ############################# Service ###############################
 

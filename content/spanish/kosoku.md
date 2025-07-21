@@ -15,7 +15,7 @@ kosoku:
 
 kosoku_video:
   enable : true
-  youtube_id: "dQw4w9WgXcQ"
+  youtube_id: "N_gSmXmxfF0"
 
 
 
@@ -45,6 +45,11 @@ featured_service:
 
 ############################# Service ###############################
 
+kosoku_video_2:
+  enable : true
+  youtube_id: "edw6svHVUdE"
+
+  
 service:
   enable : true
   title : "Why choosing QUKO?"
