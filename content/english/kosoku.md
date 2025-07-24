@@ -8,17 +8,14 @@ draft: false
 ########################### about service #############################
 kosoku:
   enable : true
-  title : "We have the solution you are looking for"
-  content : "At QUKO, we bring the expertise to apply cutting-edge digital technologies across a wide range of sectors.
-  <br>No matter the challenge—solving a problem or streamlining processes—we deliver results that are both high-quality and tailored to each client's specific needs."
+  title : "Redefining high-level training in canoeing and kayaking"
+  content : "At QUKO, we revolutionize elite sprint canoeing through cutting-edge data analytics and performance optimization technology.
+  <br>Our mission is to democratize affordable and accessible technology at the elite level, bridging the gap between coaches, athletes, and data analysts to drive a paradigm shift towards technology-based training optimization."
   image : "images/koso_foto.jpg"
 
 kosoku_video:
   enable : true
   youtube_id: "N_gSmXmxfF0"
-
-
-
 
 ########################## featured service ############################
 featured_service:
@@ -28,20 +25,19 @@ featured_service:
     - name : "Data logging"
       icon : "fas fa-microchip"
       color : "primary"
-      content : "Optimise your technique and performance"
+      content : "Advanced sensor technology capturing 200Hz sampling frequency with sub-centimeter position accuracy and comprehensive kinematic data"
 
     # featured service item loop
     - name : "Live data streaming"
       icon : "fas fa-satellite-dish"
       color : "primary-darker"
-      content : "Give immediate feedback to athletes"
+      content : "Real-time data transmission up to 150m range, tracking up to 9 devices simultaneously with live coaching feedback"
 
     # featured service item loop
     - name : "Garmin compatibility"
       icon : "fas fa-code"
       color : "primary-dark"
-      content : "Allow athletes to better understand their triaining sessions with real time feedback and statistics"
-
+      content : "Seamless integration with Garmin Connect featuring custom data fields for real-time athlete feedback and deferred training analysis"
 
 kosoku_video_2:
   enable : true
@@ -49,94 +45,48 @@ kosoku_video_2:
 
 ############################# Service ###############################
 
-service:
+featured_service_2:
   enable : true
-  title : "Why choosing QUKO?"
-  #description : "At QUKO, we have a team with years of experience behind them in the fields of data, electronics, software and telecommunications engineering."
+  title : "Why choose QUKO Kosoku?"
   service_item:
     # feature item loop
-    - icon : fas fa-code #https://fontawesome.com/v5.15/icons
-      name : Adaptation to the customer
-      content : "We offer compact solutions tailored to the specific use of our customers."
+    - icon : fas fa-water #https://fontawesome.com/v5.15/icons
+      name : Sport-specific design
+      content : "Purpose-built for canoeing and kayaking with waterproof IP67 certificated housing and specialized algorithms for paddle sports analytics."
 
     # feature item loop
-    # - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
-    #   name : Confidentiality
-    #   content : "We seek to maintain a relationship of close trust with our clients based on confidentiality."
+    - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
+      name : Elite performance focus
+      content : "Developed by a former CERN physicist and Spanish national-level athlete, using state-of-the-art propietary algorithms for outstanding precision and rigor."
 
     # feature item loop
-    # - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
-    #   name : Optimum performance
-    #   content : "Whatever the process to be optimized, we will strive for maximum performance through technology."
+    - icon : fas fa-chart-line #https://fontawesome.com/v5.15/icons
+      name : Maximum precision at 100 Hz
+      content : "Being able to gather high resolution data every 10 milliseconds allows us to perfectly characterise the movement of the vessel"
+
+    - icon : fas fa-broadcast-tower #https://fontawesome.com/v5.15/icons
+      name : Real-time Team Monitoring
+      content : "Live tracking of up to 9 devices simultaneously with 150+ meter range, streaming kinematic data and biometrics directly to coaches' waterproof tablets."
 
     # feature item loop
-    # - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
-    #   name : Support
-    #   content : "Our team is committed to its customers by offering technical support and consulting<br><br> "
-
+    - icon : fas fa-cloud #https://fontawesome.com/v5.15/icons
+      name : Cloud integration
+      content : "Seamless connection to QUKO Cloud for advanced visualization, 3D analysis, AI-powered pattern recognition, and comprehensive performance comparisons."
 
     # feature item loop
-    - icon : fas fa-lightbulb #https://fontawesome.com/v5.15/icons
-      name : We never stop
-      content : "At QUKO we are constantly evolving and introducing new ideas and updates to our products."
+    - icon : fas fa-battery-full #https://fontawesome.com/v5.15/icons
+      name : Competition-ready
+      content : "5-hour battery life, 10Hz double band GPS, 4 HR sensor compatibility and data streaming to 4 Garmin watches simultaneously."
 
+    # feature item loop
+    - icon : fas fa-shield-alt #https://fontawesome.com/v5.15/icons
+      name : Data security
+      content : "Fully encrypted internal storage and ciphered data transmission ensure your competitive data remains confidential during international competitions."
 
-    - icon : fas fa-microscope #https://fontawesome.com/v5.15/icons
-      name : State of the art
-      content : "We research and make use of novel techniques to bring the most innovative solutions within everyone's reach."
-
-
-    - icon : fas fa-user-check #https://fontawesome.com/v5.15/icons
-      name : Accessible
-      content : "Our clients do not require any technical knowledge to make the most out of our services."
-
-
-    # - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
-    #   name : Open
-    #   content : "We are always open to comments or suggestions on how to improve the user experience!"
-
-
-
-    # service item loop
-    #- icon : fas fa-bullseye #https://fontawesome.com/v5.15/icons
-    #  name: Branding
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-layer-group #https://fontawesome.com/v5.15/icons
-    #  name: Web Design
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-image #https://fontawesome.com/v5.15/icons
-    #  name: App Design
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-bug #https://fontawesome.com/v5.15/icons
-    #  name: Start Up
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-headphones-alt #https://fontawesome.com/v5.15/icons
-    #  name: Logo Design
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-leaf #https://fontawesome.com/v5.15/icons
-    #  name: Development
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-globe-asia #https://fontawesome.com/v5.15/icons
-    #  name: Brand Identity
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-feather #https://fontawesome.com/v5.15/icons
-    #  name: Brand Identity
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-  
+    # feature item loop
+    - icon : fas fa-plug #https://fontawesome.com/v5.15/icons
+      name : Plug-and-play simplicity
+      content : "\"Plug and play\" functionality allows staff members with no technical experience to immediately access advanced performance analytics."
 
 ############################# call to action #################################
 cta:
