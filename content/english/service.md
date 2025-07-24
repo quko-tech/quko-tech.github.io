@@ -8,11 +8,11 @@ draft: false
 ########################### about service #############################
 about:
   enable : true
-  title : "We have the solution you are looking for"
-  content : "At QUKO, we bring the expertise to apply cutting-edge digital technologies across a wide range of sectors.
+  title : "Comprehensive technology solutions for performance optimization"
+  content : "At QUKO, we combine deep research expertise with practical engineering to deliver integrated hardware and software solutions that transform complex data into actionable insights.
 
 
-<br>No matter the challenge—solving a problem or streamlining processes—we deliver results that are both high-quality and tailored to each client's specific needs."
+<br>Whether you need real-time monitoring systems, predictive analytics, or custom embedded solutions, we create technology that drives measurable performance improvements across diverse applications."
   image : "images/stock-placa3.jpg"
 
 
@@ -21,114 +21,70 @@ featured_service:
   enable : true
   service_item:
     # featured service item loop
-    - name : "Hardware"
+    - name : "Hardware Systems"
       icon : "fas fa-microchip"
       color : "primary"
-      content : "Custom hardware solutions"
+      content : "Custom embedded devices with advanced sensors, real-time processing, and wireless connectivity"
 
     # featured service item loop
-    - name : "Telecommunications"
-      icon : "fas fa-satellite-dish"
+    - name : "Cloud Analytics"
+      icon : "fas fa-cloud"
       color : "primary-darker"
-      content : "Telecommunication networks sizing and deployment capabilities"
+      content : "Scalable platforms for data visualization, AI-powered insights, and collaborative analysis"
 
     # featured service item loop
-    - name : "Software"
-      icon : "fas fa-code"
+    - name : "Intelligent Software"
+      icon : "fas fa-brain"
       color : "primary-dark"
-      content : "Solutions based on data processing, web application design, data science and more"
+      content : "Machine learning algorithms, pattern recognition, and predictive analytics tailored to your needs"
 
 
 ############################# Service ###############################
 
 service:
   enable : true
-  title : "Why choosing QUKO?"
+  title : "Why choose QUKO?"
   #description : "At QUKO, we have a team with years of experience behind them in the fields of data, electronics, software and telecommunications engineering."
   service_item:
     # feature item loop
-    - icon : fas fa-code #https://fontawesome.com/v5.15/icons
-      name : Adaptation to the customer
-      content : "We offer compact solutions tailored to the specific use of our customers."
+    - icon : fas fa-cogs #https://fontawesome.com/v5.15/icons
+      name : Scientific innovation
+      content : "Solutions built on quantum engineering, experimental physics, and advanced telecommunications expertise."
 
     # feature item loop
-    # - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
-    #   name : Confidentiality
-    #   content : "We seek to maintain a relationship of close trust with our clients based on confidentiality."
+    - icon : fas fa-shield-alt #https://fontawesome.com/v5.15/icons
+      name : Security-first approach
+      content : "End-to-end encryption, secure data transmission, and privacy-focused architectures for sensitive applications."
 
     # feature item loop
-    # - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
-    #   name : Optimum performance
-    #   content : "Whatever the process to be optimized, we will strive for maximum performance through technology."
+    - icon : fas fa-tachometer-alt #https://fontawesome.com/v5.15/icons
+      name : Real-time performance
+      content : "Live data streaming, instant visualization, and immediate feedback systems for time-critical applications."
 
     # feature item loop
-    # - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
-    #   name : Support
-    #   content : "Our team is committed to its customers by offering technical support and consulting<br><br> "
-
+    - icon : fas fa-puzzle-piece #https://fontawesome.com/v5.15/icons
+      name : Seamless integration
+      content : "Hardware and software designed to work together, creating unified solutions that maximize efficiency."
 
     # feature item loop
     - icon : fas fa-lightbulb #https://fontawesome.com/v5.15/icons
-      name : We never stop
-      content : "At QUKO we are constantly evolving and introducing new ideas and updates to our products."
+      name : Continuous evolution
+      content : "Constantly introducing new features, updates, and capabilities based on latest research and user feedback."
 
-
+    # feature item loop
     - icon : fas fa-microscope #https://fontawesome.com/v5.15/icons
-      name : State of the art
-      content : "We research and make use of novel techniques to bring the most innovative solutions within everyone's reach."
+      name : Cutting-edge technology
+      content : "Advanced algorithms, AI-powered analytics, and state-of-the-art hardware designed for maximum performance."
 
-
+    # feature item loop
     - icon : fas fa-user-check #https://fontawesome.com/v5.15/icons
-      name : Accessible
-      content : "Our clients do not require any technical knowledge to make the most out of our services."
+      name : Intuitive design
+      content : "Complex technologies made accessible through user-friendly interfaces that require no technical expertise."
 
-
-    # - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
-    #   name : Open
-    #   content : "We are always open to comments or suggestions on how to improve the user experience!"
-
-
-
-    # service item loop
-    #- icon : fas fa-bullseye #https://fontawesome.com/v5.15/icons
-    #  name: Branding
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-layer-group #https://fontawesome.com/v5.15/icons
-    #  name: Web Design
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-image #https://fontawesome.com/v5.15/icons
-    #  name: App Design
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-bug #https://fontawesome.com/v5.15/icons
-    #  name: Start Up
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-headphones-alt #https://fontawesome.com/v5.15/icons
-    #  name: Logo Design
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-leaf #https://fontawesome.com/v5.15/icons
-    #  name: Development
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-globe-asia #https://fontawesome.com/v5.15/icons
-    #  name: Brand Identity
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-feather #https://fontawesome.com/v5.15/icons
-    #  name: Brand Identity
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-  
+    # feature item loop
+    - icon : fas fa-handshake #https://fontawesome.com/v5.15/icons
+      name : Collaborative approach
+      content : "Close partnership throughout development, ensuring solutions are perfectly tailored to your specific requirements."
 
 ############################# call to action #################################
 cta:

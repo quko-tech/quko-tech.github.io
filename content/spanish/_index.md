@@ -88,7 +88,7 @@ funfacts:
   testimonial_slider:
   # testimonial item loop
   - name: "Pablo Álvarez"
-    image: "images/clients/pepe1.jpeg"
+    image: "images/clients/pepe1.png"
     designation: "Ingeniero de Telecomunicaciones"
     content: "Nuestra meta es llevar las últimas tecnologías a todo tipo se sectores, manteniendo una relación cercana con el cliente basada en la confianza y la confidencialidad."
 

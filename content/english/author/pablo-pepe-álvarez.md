@@ -2,7 +2,7 @@
 title: "Pablo (Pepe) Álvarez"
 email: "contact@quko.es"
 bg_image: "images/feature-bg.jpg"
-photo: "/images/clients/pepe1.jpeg"
+photo: "/images/clients/pepe1.png"
 draft: false
 social:
   - icon : "fab fa-facebook" #https://fontawesome.com/v5.15/icons
