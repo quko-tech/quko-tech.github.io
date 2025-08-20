@@ -43,6 +43,99 @@ kosoku_video_2:
   enable : true
   youtube_id: "edw6svHVUdE"
 
+############################# Pricing Section ###############################
+pricing:
+  enable: true
+  title: "Choose Your Kosoku Package"
+  description: "Revolutionary training technology at kickstarter prices. Limited time early bird offers!"
+  pricing_plans:
+    - name: "Single device"
+      price: "849"
+      currency: "€"
+      #original_price: "€599"
+      #badge: "CHEAPEST"
+      description: "Perfect for individual athletes"
+      features:
+        - "Complete Kosoku device"
+        - "Garmin Connect integration"
+        - "Compatibility with Quko Cloud"
+        - "Live data streaming (requires additional hardware)"
+        - "2-year warranty"
+        - "Wireless charger"
+      button_text: "Pre-selling soon!"
+      #button_text: "Pre-buy a unit"
+      #button_link: "https://www.kickstarter.com/projects/pepassaco/169757071"
+      featured: true
+
+    - name: "Give me Five!"
+      price: "3990"
+      currency: "€"
+      #original_price: "€1799"
+      #badge: "BEST VALUE"
+      description: "Ideal for small teams, clubs and training centers"
+      features:
+        - "5x Kosoku devices"
+        - "Garmin Connect integration"
+        - "Compatibility with Quko Cloud"
+        - "Live data streaming (requires additional hardware)"
+        - "2-year warranty"
+        - "Wireless chargers"
+        - "Free Transport Briefcase included"
+      button_text: "Pre-selling soon!"
+      #button_text: "Pre-buy this bundle"
+      #button_link: "https://www.kickstarter.com/projects/pepassaco/169757071"
+      featured: false
+
+    - name: "Ten out of ten"
+      price: "7490"
+      currency: "€"
+      #original_price: "€3499"
+      #badge: "ULTIMATE"
+      description: "For national teams and elite programs"
+      features:
+        - "10x Kosoku devices"
+        - "10x 1-month Quko Cloud subscriptions"
+        - "Garmin Connect integration"
+        - "Compatibility with Quko Cloud"
+        - "Live data streaming (requires additional hardware)"
+        - "2-year warranty"
+        - "Wireless chargers"
+        - "Free Transport Briefcase included"
+      button_text: "Pre-selling soon!"
+      #button_text: "Pre-buy this bundle"
+      #button_link: "https://www.kickstarter.com/projects/pepassaco/169757071"
+      featured: false
+
+############################# Kickstarter Section ###############################
+kickstarter:
+  enable: false
+  title: "🚀 Preselling live on Kickstarter!"
+  subtitle: "Join the revolution in paddle sports technology"
+  logo: "images/kickstarter-logo.png"
+  
+  countdown:
+    enable: true
+    days: "28"
+    hours: "15"
+    minutes: "42"
+    # Note: The JavaScript will calculate real countdown if you set campaign end date
+  
+  stats:
+    - number: "€45K+"
+      label: "Funded"
+    - number: "150+"
+      label: "Backers"
+    - number: "78%"
+      label: "Complete"
+  
+  primary_button:
+    text: "Back on Kickstarter"
+    link: "https://www.kickstarter.com/projects/pepassaco/169757071"
+  
+  secondary_button:
+    text: "Watch Campaign Video"
+    link: "#kosoku_video"
+
 ############################# Service ###############################
 
 featured_service_2:

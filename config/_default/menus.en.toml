@@ -12,22 +12,38 @@ url = "about/"
 weight = 2
 
 [[main]]
-name = "Services"
-url = "service/"
-weight = 3
-
-[[main]]
-name = "Kosoku"
-url = "kosoku/"
+name = "Blog"
+url = "blog/"
 weight = 4
 
 [[main]]
-name = "Blog"
-url = "blog/"
 weight = 5
+name = "Products"
+hasChildren = true
+
+  [[main]]
+  parent = "Products"
+  name = "Kosoku"
+  url = "kosoku/"
+  weight = 1
+
+  [[main]]
+  parent = "Products"
+  name = "Quko Cloud"
+  url = "quko_cloud/"
+  weight = 2
+
+  [[main]]
+  parent = "Products"
+  name = "Quko Live"
+  url = "quko_live/"
+  weight = 3
+
+
+
 
 [[main]]
-weight = 6
+weight = 7
 name = "More"
 hasChildren = true
 
@@ -36,6 +52,13 @@ hasChildren = true
 #  name = "Service"
 #  url = "service/"
 #  weight = 1
+
+
+  [[main]]
+  parent = "More"
+  name = "Services"
+  url = "service/"
+  weight = 1
 
   #[[main]]
   #parent = "More"
@@ -64,7 +87,7 @@ hasChildren = true
 [[main]]
 name = "Access QUKO Cloud"
 url = "https://app.quko.es/"
-weight = 7
+weight = 8
 
 
 # footer menu

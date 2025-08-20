@@ -374,6 +374,10 @@
                 href="http://localhost:1313/author/pablo-pepe-%C3%A1lvarez/"
                 />
   </url><url>
+    <loc>http://localhost:1313/quko_cloud/</loc>
+  </url><url>
+    <loc>http://localhost:1313/quko_live/</loc>
+  </url><url>
     <loc>http://localhost:1313/project/rio-furniture-1/</loc>
     <xhtml:link
                 rel="alternate"

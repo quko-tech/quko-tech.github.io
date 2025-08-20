@@ -1,0 +1,561 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<style>
+/* FIX: Enforce a baseline font size for this page to prevent theme overrides */
+html {
+  font-size: 16px;
+}
+
+/* Modern Quko Live Styles - Using Original Red Theme */
+:root {
+  --primary-red: #ff4236;
+  --dark-red: #e63946;
+  --light-red: #ff6b5a;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --shadow: 0 10px 30px rgba(255, 66, 54, 0.1);
+  --shadow-hover: 0 20px 40px rgba(255, 66, 54, 0.2);
+}
+
+/* Base animations and styles from kosoku.html */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Section styling */
+.section {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Content animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section title improvements */
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+  font-size: 2.8rem; /* Increased size */
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-red), var(--light-red));
+  border-radius: 2px;
+}
+
+.section-title p {
+  color: #666;
+  font-size: 1.1rem; /* Increased size */
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Quko Live Hero Section */
+.quko-hero {
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+  color: white;
+  position: relative;
+  overflow: hidden;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  padding: 70px 0;
+  margin: 100px 0;
+}
+
+.quko-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent, 70%);
+  animation: float 8s ease-in-out infinite;
+}
+
+.quko-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.quko-hero h1 {
+  font-size: 4rem; /* Increased size */
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.quko-hero-subtitle {
+  font-size: 1.6rem; /* Increased size */
+  margin-bottom: 30px;
+  opacity: 0.9;
+  font-weight: 300;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-size: 1.1rem; /* Increased size */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 40px;
+  animation: pulse 2.5s infinite;
+}
+
+.quko-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px 0;
+  flex-wrap: wrap;
+}
+
+.quko-stat-item {
+  text-align: center;
+}
+
+.quko-stat-number {
+  font-size: 3.2rem; /* Increased size */
+  font-weight: 700;
+  display: block;
+  color: white;
+}
+
+.quko-stat-label {
+  font-size: 1.1rem; /* Increased size */
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Data Metrics Grid */
+.data-metrics {
+  background: var(--light-gray);
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.data-metric-card {
+  background: white;
+  border-radius: 15px;
+  padding: 35px;
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-top: 4px solid var(--primary-red);
+}
+
+.data-metric-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.data-metric-card h4 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.3rem; /* Increased size */
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.data-metric-card:hover h4 {
+    color: var(--primary-red);
+}
+
+.data-metric-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 1.05rem; /* Increased size */
+}
+
+.sports-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.sport-card {
+  background: white;
+  color: #333;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 160px; /* Increased size */
+  box-shadow: var(--shadow);
+}
+
+.sport-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  color: var(--primary-red);
+}
+
+.sport-card i {
+  font-size: 3.5rem; /* Increased size */
+  margin-bottom: 15px;
+  display: block;
+  color: var(--primary-red);
+  transition: transform 0.3s ease;
+}
+
+.sport-card:hover i {
+    transform: scale(1.1);
+}
+
+.sport-card h4 {
+  font-size: 1.2rem; /* Increased size */
+  font-weight: 600;
+}
+
+/* Button styles from kosoku.html */
+.quko-btn {
+  background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
+  color: white;
+  border: none;
+  padding: 16px 38px; /* Increased size */
+  border-radius: 30px;
+  font-size: 1.1rem; /* Increased size */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.quko-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 66, 54, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+/* Service arrow section from kosoku.html */
+.service-arrow .block {
+  padding: 50px 30px;
+  text-align: center;
+  height: 100%;
+  position: relative;
+  transition: all 0.4s ease;
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+  color: white;
+  border-radius: 15px;
+}
+
+.service-arrow .block:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.service-arrow .block i {
+  font-size: 4rem; /* Increased size */
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.service-arrow .block:hover i {
+    transform: scale(1.1);
+}
+
+.service-arrow .block h3 {
+  font-size: 1.5rem; /* Increased size */
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.service-arrow .block div {
+  font-size: 1.1rem; /* Increased size */
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* Video container from kosoku.html */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.video-container:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 66, 54, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.video-overlay:hover {
+  background: var(--primary-red);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-overlay::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 20px solid white;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  margin-left: 4px;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .section {
+      padding: 60px 0;
+  }
+  .quko-hero h1 {
+    font-size: 2.8rem;
+  }
+  .quko-hero-subtitle {
+    font-size: 1.3rem;
+  }
+  .section-title h2 {
+    font-size: 2.2rem;
+  }
+  .data-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-arrow .col-md-4 {
+      margin-bottom: 30px;
+  }
+}
+</style>
+
+
+
+{{ with .Params.featured_service }}
+{{ if .enable }}
+<section class="service-arrow section">
+  <div class="container">
+    <div class="row">
+      {{ range .service_item }}
+      <div class="col-md-4 animate-on-scroll">
+        <div class="block">
+          <i class="{{ .icon }}"></i>
+          {{ with .name }}<h3>{{ . | markdownify }}</h3>{{ end }}
+          {{ with .content }}<div>{{ . | $.Page.RenderString (dict "display" "block") }}</div>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+{{ with .Params.data_metrics }}
+{{ if .enable }}
+<section class="data-metrics section">
+  <div class="container">
+    <div class="section-title animate-on-scroll">
+      {{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
+      {{ with .description }}<p>{{ . | markdownify }}</p>{{ end }}
+    </div>
+    <div class="data-grid">
+      {{ range .metrics }}
+      <div class="data-metric-card animate-on-scroll">
+        <h4>{{ .name }}</h4>
+        <p>{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+{{ with .Params.sports_compatibility }}
+{{ if .enable }}
+<section class="sports-section section" style="padding-bottom: 10px;">
+  <div class="container" style="margin-bottom: 0;">
+    <div class="section-title animate-on-scroll" style="margin-bottom: 0;">
+      {{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
+      {{ with .description }}<p>{{ . | markdownify }}</p>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+{{ with .Params.live_video }}
+{{ if .enable }}
+<section class="service-about section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 animate-on-scroll">
+        {{ with .youtube_id }}
+        <div class="video-container" onclick="playVideo(this, '{{ . }}')">
+          <div class="video-overlay"></div>
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://img.youtube.com/vi/{{ . }}/maxresdefault.jpg') center/cover; border-radius: 15px;"></div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+{{ with .Params.quko_hero }}
+{{ if .enable }}
+<section class="quko-hero section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="quko-hero-content animate-on-scroll">
+          {{ with .title }}<h1>{{ . | markdownify }}</h1>{{ end }}
+          {{ with .subtitle }}<p class="quko-hero-subtitle" style="color: #ffffff;">{{ . | markdownify }}</p>{{ end }}
+          
+          <div class="coming-soon-badge">Coming Soon</div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+{{ if .Params.cta.enable }}
+{{ partial "cta.html" . }}
+{{ end }}
+
+<script>
+// Intersection Observer for scroll animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animated');
+    }
+  });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const animateElements = document.querySelectorAll('.animate-on-scroll');
+  animateElements.forEach(el => observer.observe(el));
+});
+
+function playVideo(container, videoId) {
+  const iframe = document.createElement('iframe');
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&showinfo=0`;
+  iframe.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 15px;';
+  iframe.frameBorder = '0';
+  iframe.allowFullscreen = true;
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  
+  const overlay = container.querySelector('.video-overlay');
+  const thumbnail = container.querySelector('div[style*="background"]');
+  
+  if (overlay) {
+    overlay.style.opacity = '0';
+    overlay.style.transform = 'translate(-50%, -50%) scale(0.5)';
+  }
+  
+  if (thumbnail) {
+    thumbnail.style.opacity = '0';
+  }
+  
+  setTimeout(() => {
+    container.innerHTML = '';
+    container.appendChild(iframe);
+  }, 300);
+}
+</script>
+
+{{ end }}

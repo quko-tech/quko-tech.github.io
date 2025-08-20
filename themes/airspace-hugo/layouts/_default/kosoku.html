@@ -66,6 +66,28 @@
   }
 }
 
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes countdown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    color: var(--primary-red);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* Section styling */
 .section {
   padding: 80px 0;
@@ -118,6 +140,317 @@
 @keyframes expandWidth {
   from { width: 0; }
   to { width: 60px; }
+}
+
+/* Pricing Section Styles */
+.pricing-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 66, 54, 0.05) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 3px solid transparent;
+}
+
+.pricing-card.featured {
+  transform: scale(1.05);
+  border: 3px solid var(--primary-red);
+  box-shadow: var(--shadow-hover);
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 66, 54, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.pricing-card:hover::before {
+  left: 100%;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(255, 66, 54, 0.3);
+}
+
+.pricing-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin: 15px 0;
+}
+
+.pricing-price {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--primary-red);
+  margin: 20px 0;
+  position: relative;
+}
+
+.pricing-price .currency {
+  font-size: 24px;
+  vertical-align: top;
+}
+
+.pricing-original {
+  font-size: 20px;
+  color: #999;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.pricing-features li {
+  padding: 10px 0;
+  color: #666;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.pricing-features li::before {
+  content: '✓';
+  color: var(--primary-red);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.pricing-features li:hover {
+  color: var(--primary-red);
+}
+
+.pricing-btn {
+  background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.pricing-btn:hover::before {
+  left: 100%;
+}
+
+.pricing-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 66, 54, 0.3);
+}
+
+/* Kickstarter Section Styles */
+.kickstarter-section {
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.kickstarter-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.03)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.03)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.kickstarter-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.kickstarter-logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.kickstarter-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.kickstarter-subtitle {
+  font-size: 24px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  color: #ffffff;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  min-width: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.countdown-number {
+  font-size: 32px;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 5px;
+  animation: countdown 2s ease-in-out infinite;
+}
+
+.countdown-label {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.kickstarter-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.kickstarter-btn {
+  background: white;
+  color: var(--primary-red);
+  border: none;
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  margin: 20px 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.kickstarter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 66, 54, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.kickstarter-btn:hover::before {
+  left: 100%;
+}
+
+.kickstarter-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  color: var(--primary-red);
+  text-decoration: none;
+}
+
+.kickstarter-btn.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.kickstarter-btn.secondary:hover {
+  background: white;
+  color: var(--primary-red);
 }
 
 /* Video container improvements */
@@ -379,6 +712,36 @@
     border-top: 9px solid transparent;
     border-bottom: 9px solid transparent;
   }
+  
+  .kickstarter-title {
+    font-size: 32px;
+  }
+  
+  .kickstarter-subtitle {
+    font-size: 18px;
+  }
+  
+  .countdown-container {
+    gap: 10px;
+  }
+  
+  .countdown-item {
+    min-width: 80px;
+    padding: 15px;
+  }
+  
+  .countdown-number {
+    font-size: 24px;
+  }
+  
+  .kickstarter-stats {
+    gap: 20px;
+  }
+  
+  .pricing-card.featured {
+    transform: none;
+    margin-top: 20px;
+  }
 }
 
 /* Enhanced container styling */
@@ -440,6 +803,7 @@
 
 </style>
 
+
 {{ with .Params.kosoku }}
 {{ if .enable }}
 <section class="service-about section pattern-bg">
@@ -461,6 +825,60 @@
 </section>
 {{ end }}
 {{ end }}
+
+<!-- Kickstarter Section -->
+{{ with .Params.kickstarter }}
+{{ if .enable }}
+<section class="kickstarter-section section">
+  <div class="container">
+    <div class="kickstarter-content animate-on-scroll">
+      {{ if .logo }}<img src="{{ .logo | relURL }}" alt="Kickstarter" class="kickstarter-logo">{{ end }}
+      {{ with .title }}<h2 class="kickstarter-title">{{ . | markdownify }}</h2>{{ end }}
+      {{ with .subtitle }}<p class="kickstarter-subtitle">{{ . | markdownify }}</p>{{ end }}
+      
+      {{ if .countdown.enable }}
+      <div class="countdown-container">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">{{ .countdown.days | default "30" }}</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">{{ .countdown.hours | default "12" }}</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">{{ .countdown.minutes | default "45" }}</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+      </div>
+      {{ end }}
+      
+      {{ if .stats }}
+      <div class="kickstarter-stats">
+        {{ range .stats }}
+        <div class="stat-item">
+          <span class="stat-number">{{ .number }}</span>
+          <span class="stat-label">{{ .label }}</span>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+      
+      <div style="margin-top: 40px;">
+        {{ with .primary_button }}
+        <a href="{{ .link }}" class="kickstarter-btn" target="_blank">{{ .text }}</a>
+        {{ end }}
+        {{ with .secondary_button }}
+        <a href="{{ .link }}" class="kickstarter-btn secondary" target="_blank">{{ .text }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+
 
 {{ with .Params.kosoku_video }}
 {{ if .enable }}
@@ -522,11 +940,10 @@
 
 <!-- Service -->
 {{ if .Params.featured_service_2.enable }}
-
 {{ with .Params.featured_service_2 }}
 <section class="service section">
   <div class="container">
-    <div class="row">
+    <div class="row" style="display: block;">
       <div class="section-title animate-on-scroll">
         {{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
         {{ with .description }}<p>{{ . | markdownify }}</p>{{ end }}
@@ -555,6 +972,106 @@
 {{ partial "cta.html" . }}
 {{ end }}
 <!-- /Call to action -->
+
+
+<!-- Pricing Section -->
+{{ with .Params.pricing }}
+{{ if .enable }}
+<section class="pricing-section section">
+  <div class="container">
+    <div class="section-title animate-on-scroll">
+      {{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
+      {{ with .description }}<p>{{ . | markdownify }}</p>{{ end }}
+    </div>
+    <div class="row justify-content-center">
+      {{ range .pricing_plans }}
+      <div class="col-lg-4 col-md-6 animate-on-scroll">
+        <div class="pricing-card {{ if .featured }}featured{{ end }}">
+          {{ if .badge }}<div class="pricing-badge">{{ .badge }}</div>{{ end }}
+          <h3 class="pricing-title">{{ .name }}</h3>
+          <div class="pricing-price">
+            {{ if .original_price }}<span class="pricing-original">{{ .original_price }}</span>{{ end }}
+            {{ .price }} {{ .currency }}
+          </div>
+          {{ if .description }}<p style="color: #666; margin: 20px 0;">{{ .description }}</p>{{ end }}
+          <ul class="pricing-features">
+            {{ range .features }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+          <a href="{{ .button_link }}" class="pricing-btn">{{ .button_text }}</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="row justify-content-center" style="margin-top: 60px;">
+      <div class="col animate-on-scroll">
+        <div class="pricing-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border: 2px solid #e9ecef;">
+          <h3 class="pricing-title" style="color: var(--primary-red);">Custom Solutions</h3>
+          <p style="font-size: 18px; color: #666; margin: 25px 0; line-height: 1.6;">
+            We offer custom solutions designed around your unique needs, timeline, and budget.
+          </p>
+          <a href="/contact" class="pricing-btn">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+<!-- Kickstarter Section -->
+{{ with .Params.kickstarter }}
+{{ if .enable }}
+<section class="kickstarter-section section">
+  <div class="container">
+    <div class="kickstarter-content animate-on-scroll">
+      {{ if .logo }}<img src="{{ .logo | relURL }}" alt="Kickstarter" class="kickstarter-logo">{{ end }}
+      {{ with .title }}<h2 class="kickstarter-title">{{ . | markdownify }}</h2>{{ end }}
+      {{ with .subtitle }}<p class="kickstarter-subtitle">{{ . | markdownify }}</p>{{ end }}
+      
+      {{ if .countdown.enable }}
+      <div class="countdown-container">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">{{ .countdown.days | default "30" }}</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">{{ .countdown.hours | default "12" }}</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">{{ .countdown.minutes | default "45" }}</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+      </div>
+      {{ end }}
+      
+      {{ if .stats }}
+      <div class="kickstarter-stats">
+        {{ range .stats }}
+        <div class="stat-item">
+          <span class="stat-number">{{ .number }}</span>
+          <span class="stat-label">{{ .label }}</span>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+      
+      <div style="margin-top: 40px;">
+        {{ with .primary_button }}
+        <a href="{{ .link }}" class="kickstarter-btn" target="_blank">{{ .text }}</a>
+        {{ end }}
+        {{ with .secondary_button }}
+        <a href="{{ .link }}" class="kickstarter-btn secondary" target="_blank">{{ .text }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
 
 <script>
 // Intersection Observer for scroll animations
@@ -605,6 +1122,28 @@ function playVideo(container, videoId) {
     container.appendChild(iframe);
   }, 300);
 }
+
+// Countdown timer functionality
+function updateCountdown() {
+  // You can set your actual campaign end date here
+  const campaignEndDate = new Date('2024-12-31T23:59:59').getTime();
+  const now = new Date().getTime();
+  const timeLeft = campaignEndDate - now;
+  
+  if (timeLeft > 0) {
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes;
+  }
+}
+
+// Update countdown every minute
+setInterval(updateCountdown, 60000);
+updateCountdown();
 
 // Add some dynamic interactions
 document.addEventListener('DOMContentLoaded', () => {
