@@ -1,0 +1,2269 @@
+{
+  "countries": {
+    "AF1": {
+      "name": "Afghanistan",
+      "flag": "🇦🇫",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "AFR": {
+      "name": "Africa Eastern and Southern",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "AF": {
+      "name": "Africa Western and Central",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "AL": {
+      "name": "Albania",
+      "flag": "🇦🇱",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "DZ": {
+      "name": "Algeria",
+      "flag": "🇩🇿",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "AN": {
+      "name": "Andorra",
+      "flag": "🏳️",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "AO": {
+      "name": "Angola",
+      "flag": "🇦🇴",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "AA": {
+      "name": "Antigua and Barbuda",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "AR1": {
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "AM": {
+      "name": "Armenia",
+      "flag": "🇦🇲",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "AR": {
+      "name": "Aruba",
+      "flag": "🏳️",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "AU": {
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "AT": {
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "AZ": {
+      "name": "Azerbaijan",
+      "flag": "🇦🇿",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BA": {
+      "name": "Bahamas, The",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BH": {
+      "name": "Bahrain",
+      "flag": "🇧🇭",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "BD": {
+      "name": "Bangladesh",
+      "flag": "🇧🇩",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BAR": {
+      "name": "Barbados",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BY": {
+      "name": "Belarus",
+      "flag": "🇧🇾",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BE1": {
+      "name": "Belgium",
+      "flag": "🇧🇪",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "BEL": {
+      "name": "Belize",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BEN": {
+      "name": "Benin",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BE": {
+      "name": "Bermuda",
+      "flag": "🏳️",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "BT": {
+      "name": "Bhutan",
+      "flag": "🇧🇹",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BO": {
+      "name": "Bolivia",
+      "flag": "🇧🇴",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BA1": {
+      "name": "Bosnia and Herzegovina",
+      "flag": "🇧🇦",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BW": {
+      "name": "Botswana",
+      "flag": "🇧🇼",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BR1": {
+      "name": "Brazil",
+      "flag": "🇧🇷",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BR": {
+      "name": "Brunei Darussalam",
+      "flag": "🏳️",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "BG": {
+      "name": "Bulgaria",
+      "flag": "🇧🇬",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BF": {
+      "name": "Burkina Faso",
+      "flag": "🇧🇫",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "BU": {
+      "name": "Burundi",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CV": {
+      "name": "Cabo Verde",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "KH": {
+      "name": "Cambodia",
+      "flag": "🇰🇭",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CM": {
+      "name": "Cameroon",
+      "flag": "🇨🇲",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CA1": {
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "CA": {
+      "name": "Cayman Islands",
+      "flag": "🏳️",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "CEN": {
+      "name": "Central African Republic",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CE": {
+      "name": "Central Europe and the Baltics",
+      "flag": "🏳️",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "TD": {
+      "name": "Chad",
+      "flag": "🇹🇩",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CL": {
+      "name": "Chile",
+      "flag": "🇨🇱",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CN": {
+      "name": "China",
+      "flag": "🇨🇳",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CO": {
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "COM": {
+      "name": "Comoros",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CD1": {
+      "name": "Congo, Dem. Rep.",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CG": {
+      "name": "Congo, Rep.",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CR": {
+      "name": "Costa Rica",
+      "flag": "🇨🇷",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CD": {
+      "name": "Cote d'Ivoire",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "HR": {
+      "name": "Croatia",
+      "flag": "🇭🇷",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "CU1": {
+      "name": "Cuba",
+      "flag": "🇨🇺",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CU": {
+      "name": "Curacao",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CY": {
+      "name": "Cyprus",
+      "flag": "🇨🇾",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "CZ1": {
+      "name": "Czech Republic",
+      "flag": "🇨🇿",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "CZ": {
+      "name": "Czechia",
+      "flag": "🏳️",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "DK": {
+      "name": "Denmark",
+      "flag": "🇩🇰",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "DJ": {
+      "name": "Djibouti",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "DOM": {
+      "name": "Dominica",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "DO": {
+      "name": "Dominican Republic",
+      "flag": "🇩🇴",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "EA": {
+      "name": "Early-demographic dividend",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "EC": {
+      "name": "Ecuador",
+      "flag": "🇪🇨",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "EG": {
+      "name": "Egypt, Arab Rep.",
+      "flag": "🇪🇬",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SV1": {
+      "name": "El Salvador",
+      "flag": "🇸🇻",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "EQ": {
+      "name": "Equatorial Guinea",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "ER": {
+      "name": "Eritrea",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "EE": {
+      "name": "Estonia",
+      "flag": "🇪🇪",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "ESW": {
+      "name": "Eswatini",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "ET": {
+      "name": "Ethiopia",
+      "flag": "🇪🇹",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "FA": {
+      "name": "Faroe Islands",
+      "flag": "🏳️",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "FJ": {
+      "name": "Fiji",
+      "flag": "🇫🇯",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "FI": {
+      "name": "Finland",
+      "flag": "🇫🇮",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "FR": {
+      "name": "France",
+      "flag": "🇫🇷",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "GA": {
+      "name": "Gabon",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "GAM": {
+      "name": "Gambia, The",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "GE": {
+      "name": "Georgia",
+      "flag": "🇬🇪",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "DE": {
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "GH": {
+      "name": "Ghana",
+      "flag": "🇬🇭",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "GR1": {
+      "name": "Greece",
+      "flag": "🇬🇷",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "GR": {
+      "name": "Greenland",
+      "flag": "🏳️",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "GRE": {
+      "name": "Grenada",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "GT": {
+      "name": "Guatemala",
+      "flag": "🇬🇹",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "GUI": {
+      "name": "Guinea",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "GU1": {
+      "name": "Guinea-Bissau",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "GU": {
+      "name": "Guyana",
+      "flag": "🏳️",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "HT": {
+      "name": "Haiti",
+      "flag": "🇭🇹",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "HN": {
+      "name": "Honduras",
+      "flag": "🇭🇳",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "HO": {
+      "name": "Hong Kong SAR, China",
+      "flag": "🏳️",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "HU": {
+      "name": "Hungary",
+      "flag": "🇭🇺",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "IB": {
+      "name": "IBRD only",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "ID": {
+      "name": "IDA & IBRD total",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "IDA": {
+      "name": "IDA blend",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "IO": {
+      "name": "IDA only",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "ID2": {
+      "name": "IDA total",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "IS": {
+      "name": "Iceland",
+      "flag": "🇮🇸",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "IN": {
+      "name": "India",
+      "flag": "🇮🇳",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "ID1": {
+      "name": "Indonesia",
+      "flag": "🇮🇩",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "IR": {
+      "name": "Iran, Islamic Rep.",
+      "flag": "🇮🇷",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "IQ": {
+      "name": "Iraq",
+      "flag": "🇮🇶",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "IE": {
+      "name": "Ireland",
+      "flag": "🇮🇪",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "IL": {
+      "name": "Israel",
+      "flag": "🇮🇱",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "IT": {
+      "name": "Italy",
+      "flag": "🇮🇹",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "JM": {
+      "name": "Jamaica",
+      "flag": "🇯🇲",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "JP": {
+      "name": "Japan",
+      "flag": "🇯🇵",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "JO": {
+      "name": "Jordan",
+      "flag": "🇯🇴",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "KZ": {
+      "name": "Kazakhstan",
+      "flag": "🇰🇿",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "KE": {
+      "name": "Kenya",
+      "flag": "🇰🇪",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "KI": {
+      "name": "Kiribati",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "KR": {
+      "name": "Korea, Rep.",
+      "flag": "🇰🇷",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "KO": {
+      "name": "Kosovo",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "KW": {
+      "name": "Kuwait",
+      "flag": "🇰🇼",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "KY": {
+      "name": "Kyrgyz Republic",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "LA1": {
+      "name": "Lao PDR",
+      "flag": "🇱🇦",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "LA": {
+      "name": "Late-demographic dividend",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "LAT": {
+      "name": "Latin America & the Caribbean (IDA & IBRD countries)",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "LV": {
+      "name": "Latvia",
+      "flag": "🇱🇻",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "LE": {
+      "name": "Least developed countries: UN classification",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "LB": {
+      "name": "Lebanon",
+      "flag": "🇱🇧",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "LES": {
+      "name": "Lesotho",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "LI": {
+      "name": "Liberia",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "LY": {
+      "name": "Libya",
+      "flag": "🇱🇾",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "LT": {
+      "name": "Lithuania",
+      "flag": "🇱🇹",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "LU": {
+      "name": "Luxembourg",
+      "flag": "🇱🇺",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "MA": {
+      "name": "Macao SAR, China",
+      "flag": "🏳️",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "MG": {
+      "name": "Madagascar",
+      "flag": "🇲🇬",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MAL": {
+      "name": "Malawi",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MY": {
+      "name": "Malaysia",
+      "flag": "🇲🇾",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MV": {
+      "name": "Maldives",
+      "flag": "🇲🇻",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "ML": {
+      "name": "Mali",
+      "flag": "🇲🇱",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MT": {
+      "name": "Malta",
+      "flag": "🇲🇹",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "MAR": {
+      "name": "Marshall Islands",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MAU": {
+      "name": "Mauritania",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MU": {
+      "name": "Mauritius",
+      "flag": "🇲🇺",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MX": {
+      "name": "Mexico",
+      "flag": "🇲🇽",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "FM": {
+      "name": "Micronesia, Fed. Sts.",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MI": {
+      "name": "Middle East, North Africa, Afghanistan & Pakistan",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MID": {
+      "name": "Middle East, North Africa, Afghanistan & Pakistan (IDA & IBRD)",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MI1": {
+      "name": "Middle East, North Africa, Afghanistan & Pakistan (excluding high income)",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MD": {
+      "name": "Moldova",
+      "flag": "🇲🇩",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MN": {
+      "name": "Mongolia",
+      "flag": "🇲🇳",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "ME": {
+      "name": "Montenegro",
+      "flag": "🇲🇪",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MA1": {
+      "name": "Morocco",
+      "flag": "🇲🇦",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MZ": {
+      "name": "Mozambique",
+      "flag": "🇲🇿",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MM": {
+      "name": "Myanmar",
+      "flag": "🇲🇲",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "NA1": {
+      "name": "Namibia",
+      "flag": "🇳🇦",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "NA": {
+      "name": "Nauru",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "NP": {
+      "name": "Nepal",
+      "flag": "🇳🇵",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "NL": {
+      "name": "Netherlands",
+      "flag": "🇳🇱",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "NZ": {
+      "name": "New Zealand",
+      "flag": "🇳🇿",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "NI": {
+      "name": "Nicaragua",
+      "flag": "🇳🇮",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "NE": {
+      "name": "Niger",
+      "flag": "🇳🇪",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "NG": {
+      "name": "Nigeria",
+      "flag": "🇳🇬",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "MK": {
+      "name": "North Macedonia",
+      "flag": "🇲🇰",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "NO": {
+      "name": "Norway",
+      "flag": "🇳🇴",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "OM": {
+      "name": "Oman",
+      "flag": "🇴🇲",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "PK": {
+      "name": "Pakistan",
+      "flag": "🇵🇰",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "PAL": {
+      "name": "Palau",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "PA": {
+      "name": "Panama",
+      "flag": "🇵🇦",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "PG": {
+      "name": "Papua New Guinea",
+      "flag": "🇵🇬",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "PY": {
+      "name": "Paraguay",
+      "flag": "🇵🇾",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "PE": {
+      "name": "Peru",
+      "flag": "🇵🇪",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "PH": {
+      "name": "Philippines",
+      "flag": "🇵🇭",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "PL": {
+      "name": "Poland",
+      "flag": "🇵🇱",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "PT": {
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "PO": {
+      "name": "Post-demographic dividend",
+      "flag": "🏳️",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "PR": {
+      "name": "Pre-demographic dividend",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "PU": {
+      "name": "Puerto Rico (US)",
+      "flag": "🏳️",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "QA": {
+      "name": "Qatar",
+      "flag": "🇶🇦",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "RO": {
+      "name": "Romania",
+      "flag": "🇷🇴",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "RU": {
+      "name": "Russian Federation",
+      "flag": "🇷🇺",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "RW": {
+      "name": "Rwanda",
+      "flag": "🇷🇼",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SAM": {
+      "name": "Samoa",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SA": {
+      "name": "San Marino",
+      "flag": "🏳️",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "SAO": {
+      "name": "Sao Tome and Principe",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SA1": {
+      "name": "Saudi Arabia",
+      "flag": "🇸🇦",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "SN": {
+      "name": "Senegal",
+      "flag": "🇸🇳",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "RS": {
+      "name": "Serbia",
+      "flag": "🇷🇸",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SEY": {
+      "name": "Seychelles",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SIE": {
+      "name": "Sierra Leone",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SG": {
+      "name": "Singapore",
+      "flag": "🇸🇬",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "SM": {
+      "name": "Sint Maarten (Dutch part)",
+      "flag": "🏳️",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "SK": {
+      "name": "Slovak Republic",
+      "flag": "🇸🇰",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "SI": {
+      "name": "Slovenia",
+      "flag": "🇸🇮",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "SS": {
+      "name": "Small states",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SO": {
+      "name": "Solomon Islands",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SOM": {
+      "name": "Somalia",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "ZA": {
+      "name": "South Africa",
+      "flag": "🇿🇦",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SOU": {
+      "name": "South Sudan",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "ES": {
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "LK": {
+      "name": "Sri Lanka",
+      "flag": "🇱🇰",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "ST": {
+      "name": "St. Kitts and Nevis",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SL": {
+      "name": "St. Lucia",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SV": {
+      "name": "St. Vincent and the Grenadines",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SD": {
+      "name": "Sudan",
+      "flag": "🇸🇩",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SU": {
+      "name": "Suriname",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SE": {
+      "name": "Sweden",
+      "flag": "🇸🇪",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "CH": {
+      "name": "Switzerland",
+      "flag": "🇨🇭",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "SYR": {
+      "name": "Syria",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "SY": {
+      "name": "Syrian Arab Republic",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "TAJ": {
+      "name": "Tajikistan",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "TZ": {
+      "name": "Tanzania",
+      "flag": "🇹🇿",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "TH": {
+      "name": "Thailand",
+      "flag": "🇹🇭",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "TI": {
+      "name": "Timor-Leste",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "TOG": {
+      "name": "Togo",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "TO": {
+      "name": "Tonga",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "TT": {
+      "name": "Trinidad and Tobago",
+      "flag": "🇹🇹",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "TN": {
+      "name": "Tunisia",
+      "flag": "🇹🇳",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "TR": {
+      "name": "Turkey",
+      "flag": "🇹🇷",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "TU": {
+      "name": "Turkiye",
+      "flag": "🏳️",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "TUR": {
+      "name": "Turkmenistan",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "TA": {
+      "name": "Turks and Caicos Islands",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "TUV": {
+      "name": "Tuvalu",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "UG": {
+      "name": "Uganda",
+      "flag": "🇺🇬",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "UA": {
+      "name": "Ukraine",
+      "flag": "🇺🇦",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "AE": {
+      "name": "United Arab Emirates",
+      "flag": "🇦🇪",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "GB": {
+      "name": "United Kingdom",
+      "flag": "🇬🇧",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "US": {
+      "name": "United States",
+      "flag": "🇺🇸",
+      "basic": {
+        "price": 129
+      },
+      "pro": {
+        "price": 1449
+      }
+    },
+    "UY": {
+      "name": "Uruguay",
+      "flag": "🇺🇾",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "UZ": {
+      "name": "Uzbekistan",
+      "flag": "🇺🇿",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "VA": {
+      "name": "Vanuatu",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "VE": {
+      "name": "Venezuela, RB",
+      "flag": "🇻🇪",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "VN": {
+      "name": "Viet Nam",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "VN1": {
+      "name": "Vietnam",
+      "flag": "🇻🇳",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "VI": {
+      "name": "Virgin Islands (U.S.)",
+      "flag": "🏳️",
+      "basic": {
+        "price": 94
+      },
+      "pro": {
+        "price": 1049
+      }
+    },
+    "WE": {
+      "name": "West Bank and Gaza",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "YE": {
+      "name": "Yemen, Rep.",
+      "flag": "🏳️",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "ZM": {
+      "name": "Zambia",
+      "flag": "🇿🇲",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    },
+    "ZW": {
+      "name": "Zimbabwe",
+      "flag": "🇿🇼",
+      "basic": {
+        "price": 64
+      },
+      "pro": {
+        "price": 710
+      }
+    }
+  },
+  "currency": {
+    "code": "EUR",
+    "symbol": "€"
+  },
+  "disclaimer": "Prices shown do not include applicable taxes, VAT, or import tariffs which may vary by country. The final price may be updated upon the final product release."
+}

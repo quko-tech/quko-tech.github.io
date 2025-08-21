@@ -452,6 +452,185 @@
 }
 
  
+.country-selector-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.country-selector-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.country-selector-modal {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.country-selector-overlay.active .country-selector-modal {
+  transform: translateY(0);
+}
+
+.country-selector-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.country-selector-subtitle {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.country-dropdown {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 25px;
+  transition: border-color 0.3s ease;
+  background: white;
+}
+
+.country-dropdown:focus {
+  outline: none;
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 3px rgba(255, 66, 54, 0.1);
+}
+
+.country-confirm-btn {
+  background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.country-confirm-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 66, 54, 0.3);
+}
+
+.country-change-link {
+  color: var(--primary-red);
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.country-change-link:hover {
+  color: var(--dark-red);
+  text-decoration: underline;
+}
+
+ 
+.country-indicator {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 25px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border: 2px solid transparent;
+}
+
+.country-indicator:hover {
+  border-color: var(--primary-red);
+  transform: translateY(-2px);
+}
+
+.country-flag {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.country-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+ 
+.country-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--primary-red);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+ 
+.contact-pricing {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 2px solid var(--primary-red);
+  color: var(--primary-red);
+}
+
+.contact-pricing .pricing-price {
+  font-size: 24px;
+  color: var(--primary-red);
+}
+
+ 
+.price-disclaimer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px 20px;
+  background: rgba(255, 66, 54, 0.05);
+  border-left: 4px solid var(--primary-red);
+  border-radius: 8px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.price-disclaimer i {
+  color: var(--primary-red);
+  margin-right: 8px;
+}
+
+ 
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -577,163 +756,6 @@
 @keyframes expandWidth {
   from { width: 0; }
   to { width: 60px; }
-}
-
- 
-.pricing-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.pricing-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 66, 54, 0.05) 0%, transparent 70%);
-  animation: float 6s ease-in-out infinite;
-}
-
-.pricing-card {
-  background: white;
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 3px solid transparent;
-}
-
-.pricing-card.featured {
-  transform: scale(1.05);
-  border: 3px solid var(--primary-red);
-  box-shadow: var(--shadow-hover);
-}
-
-.pricing-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 66, 54, 0.1), transparent);
-  transition: left 0.6s ease;
-}
-
-.pricing-card:hover::before {
-  left: 100%;
-}
-
-.pricing-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
-}
-
-.pricing-badge {
-  position: absolute;
-  top: 7px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
-  color: white;
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: 0 5px 15px rgba(255, 66, 54, 0.3);
-}
-
-.pricing-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #333;
-  margin: 15px 0;
-}
-
-.pricing-price {
-  font-size: 48px;
-  font-weight: 800;
-  color: var(--primary-red);
-  margin: 20px 0;
-  position: relative;
-}
-
-.pricing-price .currency {
-  font-size: 24px;
-  vertical-align: top;
-}
-
-.pricing-original {
-  font-size: 20px;
-  color: #999;
-  text-decoration: line-through;
-  margin-right: 10px;
-}
-
-.pricing-features {
-  list-style: none;
-  padding: 0;
-  margin: 30px 0;
-}
-
-.pricing-features li {
-  padding: 10px 0;
-  color: #666;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.pricing-features li::before {
-  content: '✓';
-  color: var(--primary-red);
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.pricing-features li:hover {
-  color: var(--primary-red);
-}
-
-.pricing-btn {
-  background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-}
-
-.pricing-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.6s ease;
-}
-
-.pricing-btn:hover::before {
-  left: 100%;
-}
-
-.pricing-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(255, 66, 54, 0.3);
 }
 
  
@@ -976,7 +998,6 @@
 }
 
  
-
 .service-title{
   align-items: center;
 }
@@ -1134,56 +1155,164 @@
 }
 
  
-@media (max-width: 768px) {
-  .section {
-    padding: 60px 0;
-  }
-  
-  .service-arrow .block {
-    padding: 40px 20px;
-    margin-bottom: 20px;
-  }
-  
-  .video-overlay {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .video-overlay::after {
-    border-left: 15px solid white;
-    border-top: 9px solid transparent;
-    border-bottom: 9px solid transparent;
-  }
-  
-  .kickstarter-title {
-    font-size: 32px;
-  }
-  
-  .kickstarter-subtitle {
-    font-size: 18px;
-  }
-  
-  .countdown-container {
-    gap: 10px;
-  }
-  
-  .countdown-item {
-    min-width: 80px;
-    padding: 15px;
-  }
-  
-  .countdown-number {
-    font-size: 24px;
-  }
-  
-  .kickstarter-stats {
-    gap: 20px;
-  }
-  
-  .pricing-card.featured {
-    transform: none;
-    margin-top: 20px;
-  }
+.pricing-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 66, 54, 0.05) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 3px solid transparent;
+}
+
+.pricing-card.featured {
+  transform: scale(1.05);
+  border: 3px solid var(--primary-red);
+  box-shadow: var(--shadow-hover);
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 66, 54, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.pricing-card:hover::before {
+  left: 100%;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(255, 66, 54, 0.3);
+}
+
+.pricing-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin: 15px 0;
+}
+
+.pricing-price {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--primary-red);
+  margin: 20px 0;
+  position: relative;
+}
+
+.pricing-price .currency {
+  font-size: 24px;
+  vertical-align: top;
+}
+
+.pricing-original {
+  font-size: 20px;
+  color: #999;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.pricing-features li {
+  padding: 10px 0;
+  color: #666;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.pricing-features li::before {
+  content: '✓';
+  color: var(--primary-red);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.pricing-features li:hover {
+  color: var(--primary-red);
+}
+
+.pricing-btn {
+  background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.pricing-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.pricing-btn:hover::before {
+  left: 100%;
+}
+
+.pricing-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 66, 54, 0.3);
+  text-decoration: none;
+  color: white;
 }
 
  
@@ -1243,8 +1372,93 @@
   width: 100%;
 }
 
+ 
+@media (max-width: 768px) {
+  .country-indicator {
+    bottom: 20px;
+    right: 10px;
+    padding: 8px 12px;
+  }
+  
+  .country-selector-modal {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  .service-arrow .block {
+    padding: 40px 20px;
+    margin-bottom: 20px;
+  }
+  
+  .video-overlay {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .video-overlay::after {
+    border-left: 15px solid white;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+  }
+  
+  .kickstarter-title {
+    font-size: 32px;
+  }
+  
+  .kickstarter-subtitle {
+    font-size: 18px;
+  }
+  
+  .countdown-container {
+    gap: 10px;
+  }
+  
+  .countdown-item {
+    min-width: 80px;
+    padding: 15px;
+  }
+  
+  .countdown-number {
+    font-size: 24px;
+  }
+  
+  .kickstarter-stats {
+    gap: 20px;
+  }
+  
+  .pricing-card.featured {
+    transform: none;
+    margin-top: 20px;
+  }
+}
+
 </style>
 
+
+<div id="countrySelector" class="country-selector-overlay">
+  <div class="country-selector-modal">
+    <h3 class="country-selector-title">Select Your Country</h3>
+    <p class="country-selector-subtitle">We've detected your location. Please confirm or select your country to see accurate pricing.</p>
+    
+    <select id="countryDropdown" class="country-dropdown">
+      <option value="">Loading countries...</option>
+    </select>
+    
+    <button id="confirmCountry" class="country-confirm-btn">Confirm Country</button>
+    <a href="#" id="changeCountryLater" class="country-change-link">I'll select later</a>
+  </div>
+</div>
+
+
+<div id="countryIndicator" class="country-indicator" onclick="showCountrySelector()">
+  <span class="country-loading" id="countryLoading"></span>
+  <span class="country-flag" id="countryFlag">🌍</span>
+  <span class="country-name" id="countryName">Detecting location...</span>
+</div>
 
 
 
@@ -1264,8 +1478,6 @@
     </div>
   </div>
 </section>
-
-
 
 
 
@@ -1466,7 +1678,6 @@
 
 
 
-
 <section class="pricing-section section">
   <div class="container">
     <div class="section-title animate-on-scroll">
@@ -1475,13 +1686,14 @@
     </div>
     <div class="row justify-content-center">
       
+      
       <div class="col-lg-6 col-md-6 animate-on-scroll">
-        <div class="pricing-card ">
+        <div class="pricing-card " data-plan="basic">
           
           <h3 class="pricing-title">Monthly subscription</h3>
           <div class="pricing-price">
-            
-            TBD €
+            <span class="pricing-original" data-original-price></span>
+            <span data-price></span>
           </div>
           <p style="color: #666; margin: 20px 0;">Ideal for trainig camps or short training periods</p>
           <ul class="pricing-features">
@@ -1495,17 +1707,18 @@
             <li>Access to the full platform</li>
             
           </ul>
-          <a href="" class="pricing-btn">Pre-selling soon!</a>
+          <a href="/checkout" class="pricing-btn" data-plan-btn="basic">Pre-selling soon!</a>
         </div>
       </div>
       
+      
       <div class="col-lg-6 col-md-6 animate-on-scroll">
-        <div class="pricing-card featured">
+        <div class="pricing-card featured" data-plan="pro">
           
           <h3 class="pricing-title">Yearly subscription</h3>
           <div class="pricing-price">
-            
-            TBD €
+            <span class="pricing-original" data-original-price></span>
+            <span data-price></span>
           </div>
           <p style="color: #666; margin: 20px 0;">The best option to step up your trainings during the season</p>
           <ul class="pricing-features">
@@ -1519,34 +1732,356 @@
             <li>Access to the full platform</li>
             
           </ul>
-          <a href="" class="pricing-btn">Pre-selling soon!</a>
+          <a href="/checkout" class="pricing-btn" data-plan-btn="pro">Pre-selling soon!</a>
         </div>
       </div>
       
     </div>
+
     <div class="row justify-content-center" style="margin-top: 60px;">
       <div class="col animate-on-scroll">
         <div class="pricing-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border: 2px solid #e9ecef;">
           <h3 class="pricing-title" style="color: var(--primary-red);">Custom Solutions</h3>
           <p style="font-size: 18px; color: #666; margin: 25px 0; line-height: 1.6;">
-            We offer custom solutions designed around your unique needs, timeline, and budget.
+            Is your team big? Or maybe you are interested in longer terms subscription bundles? We can offer custom packs that adapt to your needs! 
           </p>
           <a href="/contact" class="pricing-btn">Contact Us</a>
         </div>
       </div>
     </div>
+    
+    
+    <div class="row justify-content-center" style="margin-top: 40px;">
+      <div class="col">
+        <div class="price-disclaimer animate-on-scroll">
+          <i class="fas fa-info-circle"></i>
+          <span id="priceDisclaimer">Prices shown do not include applicable taxes, VAT, or import tariffs which may vary by country.</span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
   </div>
 </section>
 
 
 
-
-
-
-
-
-
 <script>
+
+let COUNTRY_PRICING = {};
+let currentCountry = null;
+let detectedCountry = null;
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  loadPricingData();
+});
+
+
+async function loadPricingData() {
+  try {
+    
+    const response = await fetch('/data/countries-pricing.json');
+    const data = await response.json();
+    
+    COUNTRY_PRICING = data;
+    
+    
+    if (data.disclaimer) {
+      document.getElementById('priceDisclaimer').textContent = data.disclaimer;
+    }
+    
+    
+    detectUserCountry();
+    populateCountryDropdown();
+    setupEventListeners();
+    
+  } catch (error) {
+    console.error('Failed to load pricing data:', error);
+    
+    showFallbackPricing();
+  }
+}
+
+
+function showFallbackPricing() {
+  const plans = document.querySelectorAll('[data-plan]');
+  plans.forEach(plan => {
+    plan.classList.add('contact-pricing');
+    const priceElement = plan.querySelector('[data-price]');
+    const originalElement = plan.querySelector('[data-original-price]');
+    const btnElement = plan.querySelector('[data-plan-btn]');
+    
+    if (priceElement) priceElement.textContent = 'Contact Us';
+    if (originalElement) originalElement.style.display = 'none';
+    if (btnElement) {
+      btnElement.href = '/contact';
+      btnElement.textContent = 'CONTACT US';
+    }
+  });
+  
+  updateCountryIndicator('fallback');
+}
+
+
+async function detectUserCountry() {
+  try {
+    
+    const response = await fetch('https://ipapi.co/json/');
+    const data = await response.json();
+    
+    if (data.country_code) {
+      detectedCountry = data.country_code.toUpperCase();
+      updateCountryIndicator(detectedCountry, true);
+      setDefaultCountryInDropdown(detectedCountry);
+      
+      
+      setTimeout(() => {
+        showCountrySelector();
+      }, 1000);
+    } else {
+      throw new Error('No country data');
+    }
+  } catch (error) {
+    console.log('Primary geolocation failed, trying backup...');
+    
+    try {
+      
+      const response = await fetch('https://api.country.is/');
+      const data = await response.json();
+      
+      if (data.country) {
+        detectedCountry = data.country.toUpperCase();
+        updateCountryIndicator(detectedCountry, true);
+        setDefaultCountryInDropdown(detectedCountry);
+        
+        setTimeout(() => {
+          showCountrySelector();
+        }, 1000);
+      } else {
+        throw new Error('Backup service failed');
+      }
+    } catch (backupError) {
+      console.log('All geolocation services failed, using default');
+      
+      const firstCountry = Object.keys(COUNTRY_PRICING.countries || {})[0] || 'US';
+      detectedCountry = firstCountry;
+      updateCountryIndicator(firstCountry, true);
+      setDefaultCountryInDropdown(firstCountry);
+      
+      setTimeout(() => {
+        showCountrySelector();
+      }, 1000);
+    }
+  }
+}
+
+
+function updateCountryIndicator(countryCode, isDetecting = false) {
+  const loading = document.getElementById('countryLoading');
+  const flag = document.getElementById('countryFlag');
+  const name = document.getElementById('countryName');
+  
+  if (isDetecting) {
+    loading.style.display = 'none';
+  }
+  
+  if (countryCode === 'fallback') {
+    flag.textContent = '🌍';
+    name.textContent = 'Unknown Location';
+    return;
+  }
+  
+  if (COUNTRY_PRICING.countries && COUNTRY_PRICING.countries[countryCode]) {
+    flag.textContent = COUNTRY_PRICING.countries[countryCode].flag;
+    name.textContent = COUNTRY_PRICING.countries[countryCode].name;
+  } else {
+    flag.textContent = '🌍';
+    name.textContent = 'Unknown Location';
+  }
+}
+
+
+function populateCountryDropdown() {
+  const dropdown = document.getElementById('countryDropdown');
+  dropdown.innerHTML = '';
+  
+  if (!COUNTRY_PRICING.countries) return;
+  
+  
+  Object.keys(COUNTRY_PRICING.countries).forEach(countryCode => {
+    const country = COUNTRY_PRICING.countries[countryCode];
+    const option = document.createElement('option');
+    option.value = countryCode;
+    option.textContent = `${country.flag} ${country.name}`;
+    dropdown.appendChild(option);
+  });
+  
+  
+  const otherOption = document.createElement('option');
+  otherOption.value = 'OTHER';
+  otherOption.textContent = '🌍 Other (Contact for pricing)';
+  dropdown.appendChild(otherOption);
+}
+
+
+function setDefaultCountryInDropdown(countryCode) {
+  const dropdown = document.getElementById('countryDropdown');
+  if (COUNTRY_PRICING.countries && COUNTRY_PRICING.countries[countryCode]) {
+    dropdown.value = countryCode;
+  } else {
+    dropdown.value = 'OTHER';
+  }
+}
+
+
+function showCountrySelector() {
+  document.getElementById('countrySelector').classList.add('active');
+}
+
+
+function hideCountrySelector() {
+  document.getElementById('countrySelector').classList.remove('active');
+}
+
+
+function setupEventListeners() {
+  document.getElementById('confirmCountry').addEventListener('click', function() {
+    const selectedCountry = document.getElementById('countryDropdown').value;
+    if (selectedCountry) {
+      setCountryAndUpdatePricing(selectedCountry);
+      hideCountrySelector();
+    }
+  });
+  
+  document.getElementById('changeCountryLater').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const fallbackCountry = detectedCountry || Object.keys(COUNTRY_PRICING.countries || {})[0] || 'US';
+    setCountryAndUpdatePricing(fallbackCountry);
+    hideCountrySelector();
+  });
+  
+  
+  document.getElementById('countrySelector').addEventListener('click', function(e) {
+    if (e.target === this) {
+      const fallbackCountry = detectedCountry || Object.keys(COUNTRY_PRICING.countries || {})[0] || 'US';
+      setCountryAndUpdatePricing(fallbackCountry);
+      hideCountrySelector();
+    }
+  });
+}
+
+
+function setCountryAndUpdatePricing(countryCode) {
+  currentCountry = countryCode;
+  updateCountryIndicator(countryCode);
+  
+  if (countryCode === 'OTHER' || !COUNTRY_PRICING.countries || !COUNTRY_PRICING.countries[countryCode]) {
+    showContactPricing();
+  } else {
+    updatePricingDisplay(countryCode);
+  }
+  
+  
+  localStorage.setItem('selectedCountry', countryCode);
+}
+
+
+function updatePricingDisplay(countryCode) {
+  if (!COUNTRY_PRICING.countries || !COUNTRY_PRICING.countries[countryCode]) return;
+  
+  const pricing = COUNTRY_PRICING.countries[countryCode];
+  const currency = COUNTRY_PRICING.currency;
+  
+  
+  const plans = document.querySelectorAll('[data-plan]');
+  plans.forEach(plan => {
+    const planId = plan.getAttribute('data-plan');
+    const priceElement = plan.querySelector('[data-price]');
+    const originalElement = plan.querySelector('[data-original-price]');
+    const btnElement = plan.querySelector('[data-plan-btn]');
+    
+    
+    plan.classList.remove('contact-pricing');
+    
+    if (pricing[planId] && priceElement) {
+      priceElement.textContent = formatPrice(pricing[planId].price) + currency.symbol;
+      
+      
+      if (originalElement) {
+        if (pricing[planId].original) {
+          originalElement.textContent = formatPrice(pricing[planId].original) + currency.symbol;
+          originalElement.style.display = '';
+        } else {
+          originalElement.style.display = 'none';
+        }
+      }
+      
+      if (btnElement) {
+        const originalHref = btnElement.getAttribute('href');
+        const separator = originalHref.includes('?') ? '&' : '?';
+        btnElement.href = `${originalHref}${separator}plan=${planId}&country=${countryCode}`;
+        btnElement.textContent = btnElement.getAttribute('data-original-text') || 'GET STARTED';
+      }
+    }
+  });
+}
+
+
+function showContactPricing() {
+  const plans = document.querySelectorAll('[data-plan]');
+  plans.forEach(plan => {
+    const priceElement = plan.querySelector('[data-price]');
+    const originalElement = plan.querySelector('[data-original-price]');
+    const btnElement = plan.querySelector('[data-plan-btn]');
+    
+    
+    plan.classList.add('contact-pricing');
+    
+    if (priceElement) priceElement.textContent = 'Contact Us';
+    if (originalElement) originalElement.style.display = 'none';
+    
+    if (btnElement) {
+      
+      if (!btnElement.getAttribute('data-original-text')) {
+        btnElement.setAttribute('data-original-text', btnElement.textContent);
+      }
+      btnElement.href = '/contact';
+      btnElement.textContent = 'CONTACT US';
+    }
+  });
+}
+
+
+function formatPrice(price) {
+  return price.toLocaleString();
+}
+
+
+function checkStoredCountry() {
+  const stored = localStorage.getItem('selectedCountry');
+  if (stored && stored !== 'null' && COUNTRY_PRICING.countries) {
+    setCountryAndUpdatePricing(stored);
+    return true;
+  }
+  return false;
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+  setTimeout(() => {
+    if (!checkStoredCountry()) {
+      
+      if (Object.keys(COUNTRY_PRICING).length > 0) {
+        detectUserCountry();
+      }
+    }
+  }, 500);
+});
+
 
 const observerOptions = {
   threshold: 0.1,
@@ -1608,9 +2143,13 @@ function updateCountdown() {
     const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     
-    document.getElementById('days').textContent = days;
-    document.getElementById('hours').textContent = hours;
-    document.getElementById('minutes').textContent = minutes;
+    const daysElement = document.getElementById('days');
+    const hoursElement = document.getElementById('hours');
+    const minutesElement = document.getElementById('minutes');
+    
+    if (daysElement) daysElement.textContent = days;
+    if (hoursElement) hoursElement.textContent = hours;
+    if (minutesElement) minutesElement.textContent = minutes;
   }
 }
 

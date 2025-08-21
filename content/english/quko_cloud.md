@@ -49,6 +49,7 @@ pricing:
   description: "Revolutionary training technology at kickstarter prices. Limited time early bird offers!"
   pricing_plans:
     - name: "Monthly subscription"
+      plan_id: "basic"
       price: "TBD"
       #price: "95"
       currency: "€"
@@ -66,6 +67,7 @@ pricing:
       featured: false
 
     - name: "Yearly subscription"
+      plan_id: "pro"
       price: "TBD"
       #price: "1050"
       currency: "€"
