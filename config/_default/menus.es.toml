@@ -1,4 +1,4 @@
-############# Italian navigation ##############
+############# English navigation ##############
 
 # main menu
 [[main]]
@@ -7,46 +7,70 @@ url = ""
 weight = 1
 
 [[main]]
-name = "Quiénes somos"
+name = "Acerca de"
 url = "about/"
 weight = 2
 
 [[main]]
-name = "Servicios"
-url = "service/"
-weight = 3
-
-[[main]]
-name = "Kosoku"
-url = "kosoku/"
+name = "Blog"
+url = "blog/"
 weight = 4
-
-#[[main]]
-#name = "Proyecto"
-#url = "project/"
-#weight = 3
-
-#[[main]]
-#name = "Blog"
-#url = "blog/"
-#weight = 4
 
 [[main]]
 weight = 5
+name = "Productos"
+hasChildren = true
+
+  [[main]]
+  parent = "Productos"
+  name = "Kosoku"
+  url = "kosoku/"
+  weight = 1
+
+  [[main]]
+  parent = "Productos"
+  name = "Quko Cloud"
+  url = "quko_cloud/"
+  weight = 2
+
+  [[main]]
+  parent = "Productos"
+  name = "Quko Live"
+  url = "quko_live/"
+  weight = 3
+
+
+
+
+[[main]]
+weight = 7
 name = "Más"
 hasChildren = true
 
-  #[[main]]
-  #parent = "Más"
-  #name = "Servicio"
-  #url = "service/"
-  #weight = 1
+#  [[main]]
+#  parent = "More"
+#  name = "Service"
+#  url = "service/"
+#  weight = 1
+
+
+  [[main]]
+  parent = "Más"
+  name = "Servicios"
+  url = "service/"
+  weight = 1
 
   #[[main]]
   #parent = "Más"
-  #name = "Tarifas"
+  #name = "Pricing"
   #url = "pricing/"
   #weight = 2
+
+  [[main]]
+  parent = "Más"
+  name = "Newsletter"
+  url = "newsletter/"
+  weight = 4
 
   [[main]]
   parent = "Más"
@@ -61,34 +85,35 @@ hasChildren = true
   weight = 4
 
 [[main]]
-name = "QUKO Cloud"
+name = "Acceso a QUKO Cloud"
 url = "https://app.quko.es/"
-weight = 7
+weight = 8
 
 
 # footer menu
+
 [[footer]]
-name = "Quiénes somos"
+name = "Inicio"
+url = ""
+weight = 1
+
+[[footer]]
+name = "Acerca de"
 url = "about/"
 weight = 2
 
 #[[footer]]
-#name = "Proyecto"
+#name = "Project"
 #url = "project/"
 #weight = 3
 
-[[footer]]
-name = "Servicio"
-url = "service/"
-weight = 4
-
 #[[footer]]
-#name = "Tarifas"
+#name = "Pricing"
 #url = "pricing/"
 #weight = 5
 
 [[footer]]
-name = "FAQ"
+name = "Preguntas Frecuentes"
 url = "faq/"
 weight = 6
 

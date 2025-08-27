@@ -289,23 +289,6 @@
                 href="http://localhost:1313/contact/"
                 />
   </url><url>
-    <loc>http://localhost:1313/kosoku/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/kosoku/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/kosoku/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/kosoku/"
-                />
-  </url><url>
     <loc>http://localhost:1313/newsletter/</loc>
     <xhtml:link
                 rel="alternate"
@@ -375,6 +358,23 @@
                 />
   </url><url>
     <loc>http://localhost:1313/quko_cloud/</loc>
+  </url><url>
+    <loc>http://localhost:1313/kosoku/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/kosoku/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/kosoku/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/kosoku/"
+                />
   </url><url>
     <loc>http://localhost:1313/quko_live/</loc>
   </url><url>

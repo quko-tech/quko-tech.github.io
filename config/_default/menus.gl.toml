@@ -1,4 +1,4 @@
-############# Italian navigation ##############
+############# English navigation ##############
 
 # main menu
 [[main]]
@@ -7,89 +7,113 @@ url = ""
 weight = 1
 
 [[main]]
-name = "Sobre nós"
+name = "Acerca de"
 url = "about/"
 weight = 2
 
 [[main]]
-name = "Servizos"
-url = "service/"
-weight = 3
-
-[[main]]
-name = "Kosoku"
-url = "kosoku/"
+name = "Blog"
+url = "blog/"
 weight = 4
-
-#[[main]]
-#name = "Proxecto"
-#url = "project/"
-#weight = 4
-
-
-#[[main]]
-#name = "Blog"
-#url = "blog/"
-#weight = 4
 
 [[main]]
 weight = 5
+name = "Productos"
+hasChildren = true
+
+  [[main]]
+  parent = "Productos"
+  name = "Kosoku"
+  url = "kosoku/"
+  weight = 1
+
+  [[main]]
+  parent = "Productos"
+  name = "Quko Cloud"
+  url = "quko_cloud/"
+  weight = 2
+
+  [[main]]
+  parent = "Productos"
+  name = "Quko Live"
+  url = "quko_live/"
+  weight = 3
+
+
+
+
+[[main]]
+weight = 7
 name = "Máis"
 hasChildren = true
 
-  #[[main]]
-  ##parent = "Máis"
-  #name = "Servizo"
-  #url = "service/"
-  #weight = 1
+#  [[main]]
+#  parent = "More"
+#  name = "Service"
+#  url = "service/"
+#  weight = 1
+
+
+  [[main]]
+  parent = "Más"
+  name = "Servizos"
+  url = "service/"
+  weight = 1
 
   #[[main]]
-  ##parent = "Máis"
-  #name = "Prezos"
+  #parent = "Más"
+  #name = "Pricing"
   #url = "pricing/"
   #weight = 2
 
   [[main]]
-  parent = "Máis"
+  parent = "Más"
+  name = "Newsletter"
+  url = "newsletter/"
+  weight = 4
+
+  [[main]]
+  parent = "Más"
   name = "FAQ"
   url = "faq/"
   weight = 3
   
   [[main]]
-  parent = "Máis"
+  parent = "Más"
   name = "Contacto"
   url = "contact/"
   weight = 4
 
 [[main]]
-name = "QUKO Cloud"
+name = "Acceso a QUKO Cloud"
 url = "https://app.quko.es/"
-weight = 7
+weight = 8
 
 
 # footer menu
+
 [[footer]]
-name = "Sobre nós"
+name = "Inicio"
+url = ""
+weight = 1
+
+[[footer]]
+name = "Acerca de"
 url = "about/"
 weight = 2
 
-[[footer]]
-name = "Proxecto"
-url = "project/"
-weight = 3
+#[[footer]]
+#name = "Project"
+#url = "project/"
+#weight = 3
+
+#[[footer]]
+#name = "Pricing"
+#url = "pricing/"
+#weight = 5
 
 [[footer]]
-name = "Servizo"
-url = "service/"
-weight = 4
-
-[[footer]]
-name = "Prezos"
-url = "pricing/"
-weight = 5
-
-[[footer]]
-name = "FAQ"
+name = "Preguntas Frecuentes"
 url = "faq/"
 weight = 6
 
