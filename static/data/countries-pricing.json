@@ -180,16 +180,6 @@
         "price": 710
       }
     },
-    "BY": {
-      "name": "Belarus",
-      "flag": "🇧🇾",
-      "basic": {
-        "price": 64
-      },
-      "pro": {
-        "price": 710
-      }
-    },
     "BE1": {
       "name": "Belgium",
       "flag": "🇧🇪",
@@ -1670,16 +1660,6 @@
         "price": 1049
       }
     },
-    "RU": {
-      "name": "Russian Federation",
-      "flag": "🇷🇺",
-      "basic": {
-        "price": 94
-      },
-      "pro": {
-        "price": 1049
-      }
-    },
     "RW": {
       "name": "Rwanda",
       "flag": "🇷🇼",
@@ -2265,5 +2245,5 @@
     "code": "EUR",
     "symbol": "€"
   },
-  "disclaimer": "Prices shown do not include applicable taxes, VAT, or import tariffs which may vary by country. The final price may be updated upon the final product release."
+  "disclaimer": "Prices shown do not include applicable taxes, VAT, or import tariffs which may vary by country. The final price may be updated upon the final product release. Quko Cloud subscriptions are personal and non-transferable, with one subscription per athlete using the platform. Coach or technical staff accounts are free of charge in limited amounts."
 }

@@ -58,7 +58,7 @@ pricing:
       features:
         - "Complete Kosoku device"
         - "Garmin Connect integration"
-        - "Compatibility with Quko Cloud"
+        - "Compatibility with QUKO Cloud"
         - "Live data streaming (requires additional hardware)"
         - "2-year warranty"
         - "Wireless charger"
@@ -76,7 +76,7 @@ pricing:
       features:
         - "5x Kosoku devices"
         - "Garmin Connect integration"
-        - "Compatibility with Quko Cloud"
+        - "Compatibility with QUKO Cloud"
         - "Live data streaming (requires additional hardware)"
         - "2-year warranty"
         - "Wireless chargers"
@@ -94,9 +94,9 @@ pricing:
       description: "For national teams and elite programs"
       features:
         - "10x Kosoku devices"
-        - "10x 1-month Quko Cloud subscriptions"
+        - "10x 1-month QUKO Cloud subscriptions"
         - "Garmin Connect integration"
-        - "Compatibility with Quko Cloud"
+        - "Compatibility with QUKO Cloud"
         - "Live data streaming (requires additional hardware)"
         - "2-year warranty"
         - "Wireless chargers"
