@@ -220,6 +220,7 @@
       "img-fluid",
       "img-responsive",
       "justify-content-center",
+      "justify-content-left",
       "list-inline",
       "list-inline-item",
       "m-2",

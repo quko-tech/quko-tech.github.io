@@ -1,5 +1,5 @@
 ---
-title: "Kosoku"
+title: "QUKO Kosoku"
 description: "From Japanese: \"Speed of Light\""
 bg_image: "images/logo_koso.png"
 layout: "kosoku"
