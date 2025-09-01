@@ -234,23 +234,6 @@
                 href="http://localhost:1313/es/author/"
                 />
   </url><url>
-    <loc>http://localhost:1313/es/kosoku/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/kosoku/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/kosoku/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/kosoku/"
-                />
-  </url><url>
     <loc>http://localhost:1313/es/newsletter/</loc>
     <xhtml:link
                 rel="alternate"
@@ -334,6 +317,57 @@
                 rel="alternate"
                 hreflang="es-ES"
                 href="http://localhost:1313/es/contact/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/quko_cloud/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/quko_cloud/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/quko_cloud/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/quko_cloud/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/kosoku/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/kosoku/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/kosoku/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/kosoku/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/quko_live/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/quko_live/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/quko_live/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/quko_live/"
                 />
   </url><url>
     <loc>http://localhost:1313/es/project/rio-furniture-1/</loc>
