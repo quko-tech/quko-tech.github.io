@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quko File Manager</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F680;</text></svg>">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    body{font-family:Arial,sans-serif;margin:0;padding:20px;line-height:1.6}
+    h1{color:#f44236}.menu{display:flex;gap:10px;margin-bottom:20px}
+    .menu a{text-decoration:none;padding:10px 15px;background-color:#f44236;color:white;border-radius:4px}
+    .menu a:hover{background-color:#d32f2f}
+    .file-list{width:100%;border-collapse:collapse;margin-top:20px}
+    .file-list th,.file-list td{text-align:left;padding:8px;border-bottom:1px solid #ddd}
+    .file-list tr:hover{background-color:#f5f5f5}
+    .button{padding:6px 10px;color:white;border:none;border-radius:4px;cursor:pointer;
+    text-decoration:none;display:inline-block;width:85px;text-align:center;font-size:14px;
+    font-family:Arial,sans-serif;margin:2px;box-sizing:border-box;height:32px;line-height:20px}
+    table.file-list td:last-child{white-space:nowrap;width:180px}
+    .button.download{background-color:#444444}.button.delete{background-color:#f44236}
+    .button:hover{opacity:0.9}
+    .message{padding:10px;margin:15px 0;border-radius:4px}
+    .success{background-color:#d4edda;color:#155724}
+    .error{background-color:#f8d7da;color:#721c24}
+    .storage-info{background-color:#f0f0f0;padding:15px;border-radius:4px;margin-top:20px}
+    .progress-bar{height:20px;background-color:#e0e0e0;border-radius:10px;overflow:hidden;margin-top:10px}
+    .progress-fill{height:100%;background-color:#f44236;width:0%}
+  </style>
+</head>
+<body>
+  <h1>File Manager</h1>
+  <div class='menu'>
+    <a href='/'>Home</a>
+    <a href='/config'>Configuration</a>
+    <a href='/files'>File Manager</a>
+  </div>
+  <div id='messageArea'></div>
+  <table class='file-list'>
+    <thead>
+      <tr><th>Filename</th><th>Size</th><th>Actions</th></tr>
+    </thead>
+    <tbody id='fileList'>
+      <tr><td colspan='3'>Loading files...</td></tr>
+    </tbody>
+  </table>
+  
+  <div class='storage-info' id='storageInfo'>
+    <h3>SD Card Storage</h3>
+    <div>
+      <span id='usedSpace'>-- KB</span> used of <span id='totalSpace'>-- KB</span>
+      (<span id='percentUsed'>--%</span>)
+    </div>
+    <div>Free space: <span id='freeSpace'>-- KB</span></div>
+    <div class='progress-bar'>
+      <div class='progress-fill' id='progressFill'></div>
+    </div>
+  </div>
+  
+  <script>
+    function loadFiles(){
+      fetch('/api/files')
+      .then(response=>response.json())
+      .then(files=>{
+        const filteredFiles=files.filter(file=>file.name!=='config.cfg');
+        displayFiles(filteredFiles);
+        fetch('/api/storage').then(response=>response.json())
+        .then(storageData=>{updateStorageInfo(storageData);})
+        .catch(error=>{console.error('Error fetching storage info:',error);});
+      })
+      .catch(error=>{showMessage('Error loading files: '+error.message,false);});
+    }
+    
+    function displayFiles(files){
+      const fileList=document.getElementById('fileList');
+      if(files.length===0){
+        fileList.innerHTML='<tr><td colspan="3">No files found</td></tr>';
+        return;
+      }
+      let html='';
+      files.forEach(file=>{
+        html+=`<tr>`;
+        html+=`<td>${file.name}</td>`;
+        html+=`<td>${formatSize(file.size)}</td>`;
+        html+=`<td>`;
+        html+=`<a href='/api/files/download?filename=${encodeURIComponent(file.name)}' class='button download'>Download</a>`;
+        html+=`<button type="button" onclick='deleteFile("${file.name}")' class='button delete'>Delete</button>`;
+        html+=`</td>`;
+        html+=`</tr>`;
+      });
+      fileList.innerHTML=html;
+    }
+    
+    function formatSize(bytes){
+      if(bytes<1024)return bytes+' B';
+      if(bytes<1048576)return(bytes/1024).toFixed(1)+' KB';
+      return(bytes/1048576).toFixed(1)+' MB';
+    }
+    
+    function updateStorageInfo(data){
+      document.getElementById('usedSpace').textContent=formatSizeWithUnit(data.usedBytes);
+      document.getElementById('totalSpace').textContent=formatSizeWithUnit(data.totalBytes);
+      document.getElementById('freeSpace').textContent=formatSizeWithUnit(data.freeBytes);
+      document.getElementById('percentUsed').textContent=data.percentUsed+'%';
+      document.getElementById('progressFill').style.width=data.percentUsed+'%';
+    }
+    
+    function formatSizeWithUnit(bytes){
+      const units=['B','KB','MB','GB','TB'];
+      let size=bytes;
+      let unitIndex=0;
+      while(size>=1024&&unitIndex<units.length-1){
+        size/=1024;
+        unitIndex++;
+      }
+      let formattedSize;
+      if(unitIndex===0){
+        formattedSize=size;
+      }else{
+        formattedSize=size.toFixed(2);
+      }
+      return`${formattedSize} ${units[unitIndex]} `;
+    }
+    
+    function deleteFile(filename){
+      if(!confirm(`Are you sure you want to delete ${filename}?`))return;
+      fetch('/api/files/delete',{
+        method:'POST',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:'filename='+encodeURIComponent(filename)
+      })
+      .then(response=>response.text())
+      .then(result=>{
+        showMessage(result,true);
+        loadFiles();
+      })
+      .catch(error=>{
+        showMessage(error.message,false);
+      });
+    }
+    
+    function showMessage(message,isSuccess){
+      const messageArea=document.getElementById('messageArea');
+      messageArea.innerHTML=`<div class='message ${isSuccess?'success':'error'}'>${message}</div>`;
+      setTimeout(()=>{messageArea.innerHTML='';},5000);
+    }
+    
+    loadFiles();
+  </script>
+</body>
+</html>
