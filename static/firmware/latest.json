@@ -7,7 +7,7 @@
   ],
   "html_versions": [
     {
-      "html_version": "v1.1",
+      "html_version": "v1.11",
       "html_base_url": "https://quko.es/www/v1.1",
       "files": ["config.html", "connection_setup.html", "files.html", "index.html", "update.html"],
       "serial_num": "KAAA0001"
