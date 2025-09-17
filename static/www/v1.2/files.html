@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quko File Manager</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F680;</text></svg>">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="files.css">
+</head>
+<body>
+  <h1>File Manager</h1>
+  <div class='menu'>
+    <a href='/'>Home</a>
+    <a href='/config'>Configuration</a>
+    <a href='/files'>File Manager</a>
+  </div>
+  <div id='messageArea'></div>
+  <table class='file-list'>
+    <thead>
+      <tr><th>Filename</th><th>Size</th><th>Actions</th></tr>
+    </thead>
+    <tbody id='fileList'>
+      <tr><td colspan='3'>Loading files...</td></tr>
+    </tbody>
+  </table>
+  
+  <div class='storage-info' id='storageInfo'>
+    <h3>SD Card Storage</h3>
+    <div>
+      <span id='usedSpace'>-- KB</span> used of <span id='totalSpace'>-- KB</span>
+      (<span id='percentUsed'>--%</span>)
+    </div>
+    <div>Free space: <span id='freeSpace'>-- KB</span></div>
+    <div class='progress-bar'>
+      <div class='progress-fill' id='progressFill'></div>
+    </div>
+  </div>
+  
+  <script src="common.js"></script>
+  <script src="files.js"></script>
+  
+</body>
+</html>

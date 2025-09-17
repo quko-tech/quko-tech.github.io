@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kosoku - Configuration</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F680;</text></svg>">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="config.css">
+</head>
+<body>
+  <h1>Configuration</h1>
+  <div class='menu'>
+    <a href='/'>Home</a>
+    <a href='/config'>Configuration</a>
+    <a href='/files'>File Manager</a>
+  </div>
+  
+  <a class='toggle-link' id='toggleView'>Show Raw Config</a>
+  
+  <div class='config-container'>
+    <div class='config-form' id='configForm'>
+      
+      <!-- Container 1: Security Settings -->
+      <div class='section'>
+        <h3>Security Settings</h3>
+        <div class='form-group'>
+          <label for='device_username'>Vessel Name</label>
+          <input type='text' id='device_username' name='device_username'>
+        </div>
+        <div class='form-group'>
+          <label for='device_password'>Device Password</label>
+          <input type='password' id='device_password' name='device_password'>
+        </div>
+      </div>
+
+      <!-- Container 1.5: WiFi Settings -->
+      <div class='section'>
+        <h3>WiFi Settings</h3>
+        <div class='form-group'>
+          <label for='settingsSSID'>WiFi SSID</label>
+          <input type='text' id='settingsSSID' name='settingsSSID'>
+        </div>
+        <div class='form-group'>
+          <label for='settingsPass'>WiFi Password</label>
+          <input type='password' id='settingsPass' name='settingsPass'>
+        </div>
+      </div>
+
+      <!-- Container 1.6: Telemetry Station -->
+      <div class='section'>
+        <h3>Telemetry station</h3>
+        <div class='form-group'>
+          <label for='routerSN'>Station code</label>
+          <input type='text' id='routerSN' name='routerSN'>
+        </div>
+      </div>
+
+      <!-- Container 2: Vessel Configuration -->
+      <div class='section'>
+        <h3>Vessel Information</h3>
+        <div style='display: flex; gap: 20px;'>
+          <div class='form-group' style='flex: 1;'>
+            <label for='vesselType'>Vessel Type</label>
+            <select id='vesselType' name='vesselType'>
+              <option value=''>Select Type</option>
+              <option value='Canoe'>Canoe</option>
+              <option value='Kayak'>Kayak</option>
+            </select>
+          </div>
+          <div class='form-group' style='flex: 1;'>
+            <label for='numAthletes'>Number of Athletes</label>
+            <select id='numAthletes' name='numAthletes'>
+              <option value=''>Select Number</option>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='4'>4</option>
+            </select>
+          </div>
+          <div class='form-group' style='flex: 1;'>
+            <label for='gender'>Gender of Athletes</label>
+            <select id='gender' name='gender'>
+              <option value=''>Select Gender</option>
+              <option value='Men'>Men</option>
+              <option value='Women'>Women</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Container 3: Data Usage -->
+      <div class='section'>
+        <h3>Features settings</h3>
+        <div style='display: flex; gap: 20px;'>
+          <div style='flex: 1;'>
+            <div class='toggle-container'>
+              <span class='toggle-label'>Enable Data Logging</span>
+              <label class='toggle-switch'>
+                <input type='checkbox' id='enable_logging' name='enable_logging'>
+                <span class='toggle-slider'></span>
+              </label>
+            </div>
+          </div>
+          
+          <div style='flex: 1;'>
+            <div class='toggle-container'>
+              <span class='toggle-label'>Enable Live Data Streaming</span>
+              <label class='toggle-switch'>
+                <input type='checkbox' id='enable_streaming' name='enable_streaming'>
+                <span class='toggle-slider'></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+
+      <!-- Container 4: Heart Rate Monitors -->
+      <div class='section'>
+        <h3>Heart Rate Monitors</h3>
+        
+        <!-- HRM 1 -->
+        <div class='toggle-container'>
+          <span class='toggle-label'>Enable HRM 1</span>
+          <label class='toggle-switch'>
+            <input type='checkbox' id='enable_hrm1' name='enable_hrm1' onchange='toggleTextInput("hrm1_name", this.checked)'>
+            <span class='toggle-slider'></span>
+          </label>
+        </div>
+        <div class='form-group'>
+          <label for='hrm1_name'>Name of HRM 1</label>
+          <input type='text' id='hrm1_name' name='hrm1_name' disabled>
+        </div>
+        
+        <!-- HRM 2 -->
+        <div class='toggle-container'>
+          <span class='toggle-label'>Enable HRM 2</span>
+          <label class='toggle-switch'>
+            <input type='checkbox' id='enable_hrm2' name='enable_hrm2' onchange='toggleTextInput("hrm2_name", this.checked)'>
+            <span class='toggle-slider'></span>
+          </label>
+        </div>
+        <div class='form-group'>
+          <label for='hrm2_name'>Name of HRM 2</label>
+          <input type='text' id='hrm2_name' name='hrm2_name' disabled>
+        </div>
+        
+        <!-- HRM 3 -->
+        <div class='toggle-container'>
+          <span class='toggle-label'>Enable HRM 3</span>
+          <label class='toggle-switch'>
+            <input type='checkbox' id='enable_hrm3' name='enable_hrm3' onchange='toggleTextInput("hrm3_name", this.checked)'>
+            <span class='toggle-slider'></span>
+          </label>
+        </div>
+        <div class='form-group'>
+          <label for='hrm3_name'>Name of HRM 3</label>
+          <input type='text' id='hrm3_name' name='hrm3_name' disabled>
+        </div>
+        
+        <!-- HRM 4 -->
+        <div class='toggle-container'>
+          <span class='toggle-label'>Enable HRM 4</span>
+          <label class='toggle-switch'>
+            <input type='checkbox' id='enable_hrm4' name='enable_hrm4' onchange='toggleTextInput("hrm4_name", this.checked)'>
+            <span class='toggle-slider'></span>
+          </label>
+        </div>
+        <div class='form-group'>
+          <label for='hrm4_name'>Name of HRM 4</label>
+          <input type='text' id='hrm4_name' name='hrm4_name' disabled>
+        </div>
+      </div>
+      
+      <!-- Container 5: External Button -->
+      <div class='section'>
+        <h3>Start signal transmitter</h3>
+        <div class='toggle-container'>
+          <span class='toggle-label'>Enable start signal transmitter</span>
+          <label class='toggle-switch'>
+            <input type='checkbox' id='enable_start_trans' name='enable_start_trans' onchange='toggleTextInput("start_trans_name", this.checked)'>
+            <span class='toggle-slider'></span>
+          </label>
+        </div>
+        <div class='form-group'>
+          <label for='start_trans_name'>Name of the Device</label>
+          <input type='text' id='start_trans_name' name='start_trans_name' disabled>
+        </div>
+      </div>
+
+      <div id='messageArea'></div>
+      
+      <button onclick='saveFormConfig()'>Save Configuration</button>
+    </div>
+    
+    <div class='config-raw' id='configRaw'>
+      <h2>Raw Configuration</h2>
+      <textarea id='configEditor'></textarea>
+      <button onclick='saveRawConfig()'>Save Raw Configuration</button>
+    </div>
+  </div>
+  
+  <script src="common.js"></script>
+  <script src="config.js"></script>
+  
+</body>
+</html>
