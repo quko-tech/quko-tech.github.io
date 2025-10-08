@@ -86,7 +86,7 @@ hasChildren = true
 
 [[main]]
 name = "Acceso a QUKO Cloud"
-url = "https://app.quko.es/"
+url = "https://cloud.quko.es/"
 weight = 8
 
 
