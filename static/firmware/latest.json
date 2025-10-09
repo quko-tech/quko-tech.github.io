@@ -7,8 +7,8 @@
   ],
   "html_versions": [
     {
-      "html_version": "v1.2.1",
-      "html_base_url": "https://quko.es/www/v1.2.1",
+      "html_version": "v1.2.2",
+      "html_base_url": "https://quko.es/www/v1.2.2",
       "files": ["common.js", "common.css", "config.html", "config.js", "config.css", "connection_setup.html", "connection_setup.js", "files.html", "files.js", "files.css", "index.html", "index.js", "update.html", "update.js", "update.css"],
       "owner": "Quko"
     },
