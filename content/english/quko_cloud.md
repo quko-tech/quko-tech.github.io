@@ -44,7 +44,7 @@ qukocloud_video_2:
 
 ############################# Pricing Section ###############################
 pricing:
-  enable: false #TODO: enable
+  enable: enable #TODO: enable
   title: "Choose Your Kosoku Package"
   description: "Revolutionary training technology at kickstarter prices. Limited time early bird offers!"
   pricing_plans:
