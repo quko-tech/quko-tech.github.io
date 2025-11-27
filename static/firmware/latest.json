@@ -2,13 +2,15 @@
   "firmware_versions": [
     {
       "version": 0.685,
-      "file": "https://quko.es/firmware/0.685/fw_kosoku_0.685.bin"
+      "file": "https://quko.es/firmware/0.685/fw_kosoku_0.685.bin",
+      "owner": "Quko"
     }
   ],
   "html_versions": [
     {
       "html_version": "v1.2.4",
       "html_base_url": "https://quko.es/www/v1.2.4",
+      "owner": "Quko",
       "files": ["common.js", "common.css", "config.html", "config.js", "config.css", "connection_setup.html", "connection_setup.js", "files.html", "files.js", "files.css", "index.html", "index.js", "update.html", "update.js", "update.css"],
     },
     {
