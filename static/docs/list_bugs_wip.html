@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Tracker - Bugs, WIP & Untested Features</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;800&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Dark mode (default) */
+        :root {
+            --primary-red: #f44236;
+            --dark-red: #d32f2f;
+            --light-red: #ff6659;
+            --bg-dark: #1a1a1a;
+            --bg-medium: #2a2a2a;
+            --bg-light: #3a3a3a;
+            --text-light: #ffffff;
+            --text-muted: #b0b0b0;
+            --border: #4a4a4a;
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --glow-bg: rgba(244, 66, 54, 0.1);
+            --glow-bg-alt: rgba(244, 66, 54, 0.08);
+        }
+
+        /* Light mode */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --primary-red: #f44236;
+                --dark-red: #d32f2f;
+                --light-red: #ff6659;
+                --bg-dark: #ffffff;
+                --bg-medium: #f8f8f8;
+                --bg-light: #ffffff;
+                --text-light: #1a1a1a;
+                --text-muted: #666666;
+                --border: #e0e0e0;
+                --shadow-color: rgba(0, 0, 0, 0.1);
+                --glow-bg: rgba(244, 66, 54, 0.05);
+                --glow-bg-alt: rgba(244, 66, 54, 0.03);
+            }
+
+            body {
+                background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%) !important;
+            }
+
+            h1 {
+                text-shadow: 0 0 40px rgba(244, 66, 54, 0.15) !important;
+            }
+
+            .board {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+            }
+
+            .board:hover {
+                box-shadow: 0 8px 30px rgba(244, 66, 54, 0.15) !important;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            padding: 3rem 1.5rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            text-shadow: 0 0 40px rgba(244, 66, 54, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .boards {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .board {
+            background: var(--bg-medium);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 2px solid var(--border);
+            box-shadow: 0 20px 60px var(--shadow-color);
+            animation: fadeInUp 0.8s ease;
+            animation-fill-mode: both;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .board:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 80px rgba(244, 66, 54, 0.2);
+        }
+
+        .board:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .board:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .board-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid var(--primary-red);
+        }
+
+        .board-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            letter-spacing: -0.01em;
+        }
+
+        .count-badge {
+            background: var(--primary-red);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(244, 66, 54, 0.4);
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        thead {
+            background: var(--bg-light);
+        }
+
+        th {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            border-bottom: 2px solid var(--primary-red);
+        }
+
+        th:first-child {
+            border-top-left-radius: 10px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 10px;
+        }
+
+        tbody tr {
+            background: var(--bg-light);
+            transition: all 0.2s ease;
+            animation: slideIn 0.4s ease;
+            animation-fill-mode: both;
+        }
+
+        tbody tr:nth-child(1) { animation-delay: 0.1s; }
+        tbody tr:nth-child(2) { animation-delay: 0.15s; }
+        tbody tr:nth-child(3) { animation-delay: 0.2s; }
+        tbody tr:nth-child(4) { animation-delay: 0.25s; }
+        tbody tr:nth-child(5) { animation-delay: 0.3s; }
+
+        tbody tr:hover {
+            background: var(--bg-dark);
+            transform: translateX(5px);
+        }
+
+        td {
+            padding: 1.25rem 1.5rem;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:last-child td:first-child {
+            border-bottom-left-radius: 10px;
+        }
+
+        tbody tr:last-child td:last-child {
+            border-bottom-right-radius: 10px;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            border-left: 4px solid var(--primary-red);
+        }
+
+        td:nth-child(2) {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        td:last-child {
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            th, td {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+
+            th {
+                font-size: 0.75rem;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Decorative elements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--glow-bg) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -50%;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--glow-bg-alt) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Issue Tracker</h1>
+            <p class="subtitle">Known Bugs • Work in Progress • Untested Features</p>
+        </header>
+
+        <div class="boards">
+            <!-- Known Bugs Board -->
+            <div class="board">
+                <div class="board-header">
+                    <h2 class="board-title">Known Bugs</h2>
+                    <span class="count-badge">3</span>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Bug</th>
+                                <th>Cause</th>
+                                <th>Fix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Battery lasting ~60% of total capacity</td>
+                                <td>Hardware bug</td>
+                                <td>Next hardware revision (expected Jan 2026)</td>
+                            </tr>
+                            <tr>
+                                <td>Device sometimes entering bootloop at low battery percentages</td>
+                                <td>Hardware bug</td>
+                                <td>Next hardware revision (expected Jan 2026)</td>
+                            </tr>
+                            <tr>
+                                <td>Measured time of a recording or competition is off by a small margin</td>
+                                <td>Model variables refinement needed</td>
+                                <td>Late Dec 2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Work in Progress Board -->
+            <div class="board">
+                <div class="board-header">
+                    <h2 class="board-title">Work in Progress</h2>
+                    <span class="count-badge">3</span>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Status</th>
+                                <th>Expected Launch</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Implementation of HR data in QUKO Cloud</td>
+                                <td>40% complete</td>
+                                <td>Jan 2026</td>
+                            </tr>
+                            <tr>
+                                <td>Design of environmental factors compensation</td>
+                                <td>Working on optimising the underlaying physical model</td>
+                                <td>May 2026</td>
+                            </tr>
+                            <tr>
+                                <td>Longer connection range for QUKO Live</td>
+                                <td>Optimising receiving hardware</td>
+                                <td>Apr, 2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Untested Features Board -->
+            <div class="board">
+                <div class="board-header">
+                    <h2 class="board-title">Untested Features</h2>
+                    <span class="count-badge">3</span>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Description</th>
+                                <th>Test Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Simultaneous Garmin data transmission for 3+ devices</td>
+                                <td>Tested on 1 and 2 devices</td>
+                                <td>Unknown</td>
+                            </tr>
+                            <tr>
+                                <td>Simultaneous Hear Rate Monitoring for 3+ athletes</td>
+                                <td>Tested on 1 and 2 devices</td>
+                                <td>Unknown</td>
+                            </tr>
+                            <tr>
+                                <td>Compatibility with paracanoe athletes</td>
+                                <td>Model variables refinement needed</td>
+                                <td>Unknown</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Comprehensive tracking: bugs to squash, features to build, and code to test.</p>
+        </footer>
+    </div>
+</body>
+</html>
