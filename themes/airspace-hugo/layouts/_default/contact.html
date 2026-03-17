@@ -42,7 +42,7 @@
             <div class="form-group">
               <label>
                 <input type="checkbox" name="privacy" required>
-                {{ .Params.privacy_text | safeHTML }}
+                {{ $.Params.privacy_text | safeHTML }}
               </label>
             </div>
             <button class="btn btn-default" type="submit">{{ i18n "submit" }}</button>
