@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-09-02T11:07:10+06:00</lastmod>
+    <lastmod>2025-09-01T12:00:10+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="gl-GL"
@@ -20,89 +20,11 @@
                 href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2025-09-02T11:07:10+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/blog/"
-                />
-  </url><url>
     <loc>http://localhost:1313/tags/biomechanics/</loc>
-    <lastmod>2025-07-09T12:00:10+06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-07-09T12:00:10+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/categories/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/blog/2025.07.09/</loc>
-    <lastmod>2025-07-09T12:00:10+06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/rowing/</loc>
-    <lastmod>2025-07-09T12:00:10+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/categories/rowing/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/categories/rowing/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/categories/rowing/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-07-09T12:00:10+06:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="gl-GL"
-                href="http://localhost:1313/gl/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/es/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/tags/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/blog/2025.06.30/</loc>
-    <lastmod>2025-06-30T12:00:10+06:00</lastmod>
+    <lastmod>2025-09-01T12:00:10+06:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/canoeing/</loc>
-    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
+    <lastmod>2025-09-01T12:00:10+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="gl-GL"
@@ -119,8 +41,29 @@
                 href="http://localhost:1313/categories/canoeing/"
                 />
   </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-09-01T12:00:10+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/categories/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/2025.09.02/</loc>
+    <lastmod>2025-09-01T12:00:10+06:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/kayaking/</loc>
-    <lastmod>2025-06-24T12:00:10+06:00</lastmod>
+    <lastmod>2025-09-01T12:00:10+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="gl-GL"
@@ -135,6 +78,66 @@
                 rel="alternate"
                 hreflang="en-US"
                 href="http://localhost:1313/categories/kayaking/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2025-09-01T12:00:10+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/blog/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-09-01T12:00:10+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/tags/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/2025.07.09/</loc>
+    <lastmod>2025-07-09T12:00:10+06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/2025.06.30/</loc>
+    <lastmod>2025-06-30T12:00:10+06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/rowing/</loc>
+    <lastmod>2025-06-30T12:00:10+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/categories/rowing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/categories/rowing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/categories/rowing/"
                 />
   </url><url>
     <loc>http://localhost:1313/blog/2025.06.24/</loc>
@@ -272,6 +275,23 @@
                 href="http://localhost:1313/author/"
                 />
   </url><url>
+    <loc>http://localhost:1313/legal_notice/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/legal_notice/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/legal_notice/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/legal_notice/"
+                />
+  </url><url>
     <loc>http://localhost:1313/contact/</loc>
     <xhtml:link
                 rel="alternate"
@@ -355,6 +375,23 @@
                 rel="alternate"
                 hreflang="en-US"
                 href="http://localhost:1313/author/pablo-pepe-%C3%A1lvarez/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/cookies/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/cookies/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/cookies/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/cookies/"
                 />
   </url><url>
     <loc>http://localhost:1313/quko_cloud/</loc>

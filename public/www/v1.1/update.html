@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kosoku - System Update</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2699;&#xFE0F;</text></svg>">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    body{font-family:Arial,sans-serif;margin:0;padding:20px;line-height:1.6}
+    h1{color:#f44236}
+    .update-container{background-color:#f8f8f8;padding:20px;border-radius:4px;max-width:500px;margin:0 auto}
+    .section{background-color:white;padding:15px;margin-bottom:15px;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+    .section h3{margin-top:0;color:#f44236}
+    .warning{background-color:#fff8e1;border-left:4px solid #ffa726;padding:15px;margin-bottom:20px;border-radius:4px;display:flex;align-items:flex-start}
+    .warning-icon{color:#f57c00;font-size:20px;margin-right:10px;flex-shrink:0}
+    .warning-content{flex:1;line-height:1.4}
+    .warning-content strong{display:block;margin-bottom:5px}
+    .status-info{text-align:center;padding:20px}
+    .spinner{width:50px;height:50px;border:5px solid #f3f3f3;border-top:5px solid #f44236;border-radius:50%;animation:spin 2s linear infinite;margin:0 auto 15px;transform:translateZ(0);will-change:transform}
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    .status-message{text-align:center;margin-top:15px;color:#666;font-size:18px;font-weight:bold}
+    .sub-message{text-align:center;margin-top:10px;color:#888}
+  </style>
+</head>
+<body>
+  <h1>System Update</h1>
+  
+  <div class='update-container'>
+    <div class='warning'>
+      <span class='warning-icon'>⚠️</span>
+      <div class='warning-content'>
+        <strong>Important</strong>
+        Do not power off or disconnect your device during the update process. Make sure the device stays connected to power.
+      </div>
+    </div>
+    
+    <div class='section'>
+      <h3>Update in Progress</h3>
+      <div class='status-info'>
+        <div class='spinner'></div>
+        <div class='status-message'>Installing update...</div>
+        <div class='sub-message'>This may take several minutes</div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    let checkInterval;
+    let connectionLostTimeout;
+    
+    // Check if update is complete by testing connection
+    function checkConnection() {
+      fetch('/', { method: 'HEAD' })
+        .then(() => {
+          // Connection successful, update must be complete
+          clearInterval(checkInterval);
+          clearTimeout(connectionLostTimeout);
+          window.location.href = '/';
+        })
+        .catch(() => {
+          // Still updating, connection not available yet
+          if (connectionLostTimeout) {
+            clearTimeout(connectionLostTimeout);
+          }
+          
+          // Set a timeout to show "restarting" message if connection is lost for too long
+          connectionLostTimeout = setTimeout(() => {
+            document.querySelector('.status-message').textContent = 'Device is restarting...';
+            document.querySelector('.sub-message').textContent = 'Please wait for the device to complete the update';
+          }, 10000);
+        });
+    }
+    
+    // Start checking after page loads
+    window.onload = function() {
+      // Wait a bit before starting checks to ensure update has begun
+      setTimeout(() => {
+        checkInterval = setInterval(checkConnection, 2000);
+      }, 5000);
+    };
+  </script>
+</body>
+</html>

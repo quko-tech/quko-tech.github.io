@@ -234,6 +234,23 @@
                 href="http://localhost:1313/es/author/"
                 />
   </url><url>
+    <loc>http://localhost:1313/es/legal_notice/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/legal_notice/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/legal_notice/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/legal_notice/"
+                />
+  </url><url>
     <loc>http://localhost:1313/es/newsletter/</loc>
     <xhtml:link
                 rel="alternate"
@@ -300,6 +317,23 @@
                 rel="alternate"
                 hreflang="es-ES"
                 href="http://localhost:1313/es/author/pablo-pepe-%C3%A1lvarez/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/cookies/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/cookies/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/cookies/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/cookies/"
                 />
   </url><url>
     <loc>http://localhost:1313/es/contact/</loc>

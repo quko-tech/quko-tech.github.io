@@ -234,6 +234,23 @@
                 href="http://localhost:1313/gl/author/"
                 />
   </url><url>
+    <loc>http://localhost:1313/gl/legal_notice/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/legal_notice/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/legal_notice/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/legal_notice/"
+                />
+  </url><url>
     <loc>http://localhost:1313/gl/contact/</loc>
     <xhtml:link
                 rel="alternate"
@@ -317,6 +334,23 @@
                 rel="alternate"
                 hreflang="gl-GL"
                 href="http://localhost:1313/gl/author/pablo-pepe-%C3%A1lvarez/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/gl/cookies/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/cookies/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/cookies/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/cookies/"
                 />
   </url><url>
     <loc>http://localhost:1313/gl/quko_cloud/</loc>

@@ -83,6 +83,24 @@ hasChildren = true
   name = "Contacto"
   url = "contact/"
   weight = 4
+  
+  [[main]]
+  parent = "Más"
+  name = "Aviso Legal"
+  url = "legal_notice/"
+  weight = 6
+  
+  [[main]]
+  parent = "Más"
+  name = "Política de cookies"
+  url = "cookies/"
+  weight = 7
+  
+  [[main]]
+  parent = "Más"
+  name = "Política de privacidade"
+  url = "privacy/"
+  weight = 8
 
 [[main]]
 name = "Acceso a QUKO Cloud"

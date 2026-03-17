@@ -1,0 +1,43 @@
+/* File manager page specific styles */
+
+.file-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.file-list th, .file-list td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.file-list tr:hover {
+  background-color: #f5f5f5;
+}
+
+table.file-list td:last-child {
+  white-space: nowrap;
+  width: 180px;
+}
+
+.storage-info {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #f44236;
+  width: 0%;
+}
