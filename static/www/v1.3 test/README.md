@@ -19,3 +19,4 @@ Por:
 2. Minificar archivos individualmente
 3. Remplazar .css por .min.css y .js por .min.css
 4. Remplazar href="./ por href="www/
+5. Remplazar src="./ por src="www/
