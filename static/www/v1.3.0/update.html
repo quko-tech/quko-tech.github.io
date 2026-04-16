@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kosoku - System Update</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2699;&#xFE0F;</text></svg>">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="www/common.min.css">
+  <link rel="stylesheet" href="www/update.min.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Kosoku</h1>
+  </header>
+  <main>
+    <h2 class="page-title">System Update</h2>
+
+    <div class='update-container'>
+      <div class='warning'>
+        <span class='warning-icon'>&#x26A0;&#xFE0F;</span>
+        <div class='warning-content'>
+          <strong>Important</strong>
+          Do not power off or disconnect your device during the update process. Make sure the device stays connected to power.
+        </div>
+      </div>
+
+      <div class='section'>
+        <h3>Update in Progress</h3>
+        <div class='status-info'>
+          <div class='spinner'></div>
+          <div class='status-message'>Installing update...</div>
+          <div class='sub-message'>This may take several minutes</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>v1.3.0 &middot; QUKO TECH, S.L. &copy; 2026</footer>
+  <script src="./update.min.js"></script>
+</body>
+</html>

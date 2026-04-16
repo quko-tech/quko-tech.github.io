@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kosoku - WiFi Setup</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2699;&#xFE0F;</text></svg>">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="./common.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Kosoku</h1>
+  </header>
+  <main>
+    <h2 class="page-title">WiFi Setup</h2>
+
+    <div class='config-form' id='wifiForm'>
+      <div class='section'>
+        <h3>WiFi Connection</h3>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">Enter your WiFi credentials to connect the Kosoku device to your network.</p>
+        <div class='form-group'>
+          <label for='wifi_ssid'>WiFi SSID</label>
+          <input type='text' id='wifi_ssid' name='wifi_ssid' placeholder='Your network name'>
+        </div>
+        <div class='form-group'>
+          <label for='wifi_password'>WiFi Password</label>
+          <input type='password' id='wifi_password' name='wifi_password' placeholder='Your network password'>
+        </div>
+      </div>
+
+      <div id='messageArea'></div>
+
+      <button id='connectButton' onclick='connectWifi()'>Connect</button>
+    </div>
+
+    <div class='loading-overlay' id='loadingOverlay'>
+      <div class='loading-spinner'>
+        <div class='spinner'></div>
+        <p>Connecting to WiFi...</p>
+      </div>
+    </div>
+  </main>
+  <footer>v1.3.0 &middot; QUKO TECH, S.L. &copy; 2026</footer>
+  <script src="./common.js"></script>
+  <script src="./connection_setup.js"></script>
+</body>
+</html>
