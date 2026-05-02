@@ -36,6 +36,12 @@ function connectWifi() {
     // Hide loading overlay
     document.getElementById('loadingOverlay').style.display = 'none';
     document.getElementById('connectButton').disabled = false;
-    showMessage(error.message, false);
+
+    if (error.message === 'Failed to fetch') {
+        // Network dropped — device likely shut down its AP after connecting successfully
+        showMessage("The Kosoku appears to have connected successfully!\n\nPlease reconnect to your WiFi network and access the device.", true);
+    } else {
+        showMessage(error.message, false);
+    }
     });
 }
