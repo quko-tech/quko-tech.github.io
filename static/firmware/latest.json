@@ -1,31 +1,19 @@
 {
   "firmware_versions": [
     {
-      "version": 0.909,
-      "file": "https://quko.es/firmware/0.909/fw_kosoku_0.909.bin",
+      "version": 0.910,
+      "file": "https://quko.es/firmware/0.910/fw_kosoku_0.910.bin",
       "owner": "Quko",
       "hw_version": 4
-    },
-    {
-      "version": 0.810,
-      "file": "https://quko.es/firmware/0.810/fw_kosoku_0.810.bin",
-      "hw_version": 2
     }
   ],
   "html_versions": [
     {
-      "html_version": "v1.3.1",
-      "html_base_url": "https://quko.es/www/v1.3.1",
-      "files": ["common.min.js", "common.min.css", "config.html", "config.min.js", "config.min.css", "connection_setup.html", "connection_setup.min.js", "files.html", "files.min.js", "files.min.css", "index.html", "index.min.js", "update.html", "update.min.js", "update.min.css"],
+      "html_version": "v1.3.2",
+      "html_base_url": "https://quko.es/www/v1.3.2",
+      "files": ["common.min.js", "common.min.css", "config.html", "config.min.js", "config.min.css", "connection_setup.html", "connection_setup.min.js", "files.html", "files.min.js", "files.min.css", "index.html", "index.min.js", "update.html"],
       "owner": "Quko",
       "hw_version": 4
-    },
-    {
-      "html_version": "v1.2.4",
-      "html_base_url": "https://quko.es/www/v1.2.4",
-      "files": ["common.js", "common.css", "config.html", "config.js", "config.css", "connection_setup.html", "connection_setup.js", "files.html", "files.js", "files.css", "index.html", "index.js", "update.html", "update.js", "update.css"],
-      "owner": "Quko",
-      "hw_version": 2
     }
   ]
 }

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kosoku - Configuration</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F680;</text></svg>">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="www/common.min.css">
+  <link rel="stylesheet" href="www/config.min.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Kosoku</h1>
+    <nav class="menu">
+      <a href='/'>Home</a>
+      <a href='/config'>Configuration</a>
+      <a href='/files'>File Manager</a>
+    </nav>
+  </header>
+  <main>
+    <h2 class="page-title">Configuration</h2>
+
+    <a class='toggle-link' id='toggleView'>Show Raw Config</a>
+
+    <div class='config-container'>
+      <div class='config-form' id='configForm'>
+
+        <div class='section'>
+          <h3>Vessel Information</h3>
+          <div class='form-row'>
+            <div class='form-group'>
+              <label for='vesselType'>Vessel Type</label>
+              <select id='vesselType' name='vesselType'>
+                <option value=''>Select Type</option>
+                <option value='Canoe'>Canoe</option>
+                <option value='Kayak'>Kayak</option>
+              </select>
+            </div>
+            <div class='form-group'>
+              <label for='numAthletes'>Number of Athletes</label>
+              <select id='numAthletes' name='numAthletes'>
+                <option value=''>Select Number</option>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='4'>4</option>
+              </select>
+            </div>
+            <div class='form-group'>
+              <label for='gender'>Gender of Athletes</label>
+              <select id='gender' name='gender'>
+                <option value=''>Select Gender</option>
+                <option value='Men'>Men</option>
+                <option value='Women'>Women</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class='section'>
+          <h3>Security Settings</h3>
+          <div class='form-group'>
+            <label for='device_username'>Vessel Name</label>
+            <input type='text' id='device_username' name='device_username'>
+          </div>
+          <div class='form-group'>
+            <label for='device_password'>Device Password</label>
+            <input type='password' id='device_password' name='device_password'>
+          </div>
+        </div>
+
+        <div class='section'>
+          <h3>WiFi Settings</h3>
+          <div class='form-group'>
+            <label for='settingsSSID'>WiFi SSID</label>
+            <input type='text' id='settingsSSID' name='settingsSSID'>
+          </div>
+          <div class='form-group'>
+            <label for='settingsPass'>WiFi Password</label>
+            <input type='password' id='settingsPass' name='settingsPass'>
+          </div>
+        </div>
+
+        <div class='section'>
+          <h3>Telemetry Station</h3>
+          <div class='form-group'>
+            <label for='routerSN'>Station code</label>
+            <input type='text' id='routerSN' name='routerSN'>
+          </div>
+        </div>
+
+        <div class='section'>
+          <h3>Features Settings</h3>
+          <div class='form-row'>
+            <div>
+              <div class='toggle-container'>
+                <span class='toggle-label'>Enable Data Logging</span>
+                <label class='toggle-switch'>
+                  <input type='checkbox' id='enable_logging' name='enable_logging'>
+                  <span class='toggle-slider'></span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div class='toggle-container'>
+                <span class='toggle-label'>Enable Live Data Streaming</span>
+                <label class='toggle-switch'>
+                  <input type='checkbox' id='enable_streaming' name='enable_streaming'>
+                  <span class='toggle-slider'></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='section'>
+          <h3>Heart Rate Monitors</h3>
+
+          <div class='toggle-container'>
+            <span class='toggle-label'>Enable HRM 1</span>
+            <label class='toggle-switch'>
+              <input type='checkbox' id='enable_hrm1' name='enable_hrm1' onchange='toggleTextInput("hrm1_name", this.checked)'>
+              <span class='toggle-slider'></span>
+            </label>
+          </div>
+          <div class='form-group'>
+            <label for='hrm1_name'>Name of HRM 1</label>
+            <input type='text' id='hrm1_name' name='hrm1_name' disabled>
+          </div>
+
+          <div class='toggle-container'>
+            <span class='toggle-label'>Enable HRM 2</span>
+            <label class='toggle-switch'>
+              <input type='checkbox' id='enable_hrm2' name='enable_hrm2' onchange='toggleTextInput("hrm2_name", this.checked)'>
+              <span class='toggle-slider'></span>
+            </label>
+          </div>
+          <div class='form-group'>
+            <label for='hrm2_name'>Name of HRM 2</label>
+            <input type='text' id='hrm2_name' name='hrm2_name' disabled>
+          </div>
+
+          <div class='toggle-container'>
+            <span class='toggle-label'>Enable HRM 3</span>
+            <label class='toggle-switch'>
+              <input type='checkbox' id='enable_hrm3' name='enable_hrm3' onchange='toggleTextInput("hrm3_name", this.checked)'>
+              <span class='toggle-slider'></span>
+            </label>
+          </div>
+          <div class='form-group'>
+            <label for='hrm3_name'>Name of HRM 3</label>
+            <input type='text' id='hrm3_name' name='hrm3_name' disabled>
+          </div>
+
+          <div class='toggle-container'>
+            <span class='toggle-label'>Enable HRM 4</span>
+            <label class='toggle-switch'>
+              <input type='checkbox' id='enable_hrm4' name='enable_hrm4' onchange='toggleTextInput("hrm4_name", this.checked)'>
+              <span class='toggle-slider'></span>
+            </label>
+          </div>
+          <div class='form-group'>
+            <label for='hrm4_name'>Name of HRM 4</label>
+            <input type='text' id='hrm4_name' name='hrm4_name' disabled>
+          </div>
+        </div>
+
+        <div class='section'>
+          <h3>Dynamometers</h3>
+
+          <div class='toggle-container'>
+            <span class='toggle-label'>Enable Dynamometer 1</span>
+            <label class='toggle-switch'>
+              <input type='checkbox' id='enable_dinamo1' name='enable_dinamo1' onchange='toggleTextInput("dinamo1_name", this.checked)'>
+              <span class='toggle-slider'></span>
+            </label>
+          </div>
+          <div class='form-group'>
+            <label for='dinamo1_name'>Name of Dynamometer 1</label>
+            <input type='text' id='dinamo1_name' name='dinamo1_name' disabled>
+          </div>
+
+          <div class='toggle-container'>
+            <span class='toggle-label'>Enable Dynamometer 2</span>
+            <label class='toggle-switch'>
+              <input type='checkbox' id='enable_dinamo2' name='enable_dinamo2' onchange='toggleTextInput("dinamo2_name", this.checked)'>
+              <span class='toggle-slider'></span>
+            </label>
+          </div>
+          <div class='form-group'>
+            <label for='dinamo2_name'>Name of Dynamometer 2</label>
+            <input type='text' id='dinamo2_name' name='dinamo2_name' disabled>
+          </div>
+
+          <div class='toggle-container'>
+            <span class='toggle-label'>Enable Dynamometer 3</span>
+            <label class='toggle-switch'>
+              <input type='checkbox' id='enable_dinamo3' name='enable_dinamo3' onchange='toggleTextInput("dinamo3_name", this.checked)'>
+              <span class='toggle-slider'></span>
+            </label>
+          </div>
+          <div class='form-group'>
+            <label for='dinamo3_name'>Name of Dynamometer 3</label>
+            <input type='text' id='dinamo3_name' name='dinamo3_name' disabled>
+          </div>
+
+          <div class='toggle-container'>
+            <span class='toggle-label'>Enable Dynamometer 4</span>
+            <label class='toggle-switch'>
+              <input type='checkbox' id='enable_dinamo4' name='enable_dinamo4' onchange='toggleTextInput("dinamo4_name", this.checked)'>
+              <span class='toggle-slider'></span>
+            </label>
+          </div>
+          <div class='form-group'>
+            <label for='dinamo4_name'>Name of Dynamometer 4</label>
+            <input type='text' id='dinamo4_name' name='dinamo4_name' disabled>
+          </div>
+        </div>
+
+        <div class='section'>
+          <h3>Start Signal Transmitter</h3>
+          <div class='toggle-container'>
+            <span class='toggle-label'>Enable start signal transmitter</span>
+            <label class='toggle-switch'>
+              <input type='checkbox' id='enable_start_trans' name='enable_start_trans' onchange='toggleTextInput("start_trans_name", this.checked)'>
+              <span class='toggle-slider'></span>
+            </label>
+          </div>
+          <div class='form-group'>
+            <label for='start_trans_name'>Name of the Device</label>
+            <input type='text' id='start_trans_name' name='start_trans_name' disabled>
+          </div>
+        </div>
+
+        <div id='messageArea'></div>
+
+        <button onclick='saveFormConfig()'>Save Configuration</button>
+      </div>
+
+      <div class='config-raw' id='configRaw'>
+        <h2>Raw Configuration</h2>
+        <textarea id='configEditor'></textarea>
+        <button onclick='saveRawConfig()'>Save Raw Configuration</button>
+      </div>
+    </div>
+  </main>
+  <footer>v1.3.0 &middot; QUKO TECH, S.L. &copy; 2026</footer>
+  <script src="www/common.min.js"></script>
+  <script src="www/config.min.js"></script>
+</body>
+</html>
