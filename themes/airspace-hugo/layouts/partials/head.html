@@ -198,7 +198,8 @@
   grecaptcha.ready(function() {
       grecaptcha.execute('{{ site.Params.recaptcha_site_key }}', {action: 'homepage'})
       .then(function(token) {
-        document.getElementById('captchaResponse').value = token;
+        var el = document.getElementById('captchaResponse');
+        if (el) el.value = token;
       });
     });
 </script>

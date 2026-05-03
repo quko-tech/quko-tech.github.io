@@ -1276,7 +1276,8 @@ async function loadPricingData() {
     
     // Update disclaimer
     if (data.disclaimer) {
-      document.getElementById('priceDisclaimer').textContent = data.disclaimer;
+      var disclaimerEl = document.getElementById('priceDisclaimer');
+      if (disclaimerEl) disclaimerEl.textContent = data.disclaimer;
     }
     
     // Initialize country detection after loading data
@@ -1370,28 +1371,29 @@ function updateCountryIndicator(countryCode, isDetecting = false) {
   const flag = document.getElementById('countryFlag');
   const name = document.getElementById('countryName');
   
-  if (isDetecting) {
+  if (loading && isDetecting) {
     loading.style.display = 'none';
   }
-  
+
   if (countryCode === 'fallback') {
-    flag.textContent = '🌍';
-    name.textContent = 'Unknown Location';
+    if (flag) flag.textContent = '🌍';
+    if (name) name.textContent = 'Unknown Location';
     return;
   }
-  
+
   if (COUNTRY_PRICING.countries && COUNTRY_PRICING.countries[countryCode]) {
-    flag.textContent = COUNTRY_PRICING.countries[countryCode].flag;
-    name.textContent = COUNTRY_PRICING.countries[countryCode].name;
+    if (flag) flag.textContent = COUNTRY_PRICING.countries[countryCode].flag;
+    if (name) name.textContent = COUNTRY_PRICING.countries[countryCode].name;
   } else {
-    flag.textContent = '🌍';
-    name.textContent = 'Unknown Location';
+    if (flag) flag.textContent = '🌍';
+    if (name) name.textContent = 'Unknown Location';
   }
 }
 
 // Populate country dropdown
 function populateCountryDropdown() {
   const dropdown = document.getElementById('countryDropdown');
+  if (!dropdown) return;
   dropdown.innerHTML = '';
   
   if (!COUNTRY_PRICING.countries) return;
@@ -1415,6 +1417,7 @@ function populateCountryDropdown() {
 // Set default country in dropdown
 function setDefaultCountryInDropdown(countryCode) {
   const dropdown = document.getElementById('countryDropdown');
+  if (!dropdown) return;
   if (COUNTRY_PRICING.countries && COUNTRY_PRICING.countries[countryCode]) {
     dropdown.value = countryCode;
   } else {
@@ -1424,40 +1427,50 @@ function setDefaultCountryInDropdown(countryCode) {
 
 // Show country selector modal
 function showCountrySelector() {
-  document.getElementById('countrySelector').classList.add('active');
+  var el = document.getElementById('countrySelector');
+  if (el) el.classList.add('active');
 }
 
 // Hide country selector modal
 function hideCountrySelector() {
-  document.getElementById('countrySelector').classList.remove('active');
+  var el = document.getElementById('countrySelector');
+  if (el) el.classList.remove('active');
 }
 
 // Setup event listeners
 function setupEventListeners() {
-  document.getElementById('confirmCountry').addEventListener('click', function() {
-    const selectedCountry = document.getElementById('countryDropdown').value;
-    if (selectedCountry) {
-      setCountryAndUpdatePricing(selectedCountry);
-      hideCountrySelector();
-    }
-  });
-  
-  document.getElementById('changeCountryLater').addEventListener('click', function(e) {
-    e.preventDefault();
-    // Use detected country or default to first available
-    const fallbackCountry = detectedCountry || Object.keys(COUNTRY_PRICING.countries || {})[0] || 'US';
-    setCountryAndUpdatePricing(fallbackCountry);
-    hideCountrySelector();
-  });
-  
-  // Allow clicking outside modal to close
-  document.getElementById('countrySelector').addEventListener('click', function(e) {
-    if (e.target === this) {
+  var confirmBtn = document.getElementById('confirmCountry');
+  var changeLaterLink = document.getElementById('changeCountryLater');
+  var selectorOverlay = document.getElementById('countrySelector');
+
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', function() {
+      const selectedCountry = document.getElementById('countryDropdown').value;
+      if (selectedCountry) {
+        setCountryAndUpdatePricing(selectedCountry);
+        hideCountrySelector();
+      }
+    });
+  }
+
+  if (changeLaterLink) {
+    changeLaterLink.addEventListener('click', function(e) {
+      e.preventDefault();
       const fallbackCountry = detectedCountry || Object.keys(COUNTRY_PRICING.countries || {})[0] || 'US';
       setCountryAndUpdatePricing(fallbackCountry);
       hideCountrySelector();
-    }
-  });
+    });
+  }
+
+  if (selectorOverlay) {
+    selectorOverlay.addEventListener('click', function(e) {
+      if (e.target === this) {
+        const fallbackCountry = detectedCountry || Object.keys(COUNTRY_PRICING.countries || {})[0] || 'US';
+        setCountryAndUpdatePricing(fallbackCountry);
+        hideCountrySelector();
+      }
+    });
+  }
 }
 
 // Set country and update all pricing

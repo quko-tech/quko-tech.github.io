@@ -772,6 +772,10 @@ header {
       -ms-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       transition: all 0.3s ease; }
+      @media (max-width: 992px) {
+        .navigation .navbar-brand img {
+          max-height: 40px;
+          width: auto; } }
   .navigation .navbar {
     background: none;
     border: 0px; }
@@ -3772,7 +3776,9 @@ body {
       border-radius: 2px; }
     .navigation .navbar-nav a:hover:after, .navigation .navbar-nav a.current:after {
       width: 60%; }
-
+  @media (max-width: 992px) {
+    .navigation .navbar-nav a:after {
+      display: none; } }
 .navigation.nav-scrolled {
   padding: 5px 0;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); }

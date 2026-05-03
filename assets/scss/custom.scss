@@ -352,6 +352,13 @@ body {
       width: 60%;
     }
   }
+
+  // Disable underline animation on mobile collapsed menu
+  @media (max-width: 992px) {
+    .navbar-nav a:after {
+      display: none;
+    }
+  }
 }
 
 // Navbar shrink on scroll
