@@ -25,7 +25,8 @@
       "Bash(node *)",
       "Bash(hugo --logLevel debug)",
       "Bash(rm -rf resources/_gen)",
-      "Bash(rm -rf public)"
+      "Bash(rm -rf public)",
+      "Bash(hugo)"
     ]
   }
 }

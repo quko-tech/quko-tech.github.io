@@ -6,10 +6,6 @@ name = "Home"
 url = ""
 weight = 1
 
-[[main]]
-name = "About"
-url = "about/"
-weight = 2
 
 #[[main]]
 #name = "Blog"
@@ -17,7 +13,7 @@ weight = 2
 #weight = 4
 
 [[main]]
-weight = 5
+weight = 2
 name = "Products"
 hasChildren = true
 
@@ -41,6 +37,10 @@ hasChildren = true
 
 
 
+[[main]]
+name = "About"
+url = "about/"
+weight = 3
 
 [[main]]
 weight = 7
@@ -65,11 +65,11 @@ hasChildren = true
   url = "newsletter/"
   weight = 4
 
-  [[main]]
-  parent = "More"
-  name = "FAQ"
-  url = "faq/"
-  weight = 3
+  #[[main]]
+  #parent = "More"
+  #name = "FAQ"
+  #url = "faq/"
+  #weight = 3
   
   [[main]]
   parent = "More"

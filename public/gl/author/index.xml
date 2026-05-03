@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on QUKO | Data solutions</title>
-    <link>http://localhost:1313/gl/author/</link>
+    <link>https://quko.es/gl/author/</link>
     <description>Recent content in Authors on QUKO | Data solutions</description>
     <generator>Hugo</generator>
     <language>gl-GL</language>
-    <atom:link href="http://localhost:1313/gl/author/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://quko.es/gl/author/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pablo (Pepe) Álvarez</title>
-      <link>http://localhost:1313/gl/author/pablo-pepe-%C3%A1lvarez/</link>
+      <link>https://quko.es/gl/author/pablo-pepe-%C3%A1lvarez/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/gl/author/pablo-pepe-%C3%A1lvarez/</guid>
+      <guid>https://quko.es/gl/author/pablo-pepe-%C3%A1lvarez/</guid>
       <description>&lt;p&gt;Enxeñeiro de Telecomunicacións (2021) pola Universidade Politécnica de Madrid, especializado en sistemas de telecomunicación e procesamento de sinal. Enxeñeiro Cuántico pola ETH Zürich (2024) e actualmente matriculado nun programa de doutoramento en Teoría da Información Cuántica na Université Grenoble Alpes. Antigo físico experimental e analista de datos no CERN (grupo EP-DT). Deportista de Alto Nivel en piragüismo de velocidade, competindo activamente ao máis alto nivel nacional.&lt;/p&gt;</description>
     </item>
   </channel>

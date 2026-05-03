@@ -6,18 +6,13 @@ name = "Inicio"
 url = ""
 weight = 1
 
-[[main]]
-name = "Acerca de"
-url = "about/"
-weight = 2
-
 #[[main]]
 #name = "Blog"
 #url = "blog/"
 #weight = 4
 
 [[main]]
-weight = 5
+weight = 3
 name = "Productos"
 hasChildren = true
 
@@ -40,6 +35,11 @@ hasChildren = true
   weight = 3
 
 
+
+[[main]]
+name = "Acerca de"
+url = "about/"
+weight = 2
 
 
 [[main]]
@@ -65,11 +65,11 @@ hasChildren = true
   url = "newsletter/"
   weight = 4
 
-  [[main]]
-  parent = "Más"
-  name = "FAQ"
-  url = "faq/"
-  weight = 3
+  #[[main]]
+  #parent = "Más"
+  #name = "FAQ"
+  #url = "faq/"
+  #weight = 3
   
   [[main]]
   parent = "Más"

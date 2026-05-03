@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rowing on QUKO | Data solutions</title>
-    <link>http://localhost:1313/categories/rowing/</link>
+    <link>https://quko.es/categories/rowing/</link>
     <description>Recent content in Rowing on QUKO | Data solutions</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 30 Jun 2025 12:00:10 +0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/rowing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://quko.es/categories/rowing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Biomechanical Analysis of Propulsion in Paddle Sports</title>
-      <link>http://localhost:1313/blog/2025.06.30/</link>
+      <link>https://quko.es/blog/2025.06.30/</link>
       <pubDate>Mon, 30 Jun 2025 12:00:10 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2025.06.30/</guid>
+      <guid>https://quko.es/blog/2025.06.30/</guid>
       <description>&lt;p&gt;A groundbreaking biomechanical analysis by researchers A. Baudouin and D. Hawkins from the University of California, Davis, published in the British Journal of Sports Medicine, reveals the complex interplay of forces that determine performance in rowing. While this research focuses specifically on rowing, the fundamental principles of propulsion, drag, and power transfer apply equally to sprint kayaking and canoeing, making these insights valuable for all paddle sport athletes seeking to optimize their performance.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Psychophysiological Monitoring in Elite Paddling Sports</title>
-      <link>http://localhost:1313/blog/2025.06.18/</link>
+      <link>https://quko.es/blog/2025.06.18/</link>
       <pubDate>Wed, 18 Jun 2025 12:00:10 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2025.06.18/</guid>
+      <guid>https://quko.es/blog/2025.06.18/</guid>
       <description>&lt;p&gt;Recent groundbreaking research by Michael Kellmann and Klaus-Dietrich Günther from the Institut für Sportwissenschaft at Universität Potsdam and the German Rowing Association has revealed crucial insights into how elite athletes experience stress and recovery during high-intensity training preparation. Their study, published in Medicine &amp;amp; Science in Sports &amp;amp; Exercise, followed eleven elite rowers from the German National Rowing Team as they prepared for the 1996 Atlanta Olympic Games, providing valuable lessons that extend beyond rowing to all paddling sports including sprint kayaking and canoeing.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hydrodynamic Efficiency Analysis in Paddle Sports Performance</title>
-      <link>http://localhost:1313/blog/2025.06.13/</link>
+      <link>https://quko.es/blog/2025.06.13/</link>
       <pubDate>Fri, 13 Jun 2025 12:00:10 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2025.06.13/</guid>
+      <guid>https://quko.es/blog/2025.06.13/</guid>
       <description>&lt;p&gt;Every stroke you take on the water represents a transfer of energy from your muscles to forward motion, but how much of that precious energy actually propels you forward? Research conducted by K. Affeld, K. Schichl, and A. Ziemann from the Freie Universität Berlin and Technische Universität Berlin has revealed a startling truth about paddle sports: &lt;em&gt;&amp;ldquo;Between one-fourth and one-third of the energy in rowing is lost to the flow of water around the blade which decreases efficiency.&amp;rdquo;&lt;/em&gt; This groundbreaking study not only quantifies these energy losses but also provides a practical method for measuring rowing efficiency in real-time, offering insights that extend far beyond traditional rowing to benefit athletes in sprint kayaking and canoeing as well.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Optimizing Paddle Design with Physics</title>
-      <link>http://localhost:1313/blog/2025.05.27/</link>
+      <link>https://quko.es/blog/2025.05.27/</link>
       <pubDate>Tue, 27 May 2025 11:07:10 +0600</pubDate>
-      <guid>http://localhost:1313/blog/2025.05.27/</guid>
+      <guid>https://quko.es/blog/2025.05.27/</guid>
       <description>&lt;p&gt;Recent groundbreaking research from École polytechnique and Phyling, led by Romain Labbé and his team, has revolutionized our understanding of paddle optimization in water sports. Their study &lt;em&gt;&amp;ldquo;Physics of rowing oars&amp;rdquo;&lt;/em&gt; challenges conventional wisdom by examining paddle efficiency through the lens of human physiological constraints rather than purely mechanical considerations. This research doesn&amp;rsquo;t just apply to rowing—its insights extend to sprint kayaking and canoeing, offering valuable guidance for any athlete who depends on paddle efficiency for performance.&lt;/p&gt;</description>
     </item>
   </channel>

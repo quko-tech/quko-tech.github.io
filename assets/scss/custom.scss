@@ -312,9 +312,14 @@ body {
   animation: floatSlow 6s ease-in-out infinite;
 }
 
-// About section image - subtle float
+// About section image - hover lift effect
 .about .col-md-5 .block img {
-  animation: floatSlow 6s ease-in-out infinite;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+
+  &:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  }
 }
 
 // ============================================================
@@ -497,20 +502,6 @@ body {
 
 .call-to-action {
   position: relative;
-
-  // Animated gradient border at bottom
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, $color-primary, $color-secondary, $color-primary);
-    background-size: 200% 100%;
-    animation: gradientShift 3s ease infinite;
-    z-index: 2;
-  }
 
   .btn {
     position: relative;
@@ -772,6 +763,7 @@ img {
 }
 
 // Language selector modernization
+.navbar-nav > li > #select-language,
 #select-language {
   appearance: none;
   background: rgba($color-primary, 0.06);
@@ -786,6 +778,8 @@ img {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 8px center;
+  vertical-align: middle;
+  margin: 8px 15px;
 
   &:hover {
     border-color: $color-primary;

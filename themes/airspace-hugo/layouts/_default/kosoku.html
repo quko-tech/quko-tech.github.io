@@ -124,18 +124,6 @@
   pointer-events: none;
 }
 
-/* Content animations */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.animate-on-scroll.animated {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Modern title styling */
 .modern-title {
   position: relative;
@@ -827,12 +815,12 @@
 <section class="service-about section pattern-bg">
   <div class="container enhanced-container">
     <div class="row align-items-center">
-      <div class="col-md-6 animate-on-scroll">
+      <div class="col-md-6" data-reveal="left">
         {{ with .title }}<h2 class="modern-title">{{ . | markdownify }}</h2>{{ end }}
         {{ with .content }}<div class="mt-30" style="font-size: 18px; line-height: 1.8; color: #555;">{{ . | $.Page.RenderString (dict "display" "block") }}</div>{{ end }}
       </div>
       {{ with .image -}}
-      <div class="col-md-6 animate-on-scroll">
+      <div class="col-md-6" data-reveal="right" data-reveal-delay="200">
         <div style="position: relative;">
           <img class="img-responsive" src="{{ . | relURL }}" style="width: 100%; border-radius: 15px; box-shadow: var(--shadow); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
         </div>
@@ -849,7 +837,7 @@
 {{ if .enable }}
 <section class="kickstarter-section section">
   <div class="container">
-    <div class="kickstarter-content animate-on-scroll">
+    <div class="kickstarter-content" data-reveal="up">
       {{ if .logo }}<img src="{{ .logo | relURL }}" alt="Kickstarter" class="kickstarter-logo">{{ end }}
       {{ with .title }}<h2 class="kickstarter-title">{{ . | markdownify }}</h2>{{ end }}
       {{ with .subtitle }}<p class="kickstarter-subtitle">{{ . | markdownify }}</p>{{ end }}
@@ -903,7 +891,7 @@
 <section class="service-about section">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 animate-on-scroll">
+      <div class="col-md-12" data-reveal="up">
         {{ with .youtube_id }}
         <div class="video-container" onclick="playVideo(this, '{{ . }}')">
           <div class="video-overlay"></div>
@@ -922,12 +910,12 @@
 <section class="service-arrow">
   <div class="container">
     <div class="row">
-      {{ range .service_item }}
-      <div class="col-md-4 animate-on-scroll">
-        <div class="block bg-primary bg-{{ .color }}">
-          <i class="{{ .icon }}"></i>
-          {{ with .name }}<h3 style="color: white; font-weight: 600; margin-bottom: 20px;">{{ . | markdownify }}</h3>{{ end }}
-          {{ with .content }}<div style="color: rgba(255,255,255,0.9); font-size: 16px; line-height: 1.6;">{{ . | $.Page.RenderString (dict "display" "block") }}</div>{{ end }}
+      {{ range $index, $item := .service_item }}
+      <div class="col-md-4" data-reveal="up" data-reveal-delay="{{ mul $index 200 }}">
+        <div class="block bg-primary bg-{{ $item.color }}">
+          <i class="{{ $item.icon }}"></i>
+          {{ with $item.name }}<h3 style="color: white; font-weight: 600; margin-bottom: 20px;">{{ . | markdownify }}</h3>{{ end }}
+          {{ with $item.content }}<div style="color: rgba(255,255,255,0.9); font-size: 16px; line-height: 1.6;">{{ . | $.Page.RenderString (dict "display" "block") }}</div>{{ end }}
         </div>
       </div>
       {{ end }}
@@ -942,7 +930,7 @@
 <section class="service-about section pattern-bg">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 animate-on-scroll">
+      <div class="col-md-12" data-reveal="up">
         {{ with .youtube_id }}
         <div class="video-container" onclick="playVideo(this, '{{ . }}')">
           <div class="video-overlay"></div>
@@ -962,18 +950,18 @@
 <section class="service section">
   <div class="container">
     <div class="row" style="display: block;">
-      <div class="section-title animate-on-scroll">
+      <div class="section-title" data-reveal="up">
         {{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
         {{ with .description }}<p>{{ . | markdownify }}</p>{{ end }}
       </div>
     </div>
     <div class="row">
-      {{ range .service_item }}
-      <div class="col-sm-6 col-md-3 animate-on-scroll">
+      {{ range $index, $item := .service_item }}
+      <div class="col-sm-6 col-md-3" data-reveal="up" data-reveal-delay="{{ mul $index 100 }}">
         <div class="service-item">
-          <i class="{{ .icon }}"></i>
-          <h4>{{ .name | markdownify }}</h4>
-          <p>{{ .content | markdownify }}</p>
+          <i class="{{ $item.icon }}"></i>
+          <h4>{{ $item.name | markdownify }}</h4>
+          <p>{{ $item.content | markdownify }}</p>
         </div>
       </div>
       {{ end }}
@@ -997,13 +985,13 @@
 {{ if .enable }}
 <section class="pricing-section section">
   <div class="container">
-    <div class="section-title animate-on-scroll">
+    <div class="section-title" data-reveal="up">
       {{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
       {{ with .description }}<p>{{ . | markdownify }}</p>{{ end }}
     </div>
     <div class="row justify-content-center">
-      {{ range .pricing_plans }}
-      <div class="col-lg-4 col-md-6 animate-on-scroll">
+      {{ range $index, $plan := .pricing_plans }}
+      <div class="col-lg-4 col-md-6" data-reveal="up" data-reveal-delay="{{ mul $index 200 }}">
         <div class="pricing-card {{ if .featured }}featured{{ end }}">
           {{ if .badge }}<div class="pricing-badge">{{ .badge }}</div>{{ end }}
           <h3 class="pricing-title">{{ .name }}</h3>
@@ -1024,7 +1012,7 @@
     </div>
 
     <div class="row justify-content-center" style="margin-top: 60px;">
-      <div class="col animate-on-scroll">
+      <div class="col" data-reveal="up">
         <div class="pricing-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border: 2px solid #e9ecef;">
           <h3 class="pricing-title" style="color: var(--primary-red);">Custom Solutions</h3>
           <p style="font-size: 18px; color: #666; margin: 25px 0; line-height: 1.6;">
@@ -1040,7 +1028,7 @@
     <!-- Price Disclaimer -->
     <div class="row justify-content-center" style="margin-top: 40px;">
       <div class="col">
-        <div class="price-disclaimer animate-on-scroll">
+        <div class="price-disclaimer" data-reveal="fade">
           <i class="fas fa-info-circle"></i>
           <span id="priceDisclaimer">A subscription to QUKO Cloud is required to make use of the data analysis and cloud computing features showcased in the videos.</span>
         </div>
@@ -1060,7 +1048,7 @@
 {{ if .enable }}
 <section class="kickstarter-section section">
   <div class="container">
-    <div class="kickstarter-content animate-on-scroll">
+    <div class="kickstarter-content" data-reveal="up">
       {{ if .logo }}<img src="{{ .logo | relURL }}" alt="Kickstarter" class="kickstarter-logo">{{ end }}
       {{ with .title }}<h2 class="kickstarter-title">{{ . | markdownify }}</h2>{{ end }}
       {{ with .subtitle }}<p class="kickstarter-subtitle">{{ . | markdownify }}</p>{{ end }}
@@ -1109,26 +1097,6 @@
 
 
 <script>
-// Intersection Observer for scroll animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animated');
-    }
-  });
-}, observerOptions);
-
-// Observe all elements with animate-on-scroll class
-document.addEventListener('DOMContentLoaded', () => {
-  const animateElements = document.querySelectorAll('.animate-on-scroll');
-  animateElements.forEach(el => observer.observe(el));
-});
-
 // Enhanced YouTube video player function
 function playVideo(container, videoId) {
   const iframe = document.createElement('iframe');
