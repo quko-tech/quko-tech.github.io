@@ -1,1 +1,800 @@
-// Add your custom code
+// ============================================================
+// MODERN POLISH & ANIMATIONS
+// ============================================================
+
+// --- Smooth scroll ---
+html {
+  scroll-behavior: smooth;
+}
+
+// --- Selection color ---
+::selection {
+  background: rgba($color-primary, 0.2);
+  color: $text-dark;
+}
+
+// --- Focus visible for accessibility ---
+*:focus-visible {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+// Better text rendering
+body {
+  text-rendering: optimizeLegibility;
+}
+
+// ============================================================
+// SCROLL REVEAL SYSTEM
+// Elements with [data-reveal] start hidden and animate in
+// when they receive the .revealed class from IntersectionObserver
+// ============================================================
+
+[data-reveal] {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal="up"] {
+  transform: translateY(40px);
+}
+
+[data-reveal="down"] {
+  transform: translateY(-40px);
+}
+
+[data-reveal="left"] {
+  transform: translateX(-50px);
+}
+
+[data-reveal="right"] {
+  transform: translateX(50px);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.9);
+}
+
+[data-reveal="fade"] {
+  // Just opacity, no transform
+}
+
+// Revealed state
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+// ============================================================
+// KEYFRAME ANIMATIONS
+// ============================================================
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blobMorph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50% { border-radius: 50% 60% 40% 60% / 40% 50% 60% 50%; }
+  75% { border-radius: 40% 30% 60% 50% / 60% 40% 50% 60%; }
+}
+
+@keyframes slideAcross {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes drawLine {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+// ============================================================
+// HERO BANNER - dramatic entrance + living background
+// ============================================================
+
+.slider {
+  overflow: hidden;
+
+  // Animated gradient bottom edge
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top, rgba(0,0,0,0.25), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .block {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    transition: transform 0.15s ease-out;
+
+    h1 {
+      animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+    }
+
+    p {
+      animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+    }
+
+    .btn {
+      animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
+    }
+  }
+}
+
+// Decorative accent line under hero title
+.slider .block h1:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: $color-primary;
+  margin: 20px auto 0;
+  border-radius: 3px;
+  animation: drawLine 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+}
+
+// Page title entrance
+.page-title .block {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+// ============================================================
+// DECORATIVE BLOB / ACCENT ELEMENTS
+// These get added to sections via CSS pseudo-elements
+// ============================================================
+
+// About section
+.about.section {
+  position: relative;
+  overflow: hidden;
+
+  > .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Service section - subtle accent blob
+.service {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -5%;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, rgba($color-primary, 0.04), rgba($color-secondary, 0.06));
+    border-radius: 50% 60% 40% 60% / 40% 50% 60% 50%;
+    animation: blobMorph 25s ease-in-out infinite reverse;
+    z-index: 0;
+    pointer-events: none;
+
+    @media (max-width: 768px) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  > .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Testimonial section - decorative blob
+.testimonial {
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba($color-primary, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+
+    @media (max-width: 768px) {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  > .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// ============================================================
+// SECTION ACCENT LINES
+// Thin decorative lines between sections
+// ============================================================
+
+.section-accent-line {
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, $color-primary, $color-secondary);
+  border-radius: 3px;
+  margin-bottom: 25px;
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Auto accent line under section titles on homepage
+.about .section-title h2:after,
+.service > .container .section-title h2:after,
+.testimonial .section-title h2:after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, $color-primary, $color-secondary);
+  border-radius: 3px;
+  margin-top: 15px;
+}
+
+.service > .container .section-title h2:after,
+.testimonial .section-title h2:after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ============================================================
+// FLOATING IMAGE EFFECT
+// ============================================================
+
+.img-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+// About section image - subtle float
+.about .col-md-5 .block img {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+// ============================================================
+// ENHANCED NAVIGATION
+// ============================================================
+
+.navigation {
+  backdrop-filter: blur(10px);
+  background: rgba($white, 0.95);
+  transition: all 0.35s ease;
+
+  .navbar-nav a {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: $color-primary;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    &:hover:after,
+    &.current:after {
+      width: 60%;
+    }
+  }
+}
+
+// Navbar shrink on scroll
+.navigation.nav-scrolled {
+  padding: 5px 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+
+  .navbar-brand img {
+    transform: scale(0.9);
+  }
+}
+
+// ============================================================
+// SERVICE ITEMS - staggered reveal + card effects
+// ============================================================
+
+.service .service-item {
+  background: transparent;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  &:hover:before {
+    border-color: rgba($color-primary, 0.1);
+  }
+}
+
+// Featured service arrow blocks - shimmer on hover
+.service-arrow .block {
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+    transition: none;
+  }
+
+  &:hover:after {
+    animation: slideAcross 0.8s ease;
+  }
+
+  i {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover i {
+    transform: scale(1.15);
+  }
+}
+
+// Dark service items
+.dark-service .service-item {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  &:hover:before {
+    opacity: 1;
+  }
+
+  i {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover i {
+    transform: scale(1.15);
+  }
+}
+
+// ============================================================
+// COUNTER / FUNFACTS ENHANCEMENT
+// ============================================================
+
+.counter-box li {
+  position: relative;
+
+  i {
+    transition: all 0.3s ease;
+  }
+
+  &:hover i {
+    transform: scale(1.15);
+    color: $color-primary;
+  }
+}
+
+// ============================================================
+// PORTFOLIO / FEATURE SECTION
+// ============================================================
+
+.feature {
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  // Animated gradient border at top
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $color-primary, $color-secondary, $color-primary);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+    z-index: 2;
+  }
+}
+
+// ============================================================
+// CTA ENHANCEMENTS - living gradient border
+// ============================================================
+
+.call-to-action {
+  position: relative;
+
+  // Animated gradient border at bottom
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $color-primary, $color-secondary, $color-primary);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+    z-index: 2;
+  }
+
+  .btn {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.5s ease, height 0.5s ease;
+    }
+
+    &:hover:before {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+// ============================================================
+// TESTIMONIAL ENHANCEMENTS
+// ============================================================
+
+.testimonial-carousel {
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .user img {
+    transition: all 0.3s ease;
+  }
+
+  &:hover .user img {
+    transform: scale(1.05);
+  }
+}
+
+// ============================================================
+// ABOUT IMAGE WITH ACCENT DECORATION
+// ============================================================
+
+.about .col-md-5 .block {
+  position: relative;
+
+  // Accent border frame offset behind the image
+  &:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: -15px;
+    bottom: -15px;
+    border: 2px solid rgba($color-primary, 0.2);
+    border-radius: 14px;
+    z-index: -1;
+    transition: all 0.4s ease;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &:hover:after {
+    top: 10px;
+    left: 10px;
+    right: -10px;
+    bottom: -10px;
+    border-color: rgba($color-primary, 0.35);
+  }
+}
+
+// ============================================================
+// FOOTER ENHANCEMENTS
+// ============================================================
+
+.footer {
+  .footer-menu ul li a {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.5);
+      transition: width 0.3s ease;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
+  }
+}
+
+// ============================================================
+// BUTTON ENHANCEMENTS - shimmer sweep
+// ============================================================
+
+.btn-main {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease, transform 0.15s ease-out;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
+
+  &:hover:after {
+    left: 100%;
+  }
+}
+
+// ============================================================
+// IMAGE HOVER EFFECTS
+// ============================================================
+
+.about .block img,
+.about-img img {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-about img,
+.contact-box img {
+  border-radius: 12px;
+  transition: all 0.4s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  }
+}
+
+// ============================================================
+// PRICING CARDS ENHANCEMENT
+// ============================================================
+
+.pricing-table .pricing-item {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: rgba($color-primary, 0.15);
+  }
+}
+
+// ============================================================
+// FORM ENHANCEMENTS
+// ============================================================
+
+.contact-form {
+  .form-control,
+  textarea {
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: rgba($color-primary, 0.3);
+    }
+  }
+}
+
+// ============================================================
+// SCROLL PROGRESS INDICATOR (top of page)
+// ============================================================
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, $color-primary, $color-secondary);
+  z-index: 10000;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+// ============================================================
+// RESPONSIVE ADJUSTMENTS
+// ============================================================
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider .block,
+  .slider .block h1,
+  .slider .block p,
+  .slider .block .btn {
+    animation-duration: 0.6s;
+  }
+
+  .service .service-item:hover,
+  .pricing-table .pricing-item:hover {
+    transform: none;
+  }
+
+  .navigation {
+    backdrop-filter: none;
+    background: $white;
+  }
+
+  // Simpler reveal on mobile
+  [data-reveal] {
+    transition-duration: 0.5s;
+  }
+
+  [data-reveal="left"],
+  [data-reveal="right"] {
+    transform: translateY(20px);
+  }
+
+  // Hide decorative blobs on small screens
+  .about.section:before,
+  .service:after {
+    display: none;
+  }
+}
+
+// ============================================================
+// MISC MODERN TOUCHES
+// ============================================================
+
+img {
+  transition: opacity 0.3s ease;
+}
+
+// Language selector modernization
+#select-language {
+  appearance: none;
+  background: rgba($color-primary, 0.06);
+  border: 1px solid rgba($color-primary, 0.15);
+  border-radius: 6px;
+  padding: 6px 28px 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: $text-color;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+
+  &:hover {
+    border-color: $color-primary;
+    background-color: rgba($color-primary, 0.1);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+  }
+}

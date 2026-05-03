@@ -336,6 +336,23 @@
                 href="http://localhost:1313/es/cookies/"
                 />
   </url><url>
+    <loc>http://localhost:1313/es/privacy/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/privacy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="gl-GL"
+                href="http://localhost:1313/gl/privacy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/privacy/"
+                />
+  </url><url>
     <loc>http://localhost:1313/es/contact/</loc>
     <xhtml:link
                 rel="alternate"

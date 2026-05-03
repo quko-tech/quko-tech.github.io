@@ -11,10 +11,10 @@ name = "About"
 url = "about/"
 weight = 2
 
-[[main]]
-name = "Blog"
-url = "blog/"
-weight = 4
+#[[main]]
+#name = "Blog"
+#url = "blog/"
+#weight = 4
 
 [[main]]
 weight = 5
@@ -52,13 +52,6 @@ hasChildren = true
 #  name = "Service"
 #  url = "service/"
 #  weight = 1
-
-
-  [[main]]
-  parent = "More"
-  name = "Services"
-  url = "service/"
-  weight = 1
 
   #[[main]]
   #parent = "More"

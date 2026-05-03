@@ -3,12 +3,14 @@
 --*/
 
 header {
-  min-height: 100px;
+  min-height: 80px;
   @include desktop {
-    min-height: 90px;
+    min-height: 70px;
   }
   background: $white;
-  padding: 20px 0;
+  padding: 10px 0;
+  @include transition(all, 0.3s, ease);
+
   .navbar {
     margin-bottom: 0px;
     border: 0px;
@@ -23,12 +25,13 @@ header {
         padding-top: 10px;
       li {
         a {
-          color: lighten( $black, 20 );
-          padding: 10px 26px;
-          font-size: 15px;
-          font
+          color: $text-light;
+          padding: 10px 20px;
+          font-size: 14px;
+          font-weight: 500;
+          @include transition(all, 0.3s, ease);
           &:hover {
-            color: $black;
+            color: $color-primary;
           }
         }
       }

@@ -72,7 +72,7 @@ funfacts:
   # funfacts item loop
   - icon: "fas fa-trophy" #https://fontawesome.com/v5.15/icons
     name: "Awards won"
-    count: "1"
+    count: "3"
 
   # funfacts item loop
   - icon: "fas fa-project-diagram" #https://fontawesome.com/v5.15/icons

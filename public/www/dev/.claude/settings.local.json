@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -c \"/c/Users/quita/Documents/quko-tech.github.io/static/www/v1.3 test/\"*.css \"/c/Users/quita/Documents/quko-tech.github.io/static/www/v1.3 test/\"*.html \"/c/Users/quita/Documents/quko-tech.github.io/static/www/v1.3 test/\"*.js)"
+    ]
+  }
+}

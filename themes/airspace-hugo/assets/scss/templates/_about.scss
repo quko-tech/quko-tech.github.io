@@ -1,31 +1,38 @@
-.about{
-  .block{
+.about {
+  .block {
     h2 {
-      padding-top: 30px;
-      padding-bottom: 30px;
-      margin:0;
+      padding-top: 20px;
+      padding-bottom: 25px;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
     p {
       padding-top: 0px;
-      line-height:28px;
+      line-height: 1.8;
+      color: $text-light;
     }
 
     img {
       width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
   }
 
   .about-img {
-    overflow:hidden;
+    overflow: hidden;
+    border-radius: 12px;
 
     &:hover img {
-      transform: scale3D(1.1,1.1,1);
+      transform: scale3D(1.05, 1.05, 1);
+      opacity: 1;
     }
 
     img {
-      opacity: .6;
-      @include transition (all, 0.5s, ease-out);
+      opacity: 0.6;
+      @include transition(all, 0.5s, ease-out);
     }
   }
 

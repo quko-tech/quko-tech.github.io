@@ -1,86 +1,99 @@
 .feature {
   background: url("../img/feature-bg.jpg");
   background-position: center center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   display: block;
   position: relative;
-  padding: 100px 0;
+  padding: 120px 0;
 }
 
 .feature h2 {
   color: #FFFFFF;
-  font-size: xx-large;
+  font-size: 32px;
+  font-weight: 700;
   margin: 0px;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 25px;
+  letter-spacing: -0.02em;
 }
 
 .feature p {
-  color: #FFFFFF;
-  font-size: large;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 17px;
   margin-bottom: 20px;
+  line-height: 1.7;
 }
 
 .feature .btn-view-works {
-  background: #6b6b6b; /* Approximate lighten($black, 42.35) */
+  background: rgba(255, 255, 255, 0.15);
   color: white;
-  padding: 10px 20px;
+  padding: 12px 28px;
   margin-bottom: 30px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  @include transition(all, 0.3s, ease);
+
+  &:hover {
+    background: $white;
+    color: $text-dark;
+    border-color: $white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
 }
 
-/* Large desktop (optional if you want to target >1400px screens differently) */
+/* Large desktop */
 @media (max-width: 1400px) {
   .feature {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-attachment: unset;
+    padding: 100px 0;
   }
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
   .feature {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 70px 0;
     background-attachment: scroll;
   }
 
   .feature h2 {
-    font-size: x-large;
+    font-size: 26px;
     padding-top: 20px;
     padding-bottom: 20px;
   }
 
   .feature p {
-    font-size: medium;
+    font-size: 15px;
   }
 
   .feature .btn-view-works {
-    font-size: 14px;
-    padding: 8px 16px;
+    font-size: 13px;
+    padding: 10px 22px;
   }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
   .feature {
-    padding: 30px 15px;
+    padding: 50px 15px;
   }
 
   .feature h2 {
-    font-size: large;
+    font-size: 22px;
     padding-top: 15px;
     padding-bottom: 15px;
   }
 
   .feature p {
-    font-size: small;
+    font-size: 14px;
   }
 
   .feature .btn-view-works {
     font-size: 12px;
-    padding: 6px 12px;
+    padding: 10px 20px;
   }
 }

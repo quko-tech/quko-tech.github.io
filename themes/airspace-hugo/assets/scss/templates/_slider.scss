@@ -3,53 +3,78 @@
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
-  padding: 170px 0 200px;
+  padding: 180px 0 200px;
   position: relative;
+
   @include large-desktop {
-    background-attachment: unset;
+    background-attachment: scroll;
     padding: 150px 0;
   }
 
+  @include tablet {
+    padding: 120px 0;
+  }
+
+  @include mobile {
+    padding: 100px 0;
+  }
+
   .block {
-    color: darken( $light, 8.4);
+    color: $white;
     text-align: center;
+    position: relative;
+    z-index: 1;
 
     h1 {
-      font-weight: 100;
-      font-size: 45px;
-      line-height: 1.33em;
-      letter-spacing: 0.2em;
-      padding-bottom: 15px;
-      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      padding-bottom: 20px;
+      color: $white;
 
       @include tablet {
-        font-size: 35px;
+        font-size: 40px;
       }
 
       @include mobile {
-        font-size: 28px;
+        font-size: 32px;
       }
 
       @include mobile-xs {
-        font-size: 26px;
+        font-size: 28px;
       }
     }
 
     p {
-      margin-bottom: 30px;
-      color: darken( $light, 25.09803921568627);
-      font-size: 18px;
-      line-height: 1.5em;
-      font-weight: 300;
+      margin-bottom: 35px;
+      color: rgba($white, 0.85);
+      font-size: 19px;
+      line-height: 1.6;
+      font-weight: 400;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
 
       @include mobile {
-        font-size: 14px;
+        font-size: 16px;
+      }
+    }
+
+    .btn-main {
+      padding: 16px 40px;
+      font-size: 14px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
       }
     }
 
     @include mobile {
       .btn {
-        font-size: 12px;
+        font-size: 13px;
       }
     }
   }

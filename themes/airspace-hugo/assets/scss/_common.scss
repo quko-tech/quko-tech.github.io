@@ -19,6 +19,7 @@ a:hover {
   text-decoration: none;
   outline: 0;
   color: $color-primary;
+  @include transition(all, 0.3s, ease);
 }
 
 blockquote {
@@ -27,6 +28,9 @@ blockquote {
   padding: 20px 40px;
   text-align: left;
   color: darken( $light, 50.98);
+  border-left: 4px solid $color-primary;
+  border-radius: 0 8px 8px 0;
+  background: rgba($color-primary, 0.04);
 }
 
 .navbar-toggle .icon-bar {
@@ -38,12 +42,16 @@ input[type="password"],
 input[type="text"],
 input[type="tel"] {
   box-shadow: none;
-  height: 45px;
+  height: 50px;
   outline: none;
-  font-size: 14px;
+  font-size: 15px;
+  border-radius: 8px;
+  padding: 10px 18px;
+  border: 1px solid $border-color;
+  @include transition(all, 0.3s, ease);
 
   &:focus {
-    box-shadow: none;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
     border: 1px solid $color-primary;
   }
 }
@@ -51,10 +59,10 @@ input[type="tel"] {
 
 .form-control {
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 8px;
 
   &:focus {
-    box-shadow: none;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
     border: 1px solid $color-primary;
   }
 }
@@ -72,11 +80,14 @@ input[type="tel"] {
   color: $white;
   display: inline-block;
   font-size: 14px;
-  letter-spacing: 1px;
-  padding: 14px 35px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 14px 36px;
   text-transform: uppercase;
-  border-radius: 0;
-  @include transition (all, 0.2s, ease);
+  border-radius: 8px;
+  border: 2px solid $color-primary;
+  box-shadow: 0 4px 15px rgba($color-primary, 0.3);
+  @include transition (all, 0.3s, ease);
 
   &.btn-icon {
     i {
@@ -87,20 +98,30 @@ input[type="tel"] {
   }
 
   &:hover {
-    background: darken($color-primary, 20%);
+    background: darken($color-primary, 10%);
+    border-color: darken($color-primary, 10%);
     color: $white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($color-primary, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba($color-primary, 0.3);
   }
 }
 
 
 .btn-solid-border {
-  border: 1px solid $white;
+  border: 2px solid $white;
   background: transparent;
   color: $white;
+  border-radius: 8px;
 
   &:hover {
-    border: 1px solid $color-primary;
+    border: 2px solid $color-primary;
     background: $color-primary;
+    box-shadow: 0 4px 15px rgba($color-primary, 0.3);
   }
 }
 
@@ -110,10 +131,14 @@ input[type="tel"] {
   background: transparent;
   padding: 0;
   color: $color-primary;
+  box-shadow: none;
+  border: none;
 
   &:hover {
     background: transparent;
-    color: $color-primary;
+    color: darken($color-primary, 10%);
+    box-shadow: none;
+    transform: none;
   }
 }
 
@@ -136,7 +161,7 @@ input[type="tel"] {
 }
 
 .btn-round {
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .btn-round-full {
@@ -149,14 +174,6 @@ input[type="tel"] {
 .btn:focus {
   outline: 0;
 }
-
-
-
-
-
-
-
-
 
 
 .mt-10 {
@@ -209,8 +226,9 @@ input[type="tel"] {
 
 .bg-shadow {
   background-color: $white;
-  box-shadow: 0 16px 24px rgba(0, 0, 0, .08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .06);
   padding: 20px;
+  border-radius: 12px;
 }
 
 .bg-gray {
@@ -227,11 +245,10 @@ input[type="tel"] {
 
 .bg-primary-darker {
   background: darken($color-primary, 20%);
-
 }
 
 .bg-dark {
-  background: #202122;
+  background: #1a1a2e;
 }
 
 
@@ -239,8 +256,8 @@ input[type="tel"] {
   padding: 100px 0;
 
   @include tablet {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 
@@ -260,34 +277,43 @@ input[type="tel"] {
 }
 
 .section-title {
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 
   @include tablet {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   h2 {
-    text-transform: uppercase;
-    font-size: xx-large;
-    font-weight: 600;
+    font-size: 32px;
+    font-weight: 700;
     margin: 0px;
     padding: 15px 0px;
+    letter-spacing: -0.02em;
+
+    @include mobile {
+      font-size: 26px;
+    }
   }
 
   p {
-    font-style: italic;
-    font-size: large;
-    color: darken( $light, 57.64);
+    font-size: 18px;
+    color: $text-light;
     padding: 10px 0px;
-    font-family: $font-secondary;
+    font-family: $font-primary;
+    max-width: 600px;
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 }
 
 
 .section-subtitle {
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 30px;
+  letter-spacing: -0.02em;
 
   @include mobile-xs {
     font-size: 26px;
@@ -300,7 +326,7 @@ input[type="tel"] {
 
 
 .page-title {
-  padding: 100px 0;
+  padding: 120px 0;
   @extend .overly;
 
   .block {
@@ -308,14 +334,21 @@ input[type="tel"] {
 
     h1 {
       color: $white;
-      font-weight: 200;
-      letter-spacing: 0.15em;
+      font-weight: 700;
+      letter-spacing: -0.02em;
       margin-top: 0;
-      text-transform: capitalize;
+      font-size: 42px;
+
+      @include mobile {
+        font-size: 32px;
+      }
     }
 
     p {
-      color: $white;
+      color: rgba($white, 0.85);
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
     }
   }
 }
@@ -326,34 +359,29 @@ input[type="tel"] {
   text-align: center;
 
   h2 {
-    color: $black;
-    font-size: 30px;
-    line-height: 40px;
-    font-weight: 400;
+    color: $text-dark;
+    font-size: 32px;
+    line-height: 1.3;
+    font-weight: 700;
   }
 
   p {
     font-size: 18px;
-    line-height: 40px;
-    color: lighten( $black, 16.078);
-    font-weight: 300;
+    line-height: 1.7;
+    color: $text-light;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
-
-
-
-
-
-
-
 
 
 .page-wrapper {
   padding: 70px 0;
 
   @include tablet {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 
@@ -365,11 +393,15 @@ input[type="tel"] {
 
       a {
         font-size: 18px;
-        color: lighten( $black, 20 );
         display: inline-block;
         padding: 7px 12px;
         color: $white;
+        border-radius: 6px;
+        @include transition(all, 0.3s, ease);
 
+        &:hover {
+          transform: translateY(-2px);
+        }
       }
 
       .twitter {
@@ -426,26 +458,25 @@ input[type="tel"] {
   }
 
   .dropdown-menu {
-    border-radius: 0;
+    border-radius: 10px;
     opacity: 1;
     visibility: visible;
     position: absolute;
-    padding: 15px;
-    border: 1px solid #ebebeb;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     position: absolute;
     display: block;
     visibility: hidden;
     opacity: 0;
-    transform: translateY(30px);
-    transition: visibility 0.2s, opacity 0.2s, transform 500ms cubic-bezier(0.43, 0.26, 0.11, 0.99);
+    transform: translateY(15px);
+    transition: visibility 0.3s, opacity 0.3s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
     @include mobile {
       transform: none;
     }
   }
 }
-
 
 
 
@@ -492,11 +523,13 @@ input[type="tel"] {
       background-color: $color-primary;
       border: 1px solid $color-primary;
       color: $white;
+      border-radius: 8px;
     }
 
     a {
-      border-radius: 0;
+      border-radius: 8px;
       background: $light;
+      @include transition(all, 0.3s, ease);
 
       &:hover {
         border: 1px solid transparent;
@@ -509,13 +542,14 @@ input[type="tel"] {
   .tab-content {
     padding: 20px;
     border: 1px solid $border-color;
+    border-radius: 12px;
   }
 }
 
 
 .commonAccordion {
   .panel {
-    border-radius: 0;
+    border-radius: 12px;
     box-shadow: none;
 
     .panel-heading {
@@ -563,21 +597,29 @@ input[type="tel"] {
 
 
 .play-icon {
-  border: 1px solid $border-color;
+  border: 2px solid $border-color;
   display: inline-block;
   width: 60px;
   height: 60px;
   border-radius: 50px;
   font-size: 30px;
+  @include transition(all, 0.3s, ease);
 
   i {
     line-height: 60px;
+  }
+
+  &:hover {
+    background: $color-primary;
+    border-color: $color-primary;
+    color: $white;
+    transform: scale(1.1);
   }
 }
 
 
 .alert-common {
-  border-radius: 0;
+  border-radius: 8px;
   border-width: 2px;
 
   i {
@@ -617,8 +659,8 @@ input[type="tel"] {
     right: 0;
     width: 100%;
     height: 100%;
-    background: darken($color-primary, 25);
-    opacity: 0.8;
+    background: linear-gradient(135deg, darken($color-primary, 30) 0%, darken($color-primary, 15) 50%, rgba($color-primary, 0.85) 100%);
+    opacity: 0.88;
   }
 }
 
@@ -637,6 +679,7 @@ input[type="tel"] {
 .sticky-top {
   position: sticky;
   top: 0;
+  z-index: 1100;
   @include desktop {
     position: static;
   }
@@ -658,80 +701,73 @@ span.cloaked-e-mail:before {
 
 
 /* ==========================================================================
-   Mobile-Specific Styles (Example: Screens <= 768px)
+   Mobile-Specific Styles
    ========================================================================== */
 
 @media (max-width: 768px) {
 
-    /* --- Layout & Spacing --- */
-
     .section {
-        padding: 60px 0; /* Reduce vertical padding */
+        padding: 60px 0;
     }
 
     .section-sm {
-        padding: 40px 0; /* Reduce vertical padding */
+        padding: 40px 0;
     }
 
     .page-title {
-        padding: 60px 0; /* Reduce padding */
+        padding: 80px 0;
     }
 
     .page-wrapper {
-        padding: 40px 0; /* Reduce padding */
+        padding: 40px 0;
     }
 
     .bg-shadow {
-        padding: 15px; /* Reduce padding for shadowed boxes */
+        padding: 15px;
     }
 
-    /* Reduce margins - You might not need all, just examples */
     .mt-50 { margin-top: 30px; }
     .mt-40 { margin-top: 25px; }
     .mt-30 { margin-top: 20px; }
 
-    /* --- Typography --- */
-
     .section-title h2 {
-        font-size: 1.8em; /* Adjust section title size */
+        font-size: 1.8em;
         padding: 10px 0px;
     }
 
     .section-title p {
-        font-size: 1em; /* Adjust paragraph size */
+        font-size: 1em;
     }
 
     .section-subtitle {
-        font-size: 22px; /* Adjust subtitle size */
+        font-size: 22px;
         margin-bottom: 20px;
     }
 
     .heading h2 {
-        font-size: 24px; /* Adjust heading size */
+        font-size: 24px;
         line-height: 1.4;
     }
 
     .heading p {
-        font-size: 16px; /* Adjust paragraph size */
+        font-size: 16px;
         line-height: 1.6;
-        padding: 0 10px; /* Add some horizontal padding if needed */
+        padding: 0 10px;
     }
 
     blockquote {
-        font-size: 16px; /* Smaller blockquote text */
-        padding: 15px 25px; /* Smaller blockquote padding */
+        font-size: 16px;
+        padding: 15px 25px;
     }
 
     .page-title .block h1 {
-        font-size: 2.5em; /* Adjust page title H1 */
-        letter-spacing: 0.1em;
+        font-size: 2em;
+        letter-spacing: -0.01em;
     }
-
-    /* --- Buttons --- */
 
     .btn-main,
     .btn-large {
-        padding: 12px 25px; /* Maybe slightly smaller padding */
+        padding: 12px 25px;
         font-size: 13px;
     }
 
@@ -739,36 +775,20 @@ span.cloaked-e-mail:before {
         padding: 15px 35px;
     }
 
-    /* Make buttons full-width if needed for better tapping */
-    .buttonPart li .btn {
-         /* display: block; */
-         /* width: 100%; */
-         /* text-align: center; */
-         /* margin-bottom: 10px; */ /* Add space if stacked */
-    }
-    /* You already have margin-bottom in your SCSS for buttons, which is good! */
-
-    /* --- Navigation & Interactive --- */
-
-    /* Dropdowns might need to be full-width or handled differently */
     .dropdown-slide:hover .dropdown-menu,
     .dropdown-slide .dropdown-menu {
-        transform: none; /* Remove transform for simpler display */
-        width: 100%; /* Example: make dropdowns full width */
-        position: relative; /* Often better to make them static/relative */
+        transform: none;
+        width: 100%;
+        position: relative;
         box-shadow: none;
         border: none;
         visibility: visible;
         opacity: 1;
-        display: none; /* Rely on JS/Click to show on mobile */
+        display: none;
     }
-    /* IMPORTANT: Hover-based dropdowns are not ideal for touch.
-       You usually need JavaScript to make them open on click/tap.
-       You might need to hide your desktop menu and show a
-       different mobile menu (like a hamburger menu). */
 
     .tabCommon .nav-tabs li {
-        display: block; /* Stack tabs */
+        display: block;
         width: 100%;
         margin-right: 0;
         margin-bottom: 5px;
@@ -778,54 +798,36 @@ span.cloaked-e-mail:before {
         text-align: center;
     }
 
-    /* --- Social Icons --- */
-
     .social-media-icons ul li a {
-        padding: 5px 10px; /* Adjust padding if needed */
+        padding: 5px 10px;
         font-size: 16px;
     }
     .social-media-icons ul li .facebook {
         padding: 5px 15px;
     }
 
-    /* --- Sticky Top --- */
-    /* Your current code makes it *static* on desktop, which is unusual.
-       Usually, you might want it sticky on desktop and static on mobile
-       if it takes up too much space. If you want it sticky *except* on mobile: */
     .sticky-top {
-        position: static; /* Remove sticky positioning on mobile */
+        position: sticky;
+        top: 0;
     }
-    /* If you want it sticky on mobile too, ensure it doesn't cover content. */
 
 }
 
-/* ==========================================================================
-   Even Smaller Screens (Example: <= 480px)
-   ========================================================================== */
 @media (max-width: 480px) {
     .section-title h2 {
-        font-size: 1.5em; /* Further reduce font size */
+        font-size: 1.5em;
     }
 
     .page-title .block h1 {
-        font-size: 2em; /* Further reduce font size */
+        font-size: 1.7em;
     }
 
     .btn-main,
     .btn-large,
     .btn-small {
-        padding: 10px 20px; /* Maybe smaller padding */
-        width: 100%; /* Often best to go full-width on very small screens */
-        display: block;
+        padding: 12px 24px;
+        width: auto;
+        display: inline-block;
         text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .btn-large {
-        padding: 12px 25px;
-    }
-    /* Remove last button margin */
-    .buttonPart li:last-child .btn {
-      margin-bottom: 0;
     }
 }

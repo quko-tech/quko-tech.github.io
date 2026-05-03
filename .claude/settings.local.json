@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.html$\")",
+      "Bash(npx hugo *)",
+      "Bash(hugo version *)",
+      "Bash(hugo server *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:1313/)",
+      "Bash(curl -s http://localhost:1313/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:1313/about/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:1313/service/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:1313/contact/)",
+      "Bash(curl -s http://localhost:1313/about/)",
+      "Bash(hugo --gc --minify)",
+      "Bash(grep -o \".btn-main,[^{]*{[^}]*}\")",
+      "WebFetch(domain:localhost)",
+      "Bash(curl -s http://localhost:1314/)",
+      "Bash(tasklist)",
+      "Bash(taskkill *)",
+      "Read(//tmp/**)",
+      "Bash(netstat -ano)",
+      "Bash(curl -s http://localhost:1313)",
+      "Bash(curl -s http://localhost:49290)",
+      "Bash(hugo --gc)",
+      "Bash(node *)",
+      "Bash(hugo --logLevel debug)",
+      "Bash(rm -rf resources/_gen)",
+      "Bash(rm -rf public)"
+    ]
+  }
+}

@@ -71,7 +71,7 @@ funfacts:
   # funfacts item loop
   - icon: "fas fa-glasses" #https://fontawesome.com/v5.15/icons
     name: "Premios ganados"
-    count: "1"
+    count: "3"
 
   # funfacts item loop
   - icon: "fas fa-keyboard" #https://fontawesome.com/v5.15/icons

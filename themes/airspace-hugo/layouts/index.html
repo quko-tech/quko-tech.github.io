@@ -1,10 +1,20 @@
 {{ define "main" }}
 
+<!-- scroll progress indicator -->
+<div class="scroll-progress" id="scrollProgress"></div>
+<script>
+window.addEventListener('scroll', function() {
+  var h = document.documentElement;
+  var progress = (h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('scrollProgress').style.width = progress + '%';
+}, {passive: true});
+</script>
+
 <!-- banner -->
 {{ with .Params.banner }}
 {{ if .enable }}
 <section class="slider {{ if .bg_overlay }}overly{{ end }}" style="background-image: url('{{ .bg_image | relURL }}');">
-  <div class="container">
+  <div class="container" style="position:relative;z-index:1;">
     <div class="row">
       <div class="col-md-12">
         <div class="block">
@@ -12,7 +22,7 @@
           {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
           {{ with .button }}
           {{ if .enable }}
-          <a href="{{ .link | relLangURL }}" class="btn btn-main animated fadeInUp">{{ .label }}</a>
+          <a href="{{ .link | relLangURL }}" class="btn btn-main">{{ .label }}</a>
           {{ end }}
           {{ end }}
         </div>
@@ -31,7 +41,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7 col-sm-12">
-        <div class="block">
+        <div class="block" data-reveal="left">
           <div class="section-title">
             {{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
             {{ with .description }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
@@ -40,8 +50,8 @@
         </div>
       </div>
       <div class="col-md-5 col-sm-12">
-        <div class="block">
-          <img src="{{ .image | relURL }}" class="img-responsive" alt="Img">
+        <div class="block" data-reveal="right" data-reveal-delay="200">
+          <img src="{{ .image | relURL }}" class="img-responsive" alt="About QUKO" style="border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,0.1);">
         </div>
       </div>
     </div>
@@ -57,7 +67,7 @@
 <section class="feature bg-2" style="background-image: url('{{ .bg_image | relURL }}')">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-6">
+      <div class="col-md-6 col-md-offset-6" data-reveal="right">
         {{ with .title }}<h2 class="section-subtitle">{{ . | markdownify }}</h2>{{ end }}
         {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
         {{ with .button }}
@@ -75,7 +85,7 @@
 
 <!-- service -->
 {{ if .Params.service.enable }}
-{{ partial "service.html" . }}
+{{ partial "service-home.html" . }}
 {{ end }}
 <!-- /service -->
 
@@ -91,13 +101,13 @@
 <section class="testimonial">
   <div class="container">
     <div class="row">
-      <div class="section-title text-center">
+      <div class="section-title text-center" data-reveal="up">
         {{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
         {{ with .description }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6" data-reveal="left" data-reveal-delay="200">
         <div class="block">
           <ul class="counter-box clearfix">
             {{ range .funfact_item }}
@@ -110,7 +120,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-5 col-md-offset-1">
+      <div class="col-md-5 col-md-offset-1" data-reveal="right" data-reveal-delay="400">
         <div class="testimonial-carousel text-center">
           <div class="testimonial-slider owl-carousel">
             {{ range .testimonial_slider }}

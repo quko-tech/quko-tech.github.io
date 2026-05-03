@@ -19,7 +19,7 @@ about:
 
 
 
-<br>Our experienced team is skilled in cutting-edge solutions—from hardware and software to signal processing, communication networks, and embedded systems—ensuring the perfect fit for your unique needs."
+<br>Our experienced team is skilled in cutting-edge solutions: from hardware and software to signal processing, communication networks, and embedded systems, ensuring the perfect fit for your unique needs."
 
   #button:
   #  enable : true
