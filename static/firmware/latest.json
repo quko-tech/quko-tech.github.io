@@ -1,8 +1,8 @@
 {
   "firmware_versions": [
     {
-      "version": 0.911,
-      "file": "https://quko.es/firmware/0.911/fw_kosoku_0.911.bin",
+      "version": 0.912,
+      "file": "https://quko.es/firmware/0.912/fw_kosoku_0.912.bin",
       "owner": "Quko",
       "hw_version": 4
     }
