@@ -19,7 +19,7 @@
   <main>
     <h2 class="page-title">Configuration</h2>
 
-    <a class='toggle-link' id='toggleView'>Show Raw Config</a>
+    <a class='toggle-link' id='toggleView' style='display:none'>Show Raw Config</a>
 
     <div class='config-container'>
       <div class='config-form' id='configForm'>
@@ -59,7 +59,7 @@
           <h3>Security Settings</h3>
           <div class='form-group'>
             <label for='device_username'>Vessel Name</label>
-            <input type='text' id='device_username' name='device_username'>
+            <input type='text' id='device_username' name='device_username' readonly>
           </div>
           <div class='form-group'>
             <label for='device_password'>Device Password</label>
@@ -164,53 +164,53 @@
         </div>
 
         <div class='section'>
-          <h3>Dynamometers</h3>
+          <h3>Paddle Sensors</h3>
 
           <div class='toggle-container'>
-            <span class='toggle-label'>Enable Dynamometer 1</span>
+            <span class='toggle-label'>Enable Paddle Sensor 1</span>
             <label class='toggle-switch'>
               <input type='checkbox' id='enable_dinamo1' name='enable_dinamo1' onchange='toggleTextInput("dinamo1_name", this.checked)'>
               <span class='toggle-slider'></span>
             </label>
           </div>
           <div class='form-group'>
-            <label for='dinamo1_name'>Name of Dynamometer 1</label>
+            <label for='dinamo1_name'>Name of Paddle Sensor 1</label>
             <input type='text' id='dinamo1_name' name='dinamo1_name' disabled>
           </div>
 
           <div class='toggle-container'>
-            <span class='toggle-label'>Enable Dynamometer 2</span>
+            <span class='toggle-label'>Enable Paddle Sensor 2</span>
             <label class='toggle-switch'>
               <input type='checkbox' id='enable_dinamo2' name='enable_dinamo2' onchange='toggleTextInput("dinamo2_name", this.checked)'>
               <span class='toggle-slider'></span>
             </label>
           </div>
           <div class='form-group'>
-            <label for='dinamo2_name'>Name of Dynamometer 2</label>
+            <label for='dinamo2_name'>Name of Paddle Sensor 2</label>
             <input type='text' id='dinamo2_name' name='dinamo2_name' disabled>
           </div>
 
           <div class='toggle-container'>
-            <span class='toggle-label'>Enable Dynamometer 3</span>
+            <span class='toggle-label'>Enable Paddle Sensor 3</span>
             <label class='toggle-switch'>
               <input type='checkbox' id='enable_dinamo3' name='enable_dinamo3' onchange='toggleTextInput("dinamo3_name", this.checked)'>
               <span class='toggle-slider'></span>
             </label>
           </div>
           <div class='form-group'>
-            <label for='dinamo3_name'>Name of Dynamometer 3</label>
+            <label for='dinamo3_name'>Name of Paddle Sensor 3</label>
             <input type='text' id='dinamo3_name' name='dinamo3_name' disabled>
           </div>
 
           <div class='toggle-container'>
-            <span class='toggle-label'>Enable Dynamometer 4</span>
+            <span class='toggle-label'>Enable Paddle Sensor 4</span>
             <label class='toggle-switch'>
               <input type='checkbox' id='enable_dinamo4' name='enable_dinamo4' onchange='toggleTextInput("dinamo4_name", this.checked)'>
               <span class='toggle-slider'></span>
             </label>
           </div>
           <div class='form-group'>
-            <label for='dinamo4_name'>Name of Dynamometer 4</label>
+            <label for='dinamo4_name'>Name of Paddle Sensor 4</label>
             <input type='text' id='dinamo4_name' name='dinamo4_name' disabled>
           </div>
         </div>
@@ -242,7 +242,7 @@
       </div>
     </div>
   </main>
-  <footer>v1.3.0 &middot; QUKO TECH, S.L. &copy; 2026</footer>
+  <footer>v<span class='app-version'></span> &middot; QUKO TECH, S.L. &copy; 2026</footer>
   <script src="./common.js"></script>
   <script src="./config.js"></script>
 </body>

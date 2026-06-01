@@ -1,11 +1,22 @@
 // Common utility functions shared across pages
 
+// Single source of truth for the app version, shown in every page footer.
+var APP_VERSION = '1.4.0';
+
 // Highlight active nav link
 (function(){
   var page = location.pathname.split('/').pop() || 'index.html';
   var links = document.querySelectorAll('.menu a');
   for(var i = 0; i < links.length; i++){
     if(links[i].getAttribute('href').replace('./','') === page) links[i].classList.add('active');
+  }
+})();
+
+// Fill in the version number in the footer(s)
+(function(){
+  var els = document.querySelectorAll('.app-version');
+  for(var i = 0; i < els.length; i++){
+    els[i].textContent = APP_VERSION;
   }
 })();
 
@@ -19,31 +30,30 @@ function showMessage(message, isSuccess, hostname = null) {
   const messageArea = document.getElementById('messageArea');
   messageArea.innerHTML = `<div class='message ${isSuccess ? 'success' : 'error'}'>${message}</div>`;
   
-  // Special handling for connection setup page with hostname redirect
+  // Special handling for connection setup page: count down, then redirect to <hostname>.local
   if (isSuccess && hostname) {
-    // Start countdown after 5 seconds
-    setTimeout(() => {
-      let secondsLeft = 10;
-      
-      // Create countdown display
-      messageArea.innerHTML = `
-        <div class='message success'>
-          ${message}<br><br>
-          Redirecting in <span id="countdown">${secondsLeft}</span>s.\nAccess http://${hostname} manually if needed\n
-        </div>
-      `;
-      
-      // Update countdown every second
-      const countdownInterval = setInterval(() => {
-        secondsLeft--;
-        document.getElementById('countdown').textContent = secondsLeft;
-        
-        if (secondsLeft <= 0) {
-          clearInterval(countdownInterval);
-          window.location.href = 'http://' + hostname;
-        }
-      }, 1000);
-    }, 5000);
+    let secondsLeft = 10;
+    const target = 'http://' + hostname + '.local';
+
+    // Create countdown display
+    messageArea.innerHTML = `
+      <div class='message success'>
+        ${message}<br><br>
+        Make sure the device is connected to the <strong>same WiFi network</strong> as this computer.<br><br>
+        Redirecting to <a href="${target}">${hostname}.local</a> in <span id="countdown">${secondsLeft}</span>s.
+      </div>
+    `;
+
+    // Update countdown every second, then redirect to <hostname>.local
+    const countdownInterval = setInterval(() => {
+      secondsLeft--;
+      document.getElementById('countdown').textContent = secondsLeft;
+
+      if (secondsLeft <= 0) {
+        clearInterval(countdownInterval);
+        window.location.href = target;
+      }
+    }, 1000);
   } else {
     // Auto-hide message after 5 seconds for regular messages
     setTimeout(() => {

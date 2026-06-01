@@ -35,7 +35,12 @@
       "Bash(curl -sI -L --max-time 20 \"https://quko.es/firmware/latest.json\")",
       "Bash(git fetch *)",
       "Bash(git ls-tree *)",
-      "Bash(curl -s -L --max-time 20 https://quko.es/)"
+      "Bash(curl -s -L --max-time 20 https://quko.es/)",
+      "Bash(python -c \"from PIL import Image; im=Image.open\\(r'assets/images/favicon.ico'\\); print\\('sizes:', im.size, 'frames:', [i.size for i in __import__\\('PIL.ImageSequence',fromlist=['Iterator']\\).Iterator\\(im\\)] if False else im.info.get\\('sizes','n/a'\\)\\)\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(python -c \"from PIL import Image; Image.open\\(r'assets/images/favicon.ico'\\).convert\\('RGBA'\\).save\\(r'assets/images/favicon.png'\\)\")",
+      "Bash(python -c \"from PIL import Image; im=Image.open\\(r'assets/images/favicon.png'\\); print\\('new favicon.png:', im.size, im.mode\\)\")",
+      "Bash(hugo --gc --minify --quiet)"
     ]
   }
 }

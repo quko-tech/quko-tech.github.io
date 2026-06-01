@@ -25,6 +25,10 @@
           <label for='wifi_password'>WiFi Password</label>
           <input type='password' id='wifi_password' name='wifi_password' placeholder='Your network password'>
         </div>
+        <div class='warning-card'>
+          <span class='warning-icon'>&#x26A0;&#xFE0F;</span>
+          <span>This device only supports <strong>2.4GHz</strong> WiFi networks. It is <strong>not compatible</strong> with 5G (5.8GHz) networks.</span>
+        </div>
       </div>
 
       <div id='messageArea'></div>
@@ -39,7 +43,7 @@
       </div>
     </div>
   </main>
-  <footer>v1.3.0 &middot; QUKO TECH, S.L. &copy; 2026</footer>
+  <footer>v<span class='app-version'></span> &middot; QUKO TECH, S.L. &copy; 2026</footer>
   <script src="./common.js"></script>
   <script src="./connection_setup.js"></script>
 </body>
