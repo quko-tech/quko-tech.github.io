@@ -16,7 +16,8 @@ Por:
     <a href='/files'>File Manager</a>
 </div>
 
-2. Minificar archivos individualmente
-3. Remplazar .css por .min.css y .js por .min.css
-4. Remplazar href="./ por href="www/
-5. Remplazar src="./ por src="www/
+2. Remplazar .css por .min.css y .js por .min.css SOLO EN LOS HTMLS
+3. Remplazar href="./ por href="www/ SOLO EN LOS HTMLS
+4. Remplazar src="./ por src="www/ SOLO EN LOS HTMLS
+
+5. Minificar archivos individualmente
