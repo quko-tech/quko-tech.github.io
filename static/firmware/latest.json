@@ -3,7 +3,7 @@
     {
       "version": 0.1,
       "file": "https://quko.es/firmware/0.915/fw_kosoku_0.915.bin",
-      "owner": "Quko",
+      "update_channel": "debug",
       "hw_version": 4
     }
   ],

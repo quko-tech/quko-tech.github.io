@@ -26,7 +26,16 @@
       "Bash(hugo --logLevel debug)",
       "Bash(rm -rf resources/_gen)",
       "Bash(rm -rf public)",
-      "Bash(hugo)"
+      "Bash(hugo)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('scripts',{}\\),indent=2\\)\\)\")",
+      "Bash(gh run *)",
+      "PowerShell(gh run *)",
+      "Bash(git check-attr *)",
+      "Bash(curl -sI -L --max-time 20 \"https://quko.es/\")",
+      "Bash(curl -sI -L --max-time 20 \"https://quko.es/firmware/latest.json\")",
+      "Bash(git fetch *)",
+      "Bash(git ls-tree *)",
+      "Bash(curl -s -L --max-time 20 https://quko.es/)"
     ]
   }
 }
