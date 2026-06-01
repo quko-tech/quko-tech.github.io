@@ -72,7 +72,7 @@ function updateFormFields(){
         document.getElementById(`hrm${i+1}_name`).value = configData.hrm && configData.hrm[i] ? configData.hrm[i].name : '';
     }
     
-    // Dynamometers
+    // Paddle Sensors
     for(let i = 0; i < 4; i++){
         const dinamoEnabled = configData.dinamo && configData.dinamo[i] ? configData.dinamo[i].enable : false;
         document.getElementById(`enable_dinamo${i+1}`).checked = dinamoEnabled;
@@ -131,16 +131,16 @@ function saveFormConfig(){
         errorMessage = 'Heart Rate Monitor 4 is enabled but has no name';
     }else if(document.getElementById('enable_dinamo1').checked && document.getElementById('dinamo1_name').value.trim() === ''){
         isValid = false;
-        errorMessage = 'Dynamometer 1 is enabled but has no name';
+        errorMessage = 'Paddle Sensor 1 is enabled but has no name';
     }else if(document.getElementById('enable_dinamo2').checked && document.getElementById('dinamo2_name').value.trim() === ''){
         isValid = false;
-        errorMessage = 'Dynamometer 2 is enabled but has no name';
+        errorMessage = 'Paddle Sensor 2 is enabled but has no name';
     }else if(document.getElementById('enable_dinamo3').checked && document.getElementById('dinamo3_name').value.trim() === ''){
         isValid = false;
-        errorMessage = 'Dynamometer 3 is enabled but has no name';
+        errorMessage = 'Paddle Sensor 3 is enabled but has no name';
     }else if(document.getElementById('enable_dinamo4').checked && document.getElementById('dinamo4_name').value.trim() === ''){
         isValid = false;
-        errorMessage = 'Dynamometer 4 is enabled but has no name';
+        errorMessage = 'Paddle Sensor 4 is enabled but has no name';
     }else if(document.getElementById('enable_start_trans').checked && document.getElementById('start_trans_name').value.trim() === ''){
         isValid = false;
         errorMessage = 'Start signal transmitter is enabled but has no name';
@@ -156,12 +156,12 @@ function saveFormConfig(){
         errorMessage = 'Device Password cannot contain spaces or non-ASCII characters';
     }
     
-    // RouterSN validation (must be number between 0-9999)
+    // RouterSN validation (if provided, must be a positive integer between 0 and 9999; otherwise blank is allowed)
     else if(document.getElementById('routerSN').value.trim() !== ''){
-        const routerSNValue = parseInt(document.getElementById('routerSN').value.trim());
-        if(isNaN(routerSNValue) || routerSNValue < 0 || routerSNValue > 9999){
+        const routerSNRaw = document.getElementById('routerSN').value.trim();
+        if(!/^\d+$/.test(routerSNRaw) || parseInt(routerSNRaw, 10) > 9999){
             isValid = false;
-            errorMessage = 'Station code must be a number between 0 and 9999';
+            errorMessage = 'Station code must be a positive integer between 0 and 9999';
         }
     }
     
@@ -183,22 +183,22 @@ function saveFormConfig(){
         errorMessage = 'Heart Rate Monitor 4 name cannot contain non-ASCII characters';
     }
     
-    // Dynamometer names non-ASCII validation
+    // Paddle Sensor names non-ASCII validation
     else if(document.getElementById('enable_dinamo1').checked && !isASCII(document.getElementById('dinamo1_name').value)){
         isValid = false;
-        errorMessage = 'Dynamometer 1 name cannot contain non-ASCII characters';
+        errorMessage = 'Paddle Sensor 1 name cannot contain non-ASCII characters';
     }
     else if(document.getElementById('enable_dinamo2').checked && !isASCII(document.getElementById('dinamo2_name').value)){
         isValid = false;
-        errorMessage = 'Dynamometer 2 name cannot contain non-ASCII characters';
+        errorMessage = 'Paddle Sensor 2 name cannot contain non-ASCII characters';
     }
     else if(document.getElementById('enable_dinamo3').checked && !isASCII(document.getElementById('dinamo3_name').value)){
         isValid = false;
-        errorMessage = 'Dynamometer 3 name cannot contain non-ASCII characters';
+        errorMessage = 'Paddle Sensor 3 name cannot contain non-ASCII characters';
     }
     else if(document.getElementById('enable_dinamo4').checked && !isASCII(document.getElementById('dinamo4_name').value)){
         isValid = false;
-        errorMessage = 'Dynamometer 4 name cannot contain non-ASCII characters';
+        errorMessage = 'Paddle Sensor 4 name cannot contain non-ASCII characters';
     }
 
     // Start trans name non-ASCII validation
@@ -254,19 +254,19 @@ function saveFormConfig(){
     }
     else if(document.getElementById('enable_dinamo1').checked && !checkFieldLength('dinamo1_name')){
         isValid = false;
-        errorMessage = 'Dynamometer 1 name cannot exceed 64 characters';
+        errorMessage = 'Paddle Sensor 1 name cannot exceed 64 characters';
     }
     else if(document.getElementById('enable_dinamo2').checked && !checkFieldLength('dinamo2_name')){
         isValid = false;
-        errorMessage = 'Dynamometer 2 name cannot exceed 64 characters';
+        errorMessage = 'Paddle Sensor 2 name cannot exceed 64 characters';
     }
     else if(document.getElementById('enable_dinamo3').checked && !checkFieldLength('dinamo3_name')){
         isValid = false;
-        errorMessage = 'Dynamometer 3 name cannot exceed 64 characters';
+        errorMessage = 'Paddle Sensor 3 name cannot exceed 64 characters';
     }
     else if(document.getElementById('enable_dinamo4').checked && !checkFieldLength('dinamo4_name')){
         isValid = false;
-        errorMessage = 'Dynamometer 4 name cannot exceed 64 characters';
+        errorMessage = 'Paddle Sensor 4 name cannot exceed 64 characters';
     }
     else if(document.getElementById('enable_start_trans').checked && !checkFieldLength('start_trans_name')){
         isValid = false;
