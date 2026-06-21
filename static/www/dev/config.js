@@ -428,7 +428,9 @@ function pollBleResults(){
 
 function renderBleDevices(devices){
     const list = document.getElementById('bleScanList');
-    const sorted = devices.slice().sort((a, b) => (b.rssi ?? -127) - (a.rssi ?? -127));
+    const sorted = devices.slice().sort((a, b) => 
+        (b.rssi != null ? b.rssi : -127) - (a.rssi != null ? a.rssi : -127)
+    );
     list.innerHTML = '';
 
     sorted.forEach(d => {
