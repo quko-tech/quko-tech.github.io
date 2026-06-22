@@ -360,7 +360,7 @@ function saveConfig(configData){
 // typing its name. Backed by /api/ble/scan, /api/ble/scan/results,
 // /api/ble/connect and /api/ble/connect/status (SETTING state only).
 
-const bleScan = { target: null, enableId: null, type: 'hrm', pollTimer: null };
+const bleScan = { target: null, enableId: null, type: 'hrm', pollTimer: null, retryTimer: null, scanning: false };
 
 function setBleStatus(text, kind){
     const el = document.getElementById('bleScanStatus');
@@ -380,6 +380,8 @@ function openBleScan(fieldId, enableId, type){
 
 function closeBleScan(){
     clearTimeout(bleScan.pollTimer);
+    clearTimeout(bleScan.retryTimer);
+    bleScan.scanning = false;
     document.getElementById('bleScanModal').style.display = 'none';
     // Release the BLE stack on the device and let the cloud sync resume
     // (fire-and-forget; the device also frees BLE when it leaves SETTING).
@@ -388,25 +390,22 @@ function closeBleScan(){
 
 async function startBleScan(){
     clearTimeout(bleScan.pollTimer);
+    clearTimeout(bleScan.retryTimer);
+    bleScan.scanning = true;          // Test buttons stay disabled until the scan ends
     document.getElementById('bleScanList').innerHTML = '';
-    setBleStatus('Starting scan…', 'scanning');
+    setBleStatus('Scanning for devices…', 'scanning');
     try {
         const res = await fetch('/api/ble/scan?type=' + encodeURIComponent(bleScan.type));
         if(!res.ok){
-            let msg;
-            if(res.status === 409){
-                msg = 'Bluetooth is busy. Wait a moment and rescan.';
-            } else if(res.status === 503){
-                msg = 'Bluetooth is unavailable right now (low memory). Try again in a few seconds.';
-            } else {
-                msg = 'Could not start the scan.';
-            }
-            setBleStatus(msg, 'error');
+            // Couldn't start right now (a connection test is running, or BLE is
+            // still coming up). Don't surface an error — just queue another scan.
+            bleScan.retryTimer = setTimeout(startBleScan, 1500);
             return;
         }
         pollBleResults();
     } catch(e){
-        setBleStatus('Could not start the scan.', 'error');
+        // Transient hiccup talking to the device — queue a retry too.
+        bleScan.retryTimer = setTimeout(startBleScan, 1500);
     }
 }
 
@@ -417,6 +416,7 @@ function pollBleResults(){
             const res = await fetch('/api/ble/scan/results');
             const data = await res.json();
             const devices = data.devices || [];
+            bleScan.scanning = !!data.scanning;   // gate the Test buttons
             renderBleDevices(devices);
             if(data.scanning){
                 setBleStatus('Scanning for devices…', 'scanning');
@@ -470,7 +470,14 @@ function renderBleDevices(devices){
         testBtn.type = 'button';
         testBtn.className = 'ble-test';
         testBtn.textContent = 'Test';
-        testBtn.addEventListener('click', () => testBleDevice(d.mac, testBtn));
+        // A connection test can't run while a scan owns the radio, so keep Test
+        // disabled until the scan finishes.
+        if(bleScan.scanning){
+            testBtn.disabled = true;
+            testBtn.title = 'Wait for the scan to finish';
+        } else {
+            testBtn.addEventListener('click', () => testBleDevice(d.mac, testBtn));
+        }
 
         const pickBtn = document.createElement('button');
         pickBtn.type = 'button';
