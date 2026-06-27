@@ -39,7 +39,7 @@ function updateStorageInfo(data){
     document.getElementById('usedSpace').textContent=formatSizeWithUnit(data.usedBytes);
     document.getElementById('totalSpace').textContent=formatSizeWithUnit(data.totalBytes);
     document.getElementById('freeSpace').textContent=formatSizeWithUnit(data.freeBytes);
-    document.getElementById('percentUsed').textContent=data.percentUsed+'%';
+    document.getElementById('percentUsed').textContent=Math.round(data.percentUsed)+'%';
     document.getElementById('progressFill').style.width=data.percentUsed+'%';
 }
 
