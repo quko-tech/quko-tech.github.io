@@ -1,0 +1,187 @@
+# QUKO — Full reference
+
+> This file contains the full text content of QUKO's key pages in one place, for LLMs and other automated systems that cannot execute JavaScript or crawl multiple pages. For a short navigational index instead, see /llms.txt. Canonical source pages are linked under each section.
+
+Company: QUKO (quko.es). Products: Kosoku (sensor hardware), QUKO Cloud (analytics platform, app at cloud.quko.es), QUKO Live (real-time telemetry). Sector: canoeing, kayaking and rowing (sprint/flatwater paddle sports) performance technology. Founder: former CERN physicist and Spanish national-level canoe/kayak athlete.
+
+---
+
+## Homepage
+Source: https://quko.es/
+
+At QUKO, we develop innovative hardware and software solutions that transform complex data into actionable insights for high-performance applications.
+
+Founded with expertise in quantum engineering, experimental physics, and telecommunications, QUKO bridges the gap between cutting-edge research and practical applications. We specialize in developing integrated solutions that combine advanced hardware design, real-time data processing, and intelligent analytics. Our approach democratizes access to sophisticated technologies typically reserved for research institutions. From live monitoring systems to cloud-based analytics platforms, we create tools that enable users to optimize performance through data-driven insights. Our solutions feature real-time visualization, AI-powered analysis, and secure data handling — all designed with user accessibility in mind.
+
+Every application requires a unique approach. Our solutions are built around specific client needs and constraints, combining deep technical expertise with practical understanding so complex technologies become intuitive tools. Through close collaboration and iterative development, QUKO delivers systems that provide immediate value while being scalable for future growth.
+
+Mission (per founder Pablo "Pepe" Álvarez, Founder & CEO): "Our mission is to make advanced technologies accessible and practical, creating solutions that bridge the gap between cutting-edge research and real-world applications."
+
+---
+
+## About QUKO
+Source: https://quko.es/about/
+
+New technologies are transforming businesses and entire industries. From AI and data science to the Internet of Things and advanced data processing, leveraging these tools is essential for maximizing performance today.
+
+At QUKO, we specialize in adapting these technologies across diverse scenarios to optimize processes in ways once thought impossible. Our experienced team is skilled in cutting-edge solutions: from hardware and software to signal processing, communication networks, and embedded systems, ensuring the perfect fit for your unique needs.
+
+Vision: At QUKO, we strongly believe in the use of cutting-edge technologies in order to optimize the efficiency of any type of activity or process, be it industrial, professional, sports, and more. We are also aware of the huge number of people who could benefit enormously from the implementation of this type of solutions, so we seek to make them as accessible as possible.
+
+Mission: Our ultimate mission is to offer technological solutions that anyone can use to get the most out of them. We seek to achieve this goal not only through generic implementation of technologies, but by putting the customer at the center and adapting our research and development to their needs.
+
+Approach: QUKO's goal is to achieve the solution that best suits our customers' requirements, through a close relationship that lets our team fully understand the problem to be solved. Our main pillars when working with clients are communication and confidentiality.
+
+The technology you need, at your fingertips — capability areas:
+- Hardware Development: custom hardware design capabilities for all use cases.
+- Network deployment: sizing and deployment of telecommunications networks.
+- Software development: years of experience developing applications and software solutions.
+
+---
+
+## Services
+Source: https://quko.es/service/
+
+At QUKO, we combine deep research expertise with practical engineering to deliver integrated hardware and software solutions that transform complex data into actionable insights. Whether you need real-time monitoring systems, predictive analytics, or custom embedded solutions, we create technology that drives measurable performance improvements across diverse applications.
+
+Featured service areas:
+- Hardware Systems: custom embedded devices with advanced sensors, real-time processing, and wireless connectivity.
+- Cloud Analytics: scalable platforms for data visualization, AI-powered insights, and collaborative analysis.
+- Intelligent Software: machine learning algorithms, pattern recognition, and predictive analytics tailored to client needs.
+
+Why choose QUKO:
+- Scientific innovation — solutions built on quantum engineering, experimental physics, and advanced telecommunications expertise.
+- Security-first approach — end-to-end encryption, secure data transmission, and privacy-focused architectures for sensitive applications.
+- Real-time performance — live data streaming, instant visualization, and immediate feedback systems for time-critical applications.
+- Seamless integration — hardware and software designed to work together as unified solutions.
+- Continuous evolution — new features and capabilities based on the latest research and user feedback.
+- Cutting-edge technology — advanced algorithms, AI-powered analytics, and state-of-the-art hardware for maximum performance.
+- Intuitive design — complex technologies made accessible through user-friendly interfaces, no technical expertise required.
+- Collaborative approach — close partnership throughout development, tailoring solutions to specific requirements.
+
+---
+
+## Kosoku (hardware sensor)
+Source: https://quko.es/kosoku/
+Title meaning: from Japanese, "Speed of Light".
+
+At QUKO, we revolutionize elite sprint canoeing through cutting-edge data analytics and performance optimization technology. Our mission is to democratize affordable and accessible technology at the elite level, bridging the gap between coaches, athletes, and data analysts to drive a paradigm shift towards technology-based training optimization.
+
+Redefining high-level training in canoeing and kayaking.
+
+Featured capabilities:
+- Data logging: advanced sensor technology capturing 200 Hz sampling frequency with sub-centimeter position accuracy and comprehensive kinematic data.
+- Live data streaming: real-time data transmission up to 150 m range, tracking up to 9 devices simultaneously with live coaching feedback.
+- Garmin compatibility: seamless integration with Garmin Connect, custom data fields for real-time athlete feedback and deferred training analysis.
+
+Why choose QUKO Kosoku:
+- Sport-specific design: purpose-built for canoeing and kayaking, IP67 waterproof-certified housing, specialized paddle-sports analytics algorithms.
+- Elite performance focus: developed by a former CERN physicist and Spanish national-level athlete, using proprietary state-of-the-art algorithms for outstanding precision and rigor.
+- Maximum precision at 100 Hz: high-resolution data every 10 milliseconds to fully characterize vessel movement.
+- Real-time Team Monitoring: live tracking of up to 9 devices simultaneously, 150+ meter range, kinematic data and biometrics streamed directly to coaches' waterproof tablets.
+- Cloud integration: seamless connection to QUKO Cloud for advanced visualization, 3D analysis, AI-powered pattern recognition, and performance comparisons.
+- Competition-ready: 5-hour battery life, 10 Hz double-band GPS, compatible with 4 heart-rate sensors, data streaming to 4 Garmin watches simultaneously.
+- Data security: fully encrypted internal storage and ciphered data transmission to keep competitive data confidential during international competitions.
+- Plug-and-play simplicity: staff with no technical experience can immediately access advanced performance analytics.
+
+Indicative (pre-launch) pricing tiers referenced on the site: single device, a 5-device "team" bundle, and a 10-device "elite programs" bundle (each historically listed around €849 / €3,990 / €7,490 respectively, described as pre-selling/TBD — confirm current pricing via contact page).
+
+---
+
+## QUKO Cloud (analytics platform)
+Source: https://quko.es/quko_cloud/
+Note: the corresponding web application is at https://cloud.quko.es/ and requires sign-in (email/password or Google OAuth); it has no public marketing content of its own.
+
+QUKO Cloud revolutionizes paddle sports training by transforming complex sensor data into clear, actionable insights. Our intelligent platform combines cutting-edge cloud computing with sports science expertise, empowering coaches and athletes to optimize performance through data-driven analysis. It acts as a bridge between the latest state-of-the-art technologies and paddle sport.
+
+Featured capabilities:
+- Cloud computing: process high-resolution sensor data in real time with deployed cloud computing solutions.
+- Interactive results: adapt data visualization to your needs via interactive charts and renders.
+- Artificial Intelligence: first implementation of an LLM model to help coaches and staff interpret and analyze the gathered data.
+
+Why QUKO Cloud is different:
+- Tailored for water sports: algorithms and processing techniques specifically designed and optimized for rowing, canoeing and kayaking.
+- State-of-the-art engineering: actively researching and applying the most novel processing techniques for the highest accuracy and precision.
+- Sports science focused: balances engineering with sports science to surface relevant metrics for easy biomechanical interpretation.
+- No knowledge required: all data is visualized in ways coaches and athletes can easily understand, no technical experience needed.
+- Active development: continuously updated based on feedback from trainers and data analysts.
+- Kosoku compatible: integrates seamlessly with the rest of the QUKO ecosystem.
+- Data security: all data stored on secure servers with regular backups; no other user has access unless specifically granted.
+- Easy and fast: "drag and drop" — upload the session file, hit continue, get results in seconds.
+
+---
+
+## QUKO Live (real-time telemetry)
+Source: https://quko.es/quko_live/
+Status: currently in closed testing.
+
+Revolutionary telemetry technology for water sports. Quko Live provides real-time performance data for up to 9 athletes simultaneously, delivering the insights coaches and athletes need to optimize training and maximize performance on the water.
+
+Featured capabilities:
+- Multi-Athlete Tracking: monitor up to 9 athletes simultaneously with individual data streams and real-time analytics for team performance insights.
+- Long-Range Wireless: 150 m wireless transmission range for continuous data collection during extended training and competitions.
+- Plug and play: no mobile data or internet connection needed — pair Kosokus with the base station and train.
+
+Comprehensive performance data tracked:
+- Acceleration & Deceleration: movement analysis for technique optimization and power development.
+- Indispensable metrics: real-time stroke frequency and distance-per-stroke monitoring with historical trend analysis.
+- Velocity Tracking: instant high-resolution, high-sensitivity speed measurements.
+- Heart Rate Zones: physiological monitoring with live heart-rate data.
+- No internet required: works without WiFi or cell data in any environment.
+- Android compatible: retrieve all data directly from your smartphone.
+
+Designed for water sports, optimized for various water sports and rowing disciplines.
+
+---
+
+## FAQ
+Source: https://quko.es/faq/
+
+1. Why choose QUKO over other alternatives?
+There is one key factor that sets QUKO apart from the competition: customized solutions tailored to customers. QUKO believes customers should be able to take advantage of the latest technologies without any prior knowledge, maintaining a close relationship based on communication and confidentiality to fully understand specific needs.
+
+2. What kind of activities does QUKO work with?
+In general, any kind. QUKO's vision revolves around developing and applying state-of-the-art tools across all kinds of processes, and is always looking to expand into new activities. Interested parties are encouraged to contact QUKO directly.
+
+3. How does QUKO process or use my data?
+QUKO does not collect sensitive data or maintain a storage database of it. Data collected during solution design/deployment, as well as final results, are processed privately on a cloud server and returned to the customer without being shared with third parties.
+
+---
+
+## Contact
+Source: https://quko.es/contact/
+
+Contact form for questions or suggestions: "Get in touch with QUKO — for any doubts or suggestions, simply fill out the form below."
+
+---
+
+## Research / Blog (QUKO Performance Lab)
+Source: https://quko.es/blog/
+Description: Latest research decoded for competitive athletes. Applied physics and biomechanics articles written by QUKO's founder, Pablo (Pepe) Álvarez, covering canoeing, kayaking and rowing.
+
+Articles (title — one-line summary):
+- Optimizing Paddle Design with Physics (2025-05-27) — The overlooked physics that reveal how small tweaks in paddle size and shape can mean big gains, or costly losses, on the water. https://quko.es/blog/2025.05.27/
+- Personalizing Paddle Blade Size Using Power Profiles (2025-06-06) — Most paddlers waste energy on every stroke, but science can fix yours. https://quko.es/blog/2025.06.06/
+- Hydrodynamic Efficiency Analysis in Paddle Sports Performance (2025-06-13) — You're losing up to 33% of your stroke power to water turbulence; here's how science finally measured it. https://quko.es/blog/2025.06.13/
+- Psychophysiological Monitoring in Elite Paddling Sports (2025-06-18) — Why your hardest training block might be sabotaging your race performance, and how to fix it. https://quko.es/blog/2025.06.18/
+- Metabolic Contributions in Sprint Kayaking: 500m vs 1000m Analysis (2025-06-24) — A scientific study discovered the exact moment your body switches energy systems during racing, earlier than you think. https://quko.es/blog/2025.06.24/
+- Biomechanical Analysis of Propulsion in Paddle Sports (2025-06-30) — University research identifies key biomechanical factors that determine speed and efficiency in paddle sports competition. https://quko.es/blog/2025.06.30/
+- PCA Analysis of Canoe Kayak Pacing Strategies (2025-07-09) — A breakthrough study analyzing Olympic and World Championship data to uncover the tactical difference between podium finishers and everyone else. https://quko.es/blog/2025.07.09/
+- Isometric Training Optimizes Sprint Kayaking Performance (2025-09-02) — The counterintuitive training method that delivered 14% performance gains while traditional training managed only 6%. https://quko.es/blog/2025.09.02/
+
+---
+
+## Multilingual availability
+This site is published in three languages via Hugo's multilingual routing:
+- English (default, no prefix): https://quko.es/
+- Spanish: https://quko.es/es/
+- Galician: https://quko.es/gl/
+All product, company and legal pages exist in all three languages with the same path structure under each language prefix.
+
+---
+
+## Documentation & firmware
+- Kosoku user manual (PDF): https://quko.es/docs/Manual_Kosoku.pdf
+- Issue tracker: https://quko.es/docs/issue_tracker.html
+- Latest firmware metadata (JSON): https://quko.es/firmware/latest.json
+- Firmware release history and changelogs: https://quko.es/firmware/README.md
