@@ -40,7 +40,13 @@
       "Bash(echo \"exit: $?\")",
       "Bash(python -c \"from PIL import Image; Image.open\\(r'assets/images/favicon.ico'\\).convert\\('RGBA'\\).save\\(r'assets/images/favicon.png'\\)\")",
       "Bash(python -c \"from PIL import Image; im=Image.open\\(r'assets/images/favicon.png'\\); print\\('new favicon.png:', im.size, im.mode\\)\")",
-      "Bash(hugo --gc --minify --quiet)"
+      "Bash(hugo --gc --minify --quiet)",
+      "WebFetch(domain:quko.es)",
+      "WebFetch(domain:cloud.quko.es)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
