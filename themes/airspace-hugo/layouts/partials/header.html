@@ -1,83 +1,54 @@
-<!-- navigation -->
-<header class="{{if site.Params.navbar_fixed}}sticky-top{{end}} navigation">
+<header class="navigation">
   <div class="container-fluid">
-    <!-- navbar -->
-    <nav class="navbar">
-
+    <nav class="navbar" aria-label="{{ i18n "primary_navigation" }}">
       <div class="navbar-header">
-        <!-- navbar toggler -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation" aria-expanded="true">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="{{ i18n "open_navigation" }}">
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
         </button>
-        <!-- navbar brand/logo -->
-        <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
+        <a class="navbar-brand" href="{{ site.Home.RelPermalink }}" aria-label="QUKO">
           {{ partial "logo.html" . }}
         </a>
       </div>
-
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="nav navbar-nav navbar-right">
-          <!-- menu active -->
           {{ $currentPage := . }}
           {{ range site.Menus.main }}
           {{ $menuURL := .URL | absLangURL }}
-          {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+          {{ $pageURL := $currentPage.Permalink | absLangURL }}
           {{ $active := eq $menuURL $pageURL }}
           {{ if .HasChildren }}
-          <li class="nav-item dropdown 
-          {{ range .Children }}
-          {{ $childURL := .URL | absLangURL }}
-          {{ $active := eq $childURL $pageURL }}
-          {{ if $active }}current{{ end }}
-          {{ end }}">
-            <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              {{ .Name }} <span class="fas fa-angle-down"></span>
-            </a>
+          <li class="nav-item dropdown{{ if $active }} current{{ end }}">
+            <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="fas fa-angle-down" aria-hidden="true"></span></a>
             <ul class="dropdown-menu">
               {{ range .Children }}
               {{ $childURL := .URL | absLangURL }}
-              {{ $active := eq $childURL $pageURL }}
-              <li><a class="dropdown-item {{ if $active }}current{{ end }}" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
-                href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{ .Name }}</a></li>
+              <li><a class="dropdown-item{{ if eq $childURL $pageURL }} current{{ end }}" href="{{ if findRE `^http` .URL }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}"{{ if findRE `^http` .URL }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a></li>
               {{ end }}
             </ul>
           </li>
           {{ else }}
-          <li class="nav-item">
-            <a class="nav-link {{ if $active }}current{{ end }}" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
-              href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{.Name}}</a>
+          <li class="nav-item{{ with .Identifier }} {{ . }}{{ end }}">
+            <a class="nav-link{{ if $active }} current{{ end }}" href="{{ if findRE `^http` .URL }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}"{{ if findRE `^http` .URL }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a>
           </li>
           {{ end }}
           {{ end }}
+          {{ if .IsTranslated }}
           <li>
-            <!-- Language List -->
-            {{ if .IsTranslated }}
-            <select class="m-2 border-0" id="select-language" onchange="location = this.value;">
-              {{ $siteLanguages := site.Languages}}
-              {{ $pageLang := .Page.Lang}}
+            <label class="sr-only" for="select-language">{{ i18n "language" }}</label>
+            <select id="select-language" onchange="location = this.value;">
+              {{ $siteLanguages := site.Languages }}
+              {{ $pageLang := .Page.Lang }}
               {{ range .Page.AllTranslations }}
-              {{ $translation := .}}
-              {{ range $siteLanguages }}
-              {{ if eq $translation.Lang .Lang }}
-              {{ $selected := false }}
-              {{ if eq $pageLang .Lang}}
-              <option id="{{ $translation.Language }}" value="{{ $translation.RelPermalink }}" selected>{{ .LanguageName }}
-              </option>
-              {{ else }}
-              <option id="{{ $translation.Language }}" value="{{ $translation.RelPermalink }}">{{ .LanguageName }}</option>
-              {{ end }}
-              {{ end }}
-              {{ end }}
+              {{ $translation := . }}
+              {{ range $siteLanguages }}{{ if eq $translation.Lang .Lang }}
+              <option value="{{ $translation.RelPermalink }}"{{ if eq $pageLang .Lang }} selected{{ end }}>{{ .LanguageName }}</option>
+              {{ end }}{{ end }}
               {{ end }}
             </select>
-            {{ end }}
           </li>
+          {{ end }}
         </ul>
       </div>
     </nav>
   </div>
 </header>
-<!-- /navigation -->

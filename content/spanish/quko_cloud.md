@@ -1,166 +1,69 @@
 ---
-title: "QUKO Cloud"
-description: "The future of sport technology"
-bg_image: "images/cloud.png"
+title: "Quko Cloud"
+description: "Análisis avanzado y colaboración para sesiones de piragüismo, kayak y remo."
 layout: "quko_cloud"
 draft: false
-
-########################### about service #############################
-qukocloud:
-  enable : true
-  title : "A bridge between the latest state-of-the-art technologies and paddle sport"
-  content : "QUKO Cloud revolutionizes paddle sports training by transforming complex sensor data into clear, actionable insights. Our intelligent platform combines cutting-edge cloud computing with sports science expertise, empowering coaches and athletes to optimize performance through data-driven analysis"
-  image : "images/qukosim.png"
-
-qukocloud_video:
-  enable : true
-  youtube_id: "HAdz6oQfJj0"
-
-########################## featured service ############################
-featured_service:
-  enable : true
-  service_item:
-    # featured service item loop
-    - name : "Cloud computing"
-      icon : "fas fa-cloud"
-      color : "primary"
-      content : "Process high resolution sensor data in real time with the deployed cloud computing solutions"
-
-    # featured service item loop
-    - name : "Interactive results"
-      icon : "fas fa-hand-point-up"
-      color : "primary-darker"
-      content : "Adapt the data visualization to your needs thanks to the interactive charts and renders"
-
-    # featured service item loop
-    - name : "Artificial Intelligence"
-      icon : "fas fa-chart-line"
-      color : "primary-dark"
-      content : "First implementation of a LLM model to aid coaches and stuff interpret and analyse the gathered data"
-
-qukocloud_video_2:
-  enable : true
-  youtube_id: "CuyHIUiBL-w"
-
-############################# Pricing Section ###############################
-pricing:
-  enable: false
-  title: "Choose Your Kosoku Package"
-  description: "Revolutionary training technology at kickstarter prices. Limited time early bird offers!"
-  pricing_plans:
-    - name: "Monthly subscription"
-      plan_id: "basic"
-      price: "TBD"
-      #price: "95"
-      currency: "€"
-      #original_price: "€599"
-      #badge: "CHEAPEST"
-      description: "Ideal for trainig camps or short training periods"
-      features:
-        - "Unlimited number of uploads"
-        - "Access to 3D simulations"
-        - "AI Data analyst"
-        - "Access to the full platform"
-      button_text: "Pre-selling soon!"
-      #button_text: "Pre-buy a unit"
-      #button_link: "https://www.kickstarter.com/projects/pepassaco/169757071"
-      featured: false
-
-    - name: "Yearly subscription"
-      plan_id: "pro"
-      price: "TBD"
-      #price: "1050"
-      currency: "€"
-      #original_price: "€1799"
-      #badge: "BEST VALUE"
-      description: "The best option to step up your trainings during the season"
-      features:
-        - "Unlimited number of uploads"
-        - "Access to 3D simulations"
-        - "AI Data analyst"
-        - "Access to the full platform"
-      button_text: "Pre-selling soon!"
-      #button_text: "Pre-buy this bundle"
-      #button_link: "https://www.kickstarter.com/projects/pepassaco/169757071"
-      featured: true
-
-############################# Kickstarter Section ###############################
-kickstarter:
-  enable: false
-  title: "🚀 Preselling live on Kickstarter!"
-  subtitle: "Join the revolution in paddle sports technology"
-  logo: "images/kickstarter-logo.png"
-  
-  countdown:
-    enable: true
-    days: "28"
-    hours: "15"
-    minutes: "42"
-    # Note: The JavaScript will calculate real countdown if you set campaign end date
-  
-  stats:
-    - number: "€45K+"
-      label: "Funded"
-    - number: "150+"
-      label: "Backers"
-    - number: "78%"
-      label: "Complete"
-  
-  primary_button:
-    text: "Back on Kickstarter"
-    link: "https://www.kickstarter.com/projects/pepassaco/169757071"
-  
-  secondary_button:
-    text: "Watch Campaign Video"
-    link: "#kosoku_video"
-
-############################# Service ###############################
-
-featured_service_2:
-  enable : true
-  title : "QUKO Cloud is just different"
-  service_item:
-    # feature item loop
-    - icon : fas fa-water #https://fontawesome.com/v5.15/icons
-      name : Tailored for water sports
-      content : "All the algorithms and processing techniques are specifically designed and optimised for paddle sports like rowing, canoeing and kayaking."
-
-    # feature item loop
-    - icon : fas fa-bolt #https://fontawesome.com/v5.15/icons
-      name : State of the art engineering
-      content : "Actively researching to apply the most nobel processing techniques to bring the highest accuracy and precision."
-
-    # feature item loop
-    - icon : fas fa-microscope #https://fontawesome.com/v5.15/icons
-      name : Sports science focused
-      content : "Finding the right balance between engineering and sports science, to show all the relevant metrics for an easy biomechanical interpretation"
-
-    - icon : fas fa-dumbbell #https://fontawesome.com/v5.15/icons
-      name : No knowledge required
-      content : "No technical experience is needed to make the most out of QUKO Cloud: all data is visualized in ways coachs and athletes can easily understand."
-
-    # feature item loop
-    - icon : fas fa-laptop-code #https://fontawesome.com/v5.15/icons
-      name : Active development
-      content : "In QUKO, we like to listen to the feedback received from trainers and data analyst to update and improve our services with new maningful fatures."
-
-    # feature item loop
-    - icon : fas fa-microchip #https://fontawesome.com/v5.15/icons
-      name : Kosoku compatible
-      content : "Designed to make QUKO Cloud integrate seamlessly with the rest of the QUKO ecosystem."
-
-    # feature item loop
-    - icon : fas fa-key #https://fontawesome.com/v5.15/icons
-      name : Data security
-      content : "All data is stored in secure servers with regular backups, and no other user can have access unless specifically given."
-
-    # feature item loop
-    - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
-      name : Easy and fast
-      content : "\"Drag and drop\" functionality: upload the session file, hit continue and enjoy the results in just some seconds!"
-
-############################# call to action #################################
-cta:
-  enable : true
-  # call to action content comes from "_index.md"
+hero:
+  eyebrow: "Plataforma de rendimiento para deportes de agua"
+  title: "Convierte cada sesión en conocimiento útil"
+  text: "Quko Cloud procesa los datos de Kosoku en análisis deportivos claros para atletas, entrenadores, investigadores y analistas."
+  primary_label: "Solicitar una demo"
+  primary_link: "contact/"
+  secondary_label: "Acceder a Quko Cloud"
+  secondary_link: "https://cloud.quko.es/"
+  image: "images/cloud.png"
+  image_alt: "Gráficas de Quko Cloud para velocidad, avance y frecuencia"
+metrics:
+  - {value: "Por palada", label: "Análisis técnico y de consistencia"}
+  - {value: "3D + vídeo", label: "Revisión visual sincronizada"}
+  - {value: "IA", label: "Interpretación asistida"}
+  - {value: "4 formatos", label: "Exportación PDF, JSON, FIT y TCX"}
+workflow:
+  eyebrow: "Del archivo al hallazgo"
+  title: "Un proceso completo de análisis"
+  text: "Quko Cloud guía la sesión desde la carga hasta la comunicación sin ocultar los datos."
+  steps:
+    - {title: "Carga", text: "Añade el archivo Kosoku, deportistas, embarcación, pista y contexto."}
+    - {title: "Ajusta", text: "Confirma la salida y deja que los algoritmos deportivos procesen el esfuerzo."}
+    - {title: "Analiza", text: "Explora, compara, comparte y exporta las vistas que responden a tu pregunta."}
+showcase:
+  eyebrow: "Creado para interpretar"
+  title: "Observa cómo cambia el rendimiento durante el esfuerzo"
+  text: "Pasa del resultado general al detalle por palada, la progresión por parciales y el contexto técnico."
+  image: "images/cloud.png"
+  image_alt: "Panel de análisis de sesión de Quko Cloud"
+  items:
+    - "Gráficas interactivas, tablas y parciales configurables"
+    - "Movimiento, ritmo, frecuencia cardiaca y mecánica de palada"
+    - "Análisis privado, referencias públicas y comparación entre sesiones"
+features:
+  eyebrow: "Un lugar para profundizar"
+  title: "Análisis, colaboración y automatización"
+  text: "Usa la interfaz o conecta los datos de QUKO con las herramientas de tu equipo."
+  items:
+    - {title: "Análisis individual", text: "Estudia velocidad, frecuencia, avance, movimiento y fisiología.", icon: "fas fa-chart-area"}
+    - {title: "Comparación de sesiones", text: "Compara esfuerzos, deportistas y condiciones con vistas alineadas.", icon: "fas fa-exchange-alt"}
+    - {title: "3D y vídeo", text: "Reproduce el movimiento y sincroniza vídeo fotograma a fotograma.", icon: "fas fa-cube"}
+    - {title: "Análisis mecánico", text: "Relaciona fuerza, impulso, velocidad e información de cada lado.", icon: "fas fa-cogs"}
+    - {title: "Información asistida por IA", text: "Genera informes o conecta datos autorizados con asistentes externos.", icon: "fas fa-brain"}
+    - {title: "Comparte y exporta", text: "Crea enlaces temporales y exporta informes o datos estructurados.", icon: "fas fa-share-alt"}
+for_whom:
+  eyebrow: "Acceso adaptado a equipos reales"
+  title: "La vista adecuada para cada perfil"
+  items:
+    - {title: "Deportistas y entrenadores", text: "Revisa el progreso individual y decide en equipo."}
+    - {title: "Clubes y federaciones", text: "Gestiona accesos, sesiones y procesos institucionales."}
+    - {title: "Investigadores y analistas", text: "Utiliza exportaciones abiertas, API REST y conexión segura con IA."}
+integrations:
+  eyebrow: "Tus datos, listos para moverse"
+  title: "Conecta el análisis con el resto de tu trabajo"
+  items: ["Kosoku", "Quko Live", "Garmin", "Strava", "FIT", "TCX", "PDF", "JSON", "API REST", "Asistentes de IA"]
+marketing_cta:
+  eyebrow: "Descubre Quko Cloud"
+  title: "Da una segunda vida a cada sesión"
+  text: "Solicita una demostración guiada o inicia sesión para trabajar con tus datos."
+  primary_label: "Solicitar una demo"
+  primary_link: "contact/"
+  secondary_label: "Acceder a Quko Cloud"
+  secondary_link: "https://cloud.quko.es/"
 ---

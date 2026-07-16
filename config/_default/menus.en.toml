@@ -1,134 +1,92 @@
-############# English navigation ##############
-
-# main menu
 [[main]]
 name = "Home"
 url = ""
 weight = 1
 
-
-#[[main]]
-#name = "Blog"
-#url = "blog/"
-#weight = 4
+[[main]]
+name = "Technology"
+url = "service/"
+weight = 2
 
 [[main]]
-weight = 2
 name = "Products"
-hasChildren = true
+identifier = "products"
+weight = 3
 
   [[main]]
-  parent = "Products"
+  parent = "products"
   name = "Kosoku"
   url = "kosoku/"
   weight = 1
 
   [[main]]
-  parent = "Products"
-  name = "Quko Cloud"
-  url = "quko_cloud/"
+  parent = "products"
+  name = "Quko Live"
+  url = "quko_live/"
   weight = 2
 
   [[main]]
-  parent = "Products"
-  name = "Quko Live"
-  url = "quko_live/"
+  parent = "products"
+  name = "Quko Cloud"
+  url = "quko_cloud/"
   weight = 3
 
+[[main]]
+name = "More"
+identifier = "more"
+weight = 4
 
+  [[main]]
+  parent = "more"
+  name = "About"
+  url = "about/"
+  weight = 1
+
+  [[main]]
+  parent = "more"
+  name = "Blog"
+  url = "blog/"
+  weight = 2
+
+  [[main]]
+  parent = "more"
+  name = "FAQ"
+  url = "faq/"
+  weight = 3
 
 [[main]]
+name = "Access Cloud"
+url = "https://cloud.quko.es/"
+identifier = "nav-cloud"
+weight = 6
+
+[[main]]
+name = "Request a demo"
+url = "contact/"
+identifier = "nav-cta"
+weight = 7
+
+[[footer]]
+name = "Products"
+url = "kosoku/"
+weight = 1
+[[footer]]
+name = "Technology"
+url = "service/"
+weight = 2
+[[footer]]
 name = "About"
 url = "about/"
 weight = 3
-
-[[main]]
-weight = 7
-name = "More"
-hasChildren = true
-
-#  [[main]]
-#  parent = "More"
-#  name = "Service"
-#  url = "service/"
-#  weight = 1
-
-  #[[main]]
-  #parent = "More"
-  #name = "Pricing"
-  #url = "pricing/"
-  #weight = 2
-
-  [[main]]
-  parent = "More"
-  name = "Newsletter"
-  url = "newsletter/"
-  weight = 4
-
-  #[[main]]
-  #parent = "More"
-  #name = "FAQ"
-  #url = "faq/"
-  #weight = 3
-  
-  [[main]]
-  parent = "More"
-  name = "Contact"
-  url = "contact/"
-  weight = 4
-  
-  [[main]]
-  parent = "More"
-  name = "Legal notice"
-  url = "legal_notice/"
-  weight = 6
-  
-  [[main]]
-  parent = "More"
-  name = "Cookies policy"
-  url = "cookies/"
-  weight = 7
-  
-  [[main]]
-  parent = "More"
-  name = "Privacy policy"
-  url = "privacy/"
-  weight = 8
-
-[[main]]
-name = "Access QUKO Cloud"
-url = "https://cloud.quko.es/"
-weight = 8
-
-
-# footer menu
-
-[[footer]]
-name = "Home"
-url = ""
-weight = 1
-
-[[footer]]
-name = "About"
-url = "about/"
-weight = 2
-
-#[[footer]]
-#name = "Project"
-#url = "project/"
-#weight = 3
-
-#[[footer]]
-#name = "Pricing"
-#url = "pricing/"
-#weight = 5
-
 [[footer]]
 name = "FAQ"
 url = "faq/"
-weight = 6
-
+weight = 4
 [[footer]]
-name = "Contact"
-url = "contact/"
-weight = 7
+name = "Privacy"
+url = "privacy/"
+weight = 5
+[[footer]]
+name = "Legal notice"
+url = "legal_notice/"
+weight = 6

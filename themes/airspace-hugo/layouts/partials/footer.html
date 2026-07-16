@@ -1,16 +1,28 @@
 <footer class="footer">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="footer-menu">
-          <ul>
-            {{ range site.Menus.footer }}
-            <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
-            {{ end }}
-          </ul>
-        </div>
-        <p style="color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:8px;letter-spacing:0.5px;">QUKO TECH, S.L.&reg;</p>
-        <p class="copyright">{{ site.Params.copyright | markdownify }}</p>
+    <div class="quko-footer-grid">
+      <div class="quko-footer-brand">
+        <a href="{{ site.Home.RelPermalink }}">{{ partial "logo.html" . }}</a>
+        <p>{{ i18n "footer_description" }}</p>
+        <a class="btn-quko" href="{{ `contact/` | relLangURL }}">{{ i18n "request_demo" }}</a>
+      </div>
+      <div class="quko-footer-column">
+        <h3>{{ i18n "footer_explore" }}</h3>
+        <ul>{{ range site.Menus.footer }}<li><a href="{{ if findRE `^http` .URL }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}">{{ .Name }}</a></li>{{ end }}</ul>
+      </div>
+      <div class="quko-footer-column">
+        <h3>{{ i18n "footer_contact" }}</h3>
+        <ul>
+          <li><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></li>
+          <li><a href="tel:{{ replaceRE `\s` `` site.Params.phone }}">{{ site.Params.phone }}</a></li>
+          <li><a href="https://cloud.quko.es/" target="_blank" rel="noopener">Quko Cloud</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="quko-footer-bottom">
+      <p>QUKO TECH, S.L.&reg; {{ now.Year }}. {{ i18n "all_rights_reserved" }}</p>
+      <div class="quko-socials">
+        {{ range site.Params.social }}<a href="{{ .link }}" target="_blank" rel="noopener" aria-label="{{ .title }}"><i class="{{ .icon }}"></i></a>{{ end }}
       </div>
     </div>
   </div>

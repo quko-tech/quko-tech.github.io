@@ -1,188 +1,91 @@
 ---
 title: "QUKO Kosoku"
-description: "From Japanese: \"Speed of Light\""
-bg_image: "images/logo_koso.png"
+description: "High-resolution performance capture, built for canoeing, kayaking and rowing."
 layout: "kosoku"
 draft: false
-
-########################### about service #############################
-kosoku:
-  enable : true
-  title : "Redefining high-level training in canoeing and kayaking"
-  content : "At QUKO, we revolutionize elite sprint canoeing through cutting-edge data analytics and performance optimization technology.
-  <br>Our mission is to democratize affordable and accessible technology at the elite level, bridging the gap between coaches, athletes, and data analysts to drive a paradigm shift towards technology-based training optimization."
-  image : "images/koso_foto.jpg"
-
-kosoku_video:
-  enable : true
-  youtube_id: "N_gSmXmxfF0"
-
-########################## featured service ############################
-featured_service:
-  enable : true
-  service_item:
-    # featured service item loop
-    - name : "Data logging"
-      icon : "fas fa-microchip"
-      color : "primary"
-      content : "Advanced sensor technology capturing 200Hz sampling frequency with sub-centimeter position accuracy and comprehensive kinematic data"
-
-    # featured service item loop
-    - name : "Live data streaming"
-      icon : "fas fa-satellite-dish"
-      color : "primary-darker"
-      content : "Real-time data transmission up to 150m range, tracking up to 9 devices simultaneously with live coaching feedback"
-
-    # featured service item loop
-    - name : "Garmin compatibility"
-      icon : "fas fa-code"
-      color : "primary-dark"
-      content : "Seamless integration with Garmin Connect featuring custom data fields for real-time athlete feedback and deferred training analysis"
-
-kosoku_video_2:
-  enable : true
-  youtube_id: "edw6svHVUdE"
-
-############################# Pricing Section ###############################
-pricing:
-  enable: false # TODO: enable
-  title: "Choose Your Kosoku Package"
-  description: "Revolutionary training technology at kickstarter prices. Limited time early bird offers!"
-  pricing_plans:
-    - name: "Single device"
-      price: "849"
-      currency: "€"
-      #original_price: "€599"
-      #badge: "CHEAPEST"
-      description: "Perfect for individual athletes"
-      features:
-        - "Complete Kosoku device"
-        - "Garmin Connect integration"
-        - "Compatibility with QUKO Cloud"
-        - "Live data streaming (requires additional hardware)"
-        - "2-year warranty"
-        - "Wireless charger"
-      button_text: "Pre-selling soon!"
-      #button_text: "Pre-buy a unit"
-      #button_link: "https://www.kickstarter.com/projects/pepassaco/169757071"
-      featured: true
-
-    - name: "Give me Five!"
-      price: "3990"
-      currency: "€"
-      #original_price: "€1799"
-      #badge: "BEST VALUE"
-      description: "Ideal for small teams, clubs and training centers"
-      features:
-        - "5x Kosoku devices"
-        - "Garmin Connect integration"
-        - "Compatibility with QUKO Cloud"
-        - "Live data streaming (requires additional hardware)"
-        - "2-year warranty"
-        - "Wireless chargers"
-        - "Free Transport Briefcase included"
-      button_text: "Pre-selling soon!"
-      #button_text: "Pre-buy this bundle"
-      #button_link: "https://www.kickstarter.com/projects/pepassaco/169757071"
-      featured: false
-
-    - name: "Ten out of ten"
-      price: "7490"
-      currency: "€"
-      #original_price: "€3499"
-      #badge: "ULTIMATE"
-      description: "For national teams and elite programs"
-      features:
-        - "10x Kosoku devices"
-        - "10x 1-month QUKO Cloud subscriptions"
-        - "Garmin Connect integration"
-        - "Compatibility with QUKO Cloud"
-        - "Live data streaming (requires additional hardware)"
-        - "2-year warranty"
-        - "Wireless chargers"
-        - "Free Transport Briefcase included"
-      button_text: "Pre-selling soon!"
-      #button_text: "Pre-buy this bundle"
-      #button_link: "https://www.kickstarter.com/projects/pepassaco/169757071"
-      featured: false
-
-############################# Kickstarter Section ###############################
-kickstarter:
-  enable: false
-  title: "🚀 Preselling live on Kickstarter!"
-  subtitle: "Join the revolution in paddle sports technology"
-  logo: "images/kickstarter-logo.png"
-  
-  countdown:
-    enable: true
-    days: "28"
-    hours: "15"
-    minutes: "42"
-    # Note: The JavaScript will calculate real countdown if you set campaign end date
-  
-  stats:
-    - number: "€45K+"
-      label: "Funded"
-    - number: "150+"
-      label: "Backers"
-    - number: "78%"
-      label: "Complete"
-  
-  primary_button:
-    text: "Back on Kickstarter"
-    link: "https://www.kickstarter.com/projects/pepassaco/169757071"
-  
-  secondary_button:
-    text: "Watch Campaign Video"
-    link: "#kosoku_video"
-
-############################# Service ###############################
-
-featured_service_2:
-  enable : true
-  title : "Why choose QUKO Kosoku?"
-  service_item:
-    # feature item loop
-    - icon : fas fa-water #https://fontawesome.com/v5.15/icons
-      name : Sport-specific design
-      content : "Purpose-built for canoeing and kayaking with waterproof IP67 certificated housing and specialized algorithms for paddle sports analytics."
-
-    # feature item loop
-    - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
-      name : Elite performance focus
-      content : "Developed by a former CERN physicist and Spanish national-level athlete, using state-of-the-art propietary algorithms for outstanding precision and rigor."
-
-    # feature item loop
-    - icon : fas fa-chart-line #https://fontawesome.com/v5.15/icons
-      name : Maximum precision at 100 Hz
-      content : "Being able to gather high resolution data every 10 milliseconds allows us to perfectly characterise the movement of the vessel"
-
-    - icon : fas fa-broadcast-tower #https://fontawesome.com/v5.15/icons
-      name : Real-time Team Monitoring
-      content : "Live tracking of up to 9 devices simultaneously with 150+ meter range, streaming kinematic data and biometrics directly to coaches' waterproof tablets."
-
-    # feature item loop
-    - icon : fas fa-cloud #https://fontawesome.com/v5.15/icons
-      name : Cloud integration
-      content : "Seamless connection to QUKO Cloud for advanced visualization, 3D analysis, AI-powered pattern recognition, and comprehensive performance comparisons."
-
-    # feature item loop
-    - icon : fas fa-battery-full #https://fontawesome.com/v5.15/icons
-      name : Competition-ready
-      content : "5-hour battery life, 10Hz double band GPS, 4 HR sensor compatibility and data streaming to 4 Garmin watches simultaneously."
-
-    # feature item loop
-    - icon : fas fa-shield-alt #https://fontawesome.com/v5.15/icons
-      name : Data security
-      content : "Fully encrypted internal storage and ciphered data transmission ensure your competitive data remains confidential during international competitions."
-
-    # feature item loop
-    - icon : fas fa-plug #https://fontawesome.com/v5.15/icons
-      name : Plug-and-play simplicity
-      content : "\"Plug and play\" functionality allows staff members with no technical experience to immediately access advanced performance analytics."
-
-############################# call to action #################################
-cta:
-  enable : true
-  # call to action content comes from "_index.md"
+hero:
+  eyebrow: "On-boat performance sensor"
+  title: "Measure every movement that matters"
+  text: "Kosoku captures precise motion, position and physiological data without getting in the athlete's way."
+  primary_label: "Request a demo"
+  primary_link: "contact/"
+  secondary_label: "Access Quko Cloud"
+  secondary_link: "https://cloud.quko.es/"
+  image: "images/koso_foto.jpg"
+  image_alt: "Kosoku sensor and charging base beside a training venue"
+metrics:
+  - value: "100 Hz"
+    label: "High-resolution motion capture"
+  - value: "10 Hz"
+    label: "Dual-band positioning"
+  - value: "150 m"
+    label: "Live transmission range"
+  - value: "5 h"
+    label: "Training battery life"
+workflow:
+  eyebrow: "Ready for the water"
+  title: "Precise data without a complex setup"
+  text: "Kosoku fits naturally into training and connects directly with the rest of the QUKO ecosystem."
+  steps:
+    - title: "Attach"
+      text: "Secure Kosoku to the boat and let the automatic calibration prepare the session."
+    - title: "Record"
+      text: "Capture position, acceleration, rotation, stroke dynamics and compatible heart-rate data."
+    - title: "Connect"
+      text: "Review live metrics with Quko Live or upload the full session to Quko Cloud."
+showcase:
+  eyebrow: "Designed for the real world"
+  title: "Competition-ready from hull to cloud"
+  text: "The hardware is designed around water, movement, limited setup time and sensitive performance data."
+  image: "images/palada.jpeg"
+  image_alt: "Athlete paddling on the water"
+  items:
+    - "IP67 enclosure and wireless charging"
+    - "Encrypted storage and protected transmission"
+    - "Support for Garmin watches and heart-rate sensors"
+features:
+  eyebrow: "One sensor, richer context"
+  title: "Capture the complete session"
+  text: "Bring kinematic, positional and physiological signals together in one synchronized record."
+  items:
+    - title: "Boat movement"
+      text: "Measure acceleration and rotation across every axis."
+      icon: "fas fa-wave-square"
+    - title: "Position and speed"
+      text: "Track the route and small changes in velocity with sensitive positioning."
+      icon: "fas fa-location-arrow"
+    - title: "Stroke metrics"
+      text: "Calculate frequency, advance and timing throughout the effort."
+      icon: "fas fa-stopwatch"
+    - title: "Physiological data"
+      text: "Add compatible heart-rate sources to the same session timeline."
+      icon: "fas fa-heartbeat"
+    - title: "Live feedback"
+      text: "Transmit performance data to coaches during the session."
+      icon: "fas fa-broadcast-tower"
+    - title: "Secure files"
+      text: "Keep complete recordings on the device until they are ready to process."
+      icon: "fas fa-shield-alt"
+for_whom:
+  eyebrow: "Built for every level of analysis"
+  title: "From individual feedback to research programmes"
+  items:
+    - title: "Athletes and coaches"
+      text: "Turn daily training into objective, repeatable evidence."
+    - title: "Teams and federations"
+      text: "Use consistent measurement across athletes, boats and venues."
+    - title: "Researchers and analysts"
+      text: "Work with synchronized, high-resolution data and open exports."
+integrations:
+  eyebrow: "Connected by design"
+  title: "Fits the tools around your training"
+  items: ["Quko Live", "Quko Cloud", "Garmin", "Heart-rate sensors", "Paddle sensors", "Start systems"]
+marketing_cta:
+  eyebrow: "Meet Kosoku"
+  title: "See what your boat has been telling you"
+  text: "Request a product demonstration and explore the right setup for your programme."
+  primary_label: "Request a demo"
+  primary_link: "contact/"
+  secondary_label: "Access Quko Cloud"
+  secondary_link: "https://cloud.quko.es/"
 ---

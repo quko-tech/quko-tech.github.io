@@ -70,3 +70,12 @@ gdpr_contact_info = "Contact us for any privacy-related questions or to exercise
 # General terms
 privacy_policy = "Privacy Policy"
 optional = "Optional"
+
+primary_navigation = "Primary navigation"
+open_navigation = "Open navigation"
+language = "Language"
+footer_description = "Connected performance technology for canoeing, kayaking and rowing."
+footer_explore = "Explore"
+footer_contact = "Contact"
+request_demo = "Request a demo"
+all_rights_reserved = "All rights reserved."

@@ -1,136 +1,45 @@
 ---
-title: "Servizos"
-description: "Isto é o que ofrecemos"
-bg_image: "images/feature-bg.jpg"
+title: "Tecnoloxía"
+description: "A enxeñaría que converte medicións fiables en coñecemento útil."
+eyebrow: "Capacidades QUKO"
 layout: "service"
 draft: false
-
-########################### about service #############################
-about:
-  enable : true
-  title : "Temos a solución que buscas"
-  content : "En QUKO contamos coa experiencia e o coñecemento necesario para implementar todo tipo de solucións baseadas nas últimas tecnoloxías dixitais nunha amplia diversidade de sectores.
-
-  <br> Independentemente do reto que nos propoñan os nosos clientes, xa sexa buscar a solución a un problema ou a optimización dun proceso, ofrecémoslles non só os mellores resultados, senón tambén os que mejor se adaptan ás súas condicións en específico."
-  image : "images/stock-placa3.jpg"
-
-
-########################## featured service ############################
-featured_service:
-  enable : true
-  service_item:
-    # featured service item loop
-    - name : "Hardware"
-      icon : "fas fa-microchip"
-      color : "primary"
-      content : "Solucións de hardware persoalizado"
-
-    # featured service item loop
-    - name : "Telecomunicacións"
-      icon : "fas fa-satellite-dish"
-      color : "primary-darker"
-      content : "Capacidade para o dimensionado e despregadura de redes de telecomunicacións"
-
-    # featured service item loop
-    - name : "Software"
-      icon : "fas fa-code"
-      color : "primary-dark"
-      content : "Solucións baseadas en procesado de datos, deseno de aplicacións web, data science e máis"
-
-
-############################# Service ###############################
-
-service:
-  enable : true
-  title : "Por que QUKO?"
-  description : "En QUKO, dispoñemos dun equipo con anos de experiencia nos campos da enxeñería de datos, electrónica, de software y de telecomunicacións"
-  service_item:
-    # feature item loop
-    - icon : fas fa-code #https://fontawesome.com/v5.15/icons
-      name : Adaptación al cliente
-      content : "Ofrecemos solucións compactas adaptadas a usos específicos"
-
-    # feature item loop
-    # - icon : fas fa-window-restore #https://fontawesome.com/v5.15/icons
-    #   name : Confidencialidade
-    #   content : "Procuramos manter unha relación de estreita confianza cos nosos clientes basaeda na confidencialidade"
-
-    # feature item loop
-    # - icon : fas fa-rocket #https://fontawesome.com/v5.15/icons
-    #   name : Rendimiento óptimo
-    #   content : "Sexa o que sexa o proceso a optimizar, loitaremos por obter o máximo rendemiento mediante a tecnoloxía"
-
-    # feature item loop
-    # - icon : fas fa-info-circle #https://fontawesome.com/v5.15/icons
-    #   name : Soporte
-    #   content : "O noso equipo comprométese cos seus usuarios ofrecendo soporte técnico e consultorio<br><br> "
-
-
-    # feature item loop
-    - icon : fas fa-lightbulb #https://fontawesome.com/v5.15/icons
-      name : No paramos
-      content : "En QUKO estamos sempre evolucioando e introducindo novas ideas e actualizacións nos nosos productos"
-
-
-    - icon : fas fa-microscope #https://fontawesome.com/v5.15/icons
-      name : A la vanguardia
-      content : "Investigamos e facemos uso de técnicas noveles para poñer as solucións máis innovadoras ao alcance de todos"
-
-
-    - icon : fas fa-user-check #https://fontawesome.com/v5.15/icons
-      name : Accesible
-      content : "Os usuarios no requiren de coñecementos previos para facer uso dos nosos servicios"
-
-
-    # - icon : fas fa-smile #https://fontawesome.com/v5.15/icons
-    #   name : Abierto
-    #   content : "Estamos sempre abertos a comentarios ou suxestións sobre como mellorar a experiencia de usuario!"
-
-
-
-    # service item loop
-    #- icon : fas fa-bullseye #https://fontawesome.com/v5.15/icons
-    #  name: Branding
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-layer-group #https://fontawesome.com/v5.15/icons
-    #  name: Web Design
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-image #https://fontawesome.com/v5.15/icons
-    #  name: App Design
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-bug #https://fontawesome.com/v5.15/icons
-    #  name: Start Up
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-headphones-alt #https://fontawesome.com/v5.15/icons
-    #  name: Logo Design
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-leaf #https://fontawesome.com/v5.15/icons
-    #  name: Development
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-globe-asia #https://fontawesome.com/v5.15/icons
-    #  name: Brand Identity
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    #- icon : fas fa-feather #https://fontawesome.com/v5.15/icons
-    #  name: Brand Identity
-    #  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-  
-
-############################# call to action #################################
-cta:
-  enable : true
-  # call to action content comes from "_index.md"
+capabilities:
+  eyebrow: "Tecnoloxía multidisciplinar"
+  title: "Un equipo para todo o sistema"
+  text: "Dominar a cadea de datos permite deseñar cada capa arredor da mesma pregunta de rendemento."
+  items:
+    - {title: "Hardware de sensores", text: "Electrónica, sensores inerciais, posicionamento e deseño robusto.", icon: "fas fa-microchip"}
+    - {title: "Firmware embebido", text: "Captura fiable, procesado local, almacenamento e control do dispositivo.", icon: "fas fa-code"}
+    - {title: "Telemetría sen fíos", text: "Ligazóns de longo alcance, configuración Bluetooth e datos multidispositivo.", icon: "fas fa-satellite-dish"}
+    - {title: "Plataformas cloud", text: "Procesado seguro, acceso por perfís e colaboración.", icon: "fas fa-cloud"}
+    - {title: "Analítica deportiva", text: "Procesado de sinal e métricas baseadas na mecánica da padexada.", icon: "fas fa-chart-line"}
+    - {title: "Integración aberta", text: "APIs, exportacións estruturadas e conexión segura con ferramentas de IA.", icon: "fas fa-plug"}
+approach:
+  eyebrow: "Como se constrúe o sistema"
+  title: "Investigación traducida ao uso diario"
+  text: "O noso proceso mantén o rigor científico conectado con decisións prácticas."
+  steps:
+    - {title: "Comprender", text: "Comezamos pola decisión, o contorno e as persoas que usarán o resultado."}
+    - {title: "Deseñar", text: "Construímos as capas de medición e software como un sistema coherente."}
+    - {title: "Validar", text: "Probamos na auga, aprendemos dos usuarios e melloramos cada versión."}
+platform:
+  eyebrow: "Demostrado nun ecosistema"
+  title: "A plataforma QUKO é a nosa enxeñaría na práctica"
+  text: "Kosoku, Quko Live e Quko Cloud mostran como hardware, conectividade e análise traballan como un."
+  image: "images/cloud.png"
+  image_alt: "Interface de análise de Quko Cloud"
+  items:
+    - "Hardware e firmware específicos"
+    - "Telemetría en directo"
+    - "Análise e colaboración na nube"
+    - "APIs, exportacións e conexión con IA"
+marketing_cta:
+  eyebrow: "Explora un reto técnico"
+  title: "Precisas un sistema de medición que aínda non existe?"
+  text: "Cóntanos que debe medir, onde debe funcionar e que decisión debe mellorar."
+  primary_label: "Falar con QUKO"
+  primary_link: "contact/"
+  secondary_label: "Explorar o ecosistema"
+  secondary_link: "../#ecosystem"
 ---

@@ -1,6 +1,6 @@
 ---
-title: "Ponte en contacto con QUKO"
-description: "Para cualquier duda o sugerencia, simplemente rellena el formulario de debajo"
+title: "Solicita una demo de QUKO"
+description: "Cuéntanos tus objetivos de entrenamiento, investigación o análisis."
 bg_image: "images/feature-bg.jpg"
 layout: "contact"
 draft: false

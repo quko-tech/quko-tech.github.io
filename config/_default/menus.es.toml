@@ -1,135 +1,81 @@
-############# English navigation ##############
-
-# main menu
 [[main]]
 name = "Inicio"
 url = ""
 weight = 1
-
-
-#[[main]]
-#name = "Blog"
-#url = "blog/"
-#weight = 4
+[[main]]
+name = "Tecnología"
+url = "service/"
+weight = 2
 
 [[main]]
-weight = 2
 name = "Productos"
-hasChildren = true
-
+identifier = "products"
+weight = 3
   [[main]]
-  parent = "Productos"
+  parent = "products"
   name = "Kosoku"
   url = "kosoku/"
   weight = 1
-
   [[main]]
-  parent = "Productos"
-  name = "Quko Cloud"
-  url = "quko_cloud/"
-  weight = 2
-
-  [[main]]
-  parent = "Productos"
+  parent = "products"
   name = "Quko Live"
   url = "quko_live/"
+  weight = 2
+  [[main]]
+  parent = "products"
+  name = "Quko Cloud"
+  url = "quko_cloud/"
   weight = 3
-
-
-
 [[main]]
-name = "Acerca de"
+name = "Más"
+identifier = "more"
+weight = 4
+  [[main]]
+  parent = "more"
+  name = "Sobre QUKO"
+  url = "about/"
+  weight = 1
+  [[main]]
+  parent = "more"
+  name = "Blog"
+  url = "blog/"
+  weight = 2
+  [[main]]
+  parent = "more"
+  name = "Preguntas frecuentes"
+  url = "faq/"
+  weight = 3
+[[main]]
+name = "Acceder a Cloud"
+url = "https://cloud.quko.es/"
+identifier = "nav-cloud"
+weight = 6
+[[main]]
+name = "Solicitar demo"
+url = "contact/"
+identifier = "nav-cta"
+weight = 7
+[[footer]]
+name = "Productos"
+url = "kosoku/"
+weight = 1
+[[footer]]
+name = "Tecnología"
+url = "service/"
+weight = 2
+[[footer]]
+name = "Sobre QUKO"
 url = "about/"
 weight = 3
-
-[[main]]
-weight = 7
-name = "Más"
-hasChildren = true
-
-#  [[main]]
-#  parent = "More"
-#  name = "Service"
-#  url = "service/"
-#  weight = 1
-
-
-  #[[main]]
-  #parent = "Más"
-  #name = "Pricing"
-  #url = "pricing/"
-  #weight = 2
-
-  #[[main]]
-  #parent = "Más"
-  #name = "FAQ"
-  #url = "faq/"
-  #weight = 3
-
-  [[main]]
-  parent = "Más"
-  name = "Newsletter"
-  url = "newsletter/"
-  weight = 4
-  
-  [[main]]
-  parent = "Más"
-  name = "Contacto"
-  url = "contact/"
-  weight = 5
-  
-  [[main]]
-  parent = "Más"
-  name = "Aviso Legal"
-  url = "legal_notice/"
-  weight = 6
-  
-  [[main]]
-  parent = "Más"
-  name = "Política de cookies"
-  url = "cookies/"
-  weight = 7
-  
-  [[main]]
-  parent = "Más"
-  name = "Política de privacidad"
-  url = "privacy/"
-  weight = 8
-
-[[main]]
-name = "Acceso a QUKO Cloud"
-url = "https://cloud.quko.es/"
-weight = 8
-
-
-# footer menu
-
 [[footer]]
-name = "Inicio"
-url = ""
-weight = 1
-
-[[footer]]
-name = "Acerca de"
-url = "about/"
-weight = 2
-
-#[[footer]]
-#name = "Project"
-#url = "project/"
-#weight = 3
-
-#[[footer]]
-#name = "Pricing"
-#url = "pricing/"
-#weight = 5
-
-[[footer]]
-name = "Preguntas Frecuentes"
+name = "Preguntas frecuentes"
 url = "faq/"
-weight = 6
-
+weight = 4
 [[footer]]
-name = "Contacto"
-url = "contact/"
-weight = 7
+name = "Privacidad"
+url = "privacy/"
+weight = 5
+[[footer]]
+name = "Aviso legal"
+url = "legal_notice/"
+weight = 6

@@ -1,8 +1,8 @@
 ---
-title: "Contacta connosco"
-description: "Para calquera duda ou suxestión, simplemente enche o formulario de debaixo"
+title: "Solicita unha demo de QUKO"
+description: "Cóntanos os teus obxectivos de adestramento, investigación ou análise."
 bg_image: "images/feature-bg.jpg"
 layout: "contact"
 draft: false
-privacy_text: 'Lin e acepto a <a href="/es/privacy" target="_blank">Política de Privacidade</a>'
+privacy_text: 'Lin e acepto a <a href="/gl/privacy" target="_blank">Política de Privacidade</a>'
 ---

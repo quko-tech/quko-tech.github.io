@@ -1,94 +1,104 @@
 ---
-############################### Banner ##############################
-banner:
-  enable: true
-  bg_image: "images/verdu.jpg"
-  bg_overlay: true
-  title: "Advanced technology solutions <br/> for elite performance"
-  content: "At QUKO, we develop innovative hardware and software solutions that transform complex data into actionable insights for high-performance applications"
-  button:
-    enable: true
-    label: "Get to know us"
-    link: "about/"
-
-############################# About #################################
-about:
-  enable: true
-  title: "About QUKO"
-  description: "Founded with expertise in quantum engineering, experimental physics, and telecommunications, QUKO bridges the gap between cutting-edge research and practical applications"
-  content: "We specialize in developing integrated solutions that combine advanced hardware design, real-time data processing, and intelligent analytics. Our approach democratizes access to sophisticated technologies typically reserved for research institutions.  
-  <br>From live monitoring systems to cloud-based analytics platforms, we create tools that enable users to optimize performance through data-driven insights. Our solutions feature real-time visualization, AI-powered analysis, and secure data handling - all designed with user accessibility in mind."
-  image: "images/palada.jpeg"
-
-######################### Portfolio ###############################
-portfolio:
-  enable: true
-  bg_image: "images/palada.gif"
-  title: "TAILORED SOLUTIONS"
-  content: "
-  
-  At QUKO, we understand that every application requires a unique approach. Our solutions are built around your specific needs and constraints.
-
-
-We combine deep technical expertise with practical understanding, ensuring that complex technologies become intuitive tools that enhance rather than complicate your workflow.
-
-
-Through close collaboration and iterative development, we deliver systems that provide immediate value while being scalable for future growth.
-
-
-  "
-  button:
-    enable: false
-    label: "See more"
-    link: "project/"
-
-############################# Service ############################
-service:
-  enable: true
-  # service content comes from "service.md" file
-
-############################ call to action ###########################
-cta:
-  enable: true
-  bg_image: "images/call-to-action-bg.jpg"
-  title: "Transform data into performance"
-  content: "We develop comprehensive solutions that integrate hardware, software, and analytics to unlock the potential of advanced technologies"
-  button:
-    enable: true
-    label: "Contact us"
-    link: "contact/"
-
-############################# Funfacts ###############################
-funfacts:
-  enable: true
-  title: "QUKO in numbers"
-  #description: "Innovation through dedication!"
-  funfact_item:
-  # funfacts item loop
-  - icon: "fas fa-mug-hot" #https://fontawesome.com/v5.15/icons
-    name: "Coffees"
-    count: "384"
-
-  # funfacts item loop
-  - icon: "fas fa-trophy" #https://fontawesome.com/v5.15/icons
-    name: "Awards won"
-    count: "3"
-
-  # funfacts item loop
-  - icon: "fas fa-project-diagram" #https://fontawesome.com/v5.15/icons
-    name: "Active projects"
-    count: "4"
-
-  # funfacts item loop
-  - icon : "fas fa-code" #https://fontawesome.com/v5.15/icons
-    name : "Lines of code"
-    count : "700000"
-
-  testimonial_slider:
-  # testimonial item loop
-  - name: "Pablo Álvarez"
-    image: "images/clients/pepe1.png"
-    designation: "Founder & CEO"
-    content: "Our mission is to make advanced technologies accessible and practical, creating solutions that bridge the gap between cutting-edge research and real-world applications."
-
+title: "QUKO | Performance intelligence for water sports"
+description: "Connected hardware, live telemetry and advanced analysis for canoeing, kayaking and rowing."
+hero:
+  eyebrow: "Water sports performance technology"
+  title: "Performance intelligence for every stroke"
+  text: "QUKO connects precise sensors, live telemetry and advanced analysis so every session leads to a better decision."
+  primary_label: "Request a demo"
+  primary_link: "contact/"
+  secondary_label: "Access Quko Cloud"
+  secondary_link: "https://cloud.quko.es/"
+  image: "images/koso_foto.jpg"
+  image_alt: "Kosoku performance sensor beside the water"
+  badge_title: "One connected ecosystem"
+  badge_text: "Capture, monitor and understand performance."
+audiences:
+  label: "Built for water sports performance teams"
+  items:
+    - name: "Athletes"
+      icon: "fas fa-user"
+    - name: "Coaches"
+      icon: "fas fa-stopwatch"
+    - name: "Researchers"
+      icon: "fas fa-microscope"
+    - name: "Data analysts"
+      icon: "fas fa-chart-line"
+ecosystem:
+  eyebrow: "From water to insight"
+  title: "One workflow, from movement to meaning"
+  text: "Each part of QUKO works together, without adding complexity to training."
+  steps:
+    - title: "Capture"
+      text: "Kosoku records high-resolution motion, position and physiological data directly on the boat."
+    - title: "Monitor"
+      text: "Quko Live gives coaches immediate feedback from multiple athletes, even without internet access."
+    - title: "Understand"
+      text: "Quko Cloud turns each session into clear analysis, comparisons, reports and AI-assisted insight."
+products:
+  eyebrow: "The QUKO ecosystem"
+  title: "Three products, one performance system"
+  text: "Use each product independently or connect them for the complete experience."
+  items:
+    - title: "Kosoku"
+      text: "A precise, connected sensor designed for canoeing, kayaking and rowing."
+      image: "images/koso_foto.jpg"
+      image_alt: "Kosoku sensor and charging base"
+      link: "kosoku/"
+      link_label: "Explore Kosoku"
+    - title: "Quko Live"
+      text: "Real-time team telemetry for faster coaching decisions on the water."
+      image: "images/live.png"
+      image_alt: "Quko Live coaching dashboard"
+      link: "quko_live/"
+      link_label: "Explore Quko Live"
+    - title: "Quko Cloud"
+      text: "Deep analysis, comparison and collaboration for every recorded session."
+      image: "images/cloud.png"
+      image_alt: "Quko Cloud performance charts"
+      link: "quko_cloud/"
+      link_label: "Explore Quko Cloud"
+analytics:
+  eyebrow: "More than a dashboard"
+  title: "See the performance behind the result"
+  text: "Study technique, pacing and consistency with views designed for sport, not generic data."
+  image: "images/cloud.png"
+  image_alt: "Speed, distance per stroke and stroke frequency analysis"
+  items:
+    - "Stroke-by-stroke charts and numerical analysis"
+    - "Session comparisons, 3D replay and synchronized video"
+    - "Mechanical analysis, reports and AI-assisted interpretation"
+  link: "quko_cloud/"
+  link_label: "Discover Quko Cloud"
+capabilities:
+  eyebrow: "Built end to end"
+  title: "Engineering across the whole data chain"
+  text: "QUKO brings hardware, communications, software and sports science into one focused team."
+  items:
+    - title: "Sensor systems"
+      text: "Custom electronics and embedded processing built for demanding environments."
+      icon: "fas fa-microchip"
+    - title: "Live telemetry"
+      text: "Reliable wireless data for immediate feedback where training happens."
+      icon: "fas fa-satellite-dish"
+    - title: "Cloud software"
+      text: "Secure workflows for processing, exploring and sharing complex sessions."
+      icon: "fas fa-cloud"
+    - title: "Applied intelligence"
+      text: "Sport-specific algorithms, AI tools and open integrations for deeper work."
+      icon: "fas fa-brain"
+  link: "service/"
+  link_label: "Explore our technology"
+integrations:
+  eyebrow: "Works with your workflow"
+  title: "Connect, export and keep moving"
+  items: ["Garmin", "Strava", "FIT", "TCX", "PDF", "JSON", "REST API", "AI assistants"]
+marketing_cta:
+  eyebrow: "See QUKO in action"
+  title: "Bring better evidence to every session"
+  text: "Tell us how you train, analyse or research. We will show you the right QUKO workflow."
+  primary_label: "Request a demo"
+  primary_link: "contact/"
+  secondary_label: "Access Quko Cloud"
+  secondary_link: "https://cloud.quko.es/"
 ---

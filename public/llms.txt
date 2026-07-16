@@ -1,52 +1,20 @@
 # QUKO
 
-> QUKO is a Spanish deep-tech company building hardware and cloud-software solutions for sprint canoeing, kayaking and rowing performance analysis. Its flagship product, Kosoku, is a waterproof on-board sensor unit (200 Hz IMU, dual-band GPS, heart rate) that streams and logs biomechanical data; QUKO Cloud is the companion analytics platform (with an AI/LLM data assistant) that turns that raw sensor data into coaching insights; QUKO Live adds real-time multi-athlete telemetry for training and racing.
-
-QUKO was founded by a former CERN physicist and national-level canoe/kayak athlete, and combines experimental-physics/signal-processing expertise with sports science. The company is based in Spain and serves individual athletes, coaches, clubs and national federations in paddle sports. The corporate site (quko.es) is available in English (default, no path prefix), Spanish (`/es/`) and Galician (`/gl/`). The companion web application at cloud.quko.es is an authenticated product (sign-in required) and is not a public documentation source; use the QUKO Cloud page below for a description of what it does.
+> QUKO builds connected performance technology for canoeing, kayaking and rowing. Its ecosystem combines Kosoku sensor hardware, Quko Live real-time telemetry and Quko Cloud analysis for athletes, coaches, researchers and data analysts.
 
 ## Products
 
-- [Kosoku](https://quko.es/kosoku/): On-board sensor device for canoeing/kayaking/rowing — 200 Hz sampling, sub-centimeter position accuracy, 10 Hz dual-band GPS, live streaming to up to 9 devices over 150 m, Garmin Connect integration, IP67 waterproof housing, 5-hour battery.
-- [QUKO Cloud](https://quko.es/quko_cloud/): Cloud analytics platform that turns Kosoku sensor data into interactive charts, 3D stroke/vessel simulations and AI-assisted (LLM) coaching insights for canoeing, kayaking and rowing.
-- [QUKO Cloud — Sign in](https://cloud.quko.es/): Authenticated web application where athletes and coaches upload sessions and view QUKO Cloud analysis. Login-gated; no public marketing content is served here.
-- [QUKO Live](https://quko.es/quko_live/): Real-time telemetry system for coaching up to 9 athletes simultaneously (stroke rate, distance per stroke, acceleration, velocity, heart-rate zones) with no internet/mobile data required. Currently in closed testing.
+- [Kosoku](https://quko.es/kosoku/): 100 Hz on-boat motion capture, dual-band positioning, live transmission and compatible physiological sensors.
+- [Quko Live](https://quko.es/quko_live/): Offline real-time telemetry for up to nine athletes over a 150 metre range.
+- [Quko Cloud](https://quko.es/quko_cloud/): Sport-specific charts, comparisons, 3D and video review, mechanical analysis, reports, AI assistance and structured exports.
+- [Access Quko Cloud](https://cloud.quko.es/): Authenticated application for working with QUKO sessions.
 
 ## Company
 
-- [About QUKO](https://quko.es/about/): Company background, founding team, and technical focus areas (hardware, embedded systems, signal processing, data science, telecommunications).
-- [Services](https://quko.es/service/): Overview of QUKO's custom hardware, cloud analytics and intelligent-software engineering services beyond the paddle-sports product line.
-- [FAQ](https://quko.es/faq/): Common questions about why QUKO, what activities/sectors it works with, and how customer data is handled (no data is sold or shared with third parties; processing happens privately in the cloud).
-- [Contact](https://quko.es/contact/): Contact form for sales, support and partnership inquiries.
-- [Pricing](https://quko.es/pricing/): Pricing page (Kosoku and QUKO Cloud plans are currently pre-launch/TBD; contact QUKO directly for current rates).
+- [Technology](https://quko.es/service/): Sensor hardware, embedded firmware, wireless telemetry, cloud software, sports analytics and open integrations.
+- [About](https://quko.es/about/): QUKO's research-led engineering approach.
+- [FAQ](https://quko.es/faq/): Product, data and access questions.
+- [Request a demo](https://quko.es/contact/): Product demonstrations and tailored proposals.
+- [Performance Lab](https://quko.es/blog/): Applied sports-performance research.
 
-## Research (QUKO Performance Lab blog)
-
-Applied physics and biomechanics research for competitive paddle-sport athletes and coaches, written by QUKO's founder.
-
-- [Optimizing Paddle Design with Physics](https://quko.es/blog/2025.05.27/): How paddle/blade length and shape affect stroke efficiency, with the physics behind optimal sizing.
-- [Personalizing Paddle Blade Size Using Power Profiles](https://quko.es/blog/2025.06.06/): Using an athlete's power profile to choose blade size and reduce wasted stroke energy.
-- [Hydrodynamic Efficiency Analysis in Paddle Sports Performance](https://quko.es/blog/2025.06.13/): Measuring stroke power lost to water turbulence in paddle sports.
-- [Psychophysiological Monitoring in Elite Paddling Sports](https://quko.es/blog/2025.06.18/): How training-load monitoring (physiological and psychological) affects race-day performance.
-- [Metabolic Contributions in Sprint Kayaking: 500m vs 1000m Analysis](https://quko.es/blog/2025.06.24/): When the body switches energy systems during sprint kayak racing at different distances.
-- [Biomechanical Analysis of Propulsion in Paddle Sports](https://quko.es/blog/2025.06.30/): Key biomechanical factors that determine speed and efficiency in paddle-sport propulsion.
-- [PCA Analysis of Canoe Kayak Pacing Strategies](https://quko.es/blog/2025.07.09/): Principal component analysis of Olympic/World Championship pacing data comparing podium finishers to the rest of the field.
-- [Isometric Training Optimizes Sprint Kayaking Performance](https://quko.es/blog/2025.09.02/): Comparing isometric training against traditional training for sprint kayak performance gains.
-
-## Documentation & firmware
-
-- [Kosoku user manual (PDF)](https://quko.es/docs/Manual_Kosoku.pdf): Full device manual for the Kosoku sensor unit.
-- [Issue tracker](https://quko.es/docs/issue_tracker.html): Known-issues and bug tracker for Kosoku/QUKO Cloud.
-- [Latest firmware metadata (JSON)](https://quko.es/firmware/latest.json): Machine-readable pointer to the current Kosoku firmware version and download.
-- [Firmware release history](https://quko.es/firmware/README.md): Index of all Kosoku firmware releases, each with its own `release_notes.md`.
-
-## Legal
-
-- [Legal notice](https://quko.es/legal_notice/)
-- [Privacy policy](https://quko.es/privacy/)
-- [Cookie policy](https://quko.es/cookies/)
-
-## Optional
-
-- [Newsletter signup](https://quko.es/newsletter/)
-- Spanish version of this site: https://quko.es/es/ (same structure, `/es/` prefix)
-- Galician version of this site: https://quko.es/gl/ (same structure, `/gl/` prefix)
+The site is available in English, Spanish at `/es/`, and Galician at `/gl/`.

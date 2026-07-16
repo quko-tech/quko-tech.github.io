@@ -1,52 +1,28 @@
 ---
-title: "Our Pricing"
-description: "We offer different packages for you to choose the one that fits you the best"
-bg_image: "images/feature-bg.jpg"
+title: "Soluciones para cada programa"
+description: "Las configuraciones QUKO se adaptan a tus deportistas, tu equipo y tus necesidades de análisis."
+eyebrow: "Planes e implantación"
 layout: "pricing"
 draft: false
-
-################################ pricing ################################
-pricing:
-  enable : true
-  pricing_table:
-  # pricing table loop
-  - name : "Basic"
-    content : "Perfect for single freelancers who work by themselves"
-    link : "#"
-    services:
-    - Unlimited software uses
-    - 10 PSD Design
-    - HTML5 Markup
-    - Basic SEO
-    - Email Marketing
-    - 24/7 Tech Support
-
-  # pricing table loop
-  - name : "Premium"
-    content : "Suitable for small businesses with up to 5 employees"
-    link : "#"
-    services:
-    - Unlimited agents
-    - 10 PSD Design
-    - HTML5 Markup
-    - Basic SEO
-    - Email Marketing
-    - 24/7 Tech Support
-
-  # pricing table loop
-  - name : "Advance"
-    content : "Suitable for large businesses with unlimited employees"
-    link : "#"
-    services:
-    - Unlimited agents
-    - 10 PSD Design
-    - HTML5 Markup
-    - Basic SEO
-    - Email Marketing
-    - 24/7 Tech Support
-
-############################# call to action #################################
-cta:
-  enable : true
-  # call to action content comes from "_index.md"
+options:
+  - title: "Individual"
+    text: "Para deportistas y especialistas con un proceso de rendimiento independiente."
+    icon: "fas fa-user"
+    items: ["Captura con Kosoku", "Análisis en Quko Cloud", "Puesta en marcha guiada"]
+  - title: "Equipo"
+    text: "Para entrenadores y clubes con varios deportistas y embarcaciones."
+    icon: "fas fa-users"
+    items: ["Varios dispositivos Kosoku", "Telemetría Quko Live", "Trabajo compartido en Cloud"]
+  - title: "Institución"
+    text: "Para federaciones, centros de rendimiento y programas de investigación."
+    icon: "fas fa-university"
+    items: ["Acceso por perfiles", "APIs y exportaciones", "Apoyo en la implantación"]
+marketing_cta:
+  eyebrow: "Una configuración a medida"
+  title: "Solicita una propuesta personalizada"
+  text: "Cuéntanos tus deportistas, disciplinas y objetivos de análisis. Te recomendaremos el sistema adecuado."
+  primary_label: "Solicitar presupuesto"
+  primary_link: "contact/"
+  secondary_label: "Acceder a Quko Cloud"
+  secondary_link: "https://cloud.quko.es/"
 ---

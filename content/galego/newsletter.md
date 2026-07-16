@@ -1,6 +1,6 @@
 ---
-title: "Newsletter Signup"
+title: "QUKO Performance Lab"
 bg_image: "images/feature-bg.jpg"
 layout: "newsletter"
-description: "Don't miss any blog entry!"
+description: "Investigación, enxeñaría e análise de rendemento no teu correo."
 ---

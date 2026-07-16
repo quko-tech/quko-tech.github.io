@@ -1,57 +1,22 @@
 {{ define "main" }}
-
-{{ partial "page-title.html" . }}
-
-{{ with .Params.about }}
-{{ if .enable }}
-<section class="service-about section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        {{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
-        {{ with .content }}<div class="mt-30">{{ . | $.Page.RenderString (dict "display" "block") }}</div>{{ end }}
-      </div>
-      {{ with .image -}}
-      <div class="col-md-6">
-        <img class="img-responsive" src="{{ . | relURL }}" style="border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,0.1);">
-      </div>
-      {{- end }}
-    </div>
-  </div>
-</section>
+<section class="quko-page-title"><div class="container"><span class="quko-eyebrow">{{ .Params.eyebrow }}</span><h1>{{ .Title }}</h1><p>{{ .Description }}</p></div></section>
+{{ with .Params.capabilities }}
+<section class="quko-section"><div class="container">
+  <div class="quko-section-title" data-reveal><span class="quko-eyebrow">{{ .eyebrow }}</span><h2>{{ .title }}</h2><p>{{ .text }}</p></div>
+  <div class="quko-grid-3">{{ range .items }}<article class="quko-card" data-reveal><span class="quko-icon"><i class="{{ .icon }}"></i></span><h3>{{ .title }}</h3><p>{{ .text }}</p></article>{{ end }}</div>
+</div></section>
 {{ end }}
+{{ with .Params.approach }}
+<section class="quko-section quko-section-dark"><div class="container">
+  <div class="quko-section-title" data-reveal><span class="quko-eyebrow">{{ .eyebrow }}</span><h2>{{ .title }}</h2><p>{{ .text }}</p></div>
+  <div class="quko-grid-3">{{ range $index, $item := .steps }}<article class="quko-card" data-reveal><span class="quko-card-number">0{{ add $index 1 }}</span><h3>{{ $item.title }}</h3><p>{{ $item.text }}</p></article>{{ end }}</div>
+</div></section>
 {{ end }}
-
-{{ with .Params.featured_service }}
-{{ if .enable }}
-<section class="service-arrow">
-  <div class="container-fluid">
-    <div class="row">
-      {{ range .service_item }}
-      <div class="col-md-4 bg-primary bg-{{ .color }} no-float">
-        <div class="block">
-          <i class="{{ .icon }}"></i>
-          {{ with .name }}<h3>{{ . | markdownify }}</h3>{{ end }}
-          {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-        </div>
-      </div>
-      {{ end }}
-    </div>
-  </div>
-</section>
+{{ with .Params.platform }}
+<section class="quko-section"><div class="container"><div class="quko-showcase">
+  <div class="quko-showcase-media light" data-reveal><img src="{{ .image | relURL }}" alt="{{ .image_alt }}"></div>
+  <div data-reveal><span class="quko-eyebrow">{{ .eyebrow }}</span><h2>{{ .title }}</h2><p>{{ .text }}</p><ul class="quko-check-list">{{ range .items }}<li><i class="fas fa-check-circle"></i><span>{{ . }}</span></li>{{ end }}</ul></div>
+</div></div></section>
 {{ end }}
-{{ end }}
-
-<!-- Service -->
-{{ if .Params.service.enable }}
-{{ partial "service.html" . }}
-{{ end }}
-<!-- /service -->
-
-<!-- Call to action -->
-{{ if .Params.cta.enable }}
-{{ partial "cta.html" . }}
-{{ end }}
-<!-- /Call to action -->
-
+{{ partial "marketing-cta.html" . }}
 {{ end }}

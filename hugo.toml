@@ -6,13 +6,13 @@
 ######################### site variables ##############################
 # customize your color and font from here.
 [params.variables]
-color_primary = "#990000" #655e7a"
-color_secondary = "#d19292"
+color_primary = "#e8383f"
+color_secondary = "#68c7dc"
 body_color = "#fff"
-text_color = "#666666"
-text_dark = "#333333"
-text_light = "#7b7b7b"
-border_color = "#de7373" #"#c4acac"
+text_color = "#626b78"
+text_dark = "#12151c"
+text_light = "#7b8490"
+border_color = "#dfe3e8"
 black = "#000000"
 white = "#ffffff"
 light = "#f5f5f5"
@@ -36,8 +36,8 @@ font_scale = "1.25" # default is "majorThird": 1.25
 # example: "Work+Sans:wght@400;500;600"
 font_primary = "Inter:wght@300;400;500;600;700"
 font_primary_type = "sans-serif" # [serif/sans-serif]
-font_secondary = "DM+Serif+Display:ital@0;1"
-font_secondary_type = "serif" # [serif/sans-serif]
+font_secondary = "Inter:wght@600;700;800"
+font_secondary_type = "sans-serif" # [serif/sans-serif]
 font_icon = "Font Awesome 5 Free" # https://fontawesome.com/v5.15/icons/
 
 

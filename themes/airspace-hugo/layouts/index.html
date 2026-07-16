@@ -1,146 +1,146 @@
 {{ define "main" }}
-
-<!-- scroll progress indicator -->
-<div class="scroll-progress" id="scrollProgress"></div>
-<script>
-window.addEventListener('scroll', function() {
-  var h = document.documentElement;
-  var progress = (h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-  document.getElementById('scrollProgress').style.width = progress + '%';
-}, {passive: true});
-</script>
-
-<!-- banner -->
-{{ with .Params.banner }}
-{{ if .enable }}
-<section class="slider {{ if .bg_overlay }}overly{{ end }}" style="background-image: url('{{ .bg_image | relURL }}');">
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="block">
-          {{ with .title }}<h1>{{ . | markdownify }}</h1>{{ end }}
-          {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-          {{ with .button }}
-          {{ if .enable }}
-          <a href="{{ .link | relLangURL }}" class="btn btn-main">{{ .label }}</a>
-          {{ end }}
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-{{ end }}
-<!-- /banner -->
-
-<!-- about -->
-{{ with .Params.about }}
-{{ if .enable }}
-<section class="about section">
+{{ with .Params.hero }}
+<section class="quko-hero">
   <div class="container">
-    <div class="row">
-      <div class="col-md-7 col-sm-12">
-        <div class="block" data-reveal="left">
-          <div class="section-title">
-            {{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
-            {{ with .description }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-          </div>
-          {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
+    <div class="quko-hero-grid">
+      <div class="quko-hero-copy" data-reveal>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h1>{{ .title | markdownify }}</h1>
+        <p>{{ .text }}</p>
+        <div class="quko-actions">
+          <a class="btn-quko" href="{{ .primary_link | relLangURL }}">{{ .primary_label }}</a>
+          <a class="btn-quko-outline" href="{{ .secondary_link }}">{{ .secondary_label }}</a>
         </div>
       </div>
-      <div class="col-md-5 col-sm-12">
-        <div class="block" data-reveal="right" data-reveal-delay="200">
-          <img src="{{ .image | relURL }}" class="img-responsive" alt="About QUKO" style="border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,0.1);">
+      <div class="quko-hero-visual" data-reveal>
+        <img src="{{ .image | relURL }}" alt="{{ .image_alt }}">
+        <div class="quko-hero-badge">
+          <strong>{{ .badge_title }}</strong>
+          <span>{{ .badge_text }}</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 {{ end }}
-{{ end }}
-<!-- /about -->
 
-<!-- portfolio -->
-{{ with .Params.portfolio }}
-{{ if .enable }}
-<section class="feature bg-2" style="background-image: url('{{ .bg_image | relURL }}')">
+{{ with .Params.audiences }}
+<section aria-label="{{ .label }}">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-6" data-reveal="right">
-        {{ with .title }}<h2 class="section-subtitle">{{ . | markdownify }}</h2>{{ end }}
-        {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-        {{ with .button }}
-        {{ if .enable }}
-        <a href="{{ .link | relLangURL }}" class="btn btn-view-works">{{ .label }}</a>
-        {{ end }}
-        {{ end }}
-      </div>
+    <div class="quko-audience-row">
+      {{ range .items }}
+      <div class="quko-audience"><i class="{{ .icon }}"></i><strong>{{ .name }}</strong></div>
+      {{ end }}
     </div>
   </div>
 </section>
 {{ end }}
-{{ end }}
-<!-- /portfolio -->
 
-<!-- service -->
-{{ if .Params.service.enable }}
-{{ partial "service-home.html" . }}
-{{ end }}
-<!-- /service -->
-
-<!-- call to action -->
-{{ if .Params.cta.enable }}
-{{ partial "cta.html" . }}
-{{ end }}
-<!-- /call to action -->
-
-<!-- funfacts -->
-{{ with .Params.funfacts }}
-{{ if .enable }}
-<section class="testimonial">
+{{ with .Params.ecosystem }}
+<section class="quko-section" id="ecosystem">
   <div class="container">
-    <div class="row">
-      <div class="section-title text-center" data-reveal="up">
-        {{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
-        {{ with .description }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-      </div>
+    <div class="quko-section-title" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
     </div>
-    <div class="row">
-      <div class="col-md-6" data-reveal="left" data-reveal-delay="200">
-        <div class="block">
-          <ul class="counter-box clearfix">
-            {{ range .funfact_item }}
-            <li class="counter-item">
-              <i class="{{ .icon }}"></i>
-              <h4 class="count" data-count="{{ .count }}">0</h4>
-              <span>{{ .name | markdownify }}</span>
-            </li>
-            {{ end }}
-          </ul>
+    <div class="quko-grid-3">
+      {{ range $index, $item := .steps }}
+      <article class="quko-card" data-reveal>
+        <span class="quko-card-number">0{{ add $index 1 }}</span>
+        <h3>{{ $item.title }}</h3>
+        <p>{{ $item.text }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.products }}
+<section class="quko-section quko-section-muted">
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
+    </div>
+    <div class="quko-grid-3">
+      {{ range .items }}
+      <article class="quko-card quko-product-card" data-reveal>
+        <img src="{{ .image | relURL }}" alt="{{ .image_alt }}">
+        <div class="quko-product-card-content">
+          <h3>{{ .title }}</h3>
+          <p>{{ .text }}</p>
+          <a class="quko-card-link" href="{{ .link | relLangURL }}">{{ .link_label }} <span aria-hidden="true">&rarr;</span></a>
         </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.analytics }}
+<section class="quko-section quko-section-dark">
+  <div class="container">
+    <div class="quko-showcase">
+      <div class="quko-showcase-media" data-reveal>
+        <img src="{{ .image | relURL }}" alt="{{ .image_alt }}">
       </div>
-      <div class="col-md-5 col-md-offset-1" data-reveal="right" data-reveal-delay="400">
-        <div class="testimonial-carousel text-center">
-          <div class="testimonial-slider owl-carousel">
-            {{ range .testimonial_slider }}
-            <div>
-              <i class="fas fa-quote-left"></i>
-              {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-              <div class="user">
-                <img src="{{ .image | relURL }}" alt="client">
-                <p><span>{{ .name | markdownify }}</span> {{ .designation | markdownify }}</p>
-              </div>
-            </div>
-            {{ end }}
-          </div>
+      <div data-reveal>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+        <p>{{ .text }}</p>
+        <ul class="quko-check-list">
+          {{ range .items }}<li><i class="fas fa-check-circle"></i><span>{{ . }}</span></li>{{ end }}
+        </ul>
+        <div class="quko-actions">
+          <a class="btn-quko-light" href="{{ .link | relLangURL }}">{{ .link_label }}</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 {{ end }}
-{{ end }}
-<!-- /funfacts -->
 
+{{ with .Params.capabilities }}
+<section class="quko-section">
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
+    </div>
+    <div class="quko-grid-4">
+      {{ range .items }}
+      <article class="quko-card" data-reveal>
+        <span class="quko-icon"><i class="{{ .icon }}"></i></span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+      </article>
+      {{ end }}
+    </div>
+    <div class="quko-actions" style="justify-content:center">
+      <a class="btn-quko-outline" href="{{ .link | relLangURL }}">{{ .link_label }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.integrations }}
+<section class="quko-section-sm quko-section-muted">
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+    </div>
+    <div class="quko-chip-row" data-reveal>
+      {{ range .items }}<span class="quko-chip">{{ . }}</span>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ partial "marketing-cta.html" . }}
 {{ end }}

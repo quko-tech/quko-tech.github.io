@@ -70,3 +70,12 @@ gdpr_contact_info = "Contacta connosco para calquera consulta relacionada coa pr
 # Termos xerais
 privacy_policy = "Política de Privacidade"
 optional = "Opcional"
+
+primary_navigation = "Navegación principal"
+open_navigation = "Abrir navegación"
+language = "Idioma"
+footer_description = "Tecnoloxía de rendemento conectada para piragüismo, kayak e remo."
+footer_explore = "Explorar"
+footer_contact = "Contacto"
+request_demo = "Solicitar unha demo"
+all_rights_reserved = "Todos os dereitos reservados."

@@ -1,0 +1,17 @@
+{{ with .Params.marketing_cta }}
+<section class="quko-section">
+  <div class="container">
+    <div class="quko-cta" data-reveal>
+      <div class="quko-cta-content">
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+        <p>{{ .text }}</p>
+        <div class="quko-actions">
+          <a class="btn-quko" href="{{ .primary_link | relLangURL }}">{{ .primary_label }}</a>
+          {{ with .secondary_label }}<a class="btn-quko-light" href="{{ $.Params.marketing_cta.secondary_link }}">{{ . }}</a>{{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,108 +1,104 @@
 ---
-############################### Banner ##############################
-banner:
-  enable: true
-  bg_image: "images/verdu.jpg"
-  bg_overlay: true
-  title: "Tecnología de vanguardia <br/> al alcance de todos "
-  content: "En QUKO, trabajamos para ofrecer soluciones innovadoras basadas en las últimas tecnologías a nuestros clientes"
-  button:
-    enable: true
-    label: "Conócenos"
-    link: "about/"
-
-############################# About #################################
-about:
-  enable: true
-  title: "Sobre QUKO"
-  description: "Nacido en el mundo del procesado de señales biométricas y biomecánicas, QUKO se creó con una meta clara: poner al alcance de cualquier persona todos los avances tecnológicos que nos rodean"
-  content: "Vivimos una época donde las tecnologías digitales se encuentran extremadamente evolucionadas: redes de sistemas empotrados, nuevas técnicas de procesado de señal, data science o inteligencia artificial son ejemplo de ello.  
-  <br>En QUKO, tenemos como objetivo ser capaces de llevar estas nuevas herramientas a nuestros usuarios, para que evolucionen ante el reto de la actual revolución digital 2.0 y puedan disponer de ellas para conseguir el máximo rendimiento y beneficios"
-  image: "images/palada.jpeg"
-
-
-######################### Portfolio ###############################
-portfolio:
-  enable: true
-  bg_image: "images/palada.gif"
-  title: "TE ESCUCHAMOS"
-  content: "Uno de los principales pilares de QUKO es nuestra filosofía de adaptar lo máximo posible las soluciones finales a las necesidades de nuestros clientes.
-
-
-  Somos conscientes del problema que puede suponer la implementación de tecnologías tan novedosas a gente de sectores alejados de la revolución digital. En este sentido, tenemos como objetivo trabajar codo con codo con los usuarios para lograr una completa y detallada caracterización de cada caso particular, y ofrecer así una solución única que se adapte por completo a sus requerimientos.
-
-
-  Desde QUKO nos alejamos de las soluciones genéricas. Mantener una relación estrecha y de confianza con nuestros clientes es clave para lograr los mejores resultados.
-  "
-  button:
-    enable: false
-    label: "Ver productos"
-    link: "project/"
-
-
-############################# Service ############################
-service:
-  enable: true
-  # service content comes from "service.md" file
-
-
-############################ call to action ###########################
-cta:
-  enable: true
-  bg_image: "images/call-to-action-bg.jpg"
-  title: "Optimiza tu rendimiento"
-  content: "En QUKO, ofrecemos todo tipo de soluciones para llevar las últimas tecnologías a diferentes ámbitos"
-  button:
-    enable: true
-    label: "Ponte en contacto"
-    link: "contact/"
-
-############################# Funfacts ###############################
-funfacts:
-  enable: true
-  title: "QUKO en números"
-  #description: "Hay mucho trabajo tras QUKO, ¡y aún estamos creciendo!"
-  funfact_item:
-  # funfacts item loop
-  - icon: "fas fa-mug-hot" #https://fontawesome.com/v5.15/icons
-    name: "Cafés"
-    count: "384"
-
-  # funfacts item loop
-  - icon: "fas fa-glasses" #https://fontawesome.com/v5.15/icons
-    name: "Premios ganados"
-    count: "3"
-
-  # funfacts item loop
-  - icon: "fas fa-keyboard" #https://fontawesome.com/v5.15/icons
-    name: "Proyectos activos"
-    count: "4"
-
-  # funfacts item loop
-  - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
-    name : "Líneas de código"
-    count : "500000"
-
-
-
-  testimonial_slider:
-  # testimonial item loop
-  - name: "Pablo Álvarez"
-    image: "images/clients/pepe1.png"
-    designation: "Ingeniero de Telecomunicaciones"
-    content: "Nuestra meta es llevar las últimas tecnologías a todo tipo se sectores, manteniendo una relación cercana con el cliente basada en la confianza y la confidencialidad."
-
-  ## testimonial item loop
-  #- name: "Menganito"
-  #  image: "images/clients/avater-2.jpg"
-  #  designation: "Ingeniero de Telecomunicaciones"
-  #  content: "Aquí vendría una frase"
-
-  ## testimonial item loop
-  #- name: "Fulanita"
-  #  image: "images/clients/avater-3.jpg"
-  #  designation: "Deportista profesional"
-  #  content: "Aquí vendría una frase"
-
-
+title: "QUKO | Inteligencia de rendimiento para deportes de agua"
+description: "Hardware conectado, telemetría en directo y análisis avanzado para piragüismo, kayak y remo."
+hero:
+  eyebrow: "Tecnología de rendimiento para deportes de agua"
+  title: "Inteligencia de rendimiento en cada palada"
+  text: "QUKO conecta sensores precisos, telemetría en directo y análisis avanzado para convertir cada sesión en una mejor decisión."
+  primary_label: "Solicitar una demo"
+  primary_link: "contact/"
+  secondary_label: "Acceder a Quko Cloud"
+  secondary_link: "https://cloud.quko.es/"
+  image: "images/koso_foto.jpg"
+  image_alt: "Sensor de rendimiento Kosoku junto al agua"
+  badge_title: "Un ecosistema conectado"
+  badge_text: "Captura, monitoriza y comprende el rendimiento."
+audiences:
+  label: "Creado para equipos de rendimiento en deportes de agua"
+  items:
+    - name: "Deportistas"
+      icon: "fas fa-user"
+    - name: "Entrenadores"
+      icon: "fas fa-stopwatch"
+    - name: "Investigadores"
+      icon: "fas fa-microscope"
+    - name: "Analistas de datos"
+      icon: "fas fa-chart-line"
+ecosystem:
+  eyebrow: "Del agua al conocimiento"
+  title: "Un proceso completo, del movimiento a su significado"
+  text: "Cada parte de QUKO trabaja de forma conjunta sin añadir complejidad al entrenamiento."
+  steps:
+    - title: "Captura"
+      text: "Kosoku registra movimiento, posición y datos fisiológicos de alta resolución directamente en la embarcación."
+    - title: "Monitoriza"
+      text: "Quko Live ofrece información inmediata de varios deportistas, incluso sin conexión a internet."
+    - title: "Comprende"
+      text: "Quko Cloud transforma cada sesión en análisis, comparativas, informes e interpretación asistida por IA."
+products:
+  eyebrow: "El ecosistema QUKO"
+  title: "Tres productos, un único sistema de rendimiento"
+  text: "Utiliza cada producto de forma independiente o conéctalos para obtener la experiencia completa."
+  items:
+    - title: "Kosoku"
+      text: "Un sensor preciso y conectado, diseñado para piragüismo, kayak y remo."
+      image: "images/koso_foto.jpg"
+      image_alt: "Sensor Kosoku y base de carga"
+      link: "kosoku/"
+      link_label: "Descubrir Kosoku"
+    - title: "Quko Live"
+      text: "Telemetría de equipo en tiempo real para decidir más rápido desde el agua."
+      image: "images/live.png"
+      image_alt: "Panel de entrenamiento de Quko Live"
+      link: "quko_live/"
+      link_label: "Descubrir Quko Live"
+    - title: "Quko Cloud"
+      text: "Análisis profundo, comparación y colaboración para cada sesión registrada."
+      image: "images/cloud.png"
+      image_alt: "Gráficas de rendimiento de Quko Cloud"
+      link: "quko_cloud/"
+      link_label: "Descubrir Quko Cloud"
+analytics:
+  eyebrow: "Mucho más que un panel"
+  title: "Observa el rendimiento que hay detrás del resultado"
+  text: "Estudia técnica, ritmo y consistencia con herramientas diseñadas para el deporte."
+  image: "images/cloud.png"
+  image_alt: "Análisis de velocidad, avance por palada y frecuencia"
+  items:
+    - "Gráficas por palada y análisis numérico"
+    - "Comparativas, reproducción 3D y vídeo sincronizado"
+    - "Análisis mecánico, informes e interpretación asistida por IA"
+  link: "quko_cloud/"
+  link_label: "Descubrir Quko Cloud"
+capabilities:
+  eyebrow: "Tecnología integral"
+  title: "Ingeniería en toda la cadena de datos"
+  text: "QUKO reúne hardware, comunicaciones, software y ciencia del deporte en un equipo especializado."
+  items:
+    - title: "Sistemas de sensores"
+      text: "Electrónica y procesado embebido para los entornos más exigentes."
+      icon: "fas fa-microchip"
+    - title: "Telemetría en directo"
+      text: "Datos inalámbricos fiables para obtener información justo donde se entrena."
+      icon: "fas fa-satellite-dish"
+    - title: "Software en la nube"
+      text: "Procesos seguros para analizar, explorar y compartir sesiones complejas."
+      icon: "fas fa-cloud"
+    - title: "Inteligencia aplicada"
+      text: "Algoritmos deportivos, herramientas de IA e integraciones abiertas."
+      icon: "fas fa-brain"
+  link: "service/"
+  link_label: "Explorar nuestra tecnología"
+integrations:
+  eyebrow: "Conecta con tu forma de trabajar"
+  title: "Integra, exporta y sigue avanzando"
+  items: ["Garmin", "Strava", "FIT", "TCX", "PDF", "JSON", "API REST", "Asistentes de IA"]
+marketing_cta:
+  eyebrow: "Descubre QUKO"
+  title: "Lleva mejores evidencias a cada sesión"
+  text: "Cuéntanos cómo entrenas, analizas o investigas. Te mostraremos el flujo QUKO más adecuado."
+  primary_label: "Solicitar una demo"
+  primary_link: "contact/"
+  secondary_label: "Acceder a Quko Cloud"
+  secondary_link: "https://cloud.quko.es/"
 ---

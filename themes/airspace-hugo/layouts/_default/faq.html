@@ -1,22 +1,9 @@
 {{ define "main" }}
-
-{{ partial "page-title.html" . }}
-
-<section class="page-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 sticky-top">
-        <h2>{{ .Title }}</h2>
-        {{ with .Params.subtitle }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-        <p>{{ i18n "last_update" }}: {{ time.Format ":date_long" .Lastmod }}</p>
-        <h3>{{ i18n "faq_toc_title" }}</h3>
-        {{ .TableOfContents }}
-      </div>
-      <div class="col-md-8">
-        {{ .Content }}
-      </div>
-    </div>
-  </div>
-</section>
-
+<section class="quko-page-title"><div class="container"><span class="quko-eyebrow">{{ .Params.eyebrow }}</span><h1>{{ .Title }}</h1><p>{{ .Description }}</p></div></section>
+{{ with .Params.groups }}
+<section class="quko-section"><div class="container">
+  {{ range . }}<div class="quko-section-title" data-reveal><h2>{{ .title }}</h2></div><div class="quko-grid-3" style="margin-bottom:60px">{{ range .items }}<article class="quko-card" data-reveal><h3>{{ .question }}</h3><p>{{ .answer }}</p></article>{{ end }}</div>{{ end }}
+</div></section>
+{{ end }}
+{{ partial "marketing-cta.html" . }}
 {{ end }}

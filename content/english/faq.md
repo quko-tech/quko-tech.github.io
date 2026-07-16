@@ -1,30 +1,28 @@
 ---
-title: "FAQ"
-description: "Any doubts? Take a look at this page!"
-subtitle : "If you don't find what you are looking for here, don't hesitate to contact us!"
-lastmod: 2023-03-10T21:10:00+07:00
-bg_image: "images/feature-bg.jpg"
+title: "Frequently asked questions"
+description: "Quick answers about the QUKO ecosystem."
+eyebrow: "QUKO FAQ"
 layout: "faq"
 draft: false
+groups:
+  - title: "Products and training"
+    items:
+      - {question: "Which sports does QUKO support?", answer: "QUKO is designed for canoeing, kayaking and rowing, including single and crew boats."}
+      - {question: "Can I use each product separately?", answer: "Yes. Kosoku, Quko Live and Quko Cloud work independently, with more value when connected."}
+      - {question: "Does Quko Live need internet access?", answer: "No. Its local wireless system is designed to work where mobile coverage is unavailable."}
+      - {question: "Who can use Quko Cloud?", answer: "Athletes, coaches, clubs, federations, researchers and data analysts can use role-appropriate workflows."}
+  - title: "Data and access"
+    items:
+      - {question: "Can sessions be shared?", answer: "Yes. Authorized users can create temporary links for individual sessions and comparisons."}
+      - {question: "Which exports are available?", answer: "Quko Cloud supports PDF, JSON, FIT and TCX, plus authenticated API access."}
+      - {question: "Can QUKO connect to AI assistants?", answer: "Yes. Authorized users can use the built-in analyst or securely connect supported external assistants."}
+      - {question: "How do I choose the right setup?", answer: "Request a demo and we will recommend a configuration based on your athletes, environment and goals."}
+marketing_cta:
+  eyebrow: "Still have a question?"
+  title: "Let us show you the complete workflow"
+  text: "A short demonstration is the fastest way to understand what QUKO can do for your programme."
+  primary_label: "Request a demo"
+  primary_link: "contact/"
+  secondary_label: "Access Quko Cloud"
+  secondary_link: "https://cloud.quko.es/"
 ---
-
-
-#### 1. Why choose QUKO over other alternatives?
-
-There is one key factor that sets us apart from the competition: we offer customized solutions tailored to our customers.
-
-At QUKO, we believe that our customers should be able to take advantage of the latest technologies without any prior knowledge. Thus, we rely on maintaining a close relationship with them, based on communication and confidentiality, in order to be able to fully understand their specific needs and to be able to offer them the solution that best suits them.
-
-<br>
-
-#### 2. What kind of activities does QUKO work with?
-
-In general, with anyone! QUKO's vision revolves around the development and application of state-of-the-art tools in all kinds of processes. 
-
-In this sense, we are always looking to expand our portfolio and expand into new activities. If you are interested in our services, do not hesitate to contact us! We will be happy to assist you and analyze your case in order to incorporate it into our project.
-
-<br>
-
-#### 3. How does QUKO process or use my data?
-
-At QUKO we do not collect any type of data or sensitive information, nor do we have any information storage database. Any data collected during the design and deployment of the solution as well as the final results are processed privately on a cloud server and returned to the customer without being shared with third parties.
