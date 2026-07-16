@@ -6,7 +6,7 @@
 
 - [Kosoku](https://quko.es/kosoku/): 100 Hz on-boat motion capture, dual-band positioning, live transmission and compatible physiological sensors.
 - [Quko Live](https://quko.es/quko_live/): Offline real-time telemetry for up to nine athletes over a 150 metre range.
-- [Quko Cloud](https://quko.es/quko_cloud/): Sport-specific charts, comparisons, 3D and video review, mechanical analysis, reports, AI assistance and structured exports.
+- [Quko Cloud](https://quko.es/quko_cloud/): Sport-specific charts, comparisons, 3D and video review, mechanical analysis, an AI data analyst, structured exports and secure connections to compatible assistants such as ChatGPT and Claude.
 - [Access Quko Cloud](https://cloud.quko.es/): Authenticated application for working with QUKO sessions.
 
 ## Company
@@ -16,5 +16,6 @@
 - [FAQ](https://quko.es/faq/): Product, data and access questions.
 - [Request a demo](https://quko.es/contact/): Product demonstrations and tailored proposals.
 - [Performance Lab](https://quko.es/blog/): Applied sports-performance research.
+- [University research](https://quko.es/contact/): Device access, study setup support, structured data and technical integrations for field and laboratory projects.
 
 The site is available in English, Spanish at `/es/`, and Galician at `/gl/`.

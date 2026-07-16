@@ -1,6 +1,7 @@
 [[main]]
 name = "Inicio"
 url = ""
+identifier = "nav-home"
 weight = 1
 [[main]]
 name = "Tecnoloxía"
@@ -45,6 +46,11 @@ weight = 4
   name = "Preguntas frecuentes"
   url = "faq/"
   weight = 3
+  [[main]]
+  parent = "more"
+  name = "Contacto"
+  url = "contact/"
+  weight = 4
 [[main]]
 name = "Acceder a Cloud"
 url = "https://cloud.quko.es/"

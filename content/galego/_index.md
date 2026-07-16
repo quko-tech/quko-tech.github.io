@@ -53,21 +53,21 @@ products:
       link: "quko_live/"
       link_label: "Descubrir Quko Live"
     - title: "Quko Cloud"
-      text: "Análise profunda, comparación e colaboración para cada sesión rexistrada."
+      text: "Análise profunda, colaboración e un analista de datos con IA para cada sesión."
       image: "images/cloud.png"
       image_alt: "Gráficas de rendemento de Quko Cloud"
       link: "quko_cloud/"
       link_label: "Descubrir Quko Cloud"
 analytics:
-  eyebrow: "Moito máis ca un panel"
-  title: "Observa o rendemento que hai detrás do resultado"
-  text: "Estuda técnica, ritmo e consistencia con ferramentas deseñadas para o deporte."
+  eyebrow: "O teu analista de datos con IA"
+  title: "Pregúntalles aos teus datos sobre rendemento"
+  text: "O analista de datos con IA de QUKO traballa coas túas sesións autorizadas para explicar patróns, comparar esforzos e preparar informes. Tamén podes traballar desde ChatGPT, Claude ou o teu asistente de IA compatible preferido."
   image: "images/cloud.png"
   image_alt: "Análise de velocidade, avance por padexada e frecuencia"
   items:
-    - "Gráficas por padexada e análise numérica"
-    - "Comparativas, reprodución 3D e vídeo sincronizado"
-    - "Análise mecánica, informes e interpretación asistida por IA"
+    - "Formula preguntas en linguaxe natural e mantén cada resposta vinculada aos teus datos"
+    - "Compara sesións, deportistas e métricas sen reconstruír a análise"
+    - "Conecta datos autorizados de QUKO con asistentes de IA mediante ferramentas seguras"
   link: "quko_cloud/"
   link_label: "Descubrir Quko Cloud"
 capabilities:
@@ -85,14 +85,20 @@ capabilities:
       text: "Procesos seguros para analizar, explorar e compartir sesións complexas."
       icon: "fas fa-cloud"
     - title: "Intelixencia aplicada"
-      text: "Algoritmos deportivos, ferramentas de IA e integracións abertas."
+      text: "Un analista de datos con IA deportiva e conexións seguras coas túas ferramentas."
       icon: "fas fa-brain"
   link: "service/"
   link_label: "Explorar a nosa tecnoloxía"
+research:
+  eyebrow: "Para universidades e equipos de investigación"
+  title: "Incorpora QUKO ao teu próximo estudo"
+  text: "Utiliza os nosos dispositivos, datos estruturados e soporte técnico en investigación de campo ou laboratorio. Axudamos co deseño do estudo, o acceso aos datos e as integracións."
+  link: "contact/"
+  link_label: "Fala co noso equipo de investigación"
 integrations:
   eyebrow: "Conecta coa túa forma de traballar"
-  title: "Integra, exporta e segue avanzando"
-  items: ["Garmin", "Strava", "FIT", "TCX", "PDF", "JSON", "API REST", "Asistentes de IA"]
+  title: "Leva os teus datos ás ferramentas que xa utilizas"
+  items: ["Garmin", "Strava", "FIT", "TCX", "PDF", "JSON", "ChatGPT", "Claude", "Conexión segura con IA"]
 marketing_cta:
   eyebrow: "Descubre QUKO"
   title: "Leva mellores evidencias a cada sesión"

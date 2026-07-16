@@ -128,6 +128,21 @@
 </section>
 {{ end }}
 
+{{ with .Params.research }}
+<section class="quko-section-sm quko-research-band">
+  <div class="container">
+    <div class="quko-research-panel" data-reveal>
+      <div>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+        <p>{{ .text }}</p>
+      </div>
+      <a class="btn-quko" href="{{ .link | relLangURL }}">{{ .link_label }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
 {{ with .Params.integrations }}
 <section class="quko-section-sm quko-section-muted">
   <div class="container">

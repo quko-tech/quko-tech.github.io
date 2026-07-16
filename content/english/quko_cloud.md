@@ -6,7 +6,7 @@ draft: false
 hero:
   eyebrow: "Water-sports performance platform"
   title: "Turn every session into actionable insight"
-  text: "Quko Cloud processes Kosoku data into clear sport-specific analysis for athletes, coaches, researchers and analysts."
+  text: "Quko Cloud turns Kosoku data into sport-specific analysis and gives athletes, coaches and researchers an AI data analyst."
   primary_label: "Request a demo"
   primary_link: "contact/"
   secondary_label: "Access Quko Cloud"
@@ -18,8 +18,8 @@ metrics:
     label: "Technique and consistency analysis"
   - value: "3D + video"
     label: "Synchronized visual review"
-  - value: "AI"
-    label: "Assisted interpretation"
+  - value: "AI analyst"
+    label: "Questions, comparisons and reports"
   - value: "4 formats"
     label: "PDF, JSON, FIT and TCX export"
 workflow:
@@ -32,7 +32,7 @@ workflow:
     - title: "Refine"
       text: "Confirm the exact start and let sport-specific algorithms process the effort."
     - title: "Analyse"
-      text: "Explore, compare, share and export the views that answer your question."
+      text: "Explore the views directly or ask the AI data analyst to compare, explain and report."
 showcase:
   eyebrow: "Built for interpretation"
   title: "See how performance changes across the effort"
@@ -45,8 +45,8 @@ showcase:
     - "Private analysis, public benchmarks and multi-session comparison"
 features:
   eyebrow: "One place for deeper work"
-  title: "Analysis, collaboration and automation"
-  text: "Use the interface directly or connect QUKO data to the tools your team already uses."
+  title: "Analysis, collaboration and an AI data analyst"
+  text: "Use Quko Cloud directly, ask questions in natural language or connect authorised data to compatible assistants such as ChatGPT and Claude."
   items:
     - title: "Individual analysis"
       text: "Study speed, cadence, advance, motion and physiology in detail."
@@ -60,8 +60,8 @@ features:
     - title: "Mechanical analysis"
       text: "Connect force, impulse, velocity and paddle-side information."
       icon: "fas fa-cogs"
-    - title: "AI-assisted insight"
-      text: "Generate reports or connect authorized data to external AI assistants."
+    - title: "AI data analyst"
+      text: "Ask about technique, pacing or progress and receive answers grounded in your sessions."
       icon: "fas fa-brain"
     - title: "Share and export"
       text: "Create temporary links and export reports or structured data."
@@ -74,12 +74,12 @@ for_whom:
       text: "Review individual progress and make training decisions together."
     - title: "Clubs and federations"
       text: "Manage athlete access, sessions and institutional workflows."
-    - title: "Researchers and analysts"
-      text: "Use open exports, a REST API and secure AI connectivity."
+    - title: "Universities, researchers and analysts"
+      text: "Use structured exports, the REST API and MCP-compatible API access for authorised AI tools, with support from our team."
 integrations:
   eyebrow: "Your data, ready to move"
   title: "Connect analysis with the rest of your workflow"
-  items: ["Kosoku", "Quko Live", "Garmin", "Strava", "FIT", "TCX", "PDF", "JSON", "REST API", "AI assistants"]
+  items: ["Kosoku", "Quko Live", "Garmin", "Strava", "FIT", "TCX", "PDF", "JSON", "REST API", "ChatGPT", "Claude"]
 marketing_cta:
   eyebrow: "Explore Quko Cloud"
   title: "Give every session a second life"

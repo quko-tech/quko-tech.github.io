@@ -3738,10 +3738,16 @@ a {
   font-weight: 650; }
 
 .navigation .navbar-nav > li > a:hover,
-.navigation .navbar-nav > li > a:focus,
-.navigation .navbar-nav > li > a.current {
+.navigation .navbar-nav > li > a:focus {
   background: transparent;
   color: var(--quko-red); }
+
+.navigation .navbar-nav > li > a.current {
+  background: transparent;
+  color: var(--quko-ink-soft); }
+
+.navigation .navbar-nav > li.nav-home > a {
+  color: var(--quko-red) !important; }
 
 .navigation .dropdown-menu {
   padding: 10px;
@@ -3863,7 +3869,7 @@ a {
 .quko-hero-badge {
   position: static;
   max-width: none;
-  margin-top: 14px;
+  margin-top: 26px;
   padding: 18px 20px;
   border: 1px solid var(--quko-line);
   border-radius: 18px;
@@ -4067,6 +4073,32 @@ a {
   font-size: 13px;
   font-weight: 700; }
 
+.quko-research-band {
+  background: linear-gradient(135deg, rgba(104, 199, 220, 0.14), rgba(232, 56, 63, 0.06)); }
+
+.quko-research-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 48px;
+  padding: 48px 54px;
+  border: 1px solid rgba(49, 73, 85, 0.12);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 50px rgba(49, 73, 85, 0.08); }
+
+.quko-research-panel h2 {
+  max-width: 760px;
+  margin: 0 0 14px;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 760;
+  line-height: 1.08; }
+
+.quko-research-panel p {
+  max-width: 760px;
+  margin: 0;
+  font-size: 17px; }
+
 .quko-cta {
   position: relative;
   overflow: hidden;
@@ -4136,6 +4168,13 @@ a {
   box-shadow: var(--quko-shadow);
   object-fit: cover; }
 
+.quko-about-hero img {
+  height: 520px;
+  max-height: none;
+  padding: 22px;
+  background: var(--quko-white);
+  object-fit: contain; }
+
 .quko-page-title {
   padding: 76px 0 58px;
   background: radial-gradient(circle at 80% 20%, rgba(104, 199, 220, 0.18), transparent 28%), var(--quko-mist);
@@ -4195,7 +4234,8 @@ a {
 .contact-form .btn,
 .newsletter-form .btn {
   border-radius: 999px;
-  background: var(--quko-red); }
+  background: var(--quko-red) !important;
+  color: var(--quko-white) !important; }
 
 .post,
 .pricing-item,
@@ -4215,21 +4255,32 @@ a {
   gap: 60px;
   margin-bottom: 52px; }
 
+.quko-footer-brand {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column; }
+
 .quko-footer-brand img {
-  width: 150px;
+  width: 180px;
   margin: 0;
   filter: none; }
 
-.quko-footer-brand > a {
+.quko-footer-logo {
   display: inline-flex;
   margin-bottom: 22px;
-  padding: 12px 16px;
-  border-radius: 15px;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 6px;
   background: var(--quko-white); }
 
 .quko-footer-brand p {
   max-width: 390px;
+  margin: 0 0 24px;
   color: rgba(255, 255, 255, 0.58); }
+
+.quko-footer-brand .btn-quko {
+  background: var(--quko-red) !important;
+  color: var(--quko-white) !important; }
 
 .quko-footer-column h3 {
   margin: 0 0 18px;
@@ -4362,6 +4413,9 @@ a {
   .quko-hero h1,
   .quko-page-hero h1 {
     font-size: 46px; }
+  .quko-about-hero img {
+    height: auto;
+    max-height: none; }
   .quko-hero-grid,
   .quko-page-hero-grid {
     grid-template-columns: 1fr; }
@@ -4376,6 +4430,12 @@ a {
   .quko-audience-row,
   .quko-metric-strip {
     grid-template-columns: 1fr; }
+  .quko-research-panel {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 34px 28px; }
+  .quko-research-panel .btn-quko {
+    width: 100%; }
   .quko-audience,
   .quko-metric {
     border-right: 0;

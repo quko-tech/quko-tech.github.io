@@ -1,6 +1,7 @@
 [[main]]
 name = "Home"
 url = ""
+identifier = "nav-home"
 weight = 1
 
 [[main]]
@@ -53,6 +54,12 @@ weight = 4
   name = "FAQ"
   url = "faq/"
   weight = 3
+
+  [[main]]
+  parent = "more"
+  name = "Contact"
+  url = "contact/"
+  weight = 4
 
 [[main]]
 name = "Access Cloud"

@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ with .Params.hero }}
-<section class="quko-page-hero">
+<section class="quko-page-hero quko-about-hero">
   <div class="container"><div class="quko-page-hero-grid">
     <div data-reveal><span class="quko-eyebrow">{{ .eyebrow }}</span><h1>{{ .title }}</h1><p>{{ .text }}</p></div>
     <div data-reveal><img src="{{ .image | relURL }}" alt="{{ .image_alt }}"></div>

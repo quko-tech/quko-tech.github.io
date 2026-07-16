@@ -53,21 +53,21 @@ products:
       link: "quko_live/"
       link_label: "Explore Quko Live"
     - title: "Quko Cloud"
-      text: "Deep analysis, comparison and collaboration for every recorded session."
+      text: "Deep analysis, collaboration and an AI data analyst for every recorded session."
       image: "images/cloud.png"
       image_alt: "Quko Cloud performance charts"
       link: "quko_cloud/"
       link_label: "Explore Quko Cloud"
 analytics:
-  eyebrow: "More than a dashboard"
-  title: "See the performance behind the result"
-  text: "Study technique, pacing and consistency with views designed for sport, not generic data."
+  eyebrow: "Your AI data analyst"
+  title: "Ask your data a performance question"
+  text: "QUKO's AI data analyst works with your authorised sessions to explain patterns, compare efforts and prepare reports. You can also work through ChatGPT, Claude or your preferred compatible AI assistant."
   image: "images/cloud.png"
   image_alt: "Speed, distance per stroke and stroke frequency analysis"
   items:
-    - "Stroke-by-stroke charts and numerical analysis"
-    - "Session comparisons, 3D replay and synchronized video"
-    - "Mechanical analysis, reports and AI-assisted interpretation"
+    - "Ask questions in natural language and keep every answer tied to your data"
+    - "Compare sessions, athletes and metrics without rebuilding the analysis"
+    - "Connect authorised QUKO data to compatible AI assistants through secure tools"
   link: "quko_cloud/"
   link_label: "Discover Quko Cloud"
 capabilities:
@@ -85,14 +85,20 @@ capabilities:
       text: "Secure workflows for processing, exploring and sharing complex sessions."
       icon: "fas fa-cloud"
     - title: "Applied intelligence"
-      text: "Sport-specific algorithms, AI tools and open integrations for deeper work."
+      text: "A sport-specific AI data analyst and secure connections to the tools you already use."
       icon: "fas fa-brain"
   link: "service/"
   link_label: "Explore our technology"
+research:
+  eyebrow: "For universities and research teams"
+  title: "Bring QUKO into your next study"
+  text: "Use our devices, structured data and technical support in field or laboratory research. We help with study setup, data access and integrations."
+  link: "contact/"
+  link_label: "Talk to our research team"
 integrations:
   eyebrow: "Works with your workflow"
-  title: "Connect, export and keep moving"
-  items: ["Garmin", "Strava", "FIT", "TCX", "PDF", "JSON", "REST API", "AI assistants"]
+  title: "Bring QUKO data into the tools you already use"
+  items: ["Garmin", "Strava", "FIT", "TCX", "PDF", "JSON", "ChatGPT", "Claude", "Secure AI connection"]
 marketing_cta:
   eyebrow: "See QUKO in action"
   title: "Bring better evidence to every session"

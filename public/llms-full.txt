@@ -18,7 +18,9 @@ Quko Live monitors up to nine athletes from one Android interface. It provides l
 
 Quko Cloud guides users from Kosoku file upload and start selection to individual or comparative analysis. Available views include interactive charts, tables, configurable splits, boat movement, pacing, physiological context, 3D replay, synchronized video and mechanical analysis. Users can share temporary links and export PDF, JSON, FIT or TCX files.
 
-The platform includes an AI-assisted analyst and secure connectivity for supported external AI assistants. Researchers and developers can use structured exports and an authenticated REST API. Role-based workflows support athletes, coaches, institutions and independent users.
+The platform includes an AI data analyst that can answer questions, compare sessions and help prepare reports using authorised performance data. Users can also connect compatible assistants such as ChatGPT and Claude. Researchers and developers can use structured exports, an authenticated REST API and MCP-compatible API access for authorised AI tools. Role-based workflows support athletes, coaches, institutions and independent users.
+
+QUKO supports universities and research teams that want to use its devices in field or laboratory studies. Support can include study setup, data access, structured exports and technical integrations.
 
 ## Engineering capabilities
 

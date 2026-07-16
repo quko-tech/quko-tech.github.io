@@ -1,5 +1,5 @@
 ---
-title: "Solicita unha demo de QUKO"
+title: "Solicita unha demo"
 description: "Cóntanos os teus obxectivos de adestramento, investigación ou análise."
 bg_image: "images/feature-bg.jpg"
 layout: "contact"
