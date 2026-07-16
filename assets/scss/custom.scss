@@ -265,6 +265,16 @@ a {
   color: var(--quko-red) !important;
 }
 
+.navigation .navbar-nav > li.dropdown > .dropdown-toggle,
+.navigation .navbar-nav > li.dropdown.current > .dropdown-toggle {
+  color: var(--quko-ink-soft) !important;
+}
+
+.navigation .navbar-nav > li.dropdown > .dropdown-toggle:hover,
+.navigation .navbar-nav > li.dropdown > .dropdown-toggle:focus {
+  color: var(--quko-red) !important;
+}
+
 .navigation .dropdown-menu {
   padding: 10px;
   border: 1px solid var(--quko-line);
@@ -874,8 +884,9 @@ a {
 
 .quko-footer-brand {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 
 .quko-footer-brand img {
@@ -897,6 +908,7 @@ a {
   max-width: 390px;
   margin: 0 0 24px;
   color: rgba(255, 255, 255, .58);
+  text-align: center;
 }
 
 .quko-footer-brand .btn-quko {

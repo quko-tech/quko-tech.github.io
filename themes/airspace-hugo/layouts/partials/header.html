@@ -17,7 +17,7 @@
           {{ $pageURL := $currentPage.Permalink | absLangURL }}
           {{ $active := eq $menuURL $pageURL }}
           {{ if .HasChildren }}
-          <li class="nav-item dropdown{{ if $active }} current{{ end }}">
+          <li class="nav-item dropdown">
             <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="fas fa-angle-down" aria-hidden="true"></span></a>
             <ul class="dropdown-menu">
               {{ range .Children }}
