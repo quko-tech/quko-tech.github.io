@@ -1,11 +1,9 @@
 {
   "firmware_versions": [
     {
-      "version": 0.960,
-      "file": "https://quko.es/firmware/0.960/fw_kosoku_0.960_hwv5.bin",
-      "hw_version": 5,
-      "update_channel": "debug",
-      "group": "Demo"
+      "version": 0.989,
+      "file": "https://quko.es/firmware/0.989/fw_kosoku_0.989_hwv5.bin",
+      "hw_version": 6
     }
   ],
   "html_versions": [
