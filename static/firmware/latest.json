@@ -1,9 +1,16 @@
 {
   "firmware_versions": [
     {
-      "version": 0.989,
-      "file": "https://quko.es/firmware/0.989/fw_kosoku_0.989_hwv5.bin",
-      "hw_version": 6
+      "version": 0.990,
+      "file": "https://quko.es/firmware/0.990/fw_kosoku_0.990_hwv4.bin",
+      "update_channel": "production",
+      "hw_version": 4
+    },
+    {
+      "version": 0.990,
+      "file": "https://quko.es/firmware/0.990/fw_kosoku_0.990_hwv5.bin",
+      "update_channel": "production",
+      "hw_version": 5
     }
   ],
   "html_versions": [
