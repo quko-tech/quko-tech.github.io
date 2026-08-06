@@ -151,7 +151,7 @@ link = "https://www.linkedin.com/in/p-adominguez"
 #
 # PLACEHOLDER: replace with the numeric store id from the Ecwid control panel
 # (Settings → General → Store ID). It is not the n2097344 websitebuilder
-# subdomain, and it is not a secret — it ships in the page.
+# subdomain, and it is not a secret, it ships in the page.
 [shop]
 ecwid_store_id = "140422005"
 # Products per row in the grid, and whether to show the category sidebar.

@@ -66,6 +66,20 @@ legal:
                                                     cloud.quko.es, where the price is determined from the billing country of the payment method.
                                                     </p>
 
+                                                    <h5>Purchases in the shop</h5>
+                                                    <p>
+                                                    Orders placed in the QUKO shop are processed with <strong>Ecwid</strong> (Lightspeed Commerce), the platform
+                                                    that runs the storefront and checkout, acting as a processor on our behalf. The data processed is what an order
+                                                    requires: name, email address, billing and shipping address, the items ordered and the amount. Payment itself is
+                                                    handled by the payment provider shown at checkout; QUKO TECH, S.L. never receives or stores full card details.
+                                                    </p>
+                                                    <p>
+                                                    Order data is retained for as long as commercial and tax law requires. Where an order includes a Quko Cloud
+                                                    licence, the licence key and the buyer's email address are also recorded in Quko Cloud so the purchase can be
+                                                    supported and the licence traced. See the
+                                                    <a href='../sales_terms/'>Terms of sale</a> for the commercial conditions.
+                                                    </p>
+
                                                     <h5>What are your rights?</h5>
                                                     <p>The rights of the USER are:</p>
                                                     <ul style='font-size: 16px !important; line-height: 1.5 !important; padding-left: 40px !important; margin: 16px 0 !important; list-style: disc outside !important;'>
@@ -76,7 +90,7 @@ legal:
 
                                                     <p>
                                                     <strong>Contact information for exercising rights:</strong><br>
-                                                    QUKO TECH, S.L. — C/Rúa Canabés de Abaixo, 5 4ºC - 36940 Pontevedra (Pontevedra).<br>
+                                                    QUKO TECH, S.L. C/Rúa Canabés de Abaixo, 5 4ºC - 36940 Pontevedra (Pontevedra).<br>
                                                     E-mail: <a href='mailto:contacto@quko.es'>contacto@quko.es</a>
                                                     </p>
 
@@ -107,7 +121,7 @@ legal:
                                                     USERS, and has communicated the appropriate information for them to be able to exercise their rights and freedoms.
                                                     </p>
                                                     <p>
-                                                    For more information about privacy safeguards, you can contact the CONTROLLER via QUKO TECH, S.L. — C/Rúa Canabés de Abaixo, 5 4ºC - 36940 Pontevedra (Pontevedra).<br>
+                                                    For more information about privacy safeguards, you can contact the CONTROLLER via QUKO TECH, S.L. C/Rúa Canabés de Abaixo, 5 4ºC - 36940 Pontevedra (Pontevedra).<br>
                                                     E-mail: <a href='mailto:contacto@quko.es'>contacto@quko.es</a>
                                                     </p>
   

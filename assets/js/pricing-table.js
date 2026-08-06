@@ -5,7 +5,7 @@
  * customer actually pays is decided server-side at cloud.quko.es from the
  * billing country on their payment method, and re-checked against the settled
  * transaction. So a wrong guess here is a cosmetic problem, never a revenue
- * one — which is why it is safe to fall back to a geolocation API at all.
+ * one, which is why it is safe to fall back to a geolocation API at all.
  *
  * Data: /data/countries-pricing.json, generated from the authoritative table in
  * Quko-Cloud. Never hand-edited.
@@ -35,9 +35,12 @@
     return entry ? entry.band : data.default_band;
   }
 
+  /* Symbol after the amount, the way it is written in Spain and across most of
+     the euro area. The space is non-breaking so the figure and its symbol can
+     never be split across two lines. */
   function money(amount) {
     var sym = (data && data.currency && data.currency.symbol) || '€';
-    return sym + amount;
+    return amount + ' ' + sym;
   }
 
   function periodLabel() {
@@ -51,32 +54,18 @@
     var prices = band && data.bands[band] && data.bands[band].basic;
     var known = !!(country && data.countries[country]);
 
-    // Fixed periods are sold in the shop, which cannot price by country, so
-    // they always show the high band — NOT the visitor's. Showing a banded
-    // figure here would quote a price the shop will not honour. Rendered
-    // before the country check because they do not depend on it.
-    var shopPrices = data.bands.high && data.bands.high.basic;
-    root.querySelectorAll('[data-fixed-sku]').forEach(function (link) {
-      var sku = link.getAttribute('data-fixed-sku');
-      var key = sku.replace('basic_', '');             // basic_code_6m -> code_6m
-      var em = link.querySelector('[data-fixed-price]');
-      if (em && shopPrices && shopPrices[key] !== undefined) {
-        em.textContent = money(shopPrices[key]);
-      }
-    });
-
     root.querySelectorAll('[data-plan]').forEach(function (card) {
       var priceEl = card.querySelector('[data-price]');
       if (!priceEl || !prices) return;
 
       if (!known) {
         // Don't show a number we can't stand behind; ask instead.
-        priceEl.textContent = '—';
+        priceEl.textContent = '-';
         card.querySelectorAll('[data-period-label]').forEach(function (el) {
           el.textContent = '';
         });
         var note = card.querySelector('[data-vat-note]');
-        if (note) note.hidden = true;
+        if (note) note.classList.add('is-blank');
         return;
       }
 
@@ -84,7 +73,7 @@
       var label = card.querySelector('[data-period-label]');
       if (label) label.textContent = '/ ' + periodLabel();
       var vat = card.querySelector('[data-vat-note]');
-      if (vat) vat.hidden = false;
+      if (vat) vat.classList.remove('is-blank');
 
       var cta = card.querySelector('[data-cta]');
       if (cta) {
@@ -152,6 +141,54 @@
     });
   }
 
+  /* Country confirmation modal.
+     Only ever shown when nothing is stored: once a visitor has told us where
+     they are, or explicitly declined to, asking again is noise. */
+  var modal = document.getElementById('quko-country-modal');
+  var modalSelect = modal && modal.querySelector('[data-country-modal-select]');
+  var modalFlag = modal && modal.querySelector('[data-country-modal-flag]');
+
+  function closeModal(remember) {
+    if (!modal) return;
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if (remember) {
+      try { localStorage.setItem(STORAGE_KEY + '.asked', '1'); } catch (e) { /* ignore */ }
+    }
+  }
+
+  function openModal(guess) {
+    if (!modal || !modalSelect) return;
+    // Mirror the main selector's options rather than building them twice.
+    modalSelect.innerHTML = select ? select.innerHTML : '';
+    if (guess && data.countries[guess]) {
+      modalSelect.value = guess;
+      if (modalFlag) modalFlag.textContent = data.countries[guess].flag;
+    }
+    modalSelect.addEventListener('change', function () {
+      var c = data.countries[modalSelect.value];
+      if (modalFlag) modalFlag.textContent = c ? c.flag : '🌍';
+    });
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  if (modal) {
+    modal.querySelectorAll('[data-country-dismiss]').forEach(function (el) {
+      el.addEventListener('click', function () { closeModal(true); });
+    });
+    var confirmBtn = modal.querySelector('[data-country-confirm]');
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', function () {
+        if (modalSelect && modalSelect.value) setCountry(modalSelect.value, true);
+        closeModal(true);
+      });
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !modal.hidden) closeModal(true);
+    });
+  }
+
   fetch('/data/countries-pricing.json')
     .then(function (r) { return r.json(); })
     .then(function (json) {
@@ -161,8 +198,11 @@
         disclaimerEl.textContent = json.disclaimer;
       }
 
-      var stored = null;
-      try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) { /* ignore */ }
+      var stored = null, asked = null;
+      try {
+        stored = localStorage.getItem(STORAGE_KEY);
+        asked = localStorage.getItem(STORAGE_KEY + '.asked');
+      } catch (e) { /* ignore */ }
       if (stored && json.countries[stored]) {
         setCountry(stored, false);
         return;
@@ -170,6 +210,8 @@
       render();
       return guessCountry().then(function (code) {
         if (code && json.countries[code]) setCountry(code, false);
+        // Confirm the guess, or ask outright if geolocation gave us nothing.
+        if (!asked) setTimeout(function () { openModal(code); }, 600);
       });
     })
     .catch(function () {

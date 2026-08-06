@@ -68,33 +68,23 @@ pricing:
   country_label: "País"
   country_placeholder: "Selecciona tu país…"
   vat_note: "Sin IVA. El precio final se confirma en el pago."
-  onetime_label: "O compra un periodo fijo, sin suscripción:"
+  onetime_note: "O compra un periodo fijo, sin suscripción, en nuestra tienda"
+  country_modal:
+    title: "¿Desde dónde nos visitas?"
+    text: "Las suscripciones de Quko Cloud tienen precio por país. Confirma el tuyo para que las cifras de abajo sean las que te corresponden."
+    confirm_label: "Confirmar"
+    later_label: "Lo elijo luego"
+    close_label: "Cerrar"
   cloud_base: "https://cloud.quko.es"
   # Our own page: the Ecwid storefront is embedded into the site.
   store_base: "shop/"
   plans:
     - id: "basic"
-      name: "Basic"
-      featured: true
-      badge: "El más elegido"
+      name: "Standard"
       text: "Acceso completo a la plataforma para un deportista."
       sku_monthly: "basic_sub_monthly"
       sku_yearly: "basic_sub_yearly"
       button_label: "Empezar"
-      features:
-        - "Subidas de sesiones ilimitadas"
-        - "Visualización 3D y comparación"
-        - "Analista de datos con IA"
-        - "Cancela cuando quieras"
-      onetime:
-        - sku: "basic_code_1m"
-          label: "1 mes"
-        - sku: "basic_code_4m"
-          label: "4 meses"
-        - sku: "basic_code_6m"
-          label: "6 meses"
-        - sku: "basic_code_12m"
-          label: "12 meses"
     - id: "alto_nivel"
       name: "Alto Nivel"
       contact: true
@@ -102,11 +92,7 @@ pricing:
       text: "Para federaciones, centros de alto rendimiento y programas de élite."
       button_label: "Solicitar propuesta"
       button_link: "contact/"
-      features:
-        - "Todo lo de Basic"
-        - "Motores reales de gemelo digital y QukoSim"
-        - "Acceso a la API REST"
-        - "Soporte de despliegue e implantación"
+
   disclaimer: "Precios orientativos, sin IVA. El precio final y los impuestos aplicables se confirman en el proceso de pago según el país de facturación de tu medio de pago. Las suscripciones de Quko Cloud son personales e intransferibles, una por deportista. Las cuentas de entrenador y cuerpo técnico son gratuitas en cantidades limitadas."
 marketing_cta:
   eyebrow: "Descubre Quko Cloud"

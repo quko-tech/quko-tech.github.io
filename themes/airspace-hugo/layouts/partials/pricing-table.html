@@ -3,7 +3,7 @@
 
   Prices shown here are INDICATIVE ONLY. The figures come from a static JSON
   file and the country from a geolocation guess, so neither can be trusted with
-  money — a VPN changes both. What a customer is actually charged is decided
+  money, a VPN changes both. What a customer is actually charged is decided
   server-side at cloud.quko.es from the billing country on their payment method.
   That is why every CTA links out rather than posting anything.
 
@@ -29,6 +29,53 @@
       {{ with .text }}<p>{{ . }}</p>{{ end }}
     </div>
 
+    {{/* Feature comparison. Only rendered where the page supplies it, so it
+         appears on /pricing/ without bloating the home page.
+
+         The three states mirror how the platform actually gates things
+         (apps/authentication/access_policy.py): Standard holds the route
+         capabilities, so it opens the advanced pages, but `accesoAltoNivel`
+         decides whether the real engine runs. Calling that "preview" rather
+         than a tick or a cross is the only honest option: a tick would imply
+         full analysis, a cross would imply the page is locked. */}}
+    {{ with .comparison }}
+    {{ if .enable }}
+    <div class="quko-compare" data-reveal>
+      {{ with .title }}<h3 class="quko-compare-title">{{ . }}</h3>{{ end }}
+      <div class="quko-compare-scroll">
+        <table class="quko-compare-table">
+          <thead>
+            <tr>
+              <th scope="col">{{ .col_feature | default "" }}</th>
+              <th scope="col">{{ .col_standard }}</th>
+              <th scope="col" class="is-highlight">{{ .col_high }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range .rows }}
+            <tr>
+              <th scope="row">{{ .name }}</th>
+              {{ range (slice .standard .high) }}
+              <td>
+                {{ if eq . "yes" }}
+                  <span class="quko-compare-yes" role="img" aria-label="Included"><i class="fas fa-check"></i></span>
+                {{ else if eq . "no" }}
+                  <span class="quko-compare-no" role="img" aria-label="Not included">&#8211;</span>
+                {{ else }}
+                  <span class="quko-compare-partial">{{ . }}</span>
+                {{ end }}
+              </td>
+              {{ end }}
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+      {{ with .legend }}<p class="quko-compare-legend">{{ . }}</p>{{ end }}
+    </div>
+    {{ end }}
+    {{ end }}
+
     <div class="quko-pricing-controls" data-reveal>
       <div class="quko-pricing-toggle" role="group" aria-label="{{ i18n "billing_period" | default "Billing period" }}">
         <button type="button" class="is-active" data-period="sub_monthly">
@@ -49,28 +96,24 @@
 
     <div class="quko-grid-{{ len .plans }} quko-pricing-grid">
       {{ range .plans }}
-      <article class="quko-card quko-pricing-card{{ if .featured }} is-featured{{ end }}"
+      <article class="quko-card quko-pricing-card"
                data-plan="{{ .id }}" data-reveal>
-        {{ if .badge }}<span class="quko-pricing-badge">{{ .badge }}</span>{{ end }}
         <h3>{{ .name }}</h3>
         {{ with .text }}<p class="quko-pricing-blurb">{{ . }}</p>{{ end }}
 
         {{ if .contact }}
           <div class="quko-pricing-price"><span class="quko-pricing-contact">{{ .price_label | default "Talk to us" }}</span></div>
+          {{/* Empty stand-in for the VAT line the priced card carries, so the
+               call to action sits at the same height in both cards. */}}
+          <p class="quko-pricing-note" aria-hidden="true"></p>
         {{ else }}
           <div class="quko-pricing-price">
-            <span data-price>&mdash;</span>
+            <span data-price>-</span>
             <span class="quko-pricing-period" data-period-label></span>
           </div>
-          <p class="quko-pricing-note" data-vat-note hidden>
+          <p class="quko-pricing-note is-blank" data-vat-note>
             {{ $.Params.pricing.vat_note | default "Excluding VAT. Final price confirmed at checkout." }}
           </p>
-        {{ end }}
-
-        {{ with .features }}
-        <ul class="quko-check-list">
-          {{ range . }}<li><i class="fas fa-check-circle"></i><span>{{ . }}</span></li>{{ end }}
-        </ul>
         {{ end }}
 
         {{ if .contact }}
@@ -83,26 +126,14 @@
             {{ .button_label | default "Get started" }}
           </a>
 
-          {{ with .onetime }}
-          <div class="quko-pricing-onetime">
-            <span>{{ $.Params.pricing.onetime_label | default "Or buy a fixed period" }}</span>
-            <div class="quko-pricing-onetime-links">
-              {{ range . }}
-              {{/* Fixed periods are sold in the shop, not through the Cloud
-                   checkout: they are one-off codes and the shop is where we
-                   are the seller. Their price is the single high-band figure,
-                   not the visitor's band — the shop cannot price by country.
-
-                   NOT data-onetime: Go's html/template strips the "data-"
-                   prefix and then treats any attribute beginning with "on" as
-                   a JS event handler, which JSON-encodes the value and ships
-                   &#34;basic_code_1m&#34; instead of the bare SKU. */}}
-              <a href="{{ .url | default $store }}" data-fixed-sku="{{ .sku }}">
-                {{ .label }} <em data-fixed-price></em>
-              </a>
-              {{ end }}
-            </div>
-          </div>
+          {{/* One line, not a price list. The fixed periods are sold in the
+               shop at a single worldwide price, so listing them beside a
+               country-adjusted subscription invited a comparison that flatters
+               neither. Anyone who wants them can follow the link. */}}
+          {{ with $.Params.pricing.onetime_note }}
+          <p class="quko-pricing-onetime">
+            <a href="{{ $store }}">{{ . }}</a>
+          </p>
           {{ end }}
         {{ end }}
       </article>
@@ -114,6 +145,34 @@
     </p>
   </div>
 </section>
+
+{{/* Country confirmation, restored from the original pricing page.
+
+     Geolocation is a guess, and prices differ enough between bands that a wrong
+     guess is worth catching before someone reads a number. Asking once, with
+     the guess pre-selected, is quicker for the visitor than noticing later that
+     the figures were for the wrong country. The inline selector stays for
+     changing it afterwards, and this is skipped entirely once a choice is
+     stored. */}}
+{{ with .country_modal }}
+<div class="quko-modal" id="quko-country-modal" hidden role="dialog" aria-modal="true"
+     aria-labelledby="quko-country-modal-title">
+  <div class="quko-modal-backdrop" data-country-dismiss></div>
+  <div class="quko-modal-box quko-country-box">
+    <button type="button" class="quko-modal-close" data-country-dismiss
+            aria-label="{{ .close_label | default "Close" }}">&times;</button>
+    <span class="quko-country-flag" data-country-modal-flag>&#127758;</span>
+    <h3 id="quko-country-modal-title">{{ .title }}</h3>
+    <p>{{ .text }}</p>
+    <select class="quko-country-dropdown" data-country-modal-select
+            aria-label="{{ .title }}"></select>
+    <div class="quko-modal-actions">
+      <button type="button" class="btn-quko" data-country-confirm>{{ .confirm_label }}</button>
+      <button type="button" class="btn-quko-outline" data-country-dismiss>{{ .later_label }}</button>
+    </div>
+  </div>
+</div>
+{{ end }}
 
 {{ $js := resources.Get "js/pricing-table.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>

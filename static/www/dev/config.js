@@ -424,8 +424,8 @@ function pollBleResults(){
             } else {
                 const n = devices.length;
                 setBleStatus(n
-                    ? `Scan finished — ${n} device${n > 1 ? 's' : ''} found.`
-                    : 'Scan finished — no compatible devices found.',
+                    ? `Scan finished: ${n} device${n > 1 ? 's' : ''} found.`
+                    : 'Scan finished: no compatible devices found.',
                     n ? 'done' : 'error');
             }
         } catch(e){

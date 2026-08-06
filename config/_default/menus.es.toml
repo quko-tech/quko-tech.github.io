@@ -91,3 +91,7 @@ weight = 5
 name = "Aviso legal"
 url = "legal_notice/"
 weight = 6
+[[footer]]
+name = "Condiciones de venta"
+url = "sales_terms/"
+weight = 7

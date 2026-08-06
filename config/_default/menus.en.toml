@@ -103,3 +103,7 @@ weight = 5
 name = "Legal notice"
 url = "legal_notice/"
 weight = 6
+[[footer]]
+name = "Terms of sale"
+url = "sales_terms/"
+weight = 7

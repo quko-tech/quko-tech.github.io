@@ -1206,10 +1206,10 @@ a {
 .quko-pricing-controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 20px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 40px;
 }
 
 .quko-pricing-toggle {
@@ -1221,13 +1221,13 @@ a {
 }
 
 .quko-pricing-toggle button {
-  padding: .5rem 1.35rem;
+  padding: 8px 22px;
   border: 0;
   border-radius: 999px;
   background: transparent;
   color: var(--quko-muted);
   font-weight: 600;
-  font-size: .95rem;
+  font-size: 15px;
   cursor: pointer;
   transition: background .2s ease, color .2s ease;
 }
@@ -1241,15 +1241,15 @@ a {
 .quko-pricing-country {
   display: inline-flex;
   align-items: center;
-  gap: .6rem;
+  gap: 10px;
   margin: 0;
   color: var(--quko-muted);
-  font-size: .95rem;
+  font-size: 15px;
 }
 
 .quko-pricing-country select {
-  padding: .55rem .9rem;
-  max-width: 16rem;
+  padding: 9px 14px;
+  max-width: 256px;
   border: 1px solid var(--quko-line);
   border-radius: 12px;
   background: var(--quko-white);
@@ -1257,105 +1257,103 @@ a {
   font: inherit;
 }
 
+/* Both plans carry the same emphasis: they are two routes to the same product,
+   not a recommendation and a runner-up. */
 .quko-pricing-card {
   display: flex;
   flex-direction: column;
   position: relative;
-}
-
-.quko-pricing-card.is-featured {
   border-color: var(--quko-red);
   box-shadow: var(--quko-shadow);
-}
-
-.quko-pricing-badge {
-  position: absolute;
-  top: -.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: .25rem .9rem;
-  border-radius: 999px;
-  background: var(--quko-red);
-  color: var(--quko-white);
-  font-size: .75rem;
-  font-weight: 700;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  white-space: nowrap;
 }
 
 .quko-pricing-price {
   display: flex;
   align-items: baseline;
-  gap: .4rem;
-  margin: 1rem 0 .25rem;
-  font-size: 2.6rem;
+  gap: 6px;
+  margin: 16px 0 4px;
+  font-size: 42px;
   font-weight: 700;
   line-height: 1;
   color: var(--quko-ink);
 }
 
 .quko-pricing-period {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 500;
   color: var(--quko-muted);
 }
 
+/* This line stands in for the 42px figure in the card opposite, and at 26px its
+   baseline sits well above it. Nudge it down so the two read as the same row. */
 .quko-pricing-contact {
-  font-size: 1.6rem;
+  font-size: 26px;
   color: var(--quko-muted);
+  padding-top: 12px;
 }
 
-.quko-pricing-note,
 .quko-pricing-blurb {
   color: var(--quko-muted);
-  font-size: .9rem;
+  font-size: 14px;
 }
 
-.quko-pricing-card .quko-check-list {
-  flex: 1 1 auto;
+.quko-pricing-note {
+  color: var(--quko-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Deliberately NOT margin-top:auto. The grid stretches both cards to the same
+   height, so pushing the button to the foot of the emptier card opened a void
+   in the middle of it and left the two buttons at different heights. Letting
+   the content flow from the top keeps the buttons level; the spare height
+   simply falls below High Level's button, inside its border, which reads as
+   breathing room rather than a hole. */
+.quko-pricing-card > .btn-quko,
+.quko-pricing-card > .btn-quko-outline {
+  margin-top: 20px;
+}
+
+/* Reserve the price row so the feature lists start level even though one plan
+   shows a figure and a VAT line while the other just says "talk to us". */
+.quko-pricing-price {
+  min-height: 52px;
+}
+
+/* One line of this element's own text. The contact card carries an empty
+   stand-in for the VAT note, and a floor shorter than a real line would leave
+   the two cards' buttons on different lines. */
+.quko-pricing-note {
+  min-height: 18px;
+}
+
+.quko-pricing-note.is-blank {
+  visibility: hidden;
 }
 
 .quko-pricing-onetime {
-  margin-top: 1rem;
-  padding-top: 1rem;
+  margin: 16px 0 0;
+  padding-top: 16px;
   border-top: 1px solid var(--quko-line);
-  font-size: .85rem;
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--quko-muted);
 }
 
-.quko-pricing-onetime-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-  margin-top: .5rem;
-}
-
-.quko-pricing-onetime-links a {
-  padding: .3rem .7rem;
-  border: 1px solid var(--quko-line);
-  border-radius: 999px;
-  color: var(--quko-ink);
-  font-weight: 600;
-  text-decoration: none;
-  transition: border-color .2s ease;
-}
-
-.quko-pricing-onetime-links a:hover {
-  border-color: var(--quko-red);
-}
-
-.quko-pricing-onetime-links em {
-  font-style: normal;
+.quko-pricing-onetime a {
   color: var(--quko-muted);
-  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .2s ease;
 }
+
+.quko-pricing-onetime a:hover { color: var(--quko-red-dark); }
 
 .quko-pricing-disclaimer {
-  max-width: 46rem;
-  margin: 2.5rem auto 0;
+  max-width: 736px;
+  margin: 40px auto 0;
   color: var(--quko-muted);
-  font-size: .82rem;
+  font-size: 13px;
   line-height: 1.6;
   text-align: center;
 }
@@ -1386,7 +1384,7 @@ a {
 }
 
 .quko-shop-placeholder {
-  padding: 3rem 2rem;
+  padding: 48px 32px;
   border: 1px dashed var(--quko-line);
   border-radius: var(--quko-radius);
   background: var(--quko-mist);
@@ -1395,20 +1393,20 @@ a {
 }
 
 .quko-shop-placeholder h3 {
-  margin-bottom: .5rem;
+  margin-bottom: 8px;
   color: var(--quko-ink);
 }
 
 .quko-shop-notes {
-  max-width: 46rem;
+  max-width: 736px;
   margin: 0 auto;
   color: var(--quko-muted);
-  font-size: .9rem;
+  font-size: 14px;
   line-height: 1.7;
 }
 
 .quko-shop-notes p + p {
-  margin-top: .75rem;
+  margin-top: 12px;
 }
 
 .quko-shop-notes a {
@@ -1420,4 +1418,330 @@ a {
 .quko-shop .ec-size,
 .quko-shop .ec-store {
   font-family: inherit;
+}
+
+.quko-shop-legal {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--quko-line);
+  font-size: 13px;
+}
+
+
+/* ── "Two ways to get Quko Cloud" ───────────────────────────────────────────
+   Shares the panel language of .quko-research-panel so it reads as part of the
+   site rather than as an alert bolted onto it. Rendered twice from one source:
+   as a band above the product grid, and inside the first-visit modal. */
+
+.quko-plan-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  grid-template-areas: "copy options" "cta options";
+  align-items: start;
+  gap: 20px 56px;
+  padding: 48px 54px;
+  border: 1px solid rgba(49, 73, 85, .12);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: 0 18px 50px rgba(49, 73, 85, .08);
+}
+
+.quko-plan-panel-copy { grid-area: copy; }
+.quko-plan-panel-cta  { grid-area: cta; }
+.quko-plan-panel .quko-plan-options { grid-area: options; }
+
+.quko-plan-panel h2 {
+  margin: 0 0 14px;
+  font-size: clamp(26px, 2.6vw, 36px);
+  font-weight: 760;
+  line-height: 1.15;
+}
+
+.quko-plan-panel p {
+  margin: 0;
+  color: var(--quko-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.quko-plan-options {
+  display: grid;
+  gap: 14px;
+}
+
+.quko-plan-option {
+  padding: 18px 20px;
+  border: 1px solid var(--quko-line);
+  border-radius: 16px;
+  background: var(--quko-white);
+}
+
+.quko-plan-option.is-featured {
+  border-color: var(--quko-red);
+  box-shadow: 0 6px 22px rgba(232, 56, 63, .10);
+}
+
+.quko-plan-option-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.quko-plan-option strong {
+  color: var(--quko-ink);
+  font-size: 16px;
+}
+
+.quko-plan-option p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.quko-plan-badge {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--quko-red);
+  color: var(--quko-white);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .quko-plan-panel {
+    grid-template-columns: 1fr;
+    grid-template-areas: "copy" "options" "cta";
+    gap: 24px;
+    padding: 32px 26px;
+  }
+}
+
+/* ── First-visit modal ─────────────────────────────────────────────────────── */
+
+.quko-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.quko-modal[hidden] { display: none; }
+
+.quko-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 21, 28, .55);
+  backdrop-filter: blur(3px);
+  animation: quko-fade .25s ease;
+}
+
+.quko-modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 40px 44px;
+  border-radius: 28px;
+  background: var(--quko-white);
+  box-shadow: 0 30px 80px rgba(18, 21, 28, .28);
+  animation: quko-rise .3s cubic-bezier(.2, .8, .3, 1);
+}
+
+.quko-modal-box h3 {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 760;
+  line-height: 1.2;
+}
+
+.quko-modal-box > p {
+  margin: 0 0 22px;
+  color: var(--quko-muted);
+  line-height: 1.7;
+}
+
+.quko-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--quko-muted);
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color .2s ease;
+}
+
+.quko-modal-close:hover { color: var(--quko-ink); }
+
+.quko-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+@keyframes quko-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes quko-rise {
+  from { opacity: 0; transform: translateY(16px) scale(.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 575px) {
+  .quko-modal-box { padding: 30px 22px; }
+  .quko-modal-actions .btn-quko,
+  .quko-modal-actions .btn-quko-outline { width: 100%; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quko-modal-backdrop, .quko-modal-box { animation: none; }
+}
+
+/* The theme defines .quko-grid-3 and .quko-grid-4 but NOT .quko-grid-2, so a
+   two-plan pricing block was getting no `display: grid` at all, which is why a
+   `gap` on it did nothing. Declare the grid here rather than adding a
+   .quko-grid-2 to the theme, since the pricing block wants a wider gutter than
+   the theme's 24px anyway: two plans are a choice to weigh up, not a list. */
+.quko-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px;
+  align-items: start;
+}
+
+@media (max-width: 1199px) { .quko-pricing-grid { gap: 40px; } }
+
+@media (max-width: 767px) {
+  .quko-pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* ── Plan comparison table ────────────────────────────────────────────────── */
+
+.quko-compare {
+  margin: 0 auto 56px;
+  max-width: 900px;
+}
+
+.quko-compare-title {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Tables are the one thing that must never widen the page on a phone. */
+.quko-compare-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--quko-line);
+  border-radius: var(--quko-radius);
+  background: var(--quko-white);
+}
+
+.quko-compare-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.quko-compare-table th,
+.quko-compare-table td {
+  padding: 14px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--quko-line);
+}
+
+.quko-compare-table thead th {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--quko-muted);
+  background: var(--quko-mist);
+}
+
+.quko-compare-table thead th.is-highlight {
+  color: var(--quko-red-dark);
+}
+
+.quko-compare-table tbody th {
+  font-weight: 500;
+  color: var(--quko-ink);
+}
+
+/* The two plan columns are centred, so their headers must be too, or the
+   labels sit left of the ticks they describe. */
+.quko-compare-table td,
+.quko-compare-table thead th:nth-child(n + 2) {
+  width: 22%;
+  text-align: center;
+}
+
+.quko-compare-table tbody tr:last-child th,
+.quko-compare-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.quko-compare-yes { color: var(--quko-red); font-size: 15px; }
+.quko-compare-no  { color: var(--quko-line); font-size: 18px; }
+
+.quko-compare-partial {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--quko-mist);
+  color: var(--quko-muted);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.quko-compare-legend {
+  margin-top: 14px;
+  color: var(--quko-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ── Country confirmation modal ───────────────────────────────────────────── */
+
+.quko-country-box {
+  max-width: 460px;
+  text-align: center;
+}
+
+.quko-country-flag {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 44px;
+  line-height: 1;
+}
+
+.quko-country-dropdown {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 14px;
+  border: 1px solid var(--quko-line);
+  border-radius: 12px;
+  background: var(--quko-white);
+  color: var(--quko-ink);
+  font: inherit;
+  font-size: 15px;
+}
+
+.quko-country-box .quko-modal-actions {
+  justify-content: center;
 }

@@ -68,6 +68,22 @@ legal:
                                                     cloud.quko.es, onde o prezo se determina segundo o país de facturación do medio de pagamento.
                                                     </p>
 
+                                                    <h5>Compras na tenda</h5>
+                                                    <p>
+                                                    Os pedidos realizados na tenda de QUKO procésanse con <strong>Ecwid</strong> (Lightspeed Commerce), a
+                                                    plataforma que xestiona o escaparate e o proceso de pagamento, actuando como encargada do tratamento por conta
+                                                    do RESPONSABLE. Trátanse os datos que un pedido require: nome, enderezo de correo electrónico, enderezo de
+                                                    facturación e de envío, os artigos pedidos e o importe. O pagamento xestiónao o provedor de pagamentos que se
+                                                    indique no proceso de compra; QUKO TECH, S.L. non recibe nin almacena en ningún momento os datos completos da
+                                                    tarxeta.
+                                                    </p>
+                                                    <p>
+                                                    Os datos de pedido consérvanse durante o tempo esixido pola normativa mercantil e fiscal. Cando un pedido inclúa
+                                                    unha licenza de Quko Cloud, a clave de licenza e o enderezo de correo do comprador rexístranse tamén en Quko
+                                                    Cloud para poder dar soporte á compra e trazar a licenza. Consulta as
+                                                    <a href='../sales_terms/'>Condicións de venda</a> para as condicións comerciais.
+                                                    </p>
+
                                                     <h5>¿Cuáles son tus derechos?</h5>
                                                     <p>Los derechos que asisten al USUARIO son:</p>
                                                     <ul style='font-size: 16px !important; line-height: 1.5 !important; padding-left: 40px !important; margin: 16px 0 !important; list-style: disc outside !important;'>
@@ -78,7 +94,7 @@ legal:
 
                                                     <p>
                                                     <strong>Datos de contacto para ejercer sus derechos:</strong><br>
-                                                    QUKO TECH, S.L. — C/Rúa Canabés de Abaixo, 5 4ºC - 36940 Pontevedra (Pontevedra).<br>
+                                                    QUKO TECH, S.L. C/Rúa Canabés de Abaixo, 5 4ºC - 36940 Pontevedra (Pontevedra).<br>
                                                     E-mail: <a href='mailto:contacto@quko.es'>contacto@quko.es</a>
                                                     </p>
 
@@ -111,7 +127,7 @@ legal:
                                                     </p>
                                                     <p>
                                                     Para más información sobre las garantías de privacidad, puedes dirigirte al RESPONSABLE a través de QUKO TECH,
-                                                    S.L. — C/Rúa Canabés de Abaixo, 5 4ºC - 36940 Pontevedra (Pontevedra).<br>
+                                                    S.L. C/Rúa Canabés de Abaixo, 5 4ºC - 36940 Pontevedra (Pontevedra).<br>
                                                     E-mail: <a href='mailto:contacto@quko.es'>contacto@quko.es</a>
                                                     </p>
   

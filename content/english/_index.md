@@ -109,33 +109,23 @@ pricing:
   country_label: "Country"
   country_placeholder: "Select your country…"
   vat_note: "Excluding VAT. Final price confirmed at checkout."
-  onetime_label: "Or buy a fixed period, no subscription:"
+  onetime_note: "Or buy a fixed period, no subscription, from our store"
+  country_modal:
+    title: "Where are you?"
+    text: "Quko Cloud subscriptions are priced by country. Confirm yours so the figures below are the ones that apply to you."
+    confirm_label: "Confirm"
+    later_label: "I'll choose later"
+    close_label: "Close"
   cloud_base: "https://cloud.quko.es"
   # Our own page: the Ecwid storefront is embedded into the site.
   store_base: "shop/"
   plans:
     - id: "basic"
-      name: "Basic"
-      featured: true
-      badge: "Most popular"
+      name: "Standard"
       text: "Full platform access for one athlete."
       sku_monthly: "basic_sub_monthly"
       sku_yearly: "basic_sub_yearly"
       button_label: "Get started"
-      features:
-        - "Unlimited session uploads"
-        - "3D visualisation and comparison"
-        - "AI data analyst"
-        - "Cancel any time"
-      onetime:
-        - sku: "basic_code_1m"
-          label: "1 month"
-        - sku: "basic_code_4m"
-          label: "4 months"
-        - sku: "basic_code_6m"
-          label: "6 months"
-        - sku: "basic_code_12m"
-          label: "12 months"
     - id: "alto_nivel"
       name: "High Level"
       contact: true
@@ -143,11 +133,7 @@ pricing:
       text: "For federations, performance centres and elite programmes."
       button_label: "Request a quote"
       button_link: "contact/"
-      features:
-        - "Everything in Basic"
-        - "Real digital twin and QukoSim engines"
-        - "REST API access"
-        - "Deployment and onboarding support"
+
   disclaimer: "Indicative prices, excluding VAT. The final price and any applicable tax are confirmed at checkout against the billing country of your payment method. Quko Cloud subscriptions are personal and non-transferable, one per athlete. Coach and technical-staff accounts are free of charge in limited numbers."
 marketing_cta:
   eyebrow: "See QUKO in action"
