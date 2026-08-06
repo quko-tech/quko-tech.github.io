@@ -102,7 +102,7 @@
         {{ with .text }}<p class="quko-pricing-blurb">{{ . }}</p>{{ end }}
 
         {{ if .contact }}
-          <div class="quko-pricing-price"><span class="quko-pricing-contact">{{ .price_label | default "Talk to us" }}</span></div>
+          <div class="quko-pricing-price is-contact"><span class="quko-pricing-contact">{{ .price_label | default "Talk to us" }}</span></div>
           {{/* Empty stand-in for the VAT line the priced card carries, so the
                call to action sits at the same height in both cards. */}}
           <p class="quko-pricing-note" aria-hidden="true"></p>
@@ -117,7 +117,7 @@
         {{ end }}
 
         {{ if .contact }}
-          <a class="btn-quko-outline" href="{{ .button_link | default "contact/" | relLangURL }}">
+          <a class="btn-quko" href="{{ .button_link | default "contact/" | relLangURL }}">
             {{ .button_label | default "Contact us" }}
           </a>
         {{ else }}
@@ -139,6 +139,18 @@
       </article>
       {{ end }}
     </div>
+
+    {{ with .group_note }}
+    <div class="quko-pricing-group" data-reveal>
+      <div class="quko-pricing-group-text">
+        <h4>{{ .title }}</h4>
+        {{ with .text }}<p>{{ . }}</p>{{ end }}
+      </div>
+      <a class="btn-quko-outline" href="{{ .button_link | default "contact/" | relLangURL }}">
+        {{ .button_label | default "Request a quote" }}
+      </a>
+    </div>
+    {{ end }}
 
     <p class="quko-pricing-disclaimer" data-disclaimer>
       {{ .disclaimer | default "" }}

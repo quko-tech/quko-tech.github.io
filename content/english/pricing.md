@@ -114,6 +114,12 @@ pricing:
       button_label: "Request a quote"
       button_link: "contact/"
 
+  group_note:
+    title: "Federations, clubs, training centres and teams"
+    text: "Managing several athletes or licences? Get a tailored quote for your organisation."
+    button_label: "Request a quote"
+    button_link: "contact/"
+
   disclaimer: "Indicative prices, excluding VAT. The final price and any applicable tax are confirmed at checkout against the billing country of your payment method. Quko Cloud subscriptions are personal and non-transferable, one per athlete. Coach and technical-staff accounts are free of charge in limited numbers."
 marketing_cta:
   eyebrow: "A configuration that fits"

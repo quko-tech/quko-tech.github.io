@@ -39,6 +39,12 @@ weight = 4
 
   [[main]]
   parent = "more"
+  name = "Pricing"
+  url = "pricing/"
+  weight = 0
+
+  [[main]]
+  parent = "more"
   name = "About"
   url = "about/"
   weight = 1

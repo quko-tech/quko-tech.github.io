@@ -33,6 +33,12 @@ identifier = "more"
 weight = 4
   [[main]]
   parent = "more"
+  name = "Precios"
+  url = "pricing/"
+  weight = 0
+
+  [[main]]
+  parent = "more"
   name = "Sobre QUKO"
   url = "about/"
   weight = 1

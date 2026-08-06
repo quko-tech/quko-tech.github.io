@@ -93,6 +93,12 @@ pricing:
       button_label: "Solicitar proposta"
       button_link: "contact/"
 
+  group_note:
+    title: "Federacións, clubs, centros de adestramento e equipos"
+    text: "Xestionas varios deportistas ou licenzas? Pide un orzamento a medida para a túa organización."
+    button_label: "Solicitar proposta"
+    button_link: "contact/"
+
   disclaimer: "Prezos orientativos, sen IVE. O prezo final e os impostos aplicables confírmanse no proceso de pagamento segundo o país de facturación do teu medio de pagamento. As subscricións de Quko Cloud son persoais e intransferibles, unha por deportista. As contas de adestrador e corpo técnico son gratuítas en cantidades limitadas."
 marketing_cta:
   eyebrow: "Descubre Quko Cloud"

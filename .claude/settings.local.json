@@ -46,7 +46,18 @@
       "Bash(git checkout *)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(xargs -I{} echo {})",
+      "PowerShell(Get-Process *)",
+      "PowerShell(Get-CimInstance *)",
+      "PowerShell(Stop-Process *)",
+      "Bash(mkdir -p \"/c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-cache\")",
+      "Bash(hugo --gc --minify --destination /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-public --cacheDir /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-cache)",
+      "Bash(ps -p 7020 -o pid,pcpu,pmem,etime,cmd)",
+      "Bash(mkdir -p /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-cache /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-resources)",
+      "Bash(hugo --gc --minify --destination /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-public --cacheDir /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-cache --resourceDir /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-resources)",
+      "Bash(hugo --gc --minify --noBuildLock --destination /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-public)",
+      "Bash(grep -o '<style[^>]*>.\\\\{0,200\\\\}' /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-public/pricing/index.html)"
     ]
   }
 }

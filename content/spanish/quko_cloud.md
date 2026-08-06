@@ -93,6 +93,12 @@ pricing:
       button_label: "Solicitar propuesta"
       button_link: "contact/"
 
+  group_note:
+    title: "Federaciones, clubes, centros de entrenamiento y equipos"
+    text: "¿Gestionas varios deportistas o licencias? Pide un presupuesto a medida para tu organización."
+    button_label: "Solicitar propuesta"
+    button_link: "contact/"
+
   disclaimer: "Precios orientativos, sin IVA. El precio final y los impuestos aplicables se confirman en el proceso de pago según el país de facturación de tu medio de pago. Las suscripciones de Quko Cloud son personales e intransferibles, una por deportista. Las cuentas de entrenador y cuerpo técnico son gratuitas en cantidades limitadas."
 marketing_cta:
   eyebrow: "Descubre Quko Cloud"
