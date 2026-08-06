@@ -143,3 +143,17 @@ link = "https://instagram.com/quko_es/"
 title = "linkedin"
 icon = "fab fa-linkedin" # fontawesome icon pack : https://fontawesome.com/icons/
 link = "https://www.linkedin.com/in/p-adominguez"
+
+# ── Shop (Ecwid, resold by IONOS) ──────────────────────────────────────────
+# The storefront is an embeddable widget, so /shop/ is a normal page of this
+# site using the same templates and CSS as everything else. There is no second
+# site to keep in visual sync, and nothing to maintain in the IONOS builder.
+#
+# PLACEHOLDER: replace with the numeric store id from the Ecwid control panel
+# (Settings → General → Store ID). It is not the n2097344 websitebuilder
+# subdomain, and it is not a secret — it ships in the page.
+[shop]
+ecwid_store_id = "140422005"
+# Products per row in the grid, and whether to show the category sidebar.
+categories_per_row = 3
+products_per_row = 3

@@ -1,0 +1,121 @@
+{{/*
+  Country-aware pricing.
+
+  Prices shown here are INDICATIVE ONLY. The figures come from a static JSON
+  file and the country from a geolocation guess, so neither can be trusted with
+  money — a VPN changes both. What a customer is actually charged is decided
+  server-side at cloud.quko.es from the billing country on their payment method.
+  That is why every CTA links out rather than posting anything.
+
+  Data: /data/countries-pricing.json, generated from
+  Quko-Cloud/apps/billing/pricing_bands.json by scripts/export_web_pricing.py.
+  Regenerate it there; do not hand-edit the JSON.
+*/}}
+{{ with .Params.pricing }}
+{{ if .enable }}
+{{ $cloud := .cloud_base | default "https://cloud.quko.es" }}
+{{/* The shop is a page of this site, so a relative value has to pick up the
+     language prefix (/shop/, /es/shop/, /gl/shop/). An absolute URL is passed
+     through untouched, in case it ever moves off-site. */}}
+{{ $storeRaw := .store_base | default "shop/" }}
+{{ $store := $storeRaw }}
+{{ if not (hasPrefix $storeRaw "http") }}{{ $store = $storeRaw | relLangURL }}{{ end }}
+<section class="quko-section quko-pricing" id="pricing" data-pricing-root
+         data-cloud="{{ $cloud }}" data-store="{{ $store }}">
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      {{ with .eyebrow }}<span class="quko-eyebrow">{{ . }}</span>{{ end }}
+      <h2>{{ .title }}</h2>
+      {{ with .text }}<p>{{ . }}</p>{{ end }}
+    </div>
+
+    <div class="quko-pricing-controls" data-reveal>
+      <div class="quko-pricing-toggle" role="group" aria-label="{{ i18n "billing_period" | default "Billing period" }}">
+        <button type="button" class="is-active" data-period="sub_monthly">
+          {{ .monthly_label | default (i18n "monthly") | default "Monthly" }}
+        </button>
+        <button type="button" data-period="sub_yearly">
+          {{ .yearly_label | default (i18n "yearly") | default "Yearly" }}
+        </button>
+      </div>
+
+      <label class="quko-pricing-country">
+        <span>{{ .country_label | default "Country" }}</span>
+        <select data-country-select>
+          <option value="">{{ .country_placeholder | default "Select your country…" }}</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="quko-grid-{{ len .plans }} quko-pricing-grid">
+      {{ range .plans }}
+      <article class="quko-card quko-pricing-card{{ if .featured }} is-featured{{ end }}"
+               data-plan="{{ .id }}" data-reveal>
+        {{ if .badge }}<span class="quko-pricing-badge">{{ .badge }}</span>{{ end }}
+        <h3>{{ .name }}</h3>
+        {{ with .text }}<p class="quko-pricing-blurb">{{ . }}</p>{{ end }}
+
+        {{ if .contact }}
+          <div class="quko-pricing-price"><span class="quko-pricing-contact">{{ .price_label | default "Talk to us" }}</span></div>
+        {{ else }}
+          <div class="quko-pricing-price">
+            <span data-price>&mdash;</span>
+            <span class="quko-pricing-period" data-period-label></span>
+          </div>
+          <p class="quko-pricing-note" data-vat-note hidden>
+            {{ $.Params.pricing.vat_note | default "Excluding VAT. Final price confirmed at checkout." }}
+          </p>
+        {{ end }}
+
+        {{ with .features }}
+        <ul class="quko-check-list">
+          {{ range . }}<li><i class="fas fa-check-circle"></i><span>{{ . }}</span></li>{{ end }}
+        </ul>
+        {{ end }}
+
+        {{ if .contact }}
+          <a class="btn-quko-outline" href="{{ .button_link | default "contact/" | relLangURL }}">
+            {{ .button_label | default "Contact us" }}
+          </a>
+        {{ else }}
+          <a class="btn-quko" data-cta data-sku-monthly="{{ .sku_monthly }}"
+             data-sku-yearly="{{ .sku_yearly }}" href="{{ $cloud }}">
+            {{ .button_label | default "Get started" }}
+          </a>
+
+          {{ with .onetime }}
+          <div class="quko-pricing-onetime">
+            <span>{{ $.Params.pricing.onetime_label | default "Or buy a fixed period" }}</span>
+            <div class="quko-pricing-onetime-links">
+              {{ range . }}
+              {{/* Fixed periods are sold in the shop, not through the Cloud
+                   checkout: they are one-off codes and the shop is where we
+                   are the seller. Their price is the single high-band figure,
+                   not the visitor's band — the shop cannot price by country.
+
+                   NOT data-onetime: Go's html/template strips the "data-"
+                   prefix and then treats any attribute beginning with "on" as
+                   a JS event handler, which JSON-encodes the value and ships
+                   &#34;basic_code_1m&#34; instead of the bare SKU. */}}
+              <a href="{{ .url | default $store }}" data-fixed-sku="{{ .sku }}">
+                {{ .label }} <em data-fixed-price></em>
+              </a>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        {{ end }}
+      </article>
+      {{ end }}
+    </div>
+
+    <p class="quko-pricing-disclaimer" data-disclaimer>
+      {{ .disclaimer | default "" }}
+    </p>
+  </div>
+</section>
+
+{{ $js := resources.Get "js/pricing-table.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}
+{{ end }}

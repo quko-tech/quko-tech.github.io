@@ -79,3 +79,7 @@ footer_explore = "Explorar"
 footer_contact = "Contacto"
 request_demo = "Solicitar unha demo"
 all_rights_reserved = "Todos os dereitos reservados."
+
+billing_period = "Período de facturación"
+monthly = "Mensual"
+yearly = "Anual"

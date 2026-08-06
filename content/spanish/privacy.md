@@ -49,6 +49,25 @@ legal:
                                                     exigidos por la normativa vigente de privacidad.
                                                     </p>
 
+                                                    <h5>Detección de país en la página de precios</h5>
+                                                    <p>
+                                                    Para que la página de precios pueda mostrar las cifras de la banda que corresponde, se estima el país aproximado
+                                                    del visitante a partir de su dirección IP. Esa estimación se solicita a los servicios de terceros
+                                                    <a href='https://ipapi.co/privacy/' target='_blank' rel='noopener'>ipapi.co</a> y, como alternativa,
+                                                    <a href='https://country.is/' target='_blank' rel='noopener'>api.country.is</a>, que reciben por tanto la
+                                                    dirección IP del visitante. No se les envía ningún otro dato ni interviene ninguna cuenta o identificador personal.
+                                                    </p>
+                                                    <p>
+                                                    El país seleccionado o detectado se guarda en el almacenamiento local del navegador bajo la clave
+                                                    <code>quko.pricing.country</code>, únicamente para que la elección se mantenga entre visitas. No es una cookie,
+                                                    no se transmite en ningún momento a QUKO TECH, S.L. y se elimina al borrar los datos del sitio en el navegador.
+                                                    El visitante puede cambiar el país detectado en cualquier momento con el selector de la propia página.
+                                                    </p>
+                                                    <p>
+                                                    Los precios mostrados de este modo son orientativos y no tienen efecto contractual. Cualquier compra se
+                                                    formaliza en cloud.quko.es, donde el precio se determina según el país de facturación del medio de pago.
+                                                    </p>
+
                                                     <h5>¿Cuáles son tus derechos?</h5>
                                                     <p>Los derechos que asisten al USUARIO son:</p>
                                                     <ul style='font-size: 16px !important; line-height: 1.5 !important; padding-left: 40px !important; margin: 16px 0 !important; list-style: disc outside !important;'>

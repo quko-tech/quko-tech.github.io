@@ -47,6 +47,25 @@ legal:
                                                     has signed the confidentiality and data processor contracts required by current privacy regulations.
                                                     </p>
 
+                                                    <h5>Country detection on the pricing page</h5>
+                                                    <p>
+                                                    So that the pricing page can show figures in the right currency band, the visitor's approximate country is
+                                                    estimated from their IP address. That estimate is requested from the third-party services
+                                                    <a href='https://ipapi.co/privacy/' target='_blank' rel='noopener'>ipapi.co</a> and, as a fallback,
+                                                    <a href='https://country.is/' target='_blank' rel='noopener'>api.country.is</a>, which therefore receive the
+                                                    visitor's IP address. No other data is sent to them and no account or personal identifier is involved.
+                                                    </p>
+                                                    <p>
+                                                    The country selected or detected is stored in the browser's local storage under the key
+                                                    <code>quko.pricing.country</code>, purely so the choice persists between visits. It is not a cookie, it is never
+                                                    transmitted to us, and clearing the browser's site data removes it. The visitor can override the detected country
+                                                    at any time using the selector on the page.
+                                                    </p>
+                                                    <p>
+                                                    Prices shown this way are indicative only and have no contractual effect. Any actual purchase is completed on
+                                                    cloud.quko.es, where the price is determined from the billing country of the payment method.
+                                                    </p>
+
                                                     <h5>What are your rights?</h5>
                                                     <p>The rights of the USER are:</p>
                                                     <ul style='font-size: 16px !important; line-height: 1.5 !important; padding-left: 40px !important; margin: 16px 0 !important; list-style: disc outside !important;'>

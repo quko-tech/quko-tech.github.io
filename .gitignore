@@ -1,0 +1,29 @@
+# Hugo build output.
+#
+# .github/workflows/main.yml runs `npm run build` (hugo --gc --minify) and
+# uploads ./public to Pages, so the built site is regenerated from source on
+# every deploy. Committing it as well only creates drift: an edit to content or
+# a layout that isn't followed by a local rebuild leaves the repo describing a
+# site that doesn't match itself.
+public/
+
+# Hugo's asset cache (compiled SCSS, resized images). Regenerated on build.
+resources/_gen/
+
+# Build-time scratch files.
+.hugo_build.lock
+hugo_stats.json
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+*.swp
+.idea/

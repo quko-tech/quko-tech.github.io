@@ -1197,3 +1197,227 @@ a {
     transform: none;
   }
 }
+
+/* ── Country-aware pricing ──────────────────────────────────────────────────
+   Prices rendered here are indicative. The binding figure is decided
+   server-side at cloud.quko.es from the billing country; see
+   partials/pricing-table.html. */
+
+.quko-pricing-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.quko-pricing-toggle {
+  display: inline-flex;
+  padding: 4px;
+  border: 1px solid var(--quko-line);
+  border-radius: 999px;
+  background: var(--quko-mist);
+}
+
+.quko-pricing-toggle button {
+  padding: .5rem 1.35rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--quko-muted);
+  font-weight: 600;
+  font-size: .95rem;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+.quko-pricing-toggle button.is-active {
+  background: var(--quko-white);
+  color: var(--quko-ink);
+  box-shadow: 0 2px 8px rgba(18, 21, 28, .08);
+}
+
+.quko-pricing-country {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  margin: 0;
+  color: var(--quko-muted);
+  font-size: .95rem;
+}
+
+.quko-pricing-country select {
+  padding: .55rem .9rem;
+  max-width: 16rem;
+  border: 1px solid var(--quko-line);
+  border-radius: 12px;
+  background: var(--quko-white);
+  color: var(--quko-ink);
+  font: inherit;
+}
+
+.quko-pricing-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.quko-pricing-card.is-featured {
+  border-color: var(--quko-red);
+  box-shadow: var(--quko-shadow);
+}
+
+.quko-pricing-badge {
+  position: absolute;
+  top: -.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: .25rem .9rem;
+  border-radius: 999px;
+  background: var(--quko-red);
+  color: var(--quko-white);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.quko-pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: .4rem;
+  margin: 1rem 0 .25rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--quko-ink);
+}
+
+.quko-pricing-period {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--quko-muted);
+}
+
+.quko-pricing-contact {
+  font-size: 1.6rem;
+  color: var(--quko-muted);
+}
+
+.quko-pricing-note,
+.quko-pricing-blurb {
+  color: var(--quko-muted);
+  font-size: .9rem;
+}
+
+.quko-pricing-card .quko-check-list {
+  flex: 1 1 auto;
+}
+
+.quko-pricing-onetime {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--quko-line);
+  font-size: .85rem;
+  color: var(--quko-muted);
+}
+
+.quko-pricing-onetime-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .5rem;
+}
+
+.quko-pricing-onetime-links a {
+  padding: .3rem .7rem;
+  border: 1px solid var(--quko-line);
+  border-radius: 999px;
+  color: var(--quko-ink);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color .2s ease;
+}
+
+.quko-pricing-onetime-links a:hover {
+  border-color: var(--quko-red);
+}
+
+.quko-pricing-onetime-links em {
+  font-style: normal;
+  color: var(--quko-muted);
+  font-weight: 500;
+}
+
+.quko-pricing-disclaimer {
+  max-width: 46rem;
+  margin: 2.5rem auto 0;
+  color: var(--quko-muted);
+  font-size: .82rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 575px) {
+  .quko-pricing-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quko-pricing-country {
+    justify-content: space-between;
+  }
+
+  .quko-pricing-country select {
+    max-width: none;
+    flex: 1 1 auto;
+  }
+}
+
+/* ── Shop ───────────────────────────────────────────────────────────────────
+   The Ecwid storefront is embedded here, so its widget lives inside our own
+   page furniture. These rules only cover the container and the fallback; the
+   widget itself is themed from the Ecwid control panel. */
+
+.quko-shop {
+  min-height: 40vh;
+}
+
+.quko-shop-placeholder {
+  padding: 3rem 2rem;
+  border: 1px dashed var(--quko-line);
+  border-radius: var(--quko-radius);
+  background: var(--quko-mist);
+  text-align: center;
+  color: var(--quko-muted);
+}
+
+.quko-shop-placeholder h3 {
+  margin-bottom: .5rem;
+  color: var(--quko-ink);
+}
+
+.quko-shop-notes {
+  max-width: 46rem;
+  margin: 0 auto;
+  color: var(--quko-muted);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+.quko-shop-notes p + p {
+  margin-top: .75rem;
+}
+
+.quko-shop-notes a {
+  color: var(--quko-red-dark);
+  text-decoration: underline;
+}
+
+/* Ecwid ships its own typography; nudge it toward ours without fighting it. */
+.quko-shop .ec-size,
+.quko-shop .ec-store {
+  font-family: inherit;
+}

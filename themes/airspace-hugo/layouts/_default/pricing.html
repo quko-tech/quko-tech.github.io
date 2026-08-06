@@ -5,5 +5,6 @@
   <div class="quko-grid-3">{{ range . }}<article class="quko-card" data-reveal><span class="quko-icon"><i class="{{ .icon }}"></i></span><h3>{{ .title }}</h3><p>{{ .text }}</p><ul class="quko-check-list">{{ range .items }}<li><i class="fas fa-check-circle"></i><span>{{ . }}</span></li>{{ end }}</ul></article>{{ end }}</div>
 </div></section>
 {{ end }}
+{{ partial "pricing-table.html" . }}
 {{ partial "marketing-cta.html" . }}
 {{ end }}

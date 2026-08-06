@@ -1,0 +1,98 @@
+{{ define "main" }}
+{{/*
+  The shop.
+
+  Ecwid's storefront is an embeddable widget rather than a hosted site you have
+  to link away to, which is the whole reason this page can exist: it uses the
+  same templates, CSS and navigation as the rest of quko.es, so the design
+  matches by construction instead of by being copied and kept in sync.
+
+  The cart, checkout and payment run inside the widget on Ecwid's
+  infrastructure — we never handle a card. Orders come back to Quko Cloud as
+  webhooks (apps/billing/providers/ecwid.py), which is what turns a licence or
+  bundle order into codes in the buyer's inbox.
+
+  ⚠️ Quko Tech is the seller of record for everything sold here: we determine
+  and remit the VAT and issue the invoice. That is unavoidable — no merchant of
+  record handles physical goods.
+*/}}
+{{ $storeId := site.Params.shop.ecwid_store_id }}
+
+<section class="quko-page-hero">
+  <div class="container">
+    <div class="quko-page-hero-grid">
+      <div data-reveal>
+        {{ with .Params.eyebrow }}<span class="quko-eyebrow">{{ . }}</span>{{ end }}
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </div>
+      {{ with .Params.image }}
+      <div data-reveal><img src="{{ . | relURL }}" alt="{{ $.Params.image_alt }}"></div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ with .Params.highlights }}
+<section class="quko-section-sm">
+  <div class="container">
+    <div class="quko-metric-strip" data-reveal>
+      {{ range . }}
+      <div class="quko-metric"><strong>{{ .value }}</strong><span>{{ .label }}</span></div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="quko-section quko-shop">
+  <div class="container">
+    {{ if or (not $storeId) (eq $storeId "00000000") }}
+      {{/* Fail visibly rather than rendering an empty page: a silent blank
+           storefront is much harder to notice than this. */}}
+      <div class="quko-shop-placeholder" data-reveal>
+        <h3>{{ .Params.setup_title | default "Store not configured yet" }}</h3>
+        <p>{{ .Params.setup_text | default "Set `shop.ecwid_store_id` in config/_default/params.toml to the numeric store id from the Ecwid control panel." }}</p>
+      </div>
+    {{ else }}
+      <div id="my-store-{{ $storeId }}" data-reveal></div>
+      <script data-cfasync="false" type="text/javascript"
+              src="https://app.ecwid.com/script.js?{{ $storeId }}&data_platform=code"
+              charset="utf-8" defer></script>
+      <script type="text/javascript">
+        // Ecwid replaces the page's own <title> and meta description as the
+        // shopper navigates. Left on, that overwrites the site's SEO metadata
+        // on every product view.
+        window.ec = window.ec || {};
+        window.ec.config = window.ec.config || {};
+        window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
+        window.ec.config.storefrontUrls.cleanUrls = true;
+
+        window.addEventListener('load', function () {
+          if (typeof xProductBrowser === 'function') {
+            xProductBrowser(
+              "categoriesPerRow={{ site.Params.shop.categories_per_row | default 3 }}",
+              "views=grid({{ site.Params.shop.products_per_row | default 3 }},3) list rows",
+              "categoryView=grid",
+              "searchView=list",
+              "id=my-store-{{ $storeId }}"
+            );
+          }
+        });
+      </script>
+    {{ end }}
+  </div>
+</section>
+
+{{ with .Params.notes }}
+<section class="quko-section-sm quko-section-muted">
+  <div class="container">
+    <div class="quko-shop-notes" data-reveal>
+      {{ range . }}<p>{{ . | markdownify }}</p>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ partial "marketing-cta.html" . }}
+{{ end }}
