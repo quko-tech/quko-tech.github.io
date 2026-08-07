@@ -1380,11 +1380,23 @@ a {
 
   .quko-pricing-country {
     justify-content: space-between;
+    /* A flex item's default min-width is `auto`, i.e. its content. The select's
+       content is the longest country name in the list, so without this the
+       select refused to shrink and ran off the right of the screen, taking the
+       chevron and part of the country name with it. */
+    min-width: 0;
+  }
+
+  .quko-pricing-country > span {
+    flex: 0 0 auto;
   }
 
   .quko-pricing-country select {
     max-width: none;
+    min-width: 0;
     flex: 1 1 auto;
+    /* iOS zooms the page in on focus for any control under 16px. */
+    font-size: 16px;
   }
 }
 
@@ -1480,10 +1492,13 @@ a {
 
 .quko-plan-options {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 14px;
+  min-width: 0;
 }
 
 .quko-plan-option {
+  min-width: 0;
   padding: 18px 20px;
   border: 1px solid var(--quko-line);
   border-radius: 16px;
@@ -1526,10 +1541,49 @@ a {
 
 @media (max-width: 991px) {
   .quko-plan-panel {
-    grid-template-columns: 1fr;
+    /* minmax(0, 1fr), not 1fr: a grid track's implicit minimum is min-content,
+       and the badge's `white-space: nowrap` made the option cards' min-content
+       wider than the phone, so they hung out over the panel's right edge.
+       Capping the minimum at 0 lets the track obey the panel instead. */
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "copy" "options" "cta";
     gap: 24px;
     padding: 32px 26px;
+  }
+}
+
+@media (max-width: 767px) {
+  .quko-plan-panel {
+    padding: 28px 20px;
+    border-radius: 22px;
+  }
+
+  .quko-plan-panel h2 {
+    font-size: 24px;
+  }
+
+  .quko-plan-panel p {
+    font-size: 15px;
+  }
+
+  .quko-plan-option {
+    padding: 16px;
+  }
+
+  /* Name and badge stop competing for one line and stack instead, so a longer
+     badge in any language can no longer widen the card. */
+  .quko-plan-option-head {
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+
+  .quko-plan-badge {
+    white-space: normal;
+  }
+
+  .quko-plan-panel-cta .btn-quko {
+    display: block;
+    text-align: center;
   }
 }
 
@@ -1560,12 +1614,26 @@ a {
   width: 100%;
   max-width: 640px;
   max-height: 88vh;
+  /* dvh, so the box is measured against the viewport the browser is actually
+     showing. On a phone, vh is the height with the address bar hidden, which is
+     taller than what you can see while it is still on screen - the box was
+     sized for space the visitor did not have yet. */
+  max-height: 88dvh;
   overflow-y: auto;
   padding: 40px 44px;
   border-radius: 28px;
   background: var(--quko-white);
   box-shadow: 0 30px 80px rgba(18, 21, 28, .28);
   animation: quko-rise .3s cubic-bezier(.2, .8, .3, 1);
+}
+
+/* The close button is absolutely positioned in the top-right corner, so it
+   takes no space and nothing flowed around it: the eyebrow, which is a full
+   width inline-flex with a rule after the text, ran straight underneath it and
+   the two overlapped. */
+.quko-modal-box > .quko-eyebrow,
+.quko-modal-box > h3 {
+  padding-right: 44px;
 }
 
 .quko-modal-box h3 {
@@ -1583,19 +1651,29 @@ a {
 
 .quko-modal-close {
   position: absolute;
-  top: 14px;
-  right: 18px;
+  top: 10px;
+  right: 12px;
+  z-index: 2;
+  /* A 44px square: the smallest target a thumb hits reliably. The glyph on its
+     own was about 21px wide, which is a miss waiting to happen on the one
+     control that gets someone out of a modal. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   padding: 0;
   border: 0;
+  border-radius: 50%;
   background: none;
   color: var(--quko-muted);
   font-size: 32px;
   line-height: 1;
   cursor: pointer;
-  transition: color .2s ease;
+  transition: color .2s ease, background .2s ease;
 }
 
-.quko-modal-close:hover { color: var(--quko-ink); }
+.quko-modal-close:hover { color: var(--quko-ink); background: var(--quko-mist); }
 
 .quko-modal-actions {
   display: flex;
@@ -1610,10 +1688,60 @@ a {
   to   { opacity: 1; transform: none; }
 }
 
-@media (max-width: 575px) {
-  .quko-modal-box { padding: 30px 22px; }
+@media (max-width: 767px) {
+  .quko-modal {
+    padding: 16px;
+  }
+
+  .quko-modal-box {
+    max-height: 92vh;
+    max-height: 92dvh;
+    padding: 26px 20px;
+    border-radius: 22px;
+  }
+
+  /* No bottom padding here: the sticky actions below supply their own, so that
+     when they sit at the foot of the scroll area there is no strip of dead
+     white beneath them for the content to scroll through. */
+  #quko-plan-modal .quko-modal-box {
+    padding-bottom: 0;
+  }
+
+  .quko-modal-box h3 {
+    font-size: 22px;
+  }
+
+  .quko-modal-box > p {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .quko-modal-actions {
+    margin-top: 20px;
+  }
+
+  /* The shop's plan notice is taller than a small phone, so both buttons sat
+     below the fold of a box that gave no sign it scrolled - the modal read as
+     if the only way past it were the close button. Sticking the actions to the
+     foot keeps "See prices" and "Continue to the shop" on screen throughout,
+     and the shadow above them shows there is more to scroll.
+
+     Scoped to this modal on purpose. The country modal is short enough to fit
+     any phone, so the same treatment there would draw a shadow across a seam
+     that nothing is ever going to scroll past. */
+  #quko-plan-modal .quko-modal-actions {
+    position: sticky;
+    bottom: 0;
+    padding: 14px 0 20px;
+    background: var(--quko-white);
+    box-shadow: 0 -12px 18px -10px rgba(18, 21, 28, .16);
+  }
+
   .quko-modal-actions .btn-quko,
-  .quko-modal-actions .btn-quko-outline { width: 100%; text-align: center; }
+  .quko-modal-actions .btn-quko-outline {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1771,6 +1899,62 @@ a {
   text-align: center;
 }
 
+/* On a phone the 520px floor put both plan columns off-screen: the table was
+   scrollable, but nothing said so, so the comparison read as a plain list of
+   features with no answer to which plan has them - the one thing it exists to
+   say. Dropping the floor and tightening the cells makes all three columns fit
+   inside ~320px; feature names wrap over two or three lines, which is a much
+   cheaper price than losing the comparison. .quko-compare-scroll keeps its
+   overflow-x for the narrowest devices. */
+@media (max-width: 767px) {
+  .quko-compare {
+    margin-bottom: 40px;
+  }
+
+  .quko-compare-title {
+    font-size: 19px;
+  }
+
+  .quko-compare-table {
+    min-width: 0;
+    font-size: 13px;
+    table-layout: fixed;
+  }
+
+  /* overflow-wrap, not word-break/hyphens: those two broke ordinary words
+     mid-syllable ("his-tograms", "accelera-tion"). This only intervenes when a
+     single word genuinely cannot fit the column. */
+  .quko-compare-table th,
+  .quko-compare-table td {
+    padding: 11px 8px;
+    overflow-wrap: break-word;
+  }
+
+  .quko-compare-table th:first-child,
+  .quko-compare-table tbody th {
+    padding-left: 12px;
+  }
+
+  .quko-compare-table thead th {
+    font-size: 10px;
+    letter-spacing: .02em;
+  }
+
+  .quko-compare-table td,
+  .quko-compare-table thead th:nth-child(n + 2) {
+    width: 25%;
+  }
+
+  /* The pill is the widest thing in a plan column, and its nowrap was what
+     forced the column wide. "Preview" is one word, so it survives wrapping
+     being allowed; the padding just stops fighting for room it hasn't got. */
+  .quko-compare-partial {
+    padding: 3px 7px;
+    font-size: 11px;
+    white-space: normal;
+  }
+}
+
 /* ── Country confirmation modal ───────────────────────────────────────────── */
 
 .quko-country-box {
@@ -1794,7 +1978,9 @@ a {
   background: var(--quko-white);
   color: var(--quko-ink);
   font: inherit;
-  font-size: 15px;
+  /* 16px, not 15: iOS zooms the whole page in when a control smaller than that
+     takes focus, and it does not zoom back out afterwards. */
+  font-size: 16px;
 }
 
 .quko-country-box .quko-modal-actions {

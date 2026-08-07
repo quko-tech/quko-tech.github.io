@@ -59,7 +59,10 @@
       "Bash(hugo --gc --minify --destination /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-public --cacheDir /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-cache --resourceDir /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-resources)",
       "Bash(hugo --gc --minify --noBuildLock --destination /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-public)",
       "Bash(grep -o '<style[^>]*>.\\\\{0,200\\\\}' /c/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/bca836bf-a5e4-4a4f-8925-1601b7af5ed1/scratchpad/hugo-verify-public/pricing/index.html)",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:1315/pricing/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:1315/shop/)",
+      "Bash(echo \"== exit $?\")"
     ]
   }
 }
