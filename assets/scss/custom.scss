@@ -1581,9 +1581,11 @@ a {
     white-space: normal;
   }
 
+  /* `display: flex`, not `block`. .btn-quko centres its label with
+     align-items/justify-content, so switching it to a block dropped the label
+     to the top of the 50px pill instead of the middle of it. */
   .quko-plan-panel-cta .btn-quko {
-    display: block;
-    text-align: center;
+    display: flex;
   }
 }
 
@@ -1630,9 +1632,13 @@ a {
 /* The close button is absolutely positioned in the top-right corner, so it
    takes no space and nothing flowed around it: the eyebrow, which is a full
    width inline-flex with a rule after the text, ran straight underneath it and
-   the two overlapped. */
-.quko-modal-box > .quko-eyebrow,
-.quko-modal-box > h3 {
+   the two overlapped once the eyebrow wrapped to two lines on a phone.
+
+   Not applied to .quko-country-box, whose contents are centred - one-sided
+   padding there would pull the title off centre to clear a button it never
+   reaches. */
+.quko-modal-box:not(.quko-country-box) > .quko-eyebrow,
+.quko-modal-box:not(.quko-country-box) > h3 {
   padding-right: 44px;
 }
 
@@ -1657,9 +1663,6 @@ a {
   /* A 44px square: the smallest target a thumb hits reliably. The glyph on its
      own was about 21px wide, which is a miss waiting to happen on the one
      control that gets someone out of a modal. */
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 44px;
   height: 44px;
   padding: 0;
@@ -1667,13 +1670,43 @@ a {
   border-radius: 50%;
   background: none;
   color: var(--quko-muted);
-  font-size: 32px;
-  line-height: 1;
   cursor: pointer;
   transition: color .2s ease, background .2s ease;
+
+  /* The mark is drawn rather than typed. Centring the &times; character inside
+     the button centres its line box, not its ink, and in this typeface the ink
+     sits high and slightly left of that - close enough to pass at 21px, plainly
+     off once a 44px circle is drawn around it. Two bars positioned from the
+     button's own centre have no such gap between box and ink. The character
+     stays in the markup for the accessible name; font-size: 0 hides it. */
+  font-size: 0;
 }
 
+.quko-modal-close:before,
+.quko-modal-close:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 17px;
+  height: 2px;
+  margin: -1px 0 0 -8.5px;
+  border-radius: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.quko-modal-close:before { transform: rotate(45deg); }
+.quko-modal-close:after  { transform: rotate(-45deg); }
+
 .quko-modal-close:hover { color: var(--quko-ink); background: var(--quko-mist); }
+
+/* The script focuses this button when the modal opens, so its focus ring is the
+   first thing on screen. Keep it, but as a tidy ring on the circle rather than
+   the default box the browser draws around a zero-font-size button. */
+.quko-modal-close:focus-visible {
+  outline: 2px solid var(--quko-red);
+  outline-offset: 2px;
+}
 
 .quko-modal-actions {
   display: flex;

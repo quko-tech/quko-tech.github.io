@@ -62,7 +62,10 @@
       "Bash(git stash *)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:1315/pricing/)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:1315/shop/)",
-      "Bash(echo \"== exit $?\")"
+      "Bash(echo \"== exit $?\")",
+      "Bash(git diff *)",
+      "Bash(curl -s -o /dev/null -w \"shop=%{http_code} \" http://localhost:1316/shop/)",
+      "Bash(curl -s -o /dev/null -w \"pricing=%{http_code}\\\\n\" http://localhost:1316/pricing/)"
     ]
   }
 }
