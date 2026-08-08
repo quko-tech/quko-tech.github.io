@@ -249,6 +249,11 @@ a {
   color: var(--quko-ink-soft);
   font-size: 14px;
   font-weight: 650;
+  /* A nav label is never meant to break. Without this the caret that follows
+     "Products"/"More" is a separate inline box and is the first thing to drop
+     to a second line when the row gets tight, which reads as a misplaced
+     arrow rather than as a wrap. */
+  white-space: nowrap;
 }
 
 .navigation .navbar-nav > li > a:hover,
@@ -318,7 +323,15 @@ a {
   color: var(--quko-red-dark) !important;
 }
 
-@media (min-width: 992px) {
+/* The horizontal nav carries eight items plus two pills and the language
+   select. Measured against the 1280px-capped container it needs ~900px of the
+   row (Spanish is the widest of the three languages), and it only has that
+   from about 1150px up. Below that the labels used to wrap, which is what put
+   the dropdown carets on their own line under "Products" and "More" and split
+   the pill labels across two ragged lines. The drawer takes over below 1200
+   instead, which leaves the horizontal nav a comfortable margin in every
+   language rather than one that happens to fit in English. */
+@media (min-width: 1200px) {
   .navigation .navbar {
     display: flex;
     align-items: center;
@@ -1031,7 +1044,12 @@ a {
   .quko-metric:nth-child(-n+2) {
     border-bottom: 1px solid var(--quko-line);
   }
+}
 
+/* Drawer navigation. This has to reach 1199px to meet the horizontal nav above,
+   and it overrides Bootstrap 3, whose own navbar breakpoint is 768px — without
+   these the collapsed menu would force itself back open from 768px up. */
+@media (max-width: 1199px) {
   .navigation .navbar-collapse {
     margin-top: 10px;
     border-top: 1px solid var(--quko-line);
@@ -1079,9 +1097,29 @@ a {
     padding: 13px 10px;
   }
 
-  .navigation .nav-cta > a {
+  /* Both pills need to size to their label. nav-cta already did; nav-cloud was
+     left as a block, so it stretched the full width of the drawer and its
+     centred-looking label sat against the left edge of a very wide pill. */
+  .navigation .nav-cta > a,
+  .navigation .nav-cloud > a {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-left: 0;
+  }
+
+  /* Bootstrap only unpins the submenu below 768px, so between there and the
+     collapse breakpoint an opened "Products"/"More" was an absolutely
+     positioned panel laid over the items beneath it. Static puts it back in
+     the flow so it pushes the rest of the drawer down. */
+  .navigation .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
   }
 
   #select-language {
@@ -2018,4 +2056,53 @@ a {
 
 .quko-country-box .quko-modal-actions {
   justify-content: center;
+}
+
+/* ── Blog post images on medium screens ───────────────────────────────────── */
+
+/* Post images are deliberately wider than the text column: 120px wider, pulled
+   back by a -60px margin each side. The theme only undoes that below 768px,
+   but the text column stops being narrower than the viewport well above that,
+   so the extra 120px hung off the edge and gave the whole page a horizontal
+   scrollbar — badly from about 780px to 900px, and still by a few pixels up to
+   1023px where the md grid rearranges the column.
+
+   Rather than chase that upper edge, the bleed now starts at the same 1200px
+   the horizontal nav does: below it the page is the compact layout and images
+   sit in the text column, above it there is real margin to bleed into. */
+@media (max-width: 1199px) {
+  .modern-article-wrapper .modern-article .article-content img,
+  .modern-article-wrapper .modern-article .post-content img,
+  .page-wrapper .post.post-single .article-content img,
+  .page-wrapper .post.post-single .post-content img {
+    width: 100%;
+    max-width: 100%;
+    margin: 48px 0;
+  }
+
+  .modern-article-wrapper .modern-article .article-content figure,
+  .modern-article-wrapper .modern-article .post-content figure,
+  .page-wrapper .post.post-single .article-content figure,
+  .page-wrapper .post.post-single .post-content figure {
+    margin: 48px 0;
+  }
+
+  /* The caption's 60px side padding exists to line up with the bleed above it;
+     with the bleed gone it just squeezes the caption into a narrow ribbon. */
+  .modern-article-wrapper .modern-article .article-content figcaption,
+  .modern-article-wrapper .modern-article .post-content figcaption,
+  .page-wrapper .post.post-single .article-content figcaption,
+  .page-wrapper .post.post-single .post-content figcaption {
+    padding: 0;
+  }
+
+  /* Between 992 and 1199 the sidebar is a col-md-3 — about 246px — and by the
+     time Bootstrap's gutter, the .article-sidebar padding and this 40px indent
+     have all come out of it the widgets are down to 136px. "CATEGORIES" is one
+     word set uppercase at 20px with 1.5px of tracking, so it needs 157px, can't
+     wrap, and hung off the side of the page. The indent is a wide-desktop
+     flourish and is the one part of that stack worth giving back. */
+  .sidebar {
+    padding-left: 0;
+  }
 }
