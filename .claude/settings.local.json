@@ -65,7 +65,22 @@
       "Bash(echo \"== exit $?\")",
       "Bash(git diff *)",
       "Bash(curl -s -o /dev/null -w \"shop=%{http_code} \" http://localhost:1316/shop/)",
-      "Bash(curl -s -o /dev/null -w \"pricing=%{http_code}\\\\n\" http://localhost:1316/pricing/)"
+      "Bash(curl -s -o /dev/null -w \"pricing=%{http_code}\\\\n\" http://localhost:1316/pricing/)",
+      "Bash(curl -s -L https://quko.es/)",
+      "Bash(curl -s -L -o /dev/null -w \"%{http_code} %{url_effective}\\\\n\" https://quko.tech/)",
+      "Bash(curl -s -L https://quko.tech/)",
+      "Bash(curl -s -o live-logo.png https://quko.es/images/logo.png)",
+      "Bash(curl -s https://quko.es/sitemap.xml)",
+      "Bash(sed 's/<[^>]*>//g')",
+      "Bash(python -c \"import PIL, sys; print\\('PIL', PIL.__version__, sys.version\\)\")",
+      "Bash(magick -version)",
+      "Bash(python -c ' *)",
+      "Read(//c/Windows/Fonts/**)",
+      "Bash(python make_og.py)",
+      "Bash(cp \"C:/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/01c4d325-c00a-4a0c-bb0a-4c2be63ac1c9/scratchpad/og-image.png\" assets/images/og-image.png)",
+      "Bash(cp \"C:/Users/quita/AppData/Local/Temp/claude/C--Users-quita-Documents-quko-tech-github-io/01c4d325-c00a-4a0c-bb0a-4c2be63ac1c9/scratchpad/og-image.png\" static/images/og-image.png)",
+      "Bash(hugo --quiet --baseURL \"https://quko.es/\")",
+      "Bash(echo \"=== EXIT $? ===\")"
     ]
   }
 }
