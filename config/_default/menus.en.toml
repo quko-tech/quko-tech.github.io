@@ -106,10 +106,14 @@ name = "Privacy"
 url = "privacy/"
 weight = 5
 [[footer]]
+name = "Paddle Results privacy policy"
+url = "privacy_paddle_results/"
+weight = 6
+[[footer]]
 name = "Legal notice"
 url = "legal_notice/"
-weight = 6
+weight = 7
 [[footer]]
 name = "Terms of sale"
 url = "sales_terms/"
-weight = 7
+weight = 8

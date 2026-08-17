@@ -94,7 +94,7 @@ legal:
 
                                                     <p>
                                                     <strong>Datos de contacto para ejercer sus derechos:</strong><br>
-                                                    QUKO TECH, S.L. C/Rúa Canabés de Abaixo, 5 4ºC - 36940 Pontevedra (Pontevedra).<br>
+                                                    QUKO TECH, S.L. Rúa Canabés de Abaixo, 5 4ºC, 36940, Cangas (Pontevedra).<br>
                                                     E-mail: <a href='mailto:contacto@quko.es'>contacto@quko.es</a>
                                                     </p>
 
@@ -127,7 +127,7 @@ legal:
                                                     </p>
                                                     <p>
                                                     Para más información sobre las garantías de privacidad, puedes dirigirte al RESPONSABLE a través de QUKO TECH,
-                                                    S.L. C/Rúa Canabés de Abaixo, 5 4ºC - 36940 Pontevedra (Pontevedra).<br>
+                                                    S.L. Rúa Canabés de Abaixo, 5 4ºC, 36940, Cangas (Pontevedra).<br>
                                                     E-mail: <a href='mailto:contacto@quko.es'>contacto@quko.es</a>
                                                     </p>
   

@@ -122,7 +122,7 @@ legal:
 
                                                     <p>
                                                     <strong>Contact information to exercise their rights:</strong><br>
-                                                    QUKO TECH, S.L. C/Rúa Canabés de Abaixo, 5 4ºC - 36940 Pontevedra (Pontevedra).<br>
+                                                    QUKO TECH, S.L. Rúa Canabés de Abaixo, 5 4ºC, 36940, Cangas (Pontevedra).<br>
                                                     E-mail: <a href='mailto:contacto@quko.es'>contacto@quko.es</a>
                                                     </p>
 
