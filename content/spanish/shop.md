@@ -8,7 +8,7 @@ setup_title: "La tienda todavía no está conectada"
 setup_text: "Añade el identificador de tienda de Ecwid a la configuración del sitio para activar el escaparate."
 shop_offer:
   eyebrow: "Incluido con cada equipo"
-  title: "Compra un Kosoku y empieza a analizar esa misma semana."
+  title: "Compra un Kosoku y consigue dos meses de Quko Cloud en Alto Nivel."
   text: "Cada Kosoku sale con dos meses gratis de licencia High Level de Quko Cloud. La clave llega con tu pedido y la cuenta atrás solo arranca cuando la canjeas, así que los meses son tuyos para el primer bloque que de verdad quieras medir."
   highlight:
     value: "2"
@@ -18,6 +18,12 @@ shop_offer:
     - "Envío internacional"
     - "IVA incluido cuando te es aplicable"
     - "Claves por correo al confirmar el pago"
+stock_notice:
+  title: "Disponibilidad de Kosoku"
+  demand: "La demanda de Kosoku es muy alta."
+  restock: "Esperamos reponer existencias a finales de año."
+  shipping: "Los pedidos se enviarán por orden de reserva: quien reserve primero recibirá su pedido primero."
+  wait: "El tiempo de espera actual es de aproximadamente 3 a 5 meses."
 notes:
   - "Los precios se adaptan a tu ubicación: cuando el IVA te es aplicable, ya está incluido en el precio que ves. Los pedidos fuera de la UE se muestran sin IVA europeo y pueden estar sujetos a aranceles a la llegada."
   - "Cada Kosoku incluye **dos meses de Quko Cloud en Alto Nivel**. Las claves de licencia se envían por correo tras el pago y puedes canjearlas cuando quieras: la cuenta atrás empieza al canjear, no al comprar."

@@ -41,6 +41,14 @@
 
 <section class="quko-section quko-shop">
   <div class="container">
+    {{ with .Params.stock_notice }}
+    <aside class="quko-shop-stock-notice" aria-labelledby="quko-shop-stock-title">
+      <h2 id="quko-shop-stock-title">{{ .title }}</h2>
+      <p>{{ .demand }} {{ .restock }}</p>
+      <p>{{ .shipping }}</p>
+      <p>{{ .wait }}</p>
+    </aside>
+    {{ end }}
     {{ if or (not $storeId) (eq $storeId "00000000") }}
       {{/* Fail visibly rather than rendering an empty page: a silent blank
            storefront is much harder to notice than this. */}}

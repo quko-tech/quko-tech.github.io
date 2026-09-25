@@ -8,7 +8,7 @@ setup_title: "The shop is not connected yet"
 setup_text: "Add the Ecwid store id to the site configuration to bring the storefront online."
 shop_offer:
   eyebrow: "Included with every unit"
-  title: "Buy a Kosoku, start analysing the same week."
+  title: "Buy a Kosoku and get two months of Quko Cloud High Level."
   text: "Every Kosoku ships with two free months of a High Level licence for Quko Cloud. The code arrives with your order and the countdown only starts when you redeem it, so the months are yours for the first block you actually want to measure."
   highlight:
     value: "2"
@@ -18,6 +18,12 @@ shop_offer:
     - "International shipping"
     - "VAT included where it applies to you"
     - "Licence codes emailed on payment"
+stock_notice:
+  title: "Kosoku stock update"
+  demand: "Demand for Kosoku is very high."
+  restock: "We expect to replenish stock at the end of the year."
+  shipping: "Orders ship in preorder order: first preordered, first shipped."
+  wait: "The current waiting time is approximately 3 to 5 months."
 notes:
   - "Prices adapt to where you are: where VAT applies to you, it is already included in the price shown. Orders going outside the EU are shown without EU VAT and may attract import duties on arrival."
   - "Every Kosoku comes with **two months of a High Level License for Quko Cloud**. Licence codes are emailed after payment and can be redeemed whenever you like: the countdown starts when you redeem, not when you buy."
