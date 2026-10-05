@@ -24,6 +24,28 @@ audiences:
       icon: "fas fa-microscope"
     - name: "Data analysts"
       icon: "fas fa-chart-line"
+medal_breakdown:
+  eyebrow: "Results with QUKO systems"
+  title: "Fueling champions worldwide"
+  text: "QUKO systems are engineered for the podium. Our athletes have captured medals at every level of the international pathway, proving our tech translates directly to triumph."
+  evolution_eyebrow: "Across the years"
+  evolution_title: "Total medals by year"
+  evolution_label: "Total medals obtained in each year from 2021 to 2026"
+  discipline_title: "Sprint Canoeing"
+  table_label: "Medal results by competition level"
+  total_label: "medals"
+  medal_labels:
+    gold: "Gold"
+    silver: "Silver"
+    bronze: "Bronze"
+  category_labels:
+    world_champs: "World Championships"
+    world_cups: "World Cups"
+    continental_champs: "Continental Championships"
+    u23_worlds: "Under 23 World Championships"
+    u23_continentals: "Under 23 Continental Championships"
+    jun_worlds: "Junior World Championships"
+    jun_continentals: "Junior Continental Championships"
 ecosystem:
   eyebrow: "From water to insight"
   title: "One workflow, from movement to meaning"

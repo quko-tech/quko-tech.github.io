@@ -1,0 +1,21 @@
+{
+  "updated": "2026-10-06",
+  "chart_max": 52,
+  "yearly_totals": [
+    { "year": "2021", "total": 8 },
+    { "year": "2022", "total": 16 },
+    { "year": "2023", "total": 12 },
+    { "year": "2024", "total": 23 },
+    { "year": "2025", "total": 27 },
+    { "year": "2026", "total": 52 }
+  ],
+  "categories": [
+    { "id": "world_champs", "gold": 3, "silver": 6, "bronze": 6 },
+    { "id": "world_cups", "gold": 8, "silver": 16, "bronze": 10 },
+    { "id": "continental_champs", "gold": 7, "silver": 10, "bronze": 6 },
+    { "id": "u23_worlds", "gold": 10, "silver": 9, "bronze": 6 },
+    { "id": "u23_continentals", "gold": 4, "silver": 7, "bronze": 6 },
+    { "id": "jun_worlds", "gold": 1, "silver": 5, "bronze": 6 },
+    { "id": "jun_continentals", "gold": 1, "silver": 3, "bronze": 8 }
+  ]
+}

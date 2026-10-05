@@ -24,6 +24,28 @@ audiences:
       icon: "fas fa-microscope"
     - name: "Analistas de datos"
       icon: "fas fa-chart-line"
+medal_breakdown:
+  eyebrow: "Resultados con sistemas QUKO"
+  title: "Precisión que chega ao podio"
+  text: "Os deportistas que adestran con sistemas QUKO conseguiron medallas en todas as etapas do percorrido internacional. O desglose conta os resultados de podio por nivel de competición."
+  evolution_eyebrow: "Ao longo dos anos"
+  evolution_title: "Total de medallas por ano"
+  evolution_label: "Total de medallas obtidas cada ano entre 2021 e 2026"
+  discipline_title: "Piragüismo Sprint"
+  table_label: "Resultados de medallas por nivel de competición"
+  total_label: "medallas"
+  medal_labels:
+    gold: "Ouro"
+    silver: "Prata"
+    bronze: "Bronce"
+  category_labels:
+    world_champs: "Campionatos do Mundo"
+    world_cups: "Copas do Mundo"
+    continental_champs: "Campionatos Continentais"
+    u23_worlds: "Campionatos do Mundo Sub-23"
+    u23_continentals: "Campionatos Continentais Sub-23"
+    jun_worlds: "Campionatos do Mundo Júnior"
+    jun_continentals: "Campionatos Continentais Júnior"
 ecosystem:
   eyebrow: "Da auga ao coñecemento"
   title: "Un proceso completo, do movemento ao seu significado"

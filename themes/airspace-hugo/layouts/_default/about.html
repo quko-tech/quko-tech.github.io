@@ -13,6 +13,7 @@
   <div class="quko-copy" data-reveal>{{ range .paragraphs }}<p>{{ . }}</p>{{ end }}</div>
 </div></div></section>
 {{ end }}
+{{ partial "medal-breakdown.html" . }}
 {{ with .Params.principles }}
 <section class="quko-section quko-section-muted"><div class="container">
   <div class="quko-section-title center" data-reveal><span class="quko-eyebrow">{{ .eyebrow }}</span><h2>{{ .title }}</h2></div>

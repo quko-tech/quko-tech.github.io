@@ -249,4 +249,78 @@ $(document).ready(function () {
   } else {
     revealItems.forEach(function (item) { item.classList.add('revealed'); });
   }
+
+  // Animate the aggregate medal results when their panel enters the viewport.
+  document.querySelectorAll('[data-medal-breakdown]').forEach(function (section) {
+    var hasStarted = false;
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function animateMedals() {
+      if (hasStarted) return;
+      hasStarted = true;
+
+      section.querySelectorAll('[data-medal-number]').forEach(function (number) {
+        var target = parseInt(number.getAttribute('data-value'), 10) || 0;
+        if (reducedMotion) {
+          number.textContent = target.toLocaleString();
+          return;
+        }
+
+        var start = performance.now();
+        var duration = 1200;
+
+        number.textContent = '0';
+        function tick(now) {
+          var progress = Math.min((now - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          number.textContent = Math.round(target * eased).toLocaleString();
+          if (progress < 1) window.requestAnimationFrame(tick);
+        }
+        window.requestAnimationFrame(tick);
+      });
+
+      section.querySelectorAll('[data-chart-number]').forEach(function (number) {
+        var target = parseInt(number.getAttribute('data-value'), 10) || 0;
+        if (reducedMotion) {
+          number.textContent = target.toLocaleString();
+          return;
+        }
+
+        var start = performance.now();
+        var duration = 1200;
+        number.textContent = '0';
+        function tickChart(now) {
+          var progress = Math.min((now - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          number.textContent = Math.round(target * eased).toLocaleString();
+          if (progress < 1) window.requestAnimationFrame(tickChart);
+        }
+        window.requestAnimationFrame(tickChart);
+      });
+
+      section.querySelectorAll('.quko-medal-bar').forEach(function (bar) {
+        var targetHeight = bar.style.getPropertyValue('--chart-height');
+        if (reducedMotion) return;
+        bar.style.height = '0%';
+        window.requestAnimationFrame(function () {
+          bar.style.height = targetHeight;
+        });
+      });
+
+    }
+
+    if ('IntersectionObserver' in window && !reducedMotion) {
+      var medalObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateMedals();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      medalObserver.observe(section);
+    } else {
+      animateMedals();
+    }
+  });
 });

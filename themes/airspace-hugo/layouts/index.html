@@ -36,6 +36,32 @@
 </section>
 {{ end }}
 
+{{ with .Params.capabilities }}
+<section class="quko-section">
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
+    </div>
+    <div class="quko-grid-4">
+      {{ range .items }}
+      <article class="quko-card" data-reveal>
+        <span class="quko-icon"><i class="{{ .icon }}"></i></span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+      </article>
+      {{ end }}
+    </div>
+    <div class="quko-actions" style="justify-content:center">
+      <a class="btn-quko-outline" href="{{ .link | relLangURL }}">{{ .link_label }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ partial "medal-breakdown.html" . }}
+
 {{ with .Params.ecosystem }}
 <section class="quko-section" id="ecosystem">
   <div class="container">
@@ -104,30 +130,6 @@
 </section>
 {{ end }}
 
-{{ with .Params.capabilities }}
-<section class="quko-section">
-  <div class="container">
-    <div class="quko-section-title center" data-reveal>
-      <span class="quko-eyebrow">{{ .eyebrow }}</span>
-      <h2>{{ .title }}</h2>
-      <p>{{ .text }}</p>
-    </div>
-    <div class="quko-grid-4">
-      {{ range .items }}
-      <article class="quko-card" data-reveal>
-        <span class="quko-icon"><i class="{{ .icon }}"></i></span>
-        <h3>{{ .title }}</h3>
-        <p>{{ .text }}</p>
-      </article>
-      {{ end }}
-    </div>
-    <div class="quko-actions" style="justify-content:center">
-      <a class="btn-quko-outline" href="{{ .link | relLangURL }}">{{ .link_label }}</a>
-    </div>
-  </div>
-</section>
-{{ end }}
-
 {{ with .Params.research }}
 <section class="quko-section-sm quko-research-band">
   <div class="container">
@@ -157,6 +159,5 @@
 </section>
 {{ end }}
 
-{{ partial "pricing-table.html" . }}
 {{ partial "marketing-cta.html" . }}
 {{ end }}

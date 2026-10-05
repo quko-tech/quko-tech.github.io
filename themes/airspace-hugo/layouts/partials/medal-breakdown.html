@@ -1,0 +1,57 @@
+{{ with .Params.medal_breakdown }}
+{{ $copy := . }}
+<section class="quko-section quko-section-dark quko-medal-section" data-medal-breakdown aria-labelledby="medal-breakdown-title">
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2 id="medal-breakdown-title">{{ .title }}</h2>
+      <p>{{ .text }}</p>
+    </div>
+
+    <div class="quko-medal-evolution" data-medal-chart data-reveal data-reveal-delay="100" aria-labelledby="medal-evolution-title">
+      <div class="quko-medal-chart-heading">
+        <span class="quko-eyebrow">{{ .evolution_eyebrow }}</span>
+        <h3 id="medal-evolution-title">{{ .evolution_title }}</h3>
+      </div>
+      <div class="quko-medal-chart" role="img" aria-label="{{ .evolution_label }}">
+        {{ range site.Data.medals.yearly_totals }}
+        <div class="quko-medal-year">
+          <span class="quko-medal-year-value" data-chart-number data-value="{{ .total }}">{{ .total }}</span>
+          <div class="quko-medal-bar-track" aria-hidden="true">
+            <span class="quko-medal-bar" style="--chart-height: {{ div (mul .total 100) site.Data.medals.chart_max }}%;"></span>
+          </div>
+          <span class="quko-medal-year-label">{{ .year }}</span>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <h3 class="quko-medal-discipline" data-reveal data-reveal-delay="150">{{ .discipline_title }}</h3>
+
+    <div class="quko-medal-table" role="table" aria-label="{{ .table_label }}">
+      {{ range $index, $category := site.Data.medals.categories }}
+      {{ $category_label := index $copy.category_labels $category.id }}
+      {{ $total := add (add (index $category "gold") (index $category "silver")) (index $category "bronze") }}
+      <article class="quko-medal-row" role="row" data-reveal data-reveal-delay="{{ add 150 (mul $index 70) }}">
+        <div class="quko-medal-category" role="rowheader">
+          <h3>{{ $category_label }}</h3>
+          <span>{{ $total }} {{ $copy.total_label }}</span>
+        </div>
+        <div class="quko-medal-values" role="presentation">
+          {{ range $medal := slice "gold" "silver" "bronze" }}
+          {{ $value := index $category $medal }}
+          <div class="quko-medal-value quko-medal-{{ $medal }}" role="cell" data-medal-value="{{ $value }}">
+            <div class="quko-medal-value-head">
+              <span class="quko-medal-disc" aria-hidden="true"><i class="fas fa-medal"></i></span>
+              <span class="quko-medal-number" data-medal-number data-value="{{ $value }}">{{ $value }}</span>
+              <span class="sr-only">{{ index $copy.medal_labels $medal }}</span>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

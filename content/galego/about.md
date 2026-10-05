@@ -15,6 +15,28 @@ story:
   paragraphs:
     - "A medición e a análise de calidade non deberían limitarse a un laboratorio. QUKO leva esa precisión á auga con ferramentas adaptadas ao adestramento real."
     - "Combinamos telecomunicacións, física experimental, sistemas embebidos, software na nube e procesado deportivo. O resultado é un proceso conectado, non tecnoloxías illadas."
+medal_breakdown:
+  eyebrow: "Resultados con sistemas QUKO"
+  title: "Rendemento medido no podio"
+  text: "Os deportistas e equipos que adestran con sistemas QUKO conseguiron medallas en competicións internacionais sénior, Sub-23 e júnior. Estes totais mostran o alcance deses resultados de podio no percorrido internacional."
+  evolution_eyebrow: "Ao longo dos anos"
+  evolution_title: "Total de medallas por ano"
+  evolution_label: "Total de medallas obtidas cada ano entre 2021 e 2026"
+  discipline_title: "Piragüismo Sprint"
+  table_label: "Resultados de medallas por nivel de competición"
+  total_label: "medallas"
+  medal_labels:
+    gold: "Ouro"
+    silver: "Prata"
+    bronze: "Bronce"
+  category_labels:
+    world_champs: "Campionatos do Mundo"
+    world_cups: "Copas do Mundo"
+    continental_champs: "Campionatos Continentais"
+    u23_worlds: "Campionatos do Mundo Sub-23"
+    u23_continentals: "Campionatos Continentais Sub-23"
+    jun_worlds: "Campionatos do Mundo Júnior"
+    jun_continentals: "Campionatos Continentais Júnior"
 principles:
   eyebrow: "Como traballamos"
   title: "Profundidade científica, decisións prácticas"

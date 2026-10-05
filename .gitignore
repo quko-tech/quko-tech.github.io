@@ -6,6 +6,7 @@
 # a layout that isn't followed by a local rebuild leaves the repo describing a
 # site that doesn't match itself.
 public/
+other_data/
 
 # Hugo's asset cache (compiled SCSS, resized images). Regenerated on build.
 resources/_gen/

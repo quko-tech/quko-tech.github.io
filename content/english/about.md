@@ -15,6 +15,28 @@ story:
   paragraphs:
     - "High-quality measurement and analysis should not be limited to a laboratory. QUKO brings that precision to the water in tools that fit real training."
     - "Our work combines telecommunications, experimental physics, embedded systems, cloud software and sport-specific data processing. The result is one connected workflow, not a collection of isolated technologies."
+medal_breakdown:
+  eyebrow: "Results with QUKO systems"
+  title: "Performance measured at the podium"
+  text: "The athletes and teams who train with QUKO systems have earned medals across senior, U23 and junior international competition. These totals show the breadth of those podium results across the international pathway."
+  evolution_eyebrow: "Across the years"
+  evolution_title: "Total medals by year"
+  evolution_label: "Total medals obtained in each year from 2021 to 2026"
+  discipline_title: "Sprint Canoeing"
+  table_label: "Medal results by competition level"
+  total_label: "medals"
+  medal_labels:
+    gold: "Gold"
+    silver: "Silver"
+    bronze: "Bronze"
+  category_labels:
+    world_champs: "World Championships"
+    world_cups: "World Cups"
+    continental_champs: "Continental Championships"
+    u23_worlds: "Under 23 World Championships"
+    u23_continentals: "Under 23 Continental Championships"
+    jun_worlds: "Junior World Championships"
+    jun_continentals: "Junior Continental Championships"
 principles:
   eyebrow: "How we work"
   title: "Scientific depth, practical decisions"
