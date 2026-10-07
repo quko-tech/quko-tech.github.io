@@ -111,3 +111,7 @@ weight = 7
 name = "Condicións de venda"
 url = "sales_terms/"
 weight = 8
+[[footer]]
+name = "Guía de marca"
+url = "brand/"
+weight = 9

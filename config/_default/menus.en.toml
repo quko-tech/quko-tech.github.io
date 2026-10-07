@@ -123,3 +123,7 @@ weight = 7
 name = "Terms of sale"
 url = "sales_terms/"
 weight = 8
+[[footer]]
+name = "Brand guidelines"
+url = "brand/"
+weight = 9
