@@ -115,3 +115,8 @@ weight = 8
 name = "Guía de marca"
 url = "brand/"
 weight = 9
+
+[[footer]]
+name = "Programa de partners"
+url = "partners/"
+weight = 10

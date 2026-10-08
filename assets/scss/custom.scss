@@ -3130,3 +3130,43 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+/* Partners programme */
+.quko-partner-copy .quko-check-list {
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.quko-partner-copy .quko-check-list li {
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+.quko-partner-copy .quko-check-list i {
+  flex: 0 0 18px;
+  margin-top: calc((1.72em - 1em) / 2);
+  font-size: 18px;
+  text-align: center;
+}
+
+.quko-partner-copy .quko-step-num {
+  flex: 0 0 24px;
+  color: var(--quko-red);
+  font-weight: 700;
+}
+
+.quko-partner-copy .quko-check-list + p {
+  margin-top: 0;
+}
+
+.quko-partner-copy .btn-quko {
+  margin-top: 14px;
+}
+
+.quko-partner-copy > :first-child {
+  margin-top: 0;
+}
+
+.quko-partner-copy > :last-child {
+  margin-bottom: 0;
+}

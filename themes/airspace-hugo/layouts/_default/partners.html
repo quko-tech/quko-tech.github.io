@@ -1,0 +1,80 @@
+{{ define "main" }}
+
+{{ with .Params.hero }}
+<section class="quko-page-hero quko-brand-hero">
+  <div class="container">
+    <div class="quko-page-hero-grid">
+      <div data-reveal>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h1>{{ .title }}</h1>
+        <p>{{ .text }}</p>
+      </div>
+      <div class="quko-brand-hero-art" data-reveal>
+        <img src="{{ .image | relURL }}" alt="{{ .image_alt }}">
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.intro }}
+<section class="quko-section">
+  <div class="container">
+    <div class="quko-copy-grid">
+      <div data-reveal>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+      </div>
+      <div class="quko-copy quko-partner-copy" data-reveal>{{ range .paragraphs }}<p>{{ . }}</p>{{ end }}</div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ range .Params.sections }}
+{{ $restricted := .dark }}
+<section id="{{ .id }}" class="quko-section{{ if .dark }} quko-section-dark{{ else if .muted }} quko-section-muted{{ end }}">
+  <div class="container">
+    <div class="quko-copy-grid">
+      <div data-reveal>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+      </div>
+      <div class="quko-copy quko-partner-copy" data-reveal>
+        {{ range .paragraphs }}<p>{{ . }}</p>{{ end }}
+        {{ with .points }}
+        <ul class="quko-check-list">
+          {{ range . }}<li><i class="fas {{ if $restricted }}fa-times-circle{{ else }}fa-check-circle{{ end }}" aria-hidden="true"></i><span>{{ . }}</span></li>{{ end }}
+        </ul>
+        {{ end }}
+        {{ with .steps }}
+        <ol class="quko-check-list quko-step-list">
+          {{ range $index, $step := . }}<li><span class="quko-step-num" aria-hidden="true">{{ add $index 1 }}.</span><span><strong>{{ $step.title }}</strong> {{ $step.text }}</span></li>{{ end }}
+        </ol>
+        {{ end }}
+        {{ with .optional }}<p>{{ . }}</p>{{ end }}
+        {{ range .links }}<p><a href="{{ .url | relLangURL }}">{{ .label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>{{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with .Params.contact }}
+<section class="quko-section quko-section-muted">
+  <div class="container">
+    <div class="quko-copy-grid">
+      <div data-reveal>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+      </div>
+      <div class="quko-copy quko-partner-copy" data-reveal>
+        <p>{{ .text }}</p>
+        <a class="btn-quko" href="mailto:{{ site.Params.email }}?subject={{ .subject | urlquery }}">{{ .label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ end }}
