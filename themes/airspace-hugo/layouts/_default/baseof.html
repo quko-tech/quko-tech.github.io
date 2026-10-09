@@ -41,7 +41,7 @@ AUTHOR WEBSITE: https://gethugothemes.com
 
 	<!-- cache partial only in production -->
 	{{ if hugo.IsProduction }}
-	{{ partialCached "footer.html" . }}
+	{{ partialCached "footer.html" . site.Language.Lang }}
 	{{ partialCached "script.html" . }}
 	{{ else }}
 	{{ partial "footer.html" . }}

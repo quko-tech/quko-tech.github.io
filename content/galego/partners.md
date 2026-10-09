@@ -124,6 +124,8 @@ sections:
     links:
       - label: "Le a guía de marca de QUKO"
         url: "brand/"
+      - label: "Explora as APIs de QUKO"
+        url: "apis/"
   - id: "access-terms"
     eyebrow: "11 · Condicións de acceso"
     title: "Acceso gratuíto, límites acordados"

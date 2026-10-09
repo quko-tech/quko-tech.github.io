@@ -1,0 +1,42 @@
+{{ define "main" }}
+<section class="quko-page-hero quko-api-hero">
+  <div class="container quko-page-hero-grid">
+    <div>
+      <span class="quko-eyebrow">{{ .Params.eyebrow }}</span>
+      <h1>{{ .Params.heading }}</h1>
+      <p>{{ .Params.text }}</p>
+      <a class="btn-quko" href="#apis">{{ .Params.explore }} <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+    </div>
+    <nav class="quko-api-network" aria-label="{{ .Title }}">
+      <span class="quko-api-network-core" aria-hidden="true">QUKO<span>API</span></span>
+      {{ range .Params.apis }}
+      <a class="quko-api-node quko-api-node-{{ .id }}" href="#api-{{ .id }}"><i class="fas {{ .icon }}" aria-hidden="true"></i>{{ .name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</section>
+<section class="quko-section-sm" id="apis" aria-label="{{ .Params.explore }}">
+  <div class="container">
+    <div class="quko-api-grid">
+      {{ range $index, $api := .Params.apis }}
+      <article class="quko-api-card" id="api-{{ .id }}">
+        <div class="quko-api-card-top"><span class="quko-api-icon"><i class="fas {{ .icon }}" aria-hidden="true"></i></span><span class="quko-api-number" aria-hidden="true">0{{ add $index 1 }}</span></div>
+        <h2>{{ .name }}</h2>
+        <h3>{{ .tagline }}</h3>
+        <p>{{ .text }}</p>
+        <span class="quko-api-access">{{ .access }}</span>
+        <details><summary>{{ $.Params.details }}</summary><p>{{ .detail }}</p></details>
+        <a class="quko-api-docs" href="{{ .url }}">{{ $.Params.docs }} <span class="sr-only">— {{ .name }}</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </article>
+      {{ end }}
+    </div>
+    <p class="quko-api-note">{{ .Params.note }}</p>
+  </div>
+</section>
+<section class="quko-section-sm quko-section-muted">
+  <div class="container quko-api-cta">
+    <div><h2>{{ .Params.contact_title }}</h2><p>{{ .Params.contact_text }}</p></div>
+    <div class="quko-api-actions"><a class="btn-quko" href="{{ `contact/` | relLangURL }}">{{ .Params.contact }}</a><a href="{{ `partners/` | relLangURL }}">{{ .Params.partners }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+  </div>
+</section>
+{{ end }}

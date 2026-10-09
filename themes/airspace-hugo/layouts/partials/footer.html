@@ -6,10 +6,13 @@
         <p>{{ i18n "footer_description" }}</p>
         <a class="btn-quko" href="{{ `contact/` | relLangURL }}">{{ i18n "request_demo" }}</a>
       </div>
+      {{ range slice "explore" "developers" "legal" }}
+      {{ $group := . }}
       <div class="quko-footer-column">
-        <h3>{{ i18n "footer_explore" }}</h3>
-        <ul>{{ range site.Menus.footer }}<li><a href="{{ if findRE `^http` .URL }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}">{{ .Name }}</a></li>{{ end }}</ul>
+        <h3>{{ i18n (printf "footer_%s" $group) }}</h3>
+        <ul>{{ range site.Menus.footer }}{{ if eq .Params.group $group }}<li><a href="{{ if findRE `^http` .URL }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}">{{ .Name }}</a></li>{{ end }}{{ end }}</ul>
       </div>
+      {{ end }}
       <div class="quko-footer-column">
         <h3>{{ i18n "footer_contact" }}</h3>
         <ul>

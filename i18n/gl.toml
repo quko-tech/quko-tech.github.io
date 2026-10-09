@@ -83,3 +83,6 @@ all_rights_reserved = "Todos os dereitos reservados."
 billing_period = "Período de facturación"
 monthly = "Mensual"
 yearly = "Anual"
+
+footer_developers = "Desenvolvedores"
+footer_legal = "Legal"

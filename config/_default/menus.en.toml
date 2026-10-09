@@ -95,40 +95,66 @@ weight = 7
 name = "Products"
 url = "kosoku/"
 weight = 1
+[footer.params]
+group = "explore"
 [[footer]]
 name = "Technology"
 url = "service/"
 weight = 2
+[footer.params]
+group = "explore"
 [[footer]]
 name = "About"
 url = "about/"
 weight = 3
+[footer.params]
+group = "explore"
 [[footer]]
 name = "FAQ"
 url = "faq/"
 weight = 4
+[footer.params]
+group = "explore"
 [[footer]]
 name = "Privacy"
 url = "privacy/"
 weight = 5
+[footer.params]
+group = "legal"
 [[footer]]
 name = "Paddle Results privacy policy"
 url = "privacy_paddle_results/"
 weight = 6
+[footer.params]
+group = "legal"
 [[footer]]
 name = "Legal notice"
 url = "legal_notice/"
 weight = 7
+[footer.params]
+group = "legal"
 [[footer]]
 name = "Terms of sale"
 url = "sales_terms/"
 weight = 8
+[footer.params]
+group = "legal"
 [[footer]]
 name = "Brand guidelines"
 url = "brand/"
 weight = 9
-
+[footer.params]
+group = "developers"
 [[footer]]
 name = "Partners Programme"
 url = "partners/"
 weight = 10
+[footer.params]
+group = "developers"
+
+[[footer]]
+name = "APIs"
+url = "apis/"
+weight = 11
+[footer.params]
+group = "developers"
