@@ -82,7 +82,7 @@ legal:
 
                                                     <h5>Results award programme</h5>
                                                     <p>
-                                                    When you or your crew submit a claim under the <a href='../results_sponsorship/'>Results Awards</a> programme,
+                                                    When you or your crew submit a claim under the <a href='../results_awards/'>Results Awards</a> programme,
                                                     QUKO TECH, S.L. processes the data you send (names and contact details of the crew members, competition, event and
                                                     official result, and the session files recorded with QUKO and other devices) to verify the claim, decide on it,
                                                     pay the award or issue the discount, comply with tax and accounting obligations, and, once the award is accepted,

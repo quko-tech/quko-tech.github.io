@@ -86,7 +86,7 @@ legal:
 
                                                     <h5>Programa de premios por resultados</h5>
              <p>
-             Cuando tú o tu tripulación presentáis una solicitud al programa de <a href='../results_sponsorship/'>premios por resultados</a>,
+             Cuando tú o tu tripulación presentáis una solicitud al programa de <a href='../results_awards/'>premios por resultados</a>,
              QUKO TECH, S.L. trata los datos que envíes (nombre y contacto de los miembros de la tripulación, competición, prueba y
              resultado oficial, y los archivos de sesión registrados con QUKO y con otros dispositivos) para verificar y resolver la
              solicitud, pagar el premio o emitir el descuento, cumplir las obligaciones fiscales y contables y, una vez aceptado el

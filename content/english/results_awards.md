@@ -3,7 +3,8 @@ title: "Results Awards"
 description: "QUKO awards for senior canoe sprint finals recorded with our devices. Explore the euro amounts, the key conditions and the full terms."
 layout: "results_sponsorship"
 draft: false
-translationKey: "results_sponsorship"
+translationKey: "results_awards"
+aliases: ["/results_sponsorship/"]
 hero_title: "A final worth celebrating."
 intro: "Your final deserves to be seen. Record a senior canoe sprint final with a QUKO device and you can submit it for a QUKO results award. Gold, silver, bronze and other final placings are included."
 hero_table_button: "Explore the awards"

@@ -3,7 +3,8 @@ title: "Premios por resultados"
 description: "Premios QUKO para finais sénior de piragüismo en augas tranquilas rexistradas cos nosos dispositivos. Consulta os importes, os puntos clave e as condicións completas."
 layout: "results_sponsorship"
 draft: false
-translationKey: "results_sponsorship"
+translationKey: "results_awards"
+aliases: ["/gl/results_sponsorship/"]
 hero_title: "Unha final que merece celebrarse."
 intro: "A túa final merece ser vista. Rexistra unha final sénior de piragüismo en augas tranquilas cun dispositivo QUKO e poderás presentala ao programa de premios por resultados. Inclúense o ouro, a prata, o bronce e os demais postos da final."
 hero_table_button: "Consultar os premios"

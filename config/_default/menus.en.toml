@@ -46,7 +46,7 @@ weight = 4
   [[main]]
   parent = "more"
   name = "Results Awards"
-  url = "results_sponsorship/"
+  url = "results_awards/"
   weight = 2
 
   [[main]]
@@ -123,7 +123,7 @@ weight = 4
 group = "explore"
 [[footer]]
 name = "Results Awards"
-url = "results_sponsorship/"
+url = "results_awards/"
 weight = 5
 [footer.params]
 group = "explore"
