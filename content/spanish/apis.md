@@ -42,7 +42,7 @@ apis:
   tagline: Lleva sesiones a Quko Cloud.
   text: Importa grabaciones nativas .qk y gestiona las sesiones y entrenamientos que tu aplicación crea en tu propia
     cuenta.
-  access: Cuentas habilitadas · Importación y edición
+  access: Empresas aprobadas · Importación y edición
   detail: QUKO debe habilitar tu cuenta. Previsualiza y procesa grabaciones nativas; edita o elimina únicamente
     las sesiones y entrenamientos subidos por tu aplicación.
   icon: fa-upload
@@ -52,7 +52,7 @@ apis:
   tagline: Pon cada regata en contexto.
   text: Convierte los resultados de piragüismo en historiales de medallas, comparativas y resúmenes de regata en
     directo para tu producto o tus comentarios.
-  access: Plan activo · Resultados y datos
+  access: Empresas aprobadas · Resultados y datos
   detail: Disponible con un plan activo de Almanac. Los datos estructurados incluyen comentarios listos para usar
     en inglés y español. Los resultados proceden del archivo de QUKO; se indican los resultados provisionales y
     sus salvedades.

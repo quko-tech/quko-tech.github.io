@@ -1,19 +1,33 @@
 {{ define "main" }}
 <section class="quko-page-hero quko-api-hero">
-  <div class="container quko-page-hero-grid">
-    <div>
+  <div class="container"><div class="quko-page-hero-grid quko-api-hero-grid">
+    <div class="quko-api-hero-copy">
       <span class="quko-eyebrow">{{ .Params.eyebrow }}</span>
       <h1>{{ .Params.heading }}</h1>
       <p>{{ .Params.text }}</p>
-      <a class="btn-quko" href="#apis">{{ .Params.explore }} <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+      <div class="quko-actions"><a class="btn-quko" href="#apis">{{ .Params.explore }} <i class="fas fa-arrow-down" aria-hidden="true"></i></a></div>
     </div>
-    <nav class="quko-api-network" aria-label="{{ .Title }}">
-      <span class="quko-api-network-core" aria-hidden="true">QUKO<span>API</span></span>
-      {{ range .Params.apis }}
-      <a class="quko-api-node quko-api-node-{{ .id }}" href="#api-{{ .id }}"><i class="fas {{ .icon }}" aria-hidden="true"></i>{{ .name }}</a>
+    {{ $samples := dict
+      "data" (slice "\"session\": \"K1 · 6 × 500 m\"" "\"distance_km\": 8.4" "\"stroke_rate\": 82" "\"replay\": \"QukoSim\"")
+      "partner" (slice "\"athlete\": \"authorised\"" "\"scope\": \"sessions:read\"" "\"webhook\": \"session.created\"" "\"embed\": \"QukoSim\"")
+      "session" (slice "\"file\": \"race_k1.qk\"" "\"preview\": \"ok\"" "\"status\": \"processed\"" "\"training\": \"created\"")
+      "almanac" (slice "\"event\": \"K1 500 m\"" "\"medals\": { \"gold\": 3 }" "\"head_to_head\": \"2 – 1\"" "\"briefing\": \"en, es\"")
+    }}
+    <div class="quko-api-console" aria-hidden="true">
+      <div class="quko-api-console-bar"><span></span><span></span><span></span><em>api.quko</em></div>
+      <div class="quko-api-console-tabs">
+        {{ range $index, $api := .Params.apis }}<span class="quko-api-console-tab{{ if eq $index 0 }} is-active{{ end }}"><i class="fas {{ .icon }}"></i>{{ .name }}</span>{{ end }}
+      </div>
+      {{ range $index, $api := .Params.apis }}
+      <div class="quko-api-console-body{{ if eq $index 0 }} is-active{{ end }}">
+        <div class="quko-api-console-line quko-api-console-req"><b>GET</b> {{ lower (replace .name " API" "") }}<span class="quko-api-console-ok">200 OK</span></div>
+        <div class="quko-api-console-line">{</div>
+        {{ $lines := index $samples .id }}{{ range $i, $l := $lines }}<div class="quko-api-console-line quko-api-console-kv" style="--d: {{ add $i 1 }}">{{ $l }}{{ if lt (add $i 1) (len $lines) }},{{ end }}</div>{{ end }}
+        <div class="quko-api-console-line" style="--d: 5">}</div>
+      </div>
       {{ end }}
-    </nav>
-  </div>
+    </div>
+  </div></div>
 </section>
 <section class="quko-section-sm" id="apis" aria-label="{{ .Params.explore }}">
   <div class="container">
@@ -34,9 +48,21 @@
   </div>
 </section>
 <section class="quko-section-sm quko-section-muted">
-  <div class="container quko-api-cta">
+  <div class="container"><div class="quko-api-cta">
     <div><h2>{{ .Params.contact_title }}</h2><p>{{ .Params.contact_text }}</p></div>
     <div class="quko-api-actions"><a class="btn-quko" href="{{ `contact/` | relLangURL }}">{{ .Params.contact }}</a><a href="{{ `partners/` | relLangURL }}">{{ .Params.partners }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
-  </div>
+  </div></div>
 </section>
+<script>
+(function () {
+  var c = document.querySelector('.quko-api-console');
+  if (!c || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var tabs = c.querySelectorAll('.quko-api-console-tab'), bodies = c.querySelectorAll('.quko-api-console-body'), i = 0;
+  setInterval(function () {
+    tabs[i].classList.remove('is-active'); bodies[i].classList.remove('is-active');
+    i = (i + 1) % tabs.length;
+    tabs[i].classList.add('is-active'); bodies[i].classList.add('is-active');
+  }, 3600);
+})();
+</script>
 {{ end }}

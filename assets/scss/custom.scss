@@ -3173,60 +3173,31 @@ a {
 
 /* API overview */
 .quko-api-hero {
-  background: radial-gradient(ellipse at 85% 30%, rgba(244, 66, 54, .09), transparent 55%), var(--quko-mist);
+  background: radial-gradient(ellipse at 15% 40%, rgba(104, 199, 220, .14), transparent 55%), #314955;
+  color: var(--quko-white);
 }
-.quko-api-network {
-  position: relative;
-  min-height: 340px;
-  border: 1px solid var(--quko-line);
-  border-radius: 32px;
-  background: repeating-linear-gradient(0deg, transparent 0 39px, rgba(18, 21, 28, .035) 39px 40px), repeating-linear-gradient(90deg, transparent 0 39px, rgba(18, 21, 28, .035) 39px 40px);
-}
-.quko-api-network::before {
-  content: "";
-  position: absolute;
-  inset: 58px 70px;
-  border: 1px dashed rgba(244, 66, 54, .45);
-  border-radius: 50%;
-  animation: quko-api-orbit 28s linear infinite;
-}
-.quko-api-network-core {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: grid;
-  place-content: center;
-  width: 112px;
-  height: 112px;
-  border-radius: 50%;
-  background: var(--quko-ink);
-  color: white;
-  font-weight: 800;
-  font-size: 24px;
-  text-align: center;
-  box-shadow: 0 0 0 12px rgba(244, 66, 54, .07);
-}
-.quko-api-network-core span { color: var(--quko-coral); font-size: 12px; letter-spacing: .15em; }
-.quko-api-node {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 18px;
-  border: 1px solid var(--quko-line);
-  border-radius: 16px;
-  background: white;
-  color: var(--quko-ink);
-  font-weight: 600;
-  box-shadow: 0 8px 24px rgba(18, 21, 28, .06);
-}
-.quko-api-node i { color: var(--quko-red); }
-.quko-api-node:hover { transform: translateY(-4px); border-color: var(--quko-red); }
-.quko-api-node-data { top: 30px; left: 24px; }
-.quko-api-node-partner { top: 30px; right: 24px; }
-.quko-api-node-session { bottom: 30px; left: 24px; }
-.quko-api-node-almanac { bottom: 30px; right: 24px; }
+.quko-api-hero h1 { color: var(--quko-white); }
+.quko-api-hero p { color: var(--quko-white); opacity: .82; }
+.quko-api-hero .quko-eyebrow { color: #ff989b; }
+.quko-api-hero .btn-quko i { margin-left: 8px; }
+.quko-api-hero-grid { grid-template-columns: minmax(360px, 1fr) minmax(0, 1fr); }
+.quko-api-console { order: -1; overflow: hidden; border-radius: var(--quko-radius); border: 1px solid rgba(255, 255, 255, .12); background: rgba(18, 21, 28, .45); color: #d7dce5; font-family: SFMono-Regular, Consolas, Menlo, monospace; font-size: 14px; box-shadow: 0 24px 60px rgba(18, 21, 28, .25); }
+.quko-api-console-bar { display: flex; align-items: center; gap: 7px; padding: 14px 18px; border-bottom: 1px solid rgba(255, 255, 255, .08); }
+.quko-api-console-bar span { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, .18); }
+.quko-api-console-bar span:first-child { background: var(--quko-coral); }
+.quko-api-console-bar em { margin-left: auto; color: rgba(255, 255, 255, .4); font-style: normal; font-size: 12px; }
+.quko-api-console-tabs { display: flex; gap: 6px; padding: 14px 18px 0; flex-wrap: wrap; }
+.quko-api-console-tab { display: flex; align-items: center; gap: 7px; padding: 7px 11px; border-radius: 9px; color: rgba(255, 255, 255, .45); font-family: inherit; font-size: 12px; transition: background .3s ease, color .3s ease; }
+.quko-api-console-tab.is-active { background: rgba(255, 255, 255, .1); color: white; }
+.quko-api-console-tab.is-active i { color: var(--quko-coral); }
+.quko-api-console-body { display: none; padding: 22px 24px 28px; min-height: 230px; }
+.quko-api-console-body.is-active { display: block; }
+.quko-api-console-line { line-height: 1.9; white-space: nowrap; opacity: 0; animation: quko-api-line .4s ease forwards; animation-delay: calc(.9s + var(--d, 0) * .16s); }
+.quko-api-console-req { margin-bottom: 8px; color: white; animation-delay: 0s; }
+.quko-api-console-req b { margin-right: 6px; color: var(--quko-coral); }
+.quko-api-console-ok { margin-left: 12px; padding: 2px 8px; border-radius: 6px; background: rgba(76, 201, 140, .15); color: #6fdcaa; font-size: 12px; opacity: 0; animation: quko-api-line .3s ease .8s forwards; }
+.quko-api-console-kv { padding-left: 22px; color: var(--quko-blue); }
+@keyframes quko-api-line { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .quko-api-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .quko-api-card {
   display: flex;
@@ -3253,26 +3224,26 @@ a {
 .quko-api-cta { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .quko-api-cta p { max-width: 640px; margin-bottom: 0; }
 .quko-api-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; flex-shrink: 0; }
-.quko-api-card a:focus-visible, .quko-api-card summary:focus-visible, .quko-api-node:focus-visible { outline: 3px solid var(--quko-red); outline-offset: 5px; }
-@keyframes quko-api-orbit { to { transform: rotate(360deg); } }
+.quko-api-card a:focus-visible, .quko-api-card summary:focus-visible { outline: 3px solid var(--quko-red); outline-offset: 5px; }
 @media (max-width: 1100px) and (min-width: 768px) {
   .quko-footer-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .quko-footer-brand { grid-column: 1 / -1; max-width: 420px; align-items: flex-start; text-align: left; }
 }
+@media (max-width: 991px) {
+  .quko-api-hero-grid { grid-template-columns: 1fr; }
+  .quko-api-console { order: 0; }
+}
 @media (max-width: 767px) {
   .quko-api-grid { grid-template-columns: 1fr; }
+  .quko-api-console { font-size: 12px; }
   .quko-api-card { padding: 26px; }
   .quko-api-cta { align-items: flex-start; flex-direction: column; }
-  .quko-api-node { padding: 12px; gap: 7px; font-size: 12px; }
-  .quko-api-node-data, .quko-api-node-session { left: 12px; }
-  .quko-api-node-partner, .quko-api-node-almanac { right: 12px; }
-  .quko-api-network { min-height: 300px; }
   .quko-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 20px; }
   .quko-footer-brand { grid-column: 1 / -1; }
   .quko-footer-column { min-width: 0; overflow-wrap: anywhere; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .quko-api-network::before { animation: none; }
+  .quko-api-console-line, .quko-api-console-ok { opacity: 1; animation: none; }
   .quko-api-card { transition: none; }
-  .quko-api-card:hover, .quko-api-card:focus-within, .quko-api-node:hover { transform: none; }
+  .quko-api-card:hover, .quko-api-card:focus-within { transform: none; }
 }

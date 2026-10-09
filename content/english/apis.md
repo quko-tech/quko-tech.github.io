@@ -39,7 +39,7 @@ apis:
   name: Session API
   tagline: Bring sessions into Quko Cloud.
   text: Import native .qk recordings and manage the sessions and training your application creates in your own account.
-  access: Enabled accounts · Import & edit
+  access: Approved companies · Import & edit
   detail: QUKO must enable your account. Preview and process native recordings, then edit or delete only the sessions
     and training uploaded by your application.
   icon: fa-upload
@@ -49,7 +49,7 @@ apis:
   tagline: Put every race in context.
   text: Turn canoe and kayak results into medal histories, athlete comparisons and live race briefings for your
     product or commentary.
-  access: Active plan · Results & facts
+  access: Approved companies · Results & facts
   detail: Available with an active Almanac plan. Structured facts include ready-to-read English and Spanish commentary.
     Results come from the QUKO archive; provisional results and caveats are flagged.
   icon: fa-trophy
