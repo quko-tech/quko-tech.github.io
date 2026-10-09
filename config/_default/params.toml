@@ -18,7 +18,9 @@ image = "images/og-image.png" # 1200x630 social share card; used as fallback if 
 address_descriptors = false
 # contact info
 phone = "+34 684 70 13 34"
-email = "contact@quko.es"
+email = "contacto@quko.es"
+# Leave the placeholder disabled until a real reCAPTCHA v3 site key is configured.
+recaptcha_site_key = "xxx-xxxxxxxxxxxxxxxxxxxxxxxx"
 location = """
 **QUKO**  
 Cangas do Morrazo              
@@ -42,9 +44,6 @@ copyright = "QUKO TECH, S.L."
 custom_script= ""
 # google tag manager, see https://developers.google.com/tag-manager/
 google_tag_manager = "" # example: G-XXXXXXXXXX
-# recaptch v3 site key
-recaptcha_site_key = "xxx-xxxxxxxxxxxxxxxxxxxxxxxx"
-
 [contact.form]
 enable = true
 # Whether to use [Netlify Forms](https://docs.netlify.com/forms/setup/)

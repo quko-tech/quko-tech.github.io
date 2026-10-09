@@ -80,6 +80,37 @@ legal:
                                                     <a href='../sales_terms/'>Terms of sale</a> for the commercial conditions.
                                                     </p>
 
+                                                    <h5>Results award programme</h5>
+                                                    <p>
+                                                    When you or your crew submit a claim under the <a href='../results_sponsorship/'>Results Awards</a> programme,
+                                                    QUKO TECH, S.L. processes the data you send (names and contact details of the crew members, competition, event and
+                                                    official result, and the session files recorded with QUKO and other devices) to verify the claim, decide on it,
+                                                    pay the award or issue the discount, comply with tax and accounting obligations, and, once the award is accepted,
+                                                    use the race data, names and official result as set out in the programme terms (including QUKO social media posts
+                                                    and showing the race to other users).
+                                                    </p>
+                                                    <p>
+                                                    <strong>Legal basis:</strong> the programme terms and the award agreement (art. 6.1.b GDPR); our tax and accounting
+                                                    obligations (art. 6.1.c GDPR); and our legitimate interest in verifying claims and preventing fraud (art. 6.1.f GDPR).
+                                                    Session files may contain heart-rate and other health data. If you choose to send them, we process them on the basis
+                                                    of your explicit consent (art. 9.2.a GDPR) solely to receive them and delete that data: we remove it from the file,
+                                                    we do not use it for verification, the award or any commercial purpose, and we permanently delete the original file as
+                                                    received within 30 days. You may withdraw your consent at any time. You can avoid this processing altogether by sending
+                                                    a file exported without heart-rate data.
+                                                    </p>
+                                                    <p>
+                                                    <strong>Crew members.</strong> The person who submits a claim provides the data of the other crew members and must inform
+                                                    them of this notice. Each crew member signs the award agreement individually.
+                                                    </p>
+                                                    <p>
+                                                    <strong>Retention and recipients.</strong> Claim data is kept for the period needed to handle the claim and for the periods
+                                                    required by tax and commercial law (generally up to six years). Names, results and race data licensed to QUKO are used
+                                                    while the licence is in force; if you withdraw your consent or object, we stop new uses of your name and personal data and
+                                                    remove it from the channels we control within a reasonable time, without affecting the award already granted.
+                                                    Data may be shared with banks and payment providers, tax authorities, and IT, hosting and e-mail providers acting as our
+                                                    processors. Data is not sold to third parties.
+                                                    </p>
+
                                                     <h5>What are your rights?</h5>
                                                     <p>The rights of the USER are:</p>
                                                     <ul style='font-size: 16px !important; line-height: 1.5 !important; padding-left: 40px !important; margin: 16px 0 !important; list-style: disc outside !important;'>

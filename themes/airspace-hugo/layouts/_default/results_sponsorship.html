@@ -1,0 +1,118 @@
+{{ define "main" }}
+{{ $awards := site.Data.results_sponsorship }}
+<section class="results-hero">
+  <div class="container"><div class="results-hero-grid">
+    <div class="results-hero-copy">
+      <span class="quko-eyebrow">{{ .Title }}</span>
+      <h1>{{ .Params.hero_title }}</h1>
+      <p>{{ .Params.intro }}</p>
+      <div class="results-hero-actions">
+        <a class="btn-quko" href="#awards">{{ .Params.hero_table_button }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <a class="results-hero-secondary" href="#conditions">{{ .Params.hero_terms_button }}</a>
+      </div>
+    </div>
+    <div class="results-hero-art" aria-hidden="true">
+      <div class="results-featured-card">
+        <span class="results-featured-label">{{ .Params.featured_label }}</span>
+        <span class="results-featured-medal"><i class="fas fa-medal"></i></span>
+        <strong>{{ lang.FormatNumber 2 $awards.reference_eur }} €</strong>
+        <span class="results-featured-result">{{ .Params.featured_result }}</span>
+        {{ with .Params.featured_amount_label }}<span class="results-featured-caption">{{ . }}</span>{{ end }}
+      </div>
+    </div>
+  </div></div>
+</section>
+<div class="results-facts"><div class="container"><div class="results-facts-grid">
+  {{ range .Params.hero_facts }}<span><i class="fas fa-check-circle" aria-hidden="true"></i>{{ . }}</span>{{ end }}
+</div></div></div>
+
+<section class="quko-section results-sponsorship" id="awards">
+  <div class="container">
+    <div class="results-section-heading">
+      <div>
+      <span class="quko-eyebrow">{{ .Params.table_eyebrow }}</span>
+      <h2>{{ .Params.table_title }}</h2>
+      </div>
+      <p>{{ .Params.table_intro }}</p>
+    </div>
+    <div class="results-award-panel">
+    <div class="results-sponsorship-controls" data-results-controls>
+      <label for="results-competition">{{ .Params.competition_label }}
+        <select id="results-competition" data-results-competition>
+          {{ range .Params.competitions }}<option value="{{ .key }}">{{ .label }}</option>{{ end }}
+        </select>
+      </label>
+      <label for="results-boat">{{ .Params.boat_label }}
+        <select id="results-boat" data-results-boat>
+          {{ range .Params.boats }}<option value="{{ .key }}">{{ .label }}</option>{{ end }}
+        </select>
+      </label>
+    </div>
+    <div class="results-sponsorship-tables" data-results-tables>
+      {{ range $competition := .Params.competitions }}
+        {{ range $boat := $.Params.boats }}
+          {{ $values := index (index $awards.payment_table_pct $competition.key) $boat.key }}
+          <div class="results-sponsorship-table-wrap" data-award-table data-competition="{{ $competition.key }}" data-boat="{{ $boat.key }}">
+            <table class="results-sponsorship-table">
+              <caption>{{ $competition.label }} · {{ $boat.label }}</caption>
+              <thead><tr><th scope="col">{{ $.Params.placing_label }}</th><th scope="col">{{ $.Params.amount_label }}</th></tr></thead>
+              <tbody>
+                {{ range $.Params.placings }}
+                  {{ $percent := index $values .key }}
+                  {{ $amount := div (mul (float $awards.reference_eur) (float $percent)) 100.0 }}
+                  {{ $rounded := mul (math.Round (div $amount (float $awards.rounding_increment_eur))) (float $awards.rounding_increment_eur) }}
+                  <tr><th scope="row">{{ .label }}</th><td>{{ lang.FormatNumber 2 $rounded }} €</td></tr>
+                {{ end }}
+              </tbody>
+            </table>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+    </div>
+    <p class="results-sponsorship-decision">{{ .Params.decision_note }}</p>
+  </div>
+</section>
+
+<section class="quko-section quko-section-muted results-sponsorship-conditions" id="conditions">
+  <div class="container">
+    <div class="results-section-heading">
+      <div>
+      <span class="quko-eyebrow">{{ .Params.conditions_eyebrow }}</span>
+      <h2>{{ .Params.conditions_title }}</h2>
+      </div>
+      <p>{{ .Params.conditions_intro }} <a href="#terms">{{ .Params.conditions_terms_link }}</a></p>
+    </div>
+    <ul class="results-key-points">
+      {{ range .Params.key_points }}<li>
+        <span class="results-key-icon" aria-hidden="true"><i class="fas fa-{{ .icon }}"></i></span>
+        <h3>{{ .title }}</h3>
+        <p class="results-key-lead">{{ .lead }}</p>
+        <ul>{{ range .items }}<li>{{ . }}</li>{{ end }}</ul>
+      </li>{{ end }}
+    </ul>
+    <div class="results-terms" id="terms">
+      <div class="results-terms-head"><h3>{{ .Params.terms_title }}</h3><span>{{ .Params.terms_version }}</span></div>
+      <div class="results-terms-scroll" tabindex="0" role="region" aria-label="{{ .Params.terms_title }}">
+        {{ range $i, $section := .Params.terms }}
+          <div class="results-terms-section">
+            {{ range $j, $paragraph := $section.paragraphs }}<p><span class="results-term-n">{{ add $i 1 }}.{{ add $j 1 }}</span>{{ $paragraph | safeHTML }}</p>{{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quko-section results-sponsorship-claim">
+  <div class="container">
+    <div class="results-claim-grid">
+      <div><span class="quko-eyebrow">{{ .Params.claim_eyebrow }}</span><h2>{{ .Params.claim_title }}</h2></div>
+      <div><p>{{ .Params.claim_text }}</p><a class="btn-quko-light" href="mailto:{{ site.Params.email }}?{{ replace (querify "subject" .Params.claim_subject "body" .Params.claim_body) "+" "%20" | safeURL }}">{{ .Params.claim_button }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+    </div>
+    <p class="results-sponsorship-closing-note">{{ .Params.closing_note }}</p>
+  </div>
+</section>
+{{ $script := resources.Get "js/results-sponsorship.js" | minify | fingerprint }}
+<script src="{{ $script.RelPermalink }}" defer></script>
+{{ end }}

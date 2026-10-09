@@ -1,0 +1,269 @@
+{
+  "title": "QUKO results sponsorship award percentages",
+  "type": "award_percentage_reference",
+  "reference": "100% = gold, senior World Championships, Olympic event, K1/C1; one award per boat",
+  "units": "percent_of_maximum_reference_payment",
+  "formula": "result_factor * competition_factor * boat_factor * 100",
+  "result_factors_pct": {
+    "gold_1st": 100.0,
+    "silver_2nd": 80.0,
+    "bronze_3rd": 65.0,
+    "4th": 55.0,
+    "5th": 45.0,
+    "6th": 35.0,
+    "7th": 30.0,
+    "8th": 25.0,
+    "9th": 20.0,
+    "final_b": 10.0
+  },
+  "competition_factors_pct": {
+    "world_championships_olympic": 100.0,
+    "world_championships_non_olympic": 70.0,
+    "european_championships_olympic": 75.0,
+    "european_championships_non_olympic": 55.0,
+    "world_cup_olympic": 20.0,
+    "world_cup_non_olympic": 15.0
+  },
+  "boat_factors_pct": {
+    "K1_C1": 100.0,
+    "K2_C2": 85.0,
+    "K4_C4": 70.0
+  },
+  "payment_table_pct": {
+    "world_championships_olympic": {
+      "K1_C1": {
+        "gold_1st": 100.0,
+        "silver_2nd": 80.0,
+        "bronze_3rd": 65.0,
+        "4th": 55.0,
+        "5th": 45.0,
+        "6th": 35.0,
+        "7th": 30.0,
+        "8th": 25.0,
+        "9th": 20.0,
+        "final_b": 10.0
+      },
+      "K2_C2": {
+        "gold_1st": 85.0,
+        "silver_2nd": 68.0,
+        "bronze_3rd": 55.25,
+        "4th": 46.75,
+        "5th": 38.25,
+        "6th": 29.75,
+        "7th": 25.5,
+        "8th": 21.25,
+        "9th": 17.0,
+        "final_b": 8.5
+      },
+      "K4_C4": {
+        "gold_1st": 70.0,
+        "silver_2nd": 56.0,
+        "bronze_3rd": 45.5,
+        "4th": 38.5,
+        "5th": 31.5,
+        "6th": 24.5,
+        "7th": 21.0,
+        "8th": 17.5,
+        "9th": 14.0,
+        "final_b": 7.0
+      }
+    },
+    "world_championships_non_olympic": {
+      "K1_C1": {
+        "gold_1st": 70.0,
+        "silver_2nd": 56.0,
+        "bronze_3rd": 45.5,
+        "4th": 38.5,
+        "5th": 31.5,
+        "6th": 24.5,
+        "7th": 21.0,
+        "8th": 17.5,
+        "9th": 14.0,
+        "final_b": 7.0
+      },
+      "K2_C2": {
+        "gold_1st": 59.5,
+        "silver_2nd": 47.6,
+        "bronze_3rd": 38.675,
+        "4th": 32.725,
+        "5th": 26.775,
+        "6th": 20.825,
+        "7th": 17.85,
+        "8th": 14.875,
+        "9th": 11.9,
+        "final_b": 5.95
+      },
+      "K4_C4": {
+        "gold_1st": 49.0,
+        "silver_2nd": 39.2,
+        "bronze_3rd": 31.85,
+        "4th": 26.95,
+        "5th": 22.05,
+        "6th": 17.15,
+        "7th": 14.7,
+        "8th": 12.25,
+        "9th": 9.8,
+        "final_b": 4.9
+      }
+    },
+    "european_championships_olympic": {
+      "K1_C1": {
+        "gold_1st": 75.0,
+        "silver_2nd": 60.0,
+        "bronze_3rd": 48.75,
+        "4th": 41.25,
+        "5th": 33.75,
+        "6th": 26.25,
+        "7th": 22.5,
+        "8th": 18.75,
+        "9th": 15.0,
+        "final_b": 7.5
+      },
+      "K2_C2": {
+        "gold_1st": 63.75,
+        "silver_2nd": 51.0,
+        "bronze_3rd": 41.4375,
+        "4th": 35.0625,
+        "5th": 28.6875,
+        "6th": 22.3125,
+        "7th": 19.125,
+        "8th": 15.9375,
+        "9th": 12.75,
+        "final_b": 6.375
+      },
+      "K4_C4": {
+        "gold_1st": 52.5,
+        "silver_2nd": 42.0,
+        "bronze_3rd": 34.125,
+        "4th": 28.875,
+        "5th": 23.625,
+        "6th": 18.375,
+        "7th": 15.75,
+        "8th": 13.125,
+        "9th": 10.5,
+        "final_b": 5.25
+      }
+    },
+    "european_championships_non_olympic": {
+      "K1_C1": {
+        "gold_1st": 55.0,
+        "silver_2nd": 44.0,
+        "bronze_3rd": 35.75,
+        "4th": 30.25,
+        "5th": 24.75,
+        "6th": 19.25,
+        "7th": 16.5,
+        "8th": 13.75,
+        "9th": 11.0,
+        "final_b": 5.5
+      },
+      "K2_C2": {
+        "gold_1st": 46.75,
+        "silver_2nd": 37.4,
+        "bronze_3rd": 30.3875,
+        "4th": 25.7125,
+        "5th": 21.0375,
+        "6th": 16.3625,
+        "7th": 14.025,
+        "8th": 11.6875,
+        "9th": 9.35,
+        "final_b": 4.675
+      },
+      "K4_C4": {
+        "gold_1st": 38.5,
+        "silver_2nd": 30.8,
+        "bronze_3rd": 25.025,
+        "4th": 21.175,
+        "5th": 17.325,
+        "6th": 13.475,
+        "7th": 11.55,
+        "8th": 9.625,
+        "9th": 7.7,
+        "final_b": 3.85
+      }
+    },
+    "world_cup_olympic": {
+      "K1_C1": {
+        "gold_1st": 20.0,
+        "silver_2nd": 16.0,
+        "bronze_3rd": 13.0,
+        "4th": 11.0,
+        "5th": 9.0,
+        "6th": 7.0,
+        "7th": 6.0,
+        "8th": 5.0,
+        "9th": 4.0,
+        "final_b": 2.0
+      },
+      "K2_C2": {
+        "gold_1st": 17.0,
+        "silver_2nd": 13.6,
+        "bronze_3rd": 11.05,
+        "4th": 9.35,
+        "5th": 7.65,
+        "6th": 5.95,
+        "7th": 5.1,
+        "8th": 4.25,
+        "9th": 3.4,
+        "final_b": 1.7
+      },
+      "K4_C4": {
+        "gold_1st": 14.0,
+        "silver_2nd": 11.2,
+        "bronze_3rd": 9.1,
+        "4th": 7.7,
+        "5th": 6.3,
+        "6th": 4.9,
+        "7th": 4.2,
+        "8th": 3.5,
+        "9th": 2.8,
+        "final_b": 1.4
+      }
+    },
+    "world_cup_non_olympic": {
+      "K1_C1": {
+        "gold_1st": 15.0,
+        "silver_2nd": 12.0,
+        "bronze_3rd": 9.75,
+        "4th": 8.25,
+        "5th": 6.75,
+        "6th": 5.25,
+        "7th": 4.5,
+        "8th": 3.75,
+        "9th": 3.0,
+        "final_b": 1.5
+      },
+      "K2_C2": {
+        "gold_1st": 12.75,
+        "silver_2nd": 10.2,
+        "bronze_3rd": 8.2875,
+        "4th": 7.0125,
+        "5th": 5.7375,
+        "6th": 4.4625,
+        "7th": 3.825,
+        "8th": 3.1875,
+        "9th": 2.55,
+        "final_b": 1.275
+      },
+      "K4_C4": {
+        "gold_1st": 10.5,
+        "silver_2nd": 8.4,
+        "bronze_3rd": 6.825,
+        "4th": 5.775,
+        "5th": 4.725,
+        "6th": 3.675,
+        "7th": 3.15,
+        "8th": 2.625,
+        "9th": 2.1,
+        "final_b": 1.05
+      }
+    }
+  },
+  "notes": [
+    "Percentages apply to the whole boat, not each crew member.",
+    "Final B is one award category regardless of placing within that final.",
+    "Euro awards are rounded to the nearest EUR 0.50; ties round upward."
+  ],
+  "reference_eur": 300,
+  "rounding_increment_eur": 0.5
+}

@@ -192,15 +192,15 @@
 {{ end }}
 
 <!-- Google reCaptcha -->
-{{ if site.Params.contact.form.use_recaptcha }}
+{{ if and (eq .Layout "contact") site.Params.contact.form.use_recaptcha site.Params.recaptcha_site_key (not (hasPrefix site.Params.recaptcha_site_key "xxx-")) }}
 <script src="https://www.google.com/recaptcha/api.js?render={{ site.Params.recaptcha_site_key }}"></script>
 <script>
   grecaptcha.ready(function() {
-      grecaptcha.execute('{{ site.Params.recaptcha_site_key }}', {action: 'homepage'})
+      grecaptcha.execute('{{ site.Params.recaptcha_site_key }}', {action: 'contact'})
       .then(function(token) {
         var el = document.getElementById('captchaResponse');
         if (el) el.value = token;
-      });
+      }).catch(function() {});
     });
 </script>
 {{ end }}

@@ -45,33 +45,39 @@ weight = 4
 
   [[main]]
   parent = "more"
+  name = "Results Awards"
+  url = "results_sponsorship/"
+  weight = 2
+
+  [[main]]
+  parent = "more"
   name = "Resources"
   url = "resources/"
-  weight = 2
+  weight = 3
 
   [[main]]
   parent = "more"
   name = "About"
   url = "about/"
-  weight = 3
+  weight = 4
 
   [[main]]
   parent = "more"
   name = "Blog"
   url = "blog/"
-  weight = 4
+  weight = 5
 
   [[main]]
   parent = "more"
   name = "FAQ"
   url = "faq/"
-  weight = 5
+  weight = 6
 
   [[main]]
   parent = "more"
   name = "Contact"
   url = "contact/"
-  weight = 6
+  weight = 7
 
 [[main]]
 name = "Shop"
@@ -113,6 +119,12 @@ group = "explore"
 name = "FAQ"
 url = "faq/"
 weight = 4
+[footer.params]
+group = "explore"
+[[footer]]
+name = "Results Awards"
+url = "results_sponsorship/"
+weight = 5
 [footer.params]
 group = "explore"
 [[footer]]

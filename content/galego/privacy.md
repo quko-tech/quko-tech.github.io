@@ -84,7 +84,37 @@ legal:
                                                     <a href='../sales_terms/'>Condicións de venda</a> para as condicións comerciais.
                                                     </p>
 
-                                                    <h5>¿Cuáles son tus derechos?</h5>
+                                                    <h5>Programa de premios por resultados</h5>
+             <p>
+             Cando ti ou a túa tripulación presentades unha solicitude ao programa de <a href='../results_sponsorship/'>premios por resultados</a>,
+             QUKO TECH, S.L. trata os datos que envíes (nome e contacto dos membros da tripulación, competición, proba e resultado oficial, e os
+             ficheiros de sesión rexistrados con QUKO e con outros dispositivos) para verificar e resolver a solicitude, pagar o premio ou emitir
+             o desconto, cumprir as obrigas fiscais e contables e, unha vez aceptado o premio, utilizar os datos da regata, os nomes e o resultado
+             oficial nos termos das condicións do programa (incluídas publicacións de QUKO nas redes sociais e mostrar a regata a outros usuarios).
+             </p>
+             <p>
+             <strong>Base xurídica:</strong> as condicións do programa e o acordo do premio (art. 6.1.b RXPD); as nosas obrigas fiscais e contables
+             (art. 6.1.c RXPD); e o noso interese lexítimo en verificar as solicitudes e previr a fraude (art. 6.1.f RXPD). Os ficheiros de sesión
+             poden conter datos de frecuencia cardíaca e outros datos de saúde. Se decides envialos, tratámolos co teu consentimento explícito
+             (art. 9.2.a RXPD) unicamente para recibilos e suprimir eses datos: elimínanse do ficheiro, non os usamos para a verificación, o premio
+             nin ningunha finalidade comercial, e borramos de forma definitiva o ficheiro orixinal tal como se recibiu nun prazo de 30 días. Podes
+             retirar o teu consentimento en calquera momento. Podes evitar este tratamento enviando un ficheiro exportado sen datos de frecuencia
+             cardíaca.
+             </p>
+             <p>
+             <strong>Membros da tripulación.</strong> Quen presenta a solicitude facilita os datos do resto da tripulación e debe informalos deste
+             aviso. Cada membro asina individualmente o acordo do premio.
+             </p>
+             <p>
+             <strong>Conservación e destinatarios.</strong> Os datos da solicitude consérvanse durante o tempo necesario para tramitala e durante os
+             prazos que esixen a normativa fiscal e mercantil (en xeral, ata seis anos). Os nomes, resultados e datos da regata licenciados a QUKO
+             utilízanse mentres a licenza estea vixente; se retiras o teu consentimento ou te opós, deixaremos de facer novos usos do teu nome e datos
+             persoais e retirarémolos dos canais que controlamos nun prazo razoable, sen que iso afecte ao premio xa concedido. Os datos poden
+             comunicarse a bancos e provedores de pagamento, ás autoridades tributarias e a provedores informáticos, de aloxamento e de correo
+             electrónico que actúan como encargados do tratamento. Non vendemos os datos a terceiros.
+             </p>
+
+             <h5>¿Cuáles son tus derechos?</h5>
                                                     <p>Los derechos que asisten al USUARIO son:</p>
                                                     <ul style='font-size: 16px !important; line-height: 1.5 !important; padding-left: 40px !important; margin: 16px 0 !important; list-style: disc outside !important;'>
                                                     <li>Derecho a retirar el consentimiento en cualquier momento.</li>

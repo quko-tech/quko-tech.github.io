@@ -39,30 +39,36 @@ weight = 4
 
   [[main]]
   parent = "more"
+  name = "Premios por resultados"
+  url = "results_sponsorship/"
+  weight = 2
+
+  [[main]]
+  parent = "more"
   name = "Recursos"
   url = "resources/"
-  weight = 2
+  weight = 3
 
   [[main]]
   parent = "more"
   name = "Sobre QUKO"
   url = "about/"
-  weight = 3
+  weight = 4
   [[main]]
   parent = "more"
   name = "Blog"
   url = "blog/"
-  weight = 4
+  weight = 5
   [[main]]
   parent = "more"
   name = "Preguntas frecuentes"
   url = "faq/"
-  weight = 5
+  weight = 6
   [[main]]
   parent = "more"
   name = "Contacto"
   url = "contact/"
-  weight = 6
+  weight = 7
 [[main]]
 name = "Tenda"
 url = "shop/"
@@ -101,6 +107,12 @@ group = "explore"
 name = "Preguntas frecuentes"
 url = "faq/"
 weight = 4
+[footer.params]
+group = "explore"
+[[footer]]
+name = "Premios por resultados"
+url = "results_sponsorship/"
+weight = 5
 [footer.params]
 group = "explore"
 [[footer]]
