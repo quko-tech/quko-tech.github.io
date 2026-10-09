@@ -65,6 +65,14 @@
 <!-- Open Graph image and Twitter Card meta-data -->
 {{ $image_path := .Params.image | default site.Params.image }}
 {{ $image_path_local :=  printf "assets/%s" $image_path }}
+{{/* Page image may live in static/ instead of assets/; if it's in neither, use the site-wide share card */}}
+{{ if not (fileExists $image_path_local) }}
+{{ $image_path_local = printf "static/%s" $image_path }}
+{{ end }}
+{{ if not (fileExists $image_path_local) }}
+{{ $image_path = site.Params.image }}
+{{ $image_path_local = printf "assets/%s" $image_path }}
+{{ end }}
 {{ $image_ext := trim (path.Ext $image_path | lower) "." }}
 {{ if fileExists $image_path_local }}
 <meta property="og:image" content="{{ $image_path | absURL }}" />
