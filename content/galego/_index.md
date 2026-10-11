@@ -4,15 +4,15 @@ description: "Hardware conectado, telemetría en directo e análise avanzada par
 hero:
   eyebrow: "Tecnoloxía de rendemento para deportes de auga"
   title: "Intelixencia de rendemento en cada padexada"
-  text: "QUKO conecta sensores precisos, telemetría en directo e análise avanzada para converter cada sesión nunha mellor decisión."
+  text: "Kosoku rexistra cada palada na embarcación, Quko Live pona na pantalla do adestrador en tempo real e Quko Cloud convértea en análise que podes aplicar, cun analista IA integrado."
   primary_label: "Solicitar unha demo"
   primary_link: "contact/"
   secondary_label: "Acceder a Quko Cloud"
   secondary_link: "https://cloud.quko.es/"
   image: "images/koso_foto.jpg"
-  image_alt: "Sensor de rendemento Kosoku a carón da auga"
-  badge_title: "Un ecosistema conectado"
-  badge_text: "Captura, monitoriza e comprende o rendemento."
+  image_alt: "Render animado do sensor Kosoku"
+  video: "videos/web/kosoku_render.mp4"
+  poster: "videos/web/kosoku_render_poster.jpg"
 audiences:
   label: "Creado para equipos de rendemento en deportes de auga"
   items:
@@ -52,11 +52,11 @@ ecosystem:
   text: "Cada parte de QUKO traballa de forma conxunta sen engadir complexidade ao adestramento."
   steps:
     - title: "Captura"
-      text: "Kosoku rexistra movemento, posición e datos fisiolóxicos de alta resolución directamente na embarcación."
+      text: "Kosoku fusiona GNSS de dobre banda e sensores de movemento a 100 Hz na cuberta, desde a primeira palada ata a meta."
     - title: "Monitoriza"
-      text: "Quko Live ofrece información inmediata de varios deportistas, mesmo sen conexión a internet."
+      text: "Quko Live envía ata nove embarcacións á tablet do adestrador en tempo real, sen necesidade de cobertura móbil."
     - title: "Comprende"
-      text: "Quko Cloud transforma cada sesión en análises, comparativas, informes e interpretación asistida por IA."
+      text: "Quko Cloud desgrana cada sesión en parciais, paladas, repeticións en 3D e simulacións de regata, cun analista IA por riba."
 products:
   eyebrow: "O ecosistema QUKO"
   title: "Tres produtos, un único sistema de rendemento"
@@ -64,14 +64,14 @@ products:
   items:
     - title: "Kosoku"
       text: "Un sensor preciso e conectado, deseñado para piragüismo, kayak e remo."
-      image: "images/koso_foto.jpg"
-      image_alt: "Sensor Kosoku e base de carga"
+      image: "images/web/cat_koso.jpg"
+      image_alt: "Sensor Kosoku diante dun campo de regatas"
       link: "kosoku/"
       link_label: "Descubrir Kosoku"
     - title: "Quko Live"
       text: "Telemetría de equipo en tempo real para decidir máis rápido desde a auga."
-      image: "images/live.png"
-      image_alt: "Panel de adestramento de Quko Live"
+      image: "images/web/live_foto_1.jpg"
+      image_alt: "Quko Live nunha tablet nunha lancha de adestrador"
       link: "quko_live/"
       link_label: "Descubrir Quko Live"
     - title: "Quko Cloud"
@@ -83,13 +83,16 @@ products:
 analytics:
   eyebrow: "O teu analista de datos con IA"
   title: "Pregúntalles aos teus datos sobre rendemento"
-  text: "O analista de datos con IA de QUKO traballa coas túas sesións autorizadas para explicar patróns, comparar esforzos e preparar informes. Tamén podes traballar desde ChatGPT, Claude ou o teu asistente de IA compatible preferido."
-  image: "images/cloud.png"
-  image_alt: "Análise de velocidade, avance por padexada e frecuencia"
+  text: "O analista IA integrado redacta un informe de cada sesión e responde ás túas preguntas cos teus números reais. Prefires o asistente que xa usas? Conecta Claude ou ChatGPT a Quko Cloud nun par de clics."
   items:
-    - "Formula preguntas en linguaxe natural e mantén cada resposta vinculada aos teus datos"
-    - "Compara sesións, deportistas e métricas sen reconstruír a análise"
-    - "Conecta datos autorizados de QUKO con asistentes de IA mediante ferramentas seguras"
+    - "Obtén unha análise escrita de calquera sesión e segue preguntando"
+    - "Compara sesións, deportistas e parciais sen montar nin unha gráfica"
+    - "Conecta Claude ou ChatGPT aos teus datos de Quko Cloud cunha ligazón segura de só lectura"
+  visual:
+    source_title: "Quko Cloud"
+    source_text: "As túas sesións, parciais e paladas"
+    link_label: "Ligazón segura de só lectura"
+    prompt: "«Onde perdín velocidade nos últimos 250 m comparado co meu mellor 1000?»"
   link: "quko_cloud/"
   link_label: "Descubrir Quko Cloud"
 capabilities:
@@ -114,13 +117,16 @@ capabilities:
 research:
   eyebrow: "Para universidades e equipos de investigación"
   title: "Incorpora QUKO ao teu próximo estudo"
-  text: "Utiliza os nosos dispositivos, datos estruturados e soporte técnico en investigación de campo ou laboratorio. Axudamos co deseño do estudo, o acceso aos datos e as integracións."
+  text: "Hardware Kosoku, exportacións palada a palada e unha API REST con OAuth, cos nosos enxeñeiros axudándote a montar o estudo, o acceso aos datos e as integracións."
   link: "contact/"
   link_label: "Fala co noso equipo de investigación"
 integrations:
-  eyebrow: "Conecta coa túa forma de traballar"
   title: "Leva os teus datos ás ferramentas que xa utilizas"
-  items: ["Garmin", "Strava", "FIT", "TCX", "PDF", "JSON", "ChatGPT", "Claude", "Conexión segura con IA"]
+  groups:
+    - label: "Conéctase con"
+      items: ["Garmin", "Suunto", "Polar", "Strava", "Claude", "ChatGPT"]
+    - label: "Exporta a"
+      items: ["PDF", "XLSX", "JSON", "FIT", "TCX"]
 pricing:
   enable: true
   eyebrow: "Plans de Quko Cloud"

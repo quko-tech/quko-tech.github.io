@@ -9,6 +9,11 @@
   --quko-line: #dfe3e8;
   --quko-muted: #626b78;
   --quko-white: #ffffff;
+  /* The one dark surface. Every dark band on the site (results, showcases, the
+     closing call to action, the API and Results Awards heroes) uses this, so
+     dark sections read as the same family instead of four unrelated themes. */
+  --quko-deep: #182733;
+  --quko-deep-glow: radial-gradient(circle at 85% 10%, rgba(104, 199, 220, .16), transparent 34%);
   --quko-radius: 24px;
   --quko-shadow: 0 24px 70px rgba(18, 21, 28, 0.12);
 }
@@ -70,7 +75,7 @@ a {
 }
 
 .quko-section-dark {
-  background: #314955;
+  background: var(--quko-deep-glow), var(--quko-deep);
   color: var(--quko-white);
 }
 
@@ -117,9 +122,27 @@ a {
   white-space: normal;
 }
 
-.quko-eyebrow:before,
-.quko-eyebrow:after {
-  width: 28px;
+/* One leading rule only. A rule on both sides only makes sense for centred
+   text, and with headings left-aligned it just doubled the noise above every
+   section. */
+.quko-eyebrow:before {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 2px;
+  background: var(--quko-red);
+  content: "";
+}
+
+/* Centred titles split into even lines instead of leaving one word alone. */
+.quko-section-title.center h2 {
+  text-wrap: balance;
+}
+
+/* A centred heading gets a matching rule on the right so the label stays
+   balanced. */
+.quko-section-title.center .quko-eyebrow:after {
+  flex: 0 0 auto;
+  width: 22px;
   height: 2px;
   background: var(--quko-red);
   content: "";
@@ -130,8 +153,8 @@ a {
 }
 
 .quko-section-title {
-  max-width: 760px;
-  margin-bottom: 48px;
+  max-width: 720px;
+  margin-bottom: 44px;
 }
 
 .quko-section-title.center {
@@ -140,17 +163,72 @@ a {
   text-align: center;
 }
 
-.quko-section-title h2 {
-  margin: 0 0 18px;
-  font-size: clamp(34px, 4vw, 58px);
+/* Section headings sit clearly below the page H1. At 58px every section
+   shouted as loudly as the hero, so nothing read as a chapter of anything. */
+.quko-section-title h2,
+.quko-showcase h2 {
+  margin: 0 0 16px;
+  font-size: clamp(30px, 3.3vw, 46px);
   font-weight: 750;
-  line-height: 1.06;
+  line-height: 1.08;
 }
 
 .quko-section-title p {
-  max-width: 680px;
+  max-width: 640px;
   margin: 0;
-  font-size: 18px;
+  font-size: 17px;
+}
+
+/* Title on the left, a quiet "see more" link on the right, on one baseline. */
+/* Home workflow section: more air than a standard section, since it follows
+   the dense medal results. */
+.quko-section.quko-ecosystem {
+  padding: 136px 0 128px;
+}
+
+.quko-ecosystem .quko-section-title {
+  margin-bottom: 72px;
+}
+
+.quko-ecosystem .quko-section-title h2 {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+  .quko-section.quko-ecosystem {
+    padding: 104px 0 96px;
+  }
+
+  .quko-ecosystem .quko-section-title {
+    margin-bottom: 52px;
+  }
+}
+
+@media (max-width: 767px) {
+  .quko-section.quko-ecosystem {
+    padding: 72px 0 64px;
+  }
+
+  .quko-ecosystem .quko-section-title {
+    margin-bottom: 36px;
+  }
+}
+
+.quko-section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 44px;
+}
+
+.quko-section-head .quko-section-title {
+  margin-bottom: 0;
+}
+
+.quko-section-head > .quko-card-link {
+  flex: 0 0 auto;
+  margin: 0 0 6px;
 }
 
 .quko-section-title.center p {
@@ -381,7 +459,7 @@ a {
 .quko-hero {
   position: relative;
   overflow: hidden;
-  padding: 96px 0 88px;
+  padding: 88px 0 56px;
   background:
     radial-gradient(circle at 78% 15%, rgba(104, 199, 220, .24), transparent 31%),
     radial-gradient(circle at 12% 75%, rgba(232, 56, 63, .15), transparent 28%),
@@ -437,41 +515,108 @@ a {
   box-shadow: var(--quko-shadow);
 }
 
-.quko-hero-badge {
-  position: static;
-  max-width: none;
-  margin-top: 26px;
-  padding: 18px 20px;
-  border: 1px solid var(--quko-line);
-  border-radius: 18px;
+/* Dark hero for the home page: the Kosoku render plays on a background close
+   to its own near-black, and its edges fade out on all four sides so the
+   frame never shows. It hands straight over to the (also dark) medal results. */
+.quko-hero.is-dark {
+  background:
+    radial-gradient(circle at 78% 42%, rgba(232, 56, 63, .12), transparent 36%),
+    radial-gradient(circle at 8% 92%, rgba(104, 199, 220, .08), transparent 32%),
+    #08090b;
+}
+
+.quko-hero.is-dark:after {
+  border-color: rgba(255, 255, 255, .06);
+}
+
+.quko-hero.is-dark h1 {
+  color: var(--quko-white);
+}
+
+.quko-hero.is-dark .quko-hero-copy > p {
+  color: rgba(255, 255, 255, .72);
+}
+
+.quko-hero.is-dark .quko-eyebrow {
+  color: #ff989b;
+}
+
+.quko-hero.is-dark .btn-quko-outline {
+  border-color: rgba(255, 255, 255, .3);
+  color: var(--quko-white) !important;
+}
+
+.quko-hero.is-dark .btn-quko-outline:hover,
+.quko-hero.is-dark .btn-quko-outline:focus {
+  border-color: var(--quko-white);
   background: var(--quko-white);
-  color: var(--quko-ink);
-  box-shadow: 0 12px 35px rgba(18, 21, 28, .08);
+  color: var(--quko-ink) !important;
 }
 
-.quko-hero-badge strong {
+.quko-hero-visual.is-video {
+  display: flex;
+  justify-content: center;
+}
+
+.quko-hero-visual.is-video video {
   display: block;
-  margin-bottom: 4px;
-  color: var(--quko-ink);
-  font-size: 18px;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 4 / 5;
+  background: #08090b;
+  object-fit: cover;
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0, #000 14%, #000 82%, transparent 100%),
+    linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent 0, #000 14%, #000 82%, transparent 100%),
+    linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%);
+  mask-composite: intersect;
 }
 
-.quko-hero-badge span {
-  color: var(--quko-muted);
-  font-size: 12px;
-  line-height: 1.4;
+.quko-hero.is-dark .quko-audience-row,
+.quko-hero.is-dark .quko-audience {
+  border-color: rgba(255, 255, 255, .12);
 }
 
+.quko-hero.is-dark .quko-audience strong {
+  color: var(--quko-white);
+}
+
+.quko-hero.is-dark .quko-audience i {
+  color: #ff696d;
+}
+
+/* When the medals follow the dark hero, their top edge fades out of the
+   hero colour instead of meeting it in a hard line. Same layers as
+   .quko-medal-section, with the fade laid on top. */
+.quko-hero.is-dark + .quko-medal-section {
+  background:
+    linear-gradient(to bottom, #08090b 0, rgba(8, 9, 11, 0) 220px),
+    radial-gradient(circle at 88% 12%, rgba(151, 24, 79, .24), transparent 30%),
+    radial-gradient(circle at 6% 88%, rgba(69, 18, 71, .28), transparent 34%),
+    linear-gradient(135deg, #0c0a11 0%, #1a0b1e 50%, #100b18 100%);
+}
+
+/* The audience strip closes the hero (it answers "who is this for?") rather
+   than floating between the hero and the first section. */
 .quko-audience-row {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  margin-top: 72px;
   border-top: 1px solid var(--quko-line);
-  border-bottom: 1px solid var(--quko-line);
 }
 
 .quko-audience {
-  padding: 28px;
+  padding: 22px 24px 0;
   border-right: 1px solid var(--quko-line);
+}
+
+.quko-audience:first-child {
+  padding-left: 0;
 }
 
 .quko-audience:last-child {
@@ -567,10 +712,27 @@ a {
   z-index: 1;
 }
 
+/* The section heading is centred over the results; the chart and table below
+   run the full container width, with their own headings left-aligned. */
 .quko-medal-section .quko-section-title {
   max-width: 800px;
-  margin-right: auto;
-  margin-left: auto;
+}
+
+/* "Across the years" sits inside its panel without the leading rule. */
+.quko-medal-chart-heading .quko-eyebrow:before {
+  display: none;
+}
+
+.quko-medal-section .quko-medal-evolution,
+.quko-medal-section .quko-medal-discipline {
+  max-width: none;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.quko-medal-section .quko-medal-chart-heading,
+.quko-medal-section .quko-medal-discipline {
+  text-align: left;
 }
 
 .quko-medal-section .quko-section-title h2,
@@ -804,7 +966,6 @@ a {
   }
 }
 
-
 .quko-card-link {
   display: inline-flex;
   align-items: center;
@@ -814,38 +975,314 @@ a {
   font-weight: 750;
 }
 
-.quko-product-card {
-  position: relative;
-  min-height: 440px;
-  overflow: hidden;
+/* Home: the three products as the three steps of one workflow. Each card
+   is numbered and labelled with the job it does in the workflow. */
+.quko-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin: 0;
   padding: 0;
-  background: #3a5360;
+  list-style: none;
 }
 
-.quko-product-card img {
+.quko-flow-step {
+  position: relative;
+  min-width: 0;
+}
+
+.quko-flow-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--quko-line);
+  border-radius: var(--quko-radius);
+  background: var(--quko-white);
+  color: inherit;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.quko-flow-card:hover,
+.quko-flow-card:focus {
+  border-color: rgba(232, 56, 63, .35);
+  box-shadow: 0 18px 48px rgba(18, 21, 28, .09);
+  color: inherit;
+  text-decoration: none;
+  transform: translateY(-4px);
+}
+
+.quko-flow-media {
+  display: block;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--quko-line);
+  background: var(--quko-mist);
+}
+
+.quko-flow-media img {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
-  opacity: .88;
+  object-position: center top;
+  transition: transform .5s ease;
 }
 
-.quko-product-card-content {
-  padding: 28px;
-  background: #3a5360;
+.quko-flow-card:hover .quko-flow-media img {
+  transform: scale(1.03);
 }
 
-.quko-product-card h3,
-.quko-product-card p {
-  color: var(--quko-white);
+.quko-flow-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 26px 28px 28px;
 }
 
-.quko-product-card p {
-  opacity: .66;
+.quko-flow-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: var(--quko-red-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
 }
 
-.quko-product-card .quko-card-link {
+.quko-flow-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 26px;
+  padding: 0 8px;
+  border-radius: 8px;
+  background: rgba(232, 56, 63, .1);
+  letter-spacing: 0;
+}
+
+.quko-flow-title {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--quko-ink);
+  font-size: 24px;
+  font-weight: 760;
+  letter-spacing: -.03em;
+  line-height: 1.15;
+}
+
+.quko-flow-text {
+  display: block;
+  color: var(--quko-muted);
+  line-height: 1.65;
+}
+
+.quko-flow-body .quko-card-link {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.quko-section-dark .quko-card-number,
+.quko-section-dark .quko-icon {
+  background: rgba(255, 105, 109, .16);
   color: #ff989b;
 }
+
+/* Integrations, folded into the analysis section they belong to. */
+.quko-inline-band {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 72px;
+  padding-top: 32px;
+  border-top: 1px solid var(--quko-line);
+}
+
+.quko-inline-band h3 {
+  flex: 0 0 260px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 740;
+  line-height: 1.3;
+}
+
+.quko-inline-band .quko-chip-row {
+  justify-content: flex-start;
+}
+
+.quko-chip-groups {
+  display: grid;
+  gap: 14px;
+}
+
+.quko-chip-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.quko-chip-label {
+  flex: 0 0 140px;
+  color: var(--quko-muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* Home: Quko Cloud data flowing into Claude and ChatGPT. */
+.quko-ai-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 32px 32px;
+  border: 1px solid var(--quko-line);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(232, 56, 63, .08), transparent 55%),
+    var(--quko-mist);
+}
+
+.quko-ai-source {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 22px;
+  border: 1px solid var(--quko-line);
+  border-radius: 18px;
+  background: var(--quko-white);
+  box-shadow: 0 14px 36px rgba(18, 21, 28, .07);
+}
+
+.quko-ai-source span {
+  color: var(--quko-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.quko-ai-source strong {
+  display: block;
+  color: var(--quko-ink);
+  font-size: 16px;
+}
+
+/* The dashed rule that joins source and targets, labelled at its middle.
+   The label sits on a pill in the panel colour, so the rule reads as passing
+   behind it. */
+.quko-ai-link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 26px 0;
+}
+
+.quko-ai-link:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: repeating-linear-gradient(to bottom, var(--quko-red) 0 6px, transparent 6px 11px);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.quko-ai-link span {
+  position: relative;
+  padding: 6px 12px;
+  border: 1px solid rgba(232, 56, 63, .25);
+  border-radius: 999px;
+  background: var(--quko-mist);
+  color: var(--quko-red-dark);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.quko-ai-targets {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.quko-ai-target {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 16px 22px;
+  border: 1px solid var(--quko-line);
+  border-radius: 20px;
+  background: var(--quko-white);
+  box-shadow: 0 14px 36px rgba(18, 21, 28, .07);
+}
+
+.quko-ai-target img {
+  width: 52px;
+  height: 52px;
+}
+
+.quko-ai-target strong {
+  font-size: 17px;
+  letter-spacing: -.02em;
+}
+
+.quko-ai-prompt {
+  max-width: 400px;
+  margin: 24px 0 0;
+  padding: 14px 18px;
+  border-radius: 16px 16px 16px 4px;
+  background: var(--quko-white);
+  color: var(--quko-ink-soft);
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
+  box-shadow: 0 8px 22px rgba(18, 21, 28, .06);
+}
+
+@media (max-width: 991px) {
+  .quko-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .quko-chip-group {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .quko-chip-label {
+    flex: none;
+  }
+
+  .quko-ai-visual {
+    padding: 28px 16px 20px;
+    border-radius: 22px;
+  }
+
+  .quko-ai-target {
+    padding: 20px 12px 16px;
+  }
+
+  .quko-ai-target img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 
 .quko-metric-strip {
   display: grid;
@@ -893,9 +1330,9 @@ a {
   position: relative;
   overflow: hidden;
   padding: 16px;
-  border: 1px solid rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, .12);
   border-radius: 30px;
-  background: #405b68;
+  background: rgba(255, 255, 255, .06);
   box-shadow: var(--quko-shadow);
 }
 
@@ -932,12 +1369,12 @@ a {
 .quko-chip-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
 .quko-chip {
-  padding: 11px 17px;
+  padding: 9px 16px;
   border: 1px solid var(--quko-line);
   border-radius: 999px;
   background: var(--quko-white);
@@ -946,84 +1383,93 @@ a {
   font-weight: 700;
 }
 
-.quko-research-band {
-  background: linear-gradient(135deg, rgba(104, 199, 220, .14), rgba(232, 56, 63, .06));
-}
-
+/* The research offer closes the "who builds this" section as one ruled row,
+   instead of a floating card on its own gradient band. */
 .quko-research-panel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 48px;
-  padding: 48px 54px;
-  border: 1px solid rgba(49, 73, 85, .12);
-  border-radius: 28px;
-  background: rgba(255, 255, 255, .82);
-  box-shadow: 0 18px 50px rgba(49, 73, 85, .08);
+  gap: 40px;
+  margin-top: 24px;
+  padding: 32px 36px;
+  border: 1px solid var(--quko-line);
+  border-radius: var(--quko-radius);
+  background: var(--quko-white);
 }
 
-.quko-research-panel h2 {
-  max-width: 760px;
-  margin: 0 0 14px;
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 760;
-  line-height: 1.08;
+.quko-research-panel .quko-eyebrow {
+  margin-bottom: 12px;
+}
+
+.quko-research-panel h3 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 750;
+  line-height: 1.2;
 }
 
 .quko-research-panel p {
-  max-width: 760px;
+  max-width: 720px;
   margin: 0;
-  font-size: 17px;
 }
 
-.quko-cta {
+/* Closing call to action: a full-width deep band that hands straight over to
+   the footer, with the copy on the left and the actions on the right. */
+.quko-cta-band {
   position: relative;
   overflow: hidden;
-  padding: 72px;
-  border-radius: 34px;
-  background:
-    radial-gradient(circle at 88% 18%, rgba(104, 199, 220, .3), transparent 29%),
-    var(--quko-ink);
+  padding: 88px 0;
+  background: var(--quko-deep-glow), var(--quko-deep);
 }
 
-.quko-cta:after {
+.quko-cta-band:after {
   position: absolute;
-  right: -90px;
-  bottom: -130px;
-  width: 330px;
-  height: 330px;
-  border: 1px solid rgba(255, 255, 255, .13);
+  right: -120px;
+  bottom: -220px;
+  width: 460px;
+  height: 460px;
+  border: 1px solid rgba(255, 255, 255, .1);
   border-radius: 50%;
   content: "";
 }
 
-.quko-cta-content {
+.quko-cta {
   position: relative;
   z-index: 2;
-  max-width: 720px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.quko-cta-content {
+  max-width: 680px;
+}
+
+.quko-cta .quko-eyebrow {
+  color: #ff989b;
 }
 
 .quko-cta h2 {
   margin: 0 0 16px;
   color: var(--quko-white);
-  font-size: clamp(36px, 4vw, 56px);
+  font-size: clamp(32px, 3.6vw, 50px);
   font-weight: 760;
-  line-height: 1.05;
+  line-height: 1.06;
 }
 
 .quko-cta p {
-  max-width: 620px;
+  max-width: 600px;
   margin: 0;
-  color: rgba(255, 255, 255, .68);
+  color: rgba(255, 255, 255, .72);
   font-size: 18px;
 }
 
-/* On the pricing page the CTA follows a long pricing section, so the default
-   104px section padding on top of that reads as a big gap. Pull it up; the
-   bottom padding is untouched. */
-.quko-pricing-page-cta .quko-section {
-  padding-top: 40px;
+.quko-cta .quko-actions {
+  flex: 0 0 auto;
+  margin-top: 0;
 }
+
 
 /* Product and standard page heroes */
 .quko-page-hero {
@@ -1158,9 +1604,11 @@ a {
 }
 
 /* Footer */
+/* Left-aligned like every section above it; the theme centres it. */
 .footer {
   padding: 72px 0 34px;
   background: #0c0e13;
+  text-align: left;
 }
 
 .quko-footer-grid {
@@ -1172,9 +1620,9 @@ a {
 
 .quko-footer-brand {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
 }
 
 .quko-footer-brand img {
@@ -1196,7 +1644,7 @@ a {
   max-width: 390px;
   margin: 0 0 24px;
   color: rgba(255, 255, 255, .58);
-  text-align: center;
+  text-align: left;
 }
 
 .quko-footer-brand .btn-quko {
@@ -1420,6 +1868,649 @@ a {
   }
 }
 
+/* ── Product page sections ───────────────────────────────────────────────────
+   Building blocks for partials/sections/*. Each product page picks its own
+   set and order from front matter. */
+
+/* Key figures along the foot of a product hero. */
+.quko-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 64px 0 0;
+  border-top: 1px solid var(--quko-line);
+}
+
+.quko-hero-stats > div {
+  padding: 22px 24px 0;
+  border-left: 1px solid var(--quko-line);
+}
+
+.quko-hero-stats > div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.quko-hero-stats dt {
+  color: var(--quko-ink);
+  font-size: 28px;
+  font-weight: 780;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+}
+
+.quko-hero-stats dd {
+  margin: 4px 0 0;
+  color: var(--quko-muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Image beside copy. */
+.quko-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  align-items: center;
+  gap: 72px;
+}
+
+.quko-split.reverse .quko-split-media {
+  order: 2;
+}
+
+.quko-split-copy h2 {
+  margin: 0 0 16px;
+  font-size: clamp(30px, 3.3vw, 46px);
+  font-weight: 750;
+  line-height: 1.08;
+}
+
+.quko-split-copy > p {
+  margin: 0;
+  font-size: 17px;
+}
+
+.quko-split-copy .quko-card-link {
+  margin-top: 26px;
+}
+
+.quko-split-media img {
+  display: block;
+  width: 100%;
+  border-radius: 26px;
+  box-shadow: var(--quko-shadow);
+  object-fit: cover;
+}
+
+.quko-split-media.is-contain img {
+  padding: 18px;
+  border: 1px solid var(--quko-line);
+  background: var(--quko-white);
+  object-fit: contain;
+}
+
+.quko-split-media.is-plain img {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* A tall screenshot or chart cropped to its useful part; `focus` in front
+   matter sets which part. */
+.quko-split-media.is-crop img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: var(--focus, center);
+}
+
+/* A photo pair gets the larger share of the row, so each picture is big
+   enough to read on its own. */
+.quko-split.has-pair {
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, .65fr);
+  gap: 56px;
+}
+
+.quko-split.has-pair .quko-split-media.is-pair img {
+  aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 991px) {
+  .quko-split.has-pair {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* Two photographs, the second offset down so the pair reads as one group. */
+.quko-split-media.is-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.quko-split-media.is-pair figure {
+  margin: 0;
+}
+
+.quko-split-media.is-pair figure:nth-child(2) {
+  margin-top: 36px;
+}
+
+.quko-split-media.is-pair img {
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+}
+
+.quko-split-media figcaption {
+  margin-top: 10px;
+  color: var(--quko-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.quko-section-dark .quko-split-copy h2 {
+  color: var(--quko-white);
+}
+
+.quko-section-dark .quko-split-media figcaption {
+  color: rgba(255, 255, 255, .6);
+}
+
+.quko-split-copy > .quko-split-note {
+  margin: 22px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--quko-line);
+  color: var(--quko-muted);
+  font-size: 14px;
+}
+
+/* Numbered steps as a ruled list, not cards. */
+.quko-step-list {
+  display: grid;
+  gap: 0;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.quko-step-list li {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  padding: 16px 0 16px 52px;
+  border-top: 1px solid var(--quko-line);
+  counter-increment: step;
+}
+
+.quko-step-list li:last-child {
+  border-bottom: 1px solid var(--quko-line);
+}
+
+.quko-step-list li:before {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(232, 56, 63, .1);
+  color: var(--quko-red-dark);
+  font-size: 13px;
+  font-weight: 800;
+  content: "0" counter(step);
+}
+
+.quko-step-list strong {
+  color: var(--quko-ink);
+  font-size: 17px;
+}
+
+.quko-step-list span {
+  color: var(--quko-muted);
+  line-height: 1.6;
+}
+
+.quko-section-dark .quko-step-list li {
+  border-color: rgba(255, 255, 255, .14);
+}
+
+.quko-section-dark .quko-step-list strong {
+  color: var(--quko-white);
+}
+
+.quko-section-dark .quko-step-list span {
+  color: rgba(255, 255, 255, .72);
+}
+
+.quko-section-dark .quko-step-list li:before {
+  background: rgba(255, 105, 109, .16);
+  color: #ff989b;
+}
+
+/* Dense capability list, optionally beside a picture. */
+.quko-features.has-media {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items: stretch;
+  gap: 48px;
+}
+
+.quko-features-media {
+  overflow: hidden;
+  border-radius: 26px;
+  background: var(--quko-white);
+}
+
+.quko-features-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.quko-features-media.is-contain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border: 1px solid var(--quko-line);
+}
+
+.quko-features-media.is-contain img {
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.quko-feature-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quko-feature-list.is-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 28px;
+}
+
+.quko-features.has-media .quko-feature-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: center;
+}
+
+.quko-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px 0;
+  border-top: 1px solid var(--quko-line);
+}
+
+.quko-feature-list .quko-icon {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  margin: 0;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.quko-feature-list h3 {
+  margin: 2px 0 6px;
+  font-size: 18px;
+  font-weight: 740;
+}
+
+.quko-feature-list p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.quko-section-dark .quko-feature-list li {
+  border-color: rgba(255, 255, 255, .14);
+}
+
+.quko-section-dark .quko-feature-list p {
+  color: rgba(255, 255, 255, .72);
+  opacity: 1;
+}
+
+/* Specification table. */
+.quko-spec-table {
+  margin: 28px 0 0;
+}
+
+.quko-spec-table > div {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: 20px;
+  padding: 14px 0;
+  border-top: 1px solid var(--quko-line);
+}
+
+.quko-spec-table > div:last-child {
+  border-bottom: 1px solid var(--quko-line);
+}
+
+.quko-spec-table dt {
+  color: var(--quko-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.quko-spec-table dd {
+  margin: 0;
+  color: var(--quko-ink);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* A value given as a list shows one item per line. */
+.quko-spec-line {
+  display: block;
+}
+
+.quko-spec-line + .quko-spec-line {
+  margin-top: 4px;
+}
+
+.quko-spec-table dd p {
+  margin: 0;
+  color: inherit;
+}
+
+/* Full-width photograph band. */
+.quko-band {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 620px;
+  padding: 96px 0 72px;
+  background:
+    linear-gradient(90deg, rgba(14, 24, 32, .92) 0%, rgba(14, 24, 32, .72) 42%, rgba(14, 24, 32, .1) 75%),
+    var(--band-image) center / cover no-repeat;
+  color: var(--quko-white);
+}
+
+.quko-band-copy {
+  max-width: 560px;
+}
+
+.quko-band .quko-eyebrow {
+  color: #ff989b;
+}
+
+.quko-band h2 {
+  margin: 0 0 16px;
+  color: var(--quko-white);
+  font-size: clamp(30px, 3.3vw, 46px);
+  font-weight: 750;
+  line-height: 1.08;
+}
+
+.quko-band p {
+  margin: 0;
+  color: rgba(255, 255, 255, .8);
+  font-size: 17px;
+}
+
+.quko-band-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 32px 0 0;
+  padding: 22px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, .22);
+  list-style: none;
+}
+
+.quko-band-points strong {
+  display: block;
+  color: var(--quko-white);
+  font-size: 26px;
+  font-weight: 780;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+}
+
+.quko-band-points span {
+  color: rgba(255, 255, 255, .7);
+  font-size: 13px;
+}
+
+/* Roles: ruled columns of short copy. */
+.quko-roles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 2px solid var(--quko-ink);
+}
+
+.quko-role {
+  padding: 26px 28px 4px;
+  border-left: 1px solid var(--quko-line);
+}
+
+.quko-role:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.quko-role h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.quko-role p {
+  margin: 0;
+}
+
+/* Cross-product link cards. */
+.quko-link-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.quko-link-card {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  overflow: hidden;
+  border: 1px solid var(--quko-line);
+  border-radius: var(--quko-radius);
+  background: var(--quko-white);
+  color: inherit;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.quko-link-card:hover,
+.quko-link-card:focus {
+  border-color: rgba(232, 56, 63, .35);
+  box-shadow: 0 18px 48px rgba(18, 21, 28, .09);
+  color: inherit;
+  text-decoration: none;
+  transform: translateY(-4px);
+}
+
+.quko-link-card-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+}
+
+.quko-link-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 26px 24px;
+}
+
+.quko-link-card-body .quko-card-link {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+/* Connections band used as a section of its own. */
+.quko-inline-band.is-first {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+@media (max-width: 991px) {
+  .quko-split,
+  .quko-features.has-media {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .quko-split.reverse .quko-split-media {
+    order: 0;
+  }
+
+  .quko-feature-list,
+  .quko-feature-list.is-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quko-features-media img {
+    min-height: 0;
+    max-height: 420px;
+  }
+
+  .quko-roles,
+  .quko-link-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .quko-role,
+  .quko-role:first-child {
+    padding: 22px 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--quko-line);
+  }
+
+  .quko-band {
+    min-height: 560px;
+    background:
+      linear-gradient(0deg, rgba(14, 24, 32, .95) 0%, rgba(14, 24, 32, .78) 45%, rgba(14, 24, 32, .15) 100%),
+      var(--band-image) center / cover no-repeat;
+  }
+}
+
+@media (max-width: 767px) {
+  .quko-hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 36px;
+  }
+
+  .quko-hero-stats > div,
+  .quko-hero-stats > div:first-child {
+    padding: 14px 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--quko-line);
+  }
+
+  .quko-hero-stats > div:nth-last-child(-n+2) {
+    border-bottom: 0;
+  }
+
+  .quko-hero-stats dt {
+    font-size: 22px;
+  }
+
+  .quko-hero-stats dd {
+    font-size: 13px;
+  }
+
+  .quko-split-copy h2,
+  .quko-band h2 {
+    font-size: 29px;
+  }
+
+  .quko-split-copy > p,
+  .quko-band p {
+    font-size: 16px;
+  }
+
+  .quko-split-media img {
+    border-radius: 18px;
+  }
+
+  .quko-split-media.is-pair {
+    gap: 10px;
+  }
+
+  .quko-split-media.is-pair figure:nth-child(2) {
+    margin-top: 28px;
+  }
+
+  .quko-split-media.is-pair img {
+    border-radius: 14px;
+  }
+
+  .quko-feature-list,
+  .quko-feature-list.is-4,
+  .quko-features.has-media .quko-feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  .quko-feature-list li {
+    padding: 16px 0;
+  }
+
+  .quko-features-media {
+    border-radius: 18px;
+  }
+
+  .quko-spec-table > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 12px 0;
+  }
+
+  .quko-band {
+    min-height: 0;
+    padding: 220px 0 48px;
+  }
+
+  .quko-band-points {
+    gap: 12px;
+  }
+
+  .quko-band-points strong {
+    font-size: 20px;
+  }
+
+  .quko-link-card {
+    grid-template-columns: 1fr;
+  }
+
+  .quko-link-card-media img {
+    min-height: 0;
+    height: 180px;
+  }
+
+  .quko-link-card-body {
+    padding: 20px;
+  }
+}
+
+@media (hover: none) {
+  .quko-link-card:hover {
+    transform: none;
+  }
+}
+
 @media (max-width: 991px) {
   .quko-section {
     padding: 80px 0;
@@ -1438,7 +2529,6 @@ a {
   }
 
   .quko-grid-4,
-  .quko-audience-row,
   .quko-metric-strip {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1447,29 +2537,90 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .quko-product-card {
-    min-height: 0;
-  }
-
-  .quko-audience:nth-child(2),
   .quko-metric:nth-child(2) {
     border-right: 0;
   }
 
-  .quko-audience:nth-child(-n+2),
   .quko-metric:nth-child(-n+2) {
     border-bottom: 1px solid var(--quko-line);
+  }
+
+  /* A single column of tall cards is what made the phone layout feel endless.
+     Icon and number cards turn into compact rows: badge on the left, text on
+     the right. */
+  .quko-card:has(> .quko-icon),
+  .quko-card:has(> .quko-card-number) {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    align-content: start;
+    column-gap: 18px;
+    padding: 22px;
+  }
+
+  .quko-card:has(> .quko-icon) > .quko-icon,
+  .quko-card:has(> .quko-card-number) > .quko-card-number {
+    grid-row: 1 / span 3;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    border-radius: 13px;
+    font-size: 16px;
+  }
+
+  .quko-card:has(> .quko-icon) h3,
+  .quko-card:has(> .quko-card-number) h3 {
+    margin: 9px 0 6px;
+    font-size: 19px;
+  }
+
+  .quko-grid-3,
+  .quko-grid-4 {
+    gap: 14px;
+  }
+
+  .quko-flow {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .quko-flow-card {
+    flex-direction: row;
+  }
+
+  .quko-flow-media {
+    flex: 0 0 34%;
+    height: auto;
+    border-right: 1px solid var(--quko-line);
+    border-bottom: 0;
+  }
+
+  .quko-inline-band {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .quko-inline-band h3 {
+    flex: none;
   }
 }
 
 /* Drawer navigation. This has to reach 1199px to meet the horizontal nav above,
-   and it overrides Bootstrap 3, whose own navbar breakpoint is 768px — without
-   these the collapsed menu would force itself back open from 768px up. */
+   and it overrides Bootstrap 3, whose own navbar breakpoint is 768px. Without
+   these the collapsed menu would force itself back open from 768px up.
+   It is laid out as a proper menu sheet: full-width rows with real tap
+   targets, submenus as indented lists, and the two actions side by side at
+   the foot rather than loose pills of different widths. */
 @media (max-width: 1199px) {
   .navigation .navbar-collapse {
-    margin-top: 10px;
+    max-height: calc(100vh - 80px);
+    max-height: calc(100dvh - 80px);
+    margin: 12px 0 0;
+    padding: 0 0 18px;
+    overflow-y: auto;
     border-top: 1px solid var(--quko-line);
     background: var(--quko-white);
+    box-shadow: none;
   }
 
   .navigation .navbar-header {
@@ -1479,10 +2630,10 @@ a {
   .navigation .navbar-toggle {
     display: block;
     float: right;
-    margin: 10px 0 0;
-    padding: 10px;
+    margin: 6px 0 0;
+    padding: 12px 11px;
     border: 1px solid var(--quko-line);
-    border-radius: 10px;
+    border-radius: 12px;
     background: var(--quko-white);
   }
 
@@ -1490,6 +2641,20 @@ a {
     width: 22px;
     height: 2px;
     background: var(--quko-ink);
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  /* The burger becomes a cross while the drawer is open. */
+  .navigation .navbar-toggle:not(.collapsed) .icon-bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .navigation .navbar-toggle:not(.collapsed) .icon-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navigation .navbar-toggle:not(.collapsed) .icon-bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
   }
 
   .navigation .navbar-collapse.collapse {
@@ -1501,27 +2666,49 @@ a {
   }
 
   .navigation .navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 10px;
     float: none !important;
-    margin: 8px 0;
+    margin: 4px 0 0;
   }
 
   .navigation .navbar-nav > li {
+    flex: 0 0 100%;
     float: none;
   }
 
-  .navigation .navbar-nav > li > a {
-    padding: 13px 10px;
+  .navigation .navbar .navbar-nav > li:not(.nav-cloud):not(.nav-cta) > a,
+  .navigation .navbar .navbar-nav > li.nav-item:not(.nav-home):not(.nav-cloud):not(.nav-cta) > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 54px;
+    padding: 0 4px;
+    border-bottom: 1px solid var(--quko-line);
+    color: var(--quko-ink) !important;
+    font-size: 16px;
+    font-weight: 650 !important;
   }
 
-  /* Both pills need to size to their label. nav-cta already did; nav-cloud was
-     left as a block, so it stretched the full width of the drawer and its
-     centred-looking label sat against the left edge of a very wide pill. */
-  .navigation .nav-cta > a,
-  .navigation .nav-cloud > a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 0;
+  /* Selectors below are padded with classes on purpose: they have to outrank
+     the desktop colour rule above, which carries three :not()s. */
+  .navigation .navbar .navbar-nav > li.nav-item.nav-home > a {
+    color: var(--quko-red) !important;
+  }
+
+  .navigation .navbar .navbar-nav > li.nav-item.open:not(.nav-home):not(.nav-cloud):not(.nav-cta) > a {
+    border-bottom-color: transparent;
+    background: transparent;
+    color: var(--quko-red) !important;
+  }
+
+  .navigation .navbar-nav > li > a .fa-angle-down {
+    transition: transform .2s ease;
+  }
+
+  .navigation .navbar-nav > li.open > a .fa-angle-down {
+    transform: rotate(180deg);
   }
 
   /* Bootstrap only unpins the submenu below 768px, so between there and the
@@ -1532,40 +2719,107 @@ a {
     position: static;
     float: none;
     width: auto;
-    margin-top: 0;
+    margin: 0 0 0 4px;
+    padding: 0 0 12px;
     border: 0;
+    border-bottom: 1px solid var(--quko-line);
+    border-radius: 0;
     box-shadow: none;
     background: transparent;
   }
 
+  .navigation .navbar-nav .open .dropdown-menu > li > a {
+    padding: 11px 14px;
+    border-left: 2px solid var(--quko-line);
+    border-radius: 0;
+    color: var(--quko-ink-soft);
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .navigation .navbar-nav .open .dropdown-menu > li > a.current,
+  .navigation .navbar-nav .open .dropdown-menu > li > a:hover {
+    border-left-color: var(--quko-red);
+    background: transparent;
+    color: var(--quko-red);
+  }
+
+  /* The two actions share the last row, each taking half. */
+  .navigation .navbar-nav > li.nav-cloud,
+  .navigation .navbar-nav > li.nav-cta {
+    flex: 1 1 0;
+    min-width: 0;
+    margin-top: 18px;
+  }
+
+  .navigation .navbar .navbar-nav > li.nav-cta > a,
+  .navigation .navbar .navbar-nav > li.nav-cloud > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    margin: 0;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
   #select-language {
-    margin-left: 0;
+    width: 100%;
+    height: 46px;
+    margin: 12px 0 0;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 767px) {
   .container,
   .navigation .container-fluid {
-    width: calc(100% - 28px);
+    width: calc(100% - 32px);
     max-width: 1180px;
   }
 
+  .navigation {
+    padding: 8px 0;
+  }
+
   .quko-section {
-    padding: 64px 0;
+    padding: 60px 0;
   }
 
   .quko-section-sm {
-    padding: 52px 0;
+    padding: 44px 0;
   }
 
   .quko-hero,
   .quko-page-hero {
-    padding: 64px 0;
+    padding: 40px 0 44px;
+  }
+
+  .quko-hero {
+    padding-bottom: 28px;
   }
 
   .quko-hero h1,
   .quko-page-hero h1 {
-    font-size: 46px;
+    font-size: 40px;
+    line-height: 1.02;
+  }
+
+  .quko-hero-copy > p,
+  .quko-page-hero p {
+    margin-top: 18px;
+    font-size: 17px;
+  }
+
+  .quko-hero-grid,
+  .quko-page-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .quko-hero-visual img,
+  .quko-page-hero img {
+    border-radius: 20px;
   }
 
   .quko-about-hero img {
@@ -1573,14 +2827,35 @@ a {
     max-height: none;
   }
 
-  .quko-hero-grid,
-  .quko-page-hero-grid {
-    grid-template-columns: 1fr;
+  .quko-eyebrow {
+    margin-bottom: 14px;
+    font-size: 11px;
+  }
+
+  .quko-section-title {
+    margin-bottom: 28px;
+  }
+
+  .quko-section-title h2,
+  .quko-showcase h2 {
+    font-size: 29px;
+  }
+
+  .quko-section-title p {
+    font-size: 16px;
+  }
+
+  .quko-section-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 28px;
   }
 
   .quko-actions {
     align-items: stretch;
     flex-direction: column;
+    margin-top: 26px;
   }
 
   .quko-actions .btn-quko,
@@ -1589,55 +2864,201 @@ a {
     width: 100%;
   }
 
-  .quko-grid-4,
-  .quko-audience-row,
-  .quko-metric-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .quko-research-panel {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 34px 28px;
-  }
-
-  .quko-research-panel .btn-quko {
-    width: 100%;
+  /* Audiences: a 2 x 2 grid instead of four full-width rows. */
+  .quko-audience-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 36px;
   }
 
   .quko-audience,
-  .quko-metric {
+  .quko-audience:first-child {
+    padding: 14px 0;
     border-right: 0;
     border-bottom: 1px solid var(--quko-line);
   }
 
-  .quko-audience:last-child,
-  .quko-metric:last-child {
+  .quko-audience:nth-last-child(-n+2) {
     border-bottom: 0;
   }
 
-  .quko-card {
-    padding: 26px;
+  .quko-audience strong {
+    font-size: 14px;
   }
 
-  .quko-product-card {
-    padding: 0;
+  .quko-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .quko-metric {
+    padding: 18px;
+  }
+
+  .quko-metric strong {
+    font-size: 22px;
+  }
+
+  .quko-card {
+    padding: 22px;
+  }
+
+  .quko-card h3 {
+    font-size: 20px;
+  }
+
+  .quko-card:has(> .quko-icon),
+  .quko-card:has(> .quko-card-number) {
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 16px;
+    padding: 18px;
+  }
+
+  .quko-card:has(> .quko-icon) > .quko-icon,
+  .quko-card:has(> .quko-card-number) > .quko-card-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+
+  .quko-card:has(> .quko-icon) h3,
+  .quko-card:has(> .quko-card-number) h3 {
+    margin-top: 7px;
+    font-size: 18px;
+  }
+
+  .quko-card:has(> .quko-icon) p,
+  .quko-card:has(> .quko-card-number) p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .quko-flow-body {
+    padding: 16px 16px 18px;
+  }
+
+  .quko-flow-label {
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 11px;
+  }
+
+  .quko-flow-num {
+    min-width: 28px;
+    height: 22px;
+    padding: 0 6px;
+    font-size: 11px;
+  }
+
+  .quko-flow-title {
+    margin-bottom: 6px;
+    font-size: 19px;
+  }
+
+  .quko-flow-text {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .quko-flow-body .quko-card-link {
+    padding-top: 12px;
+    font-size: 14px;
+  }
+
+  .quko-showcase {
+    gap: 28px;
+  }
+
+  .quko-showcase-media {
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .quko-showcase-media img {
+    border-radius: 12px;
+  }
+
+  .quko-check-list {
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .quko-inline-band {
+    margin-top: 44px;
+    padding-top: 26px;
+  }
+
+  .quko-chip {
+    padding: 8px 13px;
+    font-size: 12px;
+  }
+
+  .quko-research-panel {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 14px;
+    padding: 24px 22px;
+  }
+
+  .quko-research-panel h3 {
+    font-size: 21px;
+  }
+
+  .quko-research-panel .btn-quko-outline {
+    width: 100%;
+  }
+
+  .quko-cta-band {
+    padding: 56px 0;
   }
 
   .quko-cta {
-    padding: 42px 28px;
-    border-radius: 26px;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 28px;
   }
 
-  .quko-footer-grid {
-    grid-template-columns: 1fr;
-    gap: 34px;
+  .quko-cta h2 {
+    font-size: 30px;
+  }
+
+  .quko-cta p {
+    font-size: 16px;
+  }
+
+  .footer {
+    padding: 52px 0 28px;
+  }
+
+  .quko-footer-brand {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .quko-footer-brand p {
+    text-align: left;
+  }
+
+  .quko-footer-logo {
+    padding: 9px 14px;
+  }
+
+  .quko-footer-brand img {
+    width: 130px;
   }
 
   .quko-footer-bottom {
     align-items: flex-start;
     flex-direction: column;
     gap: 20px;
+  }
+}
+
+/* Touch screens have no hover, and a lifted card that stays lifted after a
+   tap looks broken. */
+@media (hover: none) {
+  .quko-card:hover,
+  .quko-flow-card:hover {
+    transform: none;
   }
 }
 
@@ -2155,7 +3576,6 @@ a {
   border-top: 1px solid var(--quko-line);
   font-size: 13px;
 }
-
 
 /* ── The shop's offer band ──────────────────────────────────────────────────
    Sits between the page hero and the Ecwid product grid.
@@ -3177,7 +4597,7 @@ a {
 
 /* API overview */
 .quko-api-hero {
-  background: radial-gradient(ellipse at 15% 40%, rgba(104, 199, 220, .14), transparent 55%), #314955;
+  background: radial-gradient(ellipse at 15% 40%, rgba(104, 199, 220, .14), transparent 55%), var(--quko-deep);
   color: var(--quko-white);
 }
 .quko-api-hero h1 { color: var(--quko-white); }
@@ -3257,7 +4677,7 @@ a {
   position: relative;
   overflow: hidden;
   padding: 94px 0 104px;
-  background: radial-gradient(circle at 76% 45%, rgba(104, 199, 220, .22), transparent 35%), #182733;
+  background: radial-gradient(circle at 76% 45%, rgba(104, 199, 220, .22), transparent 35%), var(--quko-deep);
   color: #fff;
 }
 
@@ -3405,7 +4825,7 @@ a {
 .results-term-n { margin-right: 8px; font-weight: 400; font-variant-numeric: tabular-nums; }
 .results-terms-scroll a { color: var(--quko-red); text-decoration: underline; }
 
-.results-sponsorship-claim { background: radial-gradient(circle at 85% 10%, rgba(104, 199, 220, .17), transparent 33%), #263e4b; }
+.results-sponsorship-claim { background: radial-gradient(circle at 85% 10%, rgba(104, 199, 220, .17), transparent 33%), var(--quko-deep); }
 .results-claim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .results-sponsorship-claim .quko-eyebrow { color: #ffadb0; }
 .results-sponsorship-claim h2 { max-width: 520px; margin: 0; color: #fff; font-size: clamp(42px, 4.5vw, 60px); line-height: 1.05; }
@@ -3441,4 +4861,68 @@ a {
   .results-terms-scroll { max-height: 380px; padding: 18px 20px 22px; }
   .results-claim-grid { grid-template-columns: 1fr; }
   .results-sponsorship-closing-note { margin-top: 46px; }
+}
+
+/* Phones: each medal row on one line, name on the left and the three medal
+   counts on the right, so the seven rows stay short. The name drops a size to
+   make room. Scoped to the medal section so it outranks the stacked layout
+   above. */
+@media (max-width: 767px) {
+  .quko-medal-section .quko-medal-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 12px 12px 12px 14px;
+    border-radius: 14px;
+  }
+
+  .quko-medal-section .quko-medal-table {
+    gap: 8px;
+  }
+
+  .quko-medal-section .quko-medal-category h3 {
+    margin-bottom: 2px;
+    font-size: 13.5px;
+    line-height: 1.25;
+  }
+
+  .quko-medal-section .quko-medal-category span {
+    font-size: 11px;
+  }
+
+  .quko-medal-section .quko-medal-values {
+    grid-template-columns: repeat(3, 44px);
+    gap: 8px;
+  }
+
+  .quko-medal-section .quko-medal-value-head {
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  .quko-medal-section .quko-medal-value .quko-medal-disc {
+    width: 18px;
+    height: 18px;
+    flex-basis: 18px;
+    font-size: 9px;
+  }
+
+  .quko-medal-section .quko-medal-number {
+    font-size: 16px;
+  }
+}
+
+/* Phones: section labels often wrap to two lines here, and a rule on the first
+   line only made them look lopsided. Drop the rules and tighten the tracking
+   so a wrapped label reads as one clean block. */
+@media (max-width: 767px) {
+  .quko-eyebrow {
+    gap: 0;
+    letter-spacing: .1em;
+    line-height: 1.45;
+  }
+
+  .quko-eyebrow:before,
+  .quko-section-title.center .quko-eyebrow:after {
+    display: none;
+  }
 }

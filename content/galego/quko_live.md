@@ -1,69 +1,98 @@
 ---
 title: "Quko Live"
-description: "Telemetría multideportista en tempo real para adestradores de deportes de auga."
+description: "Telemetría en tempo real de ata nove embarcacións na tablet do adestrador, sen necesidade de cobertura móbil."
 layout: "quko_live"
 draft: false
 hero:
   eyebrow: "Telemetría de equipo en tempo real"
-  title: "Adestra a sesión mentres sucede"
-  text: "Quko Live leva velocidade, frecuencia de padexada e datos fisiolóxicos desde a auga ata o adestrador en tempo real."
+  title: "Mira cada embarcación mentres segue na auga"
+  text: "Quko Live envía os datos de Kosoku de ata nove embarcacións a unha tablet na lancha do adestrador. Velocidade, frecuencia de palada e pulso chegan ao momento, para corrixir durante a serie e non ao día seguinte."
   primary_label: "Solicitar unha demo"
   primary_link: "contact/"
-  secondary_label: "Descubrir Kosoku"
-  secondary_link: "../kosoku/"
-  image: "images/live.png"
-  image_alt: "Panel de Quko Live con gráficas e controis de tempo"
+  secondary_label: "Descubre Kosoku"
+  secondary_link: "kosoku/"
+  image: "images/web/live_foto_1.jpg"
+  image_alt: "Gráficas de Quko Live nunha tablet montada no panel dunha lancha de adestrador"
 metrics:
-  - {value: "9", label: "Deportistas monitorizados á vez"}
-  - {value: "150 m", label: "Alcance de transmisión sen fíos"}
-  - {value: "Sen internet", label: "Non precisa datos móbiles"}
-  - {value: "Android", label: "Interface portátil para adestradores"}
-workflow:
-  eyebrow: "Información inmediata"
-  title: "Unha visión máis clara desde terra ou a lancha"
-  text: "Configura os dispositivos, escolle os deportistas e segue a sesión desde unha única interface."
-  steps:
-    - {title: "Conecta", text: "Emparella os dispositivos Kosoku coa estación base de Quko Live."}
-    - {title: "Monitoriza", text: "Segue datos individuais, valores en directo, medias e tempos."}
-    - {title: "Responde", text: "Utiliza información obxectiva mentres aínda podes axustar o adestramento."}
-showcase:
-  eyebrow: "Todo á vista"
-  title: "Datos de equipo fáciles de interpretar"
-  text: "Quko Live mantén visibles as métricas esenciais e ofrece control sobre deportistas, tempos e parciais."
-  image: "images/live.png"
-  image_alt: "Interface de rendemento multideportista de Quko Live"
-  items:
-    - "Velocidade, aceleración e frecuencia de padexada en directo"
-    - "Frecuencia cardíaca e fluxos individuais"
-    - "Tempos, parciais, medias e controis de adestramento"
-features:
-  eyebrow: "Creado para adestrar"
-  title: "Información útil no momento axeitado"
-  text: "Mantén o foco nos deportistas e na técnica, non na conectividade."
-  items:
-    - {title: "Vista multideportista", text: "Segue ata nove deportistas desde unha única interface.", icon: "fas fa-users"}
-    - {title: "Conexión de longo alcance", text: "Mantén os datos a distancias reais de adestramento.", icon: "fas fa-wifi"}
-    - {title: "Sen internet", text: "Adestra onde a cobertura é débil ou inexistente.", icon: "fas fa-unlink"}
-    - {title: "Métricas técnicas", text: "Segue frecuencia, avance, velocidade e aceleración.", icon: "fas fa-chart-line"}
-    - {title: "Contexto fisiolóxico", text: "Integra pulsómetros compatibles na mesma vista.", icon: "fas fa-heartbeat"}
-    - {title: "Configuración portátil", text: "Utiliza o sistema desde un dispositivo Android.", icon: "fab fa-android"}
-for_whom:
-  eyebrow: "Para quen observa toda a sesión"
-  title: "Unha ferramenta de equipo para decidir máis rápido"
-  items:
-    - {title: "Adestradores", text: "Ofrece indicacións apoiadas por evidencias inmediatas."}
-    - {title: "Clubs e federacións", text: "Monitoriza grupos sen unha configuración de campo complexa."}
-    - {title: "Equipos de rendemento", text: "Observa varios fluxos de datos nunha vista sincronizada."}
-integrations:
-  eyebrow: "Parte do ecosistema QUKO"
-  title: "En directo agora, análise profunda despois"
-  items: ["Kosoku", "Quko Cloud", "Android", "Pulsómetros", "Sensores de pa", "Sistemas de saída"]
+  - value: "9"
+    label: "Embarcacións nunha pantalla"
+  - value: "150 m"
+    label: "Alcance sen fíos"
+  - value: "Sen conexión"
+    label: "Non precisa internet nin cobertura móbil"
+  - value: "1 kit"
+    label: "Antena, tablet e batería"
+sections:
+  - type: "split"
+    reverse: true
+    eyebrow: "O kit"
+    title: "Unha estación de campo que levas a calquera sede"
+    text: "Quko Live é un kit: unha antena de longo alcance, unha tablet e unha batería. Crea o seu propio enlace sen fíos, así que funciona igual nun encoro remoto que nun centro de alto rendemento."
+    image: "images/web/live_foto_2.jpg"
+    image_alt: "O kit de Quko Live nun pantalán: estación base con antena, tablet, batería e soporte para tablet"
+    steps:
+      - title: "Monta"
+        text: "Coloca a antena na beira ou na lancha e aliméntaa coa batería."
+      - title: "Vincula"
+        text: "Vincula cada Kosoku á túa estación Quko Live unha soa vez, desde os axustes do dispositivo."
+      - title: "Adestra"
+        text: "Segue ata nove embarcacións desde a tablet e corrixe mentres a serie segue en marcha."
+  - type: "band"
+    eyebrow: "Feito para a lancha do adestrador"
+    title: "Sen cobertura? Sen problema."
+    text: "Quko Live non depende da cobertura móbil nin do WiFi da instalación. A tablet vai xunto ao volante, o enlace aguanta as distancias reais de adestramento e a túa mirada segue na auga."
+    image: "images/web/live_foto_3.jpg"
+    image_alt: "Posto de mando dunha lancha de adestrador coa tablet de Quko Live xunto ao volante"
+  - type: "split"
+    tone: "muted"
+    eyebrow: "Na pantalla do adestrador"
+    title: "Toda a tripulación, dunha ollada"
+    text: "Unha soa pantalla con gráficas en directo e unha táboa de valores para cada embarcación, unha ao lado da outra. Nada de cambiar de vista mentres os deportistas pasan a toda velocidade."
+    image: "images/live.png"
+    image_alt: "Interface de Quko Live con gráficas de velocidade e frecuencia e unha táboa de valores en directo"
+    fit: "contain"
+    focus: "50% 64%"
+    items:
+      - "Gráficas en directo de velocidade, frecuencia e avance por palada"
+      - "Aceleración e deceleración, palada a palada"
+      - "Táboa de valores en directo con todos os Kosoku á vez"
+      - "Frecuencia cardíaca das bandas conectadas"
+      - "Cronómetro integrado con voltas, reinicio e gardado"
+  - type: "roles"
+    eyebrow: "Para quen é"
+    title: "Feito para quen segue a sesión enteira"
+    items:
+      - title: "Adestradores"
+        text: "Dá indicacións apoiadas en datos entre series, non cando xa rematou a sesión."
+      - title: "Equipos e federacións"
+        text: "Dirixe sesións de grupo e concentracións con todas as tripulacións nunha pantalla."
+      - title: "Científicos do deporte"
+        text: "Segue varios fluxos de datos sincronizados na auga e afonda despois en Quko Cloud."
+  - type: "links"
+    tone: "muted"
+    eyebrow: "Mellor xuntos"
+    title: "Live, no centro de todo"
+    items:
+      - label: "En cada embarcación"
+        title: "Kosoku"
+        text: "O sensor a bordo que alimenta Quko Live: GNSS e movemento fusionados a 100 Hz."
+        image: "images/web/cat_koso.jpg"
+        image_alt: "Sensor Kosoku diante dun campo de regatas"
+        link: "kosoku/"
+        link_label: "Descubre Kosoku"
+      - label: "Despois da sesión"
+        title: "Quko Cloud"
+        text: "Sube as sesións completas para ter parciais, análise palada a palada, repeticións en 3D e simulacións de regata."
+        image: "images/cloud.png"
+        image_alt: "Gráficas de Quko Cloud de velocidade, avance por palada e frecuencia"
+        link: "quko_cloud/"
+        link_label: "Descubre Quko Cloud"
 marketing_cta:
-  eyebrow: "Descubre Quko Live"
-  title: "Leva evidencias en directo ata a auga"
-  text: "Solicita unha demostración adaptada ao tamaño do teu equipo e ao teu contorno de adestramento."
+  eyebrow: "Proba Quko Live"
+  title: "Leva datos en tempo real á auga"
+  text: "Cóntanos cantos deportistas tes e onde adestras, e recomendámosche a configuración de Quko Live axeitada."
   primary_label: "Solicitar unha demo"
   primary_link: "contact/"
-  secondary_label: "Acceder a Quko Cloud"
-  secondary_link: "https://cloud.quko.es/"
+  secondary_label: "Descubre Kosoku"
+  secondary_link: "kosoku/"
 ---

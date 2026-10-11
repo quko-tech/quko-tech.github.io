@@ -1,0 +1,24 @@
+{{/* Where this product hands over to the others: picture cards that link. */}}
+{{ $s := .s }}
+<section class="quko-section{{ with $s.tone }} quko-section-{{ . }}{{ end }}">
+  <div class="container">
+    <div class="quko-section-title" data-reveal>
+      {{ with $s.eyebrow }}<span class="quko-eyebrow">{{ . }}</span>{{ end }}
+      <h2>{{ $s.title }}</h2>
+      {{ with $s.text }}<p>{{ . | markdownify }}</p>{{ end }}
+    </div>
+    <div class="quko-link-cards">
+      {{ range $s.items }}
+      <a class="quko-link-card" href="{{ .link | relLangURL }}" data-reveal>
+        <span class="quko-link-card-media"><img src="{{ .image | relURL }}" alt="{{ .image_alt }}" loading="lazy"></span>
+        <span class="quko-link-card-body">
+          <span class="quko-flow-label">{{ .label }}</span>
+          <span class="quko-flow-title">{{ .title }}</span>
+          <span class="quko-flow-text">{{ .text }}</span>
+          <span class="quko-card-link">{{ .link_label }} <span aria-hidden="true">&rarr;</span></span>
+        </span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>

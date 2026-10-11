@@ -1,0 +1,19 @@
+{{/* Technical specification: a picture of the hardware beside a plain table. */}}
+{{ $s := .s }}
+<section class="quko-section{{ with $s.tone }} quko-section-{{ . }}{{ end }}">
+  <div class="container">
+    <div class="quko-split">
+      <div class="quko-split-media is-contain is-plain" data-reveal>
+        <img src="{{ $s.image | relURL }}" alt="{{ $s.image_alt }}" loading="lazy">
+      </div>
+      <div class="quko-split-copy" data-reveal>
+        {{ with $s.eyebrow }}<span class="quko-eyebrow">{{ . }}</span>{{ end }}
+        <h2>{{ $s.title }}</h2>
+        {{ with $s.text }}<p>{{ . | markdownify }}</p>{{ end }}
+        <dl class="quko-spec-table">
+          {{ range $s.rows }}<div><dt>{{ .label }}</dt><dd>{{ with .values }}{{ range . }}<span class="quko-spec-line">{{ . }}</span>{{ end }}{{ else }}{{ .value | markdownify }}{{ end }}</dd></div>{{ end }}
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>

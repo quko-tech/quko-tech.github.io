@@ -1,0 +1,17 @@
+{{/* A full-width photograph with the copy laid over a dark gradient. */}}
+{{ $s := .s }}
+<section class="quko-band" style="--band-image: url('{{ $s.image | relURL }}');">
+  <div class="container">
+    <div class="quko-band-copy" data-reveal>
+      {{ with $s.eyebrow }}<span class="quko-eyebrow">{{ . }}</span>{{ end }}
+      <h2>{{ $s.title }}</h2>
+      {{ with $s.text }}<p>{{ . | markdownify }}</p>{{ end }}
+      {{ with $s.items }}
+      <ul class="quko-band-points">
+        {{ range . }}<li><strong>{{ .value }}</strong><span>{{ .label }}</span></li>{{ end }}
+      </ul>
+      {{ end }}
+    </div>
+  </div>
+  <span class="sr-only">{{ $s.image_alt }}</span>
+</section>

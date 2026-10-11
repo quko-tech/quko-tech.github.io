@@ -324,3 +324,13 @@ $(document).ready(function () {
     }
   });
 });
+
+// The home hero's Kosoku render loops silently. For people who have asked for
+// reduced motion, stop it on its poster frame instead.
+document.addEventListener('DOMContentLoaded', function () {
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('video[data-hero-video]').forEach(function (video) {
+    video.removeAttribute('autoplay');
+    video.pause();
+  });
+});

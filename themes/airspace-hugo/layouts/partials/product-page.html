@@ -1,3 +1,11 @@
+{{/*
+  Product page (Kosoku, Quko Live, Quko Cloud).
+
+  Only the hero and the closing call to action are shared. Everything in
+  between comes from the page's own `sections` list, so each product tells its
+  own story in its own order instead of three pages with the same skeleton.
+  Each entry names a `type`, rendered by partials/sections/<type>.html.
+*/}}
 {{ with .Params.hero }}
 <section class="quko-page-hero">
   <div class="container">
@@ -8,115 +16,24 @@
         <p>{{ .text }}</p>
         <div class="quko-actions">
           <a class="btn-quko" href="{{ .primary_link | relLangURL }}">{{ .primary_label }}</a>
-          <a class="btn-quko-outline" href="{{ .secondary_link }}">{{ .secondary_label }}</a>
+          <a class="btn-quko-outline" href="{{ if hasPrefix .secondary_link "http" }}{{ .secondary_link }}{{ else }}{{ .secondary_link | relLangURL }}{{ end }}">{{ .secondary_label }}</a>
         </div>
       </div>
       <div data-reveal><img src="{{ .image | relURL }}" alt="{{ .image_alt }}"></div>
     </div>
+    {{ with $.Params.metrics }}
+    <dl class="quko-hero-stats" data-reveal>
+      {{ range . }}<div><dt>{{ .value }}</dt><dd>{{ .label }}</dd></div>{{ end }}
+    </dl>
+    {{ end }}
   </div>
 </section>
 {{ end }}
 
-{{ with .Params.metrics }}
-<section class="quko-section-sm">
-  <div class="container">
-    <div class="quko-metric-strip" data-reveal>
-      {{ range . }}
-      <div class="quko-metric"><strong>{{ .value }}</strong><span>{{ .label }}</span></div>
-      {{ end }}
-    </div>
-  </div>
-</section>
+{{ $page := . }}
+{{ range .Params.sections }}
+{{ partial (printf "sections/%s.html" .type) (dict "page" $page "s" .) }}
 {{ end }}
-
-{{ with .Params.workflow }}
-<section class="quko-section">
-  <div class="container">
-    <div class="quko-section-title" data-reveal>
-      <span class="quko-eyebrow">{{ .eyebrow }}</span>
-      <h2>{{ .title }}</h2>
-      <p>{{ .text }}</p>
-    </div>
-    <div class="quko-grid-3">
-      {{ range $index, $item := .steps }}
-      <article class="quko-card" data-reveal>
-        <span class="quko-card-number">0{{ add $index 1 }}</span>
-        <h3>{{ $item.title }}</h3>
-        <p>{{ $item.text }}</p>
-      </article>
-      {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
-
-{{ with .Params.showcase }}
-<section class="quko-section quko-section-dark">
-  <div class="container">
-    <div class="quko-showcase{{ if .reverse }} reverse{{ end }}">
-      <div class="quko-showcase-media" data-reveal><img src="{{ .image | relURL }}" alt="{{ .image_alt }}"></div>
-      <div data-reveal>
-        <span class="quko-eyebrow">{{ .eyebrow }}</span>
-        <h2>{{ .title }}</h2>
-        <p>{{ .text }}</p>
-        <ul class="quko-check-list">
-          {{ range .items }}<li><i class="fas fa-check-circle"></i><span>{{ . }}</span></li>{{ end }}
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-
-{{ with .Params.features }}
-<section class="quko-section">
-  <div class="container">
-    <div class="quko-section-title center" data-reveal>
-      <span class="quko-eyebrow">{{ .eyebrow }}</span>
-      <h2>{{ .title }}</h2>
-      <p>{{ .text }}</p>
-    </div>
-    <div class="quko-grid-3">
-      {{ range .items }}
-      <article class="quko-card" data-reveal>
-        <span class="quko-icon"><i class="{{ .icon }}"></i></span>
-        <h3>{{ .title }}</h3>
-        <p>{{ .text }}</p>
-      </article>
-      {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
-
-{{ partial "assurance-card.html" . }}
-
-{{ with .Params.for_whom }}
-<section class="quko-section quko-section-muted">
-  <div class="container">
-    <div class="quko-section-title" data-reveal>
-      <span class="quko-eyebrow">{{ .eyebrow }}</span>
-      <h2>{{ .title }}</h2>
-    </div>
-    <div class="quko-grid-{{ len .items }}">
-      {{ range .items }}
-      <article class="quko-card" data-reveal><h3>{{ .title }}</h3><p>{{ .text }}</p></article>
-      {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
-
-{{ with .Params.integrations }}
-<section class="quko-section-sm">
-  <div class="container">
-    <div class="quko-section-title center" data-reveal><span class="quko-eyebrow">{{ .eyebrow }}</span><h2>{{ .title }}</h2></div>
-    <div class="quko-chip-row" data-reveal>{{ range .items }}<span class="quko-chip">{{ . }}</span>{{ end }}</div>
-  </div>
-</section>
-{{ end }}
-
-{{ partial "pricing-table.html" . }}
 
 {{ with .Params.cloud_note }}
 <div class="quko-fine-print-wrap"><div class="container">

@@ -1,63 +1,114 @@
 ---
 title: "Quko Cloud"
-description: "Análise avanzada e colaboración para sesións de piragüismo, kayak e remo."
+description: "Análise palada a palada, repeticións en 3D, simulación de regatas e un analista IA para piragüismo, kayak e remo."
 layout: "quko_cloud"
 draft: false
 hero:
   eyebrow: "Plataforma de rendemento para deportes de auga"
-  title: "Converte cada sesión en coñecemento útil"
-  text: "Quko Cloud transforma os datos de Kosoku en análises deportivas e ofrece a deportistas, adestradores e investigadores un analista de datos con IA."
+  title: "Cada sesión, descifrada palada a palada"
+  text: "Quko Cloud converte cada ficheiro de Kosoku en parciais, gráficas, repeticións en 3D e simulacións de regata, e suma un analista IA que responde en linguaxe natural."
   primary_label: "Solicitar unha demo"
   primary_link: "contact/"
   secondary_label: "Acceder a Quko Cloud"
   secondary_link: "https://cloud.quko.es/"
   image: "images/cloud.png"
-  image_alt: "Gráficas de Quko Cloud para velocidade, avance e frecuencia"
+  image_alt: "Gráficas de Quko Cloud de velocidade, avance por palada e frecuencia"
 metrics:
-  - {value: "Por padexada", label: "Análise técnica e de consistencia"}
-  - {value: "3D + vídeo", label: "Revisión visual sincronizada"}
-  - {value: "Analista IA", label: "Preguntas, comparacións e informes"}
-  - {value: "4 formatos", label: "Exportación PDF, JSON, FIT e TCX"}
-workflow:
-  eyebrow: "Do ficheiro ao achado"
-  title: "Un proceso completo de análise"
-  text: "Quko Cloud guía a sesión desde a carga ata a comunicación sen ocultar os datos."
-  steps:
-    - {title: "Carga", text: "Engade o ficheiro Kosoku, deportistas, embarcación, pista e contexto."}
-    - {title: "Axusta", text: "Confirma a saída e deixa que os algoritmos deportivos procesen o esforzo."}
-    - {title: "Analiza", text: "Explora as vistas ou pídelle ao analista de datos con IA que compare, explique e prepare informes."}
-showcase:
-  eyebrow: "Creado para interpretar"
-  title: "Observa como cambia o rendemento durante o esforzo"
-  text: "Pasa do resultado xeral ao detalle por padexada, á progresión por parciais e ao contexto técnico."
-  image: "images/cloud.png"
-  image_alt: "Panel de análise de sesión de Quko Cloud"
-  items:
-    - "Gráficas interactivas, táboas e parciais configurables"
-    - "Movemento, ritmo, frecuencia cardíaca e mecánica de padexada"
-    - "Análise privada, referencias públicas e comparación entre sesións"
-features:
-  eyebrow: "Un lugar para afondar"
-  title: "Análise, colaboración e un analista de datos con IA"
-  text: "Usa Quko Cloud, pregunta en linguaxe natural ou conecta datos autorizados con asistentes compatibles como ChatGPT e Claude."
-  items:
-    - {title: "Análise individual", text: "Estuda velocidade, frecuencia, avance, movemento e fisioloxía.", icon: "fas fa-chart-area"}
-    - {title: "Comparación de sesións", text: "Compara esforzos, deportistas e condicións con vistas aliñadas.", icon: "fas fa-exchange-alt"}
-    - {title: "3D e vídeo", text: "Reproduce o movemento e sincroniza vídeo fotograma a fotograma.", icon: "fas fa-cube"}
-    - {title: "Análise mecánica", text: "Relaciona forza, impulso, velocidade e información de cada lado.", icon: "fas fa-cogs"}
-    - {title: "Analista de datos con IA", text: "Pregunta sobre técnica, ritmo ou progreso e recibe respostas baseadas nas túas sesións.", icon: "fas fa-brain"}
-    - {title: "Comparte e exporta", text: "Crea ligazóns temporais e exporta informes ou datos estruturados.", icon: "fas fa-share-alt"}
-for_whom:
-  eyebrow: "Acceso adaptado a equipos reais"
-  title: "A vista axeitada para cada perfil"
-  items:
-    - {title: "Deportistas e adestradores", text: "Revisa o progreso individual e decide en equipo."}
-    - {title: "Clubs e federacións", text: "Xestiona accesos, sesións e procesos institucionais."}
-    - {title: "Universidades, investigadores e analistas", text: "Utiliza datos estruturados, API REST e acceso API compatible con MCP para ferramentas de IA autorizadas, co soporte do noso equipo."}
-integrations:
-  eyebrow: "Os teus datos, listos para moverse"
-  title: "Conecta a análise co resto do teu traballo"
-  items: ["Kosoku", "Quko Live", "Garmin", "Strava", "FIT", "TCX", "PDF", "JSON", "API REST", "ChatGPT", "Claude"]
+  - value: "Cada palada"
+    label: "Analizada unha a unha e por parciais"
+  - value: "9 sesións"
+    label: "Comparadas ou en carreira con Quko Sim"
+  - value: "7 idiomas"
+    label: "Entre eles galego, español e inglés"
+  - value: "Só lectura"
+    label: "Acceso seguro para Claude e ChatGPT"
+sections:
+  - type: "split"
+    eyebrow: "Do ficheiro á conclusión"
+    title: "Súbelo unha vez. A análise xa te está agardando."
+    text: "Sen follas de cálculo nin recortes a man. Quko Cloud fai o traballo pesado en canto chega a sesión."
+    image: "images/palada.jpeg"
+    image_alt: "Curvas de aceleración da embarcación en catro parciais do mesmo esforzo"
+    fit: "contain"
+    focus: "50% 35%"
+    steps:
+      - title: "Sube"
+        text: "As sesións de Kosoku chegan por WiFi. Engade deportistas, embarcación e lugar nuns clics."
+      - title: "Confirma a saída"
+        text: "Quko propón a saída a partir da curva de aceleración e detecta o sinal do sistema de saída. Un clic para axustala se fai falta."
+      - title: "Analiza"
+        text: "Parciais, estatísticas por palada, gráficas e vento listos, desde o teu anemómetro ou un servizo meteorolóxico."
+  - type: "features"
+    tone: "muted"
+    eyebrow: "Ferramentas de análise"
+    title: "Tan a fondo como pida a pregunta"
+    text: "Desde os tempos de paso ata unha soa palada, cada vista está pensada para o piragüismo e o remo."
+    items:
+      - title: "Parciais e números"
+        text: "Parciais iguais con tempo, tempo acumulado e a media, moda, máximo e dispersión de cada métrica."
+        icon: "fas fa-table"
+      - title: "Gráficas e mapas"
+        text: "A túa traxectoria nun mapa satélite co vento, distribucións por rangos, métricas por lado en kayak e unha gráfica á medida que montas arrastrando."
+        icon: "fas fa-chart-area"
+      - title: "Repetición en 3D"
+        text: "Revive a embarcación de lado, desde arriba ou de fronte, a cámara lenta e coas gráficas sincronizadas. Expórtaa como vídeo."
+        icon: "fas fa-cube"
+      - title: "Quko Sim"
+        text: "Pon ata nove sesións nunha regata virtual coa mesma saída e mira exactamente onde se gaña e se perde tempo."
+        icon: "fas fa-flag-checkered"
+      - title: "Comparación de sesións"
+        text: "Compara ata nove sesións en números e gráficas, cunha vista de diferenza de tempo ao longo do percorrido."
+        icon: "fas fa-exchange-alt"
+      - title: "Vídeo sincronizado"
+        text: "Aliña o teu propio vídeo cos datos ao milisegundo. Reprodúcese no teu navegador e nunca se sube."
+        icon: "fas fa-video"
+      - title: "Comparte e exporta"
+        text: "Envía unha ligazón de só lectura que caduca aos 14 días, ou exporta a PDF, XLSX, JSON, FIT e TCX."
+        icon: "fas fa-share-alt"
+      - title: "Progreso"
+        text: "Mellores marcas en 100, 200, 500 e 1000 m detectadas soas, ademais de forza, peso e benestar ao longo do tempo."
+        icon: "fas fa-chart-line"
+      - title: "Referencias de elite"
+        text: "Compárate con regatas internacionais de deportistas de primeiro nivel, publicadas co seu permiso, e mira as túas sesións ligadas aos resultados oficiais."
+        icon: "fas fa-medal"
+  - type: "ai"
+    eyebrow: "O teu analista de datos IA"
+    title: "Pregúntalles o que queiras ás túas sesións"
+    text: "A análise intelixente redacta un informe da sesión e responde ás túas preguntas cos teus números reais. Prefires o asistente que xa usas? Conecta Claude ou ChatGPT nun par de clics."
+    items:
+      - "Unha análise escrita de calquera sesión e un chat para seguir preguntando"
+      - "Claude e ChatGPT conéctanse cunha ligazón segura de só lectura: poden ler a túa análise, nunca modificala, compartila nin borrala"
+      - "As coordenadas GPS e os sinais en bruto do sensor nunca chegan ao asistente"
+      - "Unhas 50 ferramentas de análise: parciais, anomalías, equilibrio entre lados, referencias, mellores marcas e progresión"
+    note: "A análise con IA e a conexión de asistentes forman parte do plan Alto Nivel."
+    visual:
+      source_title: "Quko Cloud"
+      source_text: "As túas sesións, parciais e paladas"
+      link_label: "Ligazón segura de só lectura"
+      prompt: "«Onde perdín velocidade nos últimos 250 m comparado co meu mellor 1000?»"
+  - type: "roles"
+    tone: "muted"
+    eyebrow: "Pensado para equipos reais"
+    title: "A vista axeitada para cada rol"
+    items:
+      - title: "Deportistas"
+        text: "Os teus datos son teus: dálles acceso ata a dez adestradores co teu código persoal."
+      - title: "Adestradores e equipos"
+        text: "Agrupa deportistas en equipos e segue carga, benestar e resultados nun panel de 7, 30 ou 90 días."
+      - title: "Federacións e investigación"
+        text: "Xestiona licenzas de varios postos, exporta datos palada a palada e traballa cunha API REST con OAuth."
+  - type: "connections"
+    title: "Enténdese coas túas ferramentas"
+    groups:
+      - label: "Reloxos"
+        items: ["Garmin", "Suunto", "Polar"]
+      - label: "Apps e IA"
+        items: ["Strava", "Claude", "ChatGPT"]
+      - label: "Exportación"
+        items: ["PDF", "XLSX", "JSON", "FIT", "TCX"]
+      - label: "Desenvolvedores"
+        items: ["API REST", "MCP"]
+  - type: "pricing"
 pricing:
   enable: true
   eyebrow: "Plans de Quko Cloud"
@@ -103,7 +154,7 @@ pricing:
 marketing_cta:
   eyebrow: "Descubre Quko Cloud"
   title: "Dálle unha segunda vida a cada sesión"
-  text: "Solicita unha demostración guiada ou inicia sesión para traballar cos teus datos."
+  text: "Pide unha demo guiada, ou entra e abre a túa última sesión."
   primary_label: "Solicitar unha demo"
   primary_link: "contact/"
   secondary_label: "Acceder a Quko Cloud"

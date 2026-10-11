@@ -1,0 +1,19 @@
+{{/* Who uses it and how: ruled columns of short copy, no cards. */}}
+{{ $s := .s }}
+<section class="quko-section{{ with $s.tone }} quko-section-{{ . }}{{ end }}">
+  <div class="container">
+    <div class="quko-section-title" data-reveal>
+      {{ with $s.eyebrow }}<span class="quko-eyebrow">{{ . }}</span>{{ end }}
+      <h2>{{ $s.title }}</h2>
+      {{ with $s.text }}<p>{{ . | markdownify }}</p>{{ end }}
+    </div>
+    <div class="quko-roles" data-reveal>
+      {{ range $s.items }}
+      <div class="quko-role">
+        <h3>{{ .title }}</h3>
+        <p>{{ .text | markdownify }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

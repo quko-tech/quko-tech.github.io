@@ -1,0 +1,20 @@
+{{/* The AI analyst: the Claude / ChatGPT visual beside the copy. */}}
+{{ $s := .s }}
+<section class="quko-section{{ with $s.tone }} quko-section-{{ . }}{{ end }}">
+  <div class="container">
+    <div class="quko-split">
+      {{ partial "ai-visual.html" $s.visual }}
+      <div class="quko-split-copy" data-reveal>
+        {{ with $s.eyebrow }}<span class="quko-eyebrow">{{ . }}</span>{{ end }}
+        <h2>{{ $s.title }}</h2>
+        {{ with $s.text }}<p>{{ . | markdownify }}</p>{{ end }}
+        {{ with $s.items }}
+        <ul class="quko-check-list">
+          {{ range . }}<li><i class="fas fa-check-circle" aria-hidden="true"></i><span>{{ . | markdownify }}</span></li>{{ end }}
+        </ul>
+        {{ end }}
+        {{ with $s.note }}<p class="quko-split-note">{{ . | markdownify }}</p>{{ end }}
+      </div>
+    </div>
+  </div>
+</section>

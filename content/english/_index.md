@@ -4,15 +4,15 @@ description: "Connected hardware, live telemetry and advanced analysis for canoe
 hero:
   eyebrow: "Water sports performance technology"
   title: "Performance intelligence for every stroke"
-  text: "QUKO connects precise sensors, live telemetry and advanced analysis so every session leads to a better decision."
+  text: "Kosoku records every stroke on the boat, Quko Live puts it on the coach's screen in real time, and Quko Cloud turns it into analysis you can act on, with an AI analyst built in."
   primary_label: "Request a demo"
   primary_link: "contact/"
   secondary_label: "Access Quko Cloud"
   secondary_link: "https://cloud.quko.es/"
   image: "images/koso_foto.jpg"
-  image_alt: "Kosoku performance sensor beside the water"
-  badge_title: "One connected ecosystem"
-  badge_text: "Capture, monitor and understand performance."
+  image_alt: "Animated render of the Kosoku sensor"
+  video: "videos/web/kosoku_render.mp4"
+  poster: "videos/web/kosoku_render_poster.jpg"
 audiences:
   label: "Built for water sports performance teams"
   items:
@@ -52,11 +52,11 @@ ecosystem:
   text: "Each part of QUKO works together, without adding complexity to training."
   steps:
     - title: "Capture"
-      text: "Kosoku records high-resolution motion, position and physiological data directly on the boat."
+      text: "Kosoku fuses dual-band GNSS and motion sensors at 100 Hz on the deck, from the first stroke to the finish line."
     - title: "Monitor"
-      text: "Quko Live gives coaches immediate feedback from multiple athletes, even without internet access."
+      text: "Quko Live streams up to nine boats to the coach's tablet in real time, with no mobile signal needed."
     - title: "Understand"
-      text: "Quko Cloud turns each session into clear analysis, comparisons, reports and AI-assisted insight."
+      text: "Quko Cloud breaks every session into splits, strokes, 3D replays and race simulations, with an AI analyst on top."
 products:
   eyebrow: "The QUKO ecosystem"
   title: "Three products, one performance system"
@@ -64,14 +64,14 @@ products:
   items:
     - title: "Kosoku"
       text: "A precise, connected sensor designed for canoeing, kayaking and rowing."
-      image: "images/koso_foto.jpg"
-      image_alt: "Kosoku sensor and charging base"
+      image: "images/web/cat_koso.jpg"
+      image_alt: "Kosoku sensor in front of a regatta course"
       link: "kosoku/"
       link_label: "Explore Kosoku"
     - title: "Quko Live"
       text: "Real-time team telemetry for faster coaching decisions on the water."
-      image: "images/live.png"
-      image_alt: "Quko Live coaching dashboard"
+      image: "images/web/live_foto_1.jpg"
+      image_alt: "Quko Live running on a tablet in a coaching boat"
       link: "quko_live/"
       link_label: "Explore Quko Live"
     - title: "Quko Cloud"
@@ -83,13 +83,16 @@ products:
 analytics:
   eyebrow: "Your AI data analyst"
   title: "Ask your data a performance question"
-  text: "QUKO's AI data analyst works with your authorised sessions to explain patterns, compare efforts and prepare reports. You can also work through ChatGPT, Claude or your preferred compatible AI assistant."
-  image: "images/cloud.png"
-  image_alt: "Speed, distance per stroke and stroke frequency analysis"
+  text: "The built-in AI analyst writes up each session and answers follow-up questions with your real numbers. Prefer the assistant you already use? Connect Claude or ChatGPT to Quko Cloud in a couple of clicks."
   items:
-    - "Ask questions in natural language and keep every answer tied to your data"
-    - "Compare sessions, athletes and metrics without rebuilding the analysis"
-    - "Connect authorised QUKO data to compatible AI assistants through secure tools"
+    - "Get a written analysis of any session, then keep asking"
+    - "Compare sessions, athletes and splits without building a single chart"
+    - "Connect Claude or ChatGPT through a secure, read-only link to your Quko Cloud data"
+  visual:
+    source_title: "Quko Cloud"
+    source_text: "Your sessions, splits and strokes"
+    link_label: "Secure read-only link"
+    prompt: "“Where did I lose speed in the last 250 m compared with my best 1000 m?”"
   link: "quko_cloud/"
   link_label: "Discover Quko Cloud"
 capabilities:
@@ -114,13 +117,16 @@ capabilities:
 research:
   eyebrow: "For universities and research teams"
   title: "Bring QUKO into your next study"
-  text: "Use our devices, structured data and technical support in field or laboratory research. We help with study setup, data access and integrations."
+  text: "Kosoku hardware, stroke-by-stroke exports and an OAuth REST API, with our engineers helping you set up the study, the data access and the integrations."
   link: "contact/"
   link_label: "Talk to our research team"
 integrations:
-  eyebrow: "Works with your workflow"
   title: "Bring QUKO data into the tools you already use"
-  items: ["Garmin", "Strava", "FIT", "TCX", "PDF", "JSON", "ChatGPT", "Claude", "Secure AI connection"]
+  groups:
+    - label: "Connects with"
+      items: ["Garmin", "Suunto", "Polar", "Strava", "Claude", "ChatGPT"]
+    - label: "Exports to"
+      items: ["PDF", "XLSX", "JSON", "FIT", "TCX"]
 pricing:
   enable: true
   eyebrow: "Quko Cloud plans"

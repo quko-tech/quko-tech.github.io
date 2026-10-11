@@ -56,7 +56,7 @@ pricing:
       - name: "Stroke-by-stroke histograms and per-range charts"
         standard: "yes"
         high: "yes"
-      - name: "Force and acceleration curves"
+      - name: "Acceleration curves"
         standard: "yes"
         high: "yes"
       - name: "Athlete profiles and session history"

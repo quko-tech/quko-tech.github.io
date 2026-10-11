@@ -1,6 +1,11 @@
 {{ define "main" }}
+{{/* The page reads as one argument, top to bottom: what QUKO is and the
+     sensor itself, proof that it wins medals, how the three products form one
+     workflow, what the analysis gives you, who builds it, and how to start.
+     It opens dark (the Kosoku render, then the medals) and then alternates
+     mist / white so the eye always knows where one chapter ends. */}}
 {{ with .Params.hero }}
-<section class="quko-hero">
+<section class="quko-hero{{ if .video }} is-dark{{ end }}">
   <div class="container">
     <div class="quko-hero-grid">
       <div class="quko-hero-copy" data-reveal>
@@ -12,149 +17,133 @@
           <a class="btn-quko-outline" href="{{ .secondary_link }}">{{ .secondary_label }}</a>
         </div>
       </div>
+      {{ with .video }}
+      {{/* Muted, looping and inline so browsers allow autoplay. The poster is
+           the first paint; script.js keeps it still for reduced motion. */}}
+      <div class="quko-hero-visual is-video" data-reveal>
+        <video autoplay muted loop playsinline preload="auto" poster="{{ $.Params.hero.poster | relURL }}" aria-label="{{ $.Params.hero.image_alt }}" data-hero-video>
+          <source src="{{ . | relURL }}" type="video/mp4">
+        </video>
+      </div>
+      {{ else }}
       <div class="quko-hero-visual" data-reveal>
         <img src="{{ .image | relURL }}" alt="{{ .image_alt }}">
-        <div class="quko-hero-badge">
-          <strong>{{ .badge_title }}</strong>
-          <span>{{ .badge_text }}</span>
-        </div>
       </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-
-{{ with .Params.audiences }}
-<section aria-label="{{ .label }}">
-  <div class="container">
-    <div class="quko-audience-row">
-      {{ range .items }}
-      <div class="quko-audience"><i class="{{ .icon }}"></i><strong>{{ .name }}</strong></div>
       {{ end }}
     </div>
-  </div>
-</section>
-{{ end }}
-
-{{ with .Params.capabilities }}
-<section class="quko-section">
-  <div class="container">
-    <div class="quko-section-title center" data-reveal>
-      <span class="quko-eyebrow">{{ .eyebrow }}</span>
-      <h2>{{ .title }}</h2>
-      <p>{{ .text }}</p>
-    </div>
-    <div class="quko-grid-4">
+    {{ with $.Params.audiences }}
+    <div class="quko-audience-row" role="list" aria-label="{{ .label }}">
       {{ range .items }}
-      <article class="quko-card" data-reveal>
-        <span class="quko-icon"><i class="{{ .icon }}"></i></span>
-        <h3>{{ .title }}</h3>
-        <p>{{ .text }}</p>
-      </article>
+      <div class="quko-audience" role="listitem"><i class="{{ .icon }}" aria-hidden="true"></i><strong>{{ .name }}</strong></div>
       {{ end }}
     </div>
-    <div class="quko-actions" style="justify-content:center">
-      <a class="btn-quko-outline" href="{{ .link | relLangURL }}">{{ .link_label }}</a>
-    </div>
+    {{ end }}
   </div>
 </section>
 {{ end }}
 
 {{ partial "medal-breakdown.html" . }}
 
+{{/* Workflow and products used to be two sections describing the same three
+     things. Here each product is one step of the workflow: the step names the
+     job, the product does it. */}}
 {{ with .Params.ecosystem }}
-<section class="quko-section" id="ecosystem">
-  <div class="container">
-    <div class="quko-section-title" data-reveal>
-      <span class="quko-eyebrow">{{ .eyebrow }}</span>
-      <h2>{{ .title }}</h2>
-      <p>{{ .text }}</p>
-    </div>
-    <div class="quko-grid-3">
-      {{ range $index, $item := .steps }}
-      <article class="quko-card" data-reveal>
-        <span class="quko-card-number">0{{ add $index 1 }}</span>
-        <h3>{{ $item.title }}</h3>
-        <p>{{ $item.text }}</p>
-      </article>
-      {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
-
-{{ with .Params.products }}
-<section class="quko-section quko-section-muted">
+{{ $steps := .steps }}
+{{/* Centred like the medal results above it, so the page turns from proof to
+     product without the heading jumping sides, and with extra air around the
+     heading. */}}
+<section class="quko-section quko-section-muted quko-ecosystem" id="ecosystem">
   <div class="container">
     <div class="quko-section-title center" data-reveal>
       <span class="quko-eyebrow">{{ .eyebrow }}</span>
       <h2>{{ .title }}</h2>
       <p>{{ .text }}</p>
     </div>
-    <div class="quko-grid-3">
-      {{ range .items }}
-      <article class="quko-card quko-product-card" data-reveal>
-        <img src="{{ .image | relURL }}" alt="{{ .image_alt }}">
-        <div class="quko-product-card-content">
-          <h3>{{ .title }}</h3>
-          <p>{{ .text }}</p>
-          <a class="quko-card-link" href="{{ .link | relLangURL }}">{{ .link_label }} <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </article>
+    <ol class="quko-flow">
+      {{ range $index, $item := $.Params.products.items }}
+      {{ $step := index $steps $index }}
+      <li class="quko-flow-step" data-reveal>
+        <a class="quko-flow-card" href="{{ $item.link | relLangURL }}">
+          <span class="quko-flow-media"><img src="{{ $item.image | relURL }}" alt="{{ $item.image_alt }}" loading="lazy"></span>
+          <span class="quko-flow-body">
+            <span class="quko-flow-label"><span class="quko-flow-num">0{{ add $index 1 }}</span>{{ with $step }}{{ .title }}{{ end }}</span>
+            <span class="quko-flow-title">{{ $item.title }}</span>
+            <span class="quko-flow-text">{{ with $step }}{{ .text }}{{ else }}{{ $item.text }}{{ end }}</span>
+            <span class="quko-card-link">{{ $item.link_label }} <span aria-hidden="true">&rarr;</span></span>
+          </span>
+        </a>
+      </li>
       {{ end }}
-    </div>
+    </ol>
   </div>
 </section>
 {{ end }}
 
 {{ with .Params.analytics }}
-<section class="quko-section quko-section-dark">
+<section class="quko-section">
   <div class="container">
     <div class="quko-showcase">
-      <div class="quko-showcase-media" data-reveal>
-        <img src="{{ .image | relURL }}" alt="{{ .image_alt }}">
-      </div>
+      {{ partial "ai-visual.html" .visual }}
       <div data-reveal>
         <span class="quko-eyebrow">{{ .eyebrow }}</span>
         <h2>{{ .title }}</h2>
         <p>{{ .text }}</p>
         <ul class="quko-check-list">
-          {{ range .items }}<li><i class="fas fa-check-circle"></i><span>{{ . }}</span></li>{{ end }}
+          {{ range .items }}<li><i class="fas fa-check-circle" aria-hidden="true"></i><span>{{ . }}</span></li>{{ end }}
         </ul>
         <div class="quko-actions">
-          <a class="btn-quko-light" href="{{ .link | relLangURL }}">{{ .link_label }}</a>
+          <a class="btn-quko-outline" href="{{ .link | relLangURL }}">{{ .link_label }}</a>
         </div>
       </div>
     </div>
+    {{ with $.Params.integrations }}
+    {{/* Connections and file formats are different things, so they are
+         listed as two labelled groups rather than one run of chips. */}}
+    <div class="quko-inline-band" data-reveal>
+      <h3>{{ .title }}</h3>
+      <div class="quko-chip-groups">
+        {{ range .groups }}
+        <div class="quko-chip-group">
+          <span class="quko-chip-label">{{ .label }}</span>
+          <div class="quko-chip-row">{{ range .items }}<span class="quko-chip">{{ . }}</span>{{ end }}</div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
   </div>
 </section>
 {{ end }}
 
-{{ with .Params.research }}
-<section class="quko-section-sm quko-research-band">
+{{ with .Params.capabilities }}
+<section class="quko-section quko-section-muted">
   <div class="container">
-    <div class="quko-research-panel" data-reveal>
-      <div>
+    <div class="quko-section-head" data-reveal>
+      <div class="quko-section-title">
         <span class="quko-eyebrow">{{ .eyebrow }}</span>
         <h2>{{ .title }}</h2>
         <p>{{ .text }}</p>
       </div>
-      <a class="btn-quko" href="{{ .link | relLangURL }}">{{ .link_label }}</a>
+      <a class="quko-card-link" href="{{ .link | relLangURL }}">{{ .link_label }} <span aria-hidden="true">&rarr;</span></a>
     </div>
-  </div>
-</section>
-{{ end }}
-
-{{ with .Params.integrations }}
-<section class="quko-section-sm quko-section-muted">
-  <div class="container">
-    <div class="quko-section-title center" data-reveal>
-      <span class="quko-eyebrow">{{ .eyebrow }}</span>
-      <h2>{{ .title }}</h2>
+    <ul class="quko-feature-list is-4" data-reveal>
+      {{ range .items }}
+      <li>
+        <span class="quko-icon"><i class="{{ .icon }}" aria-hidden="true"></i></span>
+        <div><h3>{{ .title }}</h3><p>{{ .text }}</p></div>
+      </li>
+      {{ end }}
+    </ul>
+    {{ with $.Params.research }}
+    <div class="quko-research-panel" data-reveal>
+      <div>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+      </div>
+      <a class="btn-quko-outline" href="{{ .link | relLangURL }}">{{ .link_label }}</a>
     </div>
-    <div class="quko-chip-row" data-reveal>
-      {{ range .items }}<span class="quko-chip">{{ . }}</span>{{ end }}
-    </div>
+    {{ end }}
   </div>
 </section>
 {{ end }}

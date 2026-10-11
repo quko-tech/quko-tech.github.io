@@ -1,0 +1,28 @@
+{{/*
+  A dense list of capabilities: icon, title, one line. With an `image` the
+  list sits beside a picture on a tinted panel; without one it runs in three
+  columns. Either way the items are ruled rows, not a wall of empty cards.
+*/}}
+{{ $s := .s }}
+<section class="quko-section{{ with $s.tone }} quko-section-{{ . }}{{ end }}">
+  <div class="container">
+    <div class="quko-section-title" data-reveal>
+      {{ with $s.eyebrow }}<span class="quko-eyebrow">{{ . }}</span>{{ end }}
+      <h2>{{ $s.title }}</h2>
+      {{ with $s.text }}<p>{{ . | markdownify }}</p>{{ end }}
+    </div>
+    <div class="quko-features{{ if $s.image }} has-media{{ end }}">
+      {{ with $s.image }}
+      <div class="quko-features-media{{ with $s.fit }} is-{{ . }}{{ end }}" data-reveal><img src="{{ . | relURL }}" alt="{{ $s.image_alt }}" loading="lazy"></div>
+      {{ end }}
+      <ul class="quko-feature-list" data-reveal>
+        {{ range $s.items }}
+        <li>
+          <span class="quko-icon"><i class="{{ .icon }}" aria-hidden="true"></i></span>
+          <div><h3>{{ .title }}</h3><p>{{ .text | markdownify }}</p></div>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</section>

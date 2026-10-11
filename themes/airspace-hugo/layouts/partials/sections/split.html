@@ -1,0 +1,33 @@
+{{/*
+  Image (or a pair of images) beside copy. The copy can carry numbered
+  `steps`, a check-list of `items`, or both, and an optional link.
+  Options: tone (""|muted|dark), reverse, fit ("contain" for renders and
+  screenshots that must not be cropped).
+*/}}
+{{ $s := .s }}
+<section class="quko-section{{ with $s.tone }} quko-section-{{ . }}{{ end }}">
+  <div class="container">
+    <div class="quko-split{{ if $s.reverse }} reverse{{ end }}{{ if $s.images }} has-pair{{ end }}">
+      <div class="quko-split-media{{ with $s.fit }} is-{{ . }}{{ end }}{{ if $s.images }} is-pair{{ end }}{{ with $s.focus }} is-crop{{ end }}"{{ with $s.focus }} style="--focus: {{ . }};"{{ end }} data-reveal>
+        {{ with $s.image }}<img src="{{ . | relURL }}" alt="{{ $s.image_alt }}" loading="lazy">{{ end }}
+        {{ range $s.images }}<figure><img src="{{ .src | relURL }}" alt="{{ .alt }}" loading="lazy">{{ with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}</figure>{{ end }}
+      </div>
+      <div class="quko-split-copy" data-reveal>
+        {{ with $s.eyebrow }}<span class="quko-eyebrow">{{ . }}</span>{{ end }}
+        <h2>{{ $s.title }}</h2>
+        {{ with $s.text }}<p>{{ . | markdownify }}</p>{{ end }}
+        {{ with $s.steps }}
+        <ol class="quko-step-list">
+          {{ range . }}<li><strong>{{ .title }}</strong><span>{{ .text | markdownify }}</span></li>{{ end }}
+        </ol>
+        {{ end }}
+        {{ with $s.items }}
+        <ul class="quko-check-list">
+          {{ range . }}<li><i class="fas fa-check-circle" aria-hidden="true"></i><span>{{ . | markdownify }}</span></li>{{ end }}
+        </ul>
+        {{ end }}
+        {{ with $s.link }}<a class="quko-card-link" href="{{ . | relLangURL }}">{{ $s.link_label }} <span aria-hidden="true">&rarr;</span></a>{{ end }}
+      </div>
+    </div>
+  </div>
+</section>

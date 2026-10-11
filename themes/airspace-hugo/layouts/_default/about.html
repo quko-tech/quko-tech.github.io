@@ -16,7 +16,7 @@
 {{ partial "medal-breakdown.html" . }}
 {{ with .Params.principles }}
 <section class="quko-section quko-section-muted"><div class="container">
-  <div class="quko-section-title center" data-reveal><span class="quko-eyebrow">{{ .eyebrow }}</span><h2>{{ .title }}</h2></div>
+  <div class="quko-section-title" data-reveal><span class="quko-eyebrow">{{ .eyebrow }}</span><h2>{{ .title }}</h2></div>
   <div class="quko-grid-3">{{ range .items }}<article class="quko-card" data-reveal><span class="quko-icon"><i class="{{ .icon }}"></i></span><h3>{{ .title }}</h3><p>{{ .text }}</p></article>{{ end }}</div>
 </div></section>
 {{ end }}

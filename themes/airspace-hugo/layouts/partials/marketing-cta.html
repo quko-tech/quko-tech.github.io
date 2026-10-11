@@ -1,15 +1,17 @@
 {{ with .Params.marketing_cta }}
-<section class="quko-section">
+{{/* A full-width band rather than a card floating in a white section: the
+     card version left a wide white margin around it on every page. */}}
+<section class="quko-cta-band">
   <div class="container">
     <div class="quko-cta" data-reveal>
       <div class="quko-cta-content">
         <span class="quko-eyebrow">{{ .eyebrow }}</span>
         <h2>{{ .title }}</h2>
         <p>{{ .text }}</p>
-        <div class="quko-actions">
-          <a class="btn-quko" href="{{ .primary_link | relLangURL }}">{{ .primary_label }}</a>
-          {{ with .secondary_label }}<a class="btn-quko-light" href="{{ $.Params.marketing_cta.secondary_link }}">{{ . }}</a>{{ end }}
-        </div>
+      </div>
+      <div class="quko-actions">
+        <a class="btn-quko" href="{{ .primary_link | relLangURL }}">{{ .primary_label }}</a>
+        {{ with .secondary_label }}<a class="btn-quko-light" href="{{ with $.Params.marketing_cta.secondary_link }}{{ if hasPrefix . "http" }}{{ . }}{{ else }}{{ . | relLangURL }}{{ end }}{{ end }}">{{ . }}</a>{{ end }}
       </div>
     </div>
   </div>

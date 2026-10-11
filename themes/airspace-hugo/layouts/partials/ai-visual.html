@@ -1,0 +1,15 @@
+{{/* Quko Cloud data reaching the assistants people already use. Drawn in
+     HTML so the labels translate and the logos stay sharp. Takes the
+     `visual` map from front matter. */}}
+<div class="quko-ai-visual" data-reveal>
+  <div class="quko-ai-source">
+    <img src="{{ "images/brands/quko-symbol.svg" | relURL }}" alt="" width="44" height="44">
+    <span><strong>{{ .source_title }}</strong>{{ .source_text }}</span>
+  </div>
+  <div class="quko-ai-link"><span>{{ .link_label }}</span></div>
+  <div class="quko-ai-targets">
+    <div class="quko-ai-target"><img src="{{ "images/brands/claude.svg" | relURL }}" alt="" width="52" height="52"><strong>Claude</strong></div>
+    <div class="quko-ai-target"><img src="{{ "images/brands/chatgpt.svg" | relURL }}" alt="" width="52" height="52"><strong>ChatGPT</strong></div>
+  </div>
+  {{ with .prompt }}<p class="quko-ai-prompt">{{ . }}</p>{{ end }}
+</div>

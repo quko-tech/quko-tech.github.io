@@ -1,0 +1,17 @@
+{{/* What it connects to and what it exports, as labelled groups. */}}
+{{ $s := .s }}
+<section class="quko-section-sm{{ with $s.tone }} quko-section-{{ . }}{{ end }}">
+  <div class="container">
+    <div class="quko-inline-band is-first" data-reveal>
+      <h3>{{ $s.title }}</h3>
+      <div class="quko-chip-groups">
+        {{ range $s.groups }}
+        <div class="quko-chip-group">
+          <span class="quko-chip-label">{{ .label }}</span>
+          <div class="quko-chip-row">{{ range .items }}<span class="quko-chip">{{ . }}</span>{{ end }}</div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>

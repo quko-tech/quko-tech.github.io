@@ -56,7 +56,7 @@ pricing:
       - name: "Histogramas palada a palada e gráficas por rangos"
         standard: "yes"
         high: "yes"
-      - name: "Curvas de forza e aceleración"
+      - name: "Curvas de aceleración"
         standard: "yes"
         high: "yes"
       - name: "Perfís de deportista e historial de sesións"

@@ -1,78 +1,135 @@
 ---
 title: "QUKO Kosoku"
-description: "Captura de rendemento de alta resolución para piragüismo, kayak e remo."
+description: "O sensor a bordo para piragüismo, kayak e remo: GNSS de dobre banda e sensores de movemento fusionados a 100 Hz, palada a palada."
 layout: "kosoku"
 draft: false
 hero:
-  eyebrow: "Sensor de rendemento para embarcacións"
-  title: "Mide cada movemento que importa"
-  text: "Kosoku captura movemento, posición e datos fisiolóxicos precisos sen interferir co deportista."
+  eyebrow: "Sensor de rendemento a bordo"
+  title: "Cada palada, capturada a 100 Hz"
+  text: "Kosoku vai na cuberta e rexistra como se move de verdade a túa embarcación: velocidade, frecuencia, avance por palada, balance, cabeceo e oscilación vertical, desde a primeira palada ata a liña de meta."
   primary_label: "Solicitar unha demo"
   primary_link: "contact/"
-  secondary_label: "Acceder a Quko Cloud"
-  secondary_link: "https://cloud.quko.es/"
-  image: "images/koso_foto.jpg"
-  image_alt: "Sensor Kosoku e base de carga a carón dunha pista de adestramento"
+  secondary_label: "Mercar Kosoku"
+  secondary_link: "shop/"
+  image: "images/web/cat_koso.jpg"
+  image_alt: "Sensor Kosoku sobre un pantalán diante dun campo de regatas"
 metrics:
-  - {value: "100 Hz", label: "Captura de movemento de alta resolución"}
-  - {value: "10 Hz", label: "Posicionamento de dobre banda"}
-  - {value: "150 m", label: "Alcance de transmisión en directo"}
-  - {value: "5 h", label: "Autonomía de adestramento"}
-workflow:
-  eyebrow: "Listo para a auga"
-  title: "Datos precisos sen unha configuración complexa"
-  text: "Kosoku intégrase de forma natural no adestramento e conecta con todo o ecosistema QUKO."
-  steps:
-    - {title: "Instala", text: "Fixa Kosoku á embarcación e deixa que a calibración automática prepare a sesión."}
-    - {title: "Rexistra", text: "Captura posición, aceleración, xiro, dinámica de padexada e frecuencia cardíaca compatible."}
-    - {title: "Conecta", text: "Revisa métricas en directo con Quko Live ou sobe a sesión completa a Quko Cloud."}
-showcase:
-  eyebrow: "Deseñado para o mundo real"
-  title: "Preparado para competir, desde o casco ata a nube"
-  text: "O hardware está pensado para a auga, o movemento, o pouco tempo de preparación e os datos sensibles."
-  image: "images/palada.jpeg"
-  image_alt: "Deportista padexando na auga"
-  items:
-    - "Carcasa IP67 e carga sen fíos"
-    - "Almacenamento cifrado e transmisión protexida"
-    - "Compatibilidade con reloxos Garmin e pulsómetros"
-features:
-  eyebrow: "Un sensor, máis contexto"
-  title: "Captura a sesión completa"
-  text: "Reúne sinais cinemáticos, posicionais e fisiolóxicos nun único rexistro sincronizado."
-  items:
-    - {title: "Movemento da embarcación", text: "Mide aceleración e xiro en todos os eixes.", icon: "fas fa-wave-square"}
-    - {title: "Posición e velocidade", text: "Rexistra o percorrido e pequenos cambios de velocidade.", icon: "fas fa-location-arrow"}
-    - {title: "Métricas de padexada", text: "Calcula frecuencia, avance e tempos durante o esforzo.", icon: "fas fa-stopwatch"}
-    - {title: "Datos fisiolóxicos", text: "Engade pulsómetros compatibles á mesma liña temporal.", icon: "fas fa-heartbeat"}
-    - {title: "Información en directo", text: "Transmite datos de rendemento ao adestrador durante a sesión.", icon: "fas fa-broadcast-tower"}
-    - {title: "Ficheiros seguros", text: "Conserva os rexistros completos ata o momento de procesalos.", icon: "fas fa-shield-alt"}
-for_whom:
-  eyebrow: "Creado para todos os niveis de análise"
-  title: "Desde a mellora individual ata a investigación"
-  items:
-    - {title: "Deportistas e adestradores", text: "Converte o adestramento diario en evidencias obxectivas e repetibles."}
-    - {title: "Equipos e federacións", text: "Mide de forma coherente entre deportistas, embarcacións e pistas."}
-    - {title: "Investigadores e analistas", text: "Traballa con datos sincronizados de alta resolución e exportacións abertas."}
-integrations:
-  eyebrow: "Conectado desde o deseño"
-  title: "Encaixa coas ferramentas do teu adestramento"
-  items: ["Quko Live", "Quko Cloud", "Garmin", "Pulsómetros", "Sensores de pa", "Sistemas de saída"]
-assurance:
-  eyebrow: "Propiedade sen complicacións"
-  title: "Respaldado a longo prazo"
-  text: "Kosoku está pensado para seguir en servizo tempada tras tempada, e respaldámolo."
-  items:
-    - "**Garantía de 2 anos** incluída con cada Kosoku."
-    - "**Atención ao cliente áxil**, á que podes escribir por WhatsApp."
-    - "**Actualizacións automáticas**: as melloras de firmware e da aplicación envíanse en liña de forma continua, sen que teñas que instalar nada."
-cloud_note: "Kosoku precisa unha subscrición activa a Quko Cloud para desbloquear todas as funcións de Quko Cloud."
+  - value: "100 Hz"
+    label: "Datos GNSS e de movemento, fusionados"
+  - value: "10 Hz"
+    label: "Posicionamento GNSS de dobre banda"
+  - value: "0,1°"
+    label: "Precisión declarada en cabeceo e balance"
+  - value: "5 h"
+    label: "Autonomía de adestramento"
+sections:
+  - type: "split"
+    eyebrow: "Para calquera casco"
+    title: "Colócalo. Rema. Listo."
+    text: "Canoa, kayak, remo do skiff ao oito, dragon boat ou SUP: Kosoku vai na cuberta e non molesta. O deportista non ten que tocar nin un botón."
+    images:
+      - src: "images/web/koso_foto_2.jpg"
+        alt: "Kosoku montado na cuberta dun K1"
+        caption: "Kayak"
+      - src: "images/web/koso_foto_3.jpg"
+        alt: "Kosoku na cuberta dun bote de remo na auga"
+        caption: "Remo"
+    steps:
+      - title: "Coloca"
+        text: "Fíxao á cuberta e listo. Plug and play: sen botóns nin configuración."
+      - title: "Rema"
+        text: "A detección automática de actividade grava cada serie por ti. Só tes que comezar a remar."
+      - title: "Sincroniza"
+        text: "De volta no pantalán, as sesións viaxan por WiFi a Quko Cloud. Sen cables nin lectores de tarxetas."
+  - type: "features"
+    tone: "muted"
+    eyebrow: "Un sensor, a imaxe completa"
+    title: "O que Kosoku rexistra en cada sesión"
+    text: "Sensores de movemento e GNSS de dobre banda fusionados a 100 Hz, máis todo o que lle conectes, nunha única liña de tempo sincronizada."
+    image: "images/web/koso_foto_6.jpg"
+    image_alt: "Kosoku nunha man diante dun lago"
+    items:
+      - title: "Velocidade e posición"
+        text: "GNSS de dobre banda a 10 Hz, fusionado cos sensores de movemento para unha velocidade suave e fiable."
+        icon: "fas fa-location-arrow"
+      - title: "Cada palada"
+        text: "Frecuencia, avance por palada, duración, aceleración e deceleración máximas."
+        icon: "fas fa-stopwatch"
+      - title: "Movemento do barco"
+        text: "Balance, cabeceo, xiro e movemento vertical amosan a estabilidade do casco."
+        icon: "fas fa-wave-square"
+      - title: "No teu pulso"
+        text: "Datos en directo nun campo de datos do teu reloxo Garmin, para velos mentres remas."
+        icon: "fas fa-clock"
+      - title: "Frecuencia cardíaca"
+        text: "Ata catro bandas de pulso na mesma liña de tempo que a embarcación."
+        icon: "fas fa-heartbeat"
+  - type: "specs"
+    eyebrow: "Por dentro"
+    title: "Especificacións técnicas"
+    image: "images/web/koso_foto_4.png"
+    image_alt: "Render en tres cuartos do sensor Kosoku"
+    rows:
+      - label: "Datos primarios"
+        value: "100 Hz"
+      - label: "Posicionamento"
+        value: "10 Hz, dobre banda"
+      - label: "Precisión declarada"
+        values:
+          - "Cabeceo e balance: 0,1°"
+          - "Xiro: 0,5°"
+          - "Vertical: 1 cm"
+          - "Posición: 50 cm"
+          - "Coa embarcación calibrada"
+      - label: "Carcasa"
+        value: "IP67, carga sen fíos"
+      - label: "Batería"
+        value: "5 h de adestramento"
+      - label: "Datos"
+        value: "Almacenamento cifrado no dispositivo, subida por WiFi"
+      - label: "Accesorios"
+        value: "Bandas de pulso, sensor de temón e anemómetro"
+      - label: "En directo"
+        value: "Transmite a Quko Live e a un campo de datos de reloxo Garmin"
+      - label: "Actualizacións"
+        value: "Firmware polo aire (OTA)"
+  - type: "split"
+    tone: "muted"
+    reverse: true
+    eyebrow: "Propiedade sen complicacións"
+    title: "Listo ao sacalo da caixa e respaldado durante anos"
+    text: "Kosoku chega coa súa base de carga sen fíos. Vincúlao desde o móbil por Bluetooth e xa está listo para a auga."
+    image: "images/web/koso_foto_5.jpg"
+    image_alt: "Kosoku xunto á súa caixa e á súa base de carga sen fíos"
+    items:
+      - "**Garantía de 2 anos** incluída con cada Kosoku."
+      - "**Atención ao cliente áxil**, á que podes escribir por WhatsApp."
+      - "**Actualizacións automáticas**: as melloras de firmware e da aplicación chegan polo aire, sen que teñas que instalar nada."
+  - type: "links"
+    eyebrow: "Mellor xuntos"
+    title: "Kosoku é onde comezan os datos"
+    items:
+      - label: "Durante a sesión"
+        title: "Quko Live"
+        text: "Envía cada Kosoku á tablet do adestrador mentres a serie segue en marcha."
+        image: "images/web/live_foto_1.jpg"
+        image_alt: "Quko Live nunha tablet nunha lancha de adestrador"
+        link: "quko_live/"
+        link_label: "Descubre Quko Live"
+      - label: "Despois da sesión"
+        title: "Quko Cloud"
+        text: "Cada subida convértese en parciais, análise palada a palada, repeticións en 3D e un analista IA que coñece os teus datos."
+        image: "images/cloud.png"
+        image_alt: "Gráficas de Quko Cloud de velocidade, avance por palada e frecuencia"
+        link: "quko_cloud/"
+        link_label: "Descubre Quko Cloud"
+cloud_note: "Kosoku necesita unha subscrición activa a Quko Cloud para desbloquear todas as funcións de Quko Cloud."
 marketing_cta:
   eyebrow: "Coñece Kosoku"
-  title: "Descubre o que che conta a túa embarcación"
-  text: "Solicita unha demostración e atopa a configuración axeitada para o teu programa."
+  title: "Descubre o que che está contando a túa embarcación"
+  text: "Pide unha demo e axudámoste a atopar a configuración axeitada para as túas embarcacións e o teu programa."
   primary_label: "Solicitar unha demo"
   primary_link: "contact/"
-  secondary_label: "Acceder a Quko Cloud"
-  secondary_link: "https://cloud.quko.es/"
+  secondary_label: "Mercar Kosoku"
+  secondary_link: "shop/"
 ---
