@@ -1,0 +1,309 @@
+{{/*
+  Quko Almanac landing page. Every string comes from the page's front matter so
+  the three languages share this one template. The race briefing, ticker and
+  chat are progressive enhancements: without JavaScript (or with reduced motion)
+  they render as static, fully readable content.
+*/}}
+{{ define "main" }}
+{{ $p := .Params }}
+
+{{ with $p.hero }}
+<section class="alm-hero">
+  <div class="alm-hero-bg" aria-hidden="true">
+    <span class="alm-glow is-red"></span>
+    <span class="alm-glow is-blue"></span>
+    <span class="alm-ripple"></span><span class="alm-ripple"></span><span class="alm-ripple"></span>
+  </div>
+  <div class="container">
+    <div class="alm-hero-grid">
+      <div class="alm-hero-copy" data-reveal>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h1>{{ range .title_lines }}<span>{{ . }}</span>{{ end }}<span class="alm-accent">{{ .title_accent }}</span></h1>
+        <p>{{ .text }}</p>
+        <div class="quko-actions">
+          <a class="btn-quko" href="{{ .primary_link | relLangURL }}">{{ .primary_label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="btn-quko-ghost" href="{{ .secondary_link }}">{{ .secondary_label }}</a>
+        </div>
+      </div>
+
+      {{ with $p.briefing }}
+      <div class="alm-briefing" data-alm-briefing data-reveal>
+        <div class="alm-briefing-head">
+          <span class="alm-live"><span class="alm-live-dot" aria-hidden="true"></span>{{ .live }}</span>
+          <div>
+            <strong>{{ .race }}</strong>
+            <small>{{ .competition }}</small>
+          </div>
+        </div>
+        <ol class="alm-lanes">
+          {{ range .lanes }}
+          <li data-lane="{{ .lane }}" tabindex="0">
+            <span class="alm-lane-n" aria-label="{{ $p.briefing.lane_label }} {{ .lane }}">{{ .lane }}</span>
+            <span class="alm-lane-nation">{{ .nation }}</span>
+            <span class="alm-lane-name">{{ .name }}</span>
+            <span class="alm-lane-pb"><small>{{ $p.briefing.pb_label }}</small>{{ .pb }}</span>
+          </li>
+          {{ end }}
+        </ol>
+        <div class="alm-briefing-facts" aria-live="polite">
+          {{ range $i, $f := .facts }}
+          <p class="alm-fact{{ if eq $i 0 }} is-active{{ end }}" data-lanes="{{ $f.lanes }}"><span class="alm-chip">{{ $f.kind }}</span>{{ $f.text }}</p>
+          {{ end }}
+        </div>
+        <div class="alm-briefing-progress" aria-hidden="true">{{ range .facts }}<span></span>{{ end }}</div>
+        <small class="alm-sample-note">{{ .sample_note }}</small>
+      </div>
+      {{ end }}
+    </div>
+    {{ with $p.stats }}
+    <dl class="alm-stats-grid">
+      {{ range . }}
+      <div data-reveal>
+        <dt><span data-count="{{ .value }}"{{ if .plain }} data-plain{{ end }}>{{ if .plain }}{{ .value }}{{ else }}{{ lang.FormatNumberCustom 0 .value "- , ." }}{{ end }}</span>{{ .suffix }}</dt>
+        <dd>{{ .label }}</dd>
+      </div>
+      {{ end }}
+    </dl>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.ticker }}
+<section class="alm-ticker" aria-label="{{ .label }}">
+  <div class="alm-ticker-track">
+    {{ range $n := seq 2 }}
+    <div class="alm-ticker-set"{{ if eq $n 2 }} aria-hidden="true"{{ end }}>
+      {{ range $.Params.ticker.items }}<span class="alm-ticker-item"><span class="alm-chip">{{ .kind }}</span>{{ .text }}</span>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.pipeline }}
+<section class="quko-section alm-pipeline">
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
+    </div>
+    <ol class="alm-steps">
+      {{ range $i, $s := .steps }}
+      <li data-reveal style="transition-delay: {{ mul $i 120 }}ms">
+        <span class="alm-step-icon" aria-hidden="true"><i class="fas {{ $s.icon }}"></i></span>
+        <span class="alm-step-n">0{{ add $i 1 }}</span>
+        <h3>{{ $s.title }}</h3>
+        <p>{{ $s.text }}</p>
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.race }}
+<section class="quko-section alm-race" id="{{ .id }}">
+  <div class="container">
+    <div class="alm-race-grid">
+      <div class="alm-race-copy" data-reveal>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+        <p>{{ .text }}</p>
+        <ul class="alm-checks">{{ range .points }}<li><i class="fas fa-check" aria-hidden="true"></i>{{ . }}</li>{{ end }}</ul>
+      </div>
+      <div class="alm-race-panel" data-alm-tabs data-reveal>
+        <div class="alm-tabs" role="tablist">
+          {{ range $i, $t := .tabs }}
+          <button type="button" role="tab" id="alm-tab-{{ $t.id }}" aria-controls="alm-panel-{{ $t.id }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}"{{ if ne $i 0 }} tabindex="-1"{{ end }}>{{ $t.label }}</button>
+          {{ end }}
+        </div>
+        {{/* Panels share one grid cell, so the panel is always as tall as the
+             longest tab and switching never makes the page jump. */}}
+        <div class="alm-tab-panels">
+          {{ range $i, $t := .tabs }}
+          <div class="alm-tab-panel{{ if eq $i 0 }} is-shown{{ end }}" role="tabpanel" id="alm-panel-{{ $t.id }}" aria-labelledby="alm-tab-{{ $t.id }}"{{ if ne $i 0 }} hidden{{ end }}>
+            {{ range $j, $f := $t.facts }}
+            <p class="alm-fact-card" style="--i: {{ $j }}"><span class="alm-chip">{{ $f.kind }}</span>{{ $f.text }}</p>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+        <small class="alm-sample-note">{{ .sample_note }}</small>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.access }}
+<section class="quko-section quko-section-dark alm-access">
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
+    </div>
+    <div class="alm-access-grid">
+      {{ with .api }}
+      <article class="alm-door" data-reveal>
+        <span class="alm-door-label"><i class="fas fa-code" aria-hidden="true"></i>{{ .label }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+        <div class="alm-code" role="figure" aria-label="{{ .label }}">
+          <div class="alm-code-bar"><span></span><span></span><span></span><code>almanac.quko.es</code></div>
+<pre><code><span class="c-verb">GET</span> {{ .request }} <span class="c-ok">200 OK</span>
+
+{
+  <span class="c-key">"record"</span>: { <span class="c-key">"wins"</span>: <span class="c-num">5</span>, <span class="c-key">"losses"</span>: <span class="c-num">1</span> },
+  <span class="c-key">"facts"</span>: [{
+    <span class="c-key">"kind"</span>: <span class="c-str">"head_to_head"</span>,
+    <span class="c-key">"importance"</span>: <span class="c-num">0.9</span>,
+    <span class="c-key">"text"</span>: <span class="c-str">"{{ .response_text }}"</span>
+  }]
+}</code></pre>
+        </div>
+      </article>
+      {{ end }}
+      {{ with .ai }}
+      <article class="alm-door" data-reveal>
+        <span class="alm-door-label"><i class="fas fa-robot" aria-hidden="true"></i>{{ .label }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+        <div class="alm-chat-window" role="figure" aria-label="{{ .label }}">
+          <div class="alm-code-bar alm-chat-bar">
+            <span></span><span></span><span></span>
+            <strong>{{ .window_title }}</strong>
+            <em><i class="alm-chat-status" aria-hidden="true"></i>{{ .connected }}</em>
+          </div>
+          <div class="alm-chat" data-alm-chat>
+            <p class="alm-chat-q">{{ .question }}</p>
+            <p class="alm-chat-a">{{ .answer }}</p>
+          </div>
+          <div class="alm-chat-foot">
+            <div class="alm-chat-suggestions">{{ range .suggestions }}<span>{{ . }}</span>{{ end }}</div>
+            <div class="alm-chat-input"><span>{{ .placeholder }}</span><i class="fas fa-arrow-up" aria-hidden="true"></i></div>
+            <small class="alm-works-with">{{ .works_with }}</small>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.features }}
+<section class="quko-section alm-features">
+  <div class="container">
+    <div class="quko-section-title" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+    </div>
+    <ul class="alm-feature-grid">
+      {{ range $i, $f := .items }}
+      <li data-reveal style="transition-delay: {{ mul (mod $i 3) 90 }}ms">
+        <span class="alm-feature-icon" aria-hidden="true"><i class="fas {{ $f.icon }}"></i></span>
+        <h3>{{ $f.title }}</h3>
+        <p>{{ $f.text }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.screens }}
+<section class="quko-section alm-screens">
+  <div class="container">
+    <div class="alm-screens-head" data-reveal>
+      <div>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+      </div>
+      <div>
+        <p>{{ .text }}</p>
+        <a class="alm-link" href="{{ .link }}" target="_blank" rel="noopener">{{ .link_label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="alm-stage" data-reveal>
+      {{ with index .side 0 }}<figure class="alm-device alm-device-phone is-left"><img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" width="720" height="1280"></figure>{{ end }}
+      {{ with .main }}<figure class="alm-device alm-device-tablet"><img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" width="1100" height="1760"></figure>{{ end }}
+      {{ with index .side 1 }}<figure class="alm-device alm-device-phone is-right"><img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" width="720" height="1280"></figure>{{ end }}
+    </div>
+    <div class="alm-shots">
+      {{ range $i, $s := .strip }}<figure class="alm-device alm-device-tablet is-small" data-reveal style="transition-delay: {{ mul $i 90 }}ms"><img src="{{ $s.image | relURL }}" alt="{{ $s.alt }}" loading="lazy" width="1100" height="1760"></figure>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.languages }}
+<section class="quko-section quko-section-muted alm-languages">
+  <div class="container">
+    <div class="alm-lang-grid">
+      <div data-reveal>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+        <p>{{ .text }}</p>
+      </div>
+      <div class="alm-lang-card" data-alm-lang data-reveal>
+        <div class="alm-lang-switch" role="group" aria-label="{{ .eyebrow }}">
+          {{ range $i, $o := .options }}<button type="button" data-lang-btn="{{ $o.code }}" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}">{{ $o.code }}</button>{{ end }}
+        </div>
+        {{ range $i, $o := .options }}
+        <div class="alm-lang-lines" data-lang-panel="{{ $o.code }}" lang="{{ lower $o.code }}"{{ if ne $i 0 }} hidden{{ end }}>
+          {{ range $o.lines }}<p>{{ . }}</p>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.audience }}
+<section class="quko-section alm-audience">
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+    </div>
+    <ul class="alm-audience-grid">
+      {{ range $i, $a := .items }}
+      <li data-reveal style="transition-delay: {{ mul $i 90 }}ms">
+        <i class="fas {{ $a.icon }}" aria-hidden="true"></i>
+        <h3>{{ $a.title }}</h3>
+        <p>{{ $a.text }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.plans }}
+<section class="quko-section quko-section-muted alm-plans">
+  <div class="container">
+    <div class="alm-plans-card" data-reveal>
+      <div>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+        <p>{{ .text }}</p>
+        <div class="quko-actions">
+          <a class="btn-quko" href="{{ .primary_link | relLangURL }}">{{ .primary_label }}</a>
+          <a class="btn-quko-outline" href="{{ .secondary_link | relLangURL }}">{{ .secondary_label }}</a>
+        </div>
+      </div>
+      <ul class="alm-checks">{{ range .items }}<li><i class="fas fa-check" aria-hidden="true"></i>{{ . }}</li>{{ end }}</ul>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ partial "marketing-cta.html" . }}
+
+{{ $script := resources.Get "js/almanac.js" | minify | fingerprint }}
+<script src="{{ $script.RelPermalink }}" defer></script>
+{{ end }}

@@ -404,14 +404,12 @@ a {
   color: var(--quko-red-dark) !important;
 }
 
-/* The horizontal nav carries eight items plus two pills and the language
-   select. Measured against the 1280px-capped container it needs ~900px of the
-   row (Spanish is the widest of the three languages), and it only has that
-   from about 1150px up. Below that the labels used to wrap, which is what put
-   the dropdown carets on their own line under "Products" and "More" and split
-   the pill labels across two ragged lines. The drawer takes over below 1200
-   instead, which leaves the horizontal nav a comfortable margin in every
-   language rather than one that happens to fit in English. */
+/* The horizontal nav carries six links (two of them dropdowns), two pills and
+   the language select. Measured in Spanish, the widest of the three
+   languages, it needs ~1150px of row at full size, logo included, and less at
+   the compact size used up to 1439px. The drawer takes over below 1200. The
+   tighter link padding below is what keeps the language select inside the
+   row; without it the select was pushed past the right edge of the page. */
 @media (min-width: 1200px) {
   .navigation .navbar {
     display: flex;
@@ -440,6 +438,38 @@ a {
     display: flex;
     align-items: center;
     float: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navigation .container-fluid {
+    max-width: 1360px;
+  }
+
+  /* The theme sets 18px side padding with a more specific selector, so the
+     13px above never applied. This one is specific enough to win. */
+  .navigation .navbar .navbar-nav > li > a {
+    padding-right: 11px;
+    padding-left: 11px;
+    letter-spacing: 0;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .navigation .navbar .navbar-nav > li > a {
+    padding-right: 7px;
+    padding-left: 7px;
+    font-size: 13px;
+  }
+
+  .navigation .navbar .navbar-nav > li.nav-cta > a,
+  .navigation .navbar .navbar-nav > li.nav-cloud > a {
+    padding: 9px 13px !important;
+  }
+
+  .navigation #select-language {
+    margin-left: 6px;
+    padding: 0 24px 0 10px;
   }
 }
 
@@ -4924,5 +4954,1446 @@ a {
   .quko-eyebrow:before,
   .quko-section-title.center .quko-eyebrow:after {
     display: none;
+  }
+}
+
+/* ============================================================
+   Quko Almanac
+   A broadcast-flavoured page: dark hero with a live race briefing
+   card and the archive stats, a fact ticker and device screenshots.
+   The dark bands use --quko-deep like every other dark surface.
+   ============================================================ */
+.alm-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 104px 0 72px;
+  background: var(--quko-deep);
+  color: var(--quko-white);
+}
+
+/* Background: two soft glows drifting slowly, and ripples spreading from
+   behind the briefing card like rings on flat water. */
+.alm-hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.alm-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.alm-glow.is-red {
+  top: -10%;
+  right: 4%;
+  width: 640px;
+  height: 640px;
+  background: radial-gradient(circle, rgba(232, 56, 63, .34), transparent 65%);
+  animation: alm-drift-a 22s ease-in-out infinite alternate;
+}
+
+.alm-glow.is-blue {
+  bottom: -25%;
+  left: -8%;
+  width: 720px;
+  height: 720px;
+  background: radial-gradient(circle, rgba(104, 199, 220, .18), transparent 65%);
+  animation: alm-drift-b 28s ease-in-out infinite alternate;
+}
+
+@keyframes alm-drift-a {
+  to { transform: translate(-160px, 120px) scale(1.15); }
+}
+
+@keyframes alm-drift-b {
+  to { transform: translate(220px, -90px) scale(1.1); }
+}
+
+.alm-ripple {
+  position: absolute;
+  top: 38%;
+  left: 72%;
+  width: 900px;
+  height: 900px;
+  margin: -450px 0 0 -450px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 50%;
+  opacity: 0;
+  animation: alm-ripple 15s ease-out infinite;
+}
+
+.alm-ripple:nth-child(4) {
+  animation-delay: 5s;
+}
+
+.alm-ripple:nth-child(5) {
+  animation-delay: 10s;
+}
+
+@keyframes alm-ripple {
+  0% { opacity: 0; transform: scale(.25); }
+  15% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+
+.alm-hero .container {
+  position: relative;
+}
+
+.alm-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.alm-hero .quko-eyebrow {
+  color: #ff989b;
+}
+
+.alm-hero h1 {
+  margin: 0 0 26px;
+  color: var(--quko-white);
+  font-size: clamp(44px, 6vw, 84px);
+  font-weight: 900;
+  letter-spacing: -.045em;
+  line-height: .92;
+  text-transform: uppercase;
+}
+
+.alm-hero h1 span {
+  display: block;
+}
+
+.alm-accent {
+  background: linear-gradient(92deg, var(--quko-red) 0%, var(--quko-coral) 55%, #ffb199 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.alm-hero p {
+  max-width: 560px;
+  margin: 0;
+  color: rgba(255, 255, 255, .78);
+  font-size: 18px;
+}
+
+.btn-quko-ghost {
+  display: inline-flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 0 24px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 999px;
+  color: var(--quko-white) !important;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.btn-quko-ghost:hover,
+.btn-quko-ghost:focus {
+  border-color: var(--quko-white);
+  background: rgba(255, 255, 255, .08);
+  text-decoration: none;
+}
+
+.btn-quko i {
+  margin-left: 10px;
+}
+
+/* Hero race briefing card */
+.alm-briefing {
+  position: relative;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: var(--quko-radius);
+  background: linear-gradient(160deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .03));
+  box-shadow: 0 40px 90px rgba(0, 0, 0, .45);
+  backdrop-filter: blur(14px);
+}
+
+.alm-briefing-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.alm-briefing-head strong {
+  display: block;
+  color: var(--quko-white);
+  font-size: 16px;
+  letter-spacing: -.01em;
+}
+
+.alm-briefing-head small {
+  color: rgba(255, 255, 255, .6);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.alm-live {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: var(--quko-red);
+  color: var(--quko-white);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.alm-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--quko-white);
+  animation: alm-blink 1.4s ease-in-out infinite;
+}
+
+@keyframes alm-blink {
+  50% { opacity: .25; }
+}
+
+.alm-lanes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.alm-lanes li {
+  display: grid;
+  grid-template-columns: 30px 44px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 6px;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .05);
+  transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease, transform .3s cubic-bezier(.16, 1, .3, 1);
+}
+
+.alm-lanes li.is-lit {
+  border-color: rgba(255, 105, 109, .6);
+  background: rgba(232, 56, 63, .2);
+  transform: translateX(6px);
+}
+
+/* Pointing at an athlete pulls their row out and brings up their fact. */
+.alm-lanes li:hover,
+.alm-lanes li:focus-visible {
+  border-color: rgba(255, 255, 255, .35);
+  background: rgba(255, 255, 255, .12);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .3);
+  outline: none;
+  transform: translateX(10px) scale(1.02);
+}
+
+.alm-lanes li.is-lit:hover,
+.alm-lanes li.is-lit:focus-visible {
+  border-color: rgba(255, 105, 109, .8);
+  background: rgba(232, 56, 63, .3);
+}
+
+.alm-lanes li:hover .alm-lane-n,
+.alm-lanes li:focus-visible .alm-lane-n {
+  background: var(--quko-red);
+}
+
+.alm-lane-n {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .12);
+  color: var(--quko-white);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.alm-lanes li.is-lit .alm-lane-n {
+  background: var(--quko-red);
+}
+
+.alm-lane-nation {
+  color: rgba(255, 255, 255, .55);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.alm-lane-name {
+  overflow: hidden;
+  color: var(--quko-white);
+  font-size: 14px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.alm-lane-pb {
+  color: rgba(255, 255, 255, .85);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.alm-lane-pb small {
+  margin-right: 6px;
+  color: rgba(255, 255, 255, .45);
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+/* Without JavaScript every fact is listed; enhanced, they play one at a time
+   in a fixed-height slot so the card never jumps. */
+.alm-briefing-facts {
+  position: relative;
+  margin-top: 16px;
+}
+
+.alm-briefing-facts .alm-fact {
+  margin: 0 0 10px;
+  color: var(--quko-white);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.alm-briefing .alm-fact .alm-chip,
+.alm-fact-card .alm-chip {
+  display: table;
+  margin: 0 0 8px;
+}
+
+.alm-briefing.is-enhanced .alm-briefing-facts {
+  min-height: 104px;
+}
+
+.alm-briefing.is-enhanced .alm-fact {
+  position: absolute;
+  inset: 0 0 auto;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+/* The outgoing fact clears before the next one rises in, so two lines of text
+   never sit on top of each other mid-swap. */
+.alm-briefing.is-enhanced .alm-fact.is-active {
+  opacity: 1;
+  transform: none;
+  transition-duration: .3s;
+  transition-delay: .15s;
+}
+
+.alm-briefing-progress {
+  display: none;
+  gap: 6px;
+  margin: 4px 0 14px;
+}
+
+.alm-briefing.is-enhanced .alm-briefing-progress {
+  display: flex;
+}
+
+.alm-briefing-progress span {
+  flex: 1;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .15);
+}
+
+.alm-briefing-progress span.is-done {
+  background: rgba(255, 255, 255, .6);
+}
+
+/* The current bar fills as --p goes from 0 to 1, set by the page script. */
+.alm-briefing-progress span:not(.is-done) {
+  background: linear-gradient(90deg, var(--quko-coral) calc(var(--p, 0) * 100%), rgba(255, 255, 255, .15) 0);
+}
+
+.alm-chip {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(232, 56, 63, .16);
+  color: var(--quko-red-dark);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  vertical-align: 2px;
+  white-space: nowrap;
+}
+
+.alm-briefing .alm-chip,
+.alm-access .alm-chip {
+  background: rgba(255, 105, 109, .2);
+  color: #ffb3b5;
+}
+
+.alm-sample-note {
+  display: block;
+  color: rgba(255, 255, 255, .45);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Stats, at the foot of the hero */
+.alm-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin: 72px 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: var(--quko-radius);
+  background: rgba(255, 255, 255, .03);
+}
+
+/* Each cell draws its own left and top rule; the ones on the outer edge are
+   clipped by the grid, so the dividers stay right however the cells wrap. */
+.alm-stats-grid > div {
+  padding: 26px 20px;
+  box-shadow: -1px -1px 0 rgba(255, 255, 255, .1);
+}
+
+.alm-stats-grid dt {
+  color: var(--quko-white);
+  font-size: clamp(26px, 2.6vw, 36px);
+  font-weight: 850;
+  letter-spacing: -.04em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.alm-stats-grid dd {
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, .62);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Fact ticker: one quiet line, like a broadcast crawl */
+.alm-ticker {
+  overflow: hidden;
+  padding: 13px 0;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  background: #13202a;
+}
+
+.alm-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: alm-marquee 140s linear infinite;
+}
+
+.alm-ticker:hover .alm-ticker-track {
+  animation-play-state: paused;
+}
+
+.alm-ticker-set {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.alm-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 28px 0 0;
+  color: rgba(255, 255, 255, .78);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.alm-ticker-item:after {
+  margin-left: 28px;
+  color: var(--quko-red);
+  content: "◆";
+  font-size: 8px;
+}
+
+.alm-ticker .alm-chip {
+  margin-right: 10px;
+  padding: 2px 8px;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(255, 105, 109, .45);
+  color: #ff989b;
+  font-size: 9px;
+}
+
+@keyframes alm-marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* Pipeline */
+.alm-pipeline {
+  padding-top: 128px;
+}
+
+.alm-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+/* One connector per gap, each starting at the gap's left edge, so every gap
+   shows the same dashes. A single line behind the cards showed a different
+   slice of its pattern in each gap. */
+.alm-steps li:not(:last-child):after {
+  position: absolute;
+  top: 54px;
+  left: 100%;
+  width: 22px;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--quko-red) 0 4px, transparent 4px 7px);
+  content: "";
+  opacity: .6;
+}
+
+.alm-steps li {
+  position: relative;
+  padding: 30px;
+  border: 1px solid var(--quko-line);
+  border-radius: var(--quko-radius);
+  background: var(--quko-white);
+  box-shadow: 0 18px 50px rgba(18, 21, 28, .06);
+}
+
+.alm-step-icon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 22px;
+  border-radius: 16px;
+  background: var(--quko-red);
+  box-shadow: 0 12px 26px rgba(232, 56, 63, .3);
+  color: var(--quko-white);
+  font-size: 20px;
+}
+
+.alm-step-n {
+  position: absolute;
+  top: 28px;
+  right: 30px;
+  color: var(--quko-line);
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: -.05em;
+  line-height: 1;
+}
+
+.alm-steps h3,
+.alm-feature-grid h3,
+.alm-audience-grid h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.alm-steps p,
+.alm-feature-grid p,
+.alm-audience-grid p {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* Race briefing section */
+.alm-race {
+  padding-top: 40px;
+}
+
+.alm-race-grid,
+.alm-lang-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.alm-race h2,
+.alm-languages h2,
+.alm-screens h2,
+.alm-plans h2 {
+  margin: 0 0 18px;
+  font-size: clamp(30px, 3.3vw, 46px);
+  font-weight: 800;
+  line-height: 1.06;
+}
+
+/* Copy starts level with the top of the panel rather than centred beside it. */
+.alm-race-grid {
+  align-items: start;
+}
+
+.alm-race-copy p {
+  font-size: 17px;
+}
+
+.alm-checks {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.alm-checks li {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--quko-ink-soft);
+  font-size: 15px;
+  font-weight: 550;
+  line-height: 1.5;
+}
+
+.alm-checks i {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: rgba(232, 56, 63, .12);
+  color: var(--quko-red);
+  font-size: 10px;
+}
+
+.alm-race-panel {
+  padding: 26px;
+  border-radius: var(--quko-radius);
+  background: var(--quko-deep-glow), var(--quko-deep);
+  box-shadow: var(--quko-shadow);
+}
+
+.alm-race-panel .alm-sample-note {
+  margin-top: 14px;
+}
+
+.alm-tabs {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+}
+
+.alm-tabs button {
+  padding: 9px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, .7);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.alm-tabs button[aria-selected="true"] {
+  background: var(--quko-white);
+  color: var(--quko-ink);
+}
+
+.alm-tab-panels {
+  display: grid;
+}
+
+.alm-tab-panel {
+  grid-area: 1 / 1;
+}
+
+/* The hidden tab keeps its space (and so the panel's height); it is only made
+   invisible, which also takes it out of the accessibility tree. */
+.alm-tab-panel[hidden] {
+  display: block;
+  visibility: hidden;
+}
+
+.alm-fact-card {
+  margin: 0 0 10px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .05);
+  color: var(--quko-white);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.alm-tab-panel.is-shown .alm-fact-card {
+  animation: alm-card-in .5s cubic-bezier(.16, 1, .3, 1) both;
+  animation-delay: calc(var(--i) * 70ms);
+}
+
+.alm-race-panel .alm-chip {
+  background: rgba(255, 105, 109, .2);
+  color: #ffb3b5;
+}
+
+@keyframes alm-card-in {
+  from { opacity: 0; transform: translateY(14px); }
+}
+
+/* Two ways in */
+.alm-access-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.alm-door {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: var(--quko-radius);
+  background: rgba(255, 255, 255, .04);
+}
+
+.alm-door-label {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(104, 199, 220, .14);
+  color: var(--quko-blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.alm-door h3 {
+  margin: 0 0 10px;
+  color: var(--quko-white);
+  font-size: 24px;
+  font-weight: 750;
+}
+
+.alm-door > p {
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, .7);
+}
+
+/* Both windows grow to fill their card, so the two cards end level. */
+.alm-code,
+.alm-chat-window {
+  flex: 1 1 auto;
+}
+
+.alm-code {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 18px;
+  background: #0f1a22;
+}
+
+.alm-code-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.alm-code-bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .2);
+}
+
+.alm-code-bar span:first-child {
+  background: var(--quko-red);
+}
+
+.alm-code-bar code {
+  margin-left: auto;
+  padding: 0;
+  background: none;
+  color: rgba(255, 255, 255, .45);
+  font-size: 12px;
+}
+
+.alm-code pre {
+  margin: 0;
+  padding: 18px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, .82);
+  font-size: 12.5px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  /* Bootstrap sets word-break: break-all on pre, which split names mid-word. */
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.alm-code pre code {
+  padding: 0;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+  white-space: inherit;
+}
+
+.alm-code .c-verb { color: var(--quko-coral); font-weight: 700; }
+.alm-code .c-ok { padding: 1px 7px; border-radius: 6px; background: rgba(76, 217, 140, .16); color: #6fe3a5; }
+.alm-code .c-key { color: var(--quko-blue); }
+.alm-code .c-str { color: #ffd38a; }
+.alm-code .c-num { color: #ff9ea1; }
+
+.alm-chat-window {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 18px;
+  background: #0f1a22;
+}
+
+.alm-chat-bar strong {
+  margin-left: 8px;
+  color: rgba(255, 255, 255, .8);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.alm-chat-bar strong,
+.alm-chat-bar em {
+  white-space: nowrap;
+}
+
+.alm-chat-bar em {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+  color: #6fe3a5;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 650;
+}
+
+.alm-code-bar .alm-chat-status {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6fe3a5;
+  box-shadow: 0 0 0 3px rgba(111, 227, 165, .18);
+  animation: alm-blink 2s ease-in-out infinite;
+}
+
+.alm-chat {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 18px 8px;
+}
+
+.alm-chat-foot {
+  padding: 12px 18px 18px;
+}
+
+.alm-chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.alm-chat-suggestions span {
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, .72);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.alm-chat-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 7px 7px 7px 18px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .05);
+}
+
+.alm-chat-input span {
+  overflow: hidden;
+  color: rgba(255, 255, 255, .45);
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.alm-chat-input i {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--quko-red);
+  color: var(--quko-white);
+  font-size: 13px;
+}
+
+.alm-chat-q,
+.alm-chat-a {
+  max-width: 90%;
+  margin: 0;
+  padding: 14px 18px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.alm-chat-q {
+  align-self: flex-end;
+  border-radius: 20px 20px 6px 20px;
+  background: var(--quko-red);
+  color: var(--quko-white);
+  font-weight: 600;
+}
+
+.alm-chat-a {
+  align-self: flex-start;
+  border-radius: 20px 20px 20px 6px;
+  background: rgba(255, 255, 255, .09);
+  color: rgba(255, 255, 255, .92);
+}
+
+.alm-chat.is-waiting > * {
+  opacity: 0;
+}
+
+.alm-chat.is-playing > * {
+  animation: alm-card-in .6s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.alm-chat.is-playing .alm-chat-a {
+  animation-delay: .9s;
+}
+
+.alm-works-with {
+  display: block;
+  margin-top: 12px;
+  color: rgba(255, 255, 255, .5);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+/* Feature grid */
+.alm-feature-grid,
+.alm-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.alm-feature-grid li {
+  padding: 26px;
+  border: 1px solid var(--quko-line);
+  border-radius: 20px;
+  background: var(--quko-white);
+  transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+}
+
+.alm-feature-grid li:hover {
+  border-color: rgba(232, 56, 63, .35);
+  box-shadow: 0 18px 50px rgba(18, 21, 28, .08);
+  transform: translateY(-4px);
+}
+
+.alm-feature-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: rgba(232, 56, 63, .1);
+  color: var(--quko-red);
+  font-size: 18px;
+}
+
+.alm-feature-grid h3 {
+  font-size: 18px;
+}
+
+/* Screens */
+.alm-screens {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 70%, rgba(232, 56, 63, .12), transparent 55%),
+    var(--quko-mist);
+}
+
+.alm-screens-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.alm-screens-head p {
+  margin: 0 0 14px;
+  font-size: 17px;
+}
+
+.alm-link {
+  color: var(--quko-red-dark);
+  font-weight: 750;
+}
+
+.alm-link i {
+  margin-left: 6px;
+  transition: transform .2s ease;
+}
+
+.alm-link:hover i {
+  transform: translateX(4px);
+}
+
+.alm-device {
+  margin: 0;
+  overflow: hidden;
+  border: 8px solid #10161c;
+  background: #10161c;
+  box-shadow: 0 40px 80px rgba(18, 21, 28, .25);
+}
+
+.alm-device img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.alm-device-tablet {
+  border-radius: 30px;
+}
+
+.alm-device-phone {
+  border-radius: 34px;
+}
+
+.alm-device-phone img {
+  border-radius: 26px;
+}
+
+.alm-stage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 640px;
+}
+
+.alm-stage .alm-device-tablet {
+  position: relative;
+  z-index: 2;
+  width: 440px;
+  height: 640px;
+}
+
+.alm-stage .alm-device-tablet img {
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.alm-stage .alm-device-phone {
+  position: absolute;
+  bottom: 30px;
+  width: 250px;
+  height: 500px;
+}
+
+.alm-stage .alm-device-phone img {
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.alm-stage .is-left {
+  left: calc(50% - 470px);
+  transform: rotate(-7deg);
+}
+
+.alm-stage .is-right {
+  right: calc(50% - 470px);
+  transform: rotate(7deg);
+}
+
+.alm-shots {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 64px;
+}
+
+.alm-shots .is-small {
+  aspect-ratio: 5 / 7;
+  border-width: 6px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(18, 21, 28, .15);
+}
+
+.alm-shots .is-small img {
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 18px;
+}
+
+/* Languages */
+.alm-lang-card {
+  padding: 28px;
+  border-radius: var(--quko-radius);
+  background: var(--quko-white);
+  box-shadow: var(--quko-shadow);
+}
+
+.alm-lang-switch {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--quko-mist);
+}
+
+.alm-lang-switch button {
+  min-width: 64px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--quko-muted);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+
+.alm-lang-switch button[aria-pressed="true"] {
+  background: var(--quko-red);
+  color: var(--quko-white);
+}
+
+.alm-lang-lines p {
+  margin: 0 0 12px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--quko-red);
+  border-radius: 0 14px 14px 0;
+  background: var(--quko-mist);
+  color: var(--quko-ink);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  animation: alm-card-in .45s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+/* Audience */
+.alm-audience-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.alm-audience-grid li {
+  padding: 28px 24px;
+  border-top: 3px solid var(--quko-red);
+  border-radius: 4px 4px 20px 20px;
+  background: var(--quko-mist);
+}
+
+.alm-audience-grid i {
+  margin-bottom: 18px;
+  color: var(--quko-red);
+  font-size: 26px;
+}
+
+/* Plans */
+.alm-plans-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+  padding: 52px;
+  border: 1px solid var(--quko-line);
+  border-radius: var(--quko-radius);
+  background: var(--quko-white);
+}
+
+.alm-plans-card p {
+  margin: 0;
+  font-size: 17px;
+}
+
+.alm-plans-card .alm-checks {
+  margin: 0;
+}
+
+.alm-plans-card .alm-checks li {
+  padding: 16px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--quko-line);
+  font-size: 16px;
+}
+
+.alm-plans-card .alm-checks li:last-child {
+  border-bottom: 0;
+}
+
+@media (max-width: 1199px) {
+  .alm-stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .alm-audience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991px) {
+  .alm-hero {
+    padding: 72px 0 64px;
+  }
+
+  .alm-hero-grid,
+  .alm-race-grid,
+  .alm-lang-grid,
+  .alm-screens-head,
+  .alm-plans-card,
+  .alm-access-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .alm-steps,
+  .alm-feature-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .alm-steps li:not(:last-child):after {
+    display: none;
+  }
+
+  .alm-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .alm-stage {
+    height: 520px;
+  }
+
+  .alm-stage .alm-device-tablet {
+    width: 360px;
+    height: 520px;
+  }
+
+  .alm-stage .alm-device-phone {
+    width: 200px;
+    height: 400px;
+  }
+
+  .alm-stage .is-left {
+    left: calc(50% - 330px);
+  }
+
+  .alm-stage .is-right {
+    right: calc(50% - 330px);
+  }
+}
+
+@media (max-width: 767px) {
+  .alm-hero {
+    padding: 56px 0 48px;
+  }
+
+  .alm-hero p {
+    font-size: 16px;
+  }
+
+  .alm-briefing {
+    padding: 16px;
+  }
+
+  .alm-briefing-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .alm-briefing.is-enhanced .alm-briefing-facts {
+    min-height: 132px;
+  }
+
+  .alm-lanes li {
+    grid-template-columns: 26px 38px minmax(0, 1fr) auto;
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .alm-lane-pb small {
+    display: none;
+  }
+
+  .alm-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .alm-stats-grid {
+    margin-top: 48px;
+  }
+
+  .alm-stats-grid > div {
+    padding: 20px 16px;
+  }
+
+  .alm-feature-grid,
+  .alm-audience-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .alm-pipeline {
+    padding-top: 96px;
+  }
+
+  .alm-race-panel,
+  .alm-door,
+  .alm-lang-card {
+    padding: 20px;
+  }
+
+  .alm-tabs button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .alm-plans-card {
+    padding: 28px 22px;
+  }
+
+  .alm-chat-q,
+  .alm-chat-a {
+    max-width: 100%;
+  }
+
+  /* The connection status says enough on a phone. */
+  .alm-chat-bar strong {
+    display: none;
+  }
+
+  /* Phones get the tablet on its own; the side phones would only crowd it. */
+  .alm-stage {
+    height: auto;
+  }
+
+  .alm-stage .alm-device-phone {
+    display: none;
+  }
+
+  .alm-stage .alm-device-tablet {
+    width: unquote("min(100%, 340px)");
+    height: 500px;
+  }
+
+  .alm-shots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 36px;
+  }
+
+  .alm-shots .is-small {
+    border-width: 4px;
+    border-radius: 16px;
+  }
+
+  .alm-shots .is-small img {
+    border-radius: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alm-glow,
+  .alm-live-dot {
+    animation: none;
+  }
+
+  .alm-ripple {
+    display: none;
+  }
+
+  /* The ticker becomes a static, wrapping list of facts. */
+  .alm-ticker {
+    padding: 16px 20px;
+  }
+
+  .alm-ticker-track {
+    width: auto;
+    animation: none;
+  }
+
+  .alm-ticker-set {
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    gap: 10px 0;
+  }
+
+  .alm-ticker-set[aria-hidden] {
+    display: none;
+  }
+
+  .alm-ticker-item {
+    white-space: normal;
+  }
+
+  .alm-tab-panel.is-shown .alm-fact-card,
+  .alm-lang-lines p,
+  .alm-code-bar .alm-chat-status {
+    animation: none;
   }
 }

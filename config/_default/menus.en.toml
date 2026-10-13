@@ -10,7 +10,7 @@ url = "service/"
 weight = 2
 
 [[main]]
-name = "Products"
+name = "Performance"
 identifier = "products"
 weight = 3
 
@@ -33,9 +33,26 @@ weight = 3
   weight = 3
 
 [[main]]
+name = "Media"
+identifier = "media"
+weight = 4
+
+  [[main]]
+  parent = "media"
+  name = "Almanac"
+  url = "almanac/"
+  weight = 1
+
+  [[main]]
+  parent = "media"
+  name = "Events Coverage"
+  url = "events_coverage/"
+  weight = 2
+
+[[main]]
 name = "More"
 identifier = "more"
-weight = 4
+weight = 5
 
   [[main]]
   parent = "more"
@@ -83,22 +100,22 @@ weight = 4
 name = "Shop"
 url = "shop/"
 identifier = "nav-shop"
-weight = 5
+weight = 6
 
 [[main]]
 name = "Access Cloud"
 url = "https://cloud.quko.es/"
 identifier = "nav-cloud"
-weight = 6
+weight = 7
 
 [[main]]
 name = "Request a demo"
 url = "contact/"
 identifier = "nav-cta"
-weight = 7
+weight = 8
 
 [[footer]]
-name = "Products"
+name = "Performance"
 url = "kosoku/"
 weight = 1
 [footer.params]
