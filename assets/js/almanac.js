@@ -53,7 +53,19 @@
     var current = 0;
     var elapsed = 0;
     var last = null;
-    var held = 0;
+    // The athlete under the pointer and the one with keyboard focus, if any.
+    var hovered = null;
+    var focused = null;
+
+    function lanesOf(fact) {
+      return (fact.getAttribute('data-lanes') || '').split(' ');
+    }
+
+    function light(lit) {
+      lanes.forEach(function (lane) {
+        lane.classList.toggle('is-lit', lit.indexOf(lane.getAttribute('data-lane')) !== -1);
+      });
+    }
 
     function show(index) {
       facts[current].classList.remove('is-active');
@@ -61,10 +73,7 @@
       elapsed = 0;
       var fact = facts[current];
       fact.classList.add('is-active');
-      var lit = (fact.getAttribute('data-lanes') || '').split(' ');
-      lanes.forEach(function (lane) {
-        lane.classList.toggle('is-lit', lit.indexOf(lane.getAttribute('data-lane')) !== -1);
-      });
+      light(lanesOf(fact));
       bars.forEach(function (bar, i) {
         bar.classList.toggle('is-done', i < current);
         bar.style.setProperty('--p', 0);
@@ -75,7 +84,7 @@
       // Cap each step, so coming back to a background tab never skips facts.
       var step = last === null ? 0 : Math.min(now - last, 100);
       last = now;
-      if (!held) {
+      if (!hovered && !focused) {
         elapsed += step;
         if (elapsed >= DURATION) show((current + 1) % facts.length);
       }
@@ -89,28 +98,45 @@
       show(0);
       requestAnimationFrame(tick);
 
-      // Pointing at an athlete brings up the first fact about them and holds
-      // it; letting go gives that fact a full turn before moving on.
+      // Pointing at an athlete brings up a fact about them (one about them
+      // alone if there is one) and holds it, with only that athlete lit even
+      // when the fact names two. Letting go gives the fact a full turn before
+      // moving on.
+      function point(lane) {
+        var id = lane.getAttribute('data-lane');
+        var match = -1;
+        for (var i = 0; i < facts.length; i++) {
+          var about = lanesOf(facts[i]);
+          if (about.indexOf(id) === -1) continue;
+          if (match === -1) match = i;
+          if (about.length === 1) { match = i; break; }
+        }
+        if (match !== -1 && match !== current) show(match);
+        light([id]);
+        elapsed = 0;
+      }
+
       lanes.forEach(function (lane) {
-        function hold() {
-          held++;
-          var id = lane.getAttribute('data-lane');
-          for (var i = 0; i < facts.length; i++) {
-            if ((facts[i].getAttribute('data-lanes') || '').split(' ').indexOf(id) !== -1) {
-              if (i !== current) show(i);
-              break;
-            }
-          }
+        lane.addEventListener('mouseenter', function () {
+          hovered = lane;
+          point(lane);
+        });
+        lane.addEventListener('mouseleave', function () {
+          if (hovered === lane) hovered = null;
+          if (focused) point(focused);
           elapsed = 0;
-        }
-        function release() {
-          held = Math.max(0, held - 1);
+        });
+        // Only keyboard focus holds the briefing; a mouse click focuses the
+        // row too, but must not freeze it once the pointer moves on.
+        lane.addEventListener('focus', function () {
+          if (!lane.matches(':focus-visible')) return;
+          focused = lane;
+          if (!hovered) point(lane);
+        });
+        lane.addEventListener('blur', function () {
+          if (focused === lane) focused = null;
           elapsed = 0;
-        }
-        lane.addEventListener('mouseenter', hold);
-        lane.addEventListener('mouseleave', release);
-        lane.addEventListener('focus', hold);
-        lane.addEventListener('blur', release);
+        });
       });
     }
   }

@@ -5173,6 +5173,7 @@ a {
 }
 
 .alm-lanes li {
+  position: relative;
   display: grid;
   grid-template-columns: 30px 44px minmax(0, 1fr) auto;
   gap: 10px;
@@ -5198,7 +5199,19 @@ a {
   background: rgba(255, 255, 255, .12);
   box-shadow: 0 10px 24px rgba(0, 0, 0, .3);
   outline: none;
-  transform: translateX(10px) scale(1.02);
+  transform: translateX(10px);
+}
+
+/* The row slides right when pointed at; this invisible strip keeps covering
+   the spot it slid away from, so a pointer near its left edge stays on it
+   instead of making it flicker in and out. */
+.alm-lanes li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -12px;
+  width: 12px;
 }
 
 .alm-lanes li.is-lit:hover,
