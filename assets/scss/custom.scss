@@ -6397,3 +6397,26 @@ a {
     animation: none;
   }
 }
+
+/* Coming soon placeholder */
+.quko-coming-soon {
+  display: flex;
+  align-items: center;
+  min-height: 70vh;
+  padding: 96px 0;
+}
+
+.quko-coming-soon .quko-hero-copy {
+  max-width: 760px;
+}
+
+.quko-coming-soon h1 {
+  text-wrap: balance;
+}
+
+@media (max-width: 767px) {
+  .quko-coming-soon {
+    min-height: 0;
+    padding: 64px 0;
+  }
+}

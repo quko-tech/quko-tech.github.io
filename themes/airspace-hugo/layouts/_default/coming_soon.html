@@ -1,0 +1,22 @@
+{{/*
+  Placeholder for pages that are linked from the menu but not built yet. Every
+  string comes from the page's front matter so the three languages share this
+  one template.
+*/}}
+{{ define "main" }}
+{{ with .Params.hero }}
+<section class="quko-hero quko-coming-soon">
+  <div class="container">
+    <div class="quko-hero-copy" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h1>{{ .title }}</h1>
+      <p>{{ .text }}</p>
+      <div class="quko-actions">
+        <a class="btn-quko" href="{{ .primary_link | relLangURL }}">{{ .primary_label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        {{ with .secondary_link }}<a class="btn-quko-outline" href="{{ . | relLangURL }}">{{ $.Params.hero.secondary_label }}</a>{{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
