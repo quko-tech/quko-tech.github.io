@@ -78,6 +78,7 @@ key_points:
     lead: "Tripulaciones adultas con una grabación QUKO"
     items:
       - "Todos los miembros son mayores de 18 años y no tienen sanción antidopaje"
+      - "No disponible para deportistas cuyo contrato de patrocinio con QUKO ya contemple el uso comercial de sus competiciones"
       - "La regata se registró con un dispositivo QUKO"
       - "Un premio por embarcación, que se reparte entre la tripulación"
   - icon: "paper-plane"
@@ -120,6 +121,7 @@ terms:
     paragraphs:
       - "Todos los miembros de la tripulación deben tener al menos 18 años en la fecha de la regata y en la fecha en que firmen el acuerdo del premio. Una embarcación con algún miembro menor de 18 años no es elegible."
       - "Ningún miembro de la tripulación puede estar cumpliendo una sanción antidopaje en la fecha de la regata ni de la solicitud."
+      - "El Programa no es compatible con otros programas de patrocinio de QUKO. Una embarcación no puede optar al premio si algún miembro de la tripulación tiene un contrato de patrocinio con QUKO que ya prevea el uso comercial de alguna de sus competiciones."
       - "Cada miembro de la tripulación es responsable de cumplir las normas de la Federación Internacional de Piragüismo (ICF), de su federación nacional y del organizador de la competición, incluidas las relativas al uso de dispositivos de grabación y a los derechos comerciales, y de obtener los consentimientos que esas normas exijan."
       - "QUKO no está afiliada, respaldada ni patrocinada por la ICF, el Comité Olímpico Internacional, ninguna federación ni ningún organizador de competiciones. Los nombres de las competiciones y la palabra «olímpica» se usan solo para describir las pruebas y pertenecen a sus respectivos titulares."
   - title: "Resultados válidos"

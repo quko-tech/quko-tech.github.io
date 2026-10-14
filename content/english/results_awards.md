@@ -78,6 +78,7 @@ key_points:
     lead: "Adult crews with a QUKO recording"
     items:
       - "Every crew member is 18 or over and has no anti-doping suspension"
+      - "Not open to athletes whose QUKO sponsorship contract already covers commercial use of their competitions"
       - "The race was recorded with a QUKO device"
       - "One award per boat, shared by the crew"
   - icon: "paper-plane"
@@ -120,6 +121,7 @@ terms:
     paragraphs:
       - "Every member of the crew must be at least 18 years old on the date of the race and on the date they sign the award agreement. A boat with any crew member under 18 is not eligible."
       - "No crew member may be serving an anti-doping suspension on the date of the race or of the claim."
+      - "The Programme is not compatible with other QUKO sponsorship programmes. A boat is not eligible if any crew member has a sponsorship contract with QUKO that already provides for the commercial use of any of their competitions."
       - "Each crew member is responsible for complying with the rules of the International Canoe Federation (ICF), their national federation and the competition organiser, including rules on the use of recording devices and on commercial rights, and for obtaining any consent those rules require."
       - "QUKO is not affiliated with, endorsed by or sponsored by the ICF, the International Olympic Committee, any federation or any competition organiser. The names of competitions and the word “Olympic” are used only to describe the events and belong to their respective owners."
   - title: "Qualifying results"
