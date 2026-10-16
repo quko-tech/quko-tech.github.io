@@ -6797,7 +6797,7 @@ a {
 
   /* Hidden until the film starts playing (events-coverage.js adds is-lit),
      then the red and purple light swells out from behind the screen and
-     settles into a halo, as if the screen lit the page. */
+     stays at full strength as a halo, as if the screen lit the page. */
   .evc-ambient {
     position: absolute;
     top: -6%;
@@ -6814,7 +6814,7 @@ a {
   }
 
   .evc-stage.is-lit .evc-ambient {
-    opacity: .75;
+    opacity: 1;
     transform: scale(1);
     animation: evc-glow-in 2.4s cubic-bezier(.2, .7, .2, 1) both;
   }
@@ -8225,7 +8225,7 @@ html.evc-player-open {
 @keyframes evc-glow-in {
   0% { opacity: 0; transform: scale(.6); }
   55% { opacity: 1; transform: scale(1.12); }
-  100% { opacity: .75; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes evc-orbit {
