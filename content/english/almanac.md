@@ -40,12 +40,12 @@ briefing:
     - { kind: "Youngest", lanes: "6", text: "Eva Novak is the youngest in the field, at 23." }
 
 stats:
-  - { value: 57600, suffix: "+", label: "Athletes with a career on file" }
-  - { value: 58000, suffix: "+", label: "Races, heat to final" }
-  - { value: 1250, suffix: "+", label: "Competitions" }
-  - { value: 155, suffix: "+", label: "Nations" }
+  - { value: 55000, suffix: "+", label: "Athletes with a career on file" }
+  - { value: 50000, suffix: "+", label: "Races, heat to final" }
+  - { value: 1200, suffix: "+", label: "Competitions" }
+  - { value: 150, suffix: "+", label: "Nations" }
   - { value: 1933, label: "First result in the archive", plain: true }
-  - { value: 1000000, suffix: "+", label: "Pre-computed facts" }
+  - { value: 1000000, display: "1M", suffix: "+", label: "Pre-computed facts" }
 
 ticker:
   label: "Almanac fact lines"
@@ -64,19 +64,19 @@ pipeline:
   steps:
     - icon: "fa-database"
       title: "The archive"
-      text: "Results from 1933 to today: Olympics, World Championships, continental championships, World Cups and more. Every round, every lane, every crew."
+      text: "Every round, lane and crew since 1933, from World Cups to the Olympics."
     - icon: "fa-bolt"
       title: "The facts engine"
-      text: "Records, streaks, defending champions, rivalries and milestones, computed ahead of time and ranked by how much they matter, from 0 to 1."
+      text: "Records, streaks, rivalries and milestones, computed ahead and ranked by importance."
     - icon: "fa-microphone"
       title: "On air"
-      text: "Each fact arrives as structured data plus a ready-to-read line, with its source and caveats, so nothing goes out that you can’t stand behind."
+      text: "Structured data plus a ready-to-read line, each with its source."
 
 race:
   id: "briefing"
   eyebrow: "Race briefings"
   title: "Before the gun. After the line."
-  text: "Ask for any race and Almanac briefs you lane by lane: personal and season bests, medals at this level, previous meetings within the field, the defending champion and the fastest time in the archive. When the result lands, the storylines are waiting."
+  text: "Almanac briefs any race lane by lane: bests, medals, head-to-heads and the defending champion. When the result lands, the storylines are waiting."
   tabs:
     - id: "before"
       label: "Before the race"
@@ -94,8 +94,8 @@ race:
         - { kind: "Personal best", text: "Lena Weber sets a personal best: 1:48,33 (previous best 1:48,46)." }
   sample_note: "Illustrative Almanac output. Athletes are fictional."
   points:
-    - "Briefings for races starting in the next three hours are prepared in advance, so the first request is already instant"
-    - "Provisional results are flagged, and every fact carries its source and any coverage notes"
+    - "Upcoming races are prepared in advance, so briefings are instant"
+    - "Every fact carries its source; provisional results are flagged"
     - "Archive bests are never called world records"
 
 access:
@@ -171,19 +171,5 @@ audience:
     - { icon: "fa-microphone-alt", title: "Commentators", text: "Walk into the booth with every storyline already prepared, race by race." }
     - { icon: "fa-newspaper", title: "Digital media and apps", text: "Power previews, live blogs and results pages without building a stats desk." }
     - { icon: "fa-trophy", title: "Federations and organisers", text: "Give your own channels the history and context your events deserve." }
-
-plans:
-  eyebrow: "Access"
-  title: "A plan built around your coverage"
-  text: "Almanac is a partner API. We set up each plan for the organisation using it, from a single championship to a full season."
-  items:
-    - "REST API, AI assistant access (MCP), or both"
-    - "Monthly quota and rate limits sized to your coverage"
-    - "API keys with scopes, IP restrictions and expiry dates"
-    - "A partner console to manage keys and connected AI apps"
-  primary_label: "Request access"
-  primary_link: "contact/"
-  secondary_label: "Read about our APIs"
-  secondary_link: "apis/"
 
 ---

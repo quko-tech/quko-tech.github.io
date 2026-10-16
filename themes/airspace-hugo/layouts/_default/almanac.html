@@ -59,7 +59,8 @@
     <dl class="alm-stats-grid">
       {{ range . }}
       <div data-reveal>
-        <dt><span data-count="{{ .value }}"{{ if .plain }} data-plain{{ end }}>{{ if .plain }}{{ .value }}{{ else }}{{ lang.FormatNumberCustom 0 .value "- , ." }}{{ end }}</span>{{ .suffix }}</dt>
+        {{/* A "display" value (1M) is shown as written and never counts up. */}}
+        <dt>{{ with .display }}<span>{{ . }}</span>{{ else }}<span data-count="{{ .value }}"{{ if .plain }} data-plain{{ end }}>{{ if .plain }}{{ .value }}{{ else }}{{ lang.FormatNumberCustom 0 .value "- , ." }}{{ end }}</span>{{ end }}{{ .suffix }}</dt>
         <dd>{{ .label }}</dd>
       </div>
       {{ end }}

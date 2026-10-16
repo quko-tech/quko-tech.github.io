@@ -40,7 +40,7 @@ specs:
   label: "A cobertura en cifras"
   items:
     - { value: "0.05", display: "0,05", from: 1, decimals: 2, unit: "s", label: "Precisión de cronometraxe" }
-    - { value: "9", unit: "rúas", label: "En directo, cada segundo" }
+    - { value: "11", unit: "rúas", label: "En directo, cada segundo" }
     - { value: "150", unit: "barcos", label: "Seguidos á vez" }
     - { value: "50", unit: "+", label: "Gráficos para TV" }
     - { value: "100", unit: "%", label: "Automático" }
@@ -53,21 +53,21 @@ pipeline:
     - icon: "fas fa-microchip"
       kicker: "En cada embarcación"
       title: "Sensores Kosoku"
-      text: "Velocidade, ritmo de palada, forza e equilibrio de cada tripulación, cronometrados a 0,05 s. Ata 150 embarcacións á vez."
+      text: "Velocidade, ritmo de palada e forza de cada embarcación, a 0,05 s."
     - icon: "fas fa-network-wired"
       kicker: "Na produción"
       title: "Motor en directo de QUKO"
-      text: "Fusiona sensores, cronometraxe oficial e imaxe: sabe que plano está no aire e que embarcación é cada unha."
+      text: "Fusiona sensores, cronometraxe oficial e imaxe en directo."
     - icon: "fas fa-brain"
       kicker: "Toma a decisión"
       title: "Director con IA"
-      text: "Escolle a historia que importa en cada momento e o gráfico que mellor a conta."
+      text: "Escolle a historia que importa e o gráfico que a conta."
       input_icon: "fas fa-database"
-      input: "Almanac achega palmarés, cara a cara e mellores marcas"
+      input: "Almanac achega palmarés e cara a cara"
     - icon: "fas fa-broadcast-tower"
       kicker: "No aire"
       title: "A túa sinal internacional"
-      text: "Unha capa limpa e transparente que se integra directamente na túa produción."
+      text: "Unha capa transparente, directa á túa produción."
 
 showcase:
   eyebrow: "Os gráficos, no aire"
@@ -168,9 +168,9 @@ almanac:
   link_label: "Descubre Almanac"
   link: "almanac/"
   stats:
-    - { value: 57600, suffix: "+", label: "Deportistas" }
-    - { value: 58000, suffix: "+", label: "Regatas" }
-    - { value: 1000000, suffix: "+", label: "Datos listos para emitir" }
+    - { value: 55000, suffix: "+", label: "Deportistas" }
+    - { value: 50000, suffix: "+", label: "Regatas" }
+    - { value: 1000000, display: "1M", suffix: "+", label: "Datos listos para emitir" }
   card_title: "Datos da saída"
   card_race: "K1 500 m feminino · Final A"
   sample_note: "Exemplo ilustrativo · deportistas ficticias"

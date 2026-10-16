@@ -41,12 +41,12 @@ briefing:
     - { kind: "A máis nova", lanes: "6", text: "Eva Novak es la más joven de la carrera, con 23 años." }
 
 stats:
-  - { value: 57600, suffix: "+", label: "Deportistas coa súa traxectoria" }
-  - { value: 58000, suffix: "+", label: "Carreiras, de series a finais" }
-  - { value: 1250, suffix: "+", label: "Competicións" }
-  - { value: 155, suffix: "+", label: "Países" }
+  - { value: 55000, suffix: "+", label: "Deportistas coa súa traxectoria" }
+  - { value: 50000, suffix: "+", label: "Carreiras, de series a finais" }
+  - { value: 1200, suffix: "+", label: "Competicións" }
+  - { value: 150, suffix: "+", label: "Países" }
   - { value: 1933, label: "Primeiro resultado do arquivo", plain: true }
-  - { value: 1000000, suffix: "+", label: "Datos precalculados" }
+  - { value: 1000000, display: "1M", suffix: "+", label: "Datos precalculados" }
 
 ticker:
   label: "Frases de Almanac"
@@ -65,19 +65,19 @@ pipeline:
   steps:
     - icon: "fa-database"
       title: "O arquivo"
-      text: "Resultados desde 1933 ata hoxe: Xogos Olímpicos, Mundiais, Campionatos continentais, Copas do Mundo e máis. Cada rolda, cada rúa, cada tripulación."
+      text: "Cada rolda, rúa e tripulación desde 1933, das Copas do Mundo aos Xogos Olímpicos."
     - icon: "fa-bolt"
       title: "O motor de datos"
-      text: "Récords, rachas, campións defensores, rivalidades e fitos, calculados de antemán e ordenados por relevancia, de 0 a 1."
+      text: "Récords, rachas, rivalidades e fitos, calculados de antemán e ordenados por relevancia."
     - icon: "fa-microphone"
       title: "En antena"
-      text: "Cada dato chega estruturado e cunha frase lista para ler, coa súa fonte e os seus matices, para que non saia nada que non poidas respaldar."
+      text: "Datos estruturados e unha frase lista para ler, cada un coa súa fonte."
 
 race:
   id: "briefing"
   eyebrow: "Briefings de carreira"
   title: "Antes da saída. Despois da meta."
-  text: "Pide calquera carreira e Almanac resúmecha rúa por rúa: mellores marcas persoais e da tempada, medallas a ese nivel, enfrontamentos previos dentro da carreira, quen defende o título e o mellor tempo do arquivo. Cando chega o resultado, as historias xa están aí."
+  text: "Almanac resume calquera carreira rúa por rúa: mellores marcas, medallas, cara a cara e quen defende o título. Cando chega o resultado, as historias xa están aí."
   tabs:
     - id: "before"
       label: "Antes da carreira"
@@ -95,8 +95,8 @@ race:
         - { kind: "Marca persoal", text: "Lena Weber logra su mejor marca personal: 1:48,33 (antes 1:48,46)." }
   sample_note: "Exemplo ilustrativo de saída de Almanac, en castelán. As deportistas son ficticias."
   points:
-    - "Os briefings das carreiras das próximas tres horas prepáranse con antelación, así que a primeira consulta xa é instantánea"
-    - "Os resultados provisionais márcanse, e cada dato inclúe a súa fonte e calquera nota de cobertura"
+    - "As próximas carreiras prepáranse con antelación, así que o briefing é instantáneo"
+    - "Cada dato inclúe a súa fonte; os resultados provisionais márcanse"
     - "Os mellores tempos do arquivo nunca se presentan como récords do mundo"
 
 access:
@@ -172,19 +172,5 @@ audience:
     - { icon: "fa-microphone-alt", title: "Comentaristas", text: "Entra na cabina con todas as historias preparadas, carreira a carreira." }
     - { icon: "fa-newspaper", title: "Medios dixitais e apps", text: "Publica previas, directos e páxinas de resultados sen montar un departamento de estatística." }
     - { icon: "fa-trophy", title: "Federacións e organizadores", text: "Dálles ás túas propias canles a historia e o contexto que merecen os teus eventos." }
-
-plans:
-  eyebrow: "Acceso"
-  title: "Un plan á medida da túa cobertura"
-  text: "Almanac é unha API para partners. Configuramos cada plan para a organización que o usa, desde un único campionato ata unha tempada completa."
-  items:
-    - "API REST, acceso desde asistentes de IA (MCP) ou ambos"
-    - "Cota mensual e límites de uso axustados á túa cobertura"
-    - "Claves de API con permisos, restrición por IP e data de caducidade"
-    - "Unha consola de partner para xestionar claves e apps de IA conectadas"
-  primary_label: "Solicitar acceso"
-  primary_link: "contact/"
-  secondary_label: "Coñece as nosas APIs"
-  secondary_link: "apis/"
 
 ---

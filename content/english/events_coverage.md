@@ -40,7 +40,7 @@ specs:
   label: "Coverage in numbers"
   items:
     - { value: "0.05", from: 1, decimals: 2, unit: "s", label: "Timing precision" }
-    - { value: "9", unit: "lanes", label: "Live, every second" }
+    - { value: "11", unit: "lanes", label: "Live, every second" }
     - { value: "150", unit: "boats", label: "Tracked at once" }
     - { value: "50", unit: "+", label: "Broadcast graphics" }
     - { value: "100", unit: "%", label: "Automatic" }
@@ -53,21 +53,21 @@ pipeline:
     - icon: "fas fa-microchip"
       kicker: "On every boat"
       title: "Kosoku sensors"
-      text: "Speed, stroke rate, force and balance for every crew, timed to 0.05 s. Up to 150 boats at once."
+      text: "Speed, stroke rate and force for every boat, timed to 0.05 s."
     - icon: "fas fa-network-wired"
       kicker: "In the production"
       title: "QUKO live engine"
-      text: "Fuses sensors, official timing and the camera picture: it knows which shot is on air and which boat is which."
+      text: "Fuses sensors, official timing and the live picture."
     - icon: "fas fa-brain"
       kicker: "Making the call"
       title: "AI director"
-      text: "Picks the story that matters right now and the graphic that tells it best."
+      text: "Picks the story that matters and the graphic to tell it."
       input_icon: "fas fa-database"
-      input: "Almanac adds records, head-to-heads and personal bests"
+      input: "Almanac adds records and head-to-heads"
     - icon: "fas fa-broadcast-tower"
       kicker: "On air"
       title: "Your world feed"
-      text: "A clean, transparent layer that drops straight into your production."
+      text: "A transparent layer, straight into your production."
 
 showcase:
   eyebrow: "The graphics, on air"
@@ -168,9 +168,9 @@ almanac:
   link_label: "Explore Almanac"
   link: "almanac/"
   stats:
-    - { value: 57600, suffix: "+", label: "Athletes" }
-    - { value: 58000, suffix: "+", label: "Races" }
-    - { value: 1000000, suffix: "+", label: "Ready-to-air facts" }
+    - { value: 55000, suffix: "+", label: "Athletes" }
+    - { value: 50000, suffix: "+", label: "Races" }
+    - { value: 1000000, display: "1M", suffix: "+", label: "Ready-to-air facts" }
   card_title: "Start-list facts"
   card_race: "K1 Women 500 m · Final A"
   sample_note: "Illustrative output · fictional athletes"

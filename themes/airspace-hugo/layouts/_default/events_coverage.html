@@ -179,7 +179,7 @@
         <p>{{ replace .text "Almanac" $almLink | safeHTML }}</p>
         <dl class="evc-almanac-stats">
           {{ range .stats }}
-          <div><dt><span data-evc-count="{{ .value }}" data-group-digits>{{ lang.FormatNumberCustom 0 .value "- , ." }}</span>{{ .suffix }}</dt><dd>{{ .label }}</dd></div>
+          <div><dt>{{ with .display }}<span>{{ . }}</span>{{ else }}<span data-evc-count="{{ .value }}" data-group-digits>{{ lang.FormatNumberCustom 0 .value "- , ." }}</span>{{ end }}{{ .suffix }}</dt><dd>{{ .label }}</dd></div>
           {{ end }}
         </dl>
         <div class="quko-actions"><a class="btn-quko-outline" href="{{ .link | relLangURL }}">{{ .link_label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>

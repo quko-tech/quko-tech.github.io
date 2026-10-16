@@ -40,7 +40,7 @@ specs:
   label: "La cobertura en cifras"
   items:
     - { value: "0.05", display: "0,05", from: 1, decimals: 2, unit: "s", label: "Precisión de cronometraje" }
-    - { value: "9", unit: "calles", label: "En directo, cada segundo" }
+    - { value: "11", unit: "calles", label: "En directo, cada segundo" }
     - { value: "150", unit: "barcos", label: "Seguidos a la vez" }
     - { value: "50", unit: "+", label: "Gráficos para TV" }
     - { value: "100", unit: "%", label: "Automático" }
@@ -53,21 +53,21 @@ pipeline:
     - icon: "fas fa-microchip"
       kicker: "En cada embarcación"
       title: "Sensores Kosoku"
-      text: "Velocidad, ritmo de palada, fuerza y equilibrio de cada tripulación, cronometrados a 0,05 s. Hasta 150 embarcaciones a la vez."
+      text: "Velocidad, ritmo de palada y fuerza de cada embarcación, a 0,05 s."
     - icon: "fas fa-network-wired"
       kicker: "En la producción"
       title: "Motor en directo de QUKO"
-      text: "Fusiona sensores, cronometraje oficial e imagen: sabe qué plano está en el aire y qué embarcación es cada una."
+      text: "Fusiona sensores, cronometraje oficial e imagen en directo."
     - icon: "fas fa-brain"
       kicker: "Toma la decisión"
       title: "Director con IA"
-      text: "Elige la historia que importa en cada momento y el gráfico que mejor la cuenta."
+      text: "Elige la historia que importa y el gráfico que la cuenta."
       input_icon: "fas fa-database"
-      input: "Almanac aporta palmarés, cara a cara y mejores marcas"
+      input: "Almanac aporta palmarés y cara a cara"
     - icon: "fas fa-broadcast-tower"
       kicker: "En el aire"
       title: "Tu señal internacional"
-      text: "Una capa limpia y transparente que se integra directamente en tu producción."
+      text: "Una capa transparente, directa a tu producción."
 
 showcase:
   eyebrow: "Los gráficos, en el aire"
@@ -168,9 +168,9 @@ almanac:
   link_label: "Descubre Almanac"
   link: "almanac/"
   stats:
-    - { value: 57600, suffix: "+", label: "Deportistas" }
-    - { value: 58000, suffix: "+", label: "Carreras" }
-    - { value: 1000000, suffix: "+", label: "Datos listos para emitir" }
+    - { value: 55000, suffix: "+", label: "Deportistas" }
+    - { value: 50000, suffix: "+", label: "Carreras" }
+    - { value: 1000000, display: "1M", suffix: "+", label: "Datos listos para emitir" }
   card_title: "Datos de la salida"
   card_race: "K1 500 m femenino · Final A"
   sample_note: "Ejemplo ilustrativo · deportistas ficticias"
