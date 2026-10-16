@@ -31,3 +31,9 @@ Thumbs.db
 
 # Local Hugo verification build output.
 .hugo-results-check/
+
+# Source masters for the Events Coverage page. The site serves the compressed
+# copies in static/videos/web/ and static/images/events_coverage/; the master
+# film is over GitHub's 100 MB file limit.
+static/videos/media_broadcast.mp4
+static/images/media_broadcast_*.png

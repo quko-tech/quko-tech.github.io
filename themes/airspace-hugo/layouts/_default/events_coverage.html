@@ -1,0 +1,288 @@
+{{/*
+  Events Coverage: QUKO live data graphics for canoe sprint broadcasts. Every
+  string comes from the page's front matter so the three languages share this
+  one template. The film, gallery, decision log and Almanac card are
+  progressive enhancements: without JavaScript (or with reduced motion) each
+  renders as static, readable content.
+
+  Chapters alternate dark (broadcast) and light (explanation): cover and
+  numbers, how it works, the graphics, Almanac, the AI director, the
+  workflow, then the call to action.
+*/}}
+{{ define "main" }}
+{{ $p := .Params }}
+{{/* Every mention of Almanac in running text links to its page. */}}
+{{ $almLink := printf `<a class="evc-alm-link" href="%s">Almanac</a>` ("almanac/" | relLangURL) }}
+<div class="evc">
+
+{{ with $p.hero }}
+{{/* The cover: a compact headline band, then the film on its own broadcast
+     screen with nothing drawn over the picture, so every on-air graphic in it
+     stays legible. Desktops get the native-resolution encode, tablets 720p and
+     phones 540p; the "watch with sound" player reuses the same files. */}}
+<section class="evc-hero" data-evc-hero>
+  <div class="evc-hero-bg" aria-hidden="true">
+    <span class="evc-glow is-red"></span>
+    <span class="evc-glow is-purple"></span>
+    <span class="evc-hero-lanes"></span>
+  </div>
+  <div class="container evc-hero-inner">
+    <div class="evc-hero-head" data-reveal>
+      <div class="evc-hero-title">
+        <span class="evc-onair"><span class="evc-onair-dot" aria-hidden="true"></span>{{ .on_air }}</span>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h1>{{ range .title_lines }}<span>{{ . }}</span>{{ end }}<span class="evc-accent">{{ .title_accent }}</span></h1>
+      </div>
+      <div class="evc-hero-copy">
+        <p>{{ .text }}</p>
+        <div class="quko-actions">
+          <a class="btn-quko" href="{{ .primary_link | relLangURL }}">{{ .primary_label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <button type="button" class="btn-quko-ghost evc-play" data-evc-open aria-haspopup="dialog"><span class="evc-play-icon" aria-hidden="true"><i class="fas fa-play"></i></span>{{ .sound_label }}</button>
+        </div>
+      </div>
+    </div>
+    <div class="evc-stage" data-evc-stage>
+      <canvas class="evc-ambient" width="48" height="27" aria-hidden="true" data-evc-ambient></canvas>
+      <figure class="evc-tv" data-evc-tv>
+        <span class="evc-tv-ring" aria-hidden="true"></span>
+        <div class="evc-tv-body">
+        <div class="evc-tv-screen">
+          <video class="evc-hero-video" autoplay muted loop playsinline preload="metadata" poster="{{ .poster | relURL }}" aria-label="{{ .video_alt }}" data-hero-video data-evc-hero-video>
+            <source src="{{ .video_hd | relURL }}" type="video/mp4" media="(min-width: 1200px)">
+            <source src="{{ .video | relURL }}" type="video/mp4" media="(min-width: 768px)">
+            <source src="{{ .video_mobile | relURL }}" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="evc-tv-bar">
+          <span class="evc-tv-live"><span class="evc-onair-dot" aria-hidden="true"></span>{{ .screen_live }}</span>
+          <span class="evc-tv-title">{{ .screen_title }}</span>
+          <button type="button" class="evc-tv-sound" data-evc-open aria-haspopup="dialog"><i class="fas fa-volume-up" aria-hidden="true"></i><span>{{ .sound_label }}</span></button>
+          {{/* Shown by events-coverage.js only where the browser can go full screen. */}}
+          <button type="button" class="evc-tv-sound evc-tv-full" data-evc-fullscreen hidden><i class="fas fa-expand" aria-hidden="true"></i><span>{{ .fullscreen_label }}</span></button>
+        </figcaption>
+        </div>
+      </figure>
+    </div>
+  </div>
+  {{ with .ticker }}
+  <div class="evc-ticker" aria-hidden="true">
+    <div class="evc-ticker-track">
+      {{ range seq 2 }}{{ range $.Params.hero.ticker }}
+      <span class="evc-tick is-{{ .tone }}"><b>{{ .label }}</b>{{ .value }}</span>
+      {{ end }}{{ end }}
+    </div>
+  </div>
+  {{ end }}
+</section>
+{{ end }}
+
+{{ with $p.specs }}
+<section class="evc-specs" aria-label="{{ .label }}">
+  <div class="container">
+    <dl class="evc-specs-grid">
+      {{ range $i, $s := .items }}
+      <div class="evc-spec" data-reveal style="transition-delay: {{ mul $i 80 }}ms">
+        <dt>
+          <span class="evc-spec-value" data-evc-count="{{ $s.value }}"{{ with $s.from }} data-from="{{ . }}"{{ end }}{{ with $s.decimals }} data-decimals="{{ . }}"{{ end }}>{{ $s.display | default $s.value }}</span><span class="evc-spec-unit">{{ $s.unit }}</span>
+          <span class="evc-spec-label">{{ $s.label }}</span>
+        </dt>
+      </div>
+      {{ end }}
+    </dl>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.pipeline }}
+<section class="quko-section evc-pipeline" id="how-it-works">
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
+    </div>
+    <ol class="evc-pipe">
+      <li class="evc-pipe-line" aria-hidden="true"><span></span><span></span><span></span></li>
+      {{ range $i, $s := .steps }}
+      <li class="evc-pipe-step" data-reveal style="transition-delay: {{ mul $i 120 }}ms">
+        <span class="evc-pipe-icon"><i class="{{ $s.icon }}" aria-hidden="true"></i><span class="evc-pipe-num">0{{ add $i 1 }}</span></span>
+        <span class="evc-pipe-kicker">{{ $s.kicker }}</span>
+        <h3>{{ $s.title }}</h3>
+        <p>{{ $s.text }}</p>
+        {{ with $s.input }}<span class="evc-pipe-input"><i class="{{ $s.input_icon }}" aria-hidden="true"></i><span>{{ replace . "Almanac" $almLink | safeHTML }}</span></span>{{ end }}
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.showcase }}
+{{ $show := . }}
+<section class="quko-section evc-showcase" id="graphics">
+  <div class="evc-glow is-red" aria-hidden="true"></div>
+  <div class="evc-glow is-purple" aria-hidden="true"></div>
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
+    </div>
+    <div class="evc-gallery" data-evc-gallery data-reveal>
+      <div class="evc-groups" role="group" aria-label="{{ .rail_label }}">
+        {{ range $i, $g := .groups }}
+        <button type="button" class="evc-group{{ if eq $i 0 }} is-active{{ end }}" data-evc-group="{{ $g.key }}">{{ $g.label }}</button>
+        {{ end }}
+      </div>
+      <figure class="evc-monitor">
+        <div class="evc-screen">
+          {{ range $i, $it := .items }}
+          <img class="evc-shot{{ if eq $i 0 }} is-active{{ end }}" src="{{ printf "images/events_coverage/%s-1600.webp" $it.image | relURL }}" srcset="{{ printf "images/events_coverage/%s-800.webp" $it.image | relURL }} 800w, {{ printf "images/events_coverage/%s-1600.webp" $it.image | relURL }} 1600w" sizes="(min-width: 1220px) 1100px, 94vw" width="1600" height="900" alt="{{ $it.alt }}" loading="lazy" decoding="async" data-evc-shot>
+          {{ end }}
+          <span class="evc-screen-tag" data-evc-tag><span class="evc-onair-dot" aria-hidden="true"></span><span data-evc-tag-text>{{ (index .items 0).tag }}</span></span>
+          <button type="button" class="evc-nav is-prev" data-evc-prev aria-label="{{ .prev_label }}"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+          <button type="button" class="evc-nav is-next" data-evc-next aria-label="{{ .next_label }}"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+          <span class="evc-screen-progress" aria-hidden="true"><span data-evc-progress></span></span>
+        </div>
+        <figcaption class="evc-caption" aria-live="polite">
+          {{ range $i, $it := .items }}
+          <div class="evc-caption-item{{ if eq $i 0 }} is-active{{ end }}" data-evc-caption>
+            <span class="evc-caption-kicker">{{ range $show.groups }}{{ if eq .key $it.group }}{{ .label }}{{ end }}{{ end }} · {{ $it.tag }}</span>
+            <h3>{{ $it.title }}</h3>
+            <p>{{ $it.text }}</p>
+          </div>
+          {{ end }}
+          <span class="evc-counter" aria-hidden="true"><b data-evc-current>01</b> / {{ printf "%02d" (len .items) }}</span>
+        </figcaption>
+      </figure>
+      <div class="evc-rail" role="tablist" aria-label="{{ .rail_label }}">
+        {{ range $i, $it := .items }}
+        <button type="button" class="evc-thumb{{ if eq $i 0 }} is-active{{ end }}" role="tab" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}" data-evc-thumb data-group="{{ $it.group }}" data-tag="{{ $it.tag }}">
+          <img src="{{ printf "images/events_coverage/%s-800.webp" $it.image | relURL }}" width="800" height="450" alt="" loading="lazy" decoding="async">
+          <span>{{ $it.title }}</span>
+        </button>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.almanac }}
+<section class="quko-section quko-section-muted evc-almanac" id="almanac">
+  <div class="container">
+    <div class="evc-almanac-grid">
+      <div class="evc-almanac-copy" data-reveal>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+        <p>{{ replace .text "Almanac" $almLink | safeHTML }}</p>
+        <dl class="evc-almanac-stats">
+          {{ range .stats }}
+          <div><dt><span data-evc-count="{{ .value }}" data-group-digits>{{ lang.FormatNumberCustom 0 .value "- , ." }}</span>{{ .suffix }}</dt><dd>{{ .label }}</dd></div>
+          {{ end }}
+        </dl>
+        <div class="quko-actions"><a class="btn-quko-outline" href="{{ .link | relLangURL }}">{{ .link_label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+      </div>
+      <div class="evc-facts" data-evc-facts data-reveal>
+        <div class="evc-facts-head">
+          <span class="evc-facts-badge"><i class="fas fa-database" aria-hidden="true"></i>{{ .card_title }}</span>
+          <span class="evc-facts-race">{{ .card_race }}</span>
+        </div>
+        <ol class="evc-facts-list">
+          {{ range $i, $f := .facts }}
+          <li class="evc-fact{{ if eq $i 0 }} is-active{{ end }}">
+            <span class="evc-fact-lane">{{ $f.lane }}</span>
+            <span class="evc-fact-body"><span class="evc-fact-kind">{{ $f.kind }}</span><strong>{{ $f.name }}</strong><span class="evc-fact-text">{{ $f.text }}</span></span>
+          </li>
+          {{ end }}
+        </ol>
+        <small class="evc-facts-note">{{ .sample_note }}</small>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.director }}
+<section class="quko-section evc-director" id="ai-director">
+  <div class="evc-glow is-red" aria-hidden="true"></div>
+  <div class="container">
+    <div class="evc-director-grid">
+      <div class="evc-director-copy" data-reveal>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+        <p class="evc-lead">{{ .text }}</p>
+        <ul class="evc-points">
+          {{ range .points }}
+          <li><span class="evc-point-icon"><i class="{{ .icon }}" aria-hidden="true"></i></span><div><h3>{{ .title }}</h3><p>{{ .text }}</p></div></li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ with .console }}
+      <div class="evc-console" data-evc-console data-reveal>
+        <div class="evc-console-head">
+          <span class="evc-console-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="evc-console-title">{{ .title }}</span>
+        </div>
+        <div class="evc-console-bar">
+          <span class="evc-mode" aria-hidden="true"><span class="is-auto is-on" data-evc-auto>{{ .auto_label }}</span><span class="is-manual" data-evc-manual>{{ .manual_label }}</span></span>
+          <span class="evc-console-shot" aria-hidden="true">{{ .shot_label }} · <b data-evc-shot-label>{{ (index .lines 0).shot }}</b></span>
+        </div>
+        <ol class="evc-log">
+          {{ range .lines }}
+          <li class="evc-log-line{{ if .operator }} is-operator{{ end }}" data-shot="{{ .shot }}">
+            <time>{{ .time }}</time>
+            <span class="evc-log-cue">{{ .cue }}</span>
+            <span class="evc-log-action"><i class="fas fa-arrow-right" aria-hidden="true"></i> <span data-evc-type>{{ .action }}</span></span>
+          </li>
+          {{ end }}
+        </ol>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.workflow }}
+<section class="quko-section evc-workflow" id="workflow">
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+    </div>
+    <ol class="evc-flow">
+      {{ range $i, $s := .steps }}
+      <li class="evc-flow-step" data-reveal style="transition-delay: {{ mul $i 120 }}ms">
+        <span class="evc-flow-num">0{{ add $i 1 }}</span>
+        <span class="evc-flow-kicker">{{ $s.kicker }}</span>
+        <h3>{{ $s.title }}</h3>
+        <ul>{{ range $s.items }}<li><i class="fas fa-check" aria-hidden="true"></i><span>{{ replace . "Almanac" $almLink | safeHTML }}</span></li>{{ end }}</ul>
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+{{ end }}
+
+{{ partial "marketing-cta.html" . }}
+
+{{ with $p.hero }}
+{{/* The film with sound. preload="none" keeps it off the network until it is
+     opened; by then the hero has usually cached the same file. */}}
+<dialog class="evc-player" data-evc-player aria-label="{{ $p.player.title }}">
+  <div class="evc-player-inner">
+    <button type="button" class="evc-player-close" data-evc-close aria-label="{{ $p.player.close_label }}"><i class="fas fa-times" aria-hidden="true"></i></button>
+    <video controls playsinline preload="none" poster="{{ .poster | relURL }}" data-evc-player-video>
+      <source src="{{ .video_hd | relURL }}" type="video/mp4" media="(min-width: 1200px)">
+      <source src="{{ .video | relURL }}" type="video/mp4" media="(min-width: 768px)">
+      <source src="{{ .video_mobile | relURL }}" type="video/mp4">
+    </video>
+  </div>
+</dialog>
+{{ end }}
+
+</div>
+{{ $script := resources.Get "js/events-coverage.js" | minify | fingerprint }}
+<script src="{{ $script.RelPermalink }}" defer></script>
+{{ end }}
