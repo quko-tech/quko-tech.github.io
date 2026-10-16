@@ -36,13 +36,13 @@ weight = 4
   parent = "media"
   name = "Almanac"
   url = "almanac/"
-  weight = 1
+  weight = 2
 
   [[main]]
   parent = "media"
   name = "Cobertura de eventos"
   url = "events_coverage/"
-  weight = 2
+  weight = 1
 
 [[main]]
 name = "Más"
