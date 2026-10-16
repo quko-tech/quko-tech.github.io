@@ -5192,9 +5192,12 @@ a {
   transform: translateX(6px);
 }
 
-/* Pointing at an athlete pulls their row out and brings up their fact. */
-.alm-lanes li:hover,
-.alm-lanes li:focus-visible {
+/* Pointing at an athlete pulls their row out. With the script running the
+   pointed-at row is lit like any other (almanac.js), so only one row is ever
+   highlighted; a hover style of its own would stick on touch screens and
+   show a second one. */
+.alm-briefing:not(.is-enhanced) .alm-lanes li:hover,
+.alm-briefing:not(.is-enhanced) .alm-lanes li:focus-visible {
   border-color: rgba(255, 255, 255, .35);
   background: rgba(255, 255, 255, .12);
   box-shadow: 0 10px 24px rgba(0, 0, 0, .3);
@@ -5220,8 +5223,8 @@ a {
   background: rgba(232, 56, 63, .3);
 }
 
-.alm-lanes li:hover .alm-lane-n,
-.alm-lanes li:focus-visible .alm-lane-n {
+.alm-briefing:not(.is-enhanced) .alm-lanes li:hover .alm-lane-n,
+.alm-briefing:not(.is-enhanced) .alm-lanes li:focus-visible .alm-lane-n {
   background: var(--quko-red);
 }
 
@@ -6456,7 +6459,8 @@ a {
 /* Cover. A compact headline band, then the film on its own broadcast screen
    with nothing drawn over the picture. On phones the screen runs edge to
    edge under the headline. From tablets up it is a framed monitor
-   that switches on as the page opens, with light running round its rim. */
+   whose glow builds up behind it as the page opens, with light running
+   round its rim. */
 .evc-hero {
   position: relative;
   overflow: hidden;
@@ -6622,11 +6626,16 @@ a {
   background: #000;
 }
 
+/* The film carries a 2px black strip down its left edge; a 1.2% zoom inside
+   the clipped screen trims it (and any edge flicker) without visibly
+   cropping the graphics. Full screen resets transforms, so it is untouched
+   there. */
 .evc-hero-video {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.012);
 }
 
 .evc-tv-bar {
@@ -6786,21 +6795,28 @@ a {
     margin: 44px 0 0;
   }
 
+  /* Hidden until the film starts playing (events-coverage.js adds is-lit),
+     then the red and purple light swells out from behind the screen and
+     settles into a halo, as if the screen lit the page. */
   .evc-ambient {
     position: absolute;
-    top: 6%;
-    right: 3%;
-    bottom: 4%;
-    left: 3%;
+    top: -6%;
+    right: -8%;
+    bottom: -12%;
+    left: -8%;
     z-index: 0;
     display: block;
-    width: 94%;
-    height: 90%;
-    border-radius: 40px;
-    background: radial-gradient(circle at 30% 40%, rgba(232, 56, 63, .5), transparent 60%), radial-gradient(circle at 75% 60%, rgba(155, 77, 202, .45), transparent 60%);
-    opacity: .6;
-    filter: blur(64px) saturate(1.5);
-    transform: scale(1.06);
+    border-radius: 80px;
+    background: radial-gradient(circle at 28% 45%, rgba(232, 56, 63, .75), transparent 62%), radial-gradient(circle at 76% 55%, rgba(155, 77, 202, .7), transparent 62%);
+    opacity: 0;
+    filter: blur(90px) saturate(1.7);
+    transform: scale(.6);
+  }
+
+  .evc-stage.is-lit .evc-ambient {
+    opacity: .75;
+    transform: scale(1);
+    animation: evc-glow-in 2.4s cubic-bezier(.2, .7, .2, 1) both;
   }
 
   /* The frame is a 1.5px rim of light: a slowly orbiting red, gold and
@@ -6839,11 +6855,8 @@ a {
     background: linear-gradient(180deg, #241a2b, #0c0a11);
   }
 
-  /* Switches on once, like a monitor: a bright line that opens into the
-     picture. */
   .evc-tv-screen {
     border-radius: 11px;
-    animation: evc-power 1.1s cubic-bezier(.7, 0, .2, 1) .35s both;
   }
 
   .evc-tv-bar {
@@ -8188,10 +8201,10 @@ html.evc-player-open {
   to { left: 100%; }
 }
 
-@keyframes evc-power {
-  0% { clip-path: inset(50% 50% 50% 50%); filter: brightness(3); }
-  35% { clip-path: inset(49.6% 0 49.6% 0); filter: brightness(3); }
-  100% { clip-path: inset(0 0 0 0); filter: brightness(1); }
+@keyframes evc-glow-in {
+  0% { opacity: 0; transform: scale(.6); }
+  55% { opacity: 1; transform: scale(1.12); }
+  100% { opacity: .75; transform: scale(1); }
 }
 
 @keyframes evc-orbit {
@@ -8219,7 +8232,7 @@ html.evc-player-open {
   .evc-accent,
   .evc-onair-dot,
   .evc-tv-ring:before,
-  .evc-tv-screen {
+  .evc-stage.is-lit .evc-ambient {
     animation: none !important;
   }
 

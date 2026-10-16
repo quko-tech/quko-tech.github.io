@@ -61,9 +61,11 @@
       return (fact.getAttribute('data-lanes') || '').split(' ');
     }
 
+    // Exactly one athlete is lit at a time: the first lane a fact names.
     function light(lit) {
+      var id = lit[0];
       lanes.forEach(function (lane) {
-        lane.classList.toggle('is-lit', lit.indexOf(lane.getAttribute('data-lane')) !== -1);
+        lane.classList.toggle('is-lit', lane.getAttribute('data-lane') === id);
       });
     }
 
@@ -124,6 +126,7 @@
         lane.addEventListener('mouseleave', function () {
           if (hovered === lane) hovered = null;
           if (focused) point(focused);
+          else light(lanesOf(facts[current]));
           elapsed = 0;
         });
         // Only keyboard focus holds the briefing; a mouse click focuses the

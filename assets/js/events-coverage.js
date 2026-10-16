@@ -1,4 +1,4 @@
-// Events Coverage page: the cover film and its glow, count-ups, the graphics gallery, the AI
+// Events Coverage page: the cover film, count-ups, the graphics gallery, the AI
 // director's decision log, the Almanac facts card and the sound player. Every
 // piece starts from server-rendered, readable markup and only adds motion.
 (function () {
@@ -53,6 +53,28 @@
     watchVisibility(heroVideo, function (visible) { heroVisible = visible; syncHero(); });
   }
 
+  // ── Screen glow ────────────────────────────────────────────────────────────
+  // The light behind the screen swells up the moment the film starts playing,
+  // so the eye catches it. Without playback (data saver, reduced motion) it
+  // simply appears.
+  var stage = document.querySelector('[data-evc-stage]');
+  if (stage) {
+    var lit = false;
+    var light = function () {
+      if (lit) return;
+      lit = true;
+      stage.classList.add('is-lit');
+    };
+    if (!heroVideo || reduceMotion || saveData) {
+      light();
+    } else {
+      if (!heroVideo.paused && heroVideo.readyState >= 3) setTimeout(light, 300);
+      heroVideo.addEventListener('playing', function () { setTimeout(light, 300); });
+      // Never leave it dark if playback is blocked.
+      setTimeout(light, 4000);
+    }
+  }
+
   // ── Full screen, landscape ─────────────────────────────────────────────────
   // Takes the cover film itself full screen, with sound and controls, from
   // where it already is. Android turns to landscape on its own; iOS hands the
@@ -104,22 +126,6 @@
       document.addEventListener('webkitfullscreenchange', onChange);
       heroVideo.addEventListener('webkitendfullscreen', leaveFullscreen);
     }
-  }
-
-  // ── Ambient glow ───────────────────────────────────────────────────────────
-  // A tiny canvas behind the monitor copies the film a few times a second;
-  // CSS blurs it into a glow that changes colour with the pictures.
-  var ambient = document.querySelector('[data-evc-ambient]');
-  if (ambient && heroVideo && !reduceMotion && ambient.getContext) {
-    var ctx = ambient.getContext('2d');
-    var paint = function () {
-      if (heroVisible && !heroVideo.paused && heroVideo.readyState >= 2 &&
-          getComputedStyle(ambient).display !== 'none') {
-        try { ctx.drawImage(heroVideo, 0, 0, ambient.width, ambient.height); } catch (e) {}
-      }
-    };
-    heroVideo.addEventListener('playing', paint);
-    setInterval(paint, 160);
   }
 
   // ── Count-ups ──────────────────────────────────────────────────────────────

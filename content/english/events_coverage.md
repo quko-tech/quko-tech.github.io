@@ -168,9 +168,9 @@ almanac:
   link_label: "Explore Almanac"
   link: "almanac/"
   stats:
-    - { value: 46700, suffix: "+", label: "Athletes" }
-    - { value: 43000, suffix: "+", label: "Races" }
-    - { value: 380000, suffix: "+", label: "Ready-to-air facts" }
+    - { value: 57600, suffix: "+", label: "Athletes" }
+    - { value: 58000, suffix: "+", label: "Races" }
+    - { value: 1000000, suffix: "+", label: "Ready-to-air facts" }
   card_title: "Start-list facts"
   card_race: "K1 Women 500 m · Final A"
   sample_note: "Illustrative output · fictional athletes"

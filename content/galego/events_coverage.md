@@ -168,9 +168,9 @@ almanac:
   link_label: "Descubre Almanac"
   link: "almanac/"
   stats:
-    - { value: 46700, suffix: "+", label: "Deportistas" }
-    - { value: 43000, suffix: "+", label: "Regatas" }
-    - { value: 380000, suffix: "+", label: "Datos listos para emitir" }
+    - { value: 57600, suffix: "+", label: "Deportistas" }
+    - { value: 58000, suffix: "+", label: "Regatas" }
+    - { value: 1000000, suffix: "+", label: "Datos listos para emitir" }
   card_title: "Datos da saída"
   card_race: "K1 500 m feminino · Final A"
   sample_note: "Exemplo ilustrativo · deportistas ficticias"

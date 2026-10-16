@@ -30,22 +30,22 @@ briefing:
     - { lane: "5", nation: "NZL", name: "Mia Taylor", pb: "1:47,85" }
     - { lane: "6", nation: "CZE", name: "Eva Novak", pb: "1:48,72" }
     - { lane: "7", nation: "ITA", name: "Giulia Rossi", pb: "1:48,61" }
-  # One athlete per fact, so the highlight moves round the field; only the
-  # head-to-head lights two lanes.
+  # One athlete per fact, so the highlight moves round the field. Only one
+  # lane is ever lit, even for the head-to-head.
   facts:
     - { kind: "Defiende título", lanes: "4", text: "Lucía Martín defiende el título de 2025." }
-    - { kind: "Cara a cara", lanes: "3 7", text: "Lena Weber domina a Giulia Rossi por 4–1 en sus enfrentamientos previos." }
+    - { kind: "Cara a cara", lanes: "3", text: "Lena Weber domina a Giulia Rossi por 4–1 en sus enfrentamientos previos." }
     - { kind: "Marca personal", lanes: "5", text: "Mia Taylor tiene la segunda mejor marca personal de la carrera: 1:47,85." }
     - { kind: "Primera final", lanes: "2", text: "Ana Costa disputa su primera final en Campeonatos del Mundo." }
     - { kind: "La más joven", lanes: "6", text: "Eva Novak es la más joven de la carrera, con 23 años." }
 
 stats:
-  - { value: 46700, suffix: "+", label: "Deportistas con su trayectoria" }
-  - { value: 43000, suffix: "+", label: "Carreras, de series a finales" }
-  - { value: 960, suffix: "+", label: "Competiciones" }
-  - { value: 150, suffix: "+", label: "Países" }
+  - { value: 57600, suffix: "+", label: "Deportistas con su trayectoria" }
+  - { value: 58000, suffix: "+", label: "Carreras, de series a finales" }
+  - { value: 1250, suffix: "+", label: "Competiciones" }
+  - { value: 155, suffix: "+", label: "Países" }
   - { value: 1933, label: "Primer resultado del archivo", plain: true }
-  - { value: 380000, suffix: "+", label: "Datos precalculados" }
+  - { value: 1000000, suffix: "+", label: "Datos precalculados" }
 
 ticker:
   label: "Frases de Almanac"

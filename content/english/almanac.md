@@ -30,22 +30,22 @@ briefing:
     - { lane: "5", nation: "NZL", name: "Mia Taylor", pb: "1:47,85" }
     - { lane: "6", nation: "CZE", name: "Eva Novak", pb: "1:48,72" }
     - { lane: "7", nation: "ITA", name: "Giulia Rossi", pb: "1:48,61" }
-  # One athlete per fact, so the highlight moves round the field; only the
-  # head-to-head lights two lanes.
+  # One athlete per fact, so the highlight moves round the field. Only one
+  # lane is ever lit, even for the head-to-head.
   facts:
     - { kind: "Defending champion", lanes: "4", text: "Lucía Martín is the defending champion from 2025." }
-    - { kind: "Head to head", lanes: "3 7", text: "Lena Weber leads Giulia Rossi 4–1 in their previous meetings." }
+    - { kind: "Head to head", lanes: "3", text: "Lena Weber leads Giulia Rossi 4–1 in their previous meetings." }
     - { kind: "Personal best", lanes: "5", text: "Mia Taylor has the second-fastest personal best in the field: 1:47,85." }
     - { kind: "First final", lanes: "2", text: "Ana Costa reaches her first World Championship final." }
     - { kind: "Youngest", lanes: "6", text: "Eva Novak is the youngest in the field, at 23." }
 
 stats:
-  - { value: 46700, suffix: "+", label: "Athletes with a career on file" }
-  - { value: 43000, suffix: "+", label: "Races, heat to final" }
-  - { value: 960, suffix: "+", label: "Competitions" }
-  - { value: 150, suffix: "+", label: "Nations" }
+  - { value: 57600, suffix: "+", label: "Athletes with a career on file" }
+  - { value: 58000, suffix: "+", label: "Races, heat to final" }
+  - { value: 1250, suffix: "+", label: "Competitions" }
+  - { value: 155, suffix: "+", label: "Nations" }
   - { value: 1933, label: "First result in the archive", plain: true }
-  - { value: 380000, suffix: "+", label: "Pre-computed facts" }
+  - { value: 1000000, suffix: "+", label: "Pre-computed facts" }
 
 ticker:
   label: "Almanac fact lines"
