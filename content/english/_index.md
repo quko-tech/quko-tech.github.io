@@ -80,6 +80,55 @@ products:
       image_alt: "Quko Cloud performance charts"
       link: "quko_cloud/"
       link_label: "Explore Quko Cloud"
+broadcast:
+  eyebrow: "Broadcasting solutions"
+  title_lines: ["Canoe sprint has never"]
+  title_accent: "looked like this on TV."
+  text: "Speed painted on the water, live gaps behind every boat and an AI director that never misses a move. Kosoku sensors put the whole race on your world feed while it is still being won."
+  primary_label: "See every graphic"
+  secondary_label: "Bring it to your event"
+  secondary_link: "contact/"
+  carousel_label: "QUKO broadcast graphics"
+  prev_label: "Previous graphic"
+  next_label: "Next graphic"
+  # Frames from the broadcasting page's gallery, in this order.
+  slides: ["lane-plates", "pace-change", "overhead-board", "highlights-balogh", "replay-fuksa"]
+archive:
+  eyebrow: "Paddle Results · Almanac"
+  title: "Every race since 1933."
+  title_accent: "Ask it anything."
+  text: "Ninety years of canoe and kayak results in one archive. Fans look it up for free on Paddle Results; broadcasters ask Almanac and get facts they can read on air."
+  stats:
+    - { value: 50000, suffix: "+", label: "Races" }
+    - { value: 55000, suffix: "+", label: "Athletes" }
+    - { value: 1200, suffix: "+", label: "Competitions" }
+  products:
+    - title: "Paddle Results"
+      text: "Free on the web, iPhone and Android"
+      image: "images/paddle_results/icon.webp"
+      link: "paddle_results/"
+    - title: "Almanac"
+      text: "Ready-to-air facts, by API or in your AI assistant"
+      icon: "fas fa-microphone-alt"
+      link: "almanac/"
+  chat:
+    title: "Almanac"
+    status: "Connected"
+    searching: "Searching 50,000+ races"
+    placeholder: "Ask about any race, athlete or nation…"
+    note: "Illustrative Almanac output · fictional athletes"
+    phone: "images/paddle_results/screen-athlete.webp"
+    phone_alt: "Lisa Carrington's career page in the Paddle Results app: starts, finals, medals and medal rate"
+    threads:
+      - q: "Who's the defending champion in the women's K1 500 m final?"
+        a: "Lucía Martín, in lane 4. She won the title in 2025 and leads Lena Weber 5–1 head to head."
+        chips: ["Defending champion", "Head to head 5–1"]
+      - q: "Any storylines for lane 2?"
+        a: "Ana Costa reaches her first World Championship final, with a personal best of 1:49.70."
+        chips: ["First final", "PB 1:49.70"]
+      - q: "Who's the youngest in the final?"
+        a: "Eva Novak, at 23. Her 1:48.72 personal best is the fifth-fastest in the field."
+        chips: ["Youngest", "PB 1:48.72"]
 analytics:
   eyebrow: "Your AI data analyst"
   title: "Ask your data a performance question"
@@ -95,38 +144,6 @@ analytics:
     prompt: "“Where did I lose speed in the last 250 m compared with my best 1000 m?”"
   link: "quko_cloud/"
   link_label: "Discover Quko Cloud"
-capabilities:
-  eyebrow: "Built end to end"
-  title: "Engineering across the whole data chain"
-  text: "QUKO brings hardware, communications, software and sports science into one focused team."
-  items:
-    - title: "Sensor systems"
-      text: "Custom electronics and embedded processing built for demanding environments."
-      icon: "fas fa-microchip"
-    - title: "Live telemetry"
-      text: "Reliable wireless data for immediate feedback where training happens."
-      icon: "fas fa-satellite-dish"
-    - title: "Cloud software"
-      text: "Secure workflows for processing, exploring and sharing complex sessions."
-      icon: "fas fa-cloud"
-    - title: "Applied intelligence"
-      text: "A sport-specific AI data analyst and secure connections to the tools you already use."
-      icon: "fas fa-brain"
-  link: "service/"
-  link_label: "Explore our technology"
-research:
-  eyebrow: "For universities and research teams"
-  title: "Bring QUKO into your next study"
-  text: "Kosoku hardware, stroke-by-stroke exports and an OAuth REST API, with our engineers helping you set up the study, the data access and the integrations."
-  link: "contact/"
-  link_label: "Talk to our research team"
-integrations:
-  title: "Bring QUKO data into the tools you already use"
-  groups:
-    - label: "Connects with"
-      items: ["Garmin", "Suunto", "Polar", "Strava", "Claude", "ChatGPT"]
-    - label: "Exports to"
-      items: ["PDF", "XLSX", "JSON", "FIT", "TCX"]
 pricing:
   enable: true
   eyebrow: "Quko Cloud plans"

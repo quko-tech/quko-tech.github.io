@@ -13,6 +13,15 @@
   <div class="quko-copy" data-reveal>{{ range .paragraphs }}<p>{{ . }}</p>{{ end }}</div>
 </div></div></section>
 {{ end }}
+{{ with .Params.capabilities }}
+<section class="quko-section quko-section-muted"><div class="container">
+  <div class="quko-section-head" data-reveal>
+    <div class="quko-section-title"><span class="quko-eyebrow">{{ .eyebrow }}</span><h2>{{ .title }}</h2><p>{{ .text }}</p></div>
+    <a class="quko-card-link" href="{{ .link | relLangURL }}">{{ .link_label }} <span aria-hidden="true">&rarr;</span></a>
+  </div>
+  <ul class="quko-feature-list is-4" data-reveal>{{ range .items }}<li><span class="quko-icon"><i class="{{ .icon }}" aria-hidden="true"></i></span><div><h3>{{ .title }}</h3><p>{{ .text }}</p></div></li>{{ end }}</ul>
+</div></section>
+{{ end }}
 {{ partial "medal-breakdown.html" . }}
 {{ with .Params.principles }}
 <section class="quko-section quko-section-muted"><div class="container">

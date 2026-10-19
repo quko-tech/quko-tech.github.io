@@ -1,0 +1,270 @@
+{{/*
+  Paddle Results: QUKO's public canoe and kayak results archive, on the web
+  and as iPhone and Android apps. Every string comes from the page's front
+  matter so the three languages share this one template. The cover's phone,
+  the web tabs and the scrolling tour are progressive enhancements: without
+  JavaScript (or with reduced motion) each renders as static, readable
+  content.
+
+  The page wears the app's own colours (its red, warm ink and paper) rather
+  than the site's: cover, the web app, the tour, the archive on every screen,
+  the principles, then the download band. The web app leads every call to
+  action; the stores follow.
+*/}}
+{{ define "main" }}
+{{ $p := .Params }}
+<div class="pr">
+
+{{ with $p.hero }}
+<section class="pr-hero">
+  <div class="pr-hero-bg" aria-hidden="true">
+    <span class="pr-glow is-red"></span>
+    <span class="pr-glow is-coral"></span>
+    <span class="pr-waves"><span class="pr-wave is-back"></span><span class="pr-wave is-mid"></span><span class="pr-wave is-front"></span></span>
+  </div>
+  <div class="container">
+    <div class="pr-hero-grid">
+      <div class="pr-hero-copy" data-reveal>
+        <div class="pr-brand">
+          <img src="{{ "images/paddle_results/icon.webp" | relURL }}" alt="" width="64" height="64">
+          <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        </div>
+        <h1>{{ range .title_lines }}<span>{{ . }}</span>{{ end }}<span class="pr-accent">{{ .title_accent }}</span></h1>
+        <p>{{ .text }}</p>
+        {{ partial "paddle-results-cta.html" (dict "apps" $p.apps) }}
+        <small class="pr-note"><i class="fas fa-check-circle" aria-hidden="true"></i>{{ .note }}</small>
+      </div>
+
+      {{/* The web app in a browser, the phone app beside it cycling through
+           its screens, and a label under each. */}}
+      <div class="pr-hero-visual" data-reveal>
+        <div class="pr-stage">
+          <span class="pr-halo" aria-hidden="true"></span>
+          {{ with .browser }}
+          <figure class="pr-browser">
+            <div class="pr-browser-bar" aria-hidden="true">
+              <span class="pr-browser-dots"><span></span><span></span><span></span></span>
+              <span class="pr-browser-url"><i class="fas fa-lock"></i><span>{{ .url }}</span></span>
+            </div>
+            <div class="pr-browser-view">
+              <img src="{{ printf "%s-1600.webp" .image | relURL }}" srcset="{{ printf "%s-800.webp" .image | relURL }} 800w, {{ printf "%s-1600.webp" .image | relURL }} 1600w" sizes="(max-width: 767px) 90vw, 560px" alt="{{ .alt }}" width="1600" height="1000" fetchpriority="high">
+            </div>
+          </figure>
+          {{ end }}
+          <div class="pr-phone" data-pr-carousel>
+            <span class="pr-phone-notch" aria-hidden="true"></span>
+            <div class="pr-phone-screen">
+              {{ range $i, $s := $p.tour.steps }}
+              <img class="pr-screen{{ if eq $i 0 }} is-active{{ end }}" src="{{ $s.image | relURL }}" alt="{{ $s.alt }}" width="720" height="1564"{{ if ne $i 0 }} loading="lazy"{{ end }}>
+              {{ end }}
+            </div>
+          </div>
+          {{ range $i, $c := .chips }}
+          <div class="pr-chip is-{{ $i }}">
+            <span class="pr-chip-icon" aria-hidden="true"><i class="fas {{ $c.icon }}"></i></span>
+            <span><small>{{ $c.label }}</small><strong>{{ $c.value }}</strong></span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    {{ with $p.stats }}
+    <dl class="pr-stats" aria-label="{{ .label }}">
+      {{ range $i, $s := .items }}
+      <div data-reveal style="transition-delay: {{ mul $i 90 }}ms">
+        <dt><span data-pr-count="{{ $s.value }}"{{ if $s.plain }} data-plain{{ end }}>{{ if $s.plain }}{{ $s.value }}{{ else }}{{ lang.FormatNumberCustom 0 $s.value "- , ." }}{{ end }}</span>{{ $s.suffix }}</dt>
+        <dd>{{ $s.label }}</dd>
+      </div>
+      {{ end }}
+    </dl>
+    {{ end }}
+
+    {{ with $p.disciplines }}
+    <ul class="pr-disciplines" aria-label="{{ .label }}" data-reveal>
+      <li aria-hidden="true">{{ .label }}</li>
+      {{ range .items }}<li>{{ . }}</li>{{ end }}
+    </ul>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.web }}
+<section class="quko-section pr-web" data-pr-web>
+  <div class="container">
+    <div class="pr-web-head" data-reveal>
+      <div>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+      </div>
+      <div>
+        <p>{{ .text }}</p>
+        <a class="btn-quko" href="{{ $p.apps.web }}" target="_blank" rel="noopener">{{ .link_label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+
+    <div class="pr-web-tabs" role="tablist" aria-label="{{ .tabs_label }}" data-reveal>
+      {{ range $i, $t := .tabs }}
+      <button type="button" role="tab" id="pr-webtab-{{ $i }}" aria-controls="pr-webview" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}"{{ if ne $i 0 }} tabindex="-1"{{ end }} data-pr-tab="{{ $i }}" data-address="{{ $t.url }}">{{ $t.label }}</button>
+      {{ end }}
+    </div>
+
+    <div class="pr-web-window" data-reveal>
+      <div class="pr-browser">
+        <div class="pr-browser-bar" aria-hidden="true">
+          <span class="pr-browser-dots"><span></span><span></span><span></span></span>
+          <span class="pr-browser-url"><i class="fas fa-lock"></i><span data-pr-url>{{ (index .tabs 0).url }}</span></span>
+        </div>
+        <div class="pr-browser-view" id="pr-webview" role="tabpanel" aria-labelledby="pr-webtab-0">
+          {{ range $i, $t := .tabs }}
+          <img class="pr-webshot{{ if eq $i 0 }} is-active{{ end }}" data-pr-webshot="{{ $i }}" src="{{ printf "%s-1600.webp" $t.image | relURL }}" srcset="{{ printf "%s-800.webp" $t.image | relURL }} 800w, {{ printf "%s-1600.webp" $t.image | relURL }} 1600w" sizes="(max-width: 1120px) 94vw, 1080px" alt="{{ $t.alt }}" width="1600" height="1000" loading="lazy">
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    <ul class="pr-web-points">
+      {{ range $i, $f := .points }}
+      <li data-reveal style="transition-delay: {{ mul $i 90 }}ms">
+        <span aria-hidden="true"><i class="fas {{ $f.icon }}"></i></span>
+        <h3>{{ $f.title }}</h3>
+        <p>{{ $f.text }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.tour }}
+<section class="quko-section pr-tour" data-pr-tour>
+  <div class="container">
+    <div class="quko-section-title" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
+    </div>
+    <div class="pr-tour-grid">
+      {{/* Desktop: one phone stays in view and follows the step being read.
+           Phones and tablets get each step's screen inline instead. */}}
+      <div class="pr-tour-aside" aria-hidden="true">
+        <div class="pr-tour-sticky">
+          <div class="pr-phone">
+            <span class="pr-phone-notch"></span>
+            <div class="pr-phone-screen">
+              {{ range $i, $s := .steps }}<img class="pr-screen{{ if eq $i 0 }} is-active{{ end }}" data-pr-shot="{{ $i }}" src="{{ $s.image | relURL }}" alt="" width="720" height="1564" loading="lazy">{{ end }}
+            </div>
+          </div>
+          <div class="pr-tour-meter">
+            <span class="pr-tour-count"><b data-pr-current>01</b> / {{ printf "%02d" (len .steps) }}</span>
+            <span class="pr-tour-bar"><span data-pr-progress></span></span>
+          </div>
+        </div>
+      </div>
+      <ol class="pr-steps">
+        {{ range $i, $s := .steps }}
+        <li class="pr-step{{ if eq $i 0 }} is-active{{ end }}" data-pr-step="{{ $i }}" data-reveal>
+          <div class="pr-step-card">
+            <span class="pr-step-head">
+              <span class="pr-step-icon" aria-hidden="true"><i class="fas {{ $s.icon }}"></i></span>
+              <span class="pr-step-kicker">{{ printf "%02d" (add $i 1) }} · {{ $s.kicker }}</span>
+            </span>
+            <h3>{{ $s.title }}</h3>
+            <p>{{ $s.text }}</p>
+            <ul class="pr-step-points">{{ range $s.points }}<li><i class="fas fa-check" aria-hidden="true"></i>{{ . }}</li>{{ end }}</ul>
+            <figure class="pr-step-shot"><img src="{{ $s.image | relURL }}" alt="{{ $s.alt }}" width="720" height="1564" loading="lazy"></figure>
+          </div>
+        </li>
+        {{ end }}
+      </ol>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.screens }}
+{{/* The archive on tablet and phone. Moved here from the Almanac page; it
+     keeps Almanac's .alm-screens styles. */}}
+<section class="quko-section alm-screens pr-screens">
+  <div class="container">
+    <div class="alm-screens-head" data-reveal>
+      <div>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }}</h2>
+      </div>
+      <div>
+        <p>{{ .text }}</p>
+        <div class="pr-links">
+          <a class="alm-link" href="{{ .link }}" target="_blank" rel="noopener">{{ .link_label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          {{ with .secondary_label }}<a class="alm-link" href="{{ $p.screens.secondary_link | relLangURL }}">{{ . }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>{{ end }}
+        </div>
+      </div>
+    </div>
+    <div class="alm-stage" data-reveal>
+      {{ with index .side 0 }}<figure class="alm-device alm-device-phone is-left"><img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" width="720" height="1280"></figure>{{ end }}
+      {{ with .main }}<figure class="alm-device alm-device-tablet"><img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" width="1100" height="1760"></figure>{{ end }}
+      {{ with index .side 1 }}<figure class="alm-device alm-device-phone is-right"><img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" width="720" height="1280"></figure>{{ end }}
+    </div>
+    <div class="alm-shots">
+      {{ range $i, $s := .strip }}<figure class="alm-device alm-device-tablet is-small" data-reveal style="transition-delay: {{ mul $i 90 }}ms"><img src="{{ $s.image | relURL }}" alt="{{ $s.alt }}" loading="lazy" width="1100" height="1760"></figure>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.principles }}
+<section class="quko-section pr-facts">
+  <div class="pr-facts-bg" aria-hidden="true"><span class="pr-glow is-red"></span></div>
+  <div class="container">
+    <div class="quko-section-title center" data-reveal>
+      <span class="quko-eyebrow">{{ .eyebrow }}</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
+    </div>
+    <ul class="pr-facts-grid">
+      {{ range $i, $f := .items }}
+      <li data-reveal style="transition-delay: {{ mul $i 110 }}ms">
+        <span class="pr-facts-icon" aria-hidden="true"><i class="fas {{ $f.icon }}"></i></span>
+        <h3>{{ $f.title }}</h3>
+        <p>{{ $f.text }}</p>
+      </li>
+      {{ end }}
+    </ul>
+    {{ with .privacy }}
+    <div class="pr-privacy" data-reveal>
+      <strong><i class="fas fa-lock" aria-hidden="true"></i>{{ .title }}</strong>
+      <ul>{{ range .items }}<li><i class="fas fa-check" aria-hidden="true"></i>{{ . }}</li>{{ end }}</ul>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with $p.download }}
+<section class="pr-download">
+  <div class="container">
+    <div class="pr-download-inner">
+      <div data-reveal>
+        <div class="pr-download-brand">
+          <span class="pr-ripples" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <img src="{{ "images/paddle_results/icon.webp" | relURL }}" alt="" width="56" height="56" loading="lazy">
+          <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        </div>
+        <h2>{{ .title }}</h2>
+        <p>{{ .text }}</p>
+      </div>
+      <div class="pr-download-actions" data-reveal>
+        {{ partial "paddle-results-cta.html" (dict "apps" $p.apps) }}
+        <small class="pr-download-foot">{{ .footnote }}</small>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+</div>
+
+{{ $script := resources.Get "js/paddle-results.js" | minify | fingerprint }}
+<script src="{{ $script.RelPermalink }}" defer></script>
+{{ end }}

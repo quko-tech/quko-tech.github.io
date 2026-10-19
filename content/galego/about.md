@@ -15,6 +15,25 @@ story:
   paragraphs:
     - "A medición e a análise de calidade non deberían limitarse a un laboratorio. QUKO leva esa precisión á auga con ferramentas adaptadas ao adestramento real."
     - "Combinamos telecomunicacións, física experimental, sistemas embebidos, software na nube e procesado deportivo. O resultado é un proceso conectado, non tecnoloxías illadas."
+capabilities:
+  eyebrow: "Tecnoloxía integral"
+  title: "Enxeñaría en toda a cadea de datos"
+  text: "QUKO reúne hardware, comunicacións, software e ciencia do deporte nun equipo especializado."
+  items:
+    - title: "Sistemas de sensores"
+      text: "Electrónica e procesado embebido para os contornos máis esixentes."
+      icon: "fas fa-microchip"
+    - title: "Telemetría en directo"
+      text: "Datos sen fíos fiables para obter información xusto onde se adestra."
+      icon: "fas fa-satellite-dish"
+    - title: "Software na nube"
+      text: "Procesos seguros para analizar, explorar e compartir sesións complexas."
+      icon: "fas fa-cloud"
+    - title: "Intelixencia aplicada"
+      text: "Un analista de datos con IA deportiva e conexións seguras coas túas ferramentas."
+      icon: "fas fa-brain"
+  link: "service/"
+  link_label: "Explorar a nosa tecnoloxía"
 medal_breakdown:
   eyebrow: "Resultados con sistemas QUKO"
   title: "Rendemento medido no podio"

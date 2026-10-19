@@ -123,6 +123,13 @@ sections:
         image_alt: "Gráficas de Quko Cloud de velocidad, avance por palada y frecuencia"
         link: "quko_cloud/"
         link_label: "Descubre Quko Cloud"
+  - type: "research"
+    tone: "muted"
+    eyebrow: "Para universidades y equipos de investigación"
+    title: "Incorpora Kosoku a tu próximo estudio"
+    text: "Hardware Kosoku, exportaciones palada a palada y una API REST con OAuth, con nuestros ingenieros ayudándote a montar el estudio, el acceso a los datos y las integraciones."
+    link: "contact/"
+    link_label: "Habla con nuestro equipo de investigación"
 cloud_note: "Kosoku necesita una suscripción activa a Quko Cloud para desbloquear todas las funciones de Quko Cloud."
 marketing_cta:
   eyebrow: "Conoce Kosoku"

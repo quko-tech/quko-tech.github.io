@@ -80,6 +80,55 @@ products:
       image_alt: "Gráficas de rendimiento de Quko Cloud"
       link: "quko_cloud/"
       link_label: "Descubrir Quko Cloud"
+broadcast:
+  eyebrow: "Soluciones de retransmisión"
+  title_lines: ["El piragüismo nunca"]
+  title_accent: "se había visto así en la tele."
+  text: "Velocidades pintadas sobre el agua, diferencias en directo detrás de cada embarcación y un director con IA que no se pierde nada. Los sensores Kosoku llevan toda la regata a la señal internacional mientras todavía se está ganando."
+  primary_label: "Ver todos los gráficos"
+  secondary_label: "Llévalo a tu evento"
+  secondary_link: "contact/"
+  carousel_label: "Gráficos de QUKO para televisión"
+  prev_label: "Gráfico anterior"
+  next_label: "Gráfico siguiente"
+  # Imágenes de la galería de la página de retransmisión, en este orden.
+  slides: ["lane-plates", "pace-change", "overhead-board", "highlights-balogh", "replay-fuksa"]
+archive:
+  eyebrow: "Paddle Results · Almanac"
+  title: "Todas las regatas desde 1933."
+  title_accent: "Pregúntale lo que quieras."
+  text: "Noventa años de resultados de piragüismo en un solo archivo. Los aficionados los consultan gratis en Paddle Results; las televisiones preguntan a Almanac y reciben datos listos para contar en directo."
+  stats:
+    - { value: 50000, suffix: "+", label: "Regatas" }
+    - { value: 55000, suffix: "+", label: "Deportistas" }
+    - { value: 1200, suffix: "+", label: "Competiciones" }
+  products:
+    - title: "Paddle Results"
+      text: "Gratis en la web, iPhone y Android"
+      image: "images/paddle_results/icon.webp"
+      link: "paddle_results/"
+    - title: "Almanac"
+      text: "Datos listos para emitir, por API o en tu asistente de IA"
+      icon: "fas fa-microphone-alt"
+      link: "almanac/"
+  chat:
+    title: "Almanac"
+    status: "Conectado"
+    searching: "Buscando en más de 50.000 regatas"
+    placeholder: "Pregunta por cualquier carrera, deportista o país…"
+    note: "Ejemplo de salida de Almanac · deportistas ficticias"
+    phone: "images/paddle_results/screen-athlete.webp"
+    phone_alt: "Página de la trayectoria de Lisa Carrington en la app Paddle Results: salidas, finales, medallas y porcentaje de medallas"
+    threads:
+      - q: "¿Quién defiende el título en la final de K1 500 m femenino?"
+        a: "Lucía Martín, en la calle 4. Ganó el título en 2025 y supera a Lena Weber 5–1 en sus enfrentamientos directos."
+        chips: ["Campeona defensora", "Cara a cara 5–1"]
+      - q: "¿Alguna historia para la calle 2?"
+        a: "Ana Costa disputa su primera final de un Mundial, con una mejor marca personal de 1:49,70."
+        chips: ["Primera final", "MMP 1:49,70"]
+      - q: "¿Quién es la más joven de la final?"
+        a: "Eva Novak, con 23 años. Su mejor marca personal, 1:48,72, es la quinta más rápida de la final."
+        chips: ["La más joven", "MMP 1:48,72"]
 analytics:
   eyebrow: "Tu analista de datos con IA"
   title: "Pregunta a tus datos sobre rendimiento"
@@ -95,38 +144,6 @@ analytics:
     prompt: "«¿Dónde perdí velocidad en los últimos 250 m comparado con mi mejor 1000?»"
   link: "quko_cloud/"
   link_label: "Descubrir Quko Cloud"
-capabilities:
-  eyebrow: "Tecnología integral"
-  title: "Ingeniería en toda la cadena de datos"
-  text: "QUKO reúne hardware, comunicaciones, software y ciencia del deporte en un equipo especializado."
-  items:
-    - title: "Sistemas de sensores"
-      text: "Electrónica y procesado embebido para los entornos más exigentes."
-      icon: "fas fa-microchip"
-    - title: "Telemetría en directo"
-      text: "Datos inalámbricos fiables para obtener información justo donde se entrena."
-      icon: "fas fa-satellite-dish"
-    - title: "Software en la nube"
-      text: "Procesos seguros para analizar, explorar y compartir sesiones complejas."
-      icon: "fas fa-cloud"
-    - title: "Inteligencia aplicada"
-      text: "Un analista de datos con IA deportiva y conexiones seguras con tus herramientas."
-      icon: "fas fa-brain"
-  link: "service/"
-  link_label: "Explorar nuestra tecnología"
-research:
-  eyebrow: "Para universidades y equipos de investigación"
-  title: "Incorpora QUKO a tu próximo estudio"
-  text: "Hardware Kosoku, exportaciones palada a palada y una API REST con OAuth, con nuestros ingenieros ayudándote a montar el estudio, el acceso a los datos y las integraciones."
-  link: "contact/"
-  link_label: "Habla con nuestro equipo de investigación"
-integrations:
-  title: "Lleva tus datos a las herramientas que ya utilizas"
-  groups:
-    - label: "Se conecta con"
-      items: ["Garmin", "Suunto", "Polar", "Strava", "Claude", "ChatGPT"]
-    - label: "Exporta a"
-      items: ["PDF", "XLSX", "JSON", "FIT", "TCX"]
 pricing:
   enable: true
   eyebrow: "Planes de Quko Cloud"

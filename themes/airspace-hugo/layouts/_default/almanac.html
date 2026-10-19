@@ -215,31 +215,6 @@
 </section>
 {{ end }}
 
-{{ with $p.screens }}
-<section class="quko-section alm-screens">
-  <div class="container">
-    <div class="alm-screens-head" data-reveal>
-      <div>
-        <span class="quko-eyebrow">{{ .eyebrow }}</span>
-        <h2>{{ .title }}</h2>
-      </div>
-      <div>
-        <p>{{ .text }}</p>
-        <a class="alm-link" href="{{ .link }}" target="_blank" rel="noopener">{{ .link_label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-    </div>
-    <div class="alm-stage" data-reveal>
-      {{ with index .side 0 }}<figure class="alm-device alm-device-phone is-left"><img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" width="720" height="1280"></figure>{{ end }}
-      {{ with .main }}<figure class="alm-device alm-device-tablet"><img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" width="1100" height="1760"></figure>{{ end }}
-      {{ with index .side 1 }}<figure class="alm-device alm-device-phone is-right"><img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" width="720" height="1280"></figure>{{ end }}
-    </div>
-    <div class="alm-shots">
-      {{ range $i, $s := .strip }}<figure class="alm-device alm-device-tablet is-small" data-reveal style="transition-delay: {{ mul $i 90 }}ms"><img src="{{ $s.image | relURL }}" alt="{{ $s.alt }}" loading="lazy" width="1100" height="1760"></figure>{{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
-
 {{ with $p.languages }}
 <section class="quko-section quko-section-muted alm-languages">
   <div class="container">

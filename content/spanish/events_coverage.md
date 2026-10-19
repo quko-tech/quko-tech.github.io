@@ -1,5 +1,5 @@
 ---
-title: "Cobertura de eventos"
+title: "Soluciones de retransmisión"
 description: "Gráficos de datos en directo para retransmisiones internacionales de piragüismo de velocidad: sensores Kosoku con precisión de 0,05 s, un director con IA que decide qué mostrar y cuándo, y datos de Almanac en pantalla."
 layout: "events_coverage"
 image: "videos/web/media_broadcast_poster.jpg"
@@ -7,7 +7,7 @@ draft: false
 
 hero:
   on_air: "En directo"
-  eyebrow: "Cobertura de eventos · Datos en directo para TV"
+  eyebrow: "Soluciones de retransmisión · Datos en directo para TV"
   title_lines: ["Cada palada."]
   title_accent: "En directo."
   text: "Gráficos de datos en tiempo real para el piragüismo de velocidad internacional de máximo nivel. Sensores Kosoku en cada embarcación, un director con IA que elige la historia y gráficos en la señal internacional mientras la carrera aún se está decidiendo."
@@ -197,7 +197,7 @@ workflow:
       items: ["Historias para la repetición y resúmenes en segundos", "Datos de carrera para comentaristas, medios y redes sociales", "Análisis para equipos, deportistas y federaciones"]
 
 marketing_cta:
-  eyebrow: "Cobertura de eventos"
+  eyebrow: "Soluciones de retransmisión"
   title: "Dale a tu regata la retransmisión que merece."
   text: "Cuéntanos cómo es tu evento, tu sede y tu producción. Te enseñaremos cómo se ven los datos en directo de QUKO sobre tus imágenes."
   primary_label: "Llévalo a tu evento"

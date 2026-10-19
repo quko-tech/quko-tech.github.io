@@ -133,22 +133,6 @@ features:
     - { icon: "fa-flag", title: "Hitos por país", text: "Medalleros y “primer oro desde…” resueltos en una sola consulta." }
     - { icon: "fa-list-ol", title: "Clasificaciones", text: "Ordena por medallas, oros, títulos, finales o salidas con cualquier filtro: “más títulos continentales de K1 femenino”." }
 
-screens:
-  eyebrow: "Sobre el archivo de Paddle Results"
-  title: "93 años de regatas. Un solo archivo."
-  text: "Almanac lee del archivo que hay detrás de Paddle Results, la app pública de resultados de piragüismo de QUKO. Si está en la app, tu retransmisión puede contarlo."
-  link_label: "Abrir Paddle Results"
-  link: "https://results.quko.es/"
-  main: { image: "images/almanac/tablet-race-final.webp", alt: "Paddle Results con la final de K1 500 m femenino de los Juegos Olímpicos de París 2024, con calles, tiempos y diferencias" }
-  side:
-    - { image: "images/almanac/phone-athlete.webp", alt: "Ficha de Lisa Carrington en Paddle Results: 296 salidas, 94 finales principales, 57 oros" }
-    - { image: "images/almanac/phone-winner-times.webp", alt: "Gráfico del tiempo ganador por carrera de una prueba, de 2001 a 2026" }
-  strip:
-    - { image: "images/almanac/tablet-medal-leaders.webp", alt: "Líderes del medallero y mejor tiempo ganador por año de una prueba" }
-    - { image: "images/almanac/tablet-nation.webp", alt: "Mejor puesto y medallas por año de un país" }
-    - { image: "images/almanac/tablet-athlete.webp", alt: "Ficha de deportista con porcentaje de medallas, Juegos Olímpicos y las pruebas que disputa" }
-    - { image: "images/almanac/tablet-rankings.webp", alt: "Rankings con los que más suben y la valoración actual frente a su mejor marca" }
-
 languages:
   eyebrow: "Bilingüe desde el primer día"
   title: "Listo para leer, en inglés y en español"

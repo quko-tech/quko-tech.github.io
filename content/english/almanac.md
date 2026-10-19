@@ -133,22 +133,6 @@ features:
     - { icon: "fa-flag", title: "Nation milestones", text: "Medal tables and “first gold since…” answered in a single call." }
     - { icon: "fa-list-ol", title: "Leaderboards", text: "Rank by medals, golds, titles, finals or starts with any filter: “most continental K1 titles by women”." }
 
-screens:
-  eyebrow: "Built on the Paddle Results archive"
-  title: "93 years of racing. One archive."
-  text: "Almanac reads from the archive behind Paddle Results, QUKO’s public results app for canoe and kayak. If it’s in the app, your broadcast can say it."
-  link_label: "Open Paddle Results"
-  link: "https://results.quko.es/"
-  main: { image: "images/almanac/tablet-race-final.webp", alt: "Paddle Results showing the K1 Women 500 m final at the Paris 2024 Olympic Games, with lanes, times and gaps" }
-  side:
-    - { image: "images/almanac/phone-athlete.webp", alt: "Lisa Carrington’s athlete profile in Paddle Results: 296 starts, 94 primary finals, 57 golds" }
-    - { image: "images/almanac/phone-winner-times.webp", alt: "Winner time by race chart for an event, from 2001 to 2026" }
-  strip:
-    - { image: "images/almanac/tablet-medal-leaders.webp", alt: "Medal leaders and best winner time by year for an event" }
-    - { image: "images/almanac/tablet-nation.webp", alt: "A nation’s best finishing position and medals by year" }
-    - { image: "images/almanac/tablet-athlete.webp", alt: "Athlete profile with medal rate, Olympic Games and the events they race" }
-    - { image: "images/almanac/tablet-rankings.webp", alt: "Rankings with biggest movers and current rating against career peak" }
-
 languages:
   eyebrow: "Bilingual from day one"
   title: "Ready to read, in English and Spanish"

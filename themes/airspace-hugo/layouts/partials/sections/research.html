@@ -1,0 +1,14 @@
+{{/* The research offer: one ruled panel with a single call to action. */}}
+{{ $s := .s }}
+<section class="quko-section-sm{{ with $s.tone }} quko-section-{{ . }}{{ end }}">
+  <div class="container">
+    <div class="quko-research-panel is-first" data-reveal>
+      <div>
+        {{ with $s.eyebrow }}<span class="quko-eyebrow">{{ . }}</span>{{ end }}
+        <h3>{{ $s.title }}</h3>
+        {{ with $s.text }}<p>{{ . | markdownify }}</p>{{ end }}
+      </div>
+      <a class="btn-quko-outline" href="{{ $s.link | relLangURL }}">{{ $s.link_label }}</a>
+    </div>
+  </div>
+</section>

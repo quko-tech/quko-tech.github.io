@@ -15,6 +15,25 @@ story:
   paragraphs:
     - "High-quality measurement and analysis should not be limited to a laboratory. QUKO brings that precision to the water in tools that fit real training."
     - "Our work combines telecommunications, experimental physics, embedded systems, cloud software and sport-specific data processing. The result is one connected workflow, not a collection of isolated technologies."
+capabilities:
+  eyebrow: "Built end to end"
+  title: "Engineering across the whole data chain"
+  text: "QUKO brings hardware, communications, software and sports science into one focused team."
+  items:
+    - title: "Sensor systems"
+      text: "Custom electronics and embedded processing built for demanding environments."
+      icon: "fas fa-microchip"
+    - title: "Live telemetry"
+      text: "Reliable wireless data for immediate feedback where training happens."
+      icon: "fas fa-satellite-dish"
+    - title: "Cloud software"
+      text: "Secure workflows for processing, exploring and sharing complex sessions."
+      icon: "fas fa-cloud"
+    - title: "Applied intelligence"
+      text: "A sport-specific AI data analyst and secure connections to the tools you already use."
+      icon: "fas fa-brain"
+  link: "service/"
+  link_label: "Explore our technology"
 medal_breakdown:
   eyebrow: "Results with QUKO systems"
   title: "Performance measured at the podium"

@@ -1,9 +1,10 @@
 {{ define "main" }}
 {{/* The page reads as one argument, top to bottom: what QUKO is and the
      sensor itself, proof that it wins medals, how the three products form one
-     workflow, what the analysis gives you, who builds it, and how to start.
-     It opens dark (the Kosoku render, then the medals) and then alternates
-     mist / white so the eye always knows where one chapter ends. */}}
+     workflow, what the analysis gives you, the same data on air and in the
+     results archive, and how to start. It opens dark (the Kosoku render,
+     then the medals) and then alternates mist / white so the eye always knows
+     where one chapter ends. */}}
 {{ with .Params.hero }}
 <section class="quko-hero{{ if .video }} is-dark{{ end }}">
   <div class="container">
@@ -96,57 +97,153 @@
         </div>
       </div>
     </div>
-    {{ with $.Params.integrations }}
-    {{/* Connections and file formats are different things, so they are
-         listed as two labelled groups rather than one run of chips. */}}
-    <div class="quko-inline-band" data-reveal>
-      <h3>{{ .title }}</h3>
-      <div class="quko-chip-groups">
-        {{ range .groups }}
-        <div class="quko-chip-group">
-          <span class="quko-chip-label">{{ .label }}</span>
-          <div class="quko-chip-row">{{ range .items }}<span class="quko-chip">{{ . }}</span>{{ end }}</div>
-        </div>
-        {{ end }}
-      </div>
-    </div>
-    {{ end }}
   </div>
 </section>
 {{ end }}
 
-{{ with .Params.capabilities }}
-<section class="quko-section quko-section-muted">
+{{/* Broadcasting solutions: the copy and the numbers on the left, the
+     on-air graphics on a monitor that plays itself on the right. Frames,
+     captions and numbers are read from the broadcasting page, so its
+     translations live in one place and the home page only chooses which
+     frames to show. */}}
+{{ with .Params.broadcast }}
+{{ $bc := . }}
+{{ with site.GetPage "/events_coverage" }}
+{{ $evc := .Params }}
+{{ $link := .RelPermalink }}
+{{ $total := len $bc.slides }}
+<section class="quko-bc evc" id="broadcasting">
+  <div class="quko-bc-bg" aria-hidden="true">
+    <span class="evc-glow is-red"></span>
+    <span class="evc-glow is-purple"></span>
+    <span class="evc-hero-lanes"></span>
+  </div>
   <div class="container">
-    <div class="quko-section-head" data-reveal>
-      <div class="quko-section-title">
-        <span class="quko-eyebrow">{{ .eyebrow }}</span>
-        <h2>{{ .title }}</h2>
-        <p>{{ .text }}</p>
+    <div class="quko-bc-grid">
+      <div class="quko-bc-copy" data-reveal>
+        <span class="evc-onair"><span class="evc-onair-dot" aria-hidden="true"></span>{{ $evc.hero.on_air }}</span>
+        <span class="quko-eyebrow">{{ $bc.eyebrow }}</span>
+        <h2>{{ range $bc.title_lines }}<span>{{ . }}</span>{{ end }}<span class="evc-accent">{{ $bc.title_accent }}</span></h2>
+        <p>{{ $bc.text }}</p>
+        <div class="quko-actions">
+          <a class="btn-quko" href="{{ $link }}">{{ $bc.primary_label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="btn-quko-ghost" href="{{ $bc.secondary_link | relLangURL }}">{{ $bc.secondary_label }}</a>
+        </div>
+        {{ with $evc.specs }}
+        <dl class="quko-bc-specs" aria-label="{{ .label }}">
+          {{ range first 4 .items }}
+          <div>
+            <dt><span data-bc-count="{{ .value }}"{{ with .from }} data-from="{{ . }}"{{ end }}{{ with .decimals }} data-decimals="{{ . }}"{{ end }}>{{ .display | default .value }}</span><small>{{ .unit }}</small></dt>
+            <dd>{{ .label }}</dd>
+          </div>
+          {{ end }}
+        </dl>
+        {{ end }}
       </div>
-      <a class="quko-card-link" href="{{ .link | relLangURL }}">{{ .link_label }} <span aria-hidden="true">&rarr;</span></a>
+
+      <div class="quko-bc-stage" data-bc-carousel data-reveal>
+        <figure class="quko-bc-monitor" role="region" aria-roledescription="carousel" aria-label="{{ $bc.carousel_label }}">
+          <div class="quko-bc-screen">
+            {{ range $i, $key := $bc.slides }}{{ range first 1 (where $evc.showcase.items "image" $key) }}
+            <div class="quko-bc-slide{{ if eq $i 0 }} is-active{{ end }}" role="group" aria-roledescription="slide" aria-label="{{ add $i 1 }} / {{ $total }}" data-bc-slide>
+              <img src="{{ printf "images/events_coverage/%s-1600.webp" .image | relURL }}" srcset="{{ printf "images/events_coverage/%s-800.webp" .image | relURL }} 800w, {{ printf "images/events_coverage/%s-1600.webp" .image | relURL }} 1600w" sizes="(min-width: 992px) 760px, 100vw" width="1600" height="900" alt="{{ .alt }}" loading="lazy" decoding="async">
+            </div>
+            {{ end }}{{ end }}
+            <span class="quko-bc-sweep" aria-hidden="true"></span>
+          </div>
+          {{/* Captions and controls sit under the picture, never over the
+               on-air graphics in it. */}}
+          <figcaption class="quko-bc-panel">
+            <div class="quko-bc-captions" aria-live="polite">
+            {{ range $i, $key := $bc.slides }}{{ range first 1 (where $evc.showcase.items "image" $key) }}
+            {{ $item := . }}
+            <div class="quko-bc-caption{{ if eq $i 0 }} is-active{{ end }}" data-bc-caption>
+              <span class="quko-bc-kicker"><span class="quko-bc-live"><span class="evc-onair-dot" aria-hidden="true"></span>{{ .tag }}</span>{{ range $evc.showcase.groups }}{{ if eq .key $item.group }}{{ .label }}{{ end }}{{ end }}</span>
+              <h3>{{ .title }}</h3>
+            </div>
+            {{ end }}{{ end }}
+            </div>
+            <div class="quko-bc-controls">
+              <span class="quko-bc-count" aria-hidden="true"><b data-bc-current>01</b> / {{ printf "%02d" $total }}</span>
+              <button type="button" class="quko-bc-nav" data-bc-prev aria-label="{{ $bc.prev_label }}"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+              <button type="button" class="quko-bc-nav" data-bc-next aria-label="{{ $bc.next_label }}"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+          </figcaption>
+        </figure>
+        <div class="quko-bc-rail" role="tablist" aria-label="{{ $bc.carousel_label }}">
+          {{ range $i, $key := $bc.slides }}{{ range first 1 (where $evc.showcase.items "image" $key) }}
+          <button type="button" class="quko-bc-dot{{ if eq $i 0 }} is-active{{ end }}" role="tab" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}" aria-label="{{ .title }}" data-bc-dot><span class="quko-bc-bar"><span></span></span></button>
+          {{ end }}{{ end }}
+        </div>
+      </div>
     </div>
-    <ul class="quko-feature-list is-4" data-reveal>
-      {{ range .items }}
-      <li>
-        <span class="quko-icon"><i class="{{ .icon }}" aria-hidden="true"></i></span>
-        <div><h3>{{ .title }}</h3><p>{{ .text }}</p></div>
-      </li>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+{{/* The results archive behind Paddle Results and Almanac. The chat plays
+     its threads one after another; without JavaScript, or with reduced
+     motion, the first thread is simply shown in full. */}}
+{{ with .Params.archive }}
+{{ $ar := . }}
+<section class="quko-section quko-arch" id="archive">
+  <div class="container">
+    <div class="quko-arch-grid">
+      <div class="quko-arch-copy" data-reveal>
+        <span class="quko-eyebrow">{{ .eyebrow }}</span>
+        <h2>{{ .title }} <span class="quko-arch-accent">{{ .title_accent }}</span></h2>
+        <p>{{ .text }}</p>
+        <dl class="quko-arch-stats">
+          {{ range .stats }}
+          <div><dt><span data-bc-count="{{ .value }}" data-group-digits>{{ lang.FormatNumberCustom 0 .value "- , ." }}</span>{{ .suffix }}</dt><dd>{{ .label }}</dd></div>
+          {{ end }}
+        </dl>
+        <div class="quko-arch-products">
+          {{ range .products }}
+          <a class="quko-arch-product" href="{{ .link | relLangURL }}">
+            <span class="quko-arch-product-icon">{{ with .image }}<img src="{{ . | relURL }}" alt="" width="48" height="48">{{ else }}<i class="{{ .icon }}" aria-hidden="true"></i>{{ end }}</span>
+            <span class="quko-arch-product-copy"><strong>{{ .title }}</strong><span>{{ .text }}</span></span>
+            <i class="fas fa-arrow-right quko-arch-product-go" aria-hidden="true"></i>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+      {{ with .chat }}
+      <div class="quko-arch-stage" data-reveal>
+        <div class="quko-arch-phone"><img src="{{ .phone | relURL }}" alt="{{ .phone_alt }}" width="720" height="1564" loading="lazy" decoding="async"></div>
+        <div class="quko-arch-chat" data-arch-chat>
+          <div class="quko-arch-chat-bar">
+            <span class="quko-arch-chat-logo"><i class="fas fa-database" aria-hidden="true"></i></span>
+            <strong>{{ .title }}</strong>
+            <em><i aria-hidden="true"></i>{{ .status }}</em>
+          </div>
+          <div class="quko-arch-chat-body" aria-live="polite">
+            {{ range $i, $t := .threads }}
+            <div class="quko-arch-thread{{ if eq $i 0 }} is-active{{ end }}" data-arch-thread>
+              <p class="quko-arch-q" data-arch-q>{{ $t.q }}</p>
+              <p class="quko-arch-tool" data-arch-tool><i class="fas fa-circle-notch" aria-hidden="true"></i><i class="fas fa-check" aria-hidden="true"></i>{{ $ar.chat.searching }}</p>
+              <div class="quko-arch-a" data-arch-a>
+                <span class="quko-arch-a-logo" aria-hidden="true"><i class="fas fa-database"></i></span>
+                <div>
+                  <p data-arch-text>{{ $t.a }}</p>
+                  <div class="quko-arch-chips">{{ range $t.chips }}<span>{{ . }}</span>{{ end }}</div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+          <div class="quko-arch-input" aria-hidden="true"><span data-arch-input>{{ .placeholder }}</span><i class="fas fa-arrow-up"></i></div>
+          <small class="quko-arch-note">{{ .note }}</small>
+        </div>
+      </div>
       {{ end }}
-    </ul>
-    {{ with $.Params.research }}
-    <div class="quko-research-panel" data-reveal>
-      <div>
-        <span class="quko-eyebrow">{{ .eyebrow }}</span>
-        <h3>{{ .title }}</h3>
-        <p>{{ .text }}</p>
-      </div>
-      <a class="btn-quko-outline" href="{{ .link | relLangURL }}">{{ .link_label }}</a>
     </div>
-    {{ end }}
   </div>
 </section>
 {{ end }}
 
 {{ partial "marketing-cta.html" . }}
+{{ $script := resources.Get "js/home-media.js" | minify | fingerprint }}
+<script src="{{ $script.RelPermalink }}" defer></script>
 {{ end }}

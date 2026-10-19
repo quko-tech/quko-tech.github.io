@@ -1121,7 +1121,7 @@ a {
   color: #ff989b;
 }
 
-/* Integrations, folded into the analysis section they belong to. */
+/* Integrations: a title beside labelled groups of chips. */
 .quko-inline-band {
   display: flex;
   align-items: center;
@@ -1413,7 +1413,7 @@ a {
   font-weight: 700;
 }
 
-/* The research offer closes the "who builds this" section as one ruled row,
+/* The research offer on the Kosoku and Quko Live pages: one ruled row,
    instead of a floating card on its own gradient band. */
 .quko-research-panel {
   display: grid;
@@ -1441,6 +1441,10 @@ a {
 .quko-research-panel p {
   max-width: 720px;
   margin: 0;
+}
+
+.quko-research-panel.is-first {
+  margin-top: 0;
 }
 
 /* Closing call to action: a full-width deep band that hands straight over to
@@ -8193,6 +8197,889 @@ html.evc-player-open {
   }
 }
 
+/* Home: broadcasting solutions. The broadcasting page's night palette and
+   on-air badge: copy on the left, a monitor that plays the graphics on the
+   right. Each frame slowly pushes in, a light sweeps the glass on every
+   change and a light runs round the rim. Captions sit under the picture. */
+.quko-bc {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 96px 0;
+  background: var(--evc-plum-band);
+  color: var(--quko-white);
+}
+
+.quko-bc-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.quko-bc-bg .evc-glow.is-red {
+  top: -220px;
+  left: -260px;
+  opacity: .3;
+}
+
+.quko-bc-bg .evc-glow.is-purple {
+  top: 38%;
+  right: -260px;
+  bottom: auto;
+  opacity: .22;
+}
+
+.quko-bc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .74fr) minmax(0, 1.26fr);
+  align-items: center;
+  gap: 48px clamp(48px, 6vw, 96px);
+}
+
+/* From desktops up the monitor is centred on the copy by itself: the rail
+   hangs below it without adding to its height. On wide screens it also
+   reaches a little past the container on the right. */
+@media (min-width: 992px) {
+  .quko-bc-stage {
+    position: relative;
+  }
+
+  .quko-bc-rail {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+  }
+}
+
+@media (min-width: 1360px) {
+  .quko-bc-stage {
+    margin-right: -64px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .quko-bc-stage {
+    margin-right: -96px;
+  }
+}
+
+.quko-bc .quko-eyebrow {
+  color: var(--evc-salmon);
+}
+
+.quko-bc h2 {
+  margin: 0;
+  color: var(--quko-white);
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+}
+
+.quko-bc h2 > span {
+  display: block;
+}
+
+.quko-bc-copy p {
+  margin: 20px 0 26px;
+  color: rgba(255, 255, 255, .78);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.quko-bc-monitor {
+  position: relative;
+  margin: 0;
+  padding: 2px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .1);
+  box-shadow: 0 40px 110px -40px rgba(232, 56, 63, .55), 0 24px 70px -30px rgba(155, 77, 202, .45);
+}
+
+/* The light running round the rim: a spinning conic gradient behind the
+   screen, seen only through the 2px gap. */
+.quko-bc-monitor:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  aspect-ratio: 1;
+  background: conic-gradient(from 0deg, transparent 0 62%, var(--quko-red) 76%, #ffd0d1 82%, var(--evc-purple) 90%, transparent 100%);
+  content: "";
+  transform: translate(-50%, -50%);
+  animation: quko-bc-spin 7s linear infinite;
+}
+
+.quko-bc-screen {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+  background: var(--evc-night);
+}
+
+/* Faint scan lines, like a studio monitor. */
+.quko-bc-screen:after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, .03) 0 1px, transparent 1px 3px);
+  content: "";
+  pointer-events: none;
+}
+
+.quko-bc-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .9s ease;
+}
+
+.quko-bc-slide.is-active {
+  z-index: 1;
+  opacity: 1;
+}
+
+.quko-bc-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: var(--origin, 50% 50%);
+}
+
+.quko-bc-slide:nth-child(6n+1) { --origin: 72% 46%; }
+.quko-bc-slide:nth-child(6n+2) { --origin: 38% 55%; }
+.quko-bc-slide:nth-child(6n+3) { --origin: 60% 30%; }
+.quko-bc-slide:nth-child(6n+4) { --origin: 50% 50%; }
+.quko-bc-slide:nth-child(6n+5) { --origin: 30% 70%; }
+.quko-bc-slide:nth-child(6n+6) { --origin: 50% 75%; }
+
+.quko-bc-stage.is-playing .quko-bc-slide.is-active img {
+  animation: quko-bc-push 7s ease-out both;
+}
+
+.quko-bc-sweep {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, .2) 48%, rgba(255, 152, 155, .18) 52%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.quko-bc-screen.is-switching .quko-bc-sweep {
+  animation: quko-bc-sweep .9s ease-out;
+}
+
+.quko-bc-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 16px 14px 20px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 0 0 18px 18px;
+  background: linear-gradient(180deg, var(--evc-panel), #0f0b14);
+}
+
+.quko-bc-captions {
+  display: grid;
+}
+
+.quko-bc-caption {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .45s ease, transform .45s ease;
+  pointer-events: none;
+}
+
+.quko-bc-caption.is-active {
+  opacity: 1;
+  transform: none;
+  transition-delay: .12s;
+  pointer-events: auto;
+}
+
+.quko-bc-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, .55);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.quko-bc-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px 4px 9px;
+  background: var(--quko-red);
+  color: var(--quko-white);
+  clip-path: polygon(0 0, 100% 0, 100% 62%, calc(100% - 7px) 100%, 0 100%);
+}
+
+.quko-bc-live .evc-onair-dot {
+  width: 6px;
+  height: 6px;
+}
+
+.quko-bc-caption h3 {
+  margin: 0;
+  color: var(--quko-white);
+  font-size: 17px;
+  font-weight: 760;
+  letter-spacing: -.01em;
+  line-height: 1.3;
+}
+
+.quko-bc-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quko-bc-count {
+  margin-right: 4px;
+  color: rgba(255, 255, 255, .5);
+  font-size: 13px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.quko-bc-count b {
+  color: var(--quko-white);
+}
+
+.quko-bc-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .06);
+  color: var(--quko-white);
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.quko-bc-nav:hover,
+.quko-bc-nav:focus-visible {
+  border-color: var(--quko-red);
+  background: var(--quko-red);
+  transform: scale(1.06);
+}
+
+.quko-bc-rail {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+/* Bars only; the padding gives each a comfortable click target. */
+.quko-bc-dot {
+  display: block;
+  padding: 8px 0;
+  border: 0;
+  background: none;
+}
+
+.quko-bc-dot:hover .quko-bc-bar {
+  background: rgba(255, 255, 255, .3);
+}
+
+.quko-bc-bar {
+  display: block;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .14);
+}
+
+.quko-bc-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--quko-red), var(--evc-salmon));
+  transform: scaleX(var(--p, 0));
+  transform-origin: left;
+}
+
+.quko-bc-dot.is-done .quko-bc-bar span,
+.quko-bc-stage:not(.is-playing) .quko-bc-dot.is-active .quko-bc-bar span {
+  transform: none;
+}
+
+.quko-bc-specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 28px;
+  margin: 34px 0 0;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.quko-bc-specs dt {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--quko-white);
+  font-size: clamp(28px, 2.6vw, 36px);
+  font-weight: 850;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.04em;
+  line-height: 1;
+}
+
+.quko-bc-specs dt small {
+  color: var(--evc-salmon);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.quko-bc-specs dd {
+  margin: 6px 0 0;
+  color: rgba(255, 255, 255, .6);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* Home: the results archive. A live-feeling Almanac chat in front of the
+   Paddle Results app, beside the numbers and the two ways in. */
+.quko-arch {
+  position: relative;
+  overflow: hidden;
+}
+
+.quko-arch-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 72px;
+}
+
+.quko-arch h2 {
+  margin: 0 0 20px;
+  font-size: clamp(36px, 4.4vw, 56px);
+  font-weight: 850;
+  line-height: 1.02;
+  letter-spacing: -.045em;
+}
+
+.quko-arch-accent {
+  display: block;
+  padding-bottom: .06em;
+  background: linear-gradient(100deg, var(--quko-red) 0%, #9b4dca 40%, var(--quko-red) 60%, #9b4dca 100%);
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: evc-shine 7s ease-in-out infinite;
+}
+
+.quko-arch-copy > p {
+  max-width: 540px;
+  margin: 0;
+  color: var(--quko-muted);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.quko-arch-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 34px 0;
+  padding: 24px 0;
+  border-top: 1px solid var(--quko-line);
+  border-bottom: 1px solid var(--quko-line);
+}
+
+.quko-arch-stats dt {
+  color: var(--quko-ink);
+  font-size: clamp(26px, 2.8vw, 36px);
+  font-weight: 850;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.04em;
+  line-height: 1;
+}
+
+.quko-arch-stats dd {
+  margin: 8px 0 0;
+  color: var(--quko-muted);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.quko-arch-products {
+  display: grid;
+  gap: 12px;
+}
+
+.quko-arch-product {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px 14px 14px;
+  border: 1px solid var(--quko-line);
+  border-radius: 18px;
+  background: var(--quko-white);
+  color: inherit;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.quko-arch-product:hover,
+.quko-arch-product:focus {
+  border-color: rgba(232, 56, 63, .35);
+  box-shadow: 0 18px 48px rgba(18, 21, 28, .09);
+  color: inherit;
+  text-decoration: none;
+  transform: translateY(-3px);
+}
+
+.quko-arch-product-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--quko-red), #9b4dca);
+  color: var(--quko-white);
+  font-size: 20px;
+}
+
+.quko-arch-product-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quko-arch-product-copy strong {
+  display: block;
+  color: var(--quko-ink);
+  font-size: 17px;
+  font-weight: 760;
+}
+
+.quko-arch-product-copy span {
+  display: block;
+  color: var(--quko-muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.quko-arch-product-go {
+  color: var(--quko-red-dark);
+  transition: transform .25s ease;
+}
+
+.quko-arch-product:hover .quko-arch-product-go {
+  transform: translateX(4px);
+}
+
+/* min-width: 0 keeps the one-line chat input from widening the column. */
+.quko-arch-stage {
+  position: relative;
+  min-width: 0;
+  min-height: 640px;
+}
+
+.quko-arch-stage:before {
+  position: absolute;
+  inset: 8% -10% 0 10%;
+  z-index: 0;
+  background: radial-gradient(circle at 30% 60%, rgba(232, 56, 63, .2), transparent 55%), radial-gradient(circle at 80% 20%, rgba(155, 77, 202, .18), transparent 50%);
+  filter: blur(30px);
+  content: "";
+}
+
+.quko-arch-phone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 250px;
+  padding: 9px;
+  border-radius: 38px;
+  background: var(--quko-ink);
+  box-shadow: 0 40px 90px rgba(18, 21, 28, .25);
+  transform: rotate(6deg);
+  animation: quko-arch-float 9s ease-in-out infinite;
+}
+
+.quko-arch-phone img {
+  display: block;
+  width: 100%;
+  border-radius: 30px;
+}
+
+.quko-arch-chat {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 450px;
+  margin-top: 190px;
+  overflow: hidden;
+  border: 1px solid var(--quko-line);
+  border-radius: 22px;
+  background: var(--quko-white);
+  box-shadow: 0 34px 90px rgba(18, 21, 28, .2);
+}
+
+.quko-arch-chat-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--quko-line);
+  background: var(--quko-mist);
+}
+
+.quko-arch-chat-logo,
+.quko-arch-a-logo {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--quko-red), #9b4dca);
+  color: var(--quko-white);
+  font-size: 13px;
+}
+
+.quko-arch-chat-bar strong {
+  color: var(--quko-ink);
+  font-size: 15px;
+  font-weight: 760;
+}
+
+.quko-arch-chat-bar em {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+  color: var(--quko-muted);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.quko-arch-chat-bar em i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22a35a;
+  box-shadow: 0 0 0 4px rgba(34, 163, 90, .16);
+  animation: evc-pulse 1.8s ease-in-out infinite;
+}
+
+.quko-arch-chat-body {
+  display: grid;
+  min-height: 300px;
+  padding: 22px 18px 18px;
+}
+
+.quko-arch-thread {
+  display: flex;
+  grid-area: 1 / 1;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+.quko-arch-thread.is-active {
+  opacity: 1;
+}
+
+.quko-arch-thread.is-leaving {
+  opacity: 0;
+}
+
+.quko-arch-q {
+  align-self: flex-end;
+  max-width: 86%;
+  margin: 0;
+  padding: 11px 15px;
+  border-radius: 18px 18px 4px 18px;
+  background: var(--quko-ink);
+  color: var(--quko-white);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+
+.quko-arch-tool {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 12px;
+  border: 1px solid var(--quko-line);
+  border-radius: 999px;
+  background: var(--quko-mist);
+  color: var(--quko-muted);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.quko-arch-tool .fa-circle-notch {
+  display: none;
+  color: var(--quko-red);
+  animation: quko-bc-spin-icon 1s linear infinite;
+}
+
+.quko-arch-tool .fa-check {
+  color: #22a35a;
+}
+
+.quko-arch-chat.is-enhanced .quko-arch-tool:not(.is-done) .fa-circle-notch {
+  display: inline-block;
+}
+
+.quko-arch-chat.is-enhanced .quko-arch-tool:not(.is-done) .fa-check {
+  display: none;
+}
+
+.quko-arch-a {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.quko-arch-a p {
+  margin: 3px 0 0;
+  color: var(--quko-ink);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.quko-arch-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.quko-arch-chips span {
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(232, 56, 63, .1);
+  color: var(--quko-red-dark);
+  font-size: 12px;
+  font-weight: 760;
+}
+
+/* Played step by step once the script takes over. */
+.quko-arch-chat.is-enhanced .quko-arch-q,
+.quko-arch-chat.is-enhanced .quko-arch-tool,
+.quko-arch-chat.is-enhanced .quko-arch-a {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+.quko-arch-chat.is-enhanced .is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.quko-arch-chat.is-enhanced .quko-arch-chips span {
+  opacity: 0;
+  transform: scale(.8);
+  transition: opacity .3s ease, transform .3s cubic-bezier(.3, 1.6, .5, 1);
+}
+
+.quko-arch-chat.is-enhanced .quko-arch-chips span.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.quko-arch-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 18px 10px;
+  padding: 9px 9px 9px 16px;
+  border: 1px solid var(--quko-line);
+  border-radius: 14px;
+  color: var(--quko-muted);
+  font-size: 14px;
+}
+
+.quko-arch-input span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* While typing, the newest characters stay in view, as in a real input:
+   end-aligned flex content overflows off the start instead of the end. */
+.quko-arch-input .is-typing {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--quko-ink);
+}
+
+.quko-arch-input .is-typing:after {
+  margin-left: 1px;
+  color: var(--quko-red);
+  content: "|";
+  animation: evc-caret 1s steps(1) infinite;
+}
+
+.quko-arch-input i {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: var(--quko-ink);
+  color: var(--quko-white);
+  font-size: 13px;
+}
+
+.quko-arch-note {
+  display: block;
+  padding: 0 18px 14px;
+  color: var(--quko-muted);
+  font-size: 11.5px;
+}
+
+@keyframes quko-bc-spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes quko-bc-spin-icon {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes quko-bc-push {
+  from { transform: scale(1); }
+  to { transform: scale(1.07); }
+}
+
+@keyframes quko-bc-sweep {
+  0% { opacity: 1; transform: translateX(-100%); }
+  100% { opacity: 1; transform: translateX(100%); }
+}
+
+@keyframes quko-arch-float {
+  0%, 100% { transform: rotate(6deg) translateY(0); }
+  50% { transform: rotate(4deg) translateY(-14px); }
+}
+
+@media (max-width: 991px) {
+  .quko-bc {
+    padding: 72px 0;
+  }
+
+  .quko-bc-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 44px;
+  }
+
+  .quko-bc-specs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .quko-arch-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+
+  .quko-arch-stage {
+    min-height: 0;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .quko-bc-monitor {
+    border-radius: 16px;
+  }
+
+  .quko-bc-screen {
+    border-radius: 14px 14px 0 0;
+  }
+
+  .quko-bc-panel {
+    padding: 12px 12px 12px 16px;
+    border-radius: 0 0 14px 14px;
+  }
+
+  .quko-bc-count {
+    display: none;
+  }
+
+  .quko-bc-specs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quko-arch-phone {
+    top: -10px;
+    right: -6px;
+    width: 160px;
+    padding: 6px;
+    border-radius: 26px;
+  }
+
+  .quko-arch-phone img {
+    border-radius: 21px;
+  }
+
+  .quko-arch-chat {
+    width: calc(100% - 24px);
+    margin-top: 120px;
+  }
+
+  .quko-arch-stats {
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quko-bc-monitor:before,
+  .quko-bc-slide img,
+  .quko-bc-sweep,
+  .quko-arch-accent,
+  .quko-arch-phone,
+  .quko-arch-chat-bar em i {
+    animation: none !important;
+  }
+}
+
 @keyframes evc-ring {
   from { opacity: .9; transform: scale(1); }
   to { opacity: 0; transform: scale(1.35, 1.6); }
@@ -8266,6 +9153,1623 @@ html.evc-player-open {
   }
 
   .evc-spec:before {
+    transform: none;
+  }
+}
+
+/* ── Paddle Results ─────────────────────────────────────────────────────────
+   The results app's own page, in the app's own colours: its brighter red,
+   warm ink and paper instead of the site's navy. The web app leads (browser
+   first, phone alongside) and water rolls along the foot of the cover. Motion is decoration only: the reduced-motion block
+   at the end and the global one above leave a still, complete page. */
+.pr {
+  --pr-red: #ff4236;
+  --pr-red-mid: #e12e23;
+  --pr-red-dark: #c9231b;
+  --pr-salmon: #ff9a8f;
+  --pr-ink: #171715;
+  --pr-ink-2: #45423f;
+  --pr-paper: #f6f3ef;
+  --pr-surface: #fffdf9;
+  --pr-line: #ded8d1;
+  --pr-muted: #76716c;
+  --pr-mint: #8ee8bd;
+  /* Shared pieces (eyebrows, links, buttons, the moved screens section) pick
+     up the app's red through the site variables. */
+  --quko-red: #ff4236;
+  --quko-red-dark: #c9231b;
+}
+
+/* Cover */
+.pr-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 72px 0 80px;
+  background: radial-gradient(ellipse at 72% 0%, #34150f 0%, transparent 62%), var(--pr-ink);
+  color: var(--quko-white);
+}
+
+.pr-hero-bg,
+.pr-facts-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.pr-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.pr-hero .pr-glow.is-red {
+  top: -22%;
+  right: -6%;
+  width: 720px;
+  height: 720px;
+  background: radial-gradient(circle, rgba(255, 66, 54, .42), transparent 65%);
+  animation: pr-drift-a 20s ease-in-out infinite alternate;
+}
+
+.pr-hero .pr-glow.is-coral {
+  bottom: -34%;
+  left: -12%;
+  width: 680px;
+  height: 680px;
+  background: radial-gradient(circle, rgba(255, 154, 143, .16), transparent 65%);
+  animation: pr-drift-b 26s ease-in-out infinite alternate;
+}
+
+/* Water rolling along the foot of the cover: three swells at different
+   speeds, the middle one against the others. Each layer is twice the cover's
+   width with the wave tiled across it, so sliding it by half loops without a
+   seam. */
+.pr-waves {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 42%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to top, #000 35%, transparent);
+  mask-image: linear-gradient(to top, #000 35%, transparent);
+}
+
+.pr-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 50% 100%;
+  animation: pr-wave 30s linear infinite;
+}
+
+.pr-wave.is-back {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath d='M0 160 C 240 100 480 100 720 160 S 1200 220 1440 160 V320 H0Z' fill='rgba(255,66,54,0.07)'/%3E%3Cpath d='M0 160 C 240 100 480 100 720 160 S 1200 220 1440 160' fill='none' stroke='rgba(255,154,143,0.22)' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+}
+
+.pr-wave.is-mid {
+  height: 80%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath d='M0 200 C 120 150 240 150 360 200 S 600 250 720 200 S 960 150 1080 200 S 1320 250 1440 200 V320 H0Z' fill='rgba(255,154,143,0.06)'/%3E%3Cpath d='M0 200 C 120 150 240 150 360 200 S 600 250 720 200 S 960 150 1080 200 S 1320 250 1440 200' fill='none' stroke='rgba(255,255,255,0.10)' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+  animation-direction: reverse;
+  animation-duration: 22s;
+}
+
+.pr-wave.is-front {
+  height: 58%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath d='M0 240 C 90 215 270 215 360 240 S 630 265 720 240 S 990 215 1080 240 S 1350 265 1440 240 V320 H0Z' fill='rgba(255,66,54,0.08)'/%3E%3Cpath d='M0 240 C 90 215 270 215 360 240 S 630 265 720 240 S 990 215 1080 240 S 1350 265 1440 240' fill='none' stroke='rgba(255,66,54,0.28)' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+  animation-duration: 16s;
+}
+
+.pr-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.pr-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.pr-brand img {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  box-shadow: 0 14px 34px rgba(255, 66, 54, .35);
+}
+
+.pr-hero .quko-eyebrow {
+  margin: 0;
+  color: var(--pr-salmon);
+}
+
+.pr-hero h1 {
+  margin: 0 0 24px;
+  color: var(--quko-white);
+  font-size: clamp(44px, 5.2vw, 76px);
+  font-weight: 900;
+  letter-spacing: -.045em;
+  line-height: .9;
+  text-transform: uppercase;
+}
+
+.pr-hero h1 span {
+  display: block;
+}
+
+/* The accent shimmers slowly, like light on water. */
+.pr-accent {
+  padding-bottom: .04em;
+  background: linear-gradient(92deg, var(--pr-red) 0%, #ff7a5c 35%, #ffc2a8 50%, #ff7a5c 65%, var(--pr-red) 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: pr-shimmer 7s ease-in-out infinite alternate;
+}
+
+.pr-hero p {
+  max-width: 520px;
+  margin: 0;
+  color: rgba(255, 255, 255, .76);
+  font-size: 18px;
+}
+
+/* Calls to action: the web app first, the stores after it. */
+.pr-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+  margin-top: 30px;
+}
+
+.pr-cta-web {
+  min-height: 56px;
+  padding: 0 28px;
+  font-size: 15.5px;
+}
+
+.btn-quko.pr-cta-web {
+  box-shadow: 0 16px 36px rgba(255, 66, 54, .35);
+}
+
+.pr-cta-web .fa-globe {
+  margin: 0 10px 0 0;
+}
+
+.pr-cta-web .fa-arrow-right {
+  margin-left: 12px;
+  transition: transform .2s ease;
+}
+
+.pr-cta-web:hover .fa-arrow-right {
+  transform: translateX(4px);
+}
+
+.pr-stores {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.pr-stores-label {
+  margin-right: 4px;
+  color: rgba(255, 255, 255, .62);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.pr-store {
+  display: block;
+  border-radius: 9px;
+}
+
+.pr-store img {
+  display: block;
+  width: auto;
+  height: 40px;
+}
+
+.pr-store:hover,
+.pr-store:focus {
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .3);
+  transform: translateY(-2px);
+}
+
+.pr-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, .6);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pr-note i {
+  color: var(--pr-mint);
+}
+
+/* The cover's picture: the web app in a browser, the phone app beside it,
+   and two labels underneath saying where each one lives. */
+.pr-stage {
+  position: relative;
+  aspect-ratio: 620 / 540;
+}
+
+.pr-halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 520px;
+  height: 520px;
+  margin: -280px 0 0 -260px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(255, 66, 54, 0), rgba(255, 66, 54, .5), rgba(255, 194, 168, .16), rgba(255, 66, 54, 0) 70%);
+  filter: blur(50px);
+  opacity: .8;
+  animation: pr-spin 18s linear infinite;
+}
+
+.pr-browser {
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--pr-surface);
+}
+
+.pr-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 34px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--pr-line);
+  background: #ece7e1;
+}
+
+.pr-browser-dots {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 6px;
+}
+
+.pr-browser-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d5cec6;
+}
+
+.pr-browser-dots span:first-child {
+  background: var(--pr-red);
+}
+
+.pr-browser-url {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 7px;
+  max-width: 62%;
+  height: 22px;
+  margin: 0 auto;
+  padding: 0 10px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--quko-white);
+  color: var(--pr-ink-2);
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pr-browser-url i {
+  color: #2c8a5a;
+  font-size: 9px;
+}
+
+.pr-browser-url span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pr-browser-view {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--pr-paper);
+}
+
+.pr-browser-view img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.pr-stage .pr-browser {
+  position: absolute;
+  top: 4%;
+  left: 0;
+  z-index: 1;
+  width: 88%;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .12), 0 40px 90px rgba(0, 0, 0, .5);
+}
+
+.pr-phone {
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  padding: 10px;
+  border-radius: 46px;
+  background: #0b0b0a;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .14), inset 0 0 0 2px #2c2926, 0 50px 100px rgba(0, 0, 0, .55);
+}
+
+.pr-stage .pr-phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 31%;
+  padding: 7px;
+  border-radius: 32px;
+  animation: pr-float 7s ease-in-out infinite;
+}
+
+/* The speaker slit sits in the bezel, so no screen is covered. */
+.pr-phone-notch {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  width: 56px;
+  height: 4px;
+  margin-left: -28px;
+  border-radius: 4px;
+  background: #2c2926;
+}
+
+.pr-stage .pr-phone-notch {
+  top: 2px;
+  width: 40px;
+  height: 3px;
+  margin-left: -20px;
+}
+
+.pr-phone-screen {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 720 / 1564;
+  border-radius: 36px;
+  background: var(--pr-paper);
+}
+
+.pr-stage .pr-phone-screen {
+  border-radius: 26px;
+}
+
+.pr-screen,
+.pr-webshot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity .7s ease, transform 1.2s cubic-bezier(.2, .7, .2, 1);
+}
+
+.pr-screen.is-active,
+.pr-webshot.is-active {
+  opacity: 1;
+  transform: none;
+}
+
+.pr-chip {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 8px;
+  border: 1px solid rgba(255, 255, 255, .7);
+  border-radius: 14px;
+  background: rgba(255, 253, 249, .96);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .35);
+  color: var(--pr-ink);
+  white-space: nowrap;
+  animation: pr-bob 6s ease-in-out infinite;
+}
+
+.pr-chip.is-0 {
+  top: 79%;
+  left: 2%;
+}
+
+.pr-chip.is-1 {
+  top: 91%;
+  left: 18%;
+  animation-delay: -3s;
+}
+
+.pr-chip-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: rgba(255, 66, 54, .12);
+  color: var(--pr-red);
+  font-size: 13px;
+}
+
+.pr-chip small {
+  display: block;
+  color: var(--pr-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.pr-chip strong {
+  display: block;
+  color: var(--pr-ink);
+  font-size: 13.5px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.pr-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px;
+  margin: 88px 0 0;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.pr-stats dt {
+  color: var(--quko-white);
+  font-size: clamp(30px, 3.4vw, 46px);
+  font-weight: 850;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.04em;
+  line-height: 1;
+}
+
+.pr-stats dd {
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, .6);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+/* The disciplines, quietly, under the numbers. */
+.pr-disciplines {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pr-disciplines li {
+  padding: 6px 13px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, .72);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.pr-disciplines li:first-child {
+  padding-left: 0;
+  border-color: transparent;
+  color: rgba(255, 255, 255, .45);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+/* On the web: the browser window, with a tab per page of the web app. */
+.pr-web {
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 100%, rgba(255, 66, 54, .1), transparent 55%), var(--quko-white);
+}
+
+.pr-web-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.pr-web-head h2 {
+  margin: 0;
+  color: var(--pr-ink);
+  font-size: clamp(30px, 3.3vw, 46px);
+  font-weight: 750;
+  line-height: 1.08;
+}
+
+.pr-web-head p {
+  margin: 0 0 18px;
+  font-size: 17px;
+}
+
+.pr-web-head .btn-quko i {
+  transition: transform .2s ease;
+}
+
+.pr-web-head .btn-quko:hover i {
+  transform: translateX(4px);
+}
+
+.pr-web-tabs {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto 26px;
+  padding: 5px;
+  overflow-x: auto;
+  border: 1px solid var(--pr-line);
+  border-radius: 999px;
+  background: var(--pr-paper);
+  scrollbar-width: none;
+}
+
+.pr-web-tabs button {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 10px 18px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--pr-ink-2);
+  font-size: 14px;
+  font-weight: 750;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+.pr-web-tabs button:hover {
+  color: var(--pr-ink);
+}
+
+.pr-web-tabs button[aria-selected="true"] {
+  background: var(--pr-ink);
+  color: var(--quko-white);
+}
+
+.pr-web-tabs button:focus-visible {
+  outline: 2px solid var(--pr-red);
+  outline-offset: 2px;
+}
+
+/* While the tabs play by themselves, the active one fills like a timer. */
+.pr-web-tabs button:after {
+  position: absolute;
+  right: 18px;
+  bottom: 5px;
+  left: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--pr-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  content: "";
+}
+
+.pr-web.is-playing .pr-web-tabs button[aria-selected="true"]:after {
+  animation: pr-fill 4s linear both;
+}
+
+.pr-web-window {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.pr-web-window:before {
+  position: absolute;
+  top: 12%;
+  right: -4%;
+  bottom: -8%;
+  left: -4%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 66, 54, .2), transparent 65%);
+  filter: blur(30px);
+  content: "";
+}
+
+/* The window tips up from the table as it scrolls into view. */
+.pr-web-window .pr-browser {
+  position: relative;
+  border-radius: 18px;
+  box-shadow: 0 0 0 1px rgba(23, 23, 21, .08), 0 50px 100px rgba(23, 23, 21, .22);
+  transform: perspective(1600px) rotateX(16deg) scale(.94);
+  transform-origin: 50% 0;
+  transition: transform 1.2s cubic-bezier(.2, .7, .2, 1);
+}
+
+.pr-web-window.revealed .pr-browser {
+  transform: none;
+}
+
+.pr-web-window .pr-browser-bar {
+  height: 44px;
+  padding: 0 18px;
+}
+
+.pr-web-window .pr-browser-dots span {
+  width: 11px;
+  height: 11px;
+}
+
+.pr-web-window .pr-browser-url {
+  height: 28px;
+  max-width: 50%;
+  font-size: 13px;
+}
+
+/* Centred under the window and no wider than it. */
+.pr-web-points {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  max-width: 1080px;
+  margin: 64px auto 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.pr-web-points span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 66, 54, .1);
+  color: var(--pr-red);
+  font-size: 16px;
+}
+
+.pr-web-points h3 {
+  margin: 16px 0 6px;
+  color: var(--pr-ink);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.pr-web-points p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Tour: one phone stays in view while the steps scroll past it. */
+.pr-tour {
+  background: var(--pr-paper);
+}
+
+.pr-tour .quko-section-title {
+  margin-bottom: 24px;
+}
+
+.pr-tour h2 {
+  color: var(--pr-ink);
+}
+
+.pr-tour-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: 80px;
+  align-items: start;
+}
+
+.pr-tour-aside {
+  position: relative;
+  align-self: stretch;
+}
+
+.pr-tour-sticky {
+  position: sticky;
+  top: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+.pr-tour-sticky:before {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 440px;
+  height: 440px;
+  margin: -220px 0 0 -220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 66, 54, .2), transparent 65%);
+  content: "";
+}
+
+.pr-tour-meter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 300px;
+}
+
+.pr-tour-count {
+  color: var(--pr-muted);
+  font-size: 13px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .1em;
+}
+
+.pr-tour-count b {
+  color: var(--pr-ink);
+}
+
+.pr-tour-bar {
+  flex: 1 1 auto;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--pr-line);
+}
+
+.pr-tour-bar span {
+  display: block;
+  height: 100%;
+  background: var(--pr-red);
+  transform: scaleX(.25);
+  transform-origin: left;
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+
+.pr-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pr-step {
+  display: flex;
+  align-items: center;
+  min-height: 74vh;
+}
+
+/* The first step starts level with the phone instead of mid-screen. */
+.pr-step:first-child {
+  align-items: flex-start;
+  min-height: 62vh;
+  padding-top: 24px;
+}
+
+.pr-step-card {
+  width: 100%;
+  padding: 38px 38px 34px;
+  border: 1px solid var(--pr-line);
+  border-radius: 28px;
+  background: var(--pr-surface);
+  transition: opacity .5s ease, transform .5s ease, border-color .5s ease, box-shadow .5s ease;
+}
+
+/* With the script running, the step being read is lit and the rest rest. */
+.pr-tour.is-enhanced .pr-step-card {
+  opacity: .4;
+  transform: scale(.97);
+}
+
+.pr-tour.is-enhanced .pr-step.is-active .pr-step-card {
+  border-color: rgba(255, 66, 54, .35);
+  box-shadow: 0 30px 70px rgba(23, 23, 21, .12);
+  opacity: 1;
+  transform: none;
+}
+
+.pr-step-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.pr-step-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: rgba(255, 66, 54, .1);
+  color: var(--pr-red);
+  font-size: 17px;
+  transition: background-color .4s ease, color .4s ease, box-shadow .4s ease;
+}
+
+.pr-step.is-active .pr-step-icon {
+  background: var(--pr-red);
+  color: var(--quko-white);
+  box-shadow: 0 12px 26px rgba(255, 66, 54, .35);
+}
+
+.pr-step-kicker {
+  color: var(--pr-red-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.pr-step h3 {
+  margin: 0 0 14px;
+  color: var(--pr-ink);
+  font-size: clamp(26px, 2.6vw, 36px);
+  font-weight: 850;
+  letter-spacing: -.04em;
+  line-height: 1.06;
+}
+
+.pr-step p {
+  margin: 0 0 22px;
+  font-size: 16.5px;
+}
+
+.pr-step-points {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pr-step-points li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  color: var(--pr-ink-2);
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.pr-step-points i {
+  color: var(--pr-red);
+  font-size: 12px;
+}
+
+/* Each step's own screen, for layouts without the sticky phone. */
+.pr-step-shot {
+  display: none;
+  max-width: 260px;
+  margin: 28px auto 0;
+  overflow: hidden;
+  border: 8px solid #0b0b0a;
+  border-radius: 38px;
+  box-shadow: 0 30px 60px rgba(23, 23, 21, .2);
+}
+
+.pr-step-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The archive on every screen (moved from Almanac). */
+.alm-screens.pr-screens {
+  background: radial-gradient(circle at 50% 72%, rgba(255, 66, 54, .12), transparent 55%), var(--quko-white);
+}
+
+.pr-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+}
+
+/* Built on facts */
+.pr-facts {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--pr-ink);
+  color: var(--quko-white);
+}
+
+.pr-facts .pr-glow.is-red {
+  top: -40%;
+  left: 50%;
+  width: 900px;
+  height: 700px;
+  margin-left: -450px;
+  background: radial-gradient(ellipse, rgba(255, 66, 54, .26), transparent 65%);
+  animation: pr-breathe 9s ease-in-out infinite alternate;
+}
+
+.pr-facts h2,
+.pr-facts h3 {
+  color: var(--quko-white);
+}
+
+.pr-facts p {
+  color: rgba(255, 255, 255, .72);
+}
+
+.pr-facts .quko-eyebrow {
+  color: var(--pr-salmon);
+}
+
+.pr-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pr-facts-grid li {
+  position: relative;
+  padding: 34px 30px 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 26px;
+  background: linear-gradient(165deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .02));
+}
+
+.pr-facts-grid li.revealed {
+  transition: opacity .65s ease, transform .35s ease, border-color .35s ease;
+}
+
+.pr-facts-grid li:before {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  left: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pr-red), transparent);
+  transform: scaleX(0);
+  transition: transform .5s ease;
+  content: "";
+}
+
+.pr-facts-grid li:hover {
+  border-color: rgba(255, 66, 54, .45);
+  transform: translateY(-6px);
+}
+
+.pr-facts-grid li:hover:before {
+  transform: none;
+}
+
+.pr-facts-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--pr-red), var(--pr-red-dark));
+  box-shadow: 0 14px 30px rgba(255, 66, 54, .35);
+  color: var(--quko-white);
+  font-size: 20px;
+}
+
+.pr-facts-grid h3 {
+  margin: 22px 0 10px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.pr-facts-grid p {
+  margin: 0;
+  font-size: 15.5px;
+}
+
+.pr-privacy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px 22px;
+  margin-top: 40px;
+  padding: 18px 28px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .04);
+}
+
+.pr-privacy strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--quko-white);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.pr-privacy strong i {
+  color: var(--pr-salmon);
+}
+
+.pr-privacy ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pr-privacy li {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(142, 232, 189, .12);
+  color: var(--pr-mint);
+  font-size: 13.5px;
+  font-weight: 750;
+}
+
+.pr-privacy li i {
+  margin-right: 8px;
+  font-size: 11px;
+}
+
+/* Download band: a deep, muted wine red rather than the app's full red,
+   with warm light and shade drifting across it and rings spreading from the
+   icon like ripples on flat water. */
+.pr-download {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 96px 0;
+  background: linear-gradient(120deg, #9c241b 0%, #74180f 55%, #521009 100%);
+  color: var(--quko-white);
+}
+
+.pr-download:before,
+.pr-download:after {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  content: "";
+}
+
+.pr-download:before {
+  top: -50%;
+  right: -6%;
+  width: 680px;
+  height: 680px;
+  background: radial-gradient(circle, rgba(255, 122, 92, .38), transparent 65%);
+  animation: pr-drift-a 18s ease-in-out infinite alternate;
+}
+
+.pr-download:after {
+  bottom: -60%;
+  left: 20%;
+  width: 720px;
+  height: 720px;
+  background: radial-gradient(circle, rgba(30, 4, 2, .5), transparent 62%);
+  animation: pr-drift-b 22s ease-in-out infinite alternate;
+}
+
+.pr-download-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.pr-download-brand {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.pr-download-brand img {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  box-shadow: 0 14px 30px rgba(30, 4, 2, .4);
+}
+
+/* Centred on the 56px icon. */
+.pr-ripples {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.pr-ripples span {
+  position: absolute;
+  width: 820px;
+  height: 820px;
+  margin: -410px 0 0 -410px;
+  border: 2px solid rgba(255, 194, 168, .26);
+  border-radius: 50%;
+  opacity: 0;
+  animation: pr-ripple 10s ease-out infinite;
+}
+
+.pr-ripples span:nth-child(2) {
+  animation-delay: 2.5s;
+}
+
+.pr-ripples span:nth-child(3) {
+  animation-delay: 5s;
+}
+
+.pr-ripples span:nth-child(4) {
+  animation-delay: 7.5s;
+}
+
+.pr-download .quko-eyebrow {
+  margin: 0;
+  color: var(--pr-salmon);
+}
+
+.pr-download .quko-eyebrow:before {
+  background: var(--pr-salmon);
+}
+
+.pr-download h2 {
+  margin: 0 0 16px;
+  color: var(--quko-white);
+  font-size: clamp(30px, 3.6vw, 48px);
+  font-weight: 850;
+  letter-spacing: -.04em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.pr-download p {
+  max-width: 500px;
+  margin: 0;
+  color: rgba(255, 255, 255, .82);
+  font-size: 18px;
+}
+
+.pr-download-actions {
+  justify-self: end;
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  border-radius: 24px;
+  background: var(--pr-surface);
+  box-shadow: 0 30px 70px rgba(30, 4, 2, .35);
+  text-align: center;
+}
+
+.pr-download-actions .pr-cta {
+  align-items: stretch;
+  gap: 22px;
+  margin-top: 0;
+}
+
+.pr-download-actions .pr-cta-web {
+  width: 100%;
+}
+
+/* "Also on" sits on its own line, so the two badges always share one. */
+.pr-download-actions .pr-stores {
+  justify-content: center;
+}
+
+.pr-download-actions .pr-stores-label {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.pr-download .pr-stores-label {
+  color: var(--pr-muted);
+}
+
+.pr-download-foot {
+  display: block;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--pr-line);
+  color: var(--pr-muted);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+@keyframes pr-drift-a {
+  to { transform: translate(-140px, 110px) scale(1.12); }
+}
+
+@keyframes pr-drift-b {
+  to { transform: translate(200px, -80px) scale(1.08); }
+}
+
+@keyframes pr-breathe {
+  from { opacity: .6; transform: scale(.94); }
+  to { opacity: 1; transform: scale(1.06); }
+}
+
+@keyframes pr-wave {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pr-shimmer {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+
+@keyframes pr-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pr-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pr-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pr-ripple {
+  0% { opacity: 0; transform: scale(.07); }
+  12% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+@keyframes pr-fill {
+  from { transform: scaleX(0); }
+  to { transform: none; }
+}
+
+/* Short screens: a smaller sticky phone, so it and its meter always fit. */
+@media (min-width: 992px) and (max-height: 820px) {
+  .pr-tour-sticky {
+    top: 72px;
+  }
+
+  .pr-tour-sticky .pr-phone {
+    width: 240px;
+    padding: 8px;
+    border-radius: 38px;
+  }
+
+  .pr-tour-sticky .pr-phone-screen {
+    border-radius: 30px;
+  }
+
+  .pr-tour-meter {
+    width: 240px;
+  }
+}
+
+@media (max-width: 991px) {
+  .pr-hero {
+    padding: 64px 0 72px;
+  }
+
+  .pr-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 56px;
+  }
+
+  .pr-stage {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .pr-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 72px;
+  }
+
+  .pr-web-head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .pr-screens .alm-screens-head {
+    gap: 16px;
+    margin-bottom: 44px;
+  }
+
+  .pr-screens .alm-screens-head h2 {
+    margin-bottom: 0;
+  }
+
+  .pr-web-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pr-tour-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .pr-tour-aside {
+    display: none;
+  }
+
+  .pr-step,
+  .pr-step:first-child {
+    display: block;
+    min-height: 0;
+    margin-bottom: 22px;
+    padding-top: 0;
+  }
+
+  .pr-tour.is-enhanced .pr-step-card {
+    opacity: 1;
+    transform: none;
+  }
+
+  .pr-step-shot {
+    display: block;
+  }
+
+  .pr-facts-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pr-download-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  .pr-download-actions {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 767px) {
+  .pr-hero {
+    padding: 48px 0 64px;
+  }
+
+  .pr-brand {
+    margin-bottom: 22px;
+  }
+
+  .pr-brand img {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .pr-hero h1 {
+    font-size: clamp(44px, 13vw, 64px);
+  }
+
+  .pr-hero p {
+    font-size: 17px;
+  }
+
+  .pr-cta-web {
+    width: 100%;
+  }
+
+  .pr-store img {
+    height: 38px;
+  }
+
+  .pr-halo {
+    width: 340px;
+    height: 340px;
+    margin: -180px 0 0 -170px;
+  }
+
+  .pr-stage .pr-browser {
+    border-radius: 10px;
+  }
+
+  .pr-browser-bar {
+    gap: 8px;
+    height: 24px;
+    padding: 0 8px;
+  }
+
+  .pr-browser-dots {
+    gap: 4px;
+  }
+
+  .pr-browser-dots span {
+    width: 6px;
+    height: 6px;
+  }
+
+  .pr-browser-url {
+    height: 16px;
+    padding: 0 7px;
+    font-size: 8.5px;
+  }
+
+  .pr-stage .pr-phone {
+    padding: 4px;
+    border-radius: 20px;
+  }
+
+  .pr-stage .pr-phone-screen {
+    border-radius: 16px;
+  }
+
+  .pr-chip {
+    gap: 8px;
+    padding: 5px 11px 5px 5px;
+    border-radius: 11px;
+  }
+
+  .pr-chip-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    font-size: 11px;
+  }
+
+  .pr-chip small {
+    font-size: 8.5px;
+  }
+
+  .pr-chip strong {
+    font-size: 11.5px;
+  }
+
+  /* A squarer picture, so both labels fit under the browser. */
+  .pr-stage {
+    aspect-ratio: 1 / 1;
+  }
+
+  .pr-chip.is-0 {
+    top: 70%;
+    left: 0;
+  }
+
+  .pr-chip.is-1 {
+    top: 83%;
+    left: 8%;
+  }
+
+  .pr-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 20px;
+  }
+
+  .pr-stats div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .pr-web-tabs {
+    margin-left: 0;
+    -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent);
+    mask-image: linear-gradient(90deg, #000 82%, transparent);
+  }
+
+  .pr-web-tabs.is-scrolled-end {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .pr-web-tabs button {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+
+  .pr-web-window .pr-browser {
+    border-radius: 12px;
+  }
+
+  .pr-web-window .pr-browser-bar {
+    height: 30px;
+    padding: 0 10px;
+  }
+
+  .pr-web-window .pr-browser-dots span {
+    width: 8px;
+    height: 8px;
+  }
+
+  .pr-web-window .pr-browser-url {
+    height: 20px;
+    max-width: 70%;
+    font-size: 10.5px;
+  }
+
+  .pr-web-points {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+    margin-top: 48px;
+  }
+
+  .pr-step-card {
+    padding: 28px 24px 24px;
+    border-radius: 24px;
+  }
+
+  .pr-privacy {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .pr-download {
+    padding: 64px 0;
+  }
+
+  .pr-ripples span {
+    width: 520px;
+    height: 520px;
+    margin: -260px 0 0 -260px;
+  }
+
+  .pr-download-actions {
+    max-width: none;
+    padding: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pr-glow,
+  .pr-halo,
+  .pr-accent,
+  .pr-stage .pr-phone,
+  .pr-chip,
+  .pr-web.is-playing .pr-web-tabs button:after {
+    animation: none !important;
+  }
+
+  .pr-wave,
+  .pr-download:before,
+  .pr-download:after {
+    animation: none;
+  }
+
+  .pr-ripples {
+    display: none;
+  }
+
+  .pr-web-window .pr-browser {
     transform: none;
   }
 }

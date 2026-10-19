@@ -1,5 +1,5 @@
 ---
-title: "Events Coverage"
+title: "Broadcasting Solutions"
 description: "Live data graphics for international canoe sprint broadcasts: Kosoku sensors timed to 0.05 s, an AI director that decides what to show and when, and Almanac athlete facts on screen."
 layout: "events_coverage"
 image: "videos/web/media_broadcast_poster.jpg"
@@ -7,7 +7,7 @@ draft: false
 
 hero:
   on_air: "On air"
-  eyebrow: "Events Coverage · Live broadcast data"
+  eyebrow: "Broadcasting Solutions · Live broadcast data"
   title_lines: ["Every stroke."]
   title_accent: "Live on air."
   text: "Real-time data graphics for international canoe sprint at the highest level. Kosoku sensors on every boat, an AI director choosing the story, and graphics on the world feed while the race is still being won."
@@ -197,7 +197,7 @@ workflow:
       items: ["Replay stories and race highlights within seconds", "Race data for commentators, media and social channels", "Analysis for teams, athletes and federations"]
 
 marketing_cta:
-  eyebrow: "Events Coverage"
+  eyebrow: "Broadcasting Solutions"
   title: "Give your regatta the broadcast it deserves."
   text: "Tell us about your event, your venue and your production. We'll show you what live QUKO data looks like on your pictures."
   primary_label: "Bring it to your event"

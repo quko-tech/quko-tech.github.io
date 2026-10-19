@@ -87,6 +87,12 @@ sections:
         image_alt: "Gráficas de Quko Cloud de velocidade, avance por palada e frecuencia"
         link: "quko_cloud/"
         link_label: "Descubre Quko Cloud"
+  - type: "research"
+    eyebrow: "Para universidades e equipos de investigación"
+    title: "Incorpora Quko Live ao teu próximo estudo"
+    text: "Datos sincronizados de ata nove embarcacións na auga, exportacións palada a palada e unha API REST con OAuth, cos nosos enxeñeiros axudándote a montar o estudo, o acceso aos datos e as integracións."
+    link: "contact/"
+    link_label: "Fala co noso equipo de investigación"
 marketing_cta:
   eyebrow: "Proba Quko Live"
   title: "Leva datos en tempo real á auga"

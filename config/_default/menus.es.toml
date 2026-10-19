@@ -34,13 +34,19 @@ weight = 4
 
   [[main]]
   parent = "media"
-  name = "Almanac"
-  url = "almanac/"
+  name = "Paddle Results"
+  url = "paddle_results/"
   weight = 2
 
   [[main]]
   parent = "media"
-  name = "Cobertura de eventos"
+  name = "Almanac"
+  url = "almanac/"
+  weight = 3
+
+  [[main]]
+  parent = "media"
+  name = "Soluciones de retransmisión"
   url = "events_coverage/"
   weight = 1
 

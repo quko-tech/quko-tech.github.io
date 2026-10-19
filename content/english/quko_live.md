@@ -87,6 +87,12 @@ sections:
         image_alt: "Quko Cloud charts for speed, distance per stroke and stroke rate"
         link: "quko_cloud/"
         link_label: "Explore Quko Cloud"
+  - type: "research"
+    eyebrow: "For universities and research teams"
+    title: "Bring Quko Live into your next study"
+    text: "Synchronised data from up to nine boats on the water, stroke-by-stroke exports and an OAuth REST API, with our engineers helping you set up the study, the data access and the integrations."
+    link: "contact/"
+    link_label: "Talk to our research team"
 marketing_cta:
   eyebrow: "Experience Quko Live"
   title: "Bring real-time evidence to the water"
