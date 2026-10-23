@@ -29,10 +29,10 @@ hero:
 stats:
   label: "The archive in numbers"
   items:
-    - { value: 50000, suffix: "+", label: "Races, heat to final" }
-    - { value: 55000, suffix: "+", label: "Athletes with a career on file" }
-    - { value: 1200, suffix: "+", label: "Competitions" }
-    - { value: 150, suffix: "+", label: "Nations" }
+    - { value: 60000, suffix: "+", label: "Races, heat to final" }
+    - { value: 65000, suffix: "+", label: "Athletes with a career on file" }
+    - { value: 1300, suffix: "+", label: "Competitions" }
+    - { value: 160, suffix: "+", label: "Nations" }
     - { value: 1933, label: "First result in the archive", plain: true }
 
 disciplines:

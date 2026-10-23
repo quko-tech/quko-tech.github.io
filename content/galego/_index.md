@@ -99,9 +99,9 @@ archive:
   title_accent: "Pregúntalle o que queiras."
   text: "Noventa anos de resultados de piragüismo nun só arquivo. Os afeccionados consúltanos de balde en Paddle Results; as televisións pregúntanlle a Almanac e reciben datos listos para contar en directo."
   stats:
-    - { value: 50000, suffix: "+", label: "Regatas" }
-    - { value: 55000, suffix: "+", label: "Deportistas" }
-    - { value: 1200, suffix: "+", label: "Competicións" }
+    - { value: 60000, suffix: "+", label: "Regatas" }
+    - { value: 65000, suffix: "+", label: "Deportistas" }
+    - { value: 1300, suffix: "+", label: "Competicións" }
   products:
     - title: "Paddle Results"
       text: "De balde na web, iPhone e Android"
@@ -114,7 +114,7 @@ archive:
   chat:
     title: "Almanac"
     status: "Conectado"
-    searching: "Buscando en máis de 50.000 regatas"
+    searching: "Buscando en máis de 60.000 regatas"
     placeholder: "Pregunta por calquera carreira, deportista ou país…"
     note: "Exemplo de saída de Almanac · deportistas ficticias"
     phone: "images/paddle_results/screen-athlete.webp"

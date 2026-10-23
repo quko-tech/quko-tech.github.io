@@ -40,10 +40,10 @@ briefing:
     - { kind: "Youngest", lanes: "6", text: "Eva Novak is the youngest in the field, at 23." }
 
 stats:
-  - { value: 55000, suffix: "+", label: "Athletes with a career on file" }
-  - { value: 50000, suffix: "+", label: "Races, heat to final" }
-  - { value: 1200, suffix: "+", label: "Competitions" }
-  - { value: 150, suffix: "+", label: "Nations" }
+  - { value: 65000, suffix: "+", label: "Athletes with a career on file" }
+  - { value: 60000, suffix: "+", label: "Races, heat to final" }
+  - { value: 1300, suffix: "+", label: "Competitions" }
+  - { value: 160, suffix: "+", label: "Nations" }
   - { value: 1933, label: "First result in the archive", plain: true }
   - { value: 1000000, display: "1M", suffix: "+", label: "Pre-computed facts" }
 

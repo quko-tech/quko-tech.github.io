@@ -168,8 +168,8 @@ almanac:
   link_label: "Explore Almanac"
   link: "almanac/"
   stats:
-    - { value: 55000, suffix: "+", label: "Athletes" }
-    - { value: 50000, suffix: "+", label: "Races" }
+    - { value: 65000, suffix: "+", label: "Athletes" }
+    - { value: 60000, suffix: "+", label: "Races" }
     - { value: 1000000, display: "1M", suffix: "+", label: "Ready-to-air facts" }
   card_title: "Start-list facts"
   card_race: "K1 Women 500 m · Final A"

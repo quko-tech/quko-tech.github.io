@@ -29,10 +29,10 @@ hero:
 stats:
   label: "El archivo en cifras"
   items:
-    - { value: 50000, suffix: "+", label: "Regatas, de series a finales" }
-    - { value: 55000, suffix: "+", label: "Deportistas con su trayectoria" }
-    - { value: 1200, suffix: "+", label: "Competiciones" }
-    - { value: 150, suffix: "+", label: "Países" }
+    - { value: 60000, suffix: "+", label: "Regatas, de series a finales" }
+    - { value: 65000, suffix: "+", label: "Deportistas con su trayectoria" }
+    - { value: 1300, suffix: "+", label: "Competiciones" }
+    - { value: 160, suffix: "+", label: "Países" }
     - { value: 1933, label: "Primer resultado del archivo", plain: true }
 
 disciplines:

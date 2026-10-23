@@ -41,10 +41,10 @@ briefing:
     - { kind: "A máis nova", lanes: "6", text: "Eva Novak es la más joven de la carrera, con 23 años." }
 
 stats:
-  - { value: 55000, suffix: "+", label: "Deportistas coa súa traxectoria" }
-  - { value: 50000, suffix: "+", label: "Carreiras, de series a finais" }
-  - { value: 1200, suffix: "+", label: "Competicións" }
-  - { value: 150, suffix: "+", label: "Países" }
+  - { value: 65000, suffix: "+", label: "Deportistas coa súa traxectoria" }
+  - { value: 60000, suffix: "+", label: "Carreiras, de series a finais" }
+  - { value: 1300, suffix: "+", label: "Competicións" }
+  - { value: 160, suffix: "+", label: "Países" }
   - { value: 1933, label: "Primeiro resultado do arquivo", plain: true }
   - { value: 1000000, display: "1M", suffix: "+", label: "Datos precalculados" }
 

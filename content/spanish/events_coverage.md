@@ -168,8 +168,8 @@ almanac:
   link_label: "Descubre Almanac"
   link: "almanac/"
   stats:
-    - { value: 55000, suffix: "+", label: "Deportistas" }
-    - { value: 50000, suffix: "+", label: "Carreras" }
+    - { value: 65000, suffix: "+", label: "Deportistas" }
+    - { value: 60000, suffix: "+", label: "Carreras" }
     - { value: 1000000, display: "1M", suffix: "+", label: "Datos listos para emitir" }
   card_title: "Datos de la salida"
   card_race: "K1 500 m femenino · Final A"

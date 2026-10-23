@@ -29,10 +29,10 @@ hero:
 stats:
   label: "O arquivo en cifras"
   items:
-    - { value: 50000, suffix: "+", label: "Carreiras, de series a finais" }
-    - { value: 55000, suffix: "+", label: "Deportistas coa súa traxectoria" }
-    - { value: 1200, suffix: "+", label: "Competicións" }
-    - { value: 150, suffix: "+", label: "Países" }
+    - { value: 60000, suffix: "+", label: "Carreiras, de series a finais" }
+    - { value: 65000, suffix: "+", label: "Deportistas coa súa traxectoria" }
+    - { value: 1300, suffix: "+", label: "Competicións" }
+    - { value: 160, suffix: "+", label: "Países" }
     - { value: 1933, label: "Primeiro resultado do arquivo", plain: true }
 
 disciplines:

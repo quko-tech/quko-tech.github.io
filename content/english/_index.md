@@ -99,9 +99,9 @@ archive:
   title_accent: "Ask it anything."
   text: "Ninety years of canoe and kayak results in one archive. Fans look it up for free on Paddle Results; broadcasters ask Almanac and get facts they can read on air."
   stats:
-    - { value: 50000, suffix: "+", label: "Races" }
-    - { value: 55000, suffix: "+", label: "Athletes" }
-    - { value: 1200, suffix: "+", label: "Competitions" }
+    - { value: 60000, suffix: "+", label: "Races" }
+    - { value: 65000, suffix: "+", label: "Athletes" }
+    - { value: 1300, suffix: "+", label: "Competitions" }
   products:
     - title: "Paddle Results"
       text: "Free on the web, iPhone and Android"
@@ -114,7 +114,7 @@ archive:
   chat:
     title: "Almanac"
     status: "Connected"
-    searching: "Searching 50,000+ races"
+    searching: "Searching 60,000+ races"
     placeholder: "Ask about any race, athlete or nation…"
     note: "Illustrative Almanac output · fictional athletes"
     phone: "images/paddle_results/screen-athlete.webp"
