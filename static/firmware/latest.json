@@ -1,8 +1,8 @@
 {
   "firmware_versions": [
     {
-      "version": 0.99975,
-      "file": "https://quko.es/firmware/0.99975/fw_kosoku_0.99975_hwv5.bin",
+      "version": 0.9997,
+      "file": "https://quko.es/firmware/0.9997/fw_kosoku_0.9997_hwv5.bin",
       "update_channel": "production",
       "hw_version": 5,
       "serial_num": "KAAA0052"
