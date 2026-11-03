@@ -83,6 +83,8 @@ sections:
           - "On a calibrated boat"
       - label: "Enclosure"
         value: "IP67, wireless charging"
+      - label: "Weight"
+        value: "130 g"
       - label: "Battery"
         value: "5 h of training"
       - label: "Data"

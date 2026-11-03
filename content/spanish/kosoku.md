@@ -83,6 +83,8 @@ sections:
           - "Con la embarcación calibrada"
       - label: "Carcasa"
         value: "IP67, carga inalámbrica"
+      - label: "Peso"
+        value: "130 g"
       - label: "Batería"
         value: "5 h de entrenamiento"
       - label: "Datos"

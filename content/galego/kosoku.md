@@ -83,6 +83,8 @@ sections:
           - "Coa embarcación calibrada"
       - label: "Carcasa"
         value: "IP67, carga sen fíos"
+      - label: "Peso"
+        value: "130 g"
       - label: "Batería"
         value: "5 h de adestramento"
       - label: "Datos"
