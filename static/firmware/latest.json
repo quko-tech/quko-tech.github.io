@@ -5,7 +5,7 @@
       "file": "https://quko.es/firmware/0.9997/fw_kosoku_0.9997_hwv5.bin",
       "update_channel": "production",
       "hw_version": 5,
-      "serial_num": "KAAA0052"
+      "group": "Poznan26"
     },
     {
       "version": 0.9993,
@@ -26,7 +26,7 @@
       "file": "https://quko.es/firmware/0.9999/fw_kosoku_0.9999_hwv5.bin.enc",
       "update_channel": "production",
       "hw_version": 5,
-      "serial_num": "KAAA0052"
+      "group": "Poznan26"
     }
   ],
   "html_versions": [
