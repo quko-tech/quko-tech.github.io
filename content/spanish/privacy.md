@@ -68,6 +68,15 @@ legal:
                                                     formaliza en cloud.quko.es, donde el precio se determina según el país de facturación del medio de pago.
                                                     </p>
 
+                                                    <h5>Mapa de estaciones</h5>
+                                                    <p>
+                                                    Para dibujar el mapa de estaciones, el navegador del visitante solicita las imágenes del mapa a
+                                                    <a href='https://osmfoundation.org/wiki/Privacy_Policy' target='_blank' rel='noopener'>OpenStreetMap</a>
+                                                    (tile.openstreetmap.org) y las lecturas de las estaciones a cloud.quko.es, el servidor de QUKO TECH, S.L. Ambos reciben
+                                                    por tanto la dirección IP del visitante y los datos técnicos que acompañan a cualquier petición web, como el tipo de
+                                                    navegador y la dirección de la página. No se instalan cookies, no interviene ninguna cuenta ni se envía ningún otro dato personal.
+                                                    </p>
+
                                                     <h5>Compras en la tienda</h5>
                                                     <p>
                                                     Los pedidos realizados en la tienda de QUKO se procesan con <strong>Ecwid</strong> (Lightspeed Commerce), la

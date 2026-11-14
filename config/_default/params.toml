@@ -31,6 +31,10 @@ Spain
 
 privacy_policy_url = "/privacy-policy"  # Update this to your actual privacy policy URL
 
+# Public MeteoQUKO API (Quko-Cloud) read by the stations map page, /stations_map/.
+# Contract: MeteoQUKO firmware repo, docs/stations_api.md section 4. No trailing slash.
+meteo_api = "https://cloud.quko.es/public/v1/meteo"
+
 [newsletter.form]
 enable = true
 

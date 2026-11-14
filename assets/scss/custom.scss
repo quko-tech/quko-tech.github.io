@@ -10836,3 +10836,709 @@ html.evc-player-open {
     max-height: calc(100dvh - 60px);
   }
 }
+
+/* ── Stations map ───────────────────────────────────────────────────────────
+   Live water temperature from the public MeteoQUKO stations. Leaflet's own
+   stylesheet is loaded by the page itself, not here, so no other page pays
+   for it. Pills are the map markers (and the legend's samples); the list
+   beside the map carries the same data for keyboard and screen-reader use. */
+.quko-stations-hero-grid {
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 1fr);
+}
+
+.quko-stations-hero .btn-quko i {
+  margin-left: 8px;
+}
+
+.quko-stations-legend {
+  padding: 30px;
+  border: 1px solid var(--quko-line);
+  border-radius: var(--quko-radius);
+  background: var(--quko-white);
+  box-shadow: var(--quko-shadow);
+}
+
+.quko-stations-legend h2 {
+  margin: 0 0 18px;
+  font-size: 18px;
+}
+
+.quko-stations-legend ul {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quko-stations-legend li {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+}
+
+.quko-stations-legend li .quko-station-pill {
+  justify-self: start;
+}
+
+.quko-stations-legend strong {
+  display: block;
+  color: var(--quko-ink);
+  font-size: 14px;
+}
+
+.quko-stations-legend div span {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.quko-stations [hidden] {
+  display: none !important;
+}
+
+/* The section padding alone would leave the map under the sticky header. */
+.quko-stations {
+  scroll-margin-top: 40px;
+}
+
+.quko-stations-app {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  align-items: start;
+  gap: 28px;
+}
+
+/* The map's panes and controls stack up to z-index 1000; isolating the wrap
+   keeps them under the sticky navigation. */
+.quko-stations-map-wrap {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--quko-line);
+  border-radius: var(--quko-radius);
+  background: var(--quko-mist);
+}
+
+.quko-stations-map {
+  height: 620px;
+  font-family: inherit;
+}
+
+.quko-stations-map.is-unavailable {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.quko-stations-map-message {
+  max-width: 360px;
+  margin: 0;
+  text-align: center;
+}
+
+.quko-stations-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(243, 245, 247, .7);
+  backdrop-filter: blur(2px);
+}
+
+.quko-stations-overlay-card {
+  max-width: 400px;
+  padding: 32px 30px;
+  border-radius: var(--quko-radius);
+  background: var(--quko-white);
+  box-shadow: var(--quko-shadow);
+  text-align: center;
+}
+
+.quko-stations-overlay-card h2 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.quko-stations-overlay-card p {
+  margin: 12px 0 0;
+  font-size: 15px;
+}
+
+.quko-stations-overlay-card p:empty {
+  display: none;
+}
+
+.quko-stations-overlay-card .btn-quko {
+  margin-top: 22px;
+}
+
+.quko-stations-overlay-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  background: rgba(104, 199, 220, .16);
+  color: #237f94;
+  font-size: 22px;
+}
+
+.quko-stations-overlay.is-loading .quko-stations-overlay-icon {
+  animation: quko-stations-pulse 1.4s ease-in-out infinite;
+}
+
+.quko-stations-overlay.is-error .quko-stations-overlay-icon {
+  background: rgba(232, 56, 63, .1);
+  color: var(--quko-red-dark);
+}
+
+@keyframes quko-stations-pulse {
+  50% { opacity: .45; transform: scale(.94); }
+}
+
+/* Pills: the temperature on the map, coloured by state. */
+.quko-station-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: var(--quko-deep);
+  color: var(--quko-white);
+  font-size: 13px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(18, 21, 28, .22);
+}
+
+.quko-station-pill.is-stale {
+  border: 1px dashed #8d96a1;
+  background: var(--quko-white);
+  color: var(--quko-muted);
+}
+
+.quko-station-pill.is-fault {
+  background: var(--quko-red-dark);
+}
+
+.quko-station-pill.is-no_data {
+  background: var(--quko-line);
+  color: var(--quko-muted);
+  box-shadow: 0 6px 16px rgba(18, 21, 28, .12);
+}
+
+.quko-station-pill-age {
+  font-weight: 600;
+}
+
+/* Approximate (automatically placed) stations: a quiet "≈" before the value. */
+.quko-station-pill-approx {
+  margin-right: -2px;
+  font-weight: 600;
+  opacity: .7;
+}
+
+.quko-station-pill i {
+  font-size: 11px;
+}
+
+/* Leaflet places the (zero-size) icon on the station; the pill sits above
+   it with its pointer on the spot. */
+.quko-station-marker-icon {
+  outline: none;
+}
+
+.quko-station-marker {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, -8px);
+  transition: transform .2s ease;
+}
+
+.quko-station-marker:after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border: 6px solid transparent;
+  border-top-color: var(--quko-deep);
+  border-bottom: 0;
+  content: "";
+}
+
+.quko-station-marker.is-stale:after {
+  border-top-color: #8d96a1;
+}
+
+.quko-station-marker.is-fault:after {
+  border-top-color: var(--quko-red-dark);
+}
+
+.quko-station-marker.is-no_data:after {
+  border-top-color: #c3c9d1;
+}
+
+.quko-station-marker.is-selected {
+  transform: translate(-50%, -8px) scale(1.1);
+}
+
+.quko-station-marker.is-selected .quko-station-pill {
+  box-shadow: 0 0 0 3px var(--quko-white), 0 0 0 5px var(--quko-red), 0 8px 20px rgba(18, 21, 28, .25);
+}
+
+.quko-station-marker-icon:focus-visible .quko-station-pill {
+  outline: 3px solid var(--quko-red);
+  outline-offset: 3px;
+}
+
+/* State badge: icon and words, never colour alone. */
+.quko-station-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #1c7a4d;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.quko-station-state.is-stale {
+  color: #8a5300;
+}
+
+.quko-station-state.is-fault {
+  color: var(--quko-red-dark);
+}
+
+.quko-station-state.is-no_data {
+  color: var(--quko-muted);
+}
+
+/* Side column: detail card, then the list. */
+.quko-stations-side {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+
+.quko-stations-list-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 22px;
+}
+
+.quko-stations-count:not(:empty) {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--quko-mist);
+  color: var(--quko-ink-soft);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.quko-stations-status {
+  margin: 6px 0 0;
+  font-size: 13px;
+}
+
+.quko-stations-status.is-warning {
+  color: #8a5300;
+}
+
+.quko-stations-list {
+  display: grid;
+  gap: 10px;
+  max-height: 560px;
+  margin: 0;
+  padding: 0 4px 4px 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.quko-stations-list:empty {
+  display: none;
+}
+
+.quko-station-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--quko-line);
+  border-radius: 16px;
+  background: var(--quko-white);
+  color: var(--quko-ink);
+  font: inherit;
+  text-align: left;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.quko-station-item:hover {
+  border-color: rgba(18, 21, 28, .35);
+}
+
+.quko-station-item:focus-visible {
+  outline: 3px solid var(--quko-red);
+  outline-offset: 2px;
+}
+
+.quko-station-item[aria-current="true"] {
+  border-color: var(--quko-red);
+  box-shadow: 0 0 0 1px var(--quko-red);
+}
+
+.quko-station-item-main {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.quko-station-item-main strong {
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.quko-station-item-main span {
+  color: var(--quko-muted);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.quko-station-item-main .quko-station-item-approx {
+  font-size: 12px;
+}
+
+.quko-station-item-reading {
+  display: grid;
+  flex: 0 0 auto;
+  justify-items: end;
+  gap: 3px;
+  text-align: right;
+}
+
+.quko-station-item-temp {
+  font-size: 18px;
+  font-weight: 780;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.quko-station-item.is-stale .quko-station-item-temp {
+  color: var(--quko-muted);
+}
+
+.quko-station-item-temp.is-text {
+  max-width: 130px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: normal;
+}
+
+.quko-station-item-age {
+  color: var(--quko-muted);
+  font-size: 12px;
+}
+
+.quko-stations-list-empty {
+  margin: 0;
+  padding: 18px;
+  border: 1px dashed var(--quko-line);
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.quko-station-detail {
+  padding: 24px;
+  border: 1px solid var(--quko-line);
+  border-radius: var(--quko-radius);
+  background: var(--quko-white);
+  box-shadow: var(--quko-shadow);
+  scroll-margin-top: 110px;
+}
+
+.quko-station-detail:focus {
+  outline: none;
+}
+
+.quko-station-detail:focus-visible {
+  outline: 3px solid var(--quko-red);
+  outline-offset: 3px;
+}
+
+.quko-station-detail-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.quko-station-detail-head h3 {
+  margin: 0;
+  font-size: 22px;
+  overflow-wrap: anywhere;
+}
+
+.quko-station-detail-head p {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+.quko-station-detail-close {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--quko-line);
+  border-radius: 50%;
+  background: var(--quko-white);
+  color: var(--quko-ink);
+}
+
+.quko-station-detail-close:hover,
+.quko-station-detail-close:focus-visible {
+  border-color: var(--quko-ink);
+}
+
+.quko-station-detail-close:focus-visible {
+  outline: 3px solid var(--quko-red);
+  outline-offset: 2px;
+}
+
+.quko-station-detail-approx {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0 0;
+  color: var(--quko-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.quko-station-detail-approx i {
+  margin-top: 3px;
+}
+
+.quko-station-detail-approx strong {
+  color: var(--quko-ink-soft);
+}
+
+.quko-station-detail-reading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-top: 20px;
+}
+
+.quko-station-detail-label {
+  flex: 1 0 100%;
+  color: var(--quko-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.quko-station-detail-reading strong {
+  color: var(--quko-ink);
+  font-size: 40px;
+  font-weight: 780;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.quko-station-detail.is-stale .quko-station-detail-reading strong {
+  color: var(--quko-muted);
+}
+
+.quko-station-detail-age {
+  flex: 1 0 100%;
+  color: var(--quko-muted);
+  font-size: 13px;
+}
+
+.quko-station-detail-explain {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.quko-station-chart {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--quko-line);
+}
+
+.quko-station-chart-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: var(--quko-ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.quko-station-chart-readout {
+  color: var(--quko-muted);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.quko-station-chart-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  touch-action: pan-y;
+}
+
+.quko-station-chart-line {
+  fill: none;
+  stroke: var(--quko-red);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.quko-station-chart-grid {
+  stroke: var(--quko-line);
+  stroke-dasharray: 3 4;
+  stroke-width: 1;
+}
+
+.quko-station-chart-cross {
+  stroke: rgba(18, 21, 28, .3);
+  stroke-width: 1;
+}
+
+.quko-station-chart-dot {
+  fill: var(--quko-red);
+  stroke: var(--quko-white);
+  stroke-width: 2;
+}
+
+.quko-station-chart-axis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  color: var(--quko-muted);
+  font-size: 11px;
+}
+
+.quko-station-chart-range {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0 0;
+}
+
+.quko-station-chart-range div {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--quko-mist);
+}
+
+.quko-station-chart-range dt {
+  color: var(--quko-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.quko-station-chart-range dd {
+  margin: 2px 0 0;
+  color: var(--quko-ink);
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.quko-station-chart-message {
+  margin: 0;
+  font-size: 14px;
+}
+
+.quko-stations-note {
+  max-width: 760px;
+  margin: 24px 0 0;
+  font-size: 13px;
+}
+
+@media (max-width: 1100px) {
+  .quko-stations-app {
+    grid-template-columns: minmax(0, 1fr) 340px;
+  }
+}
+
+@media (max-width: 991px) {
+  .quko-stations-hero-grid,
+  .quko-stations-app {
+    grid-template-columns: 1fr;
+  }
+
+  .quko-stations-map {
+    height: 60vh;
+    min-height: 340px;
+    max-height: 520px;
+  }
+
+  .quko-stations-list {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 767px) {
+  .quko-stations-legend {
+    padding: 22px;
+  }
+
+  .quko-stations-legend li {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .quko-stations-map-wrap {
+    border-radius: 18px;
+  }
+
+  .quko-stations-overlay-card {
+    padding: 24px 20px;
+  }
+
+  .quko-station-detail {
+    padding: 20px;
+  }
+
+  .quko-station-detail-reading strong {
+    font-size: 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quko-stations-overlay.is-loading .quko-stations-overlay-icon {
+    animation: none;
+  }
+
+  .quko-station-marker,
+  .quko-station-item {
+    transition: none;
+  }
+}

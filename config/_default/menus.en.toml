@@ -151,6 +151,12 @@ weight = 5
 [footer.params]
 group = "explore"
 [[footer]]
+name = "Stations map"
+url = "stations_map/"
+weight = 6
+[footer.params]
+group = "explore"
+[[footer]]
 name = "Privacy"
 url = "privacy/"
 weight = 5

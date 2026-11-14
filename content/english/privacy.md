@@ -66,6 +66,15 @@ legal:
                                                     cloud.quko.es, where the price is determined from the billing country of the payment method.
                                                     </p>
 
+                                                    <h5>Stations map</h5>
+                                                    <p>
+                                                    To draw the stations map, the visitor's browser requests the map images from
+                                                    <a href='https://osmfoundation.org/wiki/Privacy_Policy' target='_blank' rel='noopener'>OpenStreetMap</a>
+                                                    (tile.openstreetmap.org) and the station readings from cloud.quko.es, the QUKO TECH, S.L. server. Both therefore
+                                                    receive the visitor's IP address and the technical data that accompany any web request, such as the browser type and
+                                                    the address of the page. No cookies are set, no account is involved and no other personal data is sent.
+                                                    </p>
+
                                                     <h5>Purchases in the shop</h5>
                                                     <p>
                                                     Orders placed in the QUKO shop are processed with <strong>Ecwid</strong> (Lightspeed Commerce), the platform

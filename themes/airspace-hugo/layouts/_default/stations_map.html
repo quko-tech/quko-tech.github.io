@@ -1,0 +1,98 @@
+{{/*
+  Stations map: live water temperature from the public MeteoQUKO stations.
+  The data comes from Quko-Cloud's public API (site.Params.meteo_api; contract
+  in the firmware repo, docs/stations_api.md section 4). Every string comes
+  from the page's front matter so the three languages share this template;
+  the ones the script needs are handed over as JSON in `ui`.
+
+  Leaflet is vendored under assets/plugins/leaflet and loaded on this page
+  only. Without JavaScript the page explains that the map needs it.
+*/}}
+{{ define "main" }}
+{{ $p := .Params }}
+{{ $leafletCSS := resources.Get "plugins/leaflet/leaflet.css" | minify | fingerprint "sha512" }}
+{{ $leafletJS := resources.Get "plugins/leaflet/leaflet.js" | fingerprint "sha512" }}
+{{/* leaflet.css points at images/*.png next to itself; publish them there. */}}
+{{ range resources.Match "plugins/leaflet/images/*.png" }}{{ $_ := .RelPermalink }}{{ end }}
+{{ $script := resources.Get "js/stations-map.js" | minify | fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ $leafletCSS.RelPermalink }}" integrity="{{ $leafletCSS.Data.Integrity }}" crossorigin="anonymous">
+
+<section class="quko-page-hero quko-stations-hero">
+  <div class="container"><div class="quko-page-hero-grid quko-stations-hero-grid">
+    <div>
+      <span class="quko-eyebrow">{{ $p.eyebrow }}</span>
+      <h1>{{ $p.heading }}</h1>
+      <p>{{ $p.text }}</p>
+      <div class="quko-actions"><a class="btn-quko" href="#stations">{{ $p.explore }} <i class="fas fa-arrow-down" aria-hidden="true"></i></a></div>
+    </div>
+    <aside class="quko-stations-legend" aria-labelledby="stations-legend-title">
+      <h2 id="stations-legend-title">{{ $p.legend_title }}</h2>
+      <ul>
+        {{ range slice "ok" "stale" "fault" "no_data" }}
+        <li><span class="quko-station-pill is-{{ . }}" aria-hidden="true">{{ with index $p.legend_samples . }}{{ . }}{{ else }}{{ if eq . "fault" }}<i class="fas fa-exclamation-triangle"></i>{{ end }}&ndash;{{ end }}</span><div><strong>{{ index $p.ui (printf "state_%s" .) }}</strong><span>{{ index $p.ui (printf "state_%s_text" .) }}</span></div></li>
+        {{ end }}
+        <li><span class="quko-station-pill is-ok" aria-hidden="true"><span class="quko-station-pill-approx">&asymp;</span>{{ $p.legend_samples.ok }}</span><div><strong>{{ $p.ui.approx_label }}</strong><span>{{ $p.ui.approx_text }}</span></div></li>
+      </ul>
+    </aside>
+  </div></div>
+</section>
+
+<section class="quko-section-sm quko-stations" id="stations" aria-labelledby="stations-list-title">
+  <div class="container">
+    <div class="quko-stations-app" data-stations-app data-api="{{ site.Params.meteo_api }}" data-lang="{{ site.Language.Lang }}">
+      <div class="quko-stations-map-wrap">
+        <div class="quko-stations-map" data-stations-map role="region" aria-label="{{ $p.ui.map_label }}"></div>
+        <div class="quko-stations-overlay" data-stations-overlay>
+          <div class="quko-stations-overlay-card">
+            <span class="quko-stations-overlay-icon" aria-hidden="true"><i class="fas fa-water"></i></span>
+            <h2 data-overlay-title>{{ $p.ui.loading }}</h2>
+            <p data-overlay-text></p>
+            <noscript><style>[data-overlay-title] { display: none; }</style><p>{{ $p.noscript }}</p></noscript>
+            <button type="button" class="btn-quko" data-retry hidden>{{ $p.ui.retry }}</button>
+          </div>
+        </div>
+      </div>
+      <div class="quko-stations-side">
+        <div class="quko-station-detail" data-station-detail tabindex="-1" aria-labelledby="station-detail-name" hidden>
+          <div class="quko-station-detail-head">
+            <div>
+              <h3 id="station-detail-name" data-detail-name></h3>
+              <p data-detail-reservoir></p>
+            </div>
+            <button type="button" class="quko-station-detail-close" data-detail-close><i class="fas fa-times" aria-hidden="true"></i><span class="sr-only">{{ $p.ui.close }}</span></button>
+          </div>
+          <p class="quko-station-detail-approx" data-detail-approx hidden><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span><strong>{{ $p.ui.approx_label }}.</strong> {{ $p.ui.approx_text }}</span></p>
+          <div class="quko-station-detail-reading">
+            <span class="quko-station-detail-label">{{ $p.ui.water_temperature }}</span>
+            <strong data-detail-temp></strong>
+            <span data-detail-state></span>
+            <span class="quko-station-detail-age" data-detail-age></span>
+          </div>
+          <p class="quko-station-detail-explain" data-detail-explain></p>
+          <div class="quko-station-chart" data-detail-chart>
+            <div class="quko-station-chart-head"><span>{{ $p.ui.last_24h }}</span><span class="quko-station-chart-readout" data-chart-readout aria-hidden="true"></span></div>
+            <div class="quko-station-chart-plot" data-chart-plot></div>
+            <dl class="quko-station-chart-range" data-chart-range hidden>
+              <div><dt>{{ $p.ui.min }}</dt><dd data-chart-min></dd></div>
+              <div><dt>{{ $p.ui.max }}</dt><dd data-chart-max></dd></div>
+            </dl>
+            <p class="quko-station-chart-message" data-chart-message></p>
+          </div>
+        </div>
+        <div class="quko-stations-list-head">
+          <h2 id="stations-list-title">{{ $p.list_title }} <span class="quko-stations-count" data-stations-count></span></h2>
+          <p class="quko-stations-status" data-stations-status></p>
+        </div>
+        <ul class="quko-stations-list" data-stations-list></ul>
+        <p class="quko-stations-list-empty" data-stations-list-empty hidden></p>
+        <p class="sr-only" role="status" aria-live="polite" data-stations-live></p>
+      </div>
+    </div>
+    <p class="quko-stations-note">{{ $p.note }}</p>
+  </div>
+</section>
+
+<script type="application/json" data-stations-ui>{{ $p.ui | jsonify | safeJS }}</script>
+<script src="{{ $leafletJS.RelPermalink }}" integrity="{{ $leafletJS.Data.Integrity }}" crossorigin="anonymous" defer></script>
+<script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{ end }}
