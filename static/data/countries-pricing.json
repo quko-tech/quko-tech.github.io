@@ -964,6 +964,11 @@
       "flag": "🇹🇻",
       "band": "low"
     },
+    "TW": {
+      "name": "Taiwan",
+      "flag": "🇹🇼",
+      "band": "mid"
+    },
     "TZ": {
       "name": "Tanzania",
       "flag": "🇹🇿",
@@ -1050,5 +1055,5 @@
       "band": "low"
     }
   },
-  "disclaimer": "Indicative prices, excluding VAT. The final price and any applicable tax are confirmed at checkout against your billing country. Quko Cloud subscriptions are personal and non-transferable, one per athlete using the platform. Coach and technical-staff accounts are free of charge in limited numbers."
+  "disclaimer": "Indicative prices, excluding VAT. The final price and any applicable tax are confirmed at checkout against your billing country. QUKO Cloud subscriptions are personal and non-transferable, one per athlete using the platform. Coach and technical-staff accounts are free of charge in limited numbers."
 }
