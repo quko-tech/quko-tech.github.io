@@ -21,8 +21,8 @@
   ],
   "firmware_encrypted": [
     {
-      "version": 0.9999,
-      "file": "https://quko.es/firmware/0.9999/fw_kosoku_0.9999_hwv5.bin.enc",
+      "version": 1.0,
+      "file": "https://quko.es/firmware/1.0/fw_kosoku_1.0_hwv5.bin.enc",
       "update_channel": "production",
       "hw_version": 5
     }
